@@ -1,0 +1,14 @@
+.content-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+
+.content-top > div {
+  dsiplay: inline-block;
+}
+
+.seperator {
+    padding: 0 5px;
+}

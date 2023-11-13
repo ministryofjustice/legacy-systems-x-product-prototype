@@ -1,0 +1,33 @@
+{% extends "./template.html" %}
+{% set overviewActive = true %}
+{% block content %}
+<!-- Overview -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row">
+        </div>
+        <h2 class="govuk-heading-l">
+            Overview
+        </h2>
+        <section aria-label="Status List">
+            <ul class="hmpps-status-list">
+                <li>
+                    <p>On remand</p>
+                </li>
+                <!--                     <li>
+                        <p>Recognised Listener</p>
+                    </li> -->
+            </ul>
+        </section>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-heading-m">Things you need to do</h2>
+                    <div class="to-do-item">
+                        <p class="govuk-body">1 draft court case needs addtional information</p>
+                    </div>
+                 </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

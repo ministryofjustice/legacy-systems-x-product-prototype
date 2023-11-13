@@ -1,0 +1,40 @@
+// MATCHER
+
+.app-match-prisoner-records {
+  border-left: 2px solid #ccc;
+  padding-left: 60px;
+  width: 55%;
+}
+.app-match-defendant-details {
+  padding-right: 60px;
+  width: 45%;
+}
+
+.app-possible-prison-record {
+  border-left: 4px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  background: #f8f8f8;
+  padding: 0 20px;
+  padding-bottom: 15px;
+  padding-top: 5px;
+}
+
+.app-task-card {
+  border-left: 8px solid #d4351c;
+  padding: 20px;
+  margin-bottom: 0;
+  background: #f1f2f3;
+}
+
+.app-possible-prison-record .govuk-table__cell, .app-possible-prison-record .govuk-table__header {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+// Highlight
+.highlight {
+  border-bottom: 3px solid #ffbf47;
+  margin-right: 1px;
+  background-color: #fff2d3;
+  padding: 2px 0px 0px;
+}

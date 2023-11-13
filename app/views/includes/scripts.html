@@ -1,0 +1,10 @@
+<!-- Javascript -->
+<script src="/public/javascripts/jquery-1.11.3.js"></script>
+{% for scriptUrl in extensionConfig.scripts %}
+<script src="{{scriptUrl.src}}"></script>
+{% endfor %}
+<script src="/public/javascripts/accessible-autocomplete.min.js"></script>
+{% if useAutoStoreData %}
+<script src="/public/javascripts/auto-store-data.js"></script>
+{% endif %}
+<script src="/public/javascripts/date-picker.js"></script>

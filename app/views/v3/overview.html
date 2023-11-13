@@ -1,0 +1,169 @@
+{% extends "./template.html" %}
+{% set overviewActive = true %}
+{% block content %}
+<!-- Overview -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="govuk-notification-banner govuk-notification-banner-alert" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="alert">
+            <div class="govuk-notification-banner__header">
+                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                    Important
+                </h2>
+            </div>
+            <div class="govuk-notification-banner__content">
+                <p class="govuk-notification-banner__heading">
+                    This prisoner is due for immediate release. <a href="">Do an action now.</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l" onclick="toggleAlert()">
+            Overview
+        </h2>
+    </div>
+</div>
+<div class="highlights">
+    <a href="court-cases" class="highlight-card">
+        <p class="highlight-card-headline">2</p>
+        <p class="highlight-card-text">active court cases</p>
+    </a>
+    <a href="adjustments" class="highlight-card">
+        <p class="highlight-card-headline">251</p>
+        <p class="highlight-card-text">days adjustments</p>
+    </a>
+    <a href="documents" class="highlight-card">
+        <p class="highlight-card-headline">6</p>
+        <p class="highlight-card-text">documents</p>
+    </a>
+</div>
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h3 class="govuk-heading-m">Upcoming release dates</h3>
+        <div class="release-date-highlight">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                        CRD
+                        <p class="govuk-!-font-size-16 govuk-hint govuk-!-margin-bottom-0">Conditional release date</p>
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Wednesday, 23 October 2030
+<p class="govuk-!-font-size-16 govuk-hint govuk-!-margin-bottom-0">2679 days from today</p>
+
+
+
+                    </dd>
+                </div>
+            </dl>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-4"><a href="release-dates">View all release dates</a></p>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+                <h2 class="govuk-heading-m">Things you need to do <span id="notifications" class="moj-notification-badge govuk-!-margin-left-2">4</span>
+</h2>
+                <div class="to-do-item to-do-item-overdue">
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">14 day check</a>
+                        <p class="to-do-hint to-do-hint-overdue">6 days overdue</p>
+                    </div>
+                    <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--red moj-badge--large">
+                            Overdue
+                        </strong>
+                    </div>
+                </div>
+                <div class="to-do-item to-do-item-urgent">
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">2 day check</a>
+                        <p class="to-do-hint">Due in 8 days</p>
+                    </div>
+                    <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--orange moj-badge--large">
+                            Urgent
+                        </strong>
+                    </div>
+                </div>
+                <div class="to-do-item to-do-item-urgent">
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Relevent remand needs review</a>
+                        <p class="to-do-hint">11 days remand identified</p>
+                    </div>
+                    <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--orange moj-badge--large">
+                            Urgent
+                        </strong>
+                    </div>
+                </div>
+                <div class="to-do-item">
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">1 draft court case needs completing</a>
+                        <p class="to-do-hint">Court case number: T20220103</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Recent activity</h2>
+        <div class="moj-timeline">
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Calculation</h2>
+                    <p class="moj-timeline__byline">by HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-06-14T14:01:00.000Z">5 July 2022 at 2:01pm</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Calculation reason: Initial calculation</p>
+                    <a href="calculations/calculation-05-08-2022/sentence-and-offence-information">View calculation</a>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">1 adjustment added</h2>
+                    <p class="moj-timeline__byline">by HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">5 July 2022 at 12:32pm</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <ul class="govuk-list">
+                        <li>251 days remand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">1 draft court case added</h2>
+                    <p class="moj-timeline__byline">by HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-06-06T09:12:00.000Z">5 July 2022 at 11:04am</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <ul class="govuk-list">
+                        <li><a href="court-cases/court-case-T20220103">Court case T20220103 (draft)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="govuk-body govuk-!-margin-top-6"><a href="timeline">View all activity</a></p>
+    </div>
+</div>
+<script>
+function toggleAlert() {
+    var x = document.getElementById("alert");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+{% endblock %}

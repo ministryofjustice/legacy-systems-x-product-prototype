@@ -1,6 +1,1201 @@
 //
 // For guidance on how to add CSS and SCSS see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
-// 
+//
 
 // Add extra styles here
+
+
+// New DPS styles
+@import "components/dps";
+
+// DPS header
+@import "components/dps-header";
+
+//Service name header
+@import "components/service-header";
+
+//Actions list
+@import "components/actions-list";
+
+//Offence summary
+@import "components/offence-summary";
+
+//Offence card
+@import "components/offence-card";
+
+//Content top
+@import "components/content-top";
+
+// Hero banner (masthead)
+@import "components/masthead";
+
+// Date / time picker styles only
+@import "components/date_time";
+
+// Navigation cards and DPS home stuff
+@import "components/cards";
+
+// Location bar
+@import "components/location-bar";
+
+// prisoner results
+@import "components/prisoner-results";
+
+// sortable table
+@import "components/sortable-table";
+
+// print link
+@import "components/print-link";
+
+// BaSM styles
+@import "components/basm";
+
+// DPS profile styles
+@import "components/prisonerProfile/prisoner-alerts";
+@import "components/prisonerProfile/prisoner-full-image";
+@import "components/prisonerProfile/prisoner-personal";
+@import "components/prisonerProfile/prisoner-profile";
+@import "components/prisonerProfile/prisoner-profile-header";
+@import "components/prisonerProfile/prisoner-profile-footer";
+@import "components/prisonerProfile/prisoner-schedule";
+@import "components/prisonerProfile/prisoner-visits";
+@import 'components/prisonerSearch/prisoner-search';
+@import 'components/prisonerSearch/prisoner-panel';
+
+@import "components/modal";
+@import "components/govuk-cards";
+@import "components/govuk-grid";
+
+@import "components/matcher";
+
+// RaP styles
+
+@import "components/rap-styles";
+
+.custom-card {
+  border: 1px solid #bfc1c3;
+}
+
+.custom-card-main {
+  padding: 20px 20px 0px 20px;
+}
+
+.custom-card-main:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.custom-card-header-heading {
+color: #0b0c0c;
+font-family: "GDS Transport", arial, sans-serif;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+font-weight: 700;
+font-size: 24px !important;
+font-size: 1.125rem;
+line-height: 1.11111;
+display: block;
+margin-left: 15px;
+margin-block-start: 0em;
+margin-block-end: 0em;
+}
+
+.link-back {
+display: -moz-inline-stack;
+display: inline-block;
+position: relative;
+font-weight: 400;
+text-transform: none;
+line-height: 1.14286;
+margin-top: 15px;
+margin-bottom: 15px;
+padding-left: 14px;
+color: #0b0c0c;
+text-decoration: none;
+border-bottom: 1px solid #0b0c0c;
+}
+
+.link-back::before {
+content: '';
+display: block;
+width: 0;
+height: 0;
+border-top: 5px solid transparent;
+border-right: 6px solid #0b0c0c;
+border-bottom: 5px solid transparent;
+position: absolute;
+left: 0;
+top: 50%;
+margin-top: -6px;
+}
+
+.govuk-details__summary__small:before {
+content: "";
+position: absolute;
+top: -1px;
+bottom: 0;
+left: 0;
+margin: auto;
+display: block;
+width: 0;
+height: 0;
+border-style: solid;
+border-color: transparent;
+-webkit-clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+clip-path: polygon(0% 0%, 100% 50%, 0% 100%);
+border-width: 5px 0 5px 10.124px;
+border-left-color: inherit;
+}
+
+.location-bar {
+  margin-bottom: 0;
+}
+
+.moj-banner {
+  padding: 20px;
+}
+
+.calculation-breakdown-consecutive-table-cell {
+  border-top: 1px solid #b1b4b6;
+}
+
+.calculation-breakdown:first-child {
+  border-top: 1px solid #b1b4b6;
+}
+
+.prisoner-search__form__row {
+  padding: 0 15px;
+}
+
+.prisoner-search__form button {
+  margin-bottom: 0;
+}
+
+.homepage-content {
+  margin-bottom: -50px;
+}
+
+.pagination-next {
+  text-decoration: none;
+  display: block;
+  float: left;
+}
+
+.pagination-next:visited {
+  color: #1d70b8;
+}
+
+.pagination-next-second-line {
+  font-size: 16px;
+  text-decoration: underline;
+}
+
+.arrow-next {
+  margin-right: 10px;
+  display: block;
+  float: left;
+}
+
+.lookup-search-input { 
+  width: 475px;
+ }
+
+ .pagination {
+  display: block;
+  margin: govuk-spacing(8) 0;
+}
+
+.pagination__list {
+  margin: 0;
+  padding: 0;
+}
+
+.pagination__item {
+  @include govuk-font($size: 16, $line-height: (20 / 16));
+  list-style: none;
+
+  &:first-child {
+    margin-bottom: govuk-spacing(4);
+  }
+}
+
+.pagination__link {
+  display: block;
+  text-decoration: none;
+  padding-bottom: govuk-spacing(4);
+
+  &:hover,
+  &:active,
+  &:visited {
+    color: $govuk-link-colour;
+  }
+
+  &:hover,
+  &:active {
+    background-color: govuk-colour("light-grey", $legacy: "grey-4");
+
+    // Add govuk-link hover decoration to title if no label present
+    .pagination__link-text--decorated {
+      @include govuk-link-decoration;
+    }
+
+    .pagination__link-label,
+    .pagination__link-text--decorated {
+      @include govuk-link-hover-decoration;
+    }
+  }
+
+  &:focus {
+    @include govuk-focused-text;
+
+    .pagination__link-title {
+      border-top-color: transparent;
+    }
+
+    .pagination__link-icon {
+      fill: $govuk-text-colour;
+    }
+  }
+}
+
+.pagination__link-title {
+  display: block;
+  border-top: 1px solid $govuk-border-colour;
+  padding-top: govuk-spacing(3);
+}
+
+.pagination__link-divider {
+  @include govuk-visually-hidden;
+}
+
+.pagination__link-text {
+  @include govuk-font(19, $weight: bold);
+  margin-left: govuk-spacing(2);
+}
+
+.pagination__link-icon {
+  @include govuk-font($size: 24, $line-height: (33.75 / 27));
+  display: inline-block;
+  margin-bottom: 1px;
+  height: .482em;
+  width: .63em;
+  fill: govuk-colour("dark-grey", $legacy: "grey-1");
+}
+
+.pagination__link-label {
+  display: inline-block;
+  margin-top: .1em;
+  margin-left: govuk-spacing(5);
+  @include govuk-link-decoration;
+
+  @include govuk-media-query($from: tablet) {
+    margin-left: govuk-spacing(6);
+  }
+}
+
+.adjustment-details {
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.adjustment-cell {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.adjustment-hint {
+  line-height: 1.6 !important;
+}
+
+/*.govuk-checkboxes--small .govuk-checkboxes__label:before {
+  top: 2px;
+}
+
+.govuk-checkboxes__input:checked + .govuk-checkboxes__label:after {
+opacity: 1;
+top: 10px;
+}*/
+
+.list-wrapper {
+    counter-reset: ol-index;
+    counter-reset: li-index;
+}
+
+.offence-list li {
+padding-left: 20px;
+}
+
+.list-alphanum {
+  list-style-type: none;
+}
+
+ .list-alphanum::before {
+ position: absolute;
+ margin-left: -60px;
+  content: attr(data-para-num);
+ }
+
+.moj-badge--small {
+  font-size: 12px;
+  margin: 0 0 5px 10px;
+}
+
+.sentence-table-header {
+  width: 30%;
+  margin-top: 10px;
+}
+
+.document-table-header, .document-table-cell {
+  border: none;
+  padding: 5px 5px 5px 0;
+}
+
+.document-table-header {
+  width: 30%;
+}
+
+.documennt-table {
+  margin-bottom: 10px;
+}
+
+.documents-list-item {
+  padding: 15px 0 10px 0;
+  border-bottom: 1px solid #b1b4b6;
+}
+
+.documents-list-item:first-of-type {
+  border-top: 1px solid #b1b4b6;
+}
+
+.document-title {
+  display: inline-block;
+}
+
+.remove-link {
+  color: $govuk-error-colour !important;
+  float: right;
+}
+
+.sort-options-label {
+  margin-bottom: 15px;
+  font-size: 16px;
+  margin-right: 10px;
+  display: inline-block;
+}
+
+.sort-options-select {
+  font-size: 16px;
+}
+
+.calc-timeline-summary-list-padding-fix {
+  padding-top: 0px !important;
+}
+
+.last-timeline-item {
+  margin-top: -30px;
+}
+
+.design-manual-nav a:visited {
+  color: #1d70b8;
+}
+
+.design-manual-nav a:hover {
+  text-decoration: underline;
+}
+
+.design-manual-nav li {
+  margin-bottom: 15px;
+}
+
+.design-manual-img {
+  border: 1px solid #b1b4b6;
+}
+
+.govuk-breadcrumbs__link a:visited {
+  color: #1d70b8;
+}
+
+
+.moj-badge--peach {
+  border-color: #DB6551;
+  color: #DB6551;
+}
+
+.actions {
+  border: 1px solid #b1b4b6;
+  padding: 15px;
+}
+
+.actions ul {
+  padding: 0; 
+  margin: 0; 
+}
+
+.actions li {
+  list-style-type: none; 
+  padding: 0; 
+  margin-bottom: 10px; 
+}
+
+
+.release-dates-summary-list-summary-list__key {
+  width: 50% !important;
+}
+
+.no-bottom-border {
+  border-bottom: none !important;
+}
+
+.govuk-width-container {
+    max-width: 1170px;
+    margin-right: 15px;
+    margin-left:15px
+}
+
+@supports (margin: max(calc(0px))) {
+    .govuk-width-container {
+        margin-right: max(15px, calc(15px + env(safe-area-inset-right)));
+        margin-left:max(15px, calc(15px + env(safe-area-inset-left)))
+    }
+}
+
+@media (min-width: 40.0625em) {
+    .govuk-width-container {
+        margin-right: 30px;
+        margin-left:30px
+    }
+
+    @supports (margin: max(calc(0px))) {
+        .govuk-width-container {
+            margin-right: max(30px, calc(15px + env(safe-area-inset-right)));
+            margin-left:max(30px, calc(15px + env(safe-area-inset-left)))
+        }
+    }
+}
+
+@media (min-width: 1230px) {
+    .govuk-width-container {
+        margin-right: auto;
+        margin-left:auto
+    }
+
+    @supports (margin: max(calc(0px))) {
+        .govuk-width-container {
+            margin-right: auto;
+            margin-left:auto
+        }
+    }
+}
+
+.dwf-text-colour-red, .dwf-text-colour-red:visited {
+  color: govuk-colour('red') !important;
+}
+
+.hmpps-status-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px 15px;
+    list-style-type: none;
+    padding-left: 0;
+    margin-top:0
+}
+
+.hmpps-status-list li {
+    display: inline-grid;
+    align-content: center;
+    height: 70px;
+    padding: 0 15px;
+    background-color: #f3f2f1;
+    border-left:8px solid #b1b4b6
+}
+
+.hmpps-status-list li p {
+    font-size: 19px;
+    line-height: 26.48px;
+    font-weight: 700;
+    color: #0b0c0c;
+    margin:0
+}
+
+.hmpps-status-list li p + p {
+    font-size: 16px;
+    line-height: 22.03px;
+    font-weight: 300;
+    color:#505a5f
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+.card {
+  border: 1px solid #bfc1c3;
+}
+
+.card-main {
+  padding: 0
+}
+
+.card-main:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.release-dates-key {
+  width: 50%;
+}
+
+.release-dates-list {
+  margin-bottom: 0;
+}
+
+.govuk-summary-list__row:last-child {
+  border-bottom: 0;
+}
+
+.moj-side-navigation {
+  font-size: 19px;
+}
+
+
+.action-list {
+  margin-bottom: 50px;
+}
+
+.action-button {
+  border: 1px solid #b1b4b6;
+  padding: 15px;
+  margin: 10px 10px 50px 10px;
+  border-bottom: 4px solid #b1b4b6;
+  display: block;
+  width: calc(33.333333% - 20px);
+  float: left;
+}
+
+.action-button:active, .action-button:hover {
+  border: 1px solid #505a5f;
+  border-bottom: 4px solid #505a5f;
+}
+
+.action-button a {
+  font-size: 24px;
+  font-weight: bold;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+
+.action-list:first-child {
+  margin-left: -10px;
+}
+
+.hmpps-side-filter {
+    background-color: #f3f2f1;
+    padding:30px 15px
+}
+
+.hmpps-side-filter__header {
+    font-size: 24px;
+    font-weight: bold;
+    margin:0 0 20px 0
+}
+
+.hmpps-side-filter fieldset {
+    margin-bottom:10px
+}
+
+.hmpps-side-filter label {
+    display: block;
+    font-size: 19px;
+    font-weight: bold;
+    margin-bottom:10px
+}
+
+.hmpps-side-filter label .hmpps-side-filter__alert-count {
+    white-space: nowrap;
+    display:inline-block
+}
+
+.hmpps-side-filter .govuk-checkboxes__label:before {
+    background-color:#fff
+}
+
+.hmpps-side-filter .govuk-checkboxes__label {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight:300
+}
+
+.hmpps-side-filter .govuk-checkboxes--small .govuk-checkboxes__label {
+    padding:10px 15px 0 1px
+}
+
+.hmpps-side-filter > .govuk-button {
+    margin-bottom:24px
+}
+
+.hmpps-side-filter__reset-button {
+    font-size: 16px;
+    color: #1d70b8;
+    text-decoration: underline;
+    text-underline-offset: .1em;
+    cursor: pointer;
+    padding: 0;
+    border:none
+}
+
+.hmpps-side-filter__reset-button:hover {
+    color:#003078
+}
+
+.hmpps-side-filter__reset-button:focus, .hmpps-side-filter__reset-button:active {
+    outline: 3px solid rgba(0, 0, 0, 0);
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break:clone
+}
+
+.hmpps-side-filter .govuk-error-message {
+    font-size: 16px;
+    font-weight:700
+}
+
+.hmpps-side-filter .govuk-select {
+    min-width:100%
+}
+
+.hmpps-datepicker {
+    position:relative
+}
+
+.hmpps-datepicker__dialog {
+    box-shadow: 1px 1px 4px rgba(0, 0, 0, .15);
+    background-color: #fff;
+    clear: both;
+    display: none;
+    padding: 8px;
+    outline: 1px solid #b1b4b6;
+    outline-offset: -1px;
+    position: static;
+    top: 0;
+    transition: background-color .2s, outline-color .2s;
+    width: 280px;
+    z-index:2
+}
+
+.hmpps-datepicker__dialog__header {
+    position: relative;
+    text-align: center;
+    margin-bottom:5px
+}
+
+.hmpps-datepicker__dialog__header > :nth-child(1) {
+    position: absolute;
+    left: 5px;
+    top:-2px
+}
+
+.hmpps-datepicker__dialog__header > :nth-child(1) > :nth-child(2) {
+    margin-left:4px
+}
+
+.hmpps-datepicker__dialog__header > :nth-child(3) {
+    position: absolute;
+    right: 5px;
+    top:-2px
+}
+
+.hmpps-datepicker__dialog__header > :nth-child(3) > :nth-child(1) {
+    margin-right:4px
+}
+
+.hmpps-datepicker__dialog__title {
+    font-size: 16px;
+    padding: 8px 0;
+    margin:0 !important
+}
+
+.hmpps-datepicker__dialog__navbuttons button {
+    background-color: rgba(0, 0, 0, 0);
+    color: #0b0c0c !important;
+    min-height: 40px;
+    margin: 0;
+    padding: 4px 4px 0 4px;
+    min-width: 32px;
+    border: none;
+    display: inline-block;
+    cursor: pointer;
+    outline:none
+}
+
+.hmpps-datepicker__dialog__navbuttons button .hmpps-datepicker-icon {
+    height: 32px;
+    padding: 0;
+    position: static;
+    width:24px
+}
+
+.hmpps-datepicker__dialog__navbuttons button:hover {
+    background-color:rgba(255, 221, 0, .5)
+}
+
+.hmpps-datepicker__dialog__navbuttons button:focus {
+    background-color: #fd0;
+    border-bottom:4px solid #0b0c0c
+}
+
+.hmpps-datepicker__dialog__table {
+    border-collapse:collapse
+}
+
+.hmpps-datepicker__dialog__table tbody:focus-within {
+    outline:2px solid #fd0
+}
+
+.hmpps-datepicker__dialog__table td {
+    border: 0;
+    margin: 0;
+    outline: 0;
+    padding:0
+}
+
+.hmpps-datepicker__dialog__table th {
+    font-size: 16px;
+    color:#0b0c0c
+}
+
+.hmpps-datepicker__dialog__table button {
+    background-color: rgba(0, 0, 0, 0);
+    border-width: 0;
+    color: #0b0c0c;
+    min-height: 40px;
+    margin: 0;
+    padding: 0;
+    min-width: 40px;
+    font-size:16px
+}
+
+.hmpps-datepicker__dialog__table button:hover {
+    outline: 3px solid rgba(0, 0, 0, 0);
+    color: #0b0c0c;
+    background-color: rgba(255, 221, 0, .5);
+    box-shadow: none;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+    cursor:pointer
+}
+
+.hmpps-datepicker__dialog__table button:focus {
+    outline: 3px solid rgba(0, 0, 0, 0);
+    color: #0b0c0c;
+    background-color: #fd0;
+    border-bottom: 4px solid #0b0c0c;
+    padding-top: 4px;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break:clone
+}
+
+.hmpps-datepicker__dialog__table button[disabled=true] {
+    background-color: #f3f2f1;
+    color:#0b0c0c
+}
+
+.hmpps-datepicker__dialog__table button.hmpps-datepicker__current {
+    outline: 2px solid #0b0c0c !important;
+    outline-offset: -2px
+}
+
+.hmpps-datepicker__dialog__table button.hmpps-datepicker__current[tabindex="-1"] {
+    background: rgba(0, 0, 0, 0);
+    color: currentColor
+}
+
+.hmpps-datepicker__dialog__table button.hmpps-datepicker__current[tabindex="-1"]:hover {
+    background-color: rgba(255, 221, 0, .5);
+    cursor:pointer
+}
+
+.hmpps-datepicker__dialog__table button.hmpps-datepicker__today {
+    font-weight:700
+}
+
+.hmpps-datepicker__dialog__table button.hmpps-datepicker__today::after {
+    background-color: currentColor;
+    border-radius: 4px;
+    content: "";
+    height: 4px;
+    margin-top: -1px;
+    margin-left: 1px;
+    position: absolute;
+    width:4px
+}
+
+.hmpps-datepicker__dialog__table button.hmpps-datepicker-selected:not(:focus) {
+    background-color: #0b0c0c;
+    color:#fff
+}
+
+.hmpps-datepicker__dialog__table-caption {
+    font-size: 14px;
+    caption-side: bottom;
+    line-height: 2;
+    margin-top:8px
+}
+
+.hmpps-datepicker__dialog__buttongroup {
+    display: grid;
+    grid-gap: 0 8px;
+    margin-right: 0;
+    overflow: visible;
+    grid-template-columns:1fr 1fr
+}
+
+.hmpps-datepicker__dialog__buttongroup > * {
+    margin-left: 0;
+    margin-right: 0;
+    width:auto !important
+}
+
+.hmpps-datepicker__dialog__buttongroup .govuk-button {
+    margin-bottom:0
+}
+
+.hmpps-datepicker .govuk-label--m {
+    margin-bottom:5px
+}
+
+.hmpps-datepicker .govuk-hint {
+    margin-bottom:10px
+}
+
+.hmpps-datepicker-input__wrapper {
+    display: flex;
+    margin-bottom: 24px;
+    overflow:visible
+}
+
+.hmpps-datepicker-input__wrapper .govukInput {
+    float: left;
+    margin-bottom: 0;
+    margin-right: -48px;
+    padding-right:56px
+}
+
+.hmpps-datepicker-input__wrapper .hmpps-datepicker-icon {
+    height: 24px;
+    width:32px
+}
+
+.hmpps-datepicker-input__wrapper .govuk-form-group {
+    width:100%
+}
+
+@media (min-width: 768px) {
+    .hmpps-datepicker__dialog {
+        position: absolute;
+        width:auto
+    }
+}
+
+.hmpps-datepicker-button {
+    background-color: #0b0c0c;
+    fill: #fff;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 40px;
+    padding-top: 6px;
+    border: none;
+    border-bottom: 4px solid #0b0c0c;
+    outline: none;
+    cursor:pointer
+}
+
+.hmpps-datepicker-button:hover {
+    background-color: #b1b4b6;
+    fill: #0b0c0c;
+    border-bottom:4px solid #b1b4b6
+}
+
+.hmpps-datepicker-button:focus {
+    background-color: #fd0;
+    fill: #0b0c0c;
+    border-bottom:4px solid #0b0c0c
+}
+
+@media (max-width: 768px) {
+    .hmpps-datepicker-button {
+        bottom:unset
+    }
+}
+
+.court-cases-list {
+  border-bottom: 1px solid $govuk-border-colour;
+  margin-bottom: 30px
+}
+
+.sentence-list {
+  border-top: 1px solid $govuk-border-colour;
+  padding-top: 30px
+}
+
+.moj-timeline {
+  overflow: visible;
+  margin-left: 5px; 
+}
+
+.moj-timeline__item:last-child {
+  &:after {
+    background-color: govuk-colour("blue");
+    content: "";
+    height: 5px;
+    left: -5px;
+    position: absolute;
+    bottom: -10px;
+    width: 15px;
+  }
+}
+
+.to-do-item {
+  width: 100%;
+  background: govuk-colour("light-grey");
+  border-left: 10px solid govuk-colour("mid-grey") !important;
+  display: inline-block;
+  padding: 20px 15px 0px 15px;
+  margin-bottom: 10px;
+}
+
+.to-do-item-overdue {
+  border-left: 10px solid govuk-colour("red") !important;
+}
+
+.to-do-item-urgent {
+  border-left: 10px solid govuk-colour("orange") !important;
+}
+
+.to-do-item-text{
+  display: inline-block;
+  float: left;
+}
+
+.to-do-item-badge{
+  display: inline-block;
+  float: right;
+}
+
+.moj-badge--orange {
+  border-color: govuk-colour("orange");
+  color: govuk-colour("orange");
+}
+
+.to-do-hint {
+  font-size: 16px;
+  margin-top: 0px !important;
+  color: govuk-colour("dark-grey");
+}
+
+.to-do-hint-overdue {
+  color: govuk-colour("red") !important;
+}
+
+.highlights {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.highlight-card {
+  background-color: $govuk-brand-colour;
+  padding: 20px;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.highlight-card:hover {
+  background-color: #195f9c;
+}
+
+.highlight-card-headline {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 0;
+  color:  govuk-colour("white");
+}
+
+.highlight-card-text {
+  font-size: 19px;
+  text-decoration: underline;
+  margin-bottom: 10px;
+  color:  govuk-colour("white");
+}
+
+.govuk-notification-banner {
+  border: 5px solid govuk-colour("red");
+  background-color: govuk-colour("red");
+}
+
+.govuk-notification-banner__content > * {
+max-width: 100%;
+}
+
+#alert {
+  display: none;
+}
+
+.release-date-highlight {
+  background-color: govuk-colour("light-grey");
+  display: block;
+  padding: 15px ;
+  margin-bottom: 15px;
+}
+
+.release-date-highlight > .govuk-summary-list {
+  margin-bottom: 0;
+}
+
+.am-pm-select {
+    min-width: 50px !important;
+}
+
+.dwf-header {
+    margin: 0px 0px 30px 0px;
+    position: relative;
+    height: 175px;
+}
+
+.dwf-header-inner {
+    background-color: #f3f2f1 !important;
+    width: 100%;
+    padding: 20px;
+    height: 170px;
+}
+
+.dwf-header-profile-img {
+    width: 100px;
+    height: 130px;
+}
+
+.dwf-header-left {
+    display: inline-block;
+    float: left;
+    margin-right: 15px;
+}
+
+.dwf-header-info {
+    padding: 0 !important;
+    margin: 0;
+}
+
+.dwf-header-info ul {
+    list-style: none;
+}
+
+.dwf-header-info li {
+    display: inline-block;
+    margin-right: 25px;
+    color: #0b0c0c;
+}
+
+.autocomplete__option {
+  @include govuk-font(19);
+}
+
+.dwf-confirm-offence-key {
+    width: 25% !important;
+}
+
+.add-offences-summary {
+    border-top: 1px solid gray;
+    padding-top: 15px;
+}
+
+.offences-summary-title {
+    font-size: 1.5rem;
+}
+
+.offences-summary-card {
+    padding: 5px 15px;
+}
+
+.offences-summary-card-court-details-row > .govuk-summary-list__key, .offences-summary-card-court-details-row > .govuk-summary-list__value {
+    padding-bottom: 0px;
+}
+
+.offences-summary-card-court-details-row dt {
+    width: 50%;
+}
+
+.offences-summary-card-offence-details-row dt {
+    width: 50%;
+    margin-bottom: 20px;
+}
+
+.offences-summary-card-key {
+    margin-bottom: 5px;
+}
+
+.offences-summary-card-value {
+    margin-left: 0;
+    margin-bottom: 10px;
+}
+
+.offences-summary-card-row {
+    border-bottom: 1px solid #b1b4b6;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+
+.offences-summary-card-row:last-of-type {
+    border-bottom: none;
+}
+
+.offences-summary-card-title-wrapper {
+border-bottom: 1px solid rgba(0, 0, 0, 0);
+background-color: #f3f2f1;
+display: block;
+padding: 10px;
+}
+
+.offences-summary-card-content {
+    margin-bottom: 0;
+}
+
+#filter-accordian {
+    border-bottom: none;
+}
+
+.moj-filter__options {
+    padding-bottom: 0;
+}
+
+.sort-select {
+    margin-top: -5px;
+}
+
+.govuk-summary-list__key {
+    width: 42%;
+}
+
+.offence-list-reveal {
+    border-top: hidden;
+}
+
+.autocomplete__hint, .autocomplete__input {
+    width:80% !important;
+}
+
+.search {
+    background: #f3f2f1;
+    padding: 20px 20px; 
+    margin-bottom: 40px
+}
+
