@@ -1,0 +1,162 @@
+{% extends "./template.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-l">
+            Adjustments
+        </h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-m">Deductions</h2>
+    </div>
+    <div class="govuk-grid-column-full-width">
+        <!-- Adjustment 1 -->
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Remand</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link" href="#">
+                                Update
+                            </a>
+                        </li>
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link dwf-text-colour-red" href="#">
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header" scope="col" width="90%">Dates</th>
+                                <th class="govuk-table__header" scope="col">Days</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell">17 February 2018 to 20 February 2018</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">3</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell">17 June 2018 to 20 June 2018</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">3</td>
+                            </tr>
+                            <!-- Total -->
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">Total days</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">6
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!-- Court case 2 -->
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Unlawfully at large (UAL)</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link" href="#">
+                                Update
+                            </a>
+                        </li>
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link dwf-text-colour-red" href="#">
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th class="govuk-table__header" scope="col" width="90%">Dates</th>
+                                <th class="govuk-table__header" scope="col">Days</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell">17 February 2018 to 20 February 2018</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">3</td>
+                            </tr>
+                            <!-- Total -->
+                            <tr class="govuk-table__row">
+                                <!-- Dates -->
+                                <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">Total days</td>
+                                <!-- Days -->
+                                <td class="govuk-table__cell">3
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-2">
+        <h2 class="govuk-heading-m">Additions</h2>
+    </div>
+    <!-- Court case 3 -->
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Additional days awarded (ADAs)</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link" href="#">
+                            Update
+                        </a>
+                    </li>
+                    <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link dwf-text-colour-red" href="#">
+                            Delete
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="govuk-summary-card__content">
+                <table class="govuk-table">
+                    <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__header" scope="col" width="90%">Date awarded</th>
+                            <th class="govuk-table__header" scope="col">Days</th>
+                        </tr>
+                    </thead>
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <!-- Dates -->
+                            <td class="govuk-table__cell">17 February 2018</td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell">5</td>
+                        </tr>
+                        <!-- Total -->
+                        <tr class="govuk-table__row">
+                            <!-- Dates -->
+                            <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">Total days</td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell">5
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

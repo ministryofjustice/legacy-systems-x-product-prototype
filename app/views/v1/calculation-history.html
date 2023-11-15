@@ -1,0 +1,61 @@
+{% extends "./template.html" %}
+{% set releaseDatesActive = true %}
+{% block content %}
+<!-- Release dates -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">
+            Release dates
+        </h2>
+        <p class="govuk-body">Latest calculation: 10 July 2021 at HMP Leeds</p>
+        <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button">
+                Calculate new release dates
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Print notification slip
+            </button>
+        </div>
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates">Latest release dates</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="#2">Calculation history</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Date</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Reason</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Establishment</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">15 April 2020</a></td>
+                    <td class="govuk-table__cell">Initial calculation</td>
+                    <td class="govuk-table__cell">HMP Leeds</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">9 August 2020</a></td>
+                    <td class="govuk-table__cell">Transfer check</td>
+                    <td class="govuk-table__cell">HMP Sheffield</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">20 August 2020</a></td>
+                    <td class="govuk-table__cell">Adjustments added</td>
+                    <td class="govuk-table__cell">HMP Sheffield</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

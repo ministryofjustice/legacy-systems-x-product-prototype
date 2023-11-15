@@ -1,0 +1,63 @@
+{% extends "./template.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Documents -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">
+            Documents
+        </h2>
+        <table class="govuk-table" data-module="moj-sortable-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header" aria-sort="ascending">Document type</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Date</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Court</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Court case number</th>
+                    <th scope="col" class="govuk-table__header" aria-sort="none">Added by</th>
+                    <th scope="col" class="govuk-table__header"></th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">Custodial warrant</a></td>
+                    <td class="govuk-table__cell">20 March 2020</td>
+                    <td class="govuk-table__cell">Leeds Magistrates Court</td>
+                    <td class="govuk-table__cell">D20200320</td>
+                    <td class="govuk-table__cell">HMP Leeds</td>
+                    <td class="govuk-table__cell"><a class="dwf-text-colour-red" href="">Delete</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">Custodial warrant</a></td>
+                    <td class="govuk-table__cell">4 August 2020</td>
+                    <td class="govuk-table__cell">Leeds Crown Court</td>
+                    <td class="govuk-table__cell">D20200804</td>
+                    <td class="govuk-table__cell">HMP Leeds</td>
+                    <td class="govuk-table__cell"><a class="dwf-text-colour-red" href="">Delete</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">Trial record sheet</a></td>
+                    <td class="govuk-table__cell">4 August 2020</td>
+                    <td class="govuk-table__cell">Leeds Crown Court</td>
+                    <td class="govuk-table__cell">D20200804</td>
+                    <td class="govuk-table__cell" data-sort-value="1874">HMP Leeds</td>
+                    <td class="govuk-table__cell"><a class="dwf-text-colour-red" href="">Delete</a>
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">Custodial warrant</a></td>
+                    <td class="govuk-table__cell" data-sort-value="8850">15 May 2021</td>
+                    <td class="govuk-table__cell">Sheffield Crown Court</td>
+                    <td class="govuk-table__cell">G20210515</td>
+                    <td class="govuk-table__cell" data-sort-value="1953">HMP Sheffield</td>
+                    <td class="govuk-table__cell"><a class="dwf-text-colour-red" href="">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

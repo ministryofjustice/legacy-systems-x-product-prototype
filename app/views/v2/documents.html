@@ -1,0 +1,506 @@
+{% extends "./template.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Documents -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+            Documents
+        </h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="action-button-group">
+            <a href="add-documents/document-type"><button class="govuk-button" data-module="govuk-button">
+                    Add documents
+                </button></a>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <div class="moj-filter">
+            <div class="moj-filter__header">
+                <div class="moj-filter__header-title">
+                    <h2 class="govuk-heading-m">Filter</h2>
+                </div>
+                <div class="moj-filter__header-action">
+                </div>
+            </div>
+            <div class="moj-filter__content">
+                <div class="moj-filter__selected">
+                    <div class="moj-filter__selected-heading">
+                        <div class="moj-filter__heading-title">
+                            <h2 class="govuk-heading-m">Selected filters</h2>
+                        </div>
+                    </div>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Keywords</h3>
+                    <ul class="moj-filter-tags">
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Leeds Crown Court</a></li>
+                    </ul>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Type</h3>
+                    <ul class="moj-filter-tags">
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Warrant</a></li>
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Trial record sheet</a></li>
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Indictment</a></li>
+                    </ul>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Dates</h3>
+                    <ul class="moj-filter-tags">
+                        <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> From 23/10/21 to 13/06/23</a></li>
+                    </ul>
+                </div>
+                <div class="moj-filter__options">
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="court-name">
+                            Court name
+                        </label>
+                        <input class="govuk-input govuk-!-margin-top-4" id="court-name" name="court-name" type="text" value="Leeds Crown Court">
+                    </div>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                Type
+                            </legend>
+                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
+                                    <label class="govuk-label govuk-checkboxes__label" for="type">
+                                        Warrant
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                        Trial record sheet
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
+                                        Indictment
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                                        Communication
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
+                                        Other
+                                    </label>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="govuk-form-group hmpps-datepicker" data-module="hmpps-datepicker">
+                        <label class="govuk-label govuk-label--m" for="endDate">
+                            Date from
+                        </label>
+                        <div id="endDate-hint" class="govuk-hint">
+                            For example, 31/3/2023
+                        </div>
+                        <div class="hmpps-datepicker-input__wrapper">
+                            <div class="govuk-form-group">
+                                <input class="govuk-input govuk-input hmpps-js-datepicker-input" id="endDate" name="endDate" type="text" autocomplete="off" maxlength="10" data-mindate="" data-maxdate="">
+                                <div id="datepicker-endDate" class="hmpps-datepicker__dialog  datepickerDialog" role="dialog" aria-modal="true" aria-labelledby="datepicker-title-endDate">
+                                    <div class="hmpps-datepicker__dialog__header ">
+                                        <div class="hmpps-datepicker__dialog__navbuttons">
+                                            <button class="js-datepicker-prev-year" aria-label="previous year" data-button="button-datepicker-prevyear">
+                                                <span class="govuk-visually-hidden">Previous year</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#double_chevron_left"></use>
+                                                </svg>
+                                            </button>
+                                            <button class="js-datepicker-prev-month" aria-label="previous month" data-button="button-datepicker-prevmonth">
+                                                <span class="govuk-visually-hidden">Previous month</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#chevron_left"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <h2 id="datepicker-title-endDate" class="hmpps-datepicker__dialog__title  js-datepicker-month-year" aria-live="polite">June 2023</h2>
+                                        <div class="hmpps-datepicker__dialog__navbuttons">
+                                            <button class="js-datepicker-next-month" aria-label="next month" data-button="button-datepicker-nextmonth">
+                                                <span class="govuk-visually-hidden">Next month</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#chevron_right"></use>
+                                                </svg>
+                                            </button>
+                                            <button class="js-datepicker-next-year" aria-label="next year" data-button="button-datepicker-nextyear">
+                                                <span class="govuk-visually-hidden">Next year</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#double_chevron_right"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <table class="hmpps-datepicker__dialog__table  js-datepicker-grid" role="grid" aria-labelledby="datepicker-title-endDate">
+                                        <caption class="hmpps-datepicker__dialog__table-caption">You can use the arrow keys to select a date</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" abbr="Monday">Mo</th>
+                                                <th scope="col" abbr="Tuesday">Tu</th>
+                                                <th scope="col" abbr="Wednesday">We</th>
+                                                <th scope="col" abbr="Thursday">Th</th>
+                                                <th scope="col" abbr="Friday">Fr</th>
+                                                <th scope="col" abbr="Saturday">Sa</th>
+                                                <th scope="col" abbr="Sunday">Su</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: none;">29</button></td>
+                                                <td><button data-form="date-select" style="display: none;">30</button></td>
+                                                <td><button data-form="date-select" style="display: none;">31</button></td>
+                                                <td><button data-form="date-select" style="display: block;">1</button></td>
+                                                <td><button data-form="date-select" style="display: block;">2</button></td>
+                                                <td><button data-form="date-select" style="display: block;">3</button></td>
+                                                <td><button data-form="date-select" style="display: block;">4</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;">5</button></td>
+                                                <td><button data-form="date-select" style="display: block;">6</button></td>
+                                                <td><button data-form="date-select" style="display: block;">7</button></td>
+                                                <td><button data-form="date-select" style="display: block;">8</button></td>
+                                                <td><button data-form="date-select" style="display: block;">9</button></td>
+                                                <td><button data-form="date-select" style="display: block;">10</button></td>
+                                                <td><button data-form="date-select" style="display: block;">11</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;">12</button></td>
+                                                <td><button data-form="date-select" style="display: block;">13</button></td>
+                                                <td><button data-form="date-select" style="display: block;">14</button></td>
+                                                <td><button data-form="date-select" style="display: block;">15</button></td>
+                                                <td><button data-form="date-select" style="display: block;">16</button></td>
+                                                <td><button data-form="date-select" style="display: block;">17</button></td>
+                                                <td><button data-form="date-select" style="display: block;">18</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;">19</button></td>
+                                                <td><button data-form="date-select" style="display: block;">20</button></td>
+                                                <td><button data-form="date-select" style="display: block;">21</button></td>
+                                                <td><button data-form="date-select" style="display: block;">22</button></td>
+                                                <td><button data-form="date-select" style="display: block;">23</button></td>
+                                                <td><button data-form="date-select" style="display: block;">24</button></td>
+                                                <td><button data-form="date-select" style="display: block;">25</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;">26</button></td>
+                                                <td><button data-form="date-select" style="display: block;">27</button></td>
+                                                <td><button data-form="date-select" style="display: block;">28</button></td>
+                                                <td><button data-form="date-select" style="display: block;">29</button></td>
+                                                <td><button data-form="date-select" style="display: block;">30</button></td>
+                                                <td><button data-form="date-select" style="display: none;">1</button></td>
+                                                <td><button data-form="date-select" style="display: none;">2</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: none;">3</button></td>
+                                                <td><button data-form="date-select" style="display: none;">4</button></td>
+                                                <td><button data-form="date-select" style="display: none;">5</button></td>
+                                                <td><button data-form="date-select" style="display: none;">6</button></td>
+                                                <td><button data-form="date-select" style="display: none;">7</button></td>
+                                                <td><button data-form="date-select" style="display: none;">8</button></td>
+                                                <td><button data-form="date-select" style="display: none;">9</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="hmpps-datepicker__dialog__buttongroup">
+                                        <button type="button" class="govuk-button js-datepicker-ok" value="ok" data-button="button-datepicker-ok">Select</button>
+                                        <button type="button" class="govuk-button govuk-button--secondary js-datepicker-cancel" value="cancel" data-button="button-datepicker-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="hmpps-datepicker-button hmpps-js-datepicker-button" data-button="datepicker-endDate-toggle">
+                                <span class="govuk-visually-hidden">Choose date.</span>
+                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img" viewBox="0 0 22 22">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1333 2.93333H5.86668V4.4C5.86668 5.21002 5.21003 5.86667 4.40002 5.86667C3.59 5.86667 2.93335 5.21002 2.93335 4.4V2.93333H2C0.895431 2.93333 0 3.82877 0 4.93334V19.2667C0 20.3712 0.89543 21.2667 2 21.2667H20C21.1046 21.2667 22 20.3712 22 19.2667V4.93333C22 3.82876 21.1046 2.93333 20 2.93333H19.0667V4.4C19.0667 5.21002 18.41 5.86667 17.6 5.86667C16.79 5.86667 16.1333 5.21002 16.1333 4.4V2.93333ZM20.5333 8.06667H1.46665V18.8C1.46665 19.3523 1.91436 19.8 2.46665 19.8H19.5333C20.0856 19.8 20.5333 19.3523 20.5333 18.8V8.06667Z"></path>
+                                    <rect x="3.66669" width="1.46667" height="5.13333" rx="0.733333"></rect>
+                                    <rect x="16.8667" width="1.46667" height="5.13333" rx="0.733333"></rect>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="govuk-form-group hmpps-datepicker" data-module="hmpps-datepicker">
+                        <label class="govuk-label govuk-label--m" for="startDate">
+                            Date to
+                        </label>
+                        <div id="startDate-hint" class="govuk-hint">
+                            For example, 31/3/2023
+                        </div>
+                        <div class="hmpps-datepicker-input__wrapper">
+                            <div class="govuk-form-group">
+                                <input class="govuk-input govuk-input hmpps-js-datepicker-input" id="startDate" name="startDate" type="text" autocomplete="off" maxlength="10" data-mindate="" data-maxdate="">
+                                <div id="datepicker-startDate" class="hmpps-datepicker__dialog datepickerDialog" role="dialog" aria-modal="true" aria-labelledby="datepicker-title-startDate" style="display: none; left: 229px;">
+                                    <div class="hmpps-datepicker__dialog__header ">
+                                        <div class="hmpps-datepicker__dialog__navbuttons">
+                                            <button class="js-datepicker-prev-year" aria-label="previous year" data-button="button-datepicker-prevyear">
+                                                <span class="govuk-visually-hidden">Previous year</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#double_chevron_left"></use>
+                                                </svg>
+                                            </button>
+                                            <button class="js-datepicker-prev-month" aria-label="previous month" data-button="button-datepicker-prevmonth">
+                                                <span class="govuk-visually-hidden">Previous month</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#chevron_left"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <h2 id="datepicker-title-startDate" class="hmpps-datepicker__dialog__title  js-datepicker-month-year" aria-live="polite">June 2023</h2>
+                                        <div class="hmpps-datepicker__dialog__navbuttons">
+                                            <button class="js-datepicker-next-month" aria-label="next month" data-button="button-datepicker-nextmonth">
+                                                <span class="govuk-visually-hidden">Next month</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#chevron_right"></use>
+                                                </svg>
+                                            </button>
+                                            <button class="js-datepicker-next-year" aria-label="next year" data-button="button-datepicker-nextyear">
+                                                <span class="govuk-visually-hidden">Next year</span>
+                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
+                                                    <use href="/assets/images/icons.stack.svg#double_chevron_right"></use>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <table class="hmpps-datepicker__dialog__table  js-datepicker-grid" role="grid" aria-labelledby="datepicker-title-startDate">
+                                        <caption class="hmpps-datepicker__dialog__table-caption govuk-body">You can use the arrow keys to select a date</caption>
+                                        <thead>
+                                            <tr>
+                                                <th scope="col" abbr="Monday">Mo</th>
+                                                <th scope="col" abbr="Tuesday">Tu</th>
+                                                <th scope="col" abbr="Wednesday">We</th>
+                                                <th scope="col" abbr="Thursday">Th</th>
+                                                <th scope="col" abbr="Friday">Fr</th>
+                                                <th scope="col" abbr="Saturday">Sa</th>
+                                                <th scope="col" abbr="Sunday">Su</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">29</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">30</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">31</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">1</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">2</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">3</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">4</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">5</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">6</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">7</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">8</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="0" class="hmpps-datepicker-selected">9</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">10</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">11</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1" class="hmpps-datepicker__today">12</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">13</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">14</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">15</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">16</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">17</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">18</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">19</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">20</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">21</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">22</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">23</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">24</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">25</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">26</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">27</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">28</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">29</button></td>
+                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">30</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">1</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">2</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">3</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">4</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">5</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">6</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">7</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">8</button></td>
+                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">9</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                    <div class="hmpps-datepicker__dialog__buttongroup">
+                                        <button type="button" class="govuk-button js-datepicker-ok" value="ok" data-button="button-datepicker-ok">Select</button>
+                                        <button type="button" class="govuk-button govuk-button--secondary js-datepicker-cancel" value="cancel" data-button="button-datepicker-cancel">Cancel</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="hmpps-datepicker-button hmpps-js-datepicker-button" data-button="datepicker-startDate-toggle">
+                                <span class="govuk-visually-hidden">Choose date.</span>
+                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img" viewBox="0 0 22 22">
+                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1333 2.93333H5.86668V4.4C5.86668 5.21002 5.21003 5.86667 4.40002 5.86667C3.59 5.86667 2.93335 5.21002 2.93335 4.4V2.93333H2C0.895431 2.93333 0 3.82877 0 4.93334V19.2667C0 20.3712 0.89543 21.2667 2 21.2667H20C21.1046 21.2667 22 20.3712 22 19.2667V4.93333C22 3.82876 21.1046 2.93333 20 2.93333H19.0667V4.4C19.0667 5.21002 18.41 5.86667 17.6 5.86667C16.79 5.86667 16.1333 5.21002 16.1333 4.4V2.93333ZM20.5333 8.06667H1.46665V18.8C1.46665 19.3523 1.91436 19.8 2.46665 19.8H19.5333C20.0856 19.8 20.5333 19.3523 20.5333 18.8V8.06667Z"></path>
+                                    <rect x="3.66669" width="1.46667" height="5.13333" rx="0.733333"></rect>
+                                    <rect x="16.8667" width="1.46667" height="5.13333" rx="0.733333"></rect>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <button class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-2" data-module="govuk-button" data-test-id="submit-button">
+                        Apply filters
+                    </button>
+                    <div class="moj-filter__heading-action govuk-!-margin-top-5 govuk-!-margin-left-4">
+                        <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">6 documents</p>
+        <ul class="govuk-list documents-list">
+            <!-- <div class="govuk-form-group govuk-!-margin-top-4">
+  <label class="govuk-label sort-options-label" for="sort">
+    Sort by
+  </label>
+  <select class="govuk-select sort-options-select" id="sort" name="sort">
+    <option value="published">Date added (most recent)</option>
+    <option value="updated" selected>Date added (oldest)</option>
+  </select>
+</div> -->
+            <!-- Document 1 -->
+            <li class="documents-list-item">
+                <h3 class="govuk-heading-s document-title"><a href="{{ asset_path }}documents/order-of-imprisonment-court-case-1.pdf" class="govuk-link--no-visited-state" target="_blank">Order for imprisonment</a></h3>
+                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
+                <table class="govuk-table documennt-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <td class="govuk-table__cell document-table-cell"><a href="/court-cases/court-case-T20220101">T20220101</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
+                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <td class="govuk-table__cell document-table-cell">1 July 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <!-- Document 2 -->
+            <li class="documents-list-item">
+                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/order-of-imprisonment-court-case-2.pdf" class="govuk-link--no-visited-state" target="_blank">Order for imprisonment</a></h3>
+                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
+                <table class="govuk-table documennt-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <td class="govuk-table__cell document-table-cell"><a href="">T20220102</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
+                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
+                        </tr>
+                        <tr class="govuk-table__row ">
+                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <td class="govuk-table__cell document-table-cell">1 July 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <!-- Document 3 -->
+            <li class="documents-list-item">
+                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/indictment-court-case-1.pdf" class="govuk-link--no-visited-state" target="_blank">Indictment</a></h3>
+                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
+                <table class="govuk-table documennt-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <td class="govuk-table__cell document-table-cell"><a href="">T20220101</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
+                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
+                        </tr>
+                        <tr class="govuk-table__row ">
+                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <td class="govuk-table__cell document-table-cell">1 July 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <!-- Document 4 -->
+            <li class="documents-list-item">
+                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/indictment-court-case-2.pdf" class="govuk-link--no-visited-state" target="_blank">Indictment</a></h3>
+                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
+                <table class="govuk-table documennt-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <td class="govuk-table__cell document-table-cell"><a href="">T20220102</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
+                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
+                        </tr>
+                        <tr class="govuk-table__row ">
+                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <td class="govuk-table__cell document-table-cell">1 July 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <!-- Document 4 -->
+            <li class="documents-list-item">
+                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/trial-record-sheet-court-case-1.pdf" class="govuk-link--no-visited-state" target="_blank">Trial record sheet</a></h3>
+                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
+                <table class="govuk-table documennt-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <td class="govuk-table__cell document-table-cell"><a href="">T20220101</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
+                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
+                        </tr>
+                        <tr class="govuk-table__row ">
+                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <td class="govuk-table__cell document-table-cell">23 October 2021</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+            <!-- Document 5 -->
+            <li class="documents-list-item">
+                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/trial-record-sheet-court-case-2.pdf" class="govuk-link--no-visited-state" target="_blank">Trial record sheet</a></h3>
+                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
+                <table class="govuk-table documennt-table">
+                    <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <td class="govuk-table__cell document-table-cell"><a href="">T20220102</a></td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
+                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
+                        </tr>
+                        <tr class="govuk-table__row ">
+                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <td class="govuk-table__cell document-table-cell">31 March 2022</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

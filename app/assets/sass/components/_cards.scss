@@ -1,3 +1,63 @@
+
+.adjustment-card{
+  box-sizing: border-box;
+  flex-basis: 48%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  margin: 0%;
+  border: 1px solid #b1b4b6;
+
+  &_heading{
+    display:block;
+    background-color: #f3f2f1;
+    padding:16px;
+    color:black;
+  }
+  &_content {
+    padding:16px;
+  }
+  .count, .count-2 {
+    font-size: 3rem;
+    font-weight: 800;
+    padding-right:.4rem;
+  }
+}
+
+
+
+.adj-card {
+  padding: 20px;
+  flex-basis: 47%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.18);
+  background-color:#1d70b8;
+  color:white;
+  margin: 1%;
+
+    &.full {
+      width:100%;
+      margin: 40px 0;
+    }
+
+  &.grey {
+    background-color: #f3f2f1;
+    .adj-card-heading, p{
+      color:black;
+    }
+  }
+
+
+    .count {
+      font-size: 3rem;
+      color: white;
+      font-weight: 800;
+    }
+  .adj-card-heading, p, a {
+    color:white;
+  }
+
+}
+
+
+
 .establishment-roll {
   margin-bottom: 15px
 }

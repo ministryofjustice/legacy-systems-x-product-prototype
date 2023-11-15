@@ -1,0 +1,192 @@
+{% extends "./template.html" %}
+{% set courtCasesActive = true %}
+{% block content %}
+<!-- Court cases -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-l">
+            Court cases
+        </h2>
+    </div>
+</div>
+<!-- Actions -->
+<button class="govuk-button" data-module="govuk-button">
+    Add court case
+</button>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full-width">
+        <!-- Court case 1 -->
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Court case: T20220904</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link" href="#">
+                                Update
+                            </a>
+                        </li>
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link dwf-text-colour-red" href="#">
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                4 Septemeber 2022
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Sheffield Crown Court
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Outcome
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Imprisonment
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Sentences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                1
+                            </dd>
+                        </div>
+                    </dl>
+                    <ul class="govuk-list govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                        <li><a href="">View sentences</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Court case 2 -->
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Court case: T20210217</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link" href="#">
+                                Update
+                            </a>
+                        </li>
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link dwf-text-colour-red" href="#">
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                17 February 2021
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Leeds Crown Court
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Outcome
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Imprisonment
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Sentences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                5
+                            </dd>
+                        </div>
+                    </dl>
+                    <ul class="govuk-list govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                        <li><a href="">View sentences</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <!-- Court case 3 -->
+        <div class="govuk-grid-column-one-half">
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Court case: T2021010</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link" href="#">
+                                Update
+                            </a>
+                        </li>
+                        <li class="govuk-summary-card__action govuk-body"> <a class="govuk-link dwf-text-colour-red" href="#">
+                                Delete
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10 February 2021
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Leeds Crown Court
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Outcome
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Remand in custody (bail refused)
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Sentences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                1
+                            </dd>
+                        </div>
+                    </dl>
+                    <ul class="govuk-list govuk-!-margin-top-2 govuk-!-margin-bottom-0">
+                        <li><a href="">View sentences</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+{% endblock %}

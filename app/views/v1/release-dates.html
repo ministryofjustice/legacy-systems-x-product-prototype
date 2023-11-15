@@ -1,0 +1,111 @@
+{% extends "./template.html" %}
+{% set releaseDatesActive = true %}
+{% block content %}
+<!-- Release dates -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Release dates
+        </h1>
+        <div class="govuk-button-group govuk-!-margin-bottom-6 govuk-!-margin-top-6">
+            <button class="govuk-button" data-module="govuk-button">
+                Calculate new release dates
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Print notification slip
+            </button>
+        </div>
+        <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title govuk-!-font-size-24">Latest release dates    <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-margin-top-1">Latest calculation: <a href="">10 July 2021 at HMP Leeds</a></p></h2>
+  </div>
+  <div class="govuk-summary-card__content">
+                <dl class="govuk-summary-list release-dates-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            SLED
+                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Tuesday, 19 February 2036
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            CRD
+                            <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            Sunday, 19 February 2034
+                            <p class="govuk-!-font-size-16 govuk-hint govuk-!-margin-top-2">Friday, 17 February 2034 when adjusted to a working day</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            PED
+                            <p class="govuk-!-font-size-16 govuk-hint">Parole eligibility date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            Friday, 21 April 2028
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            ERSED
+                            <p class="govuk-!-font-size-16 govuk-hint">Early removal scheme eligibility date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            Wednesday, 21 April 2027
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+        <div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title govuk-!-font-size-24">Calculation history</h2>
+  </div>
+  <div class="govuk-summary-card__content">
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Calculation date</th>
+                    <th scope="col" class="govuk-table__header">Reason</th>
+                    <th scope="col" class="govuk-table__header">Establishment</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">20 March 2020</a></td>
+                    <td class="govuk-table__cell">Transfer</td>
+                    <td class="govuk-table__cell">HMP Hull</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">19 February 2020</a></td>
+                    <td class="govuk-table__cell">Transfer</td>
+                    <td class="govuk-table__cell">HMP Leeds</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">27 January 2020</a></td>
+                    <td class="govuk-table__cell">Adjustment added</td>
+                    <td class="govuk-table__cell">HMP Leeds</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="">9 January 2020</a></td>
+                    <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                    <td class="govuk-table__cell">HMP Leeds</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+</div>
+{% endblock %}

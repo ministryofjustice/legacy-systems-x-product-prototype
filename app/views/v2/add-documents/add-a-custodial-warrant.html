@@ -1,0 +1,40 @@
+{% extends "../template.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Documents -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Add a document</span>
+      <h1 class="govuk-heading-l">
+        Add a custodial warrant
+      </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="add-a-custodial-warrant" method="post" enctype="multipart/form-data">
+            <div class="govuk-form-group">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                            <h2 class="govuk-fieldset__heading">
+                                Court name
+                            </h2>
+                        </legend>
+                        <div id="search-hint" class="govuk-hint">
+                            Enter a court name, address, town or city.
+                        </div>
+                        <div>
+                            <select id="court-name-select" class="enhance-autcomplete" name="court-name" type="text" aria-describedby="search-hint">
+                                <option></option>
+                                <option value="Birmingham" crown="" court="">Birmingham Crown Court</option>
+                                <option value="Manchester" mc="">Manchester MC</option>
+                            </select>
+                        </div>
+                    </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
