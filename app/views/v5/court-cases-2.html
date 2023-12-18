@@ -1,0 +1,207 @@
+{% extends "./template.html" %}
+{% set courtCasesActive = true %}
+{% block content %}
+<!-- Court cases -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {% if data.appearanceSuccess == 1 %}
+        <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+            </svg>
+            <div class="moj-banner__message">New appearance added to court case {{ data.courtCaseIndex | int + 1 }}<span class="govuk-!-text-align-right" style="display: inline-flex; float: right;"><a class="govuk-link--no-visited-state" href="/v7/close-success-message">Close</a></span></div>
+        </div>
+        {% endif %}
+        <h1 class="govuk-heading-xl">Court cases</h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-row govuk-!-margin-bottom-3">
+            <div class="govuk-grid-column-full">
+                <!--                 <div class="moj-search search">
+                    <form action="#" method="post">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label moj-search__label govuk-!-font-weight-bold" for="search">
+                                Find a court case
+                            </label>
+                            <div id="search-hint" class="govuk-hint moj-search__hint ">
+                                You can search by court case number, court name or date
+                            </div>
+                            <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+                        </div>
+                        <button class="govuk-button moj-search__button " data-module="govuk-button">
+                            Search
+                        </button>
+                    </form>
+                </div> -->
+                <div class="content-top">
+                    <div>
+                        <span class="govuk-body govuk-!-font-weight-bold">Sort by:</span><span class="govuk-body govuk-!-margin-left-2">Most recent <span class="seperator">|</span> <a href="">Earliest</a></span>
+                    </div>
+                    <div>
+                        <span class="govuk-body">Showing <strong>{{ data.courtCases.length }}</strong> court cases</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-!-margin-top-1">
+                {% if data.courtCases | length %}
+                {% for courtCase in data.courtCases %}
+                {% set lastAppearance = courtCase.appearances | last %}
+                <div class="govuk-summary-card">
+                    <div class="govuk-summary-card__title-wrapper">
+                        <h2 class="govuk-summary-card__title">Court case {{ loop.index }}</h2>
+                        <ul class="govuk-summary-card__actions">
+                            <li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state" href="/v8/create-appearance?courtIndex={{loop.index0}}">
+                                    Add appearance<span class="govuk-visually-hidden"> to court case {{ loop.index }}</span>
+                                </a>
+                            </li>
+                            <!--                             <li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state" href="/v5/update-court-case?index={{loop.index0}}">
+                                    Edit
+                                </a>
+                            </li> -->
+                        </ul>
+                    </div>
+                    <div class="govuk-summary-card__content">
+                        <dl class="govuk-summary-list">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Reference numbers
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ courtCase.appearances | join(", ","court-case-ref") }}
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Most recent warrant date
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{ lastAppearance['warrant-date-year'] }}
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Most recent court name
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['court-name'] }}
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Overall case outcome
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ courtCase.appearances[0]['overall-case-outcome'] }}
+                                </dd>
+                            </div>
+                            {% if (lastAppearance['next-court-date-set'] == 'Yes') %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Next hearing type and date
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['next-hearing-type'] }} on {{ lastAppearance['next-court-date-day'] }}/{{ lastAppearance['next-court-date-month'] }}/{{ lastAppearance['next-court-date-year'] }} at {{ lastAppearance['next-court-time'] }} {{ lastAppearance['next-court-time-period'] }}
+                                </dd>
+                            </div>
+                                                        <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Next hearing location
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['next-court-name'] }}
+                                </dd>
+                            </div>
+                            {% else %}
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Next court date
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Date to be fixed
+                                </dd>
+                            </div>
+                            {% endif %}
+                        </dl>
+                        <hr class="govuk-section-break govuk-section-break--visible">
+                        <table class="govuk-table govuk-!-margin-top-6">
+                            <caption class="govuk-table__caption govuk-table__caption--m">Appearances</caption>
+                            <thead class="govuk-table__head">
+                                <tr class="govuk-table__row">
+                                    <th scope="col" class="govuk-table__header">Court case number</th>
+                                    <th scope="col" class="govuk-table__header">Court name</th>
+                                    <th scope="col" class="govuk-table__header">Warrant date</th>
+                                    <th scope="col" class="govuk-table__header"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                {% for appearance in courtCase.appearances | reverse %}
+                                <tr class="govuk-table__row">
+                                    <td class="govuk-table__cell">{{ appearance['court-case-ref'] }}</td>
+                                    <td class="govuk-table__cell">{{ appearance['court-name'] }}</td>
+                                    <td class="govuk-table__cell">{{ appearance['warrant-date-day'] }}/{{ appearance['warrant-date-month'] }}/{{ appearance['warrant-date-year'] }}</td>
+                                    <td class="govuk-table__cell"><a href="">Edit</a></td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                        <h2 class="govuk-heading-m">Offences ({{ courtCase.appearances[0].offences.length }})</h2>
+                        <details class="govuk-details offences-list" data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                                <span class="govuk-details__summary-text">
+                                    Show offences
+                                </span>
+                            </summary>
+                            <div class="govuk-details__text">
+                                {% for appearance in courtCase.appearances %}
+                                {% for offence in appearance.offences %}
+                                <div class="govuk-!-margin-bottom-4 app-possible-prison-record" style="display: flex;">
+                                    <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                                        <span class="govuk-body-s" style="display:inline-block;">
+                                            <!-- Count {{ loop.index }} --></span>
+                                        <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                                            {{ offence['offence-name'] }}
+                                        </h4>
+                                        <p class="govuk-body-s">Committed on {{ offence['offence-start-date-day'] }}/{{ offence['offence-start-date-month'] }}/{{ offence['offence-start-date-year'] }}</p>
+                                        <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                                            <tbody class="govuk-table__body">
+                                                <tr class="govuk-table__row govuk-body-s">
+                                                    <th scope="row" class="govuk-table__header sentence-table-header">Outcome</th>
+                                                    <td class="govuk-table__cell">{{ offence['outcome'] }}
+                                                    </td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                {% endfor %}
+                                {% endfor %}
+                            </div>
+                        </details>
+                    </div>
+                </div>
+                {% endfor %}
+                {% else %}
+                <div class="court-cases-list">
+                    <p class="govuk-body">There are no court cases recorded for Joe Bloggs.</p>
+                    <p class="gouk-body"><a href="/v7/create-court-case">Record a court case now</a>
+                    </p>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="actions-list">
+            <ul class="govuk-list actions-list-list">
+                <span class="govuk-heading-m actions-list-header">Actions</span>
+                <li><a href="/v7/create-court-case">Add a new court case</a></li>
+                <!-- <li><a href="">Record an appeal</a></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

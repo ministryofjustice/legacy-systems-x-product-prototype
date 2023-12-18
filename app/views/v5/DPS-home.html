@@ -1,0 +1,272 @@
+
+{% extends "../layout.html" %}
+
+{% block content %}
+<main class="govuk-main-wrapper app-container govuk-body" id="main-content" role="main">
+          
+
+  
+  <header class="dps-header">
+    <div class="govuk-width-container">
+        <h1>Welcome to Digital Prison Services</h1>
+        <p>The modern replacement for NOMIS.</p>
+        <a href="/learn-more-about-dps" class="govuk-link govuk-link--text-colour">Find out more about DPS</a>
+    </div>
+</header>
+  
+
+
+
+<section class="dps-homepage-search" data-qa="homepage-search-section">
+    <div class="govuk-width-container">
+        <form method="post" action="/search" novalidate="" autocomplete="off">
+            <fieldset class="govuk-fieldset">
+                <legend><h2>Search for a prisoner</h2></legend>
+                <input type="hidden" name="_csrf" value="HHxDnW2z-d79hFexiHgVDtuBlvYYF18FGfqU">
+                
+                <div class="govuk-form-group govuk-form-group--inline govuk-!-margin-bottom-3">
+                    
+
+<div class="govuk-form-group govuk-form-group__item">
+  <label class="govuk-label" for="name">
+    Name or prison number
+  </label>
+
+<input class="govuk-input hmpps-width-20" id="name" name="name" type="text">
+
+</div>
+
+                    
+
+<div class="govuk-form-group govuk-form-group__item">
+  <label class="govuk-label" for="location">
+    Residential location
+  </label>
+
+
+  <select class="govuk-select" id="location" name="location">
+  
+    
+      <option value="LEI" selected="">All</option>
+    
+  
+    
+      <option value="LEI-A">A</option>
+    
+  
+    
+      <option value="LEI-B">B</option>
+    
+  
+    
+      <option value="LEI-C">C</option>
+    
+  
+    
+      <option value="LEI-D">D</option>
+    
+  
+    
+      <option value="LEI-E">E</option>
+    
+  
+    
+      <option value="LEI-F">F</option>
+    
+  
+    
+      <option value="LEI-H">H</option>
+    
+  
+    
+      <option value="LEI-I">I</option>
+    
+  
+    
+      <option value="LEI-S">S</option>
+    
+  
+    
+      <option value="LEI-TEST">Test</option>
+    
+  
+  </select>
+</div>
+
+
+                    <div class="govuk-form-group__button">
+                    
+
+  
+    
+  
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="homepage-search-button">
+  Search
+</button>
+
+                    </div>
+                </div>
+
+                <div class="govuk-form-group">
+                    <a data-qa="search-view-all-link" href="https://digital-dev.prison.service.justice.gov.uk/prisoner-search?keywords=&amp;location=LEI" class="govuk-link govuk-link--no-visited-state">All prisoners in
+                        Leeds (HMP)</a>
+                </div>
+            </fieldset>
+        </form>
+    </div>
+</section>
+
+
+    <script src="/assets/js/homepage-search.js"></script>
+
+  <div class="govuk-width-container">
+    <section data-qa="homepage-services-section">
+    <h2 id="homepage-services" data-qa="homepage-services-heading">Services</h2>
+    <div class="hmpps-services">
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://manage-adjudications-dev.hmpps.service.justice.gov.uk " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Adjudications</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Place a prisoner on report after an incident, view reports and manage adjudications.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://activities-dev.prison.service.justice.gov.uk/activities " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Allocate people, unlock and attend</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Create and edit activities. Log applications and manage waitlists. Allocate people and edit allocations. Print unlock lists and record attendance.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://check-my-diary-dev.prison.service.justice.gov.uk?fromDPS=true " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Check my diary</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">View your prison staff detail (staff rota) from home.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://digital-dev.prison.service.justice.gov.uk/establishment-roll " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Establishment roll check</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">View the roll broken down by residential unit and see who is arriving and leaving.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://incentives-ui-dev.hmpps.service.justice.gov.uk " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Incentives</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Manage incentive level reviews by residential location and view incentives data charts.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://digital-dev.prison.service.justice.gov.uk/manage-prisoner-whereabouts/scheduled-moves " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">People due to leave</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">View people due to leave this establishment for court appearances, transfers or being released.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://activities-dev.prison.service.justice.gov.uk/appointments " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Schedule and edit appointments</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Create and manage appointments. Print movement slips.</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://submit-a-mercury-report-dev.hmpps.service.justice.gov.uk " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Submit an Intelligence Report</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Access to the new Mercury submission form</p>
+            </div>                
+        
+            <div class="hmpps-service-item">
+                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
+                <div class="hmpps-service-item__header">
+                    <a href="https://welcome-dev.prison.service.justice.gov.uk " class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Welcome people into prison</a>
+                </div>
+                <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">View prisoners booked to arrive today, add them to the establishment roll, and manage reception tasks for recent arrivals.</p>
+            </div>                
+        
+    </div>
+</section>
+    <hr class="today-section-break">
+    <section class="dps-homepage-today" data-qa="homepage-today-section">
+    <h2>Today in Leeds (HMP)</h2>
+    <p class="today-last-updated">Last updated at 08:47 on 13 December 2023</p>
+    <div class="today-card-container">
+        <div class="today-card" data-qa="today-unlock-roll-card">
+            <h3>Today's unlock roll</h3>
+            <div class="today-card__count">1101</div>
+        </div>
+        <div class="today-card" data-qa="today-current-population-card">
+            <h3>Current population</h3>
+            <div class="today-card__count">1101</div>
+            <div class="today-card__link">
+                <a href="https://digital-dev.prison.service.justice.gov.uk/establishment-roll" class="govuk-link govuk-link--no-visited-state">Establishment roll</a>
+            </div>
+        </div>
+        <div class="today-card" data-qa="today-in-card">
+            <h3>Arrived today</h3>
+            <div class="today-card__count">0</div>
+            <div class="today-card__link">
+                <a href="https://digital-dev.prison.service.justice.gov.uk/establishment-roll/in-today" class="govuk-link govuk-link--no-visited-state">Arrived today</a>
+            </div>
+        </div>
+        <div class="today-card" data-qa="today-out-card">
+            <h3>Out today</h3>
+            <div class="today-card__count">0</div>
+            <div class="today-card__link">
+                <a href="https://digital-dev.prison.service.justice.gov.uk/establishment-roll/out-today" class="govuk-link govuk-link--no-visited-state">People out today</a>
+            </div>
+        </div>
+    </div>
+</section>
+  </div>
+  <hr class="today-section-break--blue govuk-width-container">
+  <div class="govuk-width-container dps-homepage-flex-container">
+    <section class="dps-homepage-whats-new" data-qa="homepage-whats-new-section">
+    <h2>What's new in DPS</h2>
+    
+        <article class="whats-new-post">
+            <div class="whats-new-post__date">8 December 2023</div>
+            <a href="/whats-new/quickly-view-alerts" class="govuk-link govuk-link--no-visited-state">It's now easier to view important alerts on the prisoner profile</a>
+            <div class="whats-new-post__summary">We’ve just released a new feature that makes it easier to quickly view important alerts on the prisoner profile.</div>
+        </article>
+    
+        <article class="whats-new-post">
+            <div class="whats-new-post__date">27 November 2023</div>
+            <a href="/whats-new/adjudications-public" class="govuk-link govuk-link--no-visited-state">Introducing the Adjudications service</a>
+            <div class="whats-new-post__summary">From 12 December 2023 every prison will be using the new Adjudications service. It will replace creating new adjudications in NOMIS.</div>
+        </article>
+    
+        <article class="whats-new-post">
+            <div class="whats-new-post__date">27 November 2023</div>
+            <a href="/whats-new/new-prisoner-profile" class="govuk-link govuk-link--no-visited-state">Introducing the new DPS prisoner profile</a>
+            <div class="whats-new-post__summary">The Digital Prison Services (DPS) team has launched a new version of the DPS prisoner profile.</div>
+        </article>
+    
+    <a href="/whats-new" class="govuk-link govuk-link--no-visited-state">All updates</a>
+</section>
+    <section class="dps-homepage-help" data-qa="homepage-help-section">
+    <h2>Get help with DPS</h2>
+    <h3>Contact the helpdesk</h3>
+    <p>Call 0800 917 5148 or #6598 from inside an establishment.</p>
+    <h3>Tell us what you think</h3>
+    <p>You can help improve DPS by <a href="https://eu.surveymonkey.com/r/HJTL6XS" class="govuk-link govuk-link--no-visited-state" target="_blank" rel="noopener noreferrer external">giving us your feedback (opens in a new tab)</a>.</p>
+</section>
+  </div>
+
+
+        </main> 
+
+{% endblock %}

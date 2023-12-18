@@ -9,6 +9,10 @@
 // New DPS styles
 @import "components/dps";
 
+
+// New DPS homepgae
+@import "components/dps-home";
+
 // DPS header
 @import "components/dps-header";
 
@@ -1104,6 +1108,7 @@ max-width: 100%;
     margin-right: 25px;
     color: #0b0c0c;
 }
+
 
 .autocomplete__option {
   @include govuk-font(19);

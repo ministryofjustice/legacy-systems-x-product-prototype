@@ -1,0 +1,97 @@
+{% extends "./template.html" %}
+{% set releaseDatesActive = true %}
+{% block content %}
+<!-- Release dates -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Release dates
+        </h1>
+    </div>
+</div>
+
+{% if data['releaseDates'] == "none" %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <p class="govuk-body">There are no release dates calculated for Joe Bloggs.</p>
+        <p class="gouk-body"><a href="#">Calculate release dates now</a></p> 
+    </div>
+
+</div>
+
+{% else %}
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+
+        <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-marrgin-top-1">Latest calculation: <a href="#">10 May 2023 at HMP Kirkham</a></p>
+            </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+                <dl class="govuk-summary-list release-dates-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            SLED
+                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Tuesday, 5 July 2023
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            CRD
+                            <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            Tuesday, 5 July 2023
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+    
+    <div class="govuk-summary-card" id="calculation-history">
+        <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Calculation history</h2>
+        </div>
+        <div class="govuk-summary-card__content">
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Calculation date</th>
+                        <th scope="col" class="govuk-table__header">Reason</th>
+                        <th scope="col" class="govuk-table__header">Establishment</th>
+                        <th scope="col" class="govuk-table__header">Source</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body"> 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculations/calculation-05-08-2022/sentence-and-offence-information">10 May 2023</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate Release Dates Service</td> 
+                </tbody>
+            </table>
+        </div>
+    </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="actions-list">
+            <ul class="govuk-list actions-list-list">
+                <span class="govuk-heading-m actions-list-header">Actions</span>
+                <li><a href="#">Calculate release dates</a></li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+
+    {% endif %}
+    {% endblock %}
