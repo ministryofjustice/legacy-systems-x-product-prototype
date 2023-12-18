@@ -422,8 +422,8 @@
 }
 
 .connect-dps-common-header {
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding-top: 20px;
+    padding-bottom: 20px;
     background-color: #0b0c0c;
     color:#fff
 }
@@ -714,9 +714,6 @@
         margin-bottom:0
     }
 
-    .connect-dps-common-header__navigation__item:not(:only-of-type) {
-        border-left:1px solid #fff
-    }
 }
 
 .connect-dps-common-header__navigation__item a {

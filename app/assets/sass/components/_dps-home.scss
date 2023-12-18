@@ -1,4 +1,3 @@
-
 .dps-homepage-help h3 {
     font-size: 19px;
     margin: 30px 0 15px 0
@@ -51,11 +50,7 @@
     position: relative
 }
 
-.dps-homepage-container header.dps-header div::before {
-    content: url("/assets/images/dps-logo.svg");
-    float: left;
-    margin-right: 20px
-}
+
 
 .dps-homepage-container header.dps-header h1 {
     font-size: 36px;
@@ -542,4 +537,4 @@
     .govuk-template {
         background-color: #fff
     }
-} 
+}
