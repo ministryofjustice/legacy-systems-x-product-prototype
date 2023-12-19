@@ -538,3 +538,122 @@
         background-color: #fff
     }
 }
+
+
+.prisoner-profile-breadcrumbs {
+    margin-top: 15px;
+    margin-bottom: 15px
+}
+
+.prisoner-profile-breadcrumbs:after {
+    content: "";
+    display: block;
+    clear: both
+}
+
+.prisoner-profile-breadcrumbs__back {
+    float: left
+}
+
+.prisoner-profile-breadcrumbs__back a::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 2px;
+    width: .4375em;
+    height: .4375em;
+    margin: auto 0;
+    -ms-transform: rotate(225deg);
+    transform: rotate(225deg);
+    border: solid;
+    border-width: 1px 1px 0 0;
+    border-color: #0b0c0c
+}
+
+.prisoner-profile-breadcrumbs__back a:link,.prisoner-profile-breadcrumbs__back a:visited {
+    display: inline-block;
+    position: relative;
+    padding-left: 12px;
+    color: #0b0c0c
+}
+
+.prisoner-profile-breadcrumbs__search {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 400;
+    font-size: 14px;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    float: left
+}
+
+@media print {
+    .prisoner-profile-breadcrumbs__search {
+        font-family: sans-serif
+    }
+}
+
+@media(min-width: 40.0625em) {
+    .prisoner-profile-breadcrumbs__search {
+        font-size:16px;
+        font-size: 1rem;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .prisoner-profile-breadcrumbs__search {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+.prisoner-profile-breadcrumbs__search:has(+.prisoner-profile-breadcrumbs__breadcrumbs ol>li>a) {
+    border-right: 1px solid #505a5f;
+    padding-right: 15px;
+    margin-right: 15px
+}
+
+.prisoner-profile-breadcrumbs__breadcrumbs {
+    float: left
+}
+
+.prisoner-profile-breadcrumbs .govuk-breadcrumbs {
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+@media print,(min-width: 641px) {
+    .horizontal-information {
+        padding-bottom:0;
+        display: flex
+    }
+}
+
+.horizontal-information--with-border {
+    padding: 15px 0;
+    border-top: 1px solid #b1b4b6;
+    border-bottom: 1px solid #b1b4b6
+}
+
+@media print,(min-width: 641px) {
+    .horizontal-information__item {
+        flex:1 1 0;
+        padding-right: 15px
+    }
+
+    .horizontal-information__item--tenth {
+        flex-basis: 10%
+    }
+
+    .horizontal-information__item:last-child {
+        padding-right: 0
+    }
+
+    .horizontal-information__item:last-child {
+        margin-bottom: 0
+    }
+}

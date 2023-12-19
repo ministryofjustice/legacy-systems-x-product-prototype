@@ -319,7 +319,7 @@ Court cases and release dates
         </div>
         {% endblock %} -->
         {% block banner %}
-        <div class="govuk-grid-row">
+        <!-- <div class="govuk-grid-row">
             <div class="govuk-grid-column-full">
                 <div class="dwf-header govuk-!-margin-top-6 govuk-!-margin-bottom-4">
                     <div class="dwf-header-inner">
@@ -348,181 +348,9 @@ Court cases and release dates
                     </div>
                 </div>
             </div>
-        </div>
+        </div> -->
         {% endblock %}
         {% block nav %}
-
-
-        {% if overviewActive == true %}
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-
-        {% elseif releaseDatesActive == true %}
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  aria-current="page" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-
-        {% elseif courtCasesActive == true %}
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  aria-current="page" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-
-        {% elseif adjustmentsActive == true %}
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  aria-current="page" href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-
-        {% elseif documentsActive == true %}
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" aria-current="page" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-
-        {% elseif timelineActive == true %}
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  aria-current="page" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-
-        {% else %}
-
-        <nav class="moj-sub-navigation" aria-label="Sub navigation">
-            <ul class="moj-sub-navigation__list">
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"href="overview">Overview</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates</a>
-                </li>
-                <!-- <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
-                </li>
-                <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                </li> -->
-            </ul>
-        </nav>
-        {% endif %}
-
 
         {% endblock %}
         {% block content %}
@@ -540,7 +368,7 @@ Court cases and release dates
                 <div class="govuk-footer__meta-custom">
                     <h3 class="govuk-heading-m">Support</h3>
                     <p class="govuk-footer__meta-custom govuk-list govuk-!-margin-bottom-8">
-                        Email <a class="govuk-link govuk-footer__link" href="mailto:ashley.wheat@digital.justice.gov.uk">ashley.wheat<wbr>@digital.justice.gov.uk</a> for support.<br>
+                        Email <a class="govuk-link govuk-footer__link" href="mailto:james.mckechnie@digital.justice.gov.uk">ashley.wheat<wbr>@digital.justice.gov.uk</a> for support.<br>
                     </p>
                 </div>
                 <ul class="govuk-footer__inline-list">
