@@ -12,14 +12,32 @@
 {% endblock %} 
 
 {% block content %}
-<form method="post" action="release-dates">
+<form method="post" action="/task-based-routing">
   <div class="govuk-width-container">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds"> 
         <h1 class="govuk-heading-l govuk-!-margin-top-8">
-        <span class="govuk-caption-l">Look up a calculation</span>
-        Search for a person to calculate their release dates
-        </h1>
+          {% if data['navOption'] == 'single-entry' %}
+          <span class="govuk-caption-l">Court cases, adjustments and release dates</span> 
+
+          {% elif data['navOption'] == 'adjustments' %}
+          <span class="govuk-caption-l">Add an adjustment</span> 
+
+          {% elif data['navOption'] == 'crd' %}
+          <span class="govuk-caption-l">Calculate release dates</span> 
+
+          {% elif data['navOption'] == 'court-cases' %}
+          <span class="govuk-caption-l">Manage court cases</span> 
+
+          {% elif data['navOption'] == 'crd-lookup' %}
+          <span class="govuk-caption-l">Look up a calculation</span> 
+          
+          {% else %}
+          <span class="govuk-caption-l">Court cases, adjustments and release dates</span>
+          
+          {% endif %}
+          Search for a person
+      </h1>
       </div>
   
       <div class="govuk-grid-column-full">

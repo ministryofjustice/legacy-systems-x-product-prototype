@@ -172,7 +172,14 @@
         <div class="hmpps-service-item">
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
             <div class="hmpps-service-item__header">
+                {% if data['navOption'] == 'single-entry' %}
+                <a href="search-person?navOption=single-entry" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Court cases, adjustments and release dates</a>
+                {% elif data['navOption'] == 'task-based' %}
                 <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Court cases, adjustments and release dates</a>
+                {% else %}
+                <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Court cases, adjustments and release dates</a>
+                {% endif %}
+
             </div>
             <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Manage court cases, adjustments and release dates.</p>
         </div>              
