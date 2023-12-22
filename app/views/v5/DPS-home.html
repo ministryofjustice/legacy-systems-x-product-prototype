@@ -177,11 +177,24 @@
                 {% elif data['navOption'] == 'task-based' %}
                 <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Court cases, adjustments and release dates</a>
                 {% else %}
-                <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Court cases, adjustments and release dates</a>
+                    {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+                    <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Calculate release dates</a>
+                    {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
+                    <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Adjustments and release dates</a>
+                    {% else %}  
+                    <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Court cases, adjustments release dates</a>
+                    {% endif %}  
                 {% endif %}
 
             </div>
+
+            {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+            <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Look-up or calculate release dates.</p>
+            {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Make adjustments, look-up or calculate release dates.</p>
+            {% else %}  
             <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Manage court cases, adjustments and release dates.</p>
+            {% endif %}  
         </div>              
     
         <div class="hmpps-service-item">
