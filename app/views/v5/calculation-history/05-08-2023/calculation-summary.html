@@ -1,8 +1,8 @@
-{% extends "../../includes/layouts/template-linear.html" %}
+{% extends "../../../includes/layouts/template-linear.html" %}
 {% block content %} 
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="../release-dates" class="govuk-back-link">Back</a>
+    <a href="../../release-dates" class="govuk-back-link">Back</a>
 </div>
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
@@ -10,7 +10,7 @@
         <div class="govuk-grid-column-two-thirds">
             <!-- <span class="govuk-caption-xl">Calculate release dates</span> -->
             <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-                Review calculation
+                Transfer calculation on 8 May 2023 at HMP Kirkham
             </h1>
         </div>
     </div>
@@ -365,17 +365,5 @@
             </table>
         </div>
     </div>
-</div>
-<div class="moj-width-container govuk-!-margin-top-6">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <h3 class="govuk-heading-m">Confirm and submit to NOMIS</h3>
-            <p class="govuk-body">By submitting this calculation you are confirming that, to the best of your knowledge, it is correct. The calculation will be saved in NOMIS.</p>
-            <a href="calculation-complete.html">
-                <button class="govuk-button" data-module="govuk-button">Confirm and submit</button>
-            </a>
-            <p class="govuk-body govuk-!-font-size-16"><a href="calculation-cancelled.html" class="govuk-link">Cancel calculation</a></p>
-        </div>
-    </div>
-</div>
+</div> 
 {% endblock %}

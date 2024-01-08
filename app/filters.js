@@ -8,3 +8,7 @@ const addFilter = govukPrototypeKit.views.addFilter
 
 // Add your filters here
 
+
+addFilter('unique', function(arr, field) {
+    return [...new Set(arr.map(obj => obj[field]))]
+})

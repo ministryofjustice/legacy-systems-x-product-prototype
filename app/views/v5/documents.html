@@ -4,20 +4,29 @@
 <!-- Documents -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-l">
+        <h2 class="govuk-heading-xl">
             Documents
         </h2>
     </div>
 </div>
-<div class="govuk-grid-row">
+<!-- <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <div class="action-button-group">
             <a href="add-documents/document-type"><button class="govuk-button" data-module="govuk-button">
-                    Add documents
+                    Add a document
                 </button></a>
         </div>
     </div>
+</div> -->
+
+{% if data['uploadSuccess'] == 'true' %}
+<div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+    </svg>
+    <div class="moj-banner__message">New document added</div>
 </div>
+{% endif %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third">
         <div class="moj-filter">
@@ -35,7 +44,7 @@
                             <h2 class="govuk-heading-m">Selected filters</h2>
                         </div>
                     </div>
-                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Keywords</h3>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
                     <ul class="moj-filter-tags">
                         <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> Leeds Crown Court</a></li>
                     </ul>
@@ -54,6 +63,13 @@
                     <div class="govuk-form-group">
                         <label class="govuk-label govuk-label--m" for="court-name">
                             Court name
+                        </label>
+                        <input class="govuk-input govuk-!-margin-top-4" id="court-name" name="court-name" type="text" value="Leeds Crown Court">
+                    </div>
+                    
+                    <div class="govuk-form-group">
+                        <label class="govuk-label govuk-label--m" for="court-name">
+                            Case reference
                         </label>
                         <input class="govuk-input govuk-!-margin-top-4" id="court-name" name="court-name" type="text" value="Leeds Crown Court">
                     </div>
@@ -399,7 +415,15 @@
         </div>
     </div>
     <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">6 documents</p>
+        <div class="content-top govuk-!-margin-bottom-2">
+            <div>
+                <span class="govuk-body govuk-!-font-weight-bold">Sort by:</span><span class="govuk-body govuk-!-margin-left-2">Most recent <span class="seperator">|</span> <a href="">Earliest</a></span>
+            </div>
+            <div>
+                <span class="govuk-body">Showing <strong>6</strong> documents</span>
+            </div>
+        </div>
+        <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">6 documents</p> -->
         <ul class="govuk-list documents-list">
             <!-- <div class="govuk-form-group govuk-!-margin-top-4">
   <label class="govuk-label sort-options-label" for="sort">
@@ -417,7 +441,7 @@
                 <table class="govuk-table documennt-table">
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
                             <td class="govuk-table__cell document-table-cell"><a href="/court-cases/court-case-T20220101">T20220101</a></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -425,7 +449,7 @@
                             <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
                         </tr>
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
                             <td class="govuk-table__cell document-table-cell">1 July 2022</td>
                         </tr>
                     </tbody>
@@ -438,7 +462,7 @@
                 <table class="govuk-table documennt-table">
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
                             <td class="govuk-table__cell document-table-cell"><a href="">T20220102</a></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -446,7 +470,7 @@
                             <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
                         </tr>
                         <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
                             <td class="govuk-table__cell document-table-cell">1 July 2022</td>
                         </tr>
                     </tbody>
@@ -459,7 +483,7 @@
                 <table class="govuk-table documennt-table">
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
                             <td class="govuk-table__cell document-table-cell"><a href="">T20220101</a></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -467,7 +491,7 @@
                             <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
                         </tr>
                         <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
                             <td class="govuk-table__cell document-table-cell">1 July 2022</td>
                         </tr>
                     </tbody>
@@ -480,7 +504,7 @@
                 <table class="govuk-table documennt-table">
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
                             <td class="govuk-table__cell document-table-cell"><a href="">T20220102</a></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -488,7 +512,7 @@
                             <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
                         </tr>
                         <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
                             <td class="govuk-table__cell document-table-cell">1 July 2022</td>
                         </tr>
                     </tbody>
@@ -501,7 +525,7 @@
                 <table class="govuk-table documennt-table">
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
                             <td class="govuk-table__cell document-table-cell"><a href="">T20220101</a></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -509,7 +533,7 @@
                             <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
                         </tr>
                         <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
                             <td class="govuk-table__cell document-table-cell">23 October 2021</td>
                         </tr>
                     </tbody>
@@ -522,7 +546,7 @@
                 <table class="govuk-table documennt-table">
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court case number</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
                             <td class="govuk-table__cell document-table-cell"><a href="">T20220102</a></td>
                         </tr>
                         <tr class="govuk-table__row">
@@ -530,7 +554,7 @@
                             <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
                         </tr>
                         <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Court date</th>
+                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
                             <td class="govuk-table__cell document-table-cell">31 March 2022</td>
                         </tr>
                     </tbody>

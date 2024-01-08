@@ -29,3 +29,25 @@ router.post(`/task-based-routing`, function (req, res) {
 		res.redirect(`v5/overview`);
 	}
   });
+
+ 
+router.post(`/associate-doc-choice`, function (req, res) {
+	const navRoute = req.session.data['associateDoc'];
+	if (navRoute === 'yes') {
+		res.redirect(`v5/add-documents/choose-court-case`);
+	}
+	else if (navRoute === 'no') {
+		res.redirect(`v5/add-documents/add-case-reference`);
+	} 
+	else {
+		res.redirect(`v5/add-documents/choose-court-case`);
+	}
+  });
+
+
+  router.get('/:prototypeVersion/view-court-case-detail', function(req, res) {
+    const prototypeVersion = req.params.prototypeVersion
+    const courtCaseIndex = Number(req.query.courtCaseIndex) + 1
+    console.log('Court case index: ' + courtCaseIndex)
+    res.redirect(`/${prototypeVersion}/court-cases/court-case-detail`)
+})
