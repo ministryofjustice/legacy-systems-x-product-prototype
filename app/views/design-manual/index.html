@@ -1,0 +1,84 @@
+{% extends "includes/layouts/prototype-home-layout.html" %}
+{% block content %}
+<div class="app-masthead govuk-!-margin-top-0">
+    <div class="moj-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-three-quarters">
+                <h1 class="app-masthead__title govuk-heading-xl govuk-!-margin-bottom-3">
+                    Legacy systems cross-product features
+                </h1>
+                <h3 class="app-masthead__subtitle govuk-heading-l">Design manual</h3>
+                <div class="app-masthead__description">
+                    <p class="govuk-body"></p>
+                </div>
+            </div>
+            <div class="govuk-grid-column-one-third">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="govuk-breadcrumbs">
+                <ol class="govuk-breadcrumbs__list">
+                    <li class="govuk-breadcrumbs__list-item">
+                        <a class="govuk-breadcrumbs__link" href="../design-manual/">Home</a>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+        <!-- Navigation -->
+        <div class="govuk-grid-column-one-quarter">
+            <h3 class="govuk-heading-s">Pages</h3>
+            <nav class="design-manual-nav">
+                <ul class="govuk-list">
+                    <li><a class="govuk-link--no-underline" href="../design-manual/start-page">Start page</a></li>
+                    <li><a class="govuk-link--no-underline" href="../design-manual/search-for-a-person">Search for a person</a></li>
+                    <li><a class="govuk-link--no-underline" href="../design-manual/check-sentence-and-offence-information">Check sentence and offence information</a></li>
+                    <li><a class="govuk-link--no-underline" href="../design-manual/calculation-summary">Calculation summary</a></li>
+                    <li><a class="govuk-link--no-underline" href="../design-manual/calculation-complete">Calculation complete</a></li>
+                </ul>
+            </nav>
+            <h3 class="govuk-heading-s govuk-!-margin-top-6">Components and patterns</h3>
+            <nav class="design-manual-nav">
+                <ul class="govuk-list">
+                    <li><a class="govuk-link--no-underline" href="../design-manual/sentence-card">Sentence card</a></li>
+                    <li><a class="govuk-link--no-underline" href="../design-manual/release-dates-summary">Release dates summary</a></li>
+                    <li><a class="govuk-link--no-underline" href="../design-manual/calculation-breakdown">Calculation breakdown</a></li>
+                </ul>
+            </nav>
+            <h3 class="govuk-heading-s govuk-!-margin-top-6">Content</h3>
+            <nav class="design-manual-nav">
+                <ul class="govuk-list">
+                    <li><a class="govuk-link--no-underline" href="../design-manual/content-design-playbook">Content design playbook</a></li>
+                </ul>
+            </nav>
+        </div>
+        <div class="govuk-grid-column-two-thirds">
+<!--             <div class="moj-banner" role="region" aria-label="information">
+                <div class="moj-banner__message">
+                    <h2 class="govuk-heading-m">Work in progress</h2>
+                    <p class="govuk-body">This design manual is currently being worked on. This means there are sections that are incomplete and missing. Some links might not work as expected.</p>
+                </div>
+            </div> -->
+            <h1 class="govuk-heading-xl">Introduction</h1>
+            <p class="govuk-body">The Calculate release dates service uses sentence and offence information from NOMIS to automatically and accurately calculate prisoner release dates.
+            </p>
+            <p class="govuk-body">
+                This design manual gives an overview of the service, including how each page works, the patterns used and user research gathered.
+            </p>
+            <h2 class="govuk-heading-l">Service overview</h2>
+            <img class="govuk-!-margin-top-2" src="{{ asset_path }}images/crd-service-diagram.jpeg" alt="" style="width:660px;">
+            <h3 class="govuk-heading-m govuk-!-margin-top-7">
+                Service entry points
+            </h3>
+            <p class="govuk-body">Users can access the Calculate release dates service from two entry points. The service can be used as a standalone site, by using the service URL. This takes them directly to the search function to look up a person, to then calculate their release dates.</p>
+            <p class="govuk-body">Alternatively, the service can be accessed from Digital Prison Services, by searching for a person and selecting a call to action on the Prisoner Profile.</p>
+            <p class="govuk-body">Users must enter a person’s sentence and offence into NOMIS, before calculating their release dates.</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
