@@ -9,9 +9,24 @@
             Adjustments
         </h1>
     </div>
+</div> 
+
+{% if data['courtCaseAdded'] == "false" %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <p class="govuk-body">There are no sentences for Neil Rudge.</p>
+        <p class="gouk-body"><a href="#">Add a court case now</a></p> 
+    </div>
+
 </div>
+
+{% else %}
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
+        
         <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="alert">
             <div class="govuk-notification-banner__header">
                 <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
@@ -325,6 +340,8 @@
 </div>
 
 </div>
+
+{% endif %}
 <script>
 function toggleAlert() {
     var x = document.getElementById("alert");
