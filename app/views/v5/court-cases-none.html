@@ -1,0 +1,44 @@
+{% extends "../includes/layouts/template.html" %}
+{% set courtCasesActive = true %}
+{% block content %}
+<!-- Court cases -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        {% if data.appearanceSuccess == 1 %}
+        <div class="moj-banner moj-banner--success" role="region" aria-label="Success">
+            <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
+                <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
+            </svg>
+            <div class="moj-banner__message">New appearance added to court case {{ data.courtCaseIndex | int + 1 }}<span class="govuk-!-text-align-right" style="display: inline-flex; float: right;"><a class="govuk-link--no-visited-state" href="/v9/close-success-message">Close</a></span></div>
+        </div>
+        {% endif %}
+        <h1 class="govuk-heading-xl">Court cases</h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+         
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full govuk-!-margin-top-1 govuk-!-margin-bottom-9">
+               
+                <div class="">
+                    <p class="govuk-body">There are no court cases recorded for Joe Bloggs.</p>
+                    <p class="gouk-body"><a href="/v9/create-court-case">Record a court case now</a>
+                    </p>
+                </div> 
+            </div>
+        </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="actions-list">
+            <ul class="govuk-list actions-list-list">
+                <span class="govuk-heading-m actions-list-header">Actions</span>
+                <li><a href="/v9/create-court-case">Add a new court case</a></li>
+                <!-- <li><a href="">Record an appeal</a></li> -->
+            </ul>
+        </div>
+    </div>
+</div>
+
+</div>
+{% endblock %}
