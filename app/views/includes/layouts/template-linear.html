@@ -289,18 +289,26 @@ Court cases and release dates
       
     </nav> 
 </header> 
+
+{% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+
+
+{% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
 <div class="service-header">
     <div class="service-header__container">
-
-        {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-        <a href="#"><span class="service-header__service-name">Calculate release dates</span></a>
-        {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
-        <a href="#"><span class="service-header__service-name">Adjustments and release dates</span></a>
-        {% else %}  
-        <a href="#"><span class="service-header__service-name">Court cases, adjustments and release dates</span></a>
-        {% endif %}  
+        <a href="#"><span class="service-header__service-name">[Service name]</span></a> 
     </div>
 </div>
+
+{% else %} 
+
+<div class="service-header">
+  <div class="service-header__container"> 
+      <a href="#"><span class="service-header__service-name">[Service name]</span></a>
+  </div>
+</div>
+
+{% endif %}  
 {% endblock %}
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 {% block main %}
@@ -349,7 +357,7 @@ Court cases and release dates
                                     <span class="govuk-body">On remand</span>
                                     {% endif %}</li>
                                 <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span><span class="govuk-body">HMP Kirkham</span></li>
-                                <!-- <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body">01-234</span></li> -->
+                                <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body">01-234</span></li>
                             </ul>
                         </div>
                     </div>
