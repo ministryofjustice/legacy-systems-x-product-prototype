@@ -16,7 +16,7 @@
     </div>
 </div>
 
-{% if data['releaseDates'] == "none" %}
+{% if data['toShow'] == "releaseDatesNone" %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         
@@ -25,6 +25,27 @@
     </div>
 
 </div>
+
+{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no court cases recorded for Neil Rudge.</p>
+        <p class="gouk-body"><a href="#">Record a court case now</a></p>
+    </div>
+
+</div>
+
+{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no sentences for Neil Rudge.</p>
+        <p class="gouk-body">Check the details in NOMIS and then try again.</p> 
+    </div>
+
+</div>
+
 
 {% else %}
 
@@ -123,7 +144,7 @@
             <ul class="govuk-list actions-list-list">
                 <span class="govuk-heading-m actions-list-header">Actions</span>
                 <li><a href="calculate-release-dates/calculation-reason">Calculate release dates</a></li>
-                <li><a href="calculate-release-dates/calculation-reason">Enter an approved date</a></li> 
+                <li><a href="calculate-release-dates/select-which-approved-dates">Enter an approved date</a></li> 
             </ul>
         </div>
     </div>

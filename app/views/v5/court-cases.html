@@ -1,7 +1,13 @@
 {% extends "../includes/layouts/template.html" %}
 {% set courtCasesActive = true %}
 {% block content %}
+
+
 <!-- Court cases -->
+
+
+
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         {% if data.appearanceSuccess == 1 %}
@@ -15,6 +21,20 @@
         <h1 class="govuk-heading-xl">Court cases</h1>
     </div>
 </div>
+
+
+{% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no court cases recorded for Neil Rudge.</p>
+        <p class="gouk-body"><a href="#">Record a court case now</a></p>
+    </div>
+
+</div>
+
+{% else %} 
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <div class="govuk-grid-row govuk-!-margin-bottom-3">
@@ -344,4 +364,7 @@
 </div>
 
 </div>
+
+
+{% endif %}
 {% endblock %}

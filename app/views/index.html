@@ -191,10 +191,27 @@
 
                                 <p>In some scenarios, there may not be data to show on the service because there has not been any information provided or actions taken.</p>
 
+
+                                <p>Scenario 1: there are no court cases and sentences added.</p>
+
                                 <ul class="govuk-list govuk-list--bullet"> 
-                                    <li><a class="govuk-link" href="v5/court-cases-none">Court cases</a></li> 
-                                    <li><a class="govuk-link" href="v5/adjustments?courtCaseAdded=false">Adjustments</a></li>  
-                                    <li><a class="govuk-link" href="v5/release-dates?releaseDates=none">Release dates</a></li>  
+
+                                    <li><a class="govuk-link" href="v5/overview?toShow=courtCaseAddedFalse&viewOption=RSReleasedTrue">Overview</a></li>
+                                    <li><a class="govuk-link" href="v5/court-cases?toShow=courtCaseAddedFalse&viewOption=RSReleasedTrue">Court cases</a></li> 
+                                    <li><a class="govuk-link" href="v5/adjustments?toShow=courtCaseAddedFalse&viewOption=RSReleasedTrue">Adjustments</a></li>  
+                                    <li><a class="govuk-link" href="v5/release-dates?toShow=courtCaseAddedFalse&viewOption=RSReleasedTrue">Release dates</a></li> 
+
+                                    <li><a class="govuk-link" href="v5/overview?toShow=courtCaseAddedFalse&viewOption=adjustmentsReleasedTrue">Overview (pre-R&S release)</a></li>
+                                    <li><a class="govuk-link" href="v5/adjustments?toShow=courtCaseAddedFalse&viewOption=adjustmentsReleasedTrue">Adjustments (pre-R&S release)</a></li>   
+                                    <li><a class="govuk-link" href="v5/release-dates?toShow=courtCaseAddedFalse&viewOption=adjustmentsReleasedTrue">Release dates (pre-R&S release)</a></li>  
+                                </ul> 
+
+                                <p>Scenario 2: there are no release dates calculated.</p>
+
+                                <ul class="govuk-list govuk-list--bullet">  
+                                    <li><a class="govuk-link" href="v5/overview?toShow=releaseDatesNone">Overview</a></li>
+                                    <li><a class="govuk-link" href="v5/adjustments?toShow=releaseDatesNone">Adjustments</a></li>   
+                                    <li><a class="govuk-link" href="v5/release-dates?toShow=releaseDatesNone">Release dates</a></li>  
                                 </ul> 
                             </div>
                         </div>

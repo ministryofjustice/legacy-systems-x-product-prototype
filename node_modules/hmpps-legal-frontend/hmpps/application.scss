@@ -1,0 +1,9 @@
+@import "node_modules/govuk-frontend/dist/govuk/base";
+
+$moj-page-width: 1170px;
+$govuk-page-width: $moj-page-width;
+
+@import 'govuk/all';
+@import 'moj/all';
+
+@import "components/all";
