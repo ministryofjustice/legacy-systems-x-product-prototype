@@ -3,15 +3,13 @@
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
-    "clean": "rm -rf node_modules"
+    "clean": "rm -rf .tmp node_modules"
   },
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.2",
-    "@ministryofjustice/frontend": "^1.8.0",
-    "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.15.0",
-    "hmpps-design-system-frontend": "^1.0.3",
-    "jquery": "^3.7.1",
-    "nunjucks": "^3.2.4"
+    "@ministryofjustice/frontend": "^2.0.0",
+    "govuk-frontend": "^5.0.0",
+    "govuk-prototype-kit": "^13.16.0",
+    "hmpps-design-system-frontend": "^1.0.3"
   }
 }
