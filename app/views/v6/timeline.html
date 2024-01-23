@@ -1,0 +1,144 @@
+{% extends "../includes/layouts/template.html" %}
+{% set timelineActive = true %}
+{% block content %}
+<!-- Documents -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+            Timeline
+        </h2>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="action-button-group">
+            <a href="add-documents/document-type"><button class="govuk-button" data-module="govuk-button">
+                    Add a note
+                </button></a>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div class="moj-timeline">
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">Calculation</h2>
+                    <p class="moj-timeline__byline">by Paul Edgecomb at HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-06-14T14:01:00.000Z">5 July 2022 at 2:01pm</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <p>Calculation reason: Initial calculation</p>
+                    <a href="calculations/calculation-05-08-2022/sentence-and-offence-information">View calculation</a>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">1 adjustment added</h2>
+                    <p class="moj-timeline__byline">by Henry Barrowclough HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-06-07T12:32:00.000Z">5 July 2022 at 12:32pm</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <ul class="govuk-list">
+                        <li>251 days remand</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">1 draft court case added</h2>
+                    <p class="moj-timeline__byline">by Paul Edgecomb at HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-06-06T09:12:00.000Z">5 July 2022 at 11:04am</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <ul class="govuk-list">
+                        <li><a href="court-cases/court-case-T20220103">Court case T20220103 (draft)</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">2 court cases added</h2>
+                    <p class="moj-timeline__byline">by Paul Edgecomb at HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-05-28T10:45:00.000Z">5 July 2022 at 10:45am</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <ul class="govuk-list">
+                        <li><a href="court-cases/court-case-T20220101">Court case T20220101</a></li>
+                        <li><a href="court-cases/court-case-T20220102">Court case T20220102</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="moj-timeline__item">
+                <div class="moj-timeline__header">
+                    <h2 class="moj-timeline__title">6 documents added</h2>
+                    <p class="moj-timeline__byline">by Henry Barrowclough at HMP Leeds</p>
+                </div>
+                <p class="moj-timeline__date">
+                    <time datetime="2019-05-28T10:15:00.000Z">3 July 2022 at 10:15am</time>
+                </p>
+                <div class="moj-timeline__description">
+                    <ul class="moj-timeline__documents">
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="{{ asset_path }}documents/order-of-imprisonment-court-case-1.pdf" target="_blank">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                                </svg>
+                                Order of imprisonment for court case T20220101
+                            </a>
+                        </li>
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="{{ asset_path }}documents/order-of-imprisonment-court-case-2.pdf" target="_blank">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                                </svg>
+                                Order of imprisonment for court case T20220102
+                            </a>
+                        </li>
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="{{ asset_path }}documents/indictment-court-case-1.pdf" target="_blank">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                                </svg>
+                                Indictment for court case T20220101
+                            </a>
+                        </li>
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="{{ asset_path }}documents/indictment-court-case-2.pdf" target="_blank">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                                </svg>
+                                Indictment for court case T20220102
+                            </a>
+                        </li>
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="{{ asset_path }}documents/trial-record-sheet-court-case-1.pdf" target="_blank">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                                </svg>
+                                Trial record sheet for court case T20220101
+                            </a>
+                        </li>
+                        <li class="moj-timeline__document-item">
+                            <a class="govuk-link" href="{{ asset_path }}documents/trial-record-sheet-court-case-2.pdf" target="_blank">
+                                <svg class="moj-timeline__document-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 20" width="20" height="16">
+                                    <path d="M9 7V1.5L14.5 7H9zM2 0C.9 0 0 .9 0 2v16c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V6l-6-6H2z" />
+                                </svg>
+                                Trial record sheet for court case T20220102
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

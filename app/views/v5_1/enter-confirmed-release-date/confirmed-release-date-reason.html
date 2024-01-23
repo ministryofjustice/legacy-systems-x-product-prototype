@@ -1,0 +1,55 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Prisoner identity bar -->
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Neil Rudge</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">15 May 2000</span><strong>Prison number: </strong>G2883VE</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="what-is-the-confirmed-release-date" class="govuk-back-link">Back</a>
+</div>
+<!-- What is the confirmed date -->
+<div class="moj-width-container govuk-!-margin-top-4">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <form class="form" action="confirmed-release-date-reason">
+                    <div class="govuk-form-group">
+                        <span class="govuk-caption-l">Enter a confirmed release date</span>
+                        <label class="govuk-heading-l" for="confirmed-release-date">
+                            What is the reason for this confirmed release date?
+                        </label>
+                        <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+          Conditional release date approved
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+          Parole date approved
+        </label>
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+        <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+          Recall release approved
+        </label>
+      </div>
+    </div>
+                    </div>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

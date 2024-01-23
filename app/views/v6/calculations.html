@@ -1,0 +1,145 @@
+{% extends "../includes/layouts/template.html" %}
+{% set calculationsActive = true %}
+{% block content %}
+<!-- Release dates -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">
+            Calculations
+        </h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div class="action-button-group">
+            <a href="a#"><button class="govuk-button" data-module="govuk-button">
+                    Calculate release dates
+                </button></a>
+            <a href="#"><button class="govuk-button govuk-button--secondary govuk-!-margin-left-2" data-module="govuk-button">
+                    Enter approved dates
+                </button></a>
+            <a href="#"><button class="govuk-button govuk-button--secondary govuk-!-margin-left-2" data-module="govuk-button">
+                    Enter ROTL dates
+                </button></a>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-bottom-8">
+        <div class="release-date-highlight">
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                        Latest calculation
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        <a href="">5 August 2022 at HMP Leeds</a>
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+</div>
+    <!--     <div class="govuk-grid-column-full">
+        <div class="action-list">
+        <div class="action-button">
+            <a href="" class="govuk-link--no-visited-state">Calculate release dates</a>
+        </div>
+                <div class="action-button">
+            <a href="" class="govuk-link--no-visited-state">Enter approved dates</a>
+        </div>
+                        <div class="action-button">
+            <a href="" class="govuk-link--no-visited-state">Print notification slip</a>
+        </div>
+        </div>
+                <div class="govuk-button-group govuk-!-margin-bottom-6 govuk-!-margin-top-2">
+            <button class="govuk-button" data-module="govuk-button">
+                Add court case
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Secondary button
+            </button>
+                        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Secondary button
+            </button>
+        </div>
+                <div class="govuk-button-group govuk-!-margin-bottom-6 govuk-!-margin-top-2">
+            <button class="govuk-button" data-module="govuk-button">
+                Calculate release dates
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Enter approved dates
+            </button>
+            <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Print notification slip
+            </button>
+        </div>
+    </div> -->
+    <!--    </div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+        <nav class="moj-side-navigation" aria-label="Side navigation">
+            <ul class="moj-side-navigation__list">
+                <li class="moj-side-navigation__item moj-side-navigation__item--active">
+                    <a href="#release-dates" aria-current="location">Release dates</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                    <a href="#calculation-history">Calculation history</a>
+                </li>
+                <li class="moj-side-navigation__item">
+                    <a href="#3">Nav item 3</a>
+                </li>
+            </ul>
+        </nav>
+    </div> -->
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h2 class="govuk-heading-m">Calculation history</h2>
+            <div class="govuk-summary-card" id="calculation-history">
+                <div class="govuk-summary-card__content">
+                    <table class="govuk-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Calculation date</th>
+                                <th scope="col" class="govuk-table__header">Reason</th>
+                                <th scope="col" class="govuk-table__header">Establishment</th>
+                                <th scope="col" class="govuk-table__header">Source</th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><a href="calculations/calculation-05-08-2022/sentence-and-offence-information">5 August 2022</a></td>
+                                <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                                <td class="govuk-table__cell">HMP Leeds</td>
+                                <td class="govuk-table__cell">CRDS</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><a href="calculations/calculation-05-08-2022/sentence-and-offence-information">5 August 2022</a></td>
+                                <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                                <td class="govuk-table__cell">HMP Leeds</td>
+                                <td class="govuk-table__cell">CRDS</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><a href="calculations/calculation-05-08-2022/sentence-and-offence-information">5 August 2022</a></td>
+                                <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                                <td class="govuk-table__cell">HMP Leeds</td>
+                                <td class="govuk-table__cell">CRDS</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><a href="calculations/calculation-05-08-2022/sentence-and-offence-information">5 August 2022</a></td>
+                                <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                                <td class="govuk-table__cell">HMP Leeds</td>
+                                <td class="govuk-table__cell">CRDS
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell"><a href="calculations/calculation-05-08-2022/sentence-and-offence-information">5 August 2022</a></td>
+                                <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                                <td class="govuk-table__cell">HMP Leeds</td>
+                                <td class="govuk-table__cell">NOMIS</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}

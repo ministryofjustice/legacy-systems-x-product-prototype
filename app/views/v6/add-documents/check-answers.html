@@ -1,0 +1,75 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="associate-with-court-case-choice" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Add a document</span>
+      <h1 class="govuk-heading-l">
+        Check your answers
+      </h1>
+  </div>s
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="../documents?uploadSuccess=true" method="post" enctype="multipart/form-data">
+            <div class="govuk-form-group">
+                <dl class="govuk-summary-list govuk-!-margin-bottom-4">
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Uploaded file
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        remand-warrant-08012023.pdf
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> file</span></a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Case reference
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        T20789694
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Case reference</span></a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Warrant date
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        8 January 2023
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Warrant date</span></a>
+                      </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key">
+                        Court name
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                        Bristol Magistrates court
+                      </dd>
+                      <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Court name</span></a>
+                      </dd>
+                    </div>
+                  </dl>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue and upload
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

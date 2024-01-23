@@ -1,0 +1,30 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="associate-with-court-case-choice" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Add a document</span>
+      <h1 class="govuk-heading-l">
+        Add a case reference (optional)
+      </h1>
+  </div>s
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="add-warrant-date" method="post" enctype="multipart/form-data">
+            <div class="govuk-form-group">
+                <input class="govuk-input govuk-input--width-20" id="court-case-ref" name="appearance[court-case-ref]" type="text">
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

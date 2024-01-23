@@ -48,7 +48,7 @@
 
 {% else %}
 
-<div class="highlights">
+<!-- <div class="highlights">
     <a href="court-cases" class="highlight-card">
         <p class="highlight-card-headline">2</p>
         <p class="highlight-card-text">active court cases</p>
@@ -61,11 +61,110 @@
         <p class="highlight-card-headline">6</p>
         <p class="highlight-card-text">documents</p>
     </a>
-</div>
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+</div> -->
+<!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+
+
+
+                {% if data['toDo'] == 'reviewAda' or data['toDo'] == 'reviewPada' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %}
+                <h2 class="govuk-heading-m">Things you need to do 
+                    <!-- <span id="notifications" class="moj-notification-badge">1</span> -->
+                </h2>
+               
+                {% if data['toDo'] == 'reviewAda' %}
+                <div class="to-do-item">
+
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Review unapplied ADA's</a>
+                        <p class="to-do-hint">ADAs have been entered by the adjudications team but have not been applied to the sentence.</p>
+                    </div>
+
+                    <!-- <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--red moj-badge--large">
+                            Overdue
+                        </strong>
+                    </div> -->
+                </div>
+
+
+               
+                {% elif data['toDo'] == 'generalChangesApplied' %}
+                <div class="to-do-item">
+
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
+                        <p class="to-do-hint">Changes have been applied to Neil's court case or adjustment information, you now need to calculate release dates.</p>
+                    </div>
+
+                    <!-- <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--red moj-badge--large">
+                            Overdue
+                        </strong>
+                    </div> -->
+                </div>
+
+
+
+               
+                {% elif data['toDo'] == 'adjustmentsApplied' %}
+                <div class="to-do-item">
+
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
+                        <p class="to-do-hint">Adjustments have been applied, you now need to calculate release dates.</p>
+                    </div>
+
+                    <!-- <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--red moj-badge--large">
+                            Overdue
+                        </strong>
+                    </div> -->
+                </div>
+
+
+
+               
+                {% elif data['toDo'] == 'courtCaseAdded' %}
+                <div class="to-do-item">
+
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
+                        <p class="to-do-hint">New court cases have been added, you now need to calculate release dates.</p>
+                    </div>
+
+                    <!-- <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--red moj-badge--large">
+                            Overdue
+                        </strong>
+                    </div> -->
+                </div>
+               
+                {% elif data['toDo'] == 'reviewPada' %}
+                <div class="to-do-item">
+
+                    <div class="to-do-item-text">
+                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Review unapplied PADA's</a>
+                        <p class="to-do-hint">PADAs have been entered by the adjudications team but have not been applied to the sentence.</p>
+                    </div>
+
+                    <!-- <div class="to-do-item-badge">
+                        <strong class="moj-badge moj-badge--red moj-badge--large">
+                            Overdue
+                        </strong>
+                    </div> -->
+                </div>
+
+                {% else %}
+                    
+                {% endif %}
+
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                {% else %}
+                    
+                {% endif %}
       
 
         
@@ -130,19 +229,7 @@
 
         <h3 class="govuk-heading-m">Upcoming release dates</h3>
        
-        <div class="govuk-summary-card govuk-!-margin-bottom-6">
-            <div class="govuk-summary-card__title-wrapper">
-                <h2 class="govuk-summary-card__title">Latest calculation
-                    <br>
-                    <span class="govuk-body">Transfer calculation on 8 May 2023 at HMP Kirkham</span>
-                </h2>
-                <ul class="govuk-summary-card__actions">
-                  <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculation-history/05-08-2023/check-sentence-and-offence-information">View details<span class="govuk-visually-hidden"> of Transfer calculation on 8 May 2023 at HMP Kirkham</span></a>
-                  </li>
-                 
-                </ul>
-                <!-- <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-marrgin-top-1">Latest calculation: <a href="#">8 May 2023 at HMP Kirkham</a></p> -->
-            </div>
+        <div class="govuk-summary-card">
             <div class="govuk-summary-card__content" id="release-dates">
                 <dl class="govuk-summary-list release-dates-list">
                     <div class="govuk-summary-list__row">
@@ -192,50 +279,6 @@
 
         {% endif %}
 
-        <!-- <div class="govuk-grid-row">
-            <div class="govuk-grid-column-full">
-                <h2 class="govuk-heading-m">Things you need to do <span id="notifications" class="moj-notification-badge">1</span></h2>
-                <div class="to-do-item to-do-item-overdue">
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">14 day check</a>
-                        <p class="to-do-hint to-do-hint-overdue">6 days overdue</p>
-                    </div>
-                    <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div>
-                </div>
-                <div class="to-do-item to-do-item-urgent">
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">2 day check</a>
-                        <p class="to-do-hint">Due in 8 days</p>
-                    </div>
-                    <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--orange moj-badge--large">
-                            Urgent
-                        </strong>
-                    </div>
-                </div>
-                <div class="to-do-item to-do-item-urgent">
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
-                        <p class="to-do-hint">11 days remand identified</p>
-                    </div>
-                    <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--orange moj-badge--large">
-                            Urgent
-                        </strong>
-                    </div>
-                </div>
-                <div class="to-do-item">
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">1 draft court case needs completing</a>
-                        <p class="to-do-hint">Court case number: T20220103</p>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>
     <div class="govuk-grid-column-one-third">
 
