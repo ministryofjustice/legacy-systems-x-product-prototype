@@ -30,7 +30,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
-        <p class="govuk-body">There are no court cases recorded for Neil Rudge.</p>
+        <p class="govuk-body">There are no court cases recorded for Joe Bloggs.</p>
         <p class="gouk-body"><a href="#">Record a court case now</a></p>
     </div>
 
@@ -40,7 +40,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
-        <p class="govuk-body">There are no sentences for Neil Rudge.</p>
+        <p class="govuk-body">There are no sentences for Joe Bloggs.</p>
         <p class="gouk-body">Check the details in NOMIS and then try again.</p> 
     </div>
 
@@ -93,7 +93,7 @@
 
                     <div class="to-do-item-text">
                         <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Add a court case</a>
-                        <p class="to-do-hint">There are no court cases recorded for Neil Rudge.</p>
+                        <p class="to-do-hint">There are no court cases recorded for Joe Bloggs.</p>
                     </div>
 
                     <!-- <div class="to-do-item-badge">
@@ -186,7 +186,7 @@
         {% if data['toShow'] == 'releaseDatesNone' %}
 
         <h3 class="govuk-heading-m">Upcoming release dates</h3>
-        <p class="govuk-body">There are no release dates calculated for Neil Rudge.</p>
+        <p class="govuk-body">There are no release dates calculated for Joe Bloggs.</p>
         <p class="gouk-body"><a href="#">Calculate release dates</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -244,54 +244,12 @@
       
 
         
-            {% if data['toShow'] == 'courtHearingNone' %}
             
             <h3 class="govuk-heading-m">Next court hearing</h3>
             <p class="govuk-body">No upcoming court hearings.</p>
             <p class="govuk-body"><a href="court-cases">View all court cases</a></p>
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-            
-            {% else %}
-
-        <h3 class="govuk-heading-m">Next court hearing</h3>
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Case references
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    T20230101
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Location
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Aldershot and Farnham County Court
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Hearing type
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Court appearance
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    5/1/2024 at 13:00
-                </dd>
-            </div>
-        </dl>
-        <p class="govuk-body"><a href="court-cases">View all court cases</a></p>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-        {% endif %}
+          
 
         {% endif %}
 

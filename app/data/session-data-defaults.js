@@ -22,23 +22,23 @@ module.exports = {
         {
             "appearances": [
                 {
-                    "court-case-ref": "T20231234",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "Yes",
-                    "next-hearing-type": "Court appearance",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
+                    "court-case-ref": "T20223256",
+                    "overall-case-outcome": "Imprisonment",
+                    "next-court-date-set": "No",
+                    "next-hearing-type": "",
+                    "warrant-date-day": "10",
+                    "warrant-date-month": "5",
                     "warrant-date-year": "2023",
-                    "court-name": "Aldershot and Farnham County Court",
-                    "next-court-date-day": "5",
-                    "next-court-date-month": "10",
-                    "next-court-date-year": "2023",
-                    "next-court-time": "13:00",
-                    "next-court-name": "Aldershot and Farnham County Court",
+                    "court-name": "Bristol Magistrates Court",
+                    "next-court-date-day": "",
+                    "next-court-date-month": "",
+                    "next-court-date-year": "",
+                    "next-court-time": "",
+                    "next-court-name": "Bristol Magistrates Court",
                     "offences": [
                         {
-                            "offence-start-date-day": "24",
-                            "offence-start-date-month": "8",
+                            "offence-start-date-day": "30",
+                            "offence-start-date-month": "10",
                             "offence-start-date-year": "2023",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
@@ -46,21 +46,8 @@ module.exports = {
                             "offence-code": [
                                 "TH68071"
                             ],
-                            "offence-name": "Blackmail",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "24",
-                            "offence-start-date-month": "8",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "TH68071"
-                            ],
-                            "offence-name": "Blackmail",
-                            "outcome": "Remand before conviction"
+                            "offence-name": "Attempt to possess a controlled drug of Class C - GHB.",
+                            "outcome": "Sentenced"
                         }
                     ]
                 }
@@ -69,35 +56,22 @@ module.exports = {
         {
             "appearances": [
                 {
-                    "court-case-ref": "D20239878",
+                    "court-case-ref": "T20230101",
                     "overall-case-outcome": "Remand before conviction",
                     "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
+                    "warrant-date-day": "9",
+                    "warrant-date-month": "4",
                     "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
+                    "court-name": "Birmingham Magistrates Court",
                     "next-hearing-type": "",
                     "next-court-date-day": "",
                     "next-court-date-month": "",
                     "next-court-date-year": "",
                     "next-court-time": "",
-                    "offences": [
+                    "offences": [ 
                         {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
+                            "offence-start-date-day": "1",
+                            "offence-start-date-month": "1",
                             "offence-start-date-year": "2023",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
@@ -105,19 +79,19 @@ module.exports = {
                             "offence-code": [
                                 "PU86003"
                             ],
-                            "offence-name": "Affray",
+                            "offence-name": "Burglary other than dwelling - theft",
                             "outcome": "Remand before conviction"
                         }
                     ]
                 },
                 {
-                    "court-case-ref": "D20239877",
-                    "overall-case-outcome": "Remand before conviction",
+                    "court-case-ref": "T20230101",
+                    "overall-case-outcome": "Imprisonment",
                     "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
+                    "warrant-date-day": "10",
+                    "warrant-date-month": "5",
                     "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
+                    "court-name": "Bristol Magistrates Court",
                     "next-hearing-type": "",
                     "next-court-date-day": "",
                     "next-court-date-month": "",
@@ -125,8 +99,8 @@ module.exports = {
                     "next-court-time": "",
                     "offences": [
                         {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
+                            "offence-start-date-day": "1",
+                            "offence-start-date-month": "1",
                             "offence-start-date-year": "2023",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
@@ -134,273 +108,8 @@ module.exports = {
                             "offence-code": [
                                 "COML025"
                             ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
-                        }
-                    ]
-                },
-                {
-                    "court-case-ref": "D20239871",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
-                    "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
-                    "next-hearing-type": "",
-                    "next-court-date-day": "",
-                    "next-court-date-month": "",
-                    "next-court-date-year": "",
-                    "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
-                        }
-                    ]
-                },
-                {
-                    "court-case-ref": "D20239871",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
-                    "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
-                    "next-hearing-type": "",
-                    "next-court-date-day": "",
-                    "next-court-date-month": "",
-                    "next-court-date-year": "",
-                    "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
-                        }
-                    ]
-                },
-                {
-                    "court-case-ref": "D20239871",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
-                    "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
-                    "next-hearing-type": "",
-                    "next-court-date-day": "",
-                    "next-court-date-month": "",
-                    "next-court-date-year": "",
-                    "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
-                        }
-                    ]
-                },
-                {
-                    "court-case-ref": "D20239871",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
-                    "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
-                    "next-hearing-type": "",
-                    "next-court-date-day": "",
-                    "next-court-date-month": "",
-                    "next-court-date-year": "",
-                    "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
-                        }
-                    ]
-                },
-                {
-                    "court-case-ref": "D20239871",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
-                    "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
-                    "next-hearing-type": "",
-                    "next-court-date-day": "",
-                    "next-court-date-month": "",
-                    "next-court-date-year": "",
-                    "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
-                        }
-                    ]
-                },
-                {
-                    "court-case-ref": "D20239871",
-                    "overall-case-outcome": "Remand before conviction",
-                    "next-court-date-set": "No",
-                    "warrant-date-day": "12",
-                    "warrant-date-month": "9",
-                    "warrant-date-year": "2023",
-                    "court-name": "Uxbridge MC",
-                    "next-hearing-type": "",
-                    "next-court-date-day": "",
-                    "next-court-date-month": "",
-                    "next-court-date-year": "",
-                    "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": "Murder - victim one year of age or older",
-                            "outcome": "Remand before conviction"
-                        },
-                        {
-                            "offence-start-date-day": "10",
-                            "offence-start-date-month": "9",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "PU86003"
-                            ],
-                            "offence-name": "Affray",
-                            "outcome": "Remand before conviction"
+                            "offence-name": " Burglary other than dwelling - theft",
+                            "outcome": "Sentenced"
                         }
                     ]
                 }

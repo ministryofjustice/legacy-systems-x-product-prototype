@@ -1,0 +1,100 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="moj-width-container">
+    <a href="../adjustments" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl">
+                <span class="govuk-caption-xl">Adjust release dates</span>
+                Remand overview
+            </h1>
+
+            <div class="govuk-summary-card">
+
+                <div class="govuk-summary-card__content">
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Remand summary</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Periods of remand</th>
+                            <th scope="col" class="govuk-table__header">Days</th>
+                        </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                        <tr class="govuk-table__row">
+                            <td id="RemandPeriodsCount" scope="row" class="govuk-table__cell">From 9 April 2023 to 10 May 2023</td>
+                            <td id="TotalRemandDays-e" class="govuk-table__cell">30</td>
+                        </tr> 
+                        </tbody>
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th id="RemandPeriodsCount" scope="row" class="govuk-table__header">Total days</th>
+                            <td id="TotalRemandDays-f" class="govuk-table__cell">30</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                </div>
+            </div>
+            <div class="govuk-summary-card remand">
+                <div class="govuk-summary-card__title-wrapper ">
+                    <h2 class="govuk-summary-card__title">From 9 April 2023 to 10 May 2023</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action"> <a id="remand4" data-caseno="4" class="govuk-link edit-link" href="edit.html">
+                            Edit<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                        </a>
+                        </li>
+                        <li class="govuk-summary-card__action"> <a class="govuk-link delete-link" href="delete.html" data-caseno="4">
+                            Delete<span class="govuk-visually-hidden"> from University of Gloucestershire</span>
+                        </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Court name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Bristol Magistrates Court
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul class="govuk-list">
+                                    <li>Burglary other than dwelling - theft
+                                        <!-- <span class="moj-badge moj-badge--grey ">Recall</span> -->
+                                        <br>
+                                        <span class="govuk-hint">Committed on 1 January 2023</span>
+                                    </li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                30
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            
+            <div class="govuk-!-margin-bottom-6">
+                <a href="enter-remand.html" class="govuk-button" data-module="govuk-button">
+                    Add new
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
