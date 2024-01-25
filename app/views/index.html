@@ -37,6 +37,87 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-5">
+                            Version 6.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                            For research
+                            </strong>
+
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                                </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="version-5" class="govuk-accordion__section-content" aria-labelledby="version-5">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v6_1/DPS-menu",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v6_1/DPS-prisoner-profile",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+
+                                    {{govukButton({
+                                        text: "Launch from overview",
+                                        attributes: {
+                                        "formaction": "v6_1/overview",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+                                </div>
+                            </form>
+                            </div>
+                            
+                                <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">What we are testing</h4> 
+                                <p class="govuk-body">This remote round of UR is due to take place in wc 29th January 2023.</p> 
+                                <p class="govuk-body">In this round, we aim to:</p> 
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>Understand how hub requirements might differ across prison types (we have focused on local prisons to date)</li>
+                                    <li>Identify specific requirements for service features that users have told us are important to them (e.g.overview page, documents, calculation history)</li>
+                                    <li>Test options for navigation to the hub from DPS profile</li>
+                                    <li>Test options for service name</li>
+                                </ul>   
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574650552528&cot=14">Objectives and question areas (miro)</a></li> 
+                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764575918705983&cot=14">UR planning (miro)</a></li> 
+                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764576080741437&cot=14">Naming the service exercise (miro)</a></li> 
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                                <h4 class="govuk-heading-m">Scenario 1</h4> 
+                                <p>...</p>
+
+                                <p><a class="govuk-link" href="#">...</a></p> 
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-5">
                             Version 6
                             <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                             In Design
@@ -46,19 +127,43 @@
                     </div> 
                     <div id="version-5" class="govuk-accordion__section-content" aria-labelledby="version-5">
                         <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-two-thirds"> 
+                            <div class="govuk-grid-column-full"> 
                                 <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v6/DPS-menu",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
 
-                                <form method="post">
-                                {{govukButton({
-                                    text: "Launch prototype",
-                                    attributes: {
-                                    "formaction": "v6/overview",
-                                    "formmethod": "get"
-                                    },
-                                    isStartButton: true
-                                    })}}
-                                </form>
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v6/DPS-prisoner-profile",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+
+                                    {{govukButton({
+                                        text: "Launch from overview",
+                                        attributes: {
+                                        "formaction": "v6/overview",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+                                </div>
+                            </form>
+                            </div>
+                            
+                                <div class="govuk-grid-column-three-quarters"> 
                                 <h4 class="govuk-heading-m">Changes in this version</h4> 
 
                                 <ul class="govuk-list govuk-list--number">
@@ -69,12 +174,12 @@
                                         <!-- <li>Adding top tasks</li> -->
                                     </ul> 
                                     <li>Revisiting empty states</li>
-                                    <li>Calculation improvements</li>
+                                    <li>CRDS improvements</li>
                                     <ul class="govuk-list govuk-list--bullet">
                                         <li>Surfacing calculation reason</li>
-                                        <li>Improved layout of calculation sub-page</li>
-                                        <li>Aggregated calculation history (where the souce is NOMIS)</li>
+                                        <li>Calculation history</li>
                                     </ul> 
+                                    <li>Having a read-only court cases tab</li>
                                     <li>How we indicate the source of data from NOMIS</li>
                                         <ul class="govuk-list govuk-list--bullet">
                                             <li>Court cases</li>
@@ -82,7 +187,6 @@
                                             <li>Calculation history</li>
                                             <li>Next court date</li> 
                                         </ul> 
-                                    <li>Having a read-only court cases tab</li>
                                 </ul> 
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
@@ -127,65 +231,39 @@
                                     <li><a class="govuk-link" href="v6/release-dates?toShow=releaseDatesNone">Release dates</a></li>  
                                     <li><a class="govuk-link" href="v6/release-dates?toShow=releaseDatesNone&viewOption=adjustmentsReleasedFalse">Release dates (Pre-ADJ release)</a></li>  
                                 </ul> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="govuk-accordion__section">
-                    <div class="govuk-accordion__section-header">
-                        <h2 class="govuk-accordion__section-heading">
-                        <span class="govuk-accordion__section-button" id="version-5">
-                            Version 5.1
-                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
-                            For research
-                            </strong>
 
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                                In Design
-                                </strong>
-                        </span>
-                        </h2>
-                    </div> 
-                    <div id="version-5" class="govuk-accordion__section-content" aria-labelledby="version-5">
-                        <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-two-thirds"> 
-                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
 
-                                <form method="post">
-                                {{govukButton({
-                                    text: "Launch prototype",
-                                    attributes: {
-                                    "formaction": "v5_1/overview",
-                                    "formmethod": "get"
-                                    },
-                                    isStartButton: true
-                                    })}}
-                                </form>
-                                <h4 class="govuk-heading-m">What we are testing</h4> 
-                                <p class="govuk-body">This remote round of UR is due to take place in wc 29th January 2023.</p> 
-                                <p class="govuk-body">In this round, we aim to:</p> 
-                                <ul class="govuk-list govuk-list--bullet">
-                                    <li>Understand how hub requirements might differ across prison types (we have focused on local prisons to date)</li>
-                                    <li>Identify specific requirements for service features that users have told us are important to them (e.g.overview page, documents, calculation history)</li>
-                                    <li>Test options for navigation to the hub from DPS profile</li>
-                                    <li>Test options for service name</li>
-                                </ul>   
-                                <h4 class="govuk-heading-m">Supporting documents</h4>
-                                <ul class="govuk-list">
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574650552528&cot=14">Objectives and question areas (miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764575918705983&cot=14">UR planning (miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764576080741437&cot=14">Naming the service exercise (miro)</a></li> 
+                                <h4 class="govuk-heading-m">3. CRDS improvements</h4> 
+                                <p>We've been looking at ways we need to amend CRDS journeys in order to fit the hub features in, such as removing the start page. Alongside this, we've been making some improvements to existing journeys along the way.</p>
+
+                                <h5 class="govuk-heading-s">Surfacing calculation reason</h5> 
+
+                                <p>CRDS now captures a reason for calculation, we now surface this when the user looks up a calculation.</p>
+
+                                <h5 class="govuk-heading-s">Calculation history</h5> 
+
+                                <p>We've been looking to improve the calculation look-up journey. Now that there is no start page, we surface all previous calculation in a table on the calculations and release dates tab. </p>
+
+                                <p>Because some calculations may come from NOMIS, we've had to consider some of the imprications of this on our design. One of these being that NOMIS automatically produces a new calculation any time that there is a change to a prisoners record. This could muddy up our table. (DESIGN TBC) </p>
+
+                                <p>We've also improved the user experience of viewing the details of an existing calculation. Previously this replicated the calculation journey and was always seen as a temporary journey.  </p>
+
+                                <p>Some new <b>calculation details</b> options below:</p>
+                                
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li><a class="govuk-link" href="v6/calculation-history/05-08-2023/calculation">Side nav, condensed onto one page</a></li>
+                                    <li><a class="govuk-link" href="v6/calculation-history/05-08-2023/calculation-release-dates">Side nav, separate pages</a></li>
+                                    <li><a class="govuk-link" href="#">Sub nav (WIP)</a></li> 
+                                    <li><a class="govuk-link" href="#">Accordion (WIP)</a></li> 
                                 </ul> 
 
-                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">4. Read-only court cases tab</h4> 
 
-                                <h4 class="govuk-heading-m">Scenario 1</h4> 
-                                <p>...</p>
+                                <p>We've previously assumed that before R&S is released, users would not see the court cases tab (see version 5). We're now considering wether we could use data from NOMIS in order to provide the user with a read-only version of the court cases tab earlier. This is subject to agreement with R&S team and designs would be lead by them, for now we're just experimenting for the sake of upcoming UR.</p>
 
-                                <p><a class="govuk-link" href="#">...</a></p> 
-
+                                <p><a href="v6/court-cases?viewOption=RSReadOnly">Read-only court cases tab</a></p>
                             </div>
-                        </div>
+                        </div> 
                     </div>
                 </div>
                 <div class="govuk-accordion__section">
@@ -201,7 +279,7 @@
                     </div> 
                     <div id="version-5" class="govuk-accordion__section-content" aria-labelledby="version-5">
                         <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-two-thirds"> 
+                            <div class="govuk-grid-column-three-quarters"> 
                                 <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
 
                                 <form method="post">
@@ -409,7 +487,7 @@
                     </div> 
                     <div id="version-4" class="govuk-accordion__section-content" aria-labelledby="version-4">
                         <div class="govuk-grid-row">
-                            <div class="govuk-grid-column-two-thirds">
+                            <div class="govuk-grid-column-three-quarters">
                                 <span class="govuk-caption-m">27 November 2023 to 8 December 2023</span>
                                 <h3 class="govuk-heading-l">UR round 1</h3> 
                         

@@ -1,0 +1,47 @@
+{% extends "../includes/layouts/template-linear.html" %}
+
+{% set overviewActive = true %}
+{% block content %}
+<!-- Overview -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full"> 
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+    </div>
+</div>
+{% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no court cases recorded for Neil Rudge.</p>
+        <p class="gouk-body"><a href="#">Record a court case now</a></p>
+    </div>
+
+</div>
+
+{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no sentences for Neil Rudge.</p>
+        <p class="gouk-body">Check the details in NOMIS and then try again.</p> 
+    </div>
+
+</div>
+
+{% else %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no court cases recorded for Neil Rudge.</p>
+        <p class="gouk-body"><a href="#">Record a court case now</a></p>
+    </div>
+
+</div>
+
+        {% endif %}
+ 
+{% endblock %}
