@@ -71,7 +71,7 @@
                 <tbody class="govuk-table__body">
                     <tr class="govuk-table__row govuk-body-s">
                         <th scope="row" class="govuk-table__header sentence-table-header">CJA Code</th>
-                        <td class="govuk-table__cell">2003</td>
+                        <td class="govuk-table__cell">2020</td>
                     </tr>
                     <tr class="govuk-table__row govuk-body-s">
                         <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
@@ -86,14 +86,10 @@
                         <td class="govuk-table__cell">0 years 0 months 0 weeks 100 days
                         </td>
                     </tr>
-                    <tr class="govuk-table__row govuk-body-s">
-                        <th scope="row" class="govuk-table__header sentence-table-header">Licence period</th>
-                        <td class="govuk-table__cell">1 year 0 months 0 weeks 0 days
-                        </td>
-                    </tr>
+                
                     <tr class="govuk-table__row govuk-body-s">
                         <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
-                        <td class="govuk-table__cell">Consecutive
+                        <td class="govuk-table__cell">Concurrent
                         </td>
                     </tr>
                 </tbody>
@@ -162,7 +158,7 @@
                     </tr> -->
                     <tr class="govuk-table__row govuk-body-s">
                         <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
-                        <td class="govuk-table__cell">Consecutive
+                        <td class="govuk-table__cell">Consecutive to court case 1 count 1
                         </td>
                     </tr>
                 </tbody>
@@ -179,95 +175,116 @@
                 <div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
                     <ul class="govuk-tabs__list" role="tablist">
                         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
-                            <a class="govuk-tabs__tab" href="#summary" data-qa="summary-tab-link" id="tab_summary" role="tab" aria-controls="summary" aria-selected="true" tabindex="0">
-                                Summary
-                            </a>
-                        </li>
-                        <li class="govuk-tabs__list-item" role="presentation">
-                            <a class="govuk-tabs__tab" href="#detailed" data-qa="detailed-tab-link" id="tab_detailed" role="tab" aria-controls="detailed" aria-selected="false" tabindex="-1">
+                            <a class="govuk-tabs__tab" href="#detailed" data-qa="detailed-tab-link" id="tab_detailed" role="tab" aria-controls="detailed" aria-selected="true" tabindex="0">
                                 Detailed
                             </a>
                         </li>
+                        <li class="govuk-tabs__list-item" role="presentation">
+                            <a class="govuk-tabs__tab" href="#summary" data-qa="summary-tab-link" id="tab_summary" role="tab" aria-controls="summary" aria-selected="false" tabindex="-1">
+                                Summary
+                            </a>
+                        </li>
                     </ul>
-                    <div class="govuk-tabs__panel" id="summary" role="tabpanel" aria-labelledby="tab_summary">
-                        <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Deductions</h3>
-                        <table class="govuk-table">
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th class="govuk-table__header" scope="col">Adjustment</th>
-                                    <th class="govuk-table__header" scope="col">Days</th>
-                                </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Recall remand</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">0</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Remand</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">
-                                     29
-                                    </td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Recall tagged bail</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">0</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Tagged bail</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">
-                                        0
-                                    </td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Restore additional days awarded (RADA)</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">0</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Unused remand</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">0</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-8 ">Additions</h3>
-                        <table class="govuk-table">
-                            <thead class="govuk-table__head">
-                                <tr class="govuk-table__row">
-                                    <th class="govuk-table__header" scope="col">Adjustment</th>
-                                    <th class="govuk-table__header" scope="col">Days</th>
-                                </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Additional days awarded (ADA)</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">0</td>
-                                </tr>
-                                <tr class="govuk-table__row">
-                                    <!-- Adjustment -->
-                                    <td class="govuk-table__cell">Unlawfully at large (UAL)</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">0
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="detailed" role="tabpanel" aria-labelledby="tab_detailed">
-                        <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Deductions</h3>
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="summary" aria-labelledby="tab_summary" tabindex="0" role="tabpanel">
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2">Deductions</h3>
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Adjustment</th>
+                    <th class="govuk-table__header" scope="col">Days</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Recall remand</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">0
+                        
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Remand</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">
+                        29
+                        
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Recall tagged bail</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">0
+                        
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Tagged bail</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">
+                        0
+                        
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Restore additional days awarded (RADA)</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">
+                        0
+                        
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Unused remand</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">
+                        0
+                        
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <h3 class="govuk-heading-m govuk-!-margin-bottom-2 govuk-!-margin-top-8 ">Additions</h3>
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Adjustment</th>
+                    <th class="govuk-table__header" scope="col">Days</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Additional days awarded (ADA)</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">
+                        0
+                        
+                    </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <!-- Adjustment -->
+                    <td class="govuk-table__cell">Unlawfully at large (UAL)</td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell">
+                        0
+                        
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+                    <div class="govuk-tabs__panel" id="detailed" role="tabpanel" aria-labelledby="tab_detailed">
+            
+                
+                    <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Deductions</h3>
+                    
+                    
                         <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Remand</h4>
                         <table class="govuk-table govuk-!-margin-bottom-8">
                             <thead class="govuk-table__head">
@@ -277,12 +294,16 @@
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body">
-                                <tr class="govuk-table__row">
-                                    <!-- Dates -->
-                                    <td class="govuk-table__cell">From 9 February 2023 to 9 March 2023</td>
-                                    <!-- Days -->
-                                    <td class="govuk-table__cell">29</td>
-                                </tr>
+                                
+                                    <tr class="govuk-table__row">
+                                        <!-- Dates -->
+                                        <td class="govuk-table__cell">From 09 February 2023 to 09 March 2023
+                                            
+                                        </td>
+                                        <!-- Days -->
+                                        <td class="govuk-table__cell">29</td>
+                                    </tr>
+                                
                                 <!-- Total -->
                                 <tr class="govuk-table__row">
                                     <!-- Dates -->
@@ -293,8 +314,15 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <!-- <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Additions</h3> -->
-                    </div>
+                    
+                    
+                    
+                    
+                    
+                
+                
+            
+        </div>
                 </div>
             </div>
         </div>

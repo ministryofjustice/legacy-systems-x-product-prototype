@@ -45,6 +45,12 @@ router.post(`/associate-doc-choice`, function (req, res) {
   });
 
 
+  router.get('/:prototypeVersion/new-calculation', function(req, res) {
+    const prototypeVersion = req.params.prototypeVersion 
+    res.redirect(`/${prototypeVersion}/calculate-release-dates/calculation-complete?newCalculation=true`)
+})
+ 
+
   router.get('/:prototypeVersion/view-court-case-detail', function(req, res) {
     const prototypeVersion = req.params.prototypeVersion
     const courtCaseIndex = Number(req.query.courtCaseIndex) + 1
