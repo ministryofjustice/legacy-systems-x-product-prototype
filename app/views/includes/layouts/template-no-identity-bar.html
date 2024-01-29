@@ -290,18 +290,13 @@ Court cases and release dates
     </nav> 
 </header> 
 
-
-{% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-
-{% else %} 
-
+ 
 <div class="service-header">
   <div class="service-header__container"> 
       <a href="#"><span class="service-header__service-name">[Service name]</span></a>
   </div>
 </div>
-
-{% endif %}  
+ 
 
 {% endblock %}
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}

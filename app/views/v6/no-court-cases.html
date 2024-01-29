@@ -1,17 +1,20 @@
-{% extends "../includes/layouts/template-linear.html" %}
-
-{% set overviewActive = true %}
+ 
+{% extends "../includes/layouts/template-no-identity-bar.html" %}
+ 
 {% block content %}
 <!-- Overview -->
+
+
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full"> 
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-8">
+
+        <h1 class="govuk-heading-xl">
+           There is a problem
+        </h1>
     </div>
 </div>
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-    </div>
-</div>
-{% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
+
+{% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %} 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
@@ -25,8 +28,8 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
-        <p class="govuk-body">There are no sentences for Neil Rudge.</p>
-        <p class="gouk-body">Check the details in NOMIS and then try again.</p> 
+        <p class="govuk-body">There are no court cases recorded for Neil Rudge.</p>
+        <p class="gouk-body">Check the details in NOMIS and then <a class="govuk-link" href="#">try again</a>.</p> 
     </div>
 
 </div>
