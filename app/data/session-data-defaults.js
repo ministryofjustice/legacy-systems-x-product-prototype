@@ -47,7 +47,7 @@ module.exports = {
                                 "TH68071"
                             ],
                             "offence-name": "Attempt to possess a controlled drug of Class C - GHB.",
-                            "outcome": "Active in"
+                            "outcome": "Sentenced"
                         }
                     ]
                 }
@@ -109,7 +109,7 @@ module.exports = {
                                 "COML025"
                             ],
                             "offence-name": " Burglary other than dwelling - theft",
-                            "outcome": "Active in"
+                            "outcome": "Sentenced"
                         }
                     ]
                 }
