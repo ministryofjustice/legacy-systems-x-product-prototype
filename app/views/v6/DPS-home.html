@@ -169,6 +169,8 @@
         </div>      
                      
     
+        {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+        {% else %}  
         <div class="hmpps-service-item">
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">
             <div class="hmpps-service-item__header">
@@ -176,26 +178,25 @@
                 <a href="search-person?navOption=single-entry" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">[Service name]</a>
                 {% elif data['navOption'] == 'task-based' %}
                 <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">[Service name]</a>
-                {% else %}
-                    {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-                    <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Calculate release dates</a>
-                    {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
+                {% else %} 
+                    {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
                     <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">Adjustments and release dates</a>
                     {% else %}  
                     <a href="DPS-menu" class="govuk-link govuk-!-font-weight-bold govuk-link--no-visited-state">[Service name]</a>
                     {% endif %}  
                 {% endif %}
 
-            </div>
 
-            {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-            <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Look-up or calculate release dates.</p>
-            {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            </div>
+ 
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
             <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Make adjustments, look-up or calculate release dates.</p>
             {% else %}  
             <p class="govuk-!-static-margin-top-3 govuk-!-static-margin-bottom-0">Manage court cases and release dates.</p>
             {% endif %}  
-        </div>              
+        </div>   
+        
+        {% endif %}           
     
         <div class="hmpps-service-item">
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible govuk-!-static-margin-top-0">

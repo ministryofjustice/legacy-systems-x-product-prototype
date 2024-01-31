@@ -14,7 +14,7 @@
     </div>
 </div>
 
-{% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %} 
+{% if data['viewOption'] == 'RSReleasedTrue' %} 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
@@ -24,7 +24,7 @@
 
 </div>
 
-{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedTrue' %}
+{% elif  data['viewOption'] == 'adjustmentsReleasedTrue' %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        

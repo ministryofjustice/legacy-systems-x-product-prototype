@@ -98,10 +98,10 @@
                                 </ul>   
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574650552528&cot=14">Objectives and question areas (miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764575918705983&cot=14">UR planning (miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764576080741437&cot=14">Naming the service exercise (miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://docs.google.com/document/d/1z6cc-DSjpNPELMRYWsDNH-6aY2VFDQ81B8VKHcDX61c/edit#heading=h.y1kyip8kz10d">Discussion guide (google docs)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574650552528&cot=14">Objectives and question areas (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764575918705983&cot=14">UR planning (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764576080741437&cot=14">Naming the service exercise (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://docs.google.com/document/d/1z6cc-DSjpNPELMRYWsDNH-6aY2VFDQ81B8VKHcDX61c/edit#heading=h.y1kyip8kz10d">Discussion guide (google docs)</a></li> 
                                 </ul> 
 
                                 <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -168,6 +168,7 @@
                                 <h4 class="govuk-heading-m">Changes in this version</h4> 
 
                                 <ul class="govuk-list govuk-list--number">
+                                    <li>Updates to navigation to the hub</li>
                                     <li>Updates to the overview page</li>
                                     <ul class="govuk-list govuk-list--bullet">
                                         <li>Removing the dashboard tiles</li>
@@ -181,23 +182,33 @@
                                         <li>Calculation history</li>
                                     </ul> 
                                     <li>Having a read-only court cases tab</li>
-                                    <li>How we indicate the source of data from NOMIS</li>
+                                    <!-- <li>How we indicate the source of data from NOMIS</li>
                                         <ul class="govuk-list govuk-list--bullet">
                                             <li>Court cases</li>
                                             <li>Release dates</li>
                                             <li>Calculation history</li>
                                             <li>Next court date</li> 
-                                        </ul> 
+                                        </ul>  -->
                                 </ul> 
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574754429274&cot=14">Exploration of 'things to do' notifications</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574754429274&cot=14">Exploration of 'things to do' notifications and intercept pages (miro)</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574754429274&cot=14">Empty states exploration (miro)</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764577342792300&cot=14">Entry points maps (miro)</a></li>
                                 </ul> 
 
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Updates to navigation to the hub</h4> 
 
-                                <h4 class="govuk-heading-m">1. Updates to the overview</h4> 
+                                <p>We've made two key decisions about the navigation to the hub. Vire the full <a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764577342792300&cot=14">entry points maps</a> on miro.</p>
+                                <ul class="govuk-list govuk-list--number">
+                                    <li>For prisons with <b>CRDS only</b>, there will be no tile on the DPS homepage. The only way into the service will be through the existing 'calculate release dates' link on the <a href="v6/DPS-prisoner-profile?viewOption=adjustmentsReleasedFalse">prisoner profile</a>.</li> 
+                                    <li>For prisons with at least <b>CRDS and ADJ</b>, we will have a new link to the hub overview on the <a href="v6/DPS-prisoner-profile">prisoner profile</a> under the 'more information' cards instead of the 'actions' card. We will have no actions when we intially roll-out - the entry point on <a href="v6/DPS-menu">DPS homepage will still maintain action tiles</a>. We will monitor this in beta and add any actions links where necessary. </li> 
+                                </ul> 
+                                
+
+                                <h4 class="govuk-heading-m">2. Updates to the overview</h4> 
 
                                 <h5 class="govuk-heading-s">Removing tiles</h5> 
                                 <p>We've been reconsidering the three dashboard tiles at the top of the page which don't provide a lot of function for their size.</p>
@@ -210,18 +221,19 @@
                                     <li><a class="govuk-link" href="v6/overview?toDo=adjustmentsApplied">Calculate release dates</a></li>
                                 </ul> 
 
-                                <h4 class="govuk-heading-m">2. Intercept pages across the service</h4> 
+                                <h4 class="govuk-heading-m">3. Intercept pages across the service</h4> 
 
                                 <p>In some scenarios, we may need the user to do something before they can carry out certain actions on the service. An example of this is where there are ADAs to review, the user should not be able to add another adjustment or calculate release dates before reviewing the ADAs.</p>
 
                                 <ul class="govuk-list govuk-list--bullet">  
                                     <li><a href="v6/overview?toDo=reviewAda">Overview tab - ADAs to review</a></li>
                                     <li><a href="v6/adjustments?toDo=reviewAda">Adjustments tab - ADAs to review</a></li> 
+                                    <li><a href="v6/release-dates?toDo=reviewAda">Calculate release dates tab - ADAs to review</a></li> 
                                     <li><a href="v6/calculate-release-dates/review-ada">Calculate release dates journey - ADAs to review</a></li> 
                                 </ul> 
 
 
-                                <h4 class="govuk-heading-m">3. Revisiting empty states</h4> 
+                                <h4 class="govuk-heading-m">4. Revisiting empty states</h4> 
 
                                 <p>In some scenarios, there may not be data to show on the service because there has not been any information provided or actions taken.</p>
 
@@ -244,7 +256,7 @@
                                 </ul> 
 
 
-                                <h4 class="govuk-heading-m">4. CRDS improvements</h4> 
+                                <h4 class="govuk-heading-m">5. CRDS improvements</h4> 
                                 <p>We've been looking at ways we need to amend CRDS journeys in order to fit the hub features in, such as removing the start page. Alongside this, we've been making some improvements to existing journeys along the way.</p>
 
                                 <h5 class="govuk-heading-s">Surfacing calculation reason</h5> 
@@ -268,7 +280,7 @@
                                     <li><a class="govuk-link" href="#">Accordion (WIP)</a></li> 
                                 </ul> 
 
-                                <h4 class="govuk-heading-m">5. Read-only court cases tab</h4> 
+                                <h4 class="govuk-heading-m">6. Read-only court cases tab</h4> 
 
                                 <p>We've previously assumed that before R&S is released, users would not see the court cases tab (see version 5). We're now considering wether we could use data from NOMIS in order to provide the user with a read-only version of the court cases tab earlier. This is subject to agreement with R&S team and designs would be lead by them, for now we're just experimenting for the sake of upcoming UR.</p>
 
@@ -324,10 +336,10 @@
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764572866117812&cot=14">UR analysis, playback and next steps (Miro)</a></li>
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764571499538429&cot=14">Entry points exploration (Miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764572997061242&cot=14">Document upload pattern (Miro)</a></li> 
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574650552528&cot=14">UR Round 2 planning (Miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764572866117812&cot=14">UR analysis, playback and next steps (Miro)</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764571499538429&cot=14">Entry points exploration (Miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764572997061242&cot=14">Document upload pattern (Miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574650552528&cot=14">UR Round 2 planning (Miro)</a></li> 
                                 </ul> 
 
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -520,7 +532,7 @@
                                 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764569782906104&cot=14">UR planning doc (Miro)</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764569782906104&cot=14">UR planning doc (Miro)</a></li>
                                 </ul> 
                             </div> 
                         </div>
@@ -554,8 +566,8 @@
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVMLjUSwY=/?moveToWidget=3458764561589100154&cot=14">Previous hub design work (Miro)</a></li>
-                                    <li><a class="govuk-link" href="https://miro.com/app/board/uXjVMTsydIo=/?moveToWidget=3458764560895129934&cot=14">HUB feedback from DPS Connect (Miro)</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVMLjUSwY=/?moveToWidget=3458764561589100154&cot=14">Previous hub design work (Miro)</a></li>
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVMTsydIo=/?moveToWidget=3458764560895129934&cot=14">HUB feedback from DPS Connect (Miro)</a></li>
                                 </ul> 
                             </div> 
                         </div>
@@ -569,7 +581,7 @@
                 <h2 class="govuk-heading-s govuk-!-margin-bottom-2" id="-title">Useful links</h2>
                 <ul class="govuk-list">
                     <li>
-                    <a class="govuk-link" href="design-manual/index">Design manual (under construction)</a>
+                    <!-- <a class="govuk-link" href="design-manual/index">Design manual (under construction)</a> -->
                     </li>
                     <li>
                     <a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?share_link_id=602180618685">Miro board</a>
