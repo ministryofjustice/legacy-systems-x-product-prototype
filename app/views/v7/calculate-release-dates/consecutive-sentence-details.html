@@ -1,0 +1,88 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="calculation-summary" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds"> 
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+                Consecutive sentence details
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- Breakdown -->
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <!-- Concurrent sentence breakdown -->
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" width="33%" class="govuk-table__header">Sentence</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--date">Sentence date</th>
+                        <th scope="col" class="govuk-table__header govuk-table__header--date">Sentence length</th>
+                        <th scope="col" colspan="2"class="govuk-table__header govuk-table__header--date">Notional dates</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body calculation-breakdown">
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            Court case 1, count 1
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-margin-top-2">
+                                Buggery - other than in private - male victim
+                            </p>
+                            <p class="govuk-hint govuk-!-margin-top-0 govuk-!-font-size-16">EDS LASPO Discretionary Release</p>
+                        </td>
+                        <td class="govuk-table__cell">
+                            21 Feb 2018</td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-!-margin-bottom-2"><span class="govuk-!-font-weight-bold">Custodial term</span><br>13 years</div>
+                            <div class="govuk-!-margin-bottom-2">
+                                <span class="govuk-!-font-weight-bold">Licence period</span><br>1 years</div><span class="govuk-hint govuk-!-font-size-16">Concurrent</span>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">PED</h4>22 Oct 2026<br>
+                            <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">3166 days</span>
+                        </td>
+                        <td class="govuk-table__cell">
+                            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">CRD</h4>20 Feb 2031<br>
+                            <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">4748 days</span>
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            Court case 1, count 2
+                            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-2 govuk-!-margin-top-2">
+                                INDECENT ASSAULT ON A CHILD
+                            </p>
+                            <p class="govuk-hint govuk-!-margin-top-0 govuk-!-font-size-16">Section 236A SOPC CJA03</p>
+                        </td>
+                        <td class="govuk-table__cell">
+                            21 Feb 2018</td>
+                        <td class="govuk-table__cell">
+                            <div class="govuk-!-margin-bottom-2"><span class="govuk-!-font-weight-bold">Custodial term</span><br>13 years</div>
+                            <div class="govuk-!-margin-bottom-2">
+                                <span class="govuk-!-font-weight-bold">Licence period</span><br>1 years</div><span class="govuk-hint govuk-!-font-size-16">Consecutive to court case 1 count 1</span>
+                        </td>
+                        <td class="govuk-table__cell">
+                        </td>
+                        <td class="govuk-table__cell">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="moj-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body"><a href="calculation-summary">Return to calculation summary</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

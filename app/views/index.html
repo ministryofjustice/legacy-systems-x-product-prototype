@@ -32,6 +32,90 @@
               </div>
             
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-5">
+                            Version 7 
+
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                                </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="version-7" class="govuk-accordion__section-content" aria-labelledby="version-5">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v7/DPS-home",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v7/DPS-prisoner-profile",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+
+                                    {{govukButton({
+                                        text: "Launch from overview",
+                                        attributes: {
+                                        "formaction": "v7/overview",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+                                </div>
+                            </form>
+                            </div>
+                            
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">
+                                    <li>Addition of an adjustments module on the overview</li> 
+                                </ul> 
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="#">...</a></li> 
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Addition of an adjustments module on the overview</h4> 
+
+                                <p>We've been working with adjustments to agree a way to surface more information relating to adjustments on the overview. This would allow users extra quick glance information to respond to queries, but with an added benefit that user will still be able to see the adjustments even if there is an intercept page on the adjustments tab. </p>
+                                <ul class="govuk-list govuk-list--number">
+                                    <li><a href="v7/overview?toShow=adjustmentsNone">Overview - no adjustments to show</a></li>
+                                    <li><a href="v7/overview?toShow=adjustmentsV2">Overview v1 - summary list</a></li> 
+                                    <li><a href="v7/overview">Overview v2 - cards</a></li>  
+                          
+                                </ul> 
+                                 
+                                <h4 class="govuk-heading-m">2. Calculations from NOMIS</h4> 
+
+                                <p>We will be surfacing  </p>
+                                <ul class="govuk-list govuk-list--number">
+                                    <li><a href="v7/overview?toShow=adjustmentsNone">Overview - no adjustments to show</a></li>
+                                </ul> 
+ 
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
@@ -48,7 +132,7 @@
                         </span>
                         </h2>
                     </div> 
-                    <div id="version-5" class="govuk-accordion__section-content" aria-labelledby="version-5">
+                    <div id="version-6-1" class="govuk-accordion__section-content" aria-labelledby="version-5">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full"> 
                                 <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
@@ -120,13 +204,13 @@
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-5">
                             Version 6
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                            In Design
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
                             </strong>
                         </span>
                         </h2>
                     </div> 
-                    <div id="version-5" class="govuk-accordion__section-content" aria-labelledby="version-5">
+                    <div id="version-6" class="govuk-accordion__section-content" aria-labelledby="version-5">
                         <div class="govuk-grid-row">
                             <div class="govuk-grid-column-full"> 
                                 <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
@@ -263,7 +347,10 @@
 
                                 <p>CRDS now captures a reason for calculation, we now surface this when the user looks up a calculation.</p>
 
-                                <h5 class="govuk-heading-s">Calculation history</h5> 
+                                <h5 class="govuk-heading-s">Calculation history  
+                                    <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                        Experimental
+                                        </strong></h5> 
 
                                 <p>We've been looking to improve the calculation look-up journey. Now that there is no start page, we surface all previous calculation in a table on the calculations and release dates tab. </p>
 
@@ -280,7 +367,10 @@
                                     <li><a class="govuk-link" href="#">Accordion (WIP)</a></li> 
                                 </ul> 
 
-                                <h4 class="govuk-heading-m">6. Read-only court cases tab</h4> 
+                                <h4 class="govuk-heading-m">6. Read-only court cases tab   <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Experimental
+                                    </strong></h4>  
+                               
 
                                 <p>We've previously assumed that before R&S is released, users would not see the court cases tab (see version 5). We're now considering wether we could use data from NOMIS in order to provide the user with a read-only version of the court cases tab earlier. This is subject to agreement with R&S team and designs would be lead by them, for now we're just experimenting for the sake of upcoming UR.</p>
 

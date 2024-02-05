@@ -4,7 +4,7 @@
 {% set lastAppearance = data.courtCases[data.courtCaseIndex].appearances | last %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <a onclick="." class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-4">Back</a>
+        <a href="../court-cases" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-4">Back</a>
     </div>
 </div>
 <div class="govuk-grid-row">
@@ -28,7 +28,7 @@
 
   </div>
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name']}}</h1>
+        <h1 class="govuk-heading-xl">Court case {{ data.courtCaseIndex | int + 1 }}</h1>
         <h2 class="govuk-heading-l" id="1">
             Case summary
         </h2>
@@ -207,16 +207,6 @@
                                 {{ sentence['sentence-length-years'] }} years {{ sentence['sentence-length-months'] }} months {{ sentence['sentence-length-weeks'] }} weeks {{ sentence['sentence-length-days'] }} days
                             </dd>
                         </div>
-                        {% if sentence['licence-period-years'] %}
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Licence period
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                {{ sentence['licence-period-years'] }} years {{ sentence['licence-period-months'] }} months {{ sentence['licence-period-weeks'] }} weeks {{ sentence['licence-period-days'] }} days
-                            </dd>
-                        </div>
-                        {% endif %}
                     </dl>
                 </div>
             </div>

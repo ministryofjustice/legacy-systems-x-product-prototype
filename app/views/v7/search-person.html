@@ -1,0 +1,62 @@
+{% extends "includes/layouts/template-dps-branded.html" %}
+
+{% block beforeContent %}
+
+<div class="govuk-width-container">
+    <nav class="govuk-!-display-none-print">
+    {{govukBackLink({
+    text: "Back",
+    "href": "javascript: window.history.go(-1)"
+    })}}
+    </nav>
+</div>
+{% endblock %} 
+
+{% block content %}
+<form id="form" method="post" action="search-person-results">
+    <div class="govuk-width-container">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">  
+            <h1 class="govuk-heading-l govuk-!-margin-top-8">
+                {% if data['navOption'] == 'single-entry' %}
+                <span class="govuk-caption-l">[Service name]</span> 
+
+                {% elif data['navOption'] == 'adjustments' %}
+                <span class="govuk-caption-l">Add an adjustment</span> 
+
+                {% elif data['navOption'] == 'crd' %}
+                <span class="govuk-caption-l">Calculate release dates</span> 
+
+                {% elif data['navOption'] == 'court-cases' %}
+                <span class="govuk-caption-l">Manage court cases</span> 
+
+                {% elif data['navOption'] == 'crd-lookup' %}
+                <span class="govuk-caption-l">Look up a calculation</span> 
+                
+                {% else %}
+                <span class="govuk-caption-l">[Service name]</span>
+                
+                {% endif %}
+                Search for a person
+            </h1>
+                    
+                {% from "govuk/components/character-count/macro.njk" import govukCharacterCount %}
+                {{ govukInput({
+                label: {
+                text: "Search by name or prison number",
+                classes: "",
+                isPageHeading: false
+                }, 
+                classes: "govuk-input--width-20",
+                id: "prisoner-search-query",
+                name: "prisoner-search-query"
+                }) }}
+                
+                <button class="govuk-button" data-module="govuk-button">Search</button>
+        
+            </div> 
+        </div> 
+    </div> 
+
+</form>
+{% endblock %}

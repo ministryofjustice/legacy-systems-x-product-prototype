@@ -1,0 +1,222 @@
+{% extends "includes/layouts/template-dps-branded.html" %} 
+{% block content %}
+<html lang="en" class="govuk-template">
+   
+  <body
+    class="govuk-template__body js-enabled"
+    data-new-gr-c-s-check-loaded="14.1146.0"
+    data-gr-ext-installed="">
+    <a
+      href="#main-content"
+      class="govuk-skip-link"
+      data-module="govuk-skip-link"
+      >Skip to main content</a>
+
+    <div class="govuk-width-container">
+      <a href="DPS-home" class="govuk-back-link">Digital Prison Services</a>
+    </div>
+    <main class="govuk-main-wrapper" id="main-content" role="main">
+      <div class="govuk-width-container govuk-!-margin-top-7">
+        {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+        <h1 class="govuk-heading-l">Calculate release dates</h1>
+        {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
+        <h1 class="govuk-heading-l">Adjustments and release dates</h1>
+        {% else %}  
+        <h1 class="govuk-heading-l">[Service name]</h1>
+        {% endif %}  
+      </div>
+
+      <div class="homepage-content" style="min-height: 600px;">
+        <div class="govuk-width-container">
+          <div class="card-group govuk-grid-row">
+
+            {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=crd">Calculate release dates</a>
+                </h2>
+                <p class="govuk-body card__description">
+                  Calculate a person's release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+                <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a 
+                      class="govuk-link govuk-link--no-visited-state card__link"
+                      href="search-person?navOption=crd-lookup">Look up a calculation</a>
+                  </h2>
+                  <p class="govuk-body card__description">
+                    Find a person's previous release date calculations.
+                  </p>
+                </div>
+              </div>
+
+            
+              {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=adjustments">Add an adjustment</a>
+                </h2>
+                <p class="govuk-body card__description">
+                  Adjust someones release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=crd">Calculate release dates</a>
+                </h2>
+                <p class="govuk-body card__description">
+                 Calculate someones release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+                <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a 
+                      class="govuk-link govuk-link--no-visited-state card__link"
+                      href="search-person?navOption=crd-lookup">Look up a calculation</a>
+                  </h2>
+                  <p class="govuk-body card__description">
+                   Find a previous release date calculation for someone. 
+                  </p>
+                </div>
+              </div> 
+ 
+            {% elif data['viewOption'] == 'remandAndSentencingTrue' %}
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=adjustments">Add an adjustment</a>
+                </h2>
+                <p class="govuk-body card__description">
+                  Adjust someones release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=crd">Calculate release dates</a>
+                </h2>
+                <p class="govuk-body card__description">
+                 Calculate someones release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+                <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a 
+                      class="govuk-link govuk-link--no-visited-state card__link"
+                      href="search-person?navOption=crd-lookup">Look up a calculation</a>
+                  </h2>
+                  <p class="govuk-body card__description">
+                   Find a previous release date calculation for someone. 
+                  </p>
+                </div>
+              </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                <h2 class="govuk-heading-m card__heading">
+                  <a 
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=court-cases">Manage court cases</a>
+                </h2>
+                <p class="govuk-body card__description">
+                 Add court case, sentence and appearance information.
+                </p>
+              </div>
+            </div>
+
+            {% else %}
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=adjustments">Add an adjustment</a>
+                </h2>
+                <p class="govuk-body card__description">
+                  Adjust someones release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                <h2 class="govuk-heading-m card__heading">
+                  <a
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=crd">Calculate release dates</a>
+                </h2>
+                <p class="govuk-body card__description">
+                 Calculate someones release dates.
+                </p>
+              </div>
+            </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+                <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                  <h2 class="govuk-heading-m card__heading">
+                    <a 
+                      class="govuk-link govuk-link--no-visited-state card__link"
+                      href="search-person?navOption=crd-lookup">Look up a calculation</a>
+                  </h2>
+                  <p class="govuk-body card__description">
+                   Find a previous release date calculation for someone. 
+                  </p>
+                </div>
+              </div>
+
+            <div class="govuk-grid-column-one-third card-group__item">
+              <div id="" class="card card--clickable" data-qa="record-attendance-card">
+                <h2 class="govuk-heading-m card__heading">
+                  <a 
+                    class="govuk-link govuk-link--no-visited-state card__link"
+                    href="search-person?navOption=court-cases">Manage court cases</a>
+                </h2>
+                <p class="govuk-body card__description">
+                 Add court case, sentence and appearance information.
+                </p>
+              </div>
+            </div>
+
+            {% endif %}
+
+          </div>
+        </div>
+      </div>
+    </main>
+ 
+  
+  </body>
+
+  {% endblock %}
+</html>

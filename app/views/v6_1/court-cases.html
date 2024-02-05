@@ -62,10 +62,11 @@
                         <h2 class="govuk-summary-card__title">{{ lastAppearance['court-case-ref'] }} <span class="govuk-body">at</span> {{ lastAppearance['court-name']}} </h2>
                         <ul class="govuk-summary-card__actions">
                             <li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state" href="/v9/create-appearance?courtIndex={{courtCaseIndex}}">
-                                    <!-- Add appearance<span class="govuk-visually-hidden"> to court case {{ loop.index }}</span> -->
+                                    Add appearance<span class="govuk-visually-hidden"> to court case {{ loop.index }}</span>
                                 </a>
                             </li>
-                            <!--                             <li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state" href="/v5/update-court-case?index={{courtCaseIndex}}">
+                                                        <!-- <li class="govuk-summary-card__action"> <a class="govuk-link govuk-link--no-visited-state" href="/v5/update-court-case?index={{courtCaseIndex}}">
+
                                     Edit
                                 </a>
                             </li> -->
@@ -108,7 +109,7 @@
                                     Next hearing
                                 </dt>
                                 <dd class="govuk-summary-list__value">
-                                    Date to be fixed
+                                    None
                                 </dd>
                             </div>
                             {% endif %}
@@ -324,20 +325,30 @@
                         </div>
                         </details>
                         {% endif %}
-                        <!-- <p class="govuk-body"><a href="view-court-case-detail?courtCaseIndex={{loop.index0}}">View details about this court case</a></p> -->
+                        <p class="govuk-body"><a href="view-court-case-detail?courtCaseIndex={{loop.index0}}">View details about this court case</a></p>
+
                     </div>
                 </div>
                 {% endfor %}
                 {% else %}
                 <div class="court-cases-list">
                     <p class="govuk-body">There are no court cases recorded for Joe Bloggs.</p>
-                    <p class="gouk-body"><a href="/v9/create-court-case">Record a court case now</a>
+                    <p class="gouk-body"><a href="#">Record a court case now</a>
                     </p>
                 </div>
                 {% endif %}
             </div>
         </div>
     </div> 
+    <div class="govuk-grid-column-one-third">
+        <div class="actions-list">
+            <ul class="govuk-list actions-list-list">
+                <span class="govuk-heading-m actions-list-header">Actions</span>
+                <li><a href="/v9/create-court-case">Add a new court case</a></li>
+                <!-- <li><a href="">Record an appeal</a></li> -->
+            </ul>
+        </div>
+    </div>
 </div>
 
 </div>

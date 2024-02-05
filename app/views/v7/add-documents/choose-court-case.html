@@ -1,0 +1,88 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="associate-with-court-case-choice" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Add a document</span>
+      <h1 class="govuk-heading-l">
+        Select the case for this document
+      </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="add-a-custodial-warrant" method="post" enctype="multipart/form-data">
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Bristol magistrates court</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action">
+                            <a class="govuk-link select-case-link" href="check-answers" data-date="10 May 2023" data-case="T20223256" data-court="Bristol Magistrates Court">
+                            Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Case reference
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                T20223256
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Warrant date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                10 May 2023
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Bristol magistratess court</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action">
+                            <a class="govuk-link select-case-link" href="check-answers" data-date="10 May 2023" data-case="T20223256" data-court="Bristol Magistrates Court">
+                            Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content">
+                    <dl class="govuk-summary-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Case reference
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                T20789694
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Warrant date
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                8 January 2023
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
