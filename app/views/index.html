@@ -87,11 +87,13 @@
 
                                 <ul class="govuk-list govuk-list--number">
                                     <li>Addition of an adjustments module on the overview</li> 
+                                    <li>Calculations from NOMIS</li> 
+                                    <li>Tweaks to the release dates card and release dates tab</li> 
                                 </ul> 
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" target="external" href="#">...</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578225023395&cot=14">Showing nomis calculations (miro)</a></li> 
                                 </ul> 
 
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -107,10 +109,17 @@
                                  
                                 <h4 class="govuk-heading-m">2. Calculations from NOMIS</h4> 
 
-                                <p>We will be surfacing  </p>
+                                <p>If a calculation is from NOMIS, there will be no calculation breakdown. Instead we need to signify that the calculation came from NOMIS.</p>
                                 <ul class="govuk-list govuk-list--number">
-                                    <li><a href="v7/overview?toShow=adjustmentsNone">Overview - no adjustments to show</a></li>
+                                    <li><a href="v7/overview?toShow=releaseDatesNomis">Overview - latest calculation is from NOMIS</a></li>
+                                    <li><a href="v7/release-dates?toShow=releaseDatesNomis">Release dates - latest calculation is from NOMIS</a></li>
+                                    <li><a href="v7/calculation-history/11-03-2023/nomis-calculation">calculation breakdown - calculation is from NOMIS</a></li>
                                 </ul> 
+
+
+                                <h4 class="govuk-heading-m">3. Tweaks to the release dates card and release dates tab</h4> 
+                                <p>We've updated the release dates card design to now surface calculation reason alongside date and establishment. Because of this we have had to add additional headings to the release dates tab which means the calculation history page no longer requires a card design.</p>
+                                
  
                             </div>
                         </div>
@@ -126,9 +135,10 @@
                             For research
                             </strong>
 
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                                In Design
-                                </strong>
+                            
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
                         </span>
                         </h2>
                     </div> 
@@ -592,6 +602,10 @@
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-4">
                             Version 4
+
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
                             <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
                                 Closed
                             </strong>
