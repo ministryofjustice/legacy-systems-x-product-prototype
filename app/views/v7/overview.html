@@ -1,162 +1,136 @@
 
-{% extends "../includes/layouts/template.html" %} 
+{% extends "../includes/layouts/template-new-footer.html" %} 
 
 {% set overviewActive = true %}
 {% block content %}
-<!-- Overview -->
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <!-- <div class="govuk-notification-banner govuk-notification-banner-alert" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner" id="alert">
-            <div class="govuk-notification-banner__header">
-                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                    Important
-                </h2>
-            </div>
-            <div class="govuk-notification-banner__content">
-                <p class="govuk-notification-banner__heading">
-                    This prisoner is due for immediate release. <a href="">Do an action now.</a>
-                </p>
-            </div>
-        </div>
-    </div> -->
+ 
+<!-- Overview -->   
+{% if data['toDo'] == 'adaFirstTime' %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+    </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            The first time you use the adjustments service, you must <a href="#">check that the ADA (Additional days awarded)</a> information is correct.
+        </p>
+    </div>
 </div>
+
+                
+{% elif data['toDo'] == 'changesApplied' %}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+    </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            Some of the information for Joe Bloggs has changed. You now need to <a href="#">calculate the release dates</a>. 
+        </p>
+    </div>
+</div>
+
+{% else %}
+
+{% endif %}
+
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl"  >
             Overview
         </h1>
     </div>
-</div>
-
-
-<!-- <div class="highlights">
-    <a href="court-cases" class="highlight-card">
-        <p class="highlight-card-headline">2</p>
-        <p class="highlight-card-text">active court cases</p>
-    </a>
-    <a href="adjustments" class="highlight-card">
-        <p class="highlight-card-headline">1</p>
-        <p class="highlight-card-text">day of adjustments</p>
-    </a>
-    <a href="documents" class="highlight-card">
-        <p class="highlight-card-headline">6</p>
-        <p class="highlight-card-text">documents</p>
-    </a>
-</div> -->
-<!-- <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible"> -->
-<div class="govuk-grid-row">
+</div>   
+ 
+<div class="govuk-grid-row govuk-!-margin-bottom-8">
     <div class="govuk-grid-column-two-thirds">
 
                 {% if data['toDo'] == 'reviewAda' or data['toDo'] == 'reviewPada' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %}
                 <h2 class="govuk-heading-m">Things you need to do 
-                    <!-- <span id="notifications" class="moj-notification-badge">1</span> -->
+           
                 </h2>
                
-                {% if data['toDo'] == 'reviewAda' %}
-                <div class="to-do-item">
-
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Review unapplied ADA's</a>
-                        <p class="to-do-hint">ADAs have been entered by the adjudications team but have not been applied to the sentence.</p>
-                    </div>
-
-                    <!-- <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div> -->
-                </div>
-
-
-               
-                {% elif data['toDo'] == 'addCourtCase' %}
-                <div class="to-do-item">
-
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Add a court case</a>
-                        <p class="to-do-hint">There are no court cases recorded for Neil Rudge.</p>
-                    </div>
-
-                    <!-- <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div> -->
-                </div>
-
-
-               
-                {% elif data['toDo'] == 'generalChangesApplied' %}
-                <div class="to-do-item">
-
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
-                        <p class="to-do-hint">Neil's court case or adjustment information has been updated, you now need to calculate release dates.</p>
-                    </div>
-
-                    <!-- <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div> -->
-                </div>
-
-
-
-               
-                {% elif data['toDo'] == 'adjustmentsApplied' %}
-                <div class="to-do-item">
-
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
-                        <p class="to-do-hint">Adjustments have been applied, you now need to calculate release dates.</p>
-                    </div>
-
-                    <!-- <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div> -->
-                </div>
-
-
-
-               
-                {% elif data['toDo'] == 'courtCaseAdded' %}
-                <div class="to-do-item">
-
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
-                        <p class="to-do-hint">New court cases have been added, you now need to calculate release dates.</p>
-                    </div>
-
-                    <!-- <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div> -->
-                </div>
-               
-                {% elif data['toDo'] == 'reviewPada' %}
-                <div class="to-do-item">
-
-                    <div class="to-do-item-text">
-                        <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Review unapplied PADA's</a>
-                        <p class="to-do-hint">PADAs have been entered by the adjudications team but have not been applied to the sentence.</p>
-                    </div>
-
-                    <!-- <div class="to-do-item-badge">
-                        <strong class="moj-badge moj-badge--red moj-badge--large">
-                            Overdue
-                        </strong>
-                    </div> -->
-                </div>
-
-                {% else %}
                     
-                {% endif %}
+                    
+                {% if data['toDo'] == 'reviewAda' %}
+                    <div class="to-do-item">
+
+                        <div class="to-do-item-text">
+                            <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Review unapplied ADA's</a>
+                            <p class="to-do-hint">ADAs have been entered by the adjudications team but have not been applied to the sentence.</p>
+                        </div>
+    
+                    </div>
+
+
+                
+                    {% elif data['toDo'] == 'addCourtCase' %}
+                    <div class="to-do-item">
+
+                        <div class="to-do-item-text">
+                            <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Add a court case</a>
+                            <p class="to-do-hint">There are no court cases recorded for Neil Rudge.</p>
+                        </div>
+    
+                    </div>
+
+
+                
+                    {% elif data['toDo'] == 'generalChangesApplied' %}
+                    <div class="to-do-item">
+
+                        <div class="to-do-item-text">
+                            <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
+                            <p class="to-do-hint">Neil's court case or adjustment information has been updated, you now need to calculate release dates.</p>
+                        </div>
+    
+                    </div>
+
+
+
+                
+                    {% elif data['toDo'] == 'adjustmentsApplied' %}
+                 
+                    <div class="to-do-item">
+
+                        <div class="to-do-item-text">
+                            <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
+                            <p class="to-do-hint">Adjustments have been applied, you now need to calculate release dates.</p>
+                        </div>
+    
+                    </div>
+
+                    {% elif data['toDo'] == 'courtCaseAdded' %}
+                    <div class="to-do-item">
+
+                        <div class="to-do-item-text">
+                            <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Calculate release dates</a>
+                            <p class="to-do-hint">New court cases have been added, you now need to calculate release dates.</p>
+                        </div>
+    
+                    </div>
+                
+                    {% elif data['toDo'] == 'reviewPada' %}
+                    <div class="to-do-item">
+
+                        <div class="to-do-item-text">
+                            <a href="" class="govuk-heading-s govuk-link--no-visited-state govuk-!-margin-bottom-2">Review unapplied PADA's</a>
+                            <p class="to-do-hint">PADAs have been entered by the adjudications team but have not been applied to the sentence.</p>
+                        </div>
+    
+                    </div>
+
+                    {% else %}
+                        
+                    {% endif %}
 
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+                
                 {% else %}
                     
                 {% endif %}
@@ -463,7 +437,7 @@
             </div>
         </div>
         <p class="govuk-body govuk-!-margin-top-6"><a href="timeline">View all activity</a></p> -->
-    </div>
+    </div> 
 </div>
 <script>
 function toggleAlert() {

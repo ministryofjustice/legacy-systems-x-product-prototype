@@ -50,20 +50,20 @@
                                 <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
                             <form action="post">
                                 <div class="govuk-button-group"> 
-                                    {{govukButton({
+                                    <!-- {{govukButton({
                                         text: "Launch from DPS homepage",
                                         attributes: {
                                         "formaction": "v7/DPS-home",
                                         "formmethod": "get"
                                         },
                                         classes: "govuk-button--secondary"
-                                        })}}
+                                        })}} -->
 
                                     {{govukButton({
                                         text: "Launch from prisoner profile",
                                         attributes: {
-                                        "formaction": "v7/DPS-prisoner-profile",
-                                        "formmethod": "get"
+                                        "formaction": "v7/DPS-prisoner-profile?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
                                         },
                                         classes: "govuk-button--secondary"
                                         })}}
@@ -72,11 +72,24 @@
                                     {{govukButton({
                                         text: "Launch from overview",
                                         attributes: {
-                                        "formaction": "v7/overview",
-                                        "formmethod": "get"
+                                        "formaction": "v7/overview?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
                                         },
                                         classes: "govuk-button--secondary"
                                         })}}
+
+
+
+                                    {{govukButton({
+                                        text: "CRDS-only version",
+                                        attributes: {
+                                        "formaction": "v7/DPS-prisoner-profile?viewOption=adjustmentsReleasedFalse",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+
 
                                 </div>
                             </form>
@@ -90,12 +103,17 @@
                                     <li>Addition of an adjustments module on the overview</li> 
                                     <li>Calculations from NOMIS</li> 
                                     <li>Tweaks to the release dates card and release dates tab</li> 
+                                    <li>New footer</li> 
                                 </ul> 
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
                                     <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578225023395&cot=14">Showing nomis calculations (miro)</a></li> 
                                     <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578369588296&cot=14">Calculations reason (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578387401340&cot=14">Entry points to the service (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764579625854367&cot=14">Navigation back to DPS (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764579606345262&cot=14">New footer (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764574754429274&cot=14">Things to do (miro)</a></li> 
                                 </ul> 
 
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -108,7 +126,7 @@
                                 <p>We've been working with adjustments to agree a way to surface more information relating to adjustments on the overview. This would allow users extra quick glance information to respond to queries, but with an added benefit that user will still be able to see the adjustments even if there is an intercept page on the adjustments tab. </p>
                                 <ul class="govuk-list govuk-list--number">
                                     <li><a href="v7/overview?toShow=adjustmentsNone">Overview - no adjustments to show</a></li>
-                                    <li><a href="v7/overview?toShow=adjustmentsV2">Overview v1 - summary list</a></li> 
+                                    <li><a href="v7/overview?toShow=adjustmentsV2">Overview v1 - summary list</a> - we're using this version</li> 
                                     <li><a href="v7/overview">Overview v2 - cards</a></li>  
                           
                                 </ul> 
@@ -125,6 +143,37 @@
 
                                 <h4 class="govuk-heading-m">4. Tweaks to the release dates card and release dates tab</h4> 
                                 <p>We've updated the release dates card design to now surface calculation reason alongside date and establishment. Because of this we have had to add additional headings to the release dates tab which means the calculation history page no longer requires a card design.</p>
+                                
+                                <h4 class="govuk-heading-m">5. Updates to the 'things to do' pattern</h4> 
+                                <p>We have been revising the designs of the 'things to do' notification pattern to try and simplify it and it's content. We've decided to use GOV.UK <a href="https://design-system.service.gov.uk/components/notification-banner/">notification banners</a> instead of a custom component. </p>
+                                <p>We'll be testing this in UR R3 and will be carrying out further design and analysis of notifactions as a whole. </p>
+                                <p>This protoype only includes examples relevant for next UR round, all examples with explainations of logic will be available elsewhere.</p>
+                                <ul class="govuk-list govuk-list--number">
+                                    <li><a href="v7/overview?toDo=adaFirstTime">Overview - ADAs first-time review</a></li>
+                                    <li><a href="v7/release-dates?toDo=adaFirstTime">Release dates - ADAs first-time review</a></li>
+                                    <li><a href="v7/overview?toDo=changesApplied">Overview - Adjustment added, calculate release dates </a></li>
+                                    <li><a href="v7/release-dates?toDo=changesApplied">Release dates - Adjustment added, calculate release dates </a></li>
+                                </ul> 
+
+                                <h4 class="govuk-heading-m">6. Updates to the entry points to the service</h4> 
+                                <p>After multiple sessions with Connect DPS, we've agreed that we will explore ways in which we can use role-based access to customise the prisoner profile to better suit the needs of our users, and improve entry points.</p>
+                                <p>Some of the changes we could propose are: </p>  <ul class="govuk-list govuk-list--number">
+                                    <li>Repurposing the current 'Offences and release dates' card to add relevant information </li>
+                                    <li>Repositioning the cards on the page</li>
+                                    <li>Removing the offences tab</li>
+                                    <li>Accounting for CRDS-only users in the design</li>
+                                </ul> 
+                                
+                                <p>Most design options are on the <a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578387401340&cot=14">miro board</a>, this prototype only includes the relevant versions for user research.</p>
+                                <ul class="govuk-list govuk-list--number">
+                                    <li><a href="v7/DPS-prisoner-profile?viewOption=RSReleasedTrue">prisoner profile - full-access users</a></li>
+                                    <li><a href="v7/DPS-prisoner-profile?viewOption=adjustmentsReleasedFalse">prisoner profile - CRDS-only users</a></li> 
+                                </ul> 
+
+                                <h4 class="govuk-heading-m">7. New footer</h4> 
+                                <p>Our service requires a specialist support team to help with sentence calculation queries. The current DPS footer points the user to the general support desk for help, this is not suitable for our users.</p>
+                                <p>DPS currently have not have a way to accomodate our support requirements, because of this, we have been given permission to create our own footer to use whilst a strategic solution for support can be implemented by DPS connect.</p>
+                                <p>Versions of the footer can be found on <a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764579606345262&cot=14">the miro</a>.</p>
                                 
  
                             </div>

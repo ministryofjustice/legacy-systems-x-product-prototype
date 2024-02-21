@@ -7,6 +7,43 @@
 
 {% set releaseDatesActive = true %}
 {% block content %}
+
+       
+{% if data['toDo'] == 'adaFirstTime' %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+    </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            The first time you use the adjustments service, you must <a href="#">check that the ADA (Additional days awarded)</a> information is correct.
+        </p>
+    </div>
+</div>
+                
+{% elif data['toDo'] == 'changesApplied' %}
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+    </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            Some of the information for Joe Bloggs has changed. You now need to <a href="#">calculate the release dates</a>. 
+        </p>
+    </div>
+</div>
+ 
+
+{% else %}
+
+{% endif %} 
+
+
 <!-- Release dates -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -26,7 +63,7 @@
 
 </div>
 
-{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
+{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %} 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
@@ -36,7 +73,7 @@
 
 </div>
 
-{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedTrue' %}
+{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedTrue' %} 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
@@ -46,7 +83,7 @@
 
 </div>
 
-{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedFalse' %}
+{% elif data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'adjustmentsReleasedFalse' %} 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
        
@@ -56,22 +93,7 @@
 
 </div>
  
-{% else %}
-
-
-
-    {% if data['toDo'] == "reviewAda" %}
-    <article class="moj-ticket-panel govuk-!-margin-bottom-6" aria-label="Sub navigation 1">
-        <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
-            <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA adjudication(s) before calculating release dates</h2>
-            <p>Review and approve adjudications where additional days have been awarded.</p>
-            <p><a href="review-adas-padas.html" class="govuk-link">Review</a></p>
-        </section>
-    </article>
-
-    {% else %}
-    {% endif %}
-
+{% else %}  
 
  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -210,7 +232,7 @@
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
                         <th scope="col" class="govuk-table__header">Calculation date</th>
-                        <th scope="col" class="govuk-table__header">Reason</th>
+                        <th scope="col" class="govuk-table__header">Calculation reason</th>
                         <th scope="col" class="govuk-table__header">Establishment</th>
                         <th scope="col" class="govuk-table__header">Source</th>
                     </tr>
@@ -229,7 +251,7 @@
                         <td class="govuk-table__cell"><a href="calculation-history/11-03-2023/check-sentence-and-offence-information">11 March 2023</a></td>
                         <td class="govuk-table__cell" data-sort-value="8850">Transfer check</td>
                         <td class="govuk-table__cell">HMP Kirkham</td>
-                        <td class="govuk-table__cell">Calculate Release Dates Service</td> 
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
                     </tr>
 
                     {% endif %}
@@ -237,7 +259,7 @@
                         <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">2 January 2023</a></td>
                         <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
                         <td class="govuk-table__cell">HMP Bristol</td>
-                        <td class="govuk-table__cell">Calculate Release Dates Service</td> 
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
                     </tr>
                 </tbody>
             </table>

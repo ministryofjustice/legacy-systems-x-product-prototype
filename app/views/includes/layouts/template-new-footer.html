@@ -290,33 +290,48 @@ Court cases and release dates
       
     </nav> 
 </header> 
-
-{% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-
-{% else %} 
-
 <div class="service-header">
-  <div class="service-header__container"> 
-      <a href="#"><span class="service-header__service-name">Court cases and release dates</span></a>
-  </div>
-</div>
+    <div class="service-header__container">
 
-{% endif %}  
+        {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+    
+        {% else %}  
+        <a href="overview"><span class="service-header__service-name">Court cases and release dates</span></a>
+        {% endif %}  
+    </div>
+</div>
 {% endblock %}
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 {% block main %}
 <main class="govuk-main-wrapper-govuk-body">
     <div class="govuk-width-container">
         <!-- Breadcrumbs -->
-        <!-- {% block breadcrumbs %} -->
-        <!--         <div class="govuk-breadcrumbs">
+        {% block breadcrumbs %}
+        <!-- <a href="#" class="govuk-back-link">Back</a> -->
+        <!-- <div class="govuk-breadcrumbs">
             <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="#">Digital Prison Services</a>
+                </li>
                 <li class="govuk-breadcrumbs__list-item">
                     <a class="govuk-breadcrumbs__link" href="#">Back to search</a>
                 </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <span>Court cases and release dates</span>
+                </li>
             </ol>
-        </div>
-        {% endblock %} -->
+        </div> -->
+        <!-- <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+                <li class="govuk-breadcrumbs__list-item">
+                    <a class="govuk-breadcrumbs__link" href="#">Prisoner profile</a>
+                </li>
+                <li class="govuk-breadcrumbs__list-item">
+                    <span>Court cases and release dates</span>
+                </li>
+            </ol>
+        </div> -->
+        {% endblock %}
         <!--         {% block title %}
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
@@ -327,20 +342,285 @@ Court cases and release dates
         </div>
         {% endblock %} -->
         {% block banner %}
-     
-        {% set person = {
-          firstName: 'Joe',
-          lastName: 'Bloggs',
-          prisonerNumber: 'A1234BC',
-          dateOfBirth: '1987-04-01',
-          status: 'Active in',
-          prisonName: 'HMP Kirkham',
-          cellLocation: '5-2-A-051'
-      } %}
 
-      {{ miniProfile(person, '/public/images/test-image-3.jpeg', '#') }}
+            {% set person = { 
+                firstName: 'Joe',
+                lastName: 'Bloggs',
+                prisonerNumber: 'A1234BC',
+                dateOfBirth: '1987-04-01',
+                status: 'Active in',
+                prisonName: 'HMP Kirkham',
+                cellLocation: '5-2-A-051'
+            } %}
+
+            {{ miniProfile(person, '/public/images/test-image-3.jpeg', '#') }}
+
         {% endblock %}
         {% block nav %}
+
+
+        {% if overviewActive == true %} 
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
+                    </li> 
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                    </li> -->
+                </ul>
+            </nav>
+            {% elif data['viewOption'] == 'RSReleasedTrue' %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% else %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% endif %}
+
+        {% elseif releaseDatesActive == true %}
+
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                    </li> 
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link"  aria-current="page"href="release-dates">Calculations and release dates</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                    </li> -->
+                </ul>
+            </nav>
+            {% else %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" aria-current="page" href="release-dates">Calculations and release dates</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% endif %}
+
+        {% elseif courtCasesActive == true %} 
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  aria-current="page" href="court-cases">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  href="adjustments">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        {% elseif adjustmentsActive == true %}
+
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                    </li> 
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" aria-current="page" href="adjustments">Adjustments</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                    </li> -->
+                </ul>
+            </nav>
+            {% else %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" aria-current="page"  href="adjustments">Adjustments</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% endif %}
+        
+        {% elseif documentsActive == true %}
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <!-- <a class="moj-sub-navigation__link" aria-current="page" href="documents">Documents</a> -->
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        {% elseif timelineActive == true %}
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="overview">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  aria-current="page" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        {% else %}
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"href="overview">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates">Calculations and release dates</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+        {% endif %}
+
 
         {% endblock %}
         {% block content %}
@@ -350,54 +630,141 @@ Court cases and release dates
 {% endblock %}
 {% if useAutoStoreData %}
 {% block footer %}
-<footer class="govuk-footer govuk-!-display-none-print govuk-!-margin-top-8" role="contentinfo">
-    <div class="moj-width-container ">
-        <div class="govuk-footer__meta">
-            <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
-                <h2 class="govuk-visually-hidden">Support links</h2>
-                <div class="govuk-footer__meta-custom">
-                    <h3 class="govuk-heading-m">Support</h3>
-                    <p class="govuk-footer__meta-custom govuk-list govuk-!-margin-bottom-8">
-                        Email <a class="govuk-link govuk-footer__link" href="mailto:james.mckechnie@digital.justice.gov.uk">ashley.wheat<wbr>@digital.justice.gov.uk</a> for support.<br>
-                    </p>
+<footer class="connect-dps-common-footer govuk-!-display-none-print" role="contentinfo">
+    <div class="govuk-width-container">
+        
+            <div class="govuk-grid-row">
+                <div id="connect-dps-common-footer-services" class="govuk-grid-column-three-quarters connect-dps-common-footer__services-menu">
+                    <h2>Services</h2>
+                    <ul class="govuk-list">
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://manage-adjudications-dev.hmpps.service.justice.gov.uk">Adjudications</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://check-my-diary-dev.prison.service.justice.gov.uk?fromDPS=true">Check my diary</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://digital-dev.prison.service.justice.gov.uk/establishment-roll">Establishment roll check</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://digital-dev.prison.service.justice.gov.uk/global-search">Global search</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://incentives-ui-dev.hmpps.service.justice.gov.uk">Incentives</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://manage-offences-dev.hmpps.service.justice.gov.uk">Manage offences</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://digital-dev.prison.service.justice.gov.uk/manage-prisoner-whereabouts">Prisoner whereabouts</a></li>
+                        
+                            <li><a class="connect-dps-common-footer__link" href="https://submit-a-mercury-report-dev.hmpps.service.justice.gov.uk">Submit an Intelligence Report</a></li>
+                        
+                    </ul>
                 </div>
-                <ul class="govuk-footer__inline-list">
-                    <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="#">
-                            Privacy
-                        </a>
-                    </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="#">
-                            Accessibility statement
-                        </a>
-                    </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="#">
-                            Cookies
-                        </a>
-                    </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="/manage-prototype/clear-data">
-                            Clear data
-                        </a>
-                    </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="">
-                        </a>
-                    </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a class="govuk-footer__link" href="">
-                        </a>
-                    </li>
-                </ul>
+                <div class="govuk-grid-column-one-quarter">
+                    <div class="connect-dps-common-footer__help">
+                        <h2>Support</h2>
+                        <p><a class="govuk-link govuk-footer__link" href="mailto:calculatereleasedates@digital.justice.gov.uk?subject=Calculate release dates - Support">Email the specialist support team</a> for help.</p>
+                    </div>
+                </div>
             </div>
-            <div class="govuk-footer__meta-item">
-                <a class="govuk-footer__link govuk-footer__copyright-logo" href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/">© Crown copyright</a>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="connect-dps-common-footer__support-links">
+                        <h2 class="govuk-visually-hidden">Support links</h2>
+
+                        <ul class="connect-dps-common-footer__inline-list">
+                            <li class="connect-dps-common-footer__inline-list-item">
+                                <a class="connect-dps-common-footer__link" href="https://eu.surveymonkey.com/r/Z2MBZZ3" target="_blank" referrerpolicy="no-referrer" rel="noopener">
+                                    Feedback (opens in a new tab)
+                                </a>
+                            </li>
+
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://calculate-release-dates-dev.hmpps.service.justice.gov.uk/accessibility">
+                                        Accessibility
+                                    </a>
+                                </li>
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://dps-dev.prison.service.justice.gov.uk/terms-and-conditions">
+                                        Terms and conditions
+                                    </a>
+                                </li>
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://dps-dev.prison.service.justice.gov.uk/privacy-policy">
+                                        Privacy policy
+                                    </a>
+                                </li>
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://dps-dev.prison.service.justice.gov.uk/cookies-policy">
+                                        Cookies policy
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
             </div>
-        </div>
+        
     </div>
 </footer>
+<!-- 
+<footer class="govuk-footer govuk-!-display-none-print" role="contentinfo" data-gtm-vis-recent-on-screen167709157_20="1076" data-gtm-vis-first-on-screen167709157_20="1076" data-gtm-vis-total-visible-time167709157_20="100" data-gtm-vis-has-fired167709157_20="1">
+    <div class="govuk-width-container">
+        
+            <div class="govuk-grid-row">
+                <div  class="govuk-grid-column-three-quarters connect-dps-common-footer__services-menu"> 
+                    <div class="connect-dps-common-footer__help">
+                        <h2>Support</h2>
+                        <p>Email <a class="govuk-link govuk-footer__link" href="mailto:calculatereleasedates@digital.justice.gov.uk?subject=Calculate release dates - Support">calculatereleasedates@digital.justice.gov.uk</a> for support.</p>
+                    </div>  
+                   
+                </div>
+            
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="connect-dps-common-footer__support-links">
+                        <h2 class="govuk-visually-hidden">Support links</h2>
+
+                        <ul class="connect-dps-common-footer__inline-list">
+                            <li class="connect-dps-common-footer__inline-list-item">
+                                <a class="connect-dps-common-footer__link" href="https://eu.surveymonkey.com/r/Z2MBZZ3" target="_blank" referrerpolicy="no-referrer" rel="noopener">
+                                    Feedback (opens in a new tab)
+                                </a>
+                            </li>
+
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://calculate-release-dates-dev.hmpps.service.justice.gov.uk/accessibility">
+                                        Accessibility
+                                    </a>
+                                </li>
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://dps-dev.prison.service.justice.gov.uk/terms-and-conditions">
+                                        Terms and conditions
+                                    </a>
+                                </li>
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://dps-dev.prison.service.justice.gov.uk/privacy-policy">
+                                        Privacy policy
+                                    </a>
+                                </li>
+                            
+                                <li class="connect-dps-common-footer__inline-list-item">
+                                    <a class="connect-dps-common-footer__link" href="https://dps-dev.prison.service.justice.gov.uk/cookies-policy">
+                                        Cookies policy
+                                    </a>
+                                </li>
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        
+    </div>
+</footer> -->
 {% endblock %}
 {% endif %}
 {% block bodyEnd %}

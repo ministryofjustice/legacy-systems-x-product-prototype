@@ -185,13 +185,13 @@
           
     
         
-          
+<!--           
             <li class="govuk-heading-s">
               <a href="DPS-prisoner-profile-offences" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" data-qa="Offences">Offences</a>
             </li>
           
     
-        
+         -->
           
             <li class="govuk-heading-s">
               <a href="/prisoner/A0227DZ/work-and-skills" class="govuk-link govuk-link--no-visited-state govuk-link--no-underline" data-qa="Work and skills">Work and skills</a>
@@ -234,52 +234,200 @@
     
       </section>
     </div>
+
+
+    {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+    <!-- <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" data-qa="overview-mini-summary-group-a">
+        <div class="govuk-grid-row hmpps-miniSummaryWrapper" data-qa="mini-summary-list-macro">
+          <div class="govuk-grid-column-full">
+            <div class="hmpps-summary-card " id=""> 
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>Release dates</h2>
+              </div>
+              <div class="hmpps-summary-card__body">
+                <div class="govuk-grid-row card-body"> 
+                  <div class="govuk-grid-column-full">
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Date of last calculation</p>  
+                    <p class="govuk-body govuk-!-margin-bottom-1">Thursday, 19 February 2024</p>  
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-1">Calculation reason</p>  
+                    <p class="govuk-body govuk-!-margin-bottom-1">Initial calculation</p>  
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                              Date of last calculation 
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                              <p class="govuk-body">Thursday, 19 February 2024</p>
+                          </dd>
+                      </div> 
+                      <div class="govuk-summary-list__row">
+                          <dt class="govuk-summary-list__key">
+                              Calculation reason
+                          </dt>
+                          <dd class="govuk-summary-list__value">
+                              <p class="govuk-body">Initial calculation</p>
+                          </dd>
+                      </div> 
+                    </dl> 
+                 
+ 
+                    <p class="govuk-body govuk-!-margin-top-4">
+                      <a data-qa="overview-offences-view-all" href="release-dates" class="govuk-link govuk-link--no-visited-state">Calculations and release dates</a>
+                    </p> 
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    {% elif data['viewOption'] == 'adjustmentsReleasedTrue' or 'RSReleasedTrue' %}
+
+    <!-- <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full" data-qa="overview-mini-summary-group-a">
+        <div class="govuk-grid-row hmpps-miniSummaryWrapper" data-qa="mini-summary-list-macro">
+          <div class="govuk-grid-column-full">
+            <div class="hmpps-summary-card " id="">    
+              <div class="hmpps-summary-card__header" data-qa="summary-header">
+                <h2>Court cases and release dates</h2>
+              </div>
+              <div class="hmpps-summary-card__body">
+                <div class="govuk-grid-row card-body"> 
+                  <div class="govuk-grid-column-one-half"> 
+                    <p class="govuk-body card-label">Active court cases</p> 
+                    <p class="govuk-body">2</p>
+                    <p class="govuk-body card-label">Next court appearance </p> 
+                    <p class="govuk-body">Thursday, 29 February 2024</p>
+                  </div> 
+
+                  <div class="govuk-grid-column-one-half"> 
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Last calculation</p>  
+                    <p class="govuk-body govuk-!-margin-bottom-1">Monday, 19 February 2024</p>  
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-1">Calculation reason</p>  
+                    <p class="govuk-body govuk-!-margin-bottom-1">Initial calculation</p>   
+                  </div>
+                  <div class="govuk-grid-column-full"> 
+                    <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+                  </div> 
+                </div> 
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+
+    {% else %} 
+
+    {% endif %}
+
+
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-full" data-qa="overview-mini-summary-group-a">
         
         <div class="govuk-grid-row hmpps-miniSummaryWrapper" data-qa="mini-summary-list-macro">
+                
+          <!-- <div class="govuk-grid-column-two-thirds">
+                  <div class="hmpps-summary-card " id="">    
+                    <div class="hmpps-summary-card__header" data-qa="summary-header">
+                      <h2>Court cases and release dates</h2>
+                    </div>
+                    <div class="hmpps-summary-card__body">
+                      <div class="govuk-grid-row card-body"> 
+                        <div class="govuk-grid-column-one-half"> 
+                          <p class="govuk-body card-label">Active court cases</p> 
+                          <p class="govuk-body">2</p>
+                          <p class="govuk-body card-label">Next court appearance </p> 
+                          <p class="govuk-body">Thursday, 29 February 2024</p>
+                        </div> 
+      
+                        <div class="govuk-grid-column-one-half"> 
+                          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Last calculation</p>  
+                          <p class="govuk-body govuk-!-margin-bottom-1">Monday, 19 February 2024</p>  
+                          <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-1">Calculation reason</p>  
+                          <p class="govuk-body govuk-!-margin-bottom-1">Initial calculation</p>   
+                        </div>
+                        <div class="govuk-grid-column-full"> 
+                          <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+                        </div> 
+                      </div> 
+                    </div>
+                  </div>
+                </div>  -->
+
+         
             
-                <div class="govuk-grid-column-one-third">
+    
+      {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+                <div class="govuk-grid-column-two-thirds">
                     
       <div class="hmpps-summary-card " id="">
         
           <div class="hmpps-summary-card__header" data-qa="summary-header">
-            <h2>Money</h2>
+            <h2>Release dates</h2>
           </div>
         
         <div class="hmpps-summary-card__body">
           <div class="govuk-grid-row card-body ">
           <div class="govuk-grid-column-full">
             
-              <p class="govuk-body card-label">
-                Spends
-              </p>
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Last calculation</p>  
+            <p class="govuk-body govuk-!-margin-bottom-1">Monday, 19 February 2024</p>  
+            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-1">Calculation reason</p>  
+            <p class="govuk-body govuk-!-margin-bottom-1">Initial calculation</p> 
             
-            
-              <p class="govuk-body hmpps-mini-card__big ">
-                £156.00
-              </p>
-            
-            <p class="govuk-body card-label">
-              Private cash
-            </p>
-            <p class="govuk-body hmpps-mini-card__big">
-                
-                    £0.00
-                
-            </p>
-            
-            <p class="govuk-body hmpps-mini-card__link">
-              <a href="/prisoner/A0227DZ/money/spends" class="govuk-link govuk-link--no-visited-state">
-                Transactions and savings
-              </a>
-            </p>
+            <p class="govuk-body govuk-!-margin-top-4">
+              <a data-qa="overview-offences-view-all" href="release-dates" class="govuk-link govuk-link--no-visited-state">Calculations and release dates</a>
+            </p> 
           </div>
         </div>
         </div>
       </div>
     
                 </div>
+
+      
+    {% elif data['viewOption'] == 'adjustmentsReleasedTrue' or 'RSReleasedTrue' %}
+                <div class="govuk-grid-column-two-thirds">
+                    
+      <div class="hmpps-summary-card " id="">
+        
+          <div class="hmpps-summary-card__header" data-qa="summary-header">
+            <h2>Court cases and release dates</h2>
+          </div>
+        
+        <div class="hmpps-summary-card__body">
+          <div class="govuk-grid-row card-body ">
+            <div class="govuk-grid-column-one-half"> 
+              <p class="govuk-body card-label">Active court cases</p> 
+              <p class="govuk-body">2</p>
+              <p class="govuk-body card-label">Next court appearance </p> 
+              <p class="govuk-body">Thursday, 29 February 2024</p>
+            </div> 
+
+            <div class="govuk-grid-column-one-half"> 
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-1">Last calculation</p>  
+              <p class="govuk-body govuk-!-margin-bottom-1">Monday, 19 February 2024</p>  
+              <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-3 govuk-!-margin-bottom-1">Calculation reason</p>  
+              <p class="govuk-body govuk-!-margin-bottom-1">Initial calculation</p>   
+            </div>
+            <div class="govuk-grid-column-full"> 
+              <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+            </div> 
+          </div>
+        </div>
+        </div>
+      </div>
+     
+
+              
+    {% else %} 
+
+    {% endif %}
             
                 <div class="govuk-grid-column-one-third">
                     
@@ -322,6 +470,36 @@
       </div>
     
                 </div>
+                <div class="govuk-grid-column-one-third">
+        
+    
+                  <div class="hmpps-summary-card " id="">
+                    
+                      <div class="hmpps-summary-card__header" data-qa="summary-header">
+                        <h2>Alerts and security</h2>
+                      </div>
+                    
+                    <div class="hmpps-summary-card__body">
+                      <dl class="govuk-summary-list" data-qa="overview-alerts-summary">
+                    <div class="govuk-summary-list__row">
+                        <div class="govuk-!-padding-bottom-3 govuk-!-padding-top-2">
+                            <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">Active alerts</dt>
+                            <dd class="govuk-!-margin-left-0 govuk-!-margin-bottom-2" data-qa="overview-active-alerts">0</dd>
+                            <dd class="govuk-!-margin-left-0"><a href="/prisoner/A0227DZ/alerts/active" class="govuk-link govuk-link--no-visited-state">Alerts</a></dd>
+                        </div>
+                    </div>
+                    <div class="govuk-summary-list__row--no-border">
+                        <div class="govuk-!-padding-top-3">
+                            <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">Non-associations in Moorland (HMP &amp; YOI)</dt>
+                            <dd class="govuk-!-margin-left-0 govuk-!-margin-bottom-2" data-qa="overview-non-association-count">0</dd>
+                            <dd class="govuk-!-margin-left-0" data-qa="overview-non-associations-link"><a href="https://non-associations-dev.hmpps.service.justice.gov.uk/prisoner/A0227DZ/non-associations" class="govuk-link govuk-link--no-visited-state">Non-associations</a></dd>
+                        </div>
+                    </div>
+                </dl>
+                    </div>
+                  </div>
+                
+                  </div>
             
                 <div class="govuk-grid-column-one-third">
                     
@@ -367,43 +545,56 @@
       </div>
     
                 </div>
+                <div class="govuk-grid-column-one-third">
+                    
+                  <div class="hmpps-summary-card " id="">
+                    
+                      <div class="hmpps-summary-card__header" data-qa="summary-header">
+                        <h2>Money</h2>
+                      </div>
+                    
+                    <div class="hmpps-summary-card__body">
+                      <div class="govuk-grid-row card-body ">
+                      <div class="govuk-grid-column-full">
+                        
+                          <p class="govuk-body card-label">
+                            Spends
+                          </p>
+                        
+                        
+                          <p class="govuk-body hmpps-mini-card__big ">
+                            £156.00
+                          </p>
+                        
+                        <p class="govuk-body card-label">
+                          Private cash
+                        </p>
+                        <p class="govuk-body hmpps-mini-card__big">
+                            
+                                £0.00
+                            
+                        </p>
+                        
+                        <p class="govuk-body hmpps-mini-card__link">
+                          <a href="/prisoner/A0227DZ/money/spends" class="govuk-link govuk-link--no-visited-state">
+                            Transactions and savings
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                
+                            </div>
             
         </div>
     
       </div>
     </div>
     <div class="govuk-grid-row hmpps-miniSummaryWrapper">
-      <div class="govuk-grid-column-one-third">
-        
-    
-      <div class="hmpps-summary-card " id="">
-        
-          <div class="hmpps-summary-card__header" data-qa="summary-header">
-            <h2>Alerts and security</h2>
-          </div>
-        
-        <div class="hmpps-summary-card__body">
-          <dl class="govuk-summary-list" data-qa="overview-alerts-summary">
-        <div class="govuk-summary-list__row">
-            <div class="govuk-!-padding-bottom-3 govuk-!-padding-top-2">
-                <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">Active alerts</dt>
-                <dd class="govuk-!-margin-left-0 govuk-!-margin-bottom-2" data-qa="overview-active-alerts">0</dd>
-                <dd class="govuk-!-margin-left-0"><a href="/prisoner/A0227DZ/alerts/active" class="govuk-link govuk-link--no-visited-state">Alerts</a></dd>
-            </div>
-        </div>
-        <div class="govuk-summary-list__row--no-border">
-            <div class="govuk-!-padding-top-3">
-                <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">Non-associations in Moorland (HMP &amp; YOI)</dt>
-                <dd class="govuk-!-margin-left-0 govuk-!-margin-bottom-2" data-qa="overview-non-association-count">0</dd>
-                <dd class="govuk-!-margin-left-0" data-qa="overview-non-associations-link"><a href="https://non-associations-dev.hmpps.service.justice.gov.uk/prisoner/A0227DZ/non-associations" class="govuk-link govuk-link--no-visited-state">Non-associations</a></dd>
-            </div>
-        </div>
-    </dl>
-        </div>
-      </div>
-    
-      </div>
-      <div class="govuk-grid-column-two-thirds">
+      
+      
+      <div class="govuk-grid-column-full">
         
     
       <div class="hmpps-summary-card " id="">
@@ -808,45 +999,6 @@
       
     </div>
     </div>
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full" data-qa="overview-offences">
-        
-    
-    
-      <div class="hmpps-summary-card " id="">
-        
-          <div class="hmpps-summary-card__header" data-qa="summary-header">
-            <h2>Offences and release dates</h2>
-          </div>
-        
-        <div class="hmpps-summary-card__body">
-          <div class="govuk-grid-row">
-          <div class="govuk-grid-column-full">
-            <p data-qa="overview-main-offence" class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-1">Main offence</p>
-            <p>
-                Not entered
-            </p>
-            <hr class="govuk-section-break govuk-section-break--visible">
-            <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-4 govuk-!-margin-bottom-1">Imprisonment status</p>
-            <p> ORA 2020 Standard Determinate Sentence</p>
-            
-    
-            
-            <hr class="govuk-section-break govuk-section-break--visible">
-            <p class="govuk-body govuk-!-margin-top-4">
-                <a data-qa="overview-offences-view-all" href="/prisoner/A0227DZ/offences" class="govuk-link govuk-link--no-visited-state">
-                
-                 Offences, sentences and release dates
-                
-                </a>
-            </p>
-          </div>
-        </div>
-        </div>
-      </div>
-    
-      </div>
-    </div>
     
         </div>
         <div class="govuk-grid-column-one-quarter">
@@ -862,7 +1014,7 @@
         <ul class="hmpps-actions-block__list">
           
           {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-          <li> 
+          <!-- <li> 
             <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="align-self: left; margin-right: 10px;">
               <mask id="mask0_6302_14270" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
               <rect width="40" height="40" fill="#D9D9D9"/>
@@ -883,7 +1035,7 @@
               </svg>
               
             <a href="release-dates?navOption=adjustmentsReleasedFalse" class="govuk-link govuk-link--no-visited-state" data-qa="calculate-release-dates-action-link" referrerpolicy="no-referrer-when-downgrade">Calculate release dates</a>
-          </li>
+          </li> -->
 
           {% elif data['viewOption'] == 'adjustmentsReleasedTrue' %}    
           
@@ -1035,7 +1187,7 @@
 
        
       
-        <div class="hmpps-summary-card " id="">
+        <!-- <div class="hmpps-summary-card " id="">
           <div class="hmpps-summary-card__body">
             <div class="govuk-grid-row card-body hmpps-summary-card__no-header">
               <div class="govuk-grid-column-full">
@@ -1050,7 +1202,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
 
       </aside>
     </div>
