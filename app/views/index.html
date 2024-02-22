@@ -32,6 +32,91 @@
               </div>
             
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-5">
+                            Version 7.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                            For research
+                            </strong>
+
+                            
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In design
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                <div id="version-7-1" class="govuk-accordion__section-content" aria-labelledby="version-7_1">
+                    <div class="govuk-grid-row">
+                        <div class="govuk-grid-column-full"> 
+                            <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                        <form action="post">
+                            <div class="govuk-button-group"> 
+                               
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v7_1/DPS-home",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+
+                                        {{govukButton({
+                                            text: "Launch from prisoner profile",
+                                            attributes: {
+                                            "formaction": "v7_1/DPS-prisoner-profile?viewOption=RSReleasedTrue",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+    
+    
+                                        {{govukButton({
+                                            text: "Launch from overview",
+                                            attributes: {
+                                            "formaction": "v7_1/overview?toDo=adaFirstTime",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+    
+    
+     
+                            </div>
+                        </form>
+                        </div>
+                        
+                            <div class="govuk-grid-column-three-quarters"> 
+                            <h4 class="govuk-heading-m">What we are testing</h4> 
+                            <p class="govuk-body">This remote round of UR is due to take place in wc 26th February 2023.</p> 
+                            <p class="govuk-body">In this round, we aim to:</p> 
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>Testing navigation DPS to CCRD, Adjustments to CRDS in an "Approve ADAs" scenario.</li>
+                                <li>Observe how users react to and engage with new features (adjustments summary panel, things to do component).</li>
+                                <li>Test review adjudications and approve ADA flow.</li> 
+                            </ul>   
+                            <h4 class="govuk-heading-m">Supporting documents</h4>
+                            <ul class="govuk-list"> 
+                                <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764579617306700&cot=14">UR planning (miro)</a></li>  
+                                <li><a class="govuk-link" target="external" href="#">Discussion guide (google docs)</a></li> 
+                                <!-- <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578265455873&cot=14">UR playback (miro)</a></li>  -->
+                            </ul> 
+
+                            <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                            <h4 class="govuk-heading-m">Scenario 1</h4> 
+                            <p>...</p>
+
+                            <p><a class="govuk-link" href="#">...</a></p>  -->
+
+                        </div>
+                    </div>
+                </div>
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">

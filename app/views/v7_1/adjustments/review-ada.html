@@ -1,0 +1,284 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+
+<div class="moj-width-container">
+{{govukBackLink({ text: "Back", "href": "javascript: window.history.go(-1)"
+})}}
+</div>
+
+<div class="moj-width-container">
+    <div class="Adas">
+
+            <h1 class="govuk-heading-xl">
+                <!-- <span class="govuk-caption-xl">Adjustments</span> -->
+                Review adjudications
+            </h1>
+            <p>
+                Check that the existing ADAs are correct, then review and approve pending ADAs.
+            </p>
+            <h2 class="govuk-heading-m">Awarded ADAs</h2>
+            <p>These adjudications have been added as an adjustment and will be applied to sentence calculations.</p>
+            <table class="govuk-table govuk-!-margin-bottom-8">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 6 Mar 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header " scope="col">Charge number</th>
+                    <th class="govuk-table__header" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="govuk-table__cell">
+                            3822448
+                        </td>
+                        <td class="govuk-table__cell govuk-!-width-one-third">
+                            Forthwith
+                        </td>
+                        <td class="govuk-table__cell">
+                            Nottingham prison
+                        </td>
+                        <td class="govuk-table__cell table-font-xsmall">
+                            <span class="govuk-tag govuk-tag--blue govuk-!-font-size-16 ">Awarded</span>
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell ">8</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 12 Jun 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header" scope="col">Charge number</th>
+                    <th class="govuk-table__header" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3812489
+                        </td>
+                        <td class="govuk-table__cell govuk-!-width-one-third">
+                            Concurrent
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            <span class="govuk-!-font-size-16 govuk-tag govuk-tag--blue">Awarded</span>
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell  ">6 </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3812491
+                        </td>
+                        <td class="govuk-table__cell">
+                            Concurrent
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            <span class="govuk-!-font-size-16 govuk-tag govuk-tag--blue">Awarded</span>
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell ">6 </td>
+                    </tr>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">
+                            3812577
+                        </td>
+                        <td class="govuk-table__cell govuk-!-width-one-third">
+                            Concurrent
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            Nottingham prison
+                        </td>
+                        <td class="govuk-table__cell  ">
+                            <span class="govuk-!-font-size-16 govuk-tag govuk-tag--blue">Awarded</span>
+                        </td>
+                        <!-- Days -->
+                        <td class="govuk-table__cell">6 </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p class="govuk-!-font-weight-bold govuk-!-text-align-right govuk-!-margin-right-9">Total ADAs taken into calculation 14</p>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Suspended ADAs</h2>
+            <p class="govuk-!-width-three-quarters">These adjudications are currently suspended and cannot be applied to a sentence calculation until they have been awarded.
+                Refer to the team responsible for managing adjudications if these are no longer suspended and need to be added as an adjustment.</p>
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 15 Dec 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header" scope="col">Charge number</th>
+                    <th class="govuk-table__header govuk-!-width-one-third" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header" scope="col">Expires</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr class="govuk-table__row">
+
+                    <td class="govuk-table__cell">
+                        3765949
+                    </td>
+                    <td class="govuk-table__cell ">
+                        Forthwith
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Nottingham prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class="govuk-!-font-size-16 govuk-tag govuk-tag--red">Suspended</span>
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        6 Jun 2023
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell ">8 </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class="govuk-!-font-weight-bold govuk-!-text-align-right govuk-!-margin-right-9">Total suspended ADAs 8</p>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+
+            <h2 class="govuk-heading-m govuk-!-margin-top-8">Awarded ADAs pending approval</h2>
+            <p class="govuk-!-width-three-quarters">These adjudications have not yet been added as an adjustment and will not be applied to sentence calculations. Until they have been approved</p>
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved  8 Aug 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header" scope="col">Charge number</th>
+                    <th class="govuk-table__header" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr class="govuk-table__row">
+
+                    <td class="govuk-table__cell">
+                        3765949
+                    </td>
+                    <td class="govuk-table__cell govuk-!-width-one-third">
+                        Forthwith
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Nottingham prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class=" govuk-tag govuk-tag--green govuk-!-margin-bottom-1  govuk-!-font-size-16">Awaiting approval</span><br>
+                        <span class=" govuk-tag govuk-tag--purple  govuk-!-font-size-16">Prospective</span>
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell ">3 </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 12 Jun 2023</caption>
+                <thead class="govuk-table__head">
+                <tr>
+                    <th class="govuk-table__header" scope="col">Charge number</th>
+                    <th class="govuk-table__header" scope="col">To be served</th>
+                    <th class="govuk-table__header" scope="col">Heard at</th>
+                    <th class="govuk-table__header" scope="col">Status</th>
+                    <th class="govuk-table__header " scope="col">Days</th>
+                </tr>
+
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="govuk-table__cell">
+                        3583998
+                    </td>
+                    <td class="govuk-table__cell govuk-!-width-one-third">
+                        Forthwith
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Belmarsh prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class="govuk-!-font-size-16 govuk-tag govuk-tag--green">Awaiting approval</span>
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell   ">7</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        3584019
+                    </td>
+                    <td class="govuk-table__cell">
+                        Consecutive to 3583998
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Belmarsh prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class="govuk-!-font-size-16 govuk-tag govuk-tag--green">Awaiting approval</span>
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell  ">7 </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                        3584030
+                    </td>
+                    <td class="govuk-table__cell">
+                        Consecutive to 3584019
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        Belmarsh prison
+                    </td>
+                    <td class="govuk-table__cell  ">
+                        <span class=" govuk-!-font-size-16 govuk-tag govuk-tag--green">Awaiting approval</span>
+                    </td>
+                    <!-- Days -->
+                    <td class="govuk-table__cell   ">5 </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <p class=" govuk-!-font-weight-bold govuk-!-text-align-right govuk-!-margin-right-9">Total ADAs taken into calculation 22</p>
+            <hr class="govuk-section-break govuk-section-break--visible">
+
+            <div class="govuk-inset-text">
+                If you think some information is wrong, update it NOMIS or contact the adjudications team for support, then <a href="">reload this page</a>.
+            </div>
+            <h2 class="govuk-heading-m">Approve pending awarded days</h2>
+            <p class="govuk-body govuk-!-width-two-thirds">
+                Once you have checked all the adjudication information is correct, submit the days awarded.
+            </p>
+            <p>By approving this, this will update the data in NOMIS.</p>
+            <div class="govuk-!-margin-top-8 govuk-button-group">
+                <form method="post" action="../adjustments?toDo=changesApplied">
+                <button class="govuk-button" data-module="govuk-button">Approve</button>
+                </form>
+            </div>
+            <!-- <a href="intercept-page-changes.html">Cancel</a> --> 
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

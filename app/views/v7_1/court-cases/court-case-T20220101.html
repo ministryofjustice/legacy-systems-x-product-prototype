@@ -1,0 +1,117 @@
+{% extends "../../includes/layouts/template.html" %}
+{% set courtCasesActive = true %}
+{% block content %}
+<!-- Court cases -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <a onclick="history.back()" class="govuk-back-link govuk-!-margin-top-0 govuk-!-margin-bottom-4">Back</a>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-heading-l">
+            <span class="govuk-caption-l"></span>Court case: T20220101
+        </h2>
+        <div class="action-button-group govuk-!-margin-bottom-0">
+            <a href="a#"><button class="govuk-button" data-module="govuk-button">
+                    Add a sentence
+                </button></a>
+        </div>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Court date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    1 July 2022
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Court name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Leeds Crown Court
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">2 sentences</p>
+        <div class="sentence-list">
+            <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                    <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count 1</h3>
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                        Conspire to commit a burglary dwelling with intent to steal
+                    </h4>
+                    <p class="govuk-body-s">Committed from 12 May 2021 to 16 October 2021</p>
+                    <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">CJA Code</th>
+                                <td class="govuk-table__cell">2020</td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
+                                <td class="govuk-table__cell">Sentencing Code Standard Determinate Sentence</td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
+                                <td class="govuk-table__cell">1 July 2022</td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                                <td class="govuk-table__cell">0 years 75 months 0 weeks 0 days
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                <td class="govuk-table__cell">Concurrent
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+                <div class="govuk-grid-column-full govuk-!-margin-top-4">
+                    <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count 2</h3>
+                    <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                        Robbery
+                    </h4>
+                    <p class="govuk-body-s">Committed on 25 June 2021</p>
+                    <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">CJA Code</th>
+                                <td class="govuk-table__cell">2020</td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
+                                <td class="govuk-table__cell">Sentencing Code Standard Determinate Sentence</td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
+                                <td class="govuk-table__cell">1 July 2022</td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                                <td class="govuk-table__cell">15 years 0 months 0 weeks 0 days
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row govuk-body-s">
+                                <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                                <td class="govuk-table__cell">Concurrent
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

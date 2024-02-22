@@ -1,0 +1,132 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    {{govukBackLink({ text: "Back", "href": "javascript: window.history.go(-1)"
+    })}}
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="check-sentence-and-offence-information">
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                            Why are you calculating release dates for Joe Bloggs?
+                            </h1>
+                        </legend>
+
+                        <div id="calculationReasonId-hint" class="govuk-hint">
+                            Select a reason for the calculation.
+                        </div>
+
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                Initial calculation
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                Transfer check
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-3" name="calculationReasonId" type="radio" value="3" data-qa="reasonRadio-3">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-3">
+                                Lodged warrant
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-4" name="calculationReasonId" type="radio" value="4" data-qa="reasonRadio-4">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-4">
+                                ADA - Additional Days Awarded
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-5" name="calculationReasonId" type="radio" value="5" data-qa="reasonRadio-5">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-5">
+                                RADA - Restoration of Added Days Awarded
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-6" name="calculationReasonId" type="radio" value="6" data-qa="reasonRadio-6">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-6">
+                                Recording a non-calculated date
+                                </label> 
+                            </div>
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-7" name="calculationReasonId" type="radio" value="7" data-qa="reasonRadio-7">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-7">
+                                Further sentences and terms
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-8" name="calculationReasonId" type="radio" value="8" data-qa="reasonRadio-8">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-8">
+                                14 day check
+                                </label> 
+                            </div>
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-9" name="calculationReasonId" type="radio" value="9" data-qa="reasonRadio-9">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-9">
+                                2 day check
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-10" name="calculationReasonId" type="radio" value="10" data-qa="reasonRadio-10">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-10">
+                                Appeal decision
+                                </label> 
+                            </div> 
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-11" name="calculationReasonId" type="radio" value="11" data-qa="reasonRadio-11" aria-controls="conditional-calculationReasonId-11" aria-expanded="false">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-11">
+                                Other
+                                </label> 
+                            </div>
+                            
+                            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-calculationReasonId-11">       
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label" for="other-reason-description">
+                                        Please enter the reason for this calculation
+                                    </label>
+                                    <input class="govuk-input govuk-!-width-one-third" id="other-reason-description" name="otherReasonDescription" type="string" autocomplete="string"> 
+                                </div>  
+                            </div> 
+                            
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+                <input type="hidden" name="_csrf" value="ijUvXjJJ-cnFaw1jmM3mPKVq1y8JyrPCB4DQ"> 
+
+                <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                Continue
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

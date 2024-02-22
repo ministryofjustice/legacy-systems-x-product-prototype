@@ -1,0 +1,850 @@
+{% extends "includes/layouts/template-dps-branded.html" %} {% block content %}
+<html lang="en" class="govuk-template">
+  <body
+    class="govuk-template__body js-enabled"
+    data-new-gr-c-s-check-loaded="14.1146.0"
+    data-gr-ext-installed=""
+  >
+    <script nonce="">
+      document.body.className = document.body.className
+        ? document.body.className + " js-enabled"
+        : "js-enabled";
+    </script>
+
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PLCGQRM"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <a id="top"></a>
+
+    <a
+      href="#main-content"
+      class="govuk-skip-link"
+      data-module="govuk-skip-link"
+      >Skip to main content</a
+    >
+
+    <div class="govuk-width-container">
+      <div
+        class="prisoner-profile-breadcrumbs"
+        style="margin-top: 5px; margin-bottom: 5px"
+      >
+        <div
+          class="prisoner-profile-breadcrumbs__search"
+          style="margin-top: 10px; margin-bottom: 10px"
+        >
+          <a
+            href="https://digital-dev.prison.service.justice.gov.uk/prisoner-search?keywords=neil&amp;location=MDI&amp;feature=%2F"
+            class="govuk-link govuk-link--no-visited-state"
+            data-qa="back-link"
+          >
+            View most recent search
+          </a>
+        </div>
+
+        <div
+          class="prisoner-profile-breadcrumbs__breadcrumbs govuk-!-display-none-print"
+        >
+          <div class="govuk-breadcrumbs">
+            <ol class="govuk-breadcrumbs__list">
+              <li
+                class="govuk-breadcrumbs__list-item"
+                style="margin-top: 10px; margin-bottom: 10px"
+              >
+                <a
+                  class="govuk-breadcrumbs__link"
+                  href="https://digital-dev.prison.service.justice.gov.uk/"
+                  >Digital Prison Services</a
+                >
+              </li>
+            </ol>
+          </div>
+        </div>
+      </div>
+
+      <main class="govuk-main-wrapper govuk-body" id="main-content" role="main">
+        <div
+          data-test="hmpps-profile-banner-partial"
+          class="hmpps-profile-banner"
+        >
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+              <div data-qa="hidden-outside-establishment-banner" class=""></div>
+
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full hmpps-profile-banner-top">
+                  <a
+                    href="/prisoner/A0227DZ/image"
+                    class="hmpps-clickable-image"
+                    data-qa="prisoner-photo-link"
+                  >
+                    <img
+                      class="dwf-header-profile-img"
+                      src="/public/images/test-image-3.jpeg"
+                      alt="Joe Bloggs"
+                    />
+                  </a>
+                  <h2 class="govuk-heading-l hmpps-profile-prisoner-name">
+                    Bloggs, Joe
+                  </h2>
+                  <div class="info">
+                    <p
+                      class="govuk-body govuk-!-font-size-24 hmpps-profile-prisoner-number"
+                      aria-label="Prisoner Number"
+                    >
+                      A0227DZ
+                    </p>
+                    <div class="info__links">
+                      <div class="">
+                        <h3 class="govuk-heading-s">Location</h3>
+
+                        <a
+                          data-qa="prisoner-csra-info-with-link"
+                          href="/prisoner/A8691DY/location-details"
+                          aria-label="View location details"
+                          class="govuk-link govuk-link--inverse"
+                          >RECP</a
+                        >
+                      </div>
+
+                      <div class="">
+                        <h3 class="govuk-heading-s">Category</h3>
+
+                        <a
+                          data-qa="prisoner-csra-info-with-link"
+                          href="https://dev.offender-categorisation.service.justice.gov.uk/1202236"
+                          aria-label="View category"
+                          class="govuk-link govuk-link--inverse"
+                          >Not entered</a
+                        >
+                      </div>
+
+                      <div class="">
+                        <h3 class="govuk-heading-s">CSRA</h3>
+
+                        <a
+                          data-qa="prisoner-csra-info-with-link"
+                          href="/prisoner/A8691DY/csra-history"
+                          aria-label="View CSRA history"
+                          class="govuk-link govuk-link--inverse"
+                          >Not entered</a
+                        >
+                      </div>
+
+                      <div class="remove-column-gutter-right">
+                        <h3 class="govuk-heading-s">Incentive level</h3>
+
+                        <a
+                          data-qa="prisoner-csra-info-with-link"
+                          href="https://digital-dev.prison.service.justice.gov.uk/prisoner/A8691DY/incentive-level-details"
+                          aria-label="View incentive level details"
+                          class="govuk-link govuk-link--inverse"
+                          >Standard</a
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full hmpps-profile-banner-bottom">
+              <div class="govuk-grid-row">
+                <ul class="alerts-list" data-qa="alert-flags"></ul>
+
+                <div
+                  id="alert-details"
+                  class="modal-container alert-details-modal"
+                  hidden="true"
+                  data-module="modal"
+                >
+                  <div class="modal-overlay" data-modal-hide=""></div>
+                  <dialog class="modal-content" tabindex="0">
+                    <header>
+                      <h1 id="alert-details-modal-title">Alert details</h1>
+                      <button class="modal__close-button" data-modal-hide="">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 18 18"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            id="Union"
+                            fill-rule="evenodd"
+                            clip-rule="evenodd"
+                            d="M17.7209 3.57884L14.4211 0.279013L8.99975 5.70036L3.57865 0.279259L0.27882 3.57909L5.69992 9.00019L0.278967 14.4211L3.5788 17.721L8.99975 12.3L14.421 17.7212L17.7208 14.4214L12.2996 9.00019L17.7209 3.57884Z"
+                          ></path>
+                        </svg>
+                      </button>
+                    </header>
+                    <section data-modal-body=""></section>
+                  </dialog>
+                </div>
+
+                <script src="/assets/js/modal.js" nonce=""></script>
+
+                <script src="/assets/js/alertFlags.js" nonce=""></script>
+              </div>
+              <nav class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                  <ul class="hmpps-profile-tab-links">
+                    <li class="govuk-heading-s">
+                      <a
+                        href="DPS-prisoner-profile"
+                        class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"
+                        data-qa="Overview"
+                        >Overview</a
+                      >
+                    </li>
+
+                    <li class="govuk-heading-s">
+                      <a
+                        href="/prisoner/A8691DY/personal"
+                        class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"
+                        data-qa="Personal"
+                        >Personal</a
+                      >
+                    </li>
+
+                    <li class="govuk-heading-s">
+                      <a
+                        href="/prisoner/A8691DY/case-notes"
+                        class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"
+                        data-qa="Case notes"
+                        >Case notes</a
+                      >
+                    </li>
+
+                    <li class="govuk-heading-s">
+                      <a
+                        href="/prisoner/A8691DY/alerts/active"
+                        class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"
+                        data-qa="Alerts"
+                        >Alerts</a
+                      >
+                    </li>
+
+                    <li
+                      class="govuk-heading-s hmpps-profile-tab-link-selected"
+                      data-qa="active-tab"
+                    >
+                      <span data-qa="Offences">Offences</span>
+                    </li>
+
+                    <li class="govuk-heading-s">
+                      <a
+                        href="/prisoner/A8691DY/work-and-skills"
+                        class="govuk-link govuk-link--no-visited-state govuk-link--no-underline"
+                        data-qa="Work and skills"
+                        >Work and skills</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+          </div>
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-three-quarters">
+            <h1>Offences</h1>
+          </div>
+        </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-quarter app-sidebar">
+            <ul class="govuk-list hmpps-sidebar">
+              <li>
+                <a class="govuk-link" href="#courtCasesAccordion"
+                  >Court cases and offences</a
+                >
+              </li>
+              <li>
+                <a class="govuk-link" href="#release-dates">Release dates</a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-grid-column-three-quarters">
+            
+            <div class="govuk-grid-row" data-qa="court-cases-and-offences">
+              
+            
+              <div class="hmpps-action-header">
+                
+                <div class="hmpps-action-button" id="add-case-note-action-button" style="padding: 30px 10px 30px 10px; margin-right: 15px;">
+                    <svg width="40px" height="40px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style="align-self: left; margin-right: 10px;">
+                      <path stroke="#0B0C0C" stroke-linejoin="round" stroke-width="1.2" d="M17 8V7C17 6.44772 16.5523 6 16 6H10.4142C10.149 6 9.89464 5.89464 9.70711 5.70711L8.29289 4.29289C8.10536 4.10536 7.851 4 7.58579 4H4C3.44772 4 3 4.44772 3 5V17C3 18.1046 3.89543 19 5 19H19C19.5523 19 20 18.5523 20 18V11C20 10.4477 19.5523 10 19 10H8C7.44772 10 7 10.4477 7 11V17C7 18.1046 6.10457 19 5 19V19"/>
+                    </svg>
+
+                      <a href="add-court-case" class="govuk-link govuk-link--no-visited-state" referrerpolicy="no-referrer-when-downgrade">Add a court case</a>
+             
+                    </div>
+
+
+                
+                <div class="hmpps-action-button" id="add-case-note-action-button" style="padding: 30px 10px 30px 10px; margin-right: 15px;">
+                  <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" style="align-self: left; margin-right: 10px;">
+                    <mask id="mask0_6302_14270" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="40" height="40">
+                    <rect width="40" height="40" fill="#D9D9D9"/>
+                    </mask>
+                    <g mask="url(#mask0_6302_14270)">
+                    <path d="M6.25376 19H15.7462C17.5429 19 19 17.5429 19 15.7462V6.25376C19 4.46419 17.5429 3 15.7462 3H6.25376C4.45712 3 3 4.45712 3 6.25376V15.7462C3 17.5429 4.45712 19 6.25376 19ZM4.06101 6.25376C4.06101 5.04421 5.04421 4.06101 6.25376 4.06101H15.7462C16.9558 4.06101 17.939 5.04421 17.939 6.25376V15.7462C17.939 16.9558 16.9558 17.939 15.7462 17.939H6.25376C5.04421 17.939 4.06101 16.9558 4.06101 15.7462V6.25376Z" fill="#0B0C0C"/>
+                    <path d="M24.2538 19H33.7462C35.5429 19 37 17.5429 37 15.7462V6.25376C37 4.46419 35.5429 3 33.7462 3H24.2538C22.4571 3 21 4.45712 21 6.25376V15.7462C21 17.5429 22.4571 19 24.2538 19ZM22.061 6.25376C22.061 5.04421 23.0442 4.06101 24.2538 4.06101H33.7462C34.9558 4.06101 35.939 5.04421 35.939 6.25376V15.7462C35.939 16.9558 34.9558 17.939 33.7462 17.939H24.2538C23.0442 17.939 22.061 16.9558 22.061 15.7462V6.25376Z" fill="#0B0C0C"/>
+                    <path d="M6.25376 37H15.7462C17.5429 37 19 35.5429 19 33.7462V24.2538C19 22.4571 17.5429 21 15.7462 21H6.25376C4.46419 21 3 22.4571 3 24.2538V33.7462C3 35.5429 4.45712 37 6.25376 37ZM4.06101 24.2538C4.06101 23.0442 5.04421 22.061 6.25376 22.061H15.7462C16.9558 22.061 17.939 23.0442 17.939 24.2538V33.7462C17.939 34.9558 16.9558 35.939 15.7462 35.939H6.25376C5.04421 35.939 4.06101 34.9558 4.06101 33.7462V24.2538Z" fill="#0B0C0C"/>
+                    <path d="M21 33.7462C21 35.5429 22.4571 37 24.2538 37H33.7462C35.5429 37 37 35.5429 37 33.7462V24.2538C37 22.4571 35.5429 21 33.7462 21H24.2538C22.4571 21 21 22.4571 21 24.2538V33.7462ZM22.061 24.2538C22.061 23.0442 23.0442 22.061 24.2538 22.061H33.7462C34.9558 22.061 35.939 23.0442 35.939 24.2538V33.7462C35.939 34.9558 34.9558 35.939 33.7462 35.939H24.2538C23.0442 35.939 22.061 34.9558 22.061 33.7462V24.2538Z" fill="#0B0C0C"/>
+                    <rect x="24" y="10" width="10" height="2" rx="1" fill="#0B0C0C"/>
+                    <rect x="24" y="26" width="10" height="2" rx="1" fill="#0B0C0C"/>
+                    <rect x="24" y="30" width="10" height="2" rx="1" fill="#0B0C0C"/>
+                    <rect x="6" y="10" width="10" height="2" rx="1" fill="#0B0C0C"/>
+                    <rect x="12" y="6" width="10" height="2" rx="1" transform="rotate(90 12 6)" fill="#0B0C0C"/>
+                    <rect x="8.17157" y="24.7573" width="10" height="2" rx="1" transform="rotate(45 8.17157 24.7573)" fill="#0B0C0C"/>
+                    <rect x="15.2426" y="26.1716" width="10" height="2" rx="1" transform="rotate(135 15.2426 26.1716)" fill="#0B0C0C"/>
+                    </g>
+                    </svg>
+                    
+
+                    <a href="release-dates" class="govuk-link govuk-link--no-visited-state" referrerpolicy="no-referrer-when-downgrade">Calculate release dates</a>
+           
+                  </div>
+
+                </div>
+            
+                </div>
+
+                <div
+                  class="hmpps-summary-card"
+                  id="court-cases-sentence-details"
+                >
+                  <div
+                    class="hmpps-summary-card__header"
+                    data-qa="summary-header"
+                  >
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+
+                      <h2>Court cases, offences and sentences</h2>
+                    </div>
+                    
+                    <!-- <div class="govuk-grid-column-one-half govuk-!-margin-top-1">
+
+                      <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Add a court case</a>
+                        </li>
+                    
+                      </ul>
+                    </div> -->
+                  </div>
+                  </div>
+
+                  <div class="hmpps-summary-card__body">
+                    <div
+                      class="govuk-accordion .court-cases-upcoming-appearances"
+                      data-module="govuk-accordion"
+                      id="accordion-with-summary-sections"
+                    >
+                      <!-- <div class="govuk-accordion__controls">
+                        <button
+                          type="button"
+                          class="govuk-accordion__show-all"
+                          aria-expanded="false"
+                        >
+                          <span
+                            class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"
+                          ></span
+                          ><span class="govuk-accordion__show-all-text"
+                            >Show all sections</span
+                          >
+                        </button>
+                      </div> -->
+
+                      <div class="govuk-accordion__section">
+                        <div class="govuk-accordion__section-header">
+                          <h3 class="govuk-accordion__section-heading">
+                            <button
+                              type="button"
+                              aria-controls="accordion-with-summary-sections-content-1"
+                              class="govuk-accordion__section-button govuk-!-font-size-36 govuk-!-static-margin-top-2 govuk-!-static-padding-top-5"
+                              aria-expanded="false"
+                              aria-label="Court case 1 , Court case number 
+                              Not entered 
+                  Court name
+                              Bristol Crown Court , Show this section"
+                            >
+                              <span
+                                class="govuk-accordion__section-heading-text"
+                                id="accordion-with-summary-sections-heading-1"
+                                >
+                                <span
+                                  class="govuk-accordion__section-heading-text-focus"
+                                >
+                                  <span
+                                    class="govuk-!-static-margin-bottom-2 hmpps-display-block govuk-!-static-padding-bottom-1"
+                                    >Court case 1</span
+                                  >
+                                </span></span
+                              >
+                              <!-- <span
+                                class="govuk-visually-hidden govuk-accordion__section-heading-divider"
+                                >, 
+                                </span
+                              > -->
+                              <!-- <span
+                                class="govuk-accordion__section-summary"
+                                id="accordion-with-summary-sections-summary-1"
+                                > -->
+                                <span
+                                  class="govuk-accordion__section-summary-focus"
+                                >
+                                  <div class="hmpps-grid-container">
+                                    <div class="grid-item">
+                                      <h4
+                                        class="govuk-!-static-margin-0 govuk-!-font-size-19"
+                                      >
+                                        Court case number
+                                      </h4>
+                                    </div>
+                                    <div class="grid-item">
+                                      <p class="govuk-!-font-size-19">
+                                        Not entered
+                                      </p>
+                                    </div>
+                                  </div>
+                                  <div class="hmpps-grid-container">
+                                    <div class="grid-item">
+                                      <h4
+                                        class="govuk-!-static-margin-0 govuk-!-font-size-19"
+                                      >
+                                        Court name
+                                      </h4>
+                                    </div>
+                                    <div class="grid-item">
+                                      <p class="govuk-!-font-size-19">
+                                        Bristol Crown Court
+                                      </p>
+                                    </div>
+                                  </div>
+                                </span>
+                                </span
+                              >
+                              <!-- <span
+                                class="govuk-visually-hidden govuk-accordion__section-heading-divider"
+                                >,
+                                 </span
+                              > -->
+                              <!-- <span
+                                class="govuk-accordion__section-toggle"
+                                data-nosnippet=""
+                                >
+                                <span
+                                  class="govuk-accordion__section-toggle-focus"
+                                  >
+                                  <span
+                                    class="govuk-accordion-nav__chevron govuk-accordion-nav__chevron--down"
+                                  >
+                                  </span
+                                  >
+                                  <span
+                                    class="govuk-accordion__section-toggle-text"
+                                    >Show</span
+                                  >
+                                  </span
+                                >
+                                </span
+                              > -->
+                            </button>
+                          </h3>
+                        </div>
+                        <div
+                          id="accordion-with-summary-sections-content-1"
+                          class="govuk-accordion__section-content govuk-!-static-padding-bottom-0"
+                          aria-labelledby="accordion-with-summary-sections-heading-1"
+                          hidden="until-found"
+                        >
+                          <div
+                            class="govuk-grid-row hmpps-grey-details-card govuk-!-static-margin-bottom-7"
+                          >
+                            <div
+                              class="govuk-grid-column-full govuk-!-static-padding-left-5"
+                            >
+                              <div>
+                                <p
+                                  class="hmpps-secondary-text govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-6 govuk-!-font-size-16"
+                                >
+                                  Count 1
+                                </p>
+                              </div>
+
+                              <div class="govuk-!-static-margin-bottom-5">
+                                <p
+                                  class="govuk-!-font-weight-bold govuk-!-static-margin-bottom-0"
+                                >
+                                  Rape a girl aged 13 / 14 / 15 - SOA 2003
+                                </p>
+
+                                <p>Committed on 4 May 2022</p>
+                              </div>
+                              <dl
+                                class="govuk-summary-list govuk-summary-list--no-border"
+                              >
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    CJA Code
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    SX03
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">Type</dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Sentencing Code Standard Determinate
+                                    Sentence
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Sentence date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    5 May 2022
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Length
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    7 years, 6 months
+                                  </dd>
+                                </div>
+
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Concurrent or consecutive
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Concurrent
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+
+                          <div
+                            class="govuk-grid-row hmpps-grey-details-card govuk-!-static-margin-bottom-7"
+                          >
+                            <div
+                              class="govuk-grid-column-full govuk-!-static-padding-left-5"
+                            >
+                              <div>
+                                <p
+                                  class="hmpps-secondary-text govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-6 govuk-!-font-size-16"
+                                >
+                                  Count 2
+                                </p>
+                              </div>
+
+                              <div class="govuk-!-static-margin-bottom-5">
+                                <p
+                                  class="govuk-!-font-weight-bold govuk-!-static-margin-bottom-0"
+                                >
+                                  Drive vehicle for more than 13 hours or more
+                                  in a working day - domestic
+                                </p>
+
+                                <p>Committed on 4 May 2022</p>
+                              </div>
+                              <dl
+                                class="govuk-summary-list govuk-summary-list--no-border"
+                              >
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    CJA Code
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    TR68
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">Type</dt>
+                                  <dd class="govuk-summary-list__value">
+                                    ORA Sentencing Code Standard Determinate
+                                    Sentence
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Sentence date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    5 November 2029
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Length
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    3 months
+                                  </dd>
+                                </div>
+
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Concurrent or consecutive
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Consecutive
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+
+                          <div
+                            class="govuk-grid-row hmpps-grey-details-card govuk-!-static-margin-bottom-7"
+                          >
+                            <div
+                              class="govuk-grid-column-full govuk-!-static-padding-left-5"
+                            >
+                              <div>
+                                <p
+                                  class="hmpps-secondary-text govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-6 govuk-!-font-size-16"
+                                >
+                                  Count 3
+                                </p>
+                              </div>
+
+                              <div class="govuk-!-static-margin-bottom-5">
+                                <p
+                                  class="govuk-!-font-weight-bold govuk-!-static-margin-bottom-0"
+                                >
+                                  Rape a girl aged 13 / 14 / 15 - SOA 2003
+                                </p>
+
+                                <p>Committed on 4 May 2022</p>
+                              </div>
+                              <dl
+                                class="govuk-summary-list govuk-summary-list--no-border"
+                              >
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    CJA Code
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    SX03
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">Type</dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Sentencing Code Standard Determinate
+                                    Sentence
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Sentence date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    5 February 2030
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Length
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    9 years
+                                  </dd>
+                                </div>
+
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Concurrent or consecutive
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Consecutive
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+
+                          <div
+                            class="govuk-grid-row hmpps-grey-details-card govuk-!-static-margin-bottom-7"
+                          >
+                            <div
+                              class="govuk-grid-column-full govuk-!-static-padding-left-5"
+                            >
+                              <div>
+                                <p
+                                  class="hmpps-secondary-text govuk-!-static-margin-bottom-2 govuk-!-static-margin-top-6 govuk-!-font-size-16"
+                                >
+                                  Count 4
+                                </p>
+                              </div>
+
+                              <div class="govuk-!-static-margin-bottom-5">
+                                <p
+                                  class="govuk-!-font-weight-bold govuk-!-static-margin-bottom-0"
+                                >
+                                  Attempt theft from shop
+                                </p>
+
+                                <p>Committed on 4 May 2022</p>
+                              </div>
+                              <dl
+                                class="govuk-summary-list govuk-summary-list--no-border"
+                              >
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    CJA Code
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    TH68
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">Type</dt>
+                                  <dd class="govuk-summary-list__value">
+                                    ORA Sentencing Code Standard Determinate
+                                    Sentence
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Sentence date
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    5 February 2039
+                                  </dd>
+                                </div>
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Length
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    6 months
+                                  </dd>
+                                </div>
+
+                                <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                    Concurrent or consecutive
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                    Consecutive
+                                  </dd>
+                                </div>
+                              </dl>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+ 
+                <div class="hmpps-summary-card" id="release-dates">
+                  <div
+                    class="hmpps-summary-card__header"
+                    data-qa="summary-header"
+                  >
+
+                  <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+
+                      <h2>Release dates</h2>
+                    </div>
+                    
+                    <!-- <div class="govuk-grid-column-one-half govuk-!-margin-top-1">
+
+                      <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Calculate release dates</a>
+                        </li>
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">Adjust a release date</span></a>
+                        </li>
+                      </ul>
+                    </div> -->
+                  </div>
+                  </div>
+
+                  <div class="hmpps-summary-card__body">
+                    <dl class="govuk-summary-list">
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Conditional release date (CRD)
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                          20 September 2033
+                        </dd>
+                      </div>
+
+                      <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                          Sentence and licence expiry date (SLED)
+                        </dt>
+                        <dd class="govuk-summary-list__value">4 August 2039</dd>
+                      </div>
+                    </dl>
+
+                  <p>
+
+                    <a class="govuk-link" href="calculation-history/05-08-2023/check-sentence-and-offence-information">View calculation details</a>
+                  </p>
+                  </div>
+                </div> 
+            </div>
+
+          </div>
+          </div>
+        </div>
+        <div
+          class="hmpps-back-to-top hmpps-back-to-top--fixed"
+          data-module="hmpps-back-to-top"
+        >
+          <a
+            class="govuk-link govuk-link--no-visited-state hmpps-back-to-top__link"
+            href="#top"
+          >
+            <svg
+              role="presentation"
+              focusable="false"
+              class="hmpps-back-to-top__icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="13"
+              height="17"
+              viewBox="0 0 13 17"
+            >
+              <path
+                fill="currentColor"
+                d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"
+              ></path></svg
+            >Back to top
+          </a>
+        </div>
+      </main>
+    </div>
+
+    <script src="/assets/govuk/all.js"></script>
+    <script src="/assets/govukFrontendInit.js"></script>
+    <script src="/assets/moj/all.js"></script>
+    <script src="/assets/datepicker.js"></script>
+    <script src="/assets/backToTop.js"></script>
+    <script src="/assets/printPage.js"></script>
+  </body>
+
+  {% endblock %}
+</html>
