@@ -39,6 +39,27 @@
 
 </div>
 
+{% elif data['toDo'] == 'adaUpdated' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+       
+
+        <h1 class="govuk-heading-xl">
+            <!-- <span class="govuk-caption-xl">Adjust release dates</span> -->
+            Review ADA updates
+        </h1>
+    </div>
+</div> 
+ 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">Updates have been made to ADA (Additional days awarded) information, which needs to be approved.</p>
+        <p class="gouk-body"><a href="adjustments/review-ada">Review ADAs</a></p>
+    </div>
+
+</div>
+
 {% else %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -103,7 +124,7 @@
             </div>
 
             <div class="adjustment-card_content">
-                <span id="REMAND" class="count govuk-body">30</span><span class="govuk-body">Days</span>
+                <span id="REMAND" class="count govuk-body">29</span><span class="govuk-body">Days</span>
                 <!-- <p class="govuk-body govuk-!-font-size-14">Last updated on 10 May 2023 by HMP Bristol</p> -->
                 <!-- <details class="govuk-details" data-module="govuk-details" style="margin-bottom: 0px">
                     <summary class="govuk-details__summary">
@@ -337,18 +358,18 @@
                 <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">ADA (Additional days awarded)</h2>
                     <ul class="govuk-summary-card__actions">
-<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="date-of-ada.html">-->
-<!--                                            Add new<span class="govuk-visually-hidden"> add new</span>-->
-<!--                                        </a>-->
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                            Add new<span class="govuk-visually-hidden"> add new</span>
+                        </a>
                         </li>
-<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view.html">-->
-<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
-<!--                                        </a>-->
-<!--                                        </li>-->
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ADA-summary">
+                            View<span class="govuk-visually-hidden"> ADA</span>
+                        </a>
+                        </li>
                     </ul>
                 </div>
             <div class="adjustment-card_content">
-                <span id="ADA" class="count-2 govuk-body">0</span><span class="govuk-body">Days</span>
+                <span id="ADA" class="count-2 govuk-body">14</span><span class="govuk-body">Days</span>
                 <!-- <a class="govuk-link govuk-body" href="view-ada.html">
                     view details<span class="govuk-visually-hidden"> view details</span>
                 </a>

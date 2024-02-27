@@ -19,6 +19,20 @@
         </p>
     </div>
 </div>
+{% elif data['toDo'] == 'adaUpdated' %}
+
+<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+    <div class="govuk-notification-banner__header">
+    <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+        Important
+    </h2>
+    </div>
+    <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+            Before you continue, you must <a href="adjustments/review-ada">review the updated ADA information</a>.
+        </p>
+    </div>
+</div>
 
                 
 {% elif data['toDo'] == 'changesApplied' %}
@@ -56,7 +70,7 @@
 
         <div class="govuk-summary-card govuk-!-margin-bottom-6">
             <div class="govuk-summary-card__title-wrapper">
-                <h2 class="govuk-summary-card__title">27 February 2024 at HMP Kirkham
+                <h2 class="govuk-summary-card__title">28 February 2024 at HMP Kirkham
                     <br>
                     <span class="govuk-body">Calculation reason: ADA - Additional Days Awarded</span>
                 </h2>
@@ -114,7 +128,7 @@
 
         <div class="govuk-summary-card govuk-!-margin-bottom-6">
             <div class="govuk-summary-card__title-wrapper">
-                <h2 class="govuk-summary-card__title">11 March 2023 at HMP Kirkham
+                <h2 class="govuk-summary-card__title">12 April 2023 at HMP Kirkham
                     <br>
                     <span class="govuk-body">Calculation reason: Transfer check</span>
                 </h2>
@@ -174,27 +188,55 @@
         <p class="govuk-body govuk-!-margin-top-4"><a href="release-dates">View all release dates</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+
         <h3 class="govuk-heading-m">Adjustments</h3>
+
+                        
+        {% if data['toDo'] == 'changesApplied' %}
+        
         <dl class="govuk-summary-list" style="margin-bottom: 10px;">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Remand
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    99 Days
+                    29 Days
                 </dd>
             </div>
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                   Tagged bail
+                    Additional days awarded
                 </dt>
                 <dd class="govuk-summary-list__value">
-                    4 Days
+                    14 Days
                 </dd>
             </div>
         </dl>
 
-        <p class="govuk-body govuk-!-margin-top-6"><a href="index-1">View all adjustments</a></p>
+        {% else %}
+
+        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Remand
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    29 Days
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Additional days awarded
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    7 Days
+                </dd>
+            </div>
+        </dl>
+
+        {% endif %}
+
+        <p class="govuk-body govuk-!-margin-top-6"><a href="adjustments">View all adjustments</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
  
        

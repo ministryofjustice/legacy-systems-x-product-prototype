@@ -50,14 +50,14 @@
                 </dd>
             </div>
             {% if (lastAppearance['next-court-date-set'] != 'Yes') %}
-            <div class="govuk-summary-list__row">
+            <!-- <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Next hearing
                 </dt>
                 <dd class="govuk-summary-list__value">
                     Date to be fixed
                 </dd>
-            </div>
+            </div> -->
             {% endif %}
         </dl>
         {% if (lastAppearance['next-court-date-set'] == 'Yes') %}
@@ -313,7 +313,7 @@
                             <td class="govuk-table__cell">{{ appearance['court-name'] }}</td>
                             <td class="govuk-table__cell">{{ appearance['warrant-date-day'] }}/{{ appearance['warrant-date-month'] }}/{{ appearance['warrant-date-year'] }}</td>
                             <td class="govuk-table__cell">{{ appearance['overall-case-outcome'] }}</td>
-                            <td class="govuk-table__cell" width="16%"><a href="/v9/view-appearance-detail?appearanceIndex={{loop.index0}}">View and edit</a></td>
+                            <td class="govuk-table__cell" width="16%"><a href="/v9/view-appearance-detail?appearanceIndex={{loop.index0}}">View</a></td>
                         </tr>
                         {% endfor %}
                     </tbody>
@@ -360,7 +360,7 @@
                                         </dd>
                                     </div>
                                     <div class="govuk-summary-list__row govuk-!-font-size-16">
-                                        <a href="/v9/view-appearance-detail?appearanceIndex={{loop.index0}}">View and edit appearance details</a>
+                                        <a href="/v9/view-appearance-detail?appearanceIndex={{loop.index0}}">View</a>
                                     </div>
                                 </dl>
                             </div>
