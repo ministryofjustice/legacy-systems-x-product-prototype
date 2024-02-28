@@ -1,0 +1,68 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="review-ada" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>Confirm and save</h1>
+                    <p>Check that the ADA details are correct, then submit the adjustments.</p>
+                    <h2 class="govuk-heading-m">ADA details</h2>
+                    <table class="govuk-table govuk-!-width-three-quarters">
+                        <tr>
+                            <th class="govuk-table__header" scope="col">
+                                Date charge proved</th>
+                            <th class="govuk-table__header" scope="col">Charge number(s)</th>
+                            <th class="govuk-table__header govuk-!-text-align-right" scope="col">Days</th>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                7 August 2023
+                            </td>
+                            <td class="govuk-table__cell">
+                                3822448
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">7</td>
+                        </tr>
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">
+                                22 February 2024
+                            </td>
+                            <td class="govuk-table__cell">
+                                3583998
+                            </td>
+                            <!-- Days -->
+                            <td class="govuk-table__cell govuk-!-text-align-right ">7</td>
+                        </tr>
+
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th class="govuk-table__cell govuk-!-text-align-left" scope="row" colspan="2">Total ADAs </th>
+                            <td class="govuk-table__cell govuk-!-text-align-right">14</td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                    <div class="govuk-button-group">
+                        <form method="post"" action="../adjustments?toDo=changesApplied">
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                                Confirm and save
+                                </button>
+                        </form> 
+                        <form method="post"" action="../adjustments?toDo=adaUpdated">
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-qa="submitReason">
+                                Cancel
+                                </button>
+                        </form> 
+                       
+                    </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments.js"></script>
+{% endblock %}

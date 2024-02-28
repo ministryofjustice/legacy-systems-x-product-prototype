@@ -10,16 +10,16 @@
     <div class="Adas">
 
          
-<h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>
-    Review adjudications
+<h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjust release dates</span>
+    Review and approve ADAs
 </h1>
 <p>
-    Check that the existing ADAs are correct, then review and approve pending ADAs.
+    Check that the existing ADAs are correct, then review and approve pending ADAs. 
 </p>
-<h2 class="govuk-heading-m">Awarded ADAs</h2>
-<p>These adjudications have been added as an adjustment and will be applied to sentence calculations.</p>
+<h2 class="govuk-heading-m">Existing ADAs</h2>
+<p>These ADAs will be included in the calculation.</p>
 <table class="govuk-table govuk-!-margin-bottom-8">
-    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 7 August 2023</caption>
+    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Date charge proved 7 August 2023</caption>
     <thead class="govuk-table__head">
     <tr>
         <th class="govuk-table__header " scope="col">Charge number</th>
@@ -56,10 +56,9 @@
 <hr class="govuk-section-break govuk-section-break--visible">
 
 <h2 class="govuk-heading-m govuk-!-margin-top-8">Suspended ADAs</h2>
-<p class="govuk-!-width-three-quarters">These adjudications are currently suspended and cannot be applied to a sentence calculation until they have been awarded.
-    Refer to the team responsible for managing adjudications if these are no longer suspended and need to be added as an adjustment.</p>
+<p class="govuk-!-width-three-quarters">Suspended ADAs will not be included in the calculation. </p>
 <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 15 December 2023</caption>
+    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Date charge proved 15 December 2023</caption>
     <thead class="govuk-table__head">
     <tr>
         <th class="govuk-table__header" scope="col">Charge number</th>
@@ -99,10 +98,10 @@
 <hr class="govuk-section-break govuk-section-break--visible">
 
 
-<h2 class="govuk-heading-m govuk-!-margin-top-8">Awarded ADAs pending approval</h2>
-<p class="govuk-!-width-three-quarters">These adjudications have not yet been added as an adjustment and will not be applied to sentence calculations. Until they have been approved</p>
+<h2 class="govuk-heading-m govuk-!-margin-top-8">ADAs pending approval</h2>
+<p class="govuk-!-width-three-quarters">Once you have reviewed and approved the pending ADAs, they will be added to the sentence calculation.</p>
 <table class="govuk-table">
-    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Charge proved 22 February 2024</caption>
+    <caption class="govuk-table__caption govuk-table__caption--s govuk-!-margin-bottom-3">Date charge proved 22 February 2024</caption>
     <thead class="govuk-table__head">
     <tr>
         <th class="govuk-table__header" scope="col">Charge number</th>
@@ -139,22 +138,27 @@
 <hr class="govuk-section-break govuk-section-break--visible">
 
 <div class="govuk-inset-text govuk-!-width-three-quarters">
-    If you think some information is wrong, update it NOMIS or contact the adjudications team for support, then <a href="">reload this page</a>.
+    If you think some information is wrong, ask the team responsible for adjudications in your prison to correct it, then <a href="">reload this page</a>.
 </div>
-<h2 class="govuk-heading-m">Approve pending awarded days</h2>
+<h2 class="govuk-heading-m">Approve ADAs</h2>
 <p class="govuk-body govuk-!-width-two-thirds">
-    Once you have checked all the adjudication information is correct, submit the days awarded.
+    If all the ADA information is correct, approve the pending ADAs.
 </p>
-<p>By approving this, this will update the data in NOMIS.</p>
-<div class="govuk-!-margin-top-8 govuk-button-group">
-    <form method="post"" action="../adjustments?toDo=changesApplied">
-        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-            Approve
-            </button>
-    </form>
+<!-- <p>By approving this, this will update the data in NOMIS.</p> -->
 
+<div class="govuk-button-group">
+    <form method="post"" action="check-your-answers">
+        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+            Confirm and save
+            </button>
+    </form> 
+    <form method="post"" action="../adjustments?toDo=adaUpdated">
+        <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--secondary" data-module="govuk-button" data-qa="submitReason">
+            Cancel
+            </button>
+    </form> 
+   
 </div>
-<!-- <a href="overview.html">Cancel</a>  -->
     </div>
 </div>
 <script src="/public/javascripts/adjustments.js"></script>

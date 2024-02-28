@@ -1,64 +1,22 @@
-{% extends "../../includes/layouts/template-linear.html" %}
+{% extends "../../../includes/layouts/template-linear.html" %}
 {% block content %} 
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="calculation-reason" class="govuk-back-link">Back</a>
+    <a href="../../release-dates" class="govuk-back-link">Back</a>
 </div>
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds"> 
             <h1 class="govuk-heading-xl">
-                Check sentence and offence information for Joe Bloggs
-            </h1>
-            
+            <!-- <span class="govuk-caption-xl">12 August 2023 at HMP Hull</span> -->
+                Sentence and offence information for Joe Bloggs
+            </h1> 
         </div>
     </div>
 </div>
-<!-- 
-<div class="moj-width-container">
-    <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Calculation details</h3>
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Date of calculation
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    12 August 2023
-                </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Calculation reason
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Transfer check
-                </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Establishment
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    HMP Kirkham
-                </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Sentences included in this calculation
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    2
-                </dd>
-                </div>
-            </dl>
-        </div>
-    </div>
-</div> -->
 <!-- ERSED checkbox -->
-<div class="moj-width-container govuk-!-margin-top-2">
+<!-- <div class="moj-width-container govuk-!-margin-top-2">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
@@ -74,7 +32,51 @@
   </div>
         </div>
     </div>
+</div> -->
+
+<div class="moj-width-container">
+    <!-- <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Calculation details</h3> -->
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-2">
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Date of calculation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                       29 February 2024
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Calculation reason
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    ADA (Additional days awarded)
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Establishment
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    HMP Kirkham
+                </dd>
+                </div>
+                <!-- <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Sentences included in this calculation
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    2
+                </dd>
+                </div> -->
+            </dl>
+            <p class="govuk-body">There is 1 sentence included in this calculation.</p>
+        </div>
+    </div>
 </div>
+
 <!-- Court case 1 -->
 <div class="moj-width-container govuk-!-margin-top-4">
     <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Court case 1</h3>
@@ -100,7 +102,7 @@
             </dl>
         </div>
     </div>
-<!-- Count 1 -->
+    <!-- Count 1 -->
 <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
     <div class="govuk-grid-column-full govuk-!-margin-top-4">
         <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count 1</h3>
@@ -354,7 +356,7 @@
     </div>
 </div>
     <!-- If some infomation is wrong -->
-    <div class="moj-width-container">
+    <!-- <div class="moj-width-container">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <div class="govuk-inset-text">
@@ -362,17 +364,26 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
     <!-- Call to action -->
     <div class="moj-width-container">
         <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h2 class="govuk-heading-m govuk-!-margin-top-7">Now calculate release dates for Joe Bloggs</h2>
-                <p class="govuk-body">The release dates will not be saved in NOMIS until you have reviewed the calculation.</p>
-                <a href="calculation-summary.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-                    Calculate release dates
-                </a>
-            </div>
+            <nav class="pagination" role="navigation" aria-label="Pagination">
+                <ul class="pagination__list">
+                    <li class="pagination__item pagination__item--next">
+                        <a href="calculation-summary" class="govuk-link pagination__link" data-qa="next-page-button">
+                            <span class="pagination__link-title">
+                                <svg class="pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
+                                    <path d="m10.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+                                </svg>
+                                <span class="pagination__link-text">Next page</span>
+                            </span>
+                            <span class="pagination__link-divider visually-hidden">:</span>
+                            <span class="pagination__link-label">Release dates</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
         </div>
     </div>
 </div>
