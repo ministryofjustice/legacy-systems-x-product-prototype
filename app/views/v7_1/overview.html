@@ -179,6 +179,28 @@
             </div>
         </dl>
 
+                        
+        {% elif data['toDo'] == 'nothing' %}
+        
+        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Remand
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    29 Days
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Additional days awarded
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    14 Days
+                </dd>
+            </div>
+        </dl>
+
         {% else %}
 
         <dl class="govuk-summary-list" style="margin-bottom: 10px;">
