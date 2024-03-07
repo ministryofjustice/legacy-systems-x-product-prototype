@@ -1,0 +1,379 @@
+{% extends "includes/layouts/template-dps-branded.html" %} {% block
+beforeContent %}
+<div class="govuk-width-container">
+  <nav class="govuk-!-display-none-print">
+    {{govukBackLink({ text: "Back", "href": "javascript: window.history.go(-1)"
+    })}}
+  </nav>
+</div>
+{% endblock %} {% block content %}
+<form method="post" action="/task-based-routing">
+  <div class="govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l govuk-!-margin-top-8">
+          {% if data['navOption'] == 'single-entry' %}
+          <span class="govuk-caption-l"
+            >Court cases and release dates</span>
+
+          {% elif data['navOption'] == 'adjustments' %}
+          <span class="govuk-caption-l">Add an adjustment</span>
+
+          {% elif data['navOption'] == 'crd' %}
+          <span class="govuk-caption-l">Calculate release dates</span>
+
+          {% elif data['navOption'] == 'court-cases' %}
+          <span class="govuk-caption-l">Manage court cases</span>
+
+          {% elif data['navOption'] == 'crd-lookup' %}
+          <span class="govuk-caption-l">Look up a calculation</span>
+
+          {% else %}
+          <span class="govuk-caption-l">Court cases and release dates</span>
+
+          {% endif %} 
+          Search for a person
+        </h1>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <div>
+          <div style="float: left">
+            {% from "govuk/components/character-count/macro.njk" import
+            govukCharacterCount %} {{ govukInput({ value: "Neil", label: {
+            text: "Search by name or prison number", classes: "", isPageHeading:
+            false }, classes: "govuk-input--width-20", id:
+            "prisoner-search-query", name: "prisoner-search-query" }) }}
+          </div>
+          <button
+            class="govuk-button govuk-button--secondary"
+            data-module="govuk-button"
+            style="margin-top: 30px; margin-left: 10px">
+            Search
+          </button>
+        </div>
+
+        <h2 class="govuk-heading-m" style="clear: both">
+          There are 5 matching results
+        </h2> 
+
+        <nav class="moj-pagination govuk-!-font-size-19" id="pagination-label">
+
+          <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+        
+          <ul class="moj-pagination__list"></ul>
+            <p class="moj-pagination__results">Showing <b>1</b> to <b>5</b> of <b>5</b> results</p>
+          </nav>
+
+        <div class="prisoner-search__results-list">
+          <table class="govuk-table" data-test="prisoner-search-results-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">
+                  <span class="govuk-visually-hidden">Picture</span>
+                </th>
+
+                <th
+                  scope="col"
+                  class="govuk-table__header"
+                  aria-sort="ascending">
+                  <button type="button" data-index="1">Name</button>
+                </th>
+
+                <th scope="col" class="govuk-table__header">Prison number</th>
+
+                <th
+                  scope="col"
+                  class="govuk-table__header"
+                  aria-sort="ascending">
+                  <button type="button" data-index="3">Location</button>
+                </th> 
+
+                <th scope="col" class="govuk-table__header">Relevant alerts</th>
+              </tr>
+            </thead>
+
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <img
+                    src="/public/images/test-image-1.jpeg"
+                    alt="Image of Gottlieb, Neil"
+                    class="prisoner-search__results-list__image"
+                    loading="lazy"/>
+                </td>
+
+                <td class="govuk-table__cell" data-sort-value="Gottlieb, Neil">
+                  <a
+                    href="#"
+                    class="govuk-link"
+                    >Gottlieb, Neil</a>
+                </td>
+
+                <td class="govuk-table__cell">A4991DZ</td>
+
+                <td class="govuk-table__cell">Reception</td> 
+
+                <td class="govuk-table__cell">
+                  <span class=""> </span>
+                </td>
+              </tr>
+
+
+                {% if data['navOption'] == 'single-entry' %}
+                
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <img 
+                    class="prisoner-search__results-list__image"
+                    src="/public/images/test-image-3.jpeg"
+                      alt="Image of Rudge, Neil" />
+                  </td>
+
+                  <td class="govuk-table__cell" data-sort-value="Rudge, Neil">
+                    <a
+                      href="overview"
+                      class="govuk-link"
+                      >Rudge, Neil</a>
+                  </td>
+
+                  <td class="govuk-table__cell">A4161DZ</td>
+
+                  <td class="govuk-table__cell">Reception</td> 
+
+                  <td class="govuk-table__cell">
+                    <span class=""> </span>
+                  </td>
+                </tr>
+
+                {% elif data['navOption'] == 'adjustments' %}
+                
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <img
+                      class="prisoner-search__results-list__image"
+                      src="/public/images/test-image-3.jpeg"
+                        alt="Image of Rudge, Neil" />
+                    </td>
+
+                    <td class="govuk-table__cell" data-sort-value="Rudge, Neil">
+                      <a
+                        href="adjustments"
+                        class="govuk-link"
+                        >Rudge, Neil</a>
+                    </td>
+
+                    <td class="govuk-table__cell">A4161DZ</td>
+
+                    <td class="govuk-table__cell">Reception</td> 
+
+                    <td class="govuk-table__cell">
+                      <span class=""> </span>
+                    </td>
+                  </tr>
+
+                {% elif data['navOption'] == 'crd' %}
+  
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <img
+                      class="prisoner-search__results-list__image"
+                      src="/public/images/test-image-3.jpeg"
+                        alt="Image of Rudge, Neil" />
+                    </td>
+
+                    <td class="govuk-table__cell" data-sort-value="Rudge, Neil">
+                      <a
+                        href="calculate-release-dates/calculation-reason"
+                        class="govuk-link"
+                        >Rudge, Neil</a>
+                    </td>
+
+                    <td class="govuk-table__cell">A4161DZ</td>
+
+                    <td class="govuk-table__cell">Reception</td> 
+
+                    <td class="govuk-table__cell">
+                      <span class=""> </span>
+                    </td>
+                  </tr>
+
+                {% elif data['navOption'] == 'court-cases' %}
+
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">
+                      <img
+                      class="prisoner-search__results-list__image"
+                      src="/public/images/test-image-3.jpeg"
+                        alt="Image of Rudge, Neil" />
+                    </td>
+
+                    <td class="govuk-table__cell" data-sort-value="Rudge, Neil">
+                      <a
+                        href="court-cases"
+                        class="govuk-link">Rudge, Neil</a>
+                    </td>
+
+                    <td class="govuk-table__cell">A4161DZ</td>
+
+                    <td class="govuk-table__cell">Reception</td> 
+
+                    <td class="govuk-table__cell">
+                      <span class=""> </span>
+                    </td>
+                  </tr>
+
+                {% elif data['navOption'] == 'crd-lookup' %}
+  
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <img
+                    class="prisoner-search__results-list__image"
+                    src="/public/images/test-image-3.jpeg"
+                      alt="Image of Rudge, Neil" />
+                  </td>
+
+                  <td class="govuk-table__cell" data-sort-value="Rudge, Neil">
+                    <a
+                      href="release-dates"
+                      class="govuk-link"
+                      >Rudge, Neil</a>
+                  </td>
+
+                  <td class="govuk-table__cell">A4161DZ</td>
+
+                  <td class="govuk-table__cell">Reception</td> 
+
+                  <td class="govuk-table__cell">
+                    <span class=""> </span>
+                  </td>
+                </tr>
+
+ 
+
+                {% else %}
+                
+                <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">
+                    <img
+                    class="prisoner-search__results-list__image"
+                    src="/public/images/test-image-3.jpeg"
+                      alt="Image of Rudge, Neil" />
+                  </td>
+
+                  <td class="govuk-table__cell" data-sort-value="Rudge, Neil">
+                    <a
+                      href="overview"
+                      class="govuk-link"
+                      >Rudge, Neil</a>
+                  </td>
+
+                  <td class="govuk-table__cell">A4161DZ</td>
+
+                  <td class="govuk-table__cell">Reception</td> 
+
+                  <td class="govuk-table__cell">
+                    <span class=""> </span>
+                  </td>
+                </tr>
+
+                {% endif %} 
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <img
+                  src="/public/images/test-image-2.jpeg"
+                    alt="Image of Young, Neil"
+                    class="prisoner-search__results-list__image"
+                    loading="lazy"
+                  />
+                </td>
+
+                <td class="govuk-table__cell" data-sort-value="Young, Neil">
+                  <a
+                    href="#"
+                    class="govuk-link"
+                    >Young, Neil</a
+                  >
+                </td>
+
+                <td class="govuk-table__cell">A0227DZ</td>
+
+                <td class="govuk-table__cell">4-3-023</td> 
+
+                <td class="govuk-table__cell">
+                  <span class=""> </span>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <img
+                  src="/public/images/test-image-5.jpeg"
+                    alt="Image of Youngish, Neil"
+                    class="prisoner-search__results-list__image"
+                    loading="lazy"
+                  />
+                </td>
+
+                <td class="govuk-table__cell" data-sort-value="Youngish, Neil">
+                  <a
+                    href="#"
+                    class="govuk-link"
+                    >Youngish, Neil</a
+                  >
+                </td>
+
+                <td class="govuk-table__cell">A0228DZ</td>
+
+                <td class="govuk-table__cell">5-2-B-050</td>
+ 
+
+                <td class="govuk-table__cell">
+                  <span class=""> </span>
+                </td>
+              </tr>
+
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <img
+                  src="/public/images/test-image-4.jpeg"
+                    alt="Image of Youngishy, Neil"
+                    class="prisoner-search__results-list__image"
+                    loading="lazy"
+                  />
+                </td>
+
+                <td class="govuk-table__cell" data-sort-value="Youngishy, Neil">
+                  <a
+                    href="#"
+                    class="govuk-link"
+                    >Youngishy, Neil</a
+                  >
+                </td>
+
+                <td class="govuk-table__cell">A0229DZ</td>
+
+                <td class="govuk-table__cell">2-2-030</td>
+ 
+
+                <td class="govuk-table__cell">
+                  <span class=""> </span>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div
+            aria-live="polite"
+            role="status"
+            aria-atomic="true"
+            class="govuk-visually-hidden"
+          ></div>
+        </div>
+ 
+      </div>
+    </div>
+  </div>
+</form>
+{% endblock %}
