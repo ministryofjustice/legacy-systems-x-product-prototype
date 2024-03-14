@@ -262,7 +262,7 @@
                       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Next court appearance </p> 
 
     
-                      {% if data['toShow'] == 'courtHearingNone' %}
+                      {% if data['toShow'] == 'none' %}
                         
                       <p class="govuk-body">No upcoming court hearings.</p> 
                       
@@ -310,7 +310,7 @@
                       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Latest calculation </p> 
 
 
-                    {% if data['toShow2'] == 'releaseDatesNone' %}
+                    {% if data['toShow'] == 'none' %}
 
                     <p class="govuk-body">There are no release dates calculated for Joe Bloggs.</p>
                     {% else %} 
@@ -374,7 +374,7 @@
                           <div class="govuk-!-padding-top-3">
                             <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Next court appearance </p> 
 
-                          {% if data['toShow'] == 'courtHearingNone' %}
+                          {% if data['toShow'] == 'none' %}
                             
                           <p class="govuk-body">No upcoming court hearings.</p> 
                           
@@ -421,7 +421,7 @@
                     <div class="govuk-!-padding-top-3">
                       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Latest calculation </p> 
 
-                          {% if data['toShow2'] == 'releaseDatesNone' %}
+                          {% if data['toShow'] == 'none' %}
 
                           <p class="govuk-body">There are no release dates calculated for Neil Rudge.</p>
                           {% else %} 

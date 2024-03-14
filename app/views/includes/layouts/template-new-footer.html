@@ -307,53 +307,49 @@ Court cases and release dates
     <div class="govuk-width-container">
         <!-- Breadcrumbs -->
         {% block breadcrumbs %}
-        <!-- <a href="#" class="govuk-back-link">Back</a> -->
-        <!-- <div class="govuk-breadcrumbs">
+        <div class="govuk-breadcrumbs govuk-!-display-none-print">
             <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="#">Digital Prison Services</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="#">Back to search</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <span>Court cases and release dates</span>
-                </li>
+          
+            
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="DPS-home">Digital Prison Services</a>
+              </li>
+            
+          
+            
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="DPS-prisoner-profile">Bloggs, Joe</a>
+              </li>
+            
+          
             </ol>
-        </div> -->
-        <!-- <div class="govuk-breadcrumbs">
-            <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="#">Prisoner profile</a>
-                </li>
-                <li class="govuk-breadcrumbs__list-item">
-                    <span>Court cases and release dates</span>
-                </li>
-            </ol>
-        </div> -->
+          </div>
         {% endblock %}
-        <!--         {% block title %}
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <h2 class="govuk-heading-xl govuk-!-margin-top-4 govuk-!-margin-bottom-7">
-                    Neil Rudge's court cases
-                </h2>
+        
+        {% block banner %}
+        {% from "hmpps/components/mini-profile/macro.njk" import miniProfile %}
+        <div class="mini-profile govuk-!-margin-bottom-1" data-qa="mini-profile">
+            <div class="mini-profile-inner">
+                <div class="mini-profile-left">
+                    <img class="mini-profile-person-img" src="/public/images/test-image-3.jpeg" alt="Image of Last, First" loading="lazy" data-qa="mini-profile-person-img">
+                </div>
+                <div class="mini-profile-right">
+                    <ul class="mini-profile-info">
+                        <li>
+                            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+                                <a class="govuk-link--no-visited-state" href="#" target="_blank" data-qa="mini-profile-person-profile-link">Bloggs, Joe</a>
+                            </p>
+                            <span class="govuk-body" data-qa="mini-profile-prisoner-number">A8207AA</span>
+                        </li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span><span class="govuk-body" data-qa="mini-profile-dob">01/04/1987</span></li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span><span class="govuk-body" data-qa="mini-profile-prison-name">HMP Kirkham</span></li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body" data-qa="mini-profile-cell-location">5-2-A-051</span></li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Status</span><span class="govuk-body" data-qa="mini-profile-status">Active in</span></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        {% endblock %} -->
-        {% block banner %}
-
-            {% set person = { 
-                firstName: 'Joe',
-                lastName: 'Bloggs',
-                prisonerNumber: 'A8207AA',
-                dateOfBirth: '1987-04-01',
-                status: 'Active in',
-                prisonName: 'HMP Kirkham',
-                cellLocation: '5-2-A-051'
-            } %}
-
-            {{ miniProfile(person, '/public/images/test-image-3.jpeg', '#') }}
+ 
 
         {% endblock %}
         {% block nav %}
