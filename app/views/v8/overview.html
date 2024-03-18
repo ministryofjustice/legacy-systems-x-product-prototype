@@ -137,7 +137,7 @@
             
 
 
-        <h3 class="govuk-heading-m">Release dates</h3>
+        <h3 class="govuk-heading-l">Release dates</h3>
 
         {% if data['toShow'] == 'releaseDatesNone' %}
 
@@ -278,41 +278,14 @@
         <p class="govuk-body">There are no active adjustments for Neil Rudge.</p>
         <p class="gouk-body"><a href="#">Adjustments</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-
-        {% elif data['toShow'] == 'adjustmentsV2' %}
-
-        <h3 class="govuk-heading-m">Adjustments</h3>
-
-        <div class="govuk-summary-card">
-            <div class="govuk-summary-card__content" id="adjustments">
-                <dl class="govuk-summary-list ">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key ">
-                            Remand
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            <p class="govuk-body">99 days</p>
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key ">
-                            Tagged bail
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            <p class="govuk-body">4 days</p>
-                        </dd>
-                    </div>
-                </dl>
-            </div>
-        </div>
-        <p class="govuk-body govuk-!-margin-top-4"><a href="adjustments">View all adjustments</a></p>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
 
         {% else %}
 
-        <h3 class="govuk-heading-m">Adjustments</h3>
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
+        <h3 class="govuk-heading-l">Adjustments</h3>
+
+        <h3 class="govuk-heading-m">Deductions</h3>
+        <dl class="govuk-summary-list" style="margin-bottom: 40px;">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
                     Remand
@@ -331,6 +304,18 @@
             </div>
         </dl>
 
+        <h3 class="govuk-heading-m">Additions</h3>
+        <dl class="govuk-summary-list" style="margin-bottom: 10px;"> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    ADA (Additional days awarded)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    4 Days
+                </dd>
+            </div>
+        </dl>
+
         <p class="govuk-body govuk-!-margin-top-6"><a href="index-1">View all adjustments</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
@@ -341,14 +326,14 @@
         
             {% if data['toShow'] == 'courtHearingNone' %}
             
-            <h3 class="govuk-heading-m">Next court hearing</h3>
+            <h3 class="govuk-heading-l">Next court hearing</h3>
             <p class="govuk-body">No upcoming court hearings.</p>
             <!-- <p class="govuk-body"><a href="court-cases">View all court cases</a></p> -->
             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
             
             {% else %}
 
-        <h3 class="govuk-heading-m">Next court hearing</h3>
+        <h3 class="govuk-heading-l">Next court hearing</h3>
         <dl class="govuk-summary-list" style="margin-bottom: 10px;">
             <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
