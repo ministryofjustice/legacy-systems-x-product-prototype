@@ -307,7 +307,7 @@ Court cases and release dates
     <div class="govuk-width-container">
         <!-- Breadcrumbs -->
         {% block breadcrumbs %}
-        <div class="govuk-breadcrumbs govuk-!-display-none-print">
+        <!-- <div class="govuk-breadcrumbs govuk-!-display-none-print">
             <ol class="govuk-breadcrumbs__list">
           
             
@@ -323,12 +323,12 @@ Court cases and release dates
             
           
             </ol>
-          </div>
+          </div> -->
         {% endblock %}
   
         {% block banner %}
-
-        <div class="mini-profile govuk-!-margin-bottom-2" data-qa="mini-profile">
+<!-- 
+        <div class="mini-profile govuk-!-margin-top-7" data-qa="mini-profile">
             <div class="mini-profile-inner">
                 <div class="mini-profile-left">
                     <img class="mini-profile-person-img" src="/public/images/test-image-3.jpeg" alt="Image of Last, First" loading="lazy" data-qa="mini-profile-person-img">
@@ -348,7 +348,19 @@ Court cases and release dates
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
+
+        {% set person = {
+            firstName: 'Joe',
+            lastName: 'Bloggs',
+            prisonerNumber: 'A8207AA',
+            dateOfBirth: '1987-04-01',
+            status: 'Active in',
+            prisonName: 'HMP Kirkham',
+            cellLocation: '5-2-A-051'
+        } %}
+
+        {{ miniProfile(person, '/public/images/test-image-3.jpeg', '#') }}
  
 
         {% endblock %}
