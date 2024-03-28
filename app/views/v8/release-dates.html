@@ -160,6 +160,10 @@
                 </dl>
             </div>
         </div> 
+ 
+        {% elif data['toShow'] == 'noActiveSentences' %}
+
+        <p>[Placeholder] We cannot provide release dates because there are no active sentences.</p> 
 
         {% else %}
 
@@ -242,6 +246,15 @@
                     {% if data['toShow'] == 'releaseDatesNomis' %}
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell"><a href="calculation-history/11-03-2023/nomis-calculation">11 March 2023</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Transfer check</td>
+                        <td class="govuk-table__cell">Not available</td>
+                        <td class="govuk-table__cell">NOMIS</td> 
+                    </tr>
+
+ 
+                    {% elif data['toShow'] == 'noActiveSentences' %}
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell">11 March 2023</td>
                         <td class="govuk-table__cell" data-sort-value="8850">Transfer check</td>
                         <td class="govuk-table__cell">Not available</td>
                         <td class="govuk-table__cell">NOMIS</td> 
