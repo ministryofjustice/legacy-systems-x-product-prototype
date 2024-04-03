@@ -142,9 +142,24 @@
         {% if data['toShow'] == 'releaseDatesNone' %}
 
         <p class="govuk-body">There are no release dates calculated for Neil Rudge.</p>
-        <p class="gouk-body"><a href="#">Calculate release dates</a></p>
+        <p class="govuk-body"><a href="#">Calculate release dates</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
+        {% elif data['toShow'] == 'noActiveSentences' %}
+
+        <p class="govuk-body">This person has no active sentences.</p>
+            
+        <p class="govuk-body">To calculate the release dates, you must enter active sentence information in NOMIS and <a href="#">try again</a>.</p> 
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {% elif data['toShow'] == 'indeterminateNoDates' %}
+
+        <p class="govuk-body">This person is serving an indeterminate sentence and has no calculated dates. </p>
+            
+        <p class="govuk-body">You will need to <a href="#">manually enter the approved dates</a>.</p> 
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
         {% elif data['toShow'] == 'releaseDatesNomis' %}
 
