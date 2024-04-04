@@ -1,6 +1,13 @@
-{% extends "../../includes/layouts/layout_hmpps-unbranded.html" %}
+<head>
+    <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
 
-{% block content %}
+<link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" /> 
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+  <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+</head>
 
 <body class="govuk-template__body  js-enabled" data-new-gr-c-s-check-loaded="14.1110.0" data-gr-ext-installed="">
     <script
@@ -10,13 +17,13 @@
 
     <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
  
-    <div class="govuk-width-container ">
+    <div class="print-width-container">
 
         <span class="govuk-visually-hidden" id="occurrence-notification-slip-page"></span>
 
         <main class="govuk-main-wrapper " id="main-content" role="main">
 
-            <div class="govuk-grid-row">
+            <div class="govuk-grid-row print-button">
                 <div class="govuk-grid-column-full">
                     <h1 class="govuk-heading-l govuk-visually-hidden">Print notification slip</h1>
 
@@ -36,32 +43,32 @@
                
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-full">
-                        <h2 class="govuk-heading-m" style="font-weight: normal; float: right;">HMP Kirkham</h2>
+                        <h2 class="govuk-heading-s notification-slip-establishment">HMP Kirkham</h2>
                     </div>
                 </div>
 
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-full">
-                        <h1 class="govuk-heading-xl">Your release dates </h1>
+                        <h1 class="govuk-heading-l">Your release dates </h1>
                     </div>
                 </div>
 
                 <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-one-half">
+                    <div class="govuk-grid-column-two-thirds">
                         <dl class="govuk-summary-list govuk-summary-list--no-border ">
                             <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-body">
+                            <dt class="govuk-summary-list__key">
                                 Name
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-body">
+                            <dd class="govuk-summary-list__value">
                                 Joe Bloggs
                             </dd>
                             </div>
                             <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key govuk-body">
+                            <dt class="govuk-summary-list__key">
                                 Prison number
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-body">
+                            <dd class="govuk-summary-list__value">
                                 A8207AA
                             </dd>
                             </div> 
@@ -71,31 +78,39 @@
                 
                 <div class="govuk-grid-row">
                     <div class="govuk-grid-column-full">
-                        <p class="govuk-body" style="margin-bottom: 10px;">Your release dates were calculated on 1 August 2023.</p>
-                        <p class="govuk-body" style="margin-bottom: 40px;">If you need help understanding your release dates, speak to your wing officer.</p>
-               
-                        <div style="background-color: #f3f2f1; padding: 40px 10px 40px 10px; margin-bottom: 40px; text-align: center; ">
-                            <h2 class="govuk-heading-l" style="margin-bottom: 20px; display: "><span style="font-weight: normal;">You are scheduled to leave prison on </span>1 December 2024</h2> 
-                            <p class="govuk-body" style="margin-bottom: 0px; ">This is your Conditional Release Date (CRD)</p>
+
+                        <div class="printed-paragraph">
+                            <p class="govuk-body">Your release dates were calculated on 1&nbsp;August&nbsp;2023.</p>
+                            <p class="govuk-body">If you need help understanding your release dates, speak to your wing officer.</p>
+                        </div>
+
+                        <div class="release-date-callout__wrapper">
+                            <h2 class="govuk-heading-l"><span style="font-weight: normal;">You are scheduled to leave prison on </span>1&nbsp;December&nbsp;2024</h2> 
+                            <p class="govuk-body">This is your Conditional Release Date (CRD)</p>
                         </div>
                         
                         <h2 class="govuk-heading-m">Other important dates</h2>
-                        <p class="govuk-body" style="margin-bottom: 10px;">Your sentence is scheduled to finish on <b>1 December 2026</b>.</p>
-                        <p class="govuk-body" style="margin-bottom: 40px;">This is your Sentence and Licence Expiry Date (SLED)</p>
-                        <p class="govuk-body" style="margin-bottom: 10px;">You can apply for Home Detention Curfew from <b>1 July 2024</b>.</p>
-                        <p class="govuk-body" style="margin-bottom: 40px;">This is your Home Detention Curfew Eligibility Date (HDCED)</p>
+                        
+                        <div class="printed-paragraph">
+                            <p class="govuk-body">Your sentence is scheduled to finish on <b>1&nbsp;December&nbsp;2026</b>.</p>
+                            <p class="govuk-body">This is your Sentence and Licence Expiry Date (SLED)</p>
+                        </div>
 
-                        <h2 class="govuk-heading-m">Sentence details</h2>
-                        <table class="govuk-table ">
-                            <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Sentence details</caption>
-                            <thead class="govuk-table__head govuk-body">
+                        <div class="printed-paragraph">
+                            <p class="govuk-body">You can apply for Home Detention Curfew from <b>1 July 2024</b>.</p>
+                            <p class="govuk-body">This is your Home Detention Curfew Eligibility Date (HDCED)</p>
+                        </div>
+ 
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption govuk-table__caption--m">Sentence details</caption>
+                            <thead class="govuk-table__head">
                             <tr class="govuk-table__row">
                                 <th scope="col" class="govuk-table__header">Sentence</th>
                                 <th scope="col" class="govuk-table__header">Sentence start date</th>
                                 <th scope="col" class="govuk-table__header">Sentence length</th>
                             </tr>
                             </thead>
-                            <tbody class="govuk-table__body govuk-body">
+                            <tbody class="govuk-table__body">
                             <tr class="govuk-table__row">
                                 <td class="govuk-table__cell">Court case 1, count 1</td>
                                 <td class="govuk-table__cell">1 December 2021</td>
@@ -117,31 +132,31 @@
                     </div>
                 </div>
                 <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds">
+                    <div class="govuk-grid-column-full">
 
                         <h2 class="govuk-heading-m">Adjustments</h2>
 
-                        <dl class="govuk-summary-list govuk-summary-list--no-border">
+                        <dl class="govuk-summary-list govuk-summary-list--no-border dont-break">
                             <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__value  govuk-body">
+                            <dt class="govuk-summary-list__key">
                                 Remand
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-body">
+                            <dd class="govuk-summary-list__value">
                                 3 days taken away from your sentence 
                             </dd>
                             </div>
                             <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__value  govuk-body">
+                            <dt class="govuk-summary-list__key">
                                 Unlawfully At Large
                             </dt>
-                            <dd class="govuk-summary-list__value govuk-body">
+                            <dd class="govuk-summary-list__value">
                                 5 days added to your sentence
                             </dd>
                             </div> 
                         </dl>
                     </div>
                 </div>
-                <p class="govuk-body-s notification-slip-footer">Printed at 14:34 on Tuesday, 13 April 2024</p>
+                
             </div>
 
 
@@ -151,4 +166,4 @@
 
 
 
-    {% endblock %}
+    {% include "includes/scripts.html" %}
