@@ -101,14 +101,19 @@
 
                                 <ul class="govuk-list govuk-list--number">
                                     <li>Entry point improvements and handover</li>  
-                                    <li>Getting back to DPS from our service</li>  
+                                    <li>Getting back to other tasks after calculating release dates</li>  
                                     <li>Empty states</li>  
+                                    <li>Printed notification slip</li>  
                                 </ul> 
 
 
                                 <h4 class="govuk-heading-m">Supporting documents</h4>
                                 <ul class="govuk-list">
-                                    <li><a class="govuk-link" target="external" href="">..</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764578387401340&cot=14">Entry points design board (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764584677554616&cot=14">Getting back to other tasks after calculating release dates (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764583578902412&cot=14">Empty states design board (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764585156277483&cot=14">Printed notification slip analysis (miro)</a></li> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764582835906792&cot=14">Printed notification slip design board (miro)</a></li> 
                                 </ul> 
 
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -123,16 +128,68 @@
                                 <h4 class="govuk-heading-m">2. Getting back to DPS from our service</h4> 
                                 <p class="govuk-body">Looking at ways to help the user orientate themselves within the service and know what to do after thay have finished their tasks in our service..</p> 
                                 <ul class="govuk-list"> 
-                                    <li><a class="govuk-link" target="external" href="v8/overview">Overview - breadcrumbs</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v8/overview">Overview - breadcrumbs (descoped)</a></li>  
                                     <li><a class="govuk-link" target="external" href="v8/calculate-release-dates/calculation-complete">Improved confirmation screen at the end of the CRD journey. </a></li>  
                                 </ul> 
-                                <h4 class="govuk-heading-m">3. Empty states</h4> 
-                                <p class="govuk-body">Messaging to show when there is nothing to shwo in different scenarios.</p> 
-                                <ul class="govuk-list"> 
-                                    <li><a class="govuk-link" target="external" href="v8/no-court-cases">No court cases added</a></li>  
-                                    <li><a class="govuk-link" target="external" href="v8/no-active-booking">No active bookings</a></li>  
-                                </ul> 
 
+                            </div>
+
+                            <div class="govuk-grid-column-full"> 
+                                <h4 class="govuk-heading-m">3. Empty states</h4> 
+                                <p class="govuk-body">Messaging to show when there is nothing to show in different scenarios.</p> 
+                                <div class="govuk-!govuk-grid-column-full">
+                                    <dl class="govuk-summary-list">
+                                        <div class="govuk-summary-list__row">
+                                          <dt class="govuk-summary-list__key">
+                                            Booked in but no court cases added or court cases added, but they are remand (no sentences yet).
+                                          </dt>
+                                          <dd class="govuk-summary-list__value">
+                                            <span class="govuk-hint">Appears everywhere regardless of URL</span>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/no-court-cases">Shutter page</a> 
+                                          </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                          <dt class="govuk-summary-list__key">
+                                            Inactive booking or not in caseload
+                                          </dt>
+                                          <dd class="govuk-summary-list__value">
+                                            <span class="govuk-hint">Appears everywhere regardless of URL</span>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/no-active-booking">Shutter page </a>
+                                          </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                          <dt class="govuk-summary-list__key">
+                                            Prisoner (determinate/indeterminate), one or more previous sentences (therefore previous calculations), no active sentences currently, NOMIS wipes the key dates. 
+                                          </dt>
+                                          <dd class="govuk-summary-list__value">
+                                            <span class="govuk-hint">This scenario can only occur in NOMIS and will only apply where that calculation is the latest calculation</span>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/overview?toShow=noActiveSentences">Overview</a>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/adjustments?toShow=noActiveSentences">Adjustment landing page</a>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/release-dates?toShow=noActiveSentences">CRDS landing page</a>
+                                          </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                          <dt class="govuk-summary-list__key">
+                                            Indeterminate offender (unsupported in CRDS, therefore manual entry), no dates available at the point of calculation, calculation saved with no dates in CRDS or NOMIS
+                                          </dt>
+                                          <dd class="govuk-summary-list__value">
+                                            <a class="govuk-link" target="external" href="v8/overview?toShow=indeterminateNoDates">Overview</a>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/adjustments?toShow=indeterminateNoDates">Adjustment landing page (no changes)</a>
+                                            <br>
+                                            <a class="govuk-link" target="external" href="v8/release-dates?toShow=indeterminateNoDates">CRDS landing page</a>
+                                          </dd>
+                                        </div>
+                                      </dl> 
+                                </div>
+                            </div>
+
+                            <div class="govuk-grid-column-three-quarters">  
                                 <h4 class="govuk-heading-m">4. Printed notification slip</h4> 
                                 <p class="govuk-body">A new way of previewing and printing the notification slip given to prisoners when their release dates are calculated. </p> 
                                 <ul class="govuk-list"> 
