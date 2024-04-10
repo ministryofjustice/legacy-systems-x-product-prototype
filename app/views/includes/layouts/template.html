@@ -327,7 +327,7 @@ Court cases and release dates
         {% endblock %}
   
         {% block banner %}
-<!-- 
+
         <div class="mini-profile govuk-!-margin-top-7" data-qa="mini-profile">
             <div class="mini-profile-inner">
                 <div class="mini-profile-left">
@@ -348,19 +348,8 @@ Court cases and release dates
                     </ul>
                 </div>
             </div>
-        </div> -->
-
-        {% set person = {
-            firstName: 'Joe',
-            lastName: 'Bloggs',
-            prisonerNumber: 'A8207AA',
-            dateOfBirth: '1987-04-01',
-            status: 'Active in',
-            prisonName: 'HMP Kirkham',
-            cellLocation: '5-2-A-051'
-        } %}
-
-        {{ miniProfile(person, '/public/images/test-image-3.jpeg', '#') }}
+        </div>
+ 
  
 
         {% endblock %}
