@@ -11,6 +11,7 @@
     "govuk-frontend": "^4.7.0",
     "govuk-prototype-kit": "^13.16.0",
     "hmpps-court-cases-release-dates-design": "^2.2.0",
-    "hmpps-design-system-frontend": "^1.0.3"
+    "hmpps-design-system-frontend": "^1.0.3",
+    "print-this": "github:jasonday/printThis"
   }
 }
