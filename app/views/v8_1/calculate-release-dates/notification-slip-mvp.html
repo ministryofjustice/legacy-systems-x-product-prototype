@@ -1,0 +1,245 @@
+<head>
+    <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+<link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" /> 
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+  <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %} 
+ 
+</head>
+
+<body class="govuk-template__body  js-enabled" data-new-gr-c-s-check-loaded="14.1110.0" data-gr-ext-installed="">
+    <script
+        nonce="">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+    <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+ 
+    <div class="print-width-container">
+
+        <span class="govuk-visually-hidden" id="occurrence-notification-slip-page"></span>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+ 
+
+            <div class="govuk-grid-row print-button">
+                <div class="govuk-grid-column-full">
+                    <h1 class="govuk-heading-l govuk-visually-hidden">Print notification slip</h1>
+
+                    <div class="govuk-button-group govuk-!-display-none-print">
+  
+                        <button data-prevent-double-click="true"
+                            class="govuk-button no-js-hidden" data-module="govuk-button" onclick="">
+                            Print notification slip
+                        </button>
+                        
+                        <button data-prevent-double-click="true"
+                            class="govuk-button govuk-button--secondary no-js-hidden" data-module="govuk-button" onclick="">
+                            Print establishment copy
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-slip">
+              <!-- <div class="hmpps-logo-wrapper"><img src="/public/images/hmpps-logo.png" alt="HMPPS logo"> </div> -->
+               
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                
+                        <span class="govuk-caption-m">HMP Kirkham</span>
+                        <h1 class="govuk-heading-l">Release date notification slip</h1>
+                        
+                    </div>
+                </div>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-one-half">
+                        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-1">
+                            <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                Name
+                            </dt>
+                            <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                Joe Bloggs
+                            </dd>
+                            </div>
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                    Cell number
+                                </dt>
+                                <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                    5-2-A-051
+                                </dd>
+                                </div> 
+                            
+                        </dl>
+                    </div>
+                    <div class="govuk-grid-column-one-half">
+                        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4 ">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                    Prison number
+                                </dt>
+                                <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                    A8207AA
+                                </dd>
+                            </div> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                    <NOBR> Booking number </NOBR>
+                                </dt>
+                                <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                    ?
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                </div>
+            
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        
+                        <!-- <span class="govuk-body">These release dates were calculated on 1&nbsp;August&nbsp;2023.</span> -->
+                        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                    Sentence calculated on
+                                </dt>
+                                <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                    1 April 2024
+                                </dd>
+                            </div> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                    Calculation reason
+                                </dt>
+                                <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                    Initial calculation
+                                </dd>
+                            </div>
+                        </dl>   
+
+                        <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Sentences</h2>
+                        <table class="govuk-table govuk-!-margin-bottom-4">
+                            <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Sentence details</caption>
+                            <thead class="govuk-table__head ">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Sentence</th>
+                                <th scope="col" class="govuk-table__header">Sentence start date</th>
+                                <th scope="col" class="govuk-table__header">Sentence length</th>
+                            </tr>
+                            </thead>
+                            <tbody class="govuk-table__body ">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 1, count 1</td>
+                                <td class="govuk-table__cell">1 December 2021</td>
+                                <td class="govuk-table__cell">5 years</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 2, count 1</td>
+                                <td class="govuk-table__cell">1 December 2021</td>
+                                <td class="govuk-table__cell">4 months</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 2, count 2</td>
+                                <td class="govuk-table__cell">1 December 2021</td>
+                                <td class="govuk-table__cell">4 months concurrent to <br>Court case 2, count 2</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Adjustments</h2>
+
+                    <p class="govuk-body govuk-!-margin-bottom-2">This calculation includes the following adjustments to sentences.</p>
+                    <table class="govuk-table ">
+                        <caption class="govuk-table__caption govuk-table__caption--m govuk-visually-hidden">Sentence details</caption>
+                        <thead class="govuk-table__head ">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Adjustment type</th>
+                            <th scope="col" class="govuk-table__header">Date from</th>
+                            <th scope="col" class="govuk-table__header">Date to</th>
+                            <th scope="col" class="govuk-table__header">Days</th>
+                        </tr>
+                        </thead>
+                        <tbody class="govuk-table__body ">
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Remand</td>
+                            <td class="govuk-table__cell">1 December 2023</td>
+                            <td class="govuk-table__cell">4 December 2023</td>
+                            <td class="govuk-table__cell">3 days taken away</td>
+                        </tr> 
+                        <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">Unlawfully At Large</td>
+                            <td class="govuk-table__cell">12 November 2023</td>
+                            <td class="govuk-table__cell">17 November 2023</td>
+                            <td class="govuk-table__cell">3 days added</td>
+                        </tr> 
+                        </tbody>
+                    </table> 
+
+                    <p class="govuk-body govuk-!-margin-bottom-2" >Days spent in custody pending appeal to count <b>(must be completed manually)</b>:</p>
+                    <p class="govuk-body govuk-!-margin-bottom-4">Days spent on bail pending appeal not to count <b>(must be completed manually)</b>:</p>
+
+
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Key dates non-DTO</h2>
+
+
+                    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                Number of days in sentence
+                            </dt>
+                            <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                234
+                            </dd>
+                        </div> 
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                Sentence expiry date
+                            </dt>
+                            <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                8 August 2024
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                Automatic release date
+                            </dt>
+                            <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                8 August 2024
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key govuk-!-font-weight-regular" style="padding: 5px 0px 6px 0px">
+                                Top-up supervision end date
+                            </dt>
+                            <dd class="govuk-summary-list__value " style="padding: 5px 0px 6px 0px">
+                                8 October 2024
+                            </dd>
+                        </div>
+                    </dl>   
+
+                     
+                    <p class="govuk-body">If you disagree with the above dates, please write down what you think the dates should be and hand to your wing office.</p>
+ 
+                </div>
+            </div> 
+                
+            </div>
+             
+ 
+        </main>
+    </div>
+
+
+    {% include "includes/scripts.html" %}
