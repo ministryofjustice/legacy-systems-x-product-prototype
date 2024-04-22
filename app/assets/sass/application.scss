@@ -1280,3 +1280,26 @@ $govuk-blue-button-text-colour: govuk-colour("white");
       }
     }
   }
+
+
+.new-notification-location {
+  :first-child {
+    margin-bottom:0;
+  }
+}
+
+.case-border {
+  border:2px solid #b1b4b6;
+  padding: 20px;
+}
+.rada .govuk-summary-card__actions {
+   flex-wrap:nowrap;
+  height:28px;
+
+  }
+
+.rada .govuk-summary-card__action {
+  text-wrap:nowrap;
+}
+
+

@@ -65,9 +65,12 @@
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-full hmpps-profile-banner-top">
             <a href="/prisoner/A0227DZ/image" class="hmpps-clickable-image" data-qa="prisoner-photo-link">
-              <img class="dwf-header-profile-img" src="/public/images/test-image-3.jpeg" alt="Neil Rudge">
+              <img class="dwf-header-profile-img" src="/public/images/test-image-3.jpeg" alt="Joe
+  Bloggs
+ ">
             </a>
-            <h2 class="govuk-heading-l hmpps-profile-prisoner-name">Rudge, Neil</h2>
+            <h2 class="govuk-heading-l hmpps-profile-prisoner-name">Bloggs, Joe
+ </h2>
             <div class="info">
               <p class="govuk-body govuk-!-font-size-24 hmpps-profile-prisoner-number" aria-label="Prisoner Number">
                 A0227DZ
@@ -226,7 +229,8 @@
         <ul class="hmpps-status-list">
           
             <li>
-              <p>In Moorland (HMP &amp; YOI)</p>
+              <p>In Hull
+  (HMP &amp; YOI)</p>
               
             </li>
           
@@ -239,123 +243,7 @@
       <div class="govuk-grid-column-full" data-qa="overview-mini-summary-group-a">
         
         <div class="govuk-grid-row hmpps-miniSummaryWrapper" data-qa="mini-summary-list-macro">
- 
-    
-            {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-            <div class="govuk-grid-column-full">
-                                
-              <div class="hmpps-summary-card " id="">
-                
-                  <div class="hmpps-summary-card__header" data-qa="summary-header">
-                    <h2>Court cases and release dates</h2>
-                  </div>
-                
-                <div class="hmpps-summary-card__body">
-                  <div class="govuk-grid-row card-body ">
-                    <div class="govuk-grid-column-full"> 
-                      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Active court cases</p> 
-                      <p class="govuk-body hmpps-mini-card__big">1</p>
-
-                      <hr class="govuk-section-break govuk-section-break--visible">
-                      
-                      <div class="govuk-!-padding-top-3">
-                      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Next court appearance </p> 
-
-    
-                      {% if data['toShow'] == 'none' %}
-                        
-                      <p class="govuk-body">No upcoming court hearings.</p> 
-                      
-                      {% else %}
-                      <dl class="govuk-summary-list govuk-summary-list--no-border"  >
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Case reference
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                T20230101
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Location
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Aldershot and Farnham County Court
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Hearing type
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Court appearance
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Date
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                5 April 2024 at 13:00
-                            </dd>
-                        </div>
-                    </dl>
-                    {% endif %}
-                    </div>
-
-                <hr class="govuk-section-break govuk-section-break--visible">
-
-                <div class="govuk-!-padding-top-3">
-                      <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Latest calculation </p> 
-
-
-                    {% if data['toShow'] == 'none' %}
-
-                    <p class="govuk-body">There are no release dates calculated for Joe Bloggs.</p>
-                    {% else %} 
-                  
-                      <dl class="govuk-summary-list govuk-summary-list--no-border">
-                        <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
-                            Date of calculation
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-                            10 March 2024
-                          </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
-                            Establishment
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-                            HMP Kirkham 
-                          </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                          <dt class="govuk-summary-list__key">
-                            Calculation reason
-                          </dt>
-                          <dd class="govuk-summary-list__value">
-                            Transfer check
-                          </dd>
-                        </div>
-                      </dl>
-
-                      {% endif %} 
-                  
-                      <p class="govuk-body"><a data-qa="overview-offences-view-all" href="release-dates?viewOption=adjustmentsReleasedFalse" class="govuk-link govuk-link--no-visited-state">View and calculate release dates</a></p>
-                    </div> 
-
-                  </div>
-                  </div>
-                </div>
-                </div>
-              </div>
-            
-
-      
-                {% elif data['viewOption'] == 'adjustmentsReleasedTrue' or 'RSReleasedTrue' %}
+  
                   <div class="govuk-grid-column-full">
                                 
                   <div class="hmpps-summary-card " id="">
@@ -373,65 +261,22 @@
                           <hr class="govuk-section-break govuk-section-break--visible">
                           <div class="govuk-!-padding-top-3">
                             <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Next court appearance </p> 
-
-                          {% if data['toShow'] == 'none' %}
+ 
                             
                           <p class="govuk-body">No upcoming court hearings.</p> 
-                          
-                          {% else %}
-                          <dl class="govuk-summary-list govuk-summary-list--no-border"  >
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Case reference
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    T20230101
-                                </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Location
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Aldershot and Farnham County Court
-                                </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Hearing type
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    Court appearance
-                                </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                                <dt class="govuk-summary-list__key">
-                                    Date
-                                </dt>
-                                <dd class="govuk-summary-list__value">
-                                    5 April 2024 at 13:00
-                                </dd>
-                            </div>
-                        </dl>
-
-                        {% endif %}
+                        
                         </div>
                     <hr class="govuk-section-break govuk-section-break--visible">
 
                     <div class="govuk-!-padding-top-3">
                       <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Latest calculation </p> 
-
-                          {% if data['toShow'] == 'none' %}
-
-                          <p class="govuk-body">There are no release dates calculated for Neil Rudge.</p>
-                          {% else %} 
                           <dl class="govuk-summary-list govuk-summary-list--no-border">
                             <div class="govuk-summary-list__row">
                               <dt class="govuk-summary-list__key">
                                 Date of calculation
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                10 March 2024
+                                10 March 2023
                               </dd>
                             </div>
                             <div class="govuk-summary-list__row">
@@ -439,7 +284,8 @@
                                 Establishment
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                HMP Kirkham 
+                                Not provided
+  
                               </dd>
                             </div>
                             <div class="govuk-summary-list__row">
@@ -450,10 +296,9 @@
                                 Initial calculation
                               </dd>
                             </div>
-                          </dl>
-                          {% endif %} 
+                          </dl> 
                       
-                          <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview?toShow=releaseDatesNomis" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+                          <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
                         </div> 
                       </div>
                       </div>
@@ -462,10 +307,7 @@
                   </div>
                 
 
-                          
-                {% else %} 
-
-                {% endif %}
+                           
               </div>
             
         <div class="govuk-grid-row hmpps-miniSummaryWrapper" data-qa="mini-summary-list-macro">
@@ -492,7 +334,8 @@
       </div>
       <div class="govuk-summary-list__row--no-border">
           <div class="govuk-!-padding-top-3">
-              <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">Non-associations in Moorland (HMP &amp; YOI)</dt>
+              <dt class="govuk-!-font-weight-bold govuk-!-margin-bottom-1">Non-associations in Hull
+  (HMP &amp; YOI)</dt>
               <dd class="govuk-!-margin-left-0 govuk-!-margin-bottom-2" data-qa="overview-non-association-count">0</dd>
               <dd class="govuk-!-margin-left-0" data-qa="overview-non-associations-link"><a href="https://non-associations-dev.hmpps.service.justice.gov.uk/prisoner/A0227DZ/non-associations" class="govuk-link govuk-link--no-visited-state">Non-associations</a></dd>
           </div>
@@ -754,7 +597,8 @@
         <div class="govuk-summary-list__row" data-qa="preferred-name-row">
           <dt class="govuk-summary-list__key" data-qa="preferred-name-key">Preferred name</dt>
           
-            <dd class="govuk-summary-list__value" data-qa="preferred-name">Neil</dd>
+            <dd class="govuk-summary-list__value" data-qa="preferred-name">Joe
+ </dd>
           
         </div>
       

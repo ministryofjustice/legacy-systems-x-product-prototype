@@ -29,7 +29,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">Thursday, 19 February 2036</p>
+                                <p class="govuk-body">Tuesday, 18 July 2023</p>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -38,28 +38,28 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Sunday, 19 February 2034</p>
-                                <p class="govuk-!-font-size-16 govuk-hint">Friday, 17 February 2034 when adjusted to a working day</p>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                                PED
-                                <p class="govuk-!-font-size-16 govuk-hint">Parole Eligibility Date</p>
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Friday, 21 April 2028</p>
+                                <p class="govuk-body">Saturday, 29 April 2023</p>
+                                <p class="govuk-!-font-size-16 govuk-hint">Friday, 28 April 2023 when adjusted to a working day</p>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
-                                ERSED
-                                <p class="govuk-!-font-size-16 govuk-hint">Early Removal Scheme Eligibility Date</p>
+                                HDCED
+                                <p class="govuk-!-font-size-16 govuk-hint">Home detention curfew expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Wednesday, 21 April 2027</p>
+                                <p class="govuk-body">Friday, 24 March 2023</p>
                             </dd>
                         </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                TUSED
+                                <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Monday, 29 April 2024</p> 
+                            </dd>
+                        </div> 
                     </dl>
                 </div>
             </div>
@@ -168,7 +168,6 @@
                 </div>
             
         </div>
-                 
         </div>
     </div>
     <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Release dates that include adjustments</h3>
@@ -229,17 +228,18 @@
             </table>
         </div>
     </div>
-     
-</div> 
+</div>
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <h3 class="govuk-heading-m">Confirm and submit to NOMIS</h3>
-            <p class="govuk-body">By submitting this calculation you are confirming that, to the best of your knowledge, it is correct. The calculation will be saved in NOMIS.</p>
-            <a href="calculation-complete.html">
+            <h3 class="govuk-heading-m">Confirm the dates are correct</h3>
+            <p class="govuk-body">By continuing you are confirming that, to the best of your knowledge, the calculation is correct.</p>
+            <form action="/v8_1/new-calculation" method="post">
+
                 <button class="govuk-button" data-module="govuk-button">Confirm and submit</button>
-            </a>
-            <p class="govuk-body govuk-!-font-size-16"><a href="calculation-cancelled.html" class="govuk-link">Cancel calculation</a></p>
+            </form>
+          
+            <!-- <p class="govuk-body govuk-!-font-size-16"><a href="calculation-cancelled.html" class="govuk-link">Cancel calculation</a></p> -->
         </div>
     </div>
 </div>

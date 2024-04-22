@@ -1,0 +1,60 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+
+    <div class="">
+        <a href="select-offences" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Review remand details</h1>
+                    <p>Check that the remand and offence information is correct. Once you’ve reviewed it, you can add more remand time if needed.</p>
+                    <h2 class="govuk-heading-m">Remand details</h2>
+                    <div id="periodsOfRemand">
+
+                    </div>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Total days
+                            </dt>
+                            <dd id="totalDays" class="govuk-summary-list__value">
+                                29
+                            </dd>
+
+                        </div>
+
+
+                    </dl>
+                    <div class="govuk-!-margin-bottom-6">
+                        <h2 class="govuk-heading-m">Do you need to add another period of remand?</h2>
+                        <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="yes" name="changedName" type="radio" value="yes" data-route="enter-remand">
+                                <label class="govuk-label govuk-radios__label" for="yes">
+                                    Yes
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="changedName-2" name="changedName" type="radio" value="no" data-route="check-your-answers-2">
+                                <label class="govuk-label govuk-radios__label" for="changedName-2">
+                                    No
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="govuk-button-group">
+                        <a href="check-your-answers-2.html" id="review-remand-button" class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </a>
+                        <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

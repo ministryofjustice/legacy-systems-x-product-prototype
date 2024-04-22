@@ -1,0 +1,113 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+
+    <div class="">
+        <a href="enter-remand.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">
+                        <span class="govuk-caption-xl">Adjustments</span>
+                        Select the offences
+                    </h1>
+                    <p class="govuk-body-l govuk-!-margin-top-6 "> You have entered  <span class="govuk-!-font-weight-bold" id="Days"></span>  day(s) of remand. Select all the offences that apply to this remand time. </p>
+                    <p class="govuk-body-l">The rules for applying remand can be found in the <a href="#">policy framework</a>.</p>
+                    <h2 class="govuk-heading-m">
+                        Court case 1
+                    </h2>
+                    <div class="case-border govuk-!-margin-bottom-6">
+                        <p>
+                            <b>Court name :</b> Bristol Magistrates court.<br>
+                            <b>Case reference :</b> T20220702
+                        </p>
+                        <div class="govuk-form-group  ">
+                            <fieldset class="govuk-fieldset" aria-describedby="case-1-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    Offences
+                                </legend>
+                                <div id="case-1-hint" class="govuk-hint">
+                                    Select all that apply
+                                </div>
+                                <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="case-1-offence-1" name="case-1-offences" type="checkbox"
+                                               aria-describedby="case-1-offence-1-hint"
+                                               value="Burglary other than dwelling - theft"
+                                               data-court="Bristol Magistrates Court"
+                                               data-case-ref="T20220702"
+                                               data-offence-date="Committed on 1 Jan 2023"
+                                               data-offence-date-date="1 Jan 2023"
+                                               data-id="1"
+                                        >
+                                        <label class="govuk-label govuk-checkboxes__label" for="case-1-offence-1" >
+                                            Burglary other than dwelling
+                                        </label>
+                                        <div id="case-1-offence-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                            Committed on 1 Jan 2023
+                                        </div>
+                                    </div> 
+                                </div>
+                            </fieldset>
+                        </div>
+                    </div>
+
+                    <h2 class="govuk-heading-m">
+                        Court case 2
+                    </h2>
+                    <div class="case-border">
+                    <p>
+                        <b>Court name :</b> Bristol Magistrates court.<br>
+                        <b>Case reference :</b> T20223256
+                    </p>
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                <span class="govuk-fieldset__heading">
+                                    Offences
+                                </span>
+                            </legend>
+                            <div id="waste-hint" class="govuk-hint">
+                                Select all that apply
+                            </div>
+                            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input"  id="case-2-offence-1" name="case-2-offences" type="checkbox"
+                                           aria-describedby="case-2-offence-1-hint"
+                                           value="Attempt to possess a controlled drug of Class C - GHB"
+                                           data-court="Bristol Magistrates Court"
+                                           data-case-ref="T20223256"
+                                           data-offence-date="Committed on 12 Jan 2023"
+                                           data-offence-date-date="12 Jan 2023"
+                                           data-id="3"
+
+                                    >
+                                    <label class="govuk-label govuk-checkboxes__label" for="case-2-offence-1">
+                                        Attempt to possess a controlled drug of Class C - GHB 
+                                    </label>
+                                    <div id="case-2-offence-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                        Committed on 12 Jan 2023
+                                    </div>
+                                </div> 
+                            </div>
+                        </fieldset>
+                    </div>
+                    </div>
+                    <p class="govuk-inset-text">If you think some information is wrong, you can edit it in NOMIS and <a href="#">reload this page</a>.</p>
+                    <div class="govuk-button-group">
+                        <a href="review-2.html" id="add-offences-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+                        <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
