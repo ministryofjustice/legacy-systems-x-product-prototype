@@ -1,0 +1,83 @@
+{% extends "../../includes/layouts/template-linear.html" %} {% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="select-which-approved-dates" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" method="post" action="enter-ROTL">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" role="group" aria-describedby="HDCAD-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+              <h1 class="govuk-fieldset__heading">
+                Enter the HDCAD (Home detention curfew approved date)
+              </h1>
+
+            </legend> 
+
+            <div class="govuk-date-input" id="HDCAD">
+ 
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="HDCAD-day">
+                    Day
+                  </label>
+
+
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="HDCAD-day" name="day"
+                    type="number" inputmode="numeric">
+
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="HDCAD-month">
+                    Month
+                  </label>
+
+
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="HDCAD-month" name="month"
+                    type="number" inputmode="numeric">
+
+                </div>
+              </div>
+
+              <div class="govuk-date-input__item">
+                <div class="govuk-form-group">
+                  <label class="govuk-label govuk-date-input__label" for="HDCAD-year">
+                    Year
+                  </label> 
+
+                  <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="HDCAD-year" name="year"
+                    type="number" inputmode="numeric">
+
+                </div>
+              </div>
+
+
+            </div>
+
+          </fieldset>
+
+        </div> 
+
+        <input type="hidden" name="_csrf" value="spFxF0sq-CzqH8QHtGwIF7luXgK5KjaLm0bM">
+        <input type="hidden" name="dateType" value="HDCAD"> 
+
+        <button value="submit-date" type="submit" data-prevent-double-click="true" class="govuk-button"
+          data-module="govuk-button" data-qa="date-entry">
+          Continue
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

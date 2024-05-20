@@ -1,0 +1,79 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="../release-dates" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form method="post" action="/v9/which-dates-to-add">
+
+        <div class="govuk-form-group">
+
+          <fieldset class="govuk-fieldset" aria-describedby="dateSelect-hint">
+
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+              <h1 class="govuk-fieldset__heading">
+                Select the dates you need to enter
+              </h1>
+
+            </legend>
+
+
+            <div id="dateSelect-hint" class="govuk-hint">
+              Select all that apply.
+            </div>
+
+
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes"> 
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="APD" name="date-select" type="checkbox" value="APD">
+                <label class="govuk-label govuk-checkboxes__label" for="APD">
+                  APD (Approved parole date)
+                </label>
+
+              </div>
+ 
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="HDCAD" name="date-select" type="checkbox"
+                  value="HDCAD">
+                <label class="govuk-label govuk-checkboxes__label" for="HDCAD">
+                  HDCAD (Home detention curfew approved date)
+                </label>
+
+              </div>
+ 
+
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="ROTL" name="date-select" type="checkbox" value="ROTL">
+                <label class="govuk-label govuk-checkboxes__label" for="ROTL">
+                  ROTL (Release on temporary licence)
+                </label>
+
+              </div>
+  
+            </div>
+
+
+          </fieldset>
+
+
+        </div>
+
+
+        <input type="hidden" name="_csrf" value="XRwcNfA1-A_sZ67s1Ck8EWU2Aj1O8_u4NazE">
+ 
+        <button value="determinate-date-selection" type="submit" data-prevent-double-click="true" class="govuk-button"
+          data-module="govuk-button" data-qa="manual-entry">
+          Continue
+        </button>
+
+      </form>
+    </div>
+  </div>
+</div>
+{% endblock %}

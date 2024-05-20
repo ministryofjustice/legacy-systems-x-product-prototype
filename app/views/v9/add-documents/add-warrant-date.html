@@ -1,0 +1,55 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="add-case-reference" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+            <span class="govuk-caption-l">Add a document</span>
+      <h1 class="govuk-heading-l">
+        Add a warrant date (optional)
+      </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="add-court-details" method="post" enctype="multipart/form-data">
+            <div class="govuk-form-group">
+                <div class="govuk-date-input" id="warrant-date">
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="warrant-date-day">
+                                Day
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="warrant-date-day" name="appearance[warrant-date-day]" type="text" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="warrant-date-month">
+                                Month
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="warrant-date-month" name="appearance[warrant-date-month]" type="text" inputmode="numeric">
+                        </div>
+                    </div>
+                    <div class="govuk-date-input__item">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-date-input__label" for="warrant-date-year">
+                                Year
+                            </label>
+                            <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="warrant-date-year" name="appearance[warrant-date-year]" type="text" inputmode="numeric">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

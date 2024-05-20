@@ -1,0 +1,33 @@
+ 
+{% extends "../includes/layouts/template-linear.html" %}
+ 
+{% block content %}
+<!-- Overview -->
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            The details for this person cannot be found
+        </h1>
+    </div>
+</div> 
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">This could be because this person:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>is not in your case load</li>
+            <li>has no bookings assigned to them</li>
+            <li>has no active bookings</li>
+        </ul>
+
+        <p class="gouk-body">Check the details in NOMIS and then <a class="govuk-link" href="#">try again</a>.</p> 
+    </div>
+
+</div>
+ 
+ 
+{% endblock %}

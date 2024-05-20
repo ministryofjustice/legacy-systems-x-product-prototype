@@ -29,12 +29,101 @@
                   <span class="govuk-warning-text__assistive">Warning</span>
                   Before running a prototype, make sure you <a class="govuk-link--no-visited-state" href="/manage-prototype/clear-data">clear data</a>.
                 </strong>
-              </div>
+            </div>
 
 
-              <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+            <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
-              <div class="govuk-accordion__section">
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 9 
+                            
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In design
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v9/DPS-home?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                        {{govukButton({
+                                            text: "Launch from prisoner profile",
+                                            attributes: {
+                                            "formaction": "v9/DPS-prisoner-profile?viewOption=adjustmentsReleasedTrue",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">
+                                    <li>New link to add manually calculated dates</li>   
+                                    <li>DTO and non-DTO dates on the printed notification slip</li>   
+                                </ul> 
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764589276281184&cot=14">Add manually calculated dates (miro)</a></li>  
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. New link to add manually calculated dates</h4> 
+                                <p class="govuk-body">Adding a new link which will allow users to add manually calculated release dates, such as ROTL, HDCAD and ADP. The journey follow the same as the standard calculate journey.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v9/release-dates">Release dates landing page</a></li>   
+                                </ul>  
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">2. Edge cases for printed notification slip</h4> 
+                                <p class="govuk-body">Surfacing release dates releated to <b>Dentention Training Orders (DTOs)</b>. These are shown as a sparate section on the NOMIS slip, we will recreated this until we are able to carry out further analysis and research into DTO dates. </p> 
+                                <ul class="govuk-list govuk-list--bullet"> 
+                                    <li><a class="govuk-link" target="external" href="v9/calculate-release-dates/notification-slip-mvp-DTO.html">Mix of DTO and non-DTO - default copy</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v9/calculate-release-dates/notification-slip-mvp-DTO-mixed.html">DTO only - default copy</a></li>   
+                                 </ul>  
+
+                                <p class="govuk-body">Surfacing a line of content when there is a <b>HDCED</b> present.</p> 
+                                <ul class="govuk-list govuk-list--bullet"> 
+                                    <li><a class="govuk-link" target="external" href="v9/calculate-release-dates/notification-slip-mvp-offender-HDCED.html">HDCED - prisoner copy</a></li>   
+                                </ul>  
+
+                                <p class="govuk-body">Blocking the user from printing a notification slip if the prisoner is on an <b>indeterminate sentence</b>. Part of this should already be covered where we do not show a released dates card for <a href="v9/release-dates?toShow=indeterminateNoDates">indeterminate offenders with no manually added dates</a>. </p> 
+                                
+                                <p class="govuk-body">For scenarios where the user <i>has</i> added manaul dates, we must block them from printing the slip still. </p> 
+                                <ul class="govuk-list govuk-list--bullet"> 
+                                    <li><a class="govuk-link" target="external" href="v9/release-dates?toShow=indeterminateWithDates">Release dates landing page with no print link</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v9/calculate-release-dates/calculation-complete?toShow=indeterminateNoDates">Confirmation screen with no print link</a></li>   
+                                </ul>  
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="govuk-accordion__section">
                 <div class="govuk-accordion__section-header">
                     <h2 class="govuk-accordion__section-heading">
                     <span class="govuk-accordion__section-button" id="version-8_1">
@@ -43,9 +132,9 @@
                         For research
                         </strong>
 
-                        
-                        <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                            In design
+                           
+                        <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                            Closed
                         </strong>
                     </span>
                     </h2>
@@ -82,32 +171,32 @@
                     </div>
                     
                         <div class="govuk-grid-column-three-quarters"> 
-                        <h4 class="govuk-heading-m">What we are testing</h4> 
-                        <p class="govuk-body">This remote round of UR is due to take place in wc 24th April 2023.</p> 
-                        <p class="govuk-body">In this round, we aim to:</p> 
-                        <ul class="govuk-list govuk-list--bullet">
-                            <li>...</li>
-                            <li>...</li>
-                            <li>...</li> 
-                        </ul>   
-                        <h4 class="govuk-heading-m">Supporting documents</h4>
-                        <ul class="govuk-list"> 
-                            <li><a class="govuk-link" target="external" href="#">UR planning (miro)</a></li>  
-                            <li><a class="govuk-link" target="external" href="#">Discussion guide (google docs)</a></li> 
-                            <li><a class="govuk-link" target="external" href="#">UR playback (miro)</a></li> 
-                        </ul> 
+                            <h4 class="govuk-heading-m">What we are testing</h4> 
+                            <p class="govuk-body">This remote round of UR is due to take place in wc 24th April 2023.</p> 
+                            <p class="govuk-body">In this round, we aim to:</p> 
+                            <ul class="govuk-list govuk-list--bullet">
+                                <li>Understand how OMU users use data displayed on DPS prisoner profile</li>
+                                <li>Understand how do OMU users use the offences tab</li>
+                                <li>Understand the Impact of not being being able to view court case / sentence and offence details on CCARD</li> 
+                                <li>Explore user understanding of Special Remission and Lawfully at Large (adjustments)</li> 
+                            </ul>   
+                            <h4 class="govuk-heading-m">Supporting documents</h4>
+                            <ul class="govuk-list"> 
+                                <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764584678886042&cot=14">UR planning (miro)</a></li>   
+                                <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764587136968666&cot=14">UR playback (miro)</a></li> 
+                            </ul> 
 
-                        <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                            <!-- <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-                        <h4 class="govuk-heading-m">Scenario 1</h4> 
-                        <p>...</p>
+                            <h4 class="govuk-heading-m">Scenario 1</h4> 
+                            <p>...</p>
 
-                        <p><a class="govuk-link" href="#">...</a></p>  -->
+                            <p><a class="govuk-link" href="#">...</a></p>  -->
 
                     </div>
                 </div>
             </div>
-        </div>
+                </div>
             
 
                 <div class="govuk-accordion__section">
@@ -116,9 +205,9 @@
                         <span class="govuk-accordion__section-button" id="version-8">
                             Version 8 
 
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                                In Design
-                                </strong>
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
                         </span>
                         </h2>
                     </div> 
@@ -1080,8 +1169,8 @@
                     <a class="govuk-link" href="https://miro.com/app/board/uXjVNTjoHT8=/?share_link_id=602180618685">Miro board</a>
                     </li>
                     <li>
-                    <a class="govuk-link" href="https://trello.com/b/YinWzCOw/x-product-features">Trello board</a>
-                    </li>
+                    <a class="govuk-link" href="https://trello.com/b/YinWzCOw/x-product-features">Trello board (no longer in use)</a>
+                    </li> 
                     <li>
                     <a class="govuk-link" href="https://drive.google.com/drive/u/0/folders/1PRaFveYhgzPhQpm-oZyoKCyQ7Ulot0up?ths=true">Google drive</a>
                     </li>

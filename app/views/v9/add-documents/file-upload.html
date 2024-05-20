@@ -1,0 +1,38 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="document-type" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Add a document</span>
+      <h1 class="govuk-heading-l">
+        Upload a file
+      </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="associate-with-court-case-choice" method="post" enctype="multipart/form-data">
+            <div class="govuk-form-group">
+                   
+                    <p class="govuk-body">
+                        List of accepted file types... 
+                    </p>
+                    
+                    {{ govukFileUpload({
+                        id: "file-upload-1",
+                        name: "file-upload-1"
+                    }) }}
+                    </div>
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}
