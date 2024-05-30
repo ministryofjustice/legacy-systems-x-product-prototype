@@ -1,5 +1,5 @@
 {% extends "../../includes/layouts/template-linear.html" %}
-{% block content %} 
+{% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
     <a href="calculation-reason" class="govuk-back-link">Back</a>
@@ -7,11 +7,11 @@
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds"> 
+        <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">
-                Check sentence and offence information for Joe Bloggs
+                Check sentence and offence information
             </h1>
-            
+
         </div>
     </div>
 </div>
@@ -57,30 +57,21 @@
         </div>
     </div>
 </div> -->
-<!-- ERSED checkbox -->
-<div class="moj-width-container govuk-!-margin-top-2">
+<!-- NOMIS sentences -->
+<div class="moj-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label">
-          Include an Early release scheme eligibility date (ERSED) 
-        </label>
-                            <div class="govuk-hint govuk-checkboxes__hint">
-          Not applicable for terror or terror-related offences
-        </div>
-      </div>
-  </div>
+           <p class="govuk-body">This calculation will include 5 sentences from NOMIS.</p>
         </div>
     </div>
 </div>
 <!-- Court case 1 -->
-<div class="moj-width-container govuk-!-margin-top-6">
+<div class="moj-width-container govuk-!-margin-top-4">
     <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Court case 1</h3>
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4">
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key">
                         Court case number
@@ -310,15 +301,17 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-half">
                 <h2 class="govuk-heading-l govuk-!-margin-top-6">Adjustments</h2>
-                <div class="govuk-tabs govuk-!-margin-top-8" data-module="govuk-tabs">
+                <div class="govuk-tabs govuk-!-margin-top-4" data-module="govuk-tabs">
                     <ul class="govuk-tabs__list" role="tablist">
                         <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
-                            <a class="govuk-tabs__tab" href="#summary" data-qa="summary-tab-link" id="tab_summary" role="tab" aria-controls="summary" aria-selected="true" tabindex="0">
+                            <a class="govuk-tabs__tab" href="#summary" data-qa="summary-tab-link" id="tab_summary"
+                                role="tab" aria-controls="summary" aria-selected="true" tabindex="0">
                                 Summary
                             </a>
                         </li>
                         <li class="govuk-tabs__list-item" role="presentation">
-                            <a class="govuk-tabs__tab" href="#detailed" data-qa="detailed-tab-link" id="tab_detailed" role="tab" aria-controls="detailed" aria-selected="false" tabindex="-1">
+                            <a class="govuk-tabs__tab" href="#detailed" data-qa="detailed-tab-link" id="tab_detailed"
+                                role="tab" aria-controls="detailed" aria-selected="false" tabindex="-1">
                                 Detailed
                             </a>
                         </li>
@@ -400,7 +393,8 @@
                             </tbody>
                         </table>
                     </div>
-                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="detailed" role="tabpanel" aria-labelledby="tab_detailed">
+                    <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="detailed" role="tabpanel"
+                        aria-labelledby="tab_detailed">
                         <h3 class="govuk-heading-m govuk-!-margin-bottom-6">Deductions</h3>
                         <h4 class="govuk-heading-s govuk-!-margin-bottom-2">Remand</h4>
                         <table class="govuk-table govuk-!-margin-bottom-8">
@@ -420,7 +414,8 @@
                                 <!-- Total -->
                                 <tr class="govuk-table__row">
                                     <!-- Dates -->
-                                    <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">Total days</td>
+                                    <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">
+                                        Total days</td>
                                     <!-- Days -->
                                     <td class="govuk-table__cell">1
                                     </td>
@@ -438,18 +433,43 @@
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
                 <div class="govuk-inset-text">
-                    If you think some information is wrong, you can edit it in NOMIS and <a onclick="location.reload();" href="javascript:void(0);">reload this page</a>.
+                    If you think some information is wrong, you can edit it in NOMIS and <a onclick="location.reload();"
+                        href="javascript:void(0);">reload this page</a>.
                 </div>
             </div>
         </div>
     </div>
+
+    <h2 class="govuk-heading-m govuk-!-margin-top-7">Now calculate release dates</h2>
+
+<!-- ERSED checkbox -->
+<div class="moj-width-container govuk-!-margin-top-2">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
+                        value="hmrc">
+                    <label class="govuk-label govuk-checkboxes__label">
+                        Include an Early release scheme eligibility date (ERSED) in this calculation
+                    </label>
+                    <div class="govuk-hint govuk-checkboxes__hint">
+                        Not applicable for terror or terror-related offences
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
     <!-- Call to action -->
-    <div class="moj-width-container">
+    <div class="moj-width-container govuk-!-margin-top-4">
         <div class="govuk-grid-row">
             <div class="govuk-grid-column-two-thirds">
-                <h2 class="govuk-heading-m govuk-!-margin-top-7">Now calculate release dates for Joe Bloggs</h2>
-                <p class="govuk-body">The release dates will not be saved in NOMIS until you have reviewed the calculation.</p>
-                <a href="calculation-summary.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                <p class="govuk-body">The release dates will not be saved in NOMIS until you have reviewed the
+                    calculation.</p>
+                <a href="calculation-summary.html" role="button" draggable="false" class="govuk-button"
+                    data-module="govuk-button">
                     Calculate release dates
                 </a>
             </div>
