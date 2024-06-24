@@ -2,44 +2,6 @@
 {% set adjustmentsActive = true %}
 {% block content %}
 
-{% if data['toDo'] == 'changesApplied' %}
-<div class="govuk-notification-banner govuk-notification-banner--success" role="alert" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-
-    <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-            ADA updates have been saved
-        </h3>
-        <p class="govuk-body">Once all of the adjustments have been made, you must
-            <a href="calculate-release-dates/calculation-reason" class="govuk-notification-banner__link">recalculate release dates</a>.
-        </p>
-    </div>
-</div>
-{% else %}
-
-{% endif %}
-
-{% if data['toDo'] == 'adaFirstTime' %}
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-       
-
-        <h1 class="govuk-heading-xl">
-            <!-- <span class="govuk-caption-xl">Adjust release dates</span> -->
-            Review ADA adjudications
-        </h1>
-    </div>
-</div> 
- 
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-       
-        <p class="govuk-body">The first time you use the adjustments service, you must check that the ADA (Additional days awarded) information is correct. </p>
-        <p class="gouk-body"><a href="#">Review ADAs</a></p>
-    </div>
-
-</div>
-
-{% else %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
 
@@ -49,6 +11,74 @@
         </h1>
     </div>
 </div> 
+{% if data['toDo'] == 'ADAupdated' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA updates</h2>
+    <p class="govuk-body">Updates have been made to ADA (Additional days awarded) information, which need to be approved.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review ADA
+    </a>
+    </section>
+
+</article>
+
+
+{% elif data['toDo'] == 'ADAnomis' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA adjudication</h2>
+    <p class="govuk-body">This service has identified ADA adjustments that were created in NOMIS. You must review the adjudications with ADAs and approve them in this service.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review ADA
+    </a>
+    </section>
+
+</article>
+
+
+{% elif data['toDo'] == 'ADAnoAdjustment' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA adjudication</h2>
+    <p class="govuk-body">This service has identified an ADA adjustment with no supporting ADA adjudication. You must review the ADA adjustment and confirm whether it should be deleted.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review ADA
+    </a>
+    </section>
+
+</article>
+
+
+{% elif data['toDo'] == 'PADAreview' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review PADA</h2>
+    <p class="govuk-body">There is a PADA (Prospective additional days awarded) recorded for Joe Bloggs. Review the PADA and approve if it's relevant to the current sentence.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review PADA
+    </a>
+    </section>
+
+</article>
+
+{% else %}
+
+{% endif %}
+
+
 
 {% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
 <div class="govuk-grid-row">
@@ -371,8 +401,7 @@
 </div>
 
 </div>
- 
-{% endif %}
+  
 {% endif %}
 <script>
 function toggleAlert() {

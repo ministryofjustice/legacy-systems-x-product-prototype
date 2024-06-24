@@ -364,11 +364,16 @@ Court cases and release dates
                         <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
                     </li> 
                     <li class="moj-sub-navigation__item">
-                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} </a>
                     </li>
                     <li class="moj-sub-navigation__item">
-                        <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
- </a>
+                        <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} </a>
                     </li>
                     <li class="moj-sub-navigation__item">
                         <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
@@ -388,11 +393,18 @@ Court cases and release dates
                             <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
- </a>
+                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
                         <li class="moj-sub-navigation__item">
                             <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
@@ -412,11 +424,18 @@ Court cases and release dates
                             <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
- </a>
+                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
                         <li class="moj-sub-navigation__item">
                             <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
@@ -437,15 +456,22 @@ Court cases and release dates
                         <a class="moj-sub-navigation__link" href="overview">Overview</a>
                     </li> 
                     <li class="moj-sub-navigation__item">
-                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
                     </li>
                     <li class="moj-sub-navigation__item">
-                        <a class="moj-sub-navigation__link"  aria-current="page"href="release-dates">Release dates and calculations
- </a>
+                        <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
                     </li>
-                    <li class="moj-sub-navigation__item">
-                        <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                    </li> -->
                     <!-- <li class="moj-sub-navigation__item">
                         <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                     </li> -->
@@ -461,15 +487,22 @@ Court cases and release dates
                             <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments</a>
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" aria-current="page" href="release-dates">Release dates and calculations
- </a>
+                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
-                        <li class="moj-sub-navigation__item">
-                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                        </li> -->
                         <!-- <li class="moj-sub-navigation__item">
                             <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                         </li> -->
@@ -488,15 +521,22 @@ Court cases and release dates
                     <a class="moj-sub-navigation__link"  aria-current="page" href="court-cases">Court cases</a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link"  href="adjustments">Adjustments</a>
+                    <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                        {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                        {% else %} 
+                        {% endif %} 
+                    </a>
                 </li>
                 <li class="moj-sub-navigation__item">
-                    <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
- </a>
+                    <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                        {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                        {% else %} 
+                        {% endif %} 
+                    </a>
                 </li>
-                <li class="moj-sub-navigation__item">
-                    <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                </li> -->
                 <!-- <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                 </li> -->
@@ -512,15 +552,22 @@ Court cases and release dates
                         <a class="moj-sub-navigation__link" href="overview">Overview</a>
                     </li> 
                     <li class="moj-sub-navigation__item">
-                        <a class="moj-sub-navigation__link" aria-current="page" href="adjustments">Adjustments</a>
+                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
                     </li>
                     <li class="moj-sub-navigation__item">
-                        <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
- </a>
+                        <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
                     </li>
-                    <li class="moj-sub-navigation__item">
-                        <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                    </li> -->
                     <!-- <li class="moj-sub-navigation__item">
                         <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                     </li> -->
@@ -536,15 +583,22 @@ Court cases and release dates
                             <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" aria-current="page"  href="adjustments">Adjustments</a>
+                            <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
                         <li class="moj-sub-navigation__item">
-                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
- </a>
+                            <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
                         </li>
-                        <li class="moj-sub-navigation__item">
-                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                        </li> -->
                         <!-- <li class="moj-sub-navigation__item">
                             <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                         </li> -->
@@ -568,9 +622,9 @@ Court cases and release dates
                     <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
  </a>
                 </li>
-                <li class="moj-sub-navigation__item">
-                    <!-- <a class="moj-sub-navigation__link" aria-current="page" href="documents">Documents</a> -->
-                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="documents">Documents</a>
+                </li> -->
                 <!-- <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                 </li> -->
@@ -593,9 +647,9 @@ Court cases and release dates
                     <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
  </a>
                 </li>
-                <li class="moj-sub-navigation__item">
-                    <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                </li> -->
                 <!-- <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link"  aria-current="page" href="timeline">Timeline</a>
                 </li> -->
@@ -619,9 +673,9 @@ Court cases and release dates
                     <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations
  </a>
                 </li>
-                <li class="moj-sub-navigation__item">
-                    <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
-                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                </li> -->
                 <!-- <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
                 </li> -->
