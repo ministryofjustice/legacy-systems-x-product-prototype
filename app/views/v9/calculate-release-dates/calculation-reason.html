@@ -8,7 +8,6 @@
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row"> 
         <div class="govuk-grid-column-two-thirds">
-            <form method="post" action="check-sentence-and-offence-information">
 
                 <div class="govuk-form-group">
 
@@ -137,11 +136,20 @@
 
                 <input type="hidden" name="_csrf" value="ijUvXjJJ-cnFaw1jmM3mPKVq1y8JyrPCB4DQ"> 
 
-                <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-                Continue
-                </button>
+               
+                <div class="govuk-button-group">
+                    <form method="post" action="check-sentence-and-offence-information">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Continue
+                        </button>
+                    </form>
 
-            </form>
+                    <form method="post" action="cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
         </div>
     </div>
 </div>

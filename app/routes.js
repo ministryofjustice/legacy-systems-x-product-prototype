@@ -59,10 +59,10 @@ router.post(`/:prototypeVersion/approved-dates-question`, function (req, res) {
 		res.redirect(`/${prototypeVersion}/calculate-release-dates/select-which-approved-dates`);
 	}
 	else if (navRoute === 'no') {
-		res.redirect(`/${prototypeVersion}/calculate-release-dates/calculaion-complete`);
+		res.redirect(`/${prototypeVersion}/calculate-release-dates/calculation-complete`);
 	} 
 	else {
-		res.redirect(`/${prototypeVersion}/calculate-release-dates/calculaion-complete`);
+		res.redirect(`/${prototypeVersion}/calculate-release-dates/calculation-complete`);
 	}
   });
 

@@ -312,9 +312,20 @@
         <div class="govuk-grid-column-two-thirds">
             <h3 class="govuk-heading-m">Confirm and save to NOMIS</h3>
             <p class="govuk-body">By continuing, you are confirming that, to the best of your knowledge, the information is correct. The calculation will be saved in NOMIS.</p>
-            <a href="calculation-complete.html">
-                <button class="govuk-button" data-module="govuk-button">Confirm and save to NOMIS</button>
-            </a>
+           
+        <div class="govuk-button-group">
+            <form method="post" action="calculation-complete">
+                <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                    Confirm and save to NOMIS
+                </button>
+            </form>
+  
+            <form method="post" action="cancel">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </button>
+            </form>
+        </div>
             <!-- <p class="govuk-body govuk-!-font-size-16"><a href="calculation-cancelled.html" class="govuk-link">Cancel calculation</a></p> -->
         </div>
     </div>

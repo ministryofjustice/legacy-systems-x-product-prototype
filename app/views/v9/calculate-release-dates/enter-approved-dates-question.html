@@ -7,6 +7,7 @@
 <div class="moj-width-container govuk-!-margin-top-6">
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      
       <form method="post" action="/v9/approved-dates-question">
         <input type="hidden" name="_csrf" value="5fecZtpC-wz6kQSdXHARy2NrdvmoCEBBDyhE" />
 
@@ -55,12 +56,22 @@
 
         <p></p>
         <p>
-          <button value="approved-dates-question" type="submit" data-prevent-double-click="true" class="govuk-button"
-            data-module="govuk-button" data-qa="approved-dates-question">
-            Continue
-          </button>
-        </p>
+          
+            
+          <div class="govuk-button-group">
+                <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </button>
+            <form method="post" action="cancel">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </button>
+            </form>
+        </div>
+
       </form>
+
+        </p> 
     </div>
   </div>
 </div>

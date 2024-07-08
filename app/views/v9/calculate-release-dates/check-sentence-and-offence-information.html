@@ -468,10 +468,20 @@
             <div class="govuk-grid-column-two-thirds">
                 <p class="govuk-body">The release dates will not be saved in NOMIS until you have reviewed the
                     calculation.</p>
-                <a href="calculation-summary.html" role="button" draggable="false" class="govuk-button"
-                    data-module="govuk-button">
-                    Calculate release dates
-                </a>
+               
+                    <div class="govuk-button-group">
+                        <form method="post" action="calculation-summary">
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                                Calculate release dates
+                            </button>
+                        </form>
+    
+                        <form method="post" action="cancel">
+                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </button>
+                        </form>
+                    </div>
             </div>
         </div>
     </div>

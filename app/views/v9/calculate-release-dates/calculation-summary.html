@@ -266,9 +266,20 @@
             <h3 class="govuk-heading-m">Confirm the dates are correct</h3>
             <p class="govuk-body">By continuing you are confirming that, to the best of your knowledge, the calculation
                 is correct.</p>
-            <a href="enter-approved-dates-question">
-                <button class="govuk-button" data-module="govuk-button">Confirm and continue</button>
-            </a>
+            
+                <div class="govuk-button-group">
+                    <form method="post" action="enter-approved-dates-question">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Confirm and continue
+                        </button>
+                    </form>
+
+                    <form method="post" action="cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
             <!-- <p class="govuk-body govuk-!-font-size-16"><a href="../release-dates" class="govuk-link">Cancel calculation</a></p> -->
         </div>
     </div>
