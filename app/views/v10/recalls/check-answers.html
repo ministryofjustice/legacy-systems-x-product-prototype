@@ -1,0 +1,93 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="c" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Check your answers
+    </h1>
+  </div>s
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="recall-complete" method="post" enctype="multipart/form-data">
+      <div class="govuk-form-group">
+        <dl class="govuk-summary-list">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 20%;">
+              Recall period
+            </dt>
+            <dd class="govuk-summary-list__value">
+              11 December 2023 to 12 December 2023
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="add-recall-date">Edit<span
+                  class="govuk-visually-hidden"> remand period from 11 December 2023 to 12 December 2023</span></a>
+
+            </dd>
+
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 20%;">
+              Offences
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <div>
+                <div class="govuk-!-margin-bottom-3"><b>Rape a girl aged 13 / 14 / 15 - SOA 2003</b>
+                  <br>
+                  Committed on 04 May 2022
+                  <br>
+                  Heard at Bristol Crown Court
+                </div> 
+                <div class="govuk-!-margin-bottom-3"><b>Attempt theft from shop</b>
+                  <br>
+                  Committed on 04 May 2022
+                  <br>
+                  Heard at Bristol Crown Court
+                </div>
+              </div>
+            </dd>
+
+
+          </div>
+
+
+
+          <div class="govuk-summary-list__row govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 20%;">
+              Recall type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              14-day fixed-term recall
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="recall-type">Edit<span
+                  class="govuk-visually-hidden"> 14-day fixed-term recall</span></a>
+
+            </dd>
+
+          </div>
+
+
+        </dl>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">
+        Confirm
+      </button>
+    </form>
+  </div>
+</div>
+</div>
+{% endblock %}

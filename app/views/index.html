@@ -38,10 +38,76 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
-                            Version 9 
+                            Version 10
                             
                             <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                 In design
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v10/DPS-home?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                        {{govukButton({
+                                            text: "Launch from prisoner profile",
+                                            attributes: {
+                                            "formaction": "v10/DPS-prisoner-profile?viewOption=adjustmentsReleasedTrue",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">
+                                    <li>Recalls journey for 1st round of UR</li>    
+                                </ul>  
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593724256446&cot=14">Recalls ideation (miro)</a></li>     
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Recalls journey for 1st round of UR</h4> 
+                                <p class="govuk-body">...</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/check-sentence-and-offence-information">Check sentence and offence information (v1)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/check-sentence-and-offence-information-2">Check sentence and offence information (v2)</a></li>   
+                                </ul>   
+ 
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 9 
+                            
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
                             </strong>
                         </span>
                         </h2>

@@ -1,0 +1,287 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back to sentence and offence information</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <!-- <span class="govuk-caption-xl">Calculate release dates</span> -->
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+                Review calculation
+                <br>
+                <span class="govuk-body">Check the release dates before entering the approved dates.</span>
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- Final release dates -->
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title"><span class="govuk-!-font-size-24">Release dates</span></h2>
+                    <ul class="govuk-summary-card__actions">
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content" id="release-dates">
+                    <dl class="govuk-summary-list release-dates-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                SLED
+                                <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Thursday, 19 February 2036</p>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                CRD
+                                <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Sunday, 19 February 2034</p>
+                                <p class="govuk-!-font-size-16 govuk-hint">Friday, 17 February 2034 when adjusted to a
+                                    working day</p>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                PED
+                                <p class="govuk-!-font-size-16 govuk-hint">Parole Eligibility Date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Friday, 21 April 2028</p>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt
+                                class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
+                                ERSED
+                                <p class="govuk-!-font-size-16 govuk-hint">Early Removal Scheme Eligibility Date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Wednesday, 21 April 2027</p>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Why are some details missing?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Some dates and details are not included as according to <a
+                    href="http://www.justice.gov.uk/downloads/offenders/psipso/psi-2015/psi-03-2015-sentence-calculation-determiante-sentenced-prisoners.pdf"
+                    target="_blank">PSI 03/2015 (opens in new tab)</a> they are not relevant to this person's
+                circumstances.
+            </div>
+        </details>
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    How are final release dates calculated?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Some calculations are made up of different sentences and terms, such as overlapping or concurrent
+                sentences. The final release date comes from the sentence or term with the latest release date.
+            </div>
+        </details>
+    </div>
+</div>
+</div>
+<!-- Calculation breakdown -->
+<!-- Breakdown -->
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <h2 class="govuk-heading-l govuk-!-margin-top-6">Calculation breakdown</h2>
+            <div class="govuk-grid-row">
+
+
+                <div class="govuk-grid-column-full">
+                    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Consecutive sentences</h3>
+                </div>
+                <div class="govuk-grid-column-one-half">
+                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-4"
+                        data-qa="consecutive-start-date">Consecutive sentences start date: <span class="govuk-body">10
+                            March 2023</span>
+                    </p>
+                    <table class="govuk-table govuk-!-margin-bottom-4" data-qa="consecutive-sentence-table">
+                        <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Sentence</th>
+                                <th scope="col" class="govuk-table__header govuk-table__header--date">Sentence length
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody class="govuk-table__body calculation-breakdown">
+
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 1, count 1
+
+                                    <br>
+                                    <p class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">Court case number:
+                                        T20230101</p>
+
+                                </td>
+                                <td class="govuk-table__cell">100 days<br>
+
+                                </td>
+                            </tr>
+
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 2, count 2
+
+                                    <br>
+                                    <p class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">Court case number:
+                                        T20223256</p>
+
+                                </td>
+                                <td class="govuk-table__cell">60 days<br>
+
+                                    <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">consecutive to
+                                        court case 1, count 1</span>
+
+                                </td>
+                            </tr>
+
+                        </tbody>
+                    </table>
+                    <table class="govuk-table govuk-!-margin-top-6" data-qa="consecutive-dates-table">
+                        <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__header">Total sentence length</td>
+                                <td class="govuk-table__cell">160
+                                    days
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__header">SLED</td>
+
+                                <td class="govuk-table__cell">16 August 2023<br>
+                                    <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">160 days</span>
+                                </td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__header">CRD</td>
+
+                                <td class="govuk-table__cell">28 May 2023<br>
+                                    <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">80 days</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Release dates that include adjustments</h3>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <table class="govuk-table govuk-!-margin-bottom-4" data-qa="release-dates-adjustments-table">
+                <tbody class="govuk-table__body">
+
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__header">SLED with adjustments</td>
+                        <td class="govuk-table__cell">
+                            18 July 2023
+                            <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                16 August 2023 minus 29 days
+                            </div>
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__header">CRD with adjustments</td>
+                        <td class="govuk-table__cell">
+                            29 April 2023
+                            <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                28 May 2023 minus 29 days
+                            </div>
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__header">HDCED with adjustments</td>
+                        <td class="govuk-table__cell">
+                            24 March 2023
+                            <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                10 March 2023 plus 14 days
+                            </div>
+                        </td>
+                    </tr>
+
+
+
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__header">TUSED with adjustments</td>
+                        <td class="govuk-table__cell">
+                            29 April 2024
+                            <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
+                                28 May 2023 plus 12 months minus 29 days
+                            </div>
+                        </td>
+                    </tr>
+
+
+                </tbody>
+            </table>
+
+
+        </div>
+
+    </div>
+
+    <div class="govuk-inset-text">
+        If you think the calculation is wrong <a
+            href="/calculation/2c922fe3-39d4-40e8-b29c-4e7205023845/request-support">contact the specialist
+            support team</a>.
+    </div>
+</div>
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Confirm the dates are correct</h3>
+            <p class="govuk-body">By continuing you are confirming that, to the best of your knowledge, the calculation
+                is correct.</p>
+            
+                <div class="govuk-button-group">
+                    <form method="post" action="enter-approved-dates-question">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Confirm and continue
+                        </button>
+                    </form>
+
+                    <form method="post" action="cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            <!-- <p class="govuk-body govuk-!-font-size-16"><a href="../release-dates" class="govuk-link">Cancel calculation</a></p> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
