@@ -368,7 +368,13 @@
                       <div class="govuk-grid-row card-body ">
                         <div class="govuk-grid-column-full"> 
                           <p class="govuk-body-l govuk-!-font-weight-bold govuk-!-margin-bottom-2">Active court cases</p> 
+                          {% if data['toShow'] == 'none' %}
+                          
                           <p class="govuk-body hmpps-mini-card__big">0</p>
+                          
+                          {% else %}
+                          <p class="govuk-body hmpps-mini-card__big">1</p>
+                          {% endif %}
 
                           <hr class="govuk-section-break govuk-section-break--visible">
                           <div class="govuk-!-padding-top-3">
@@ -379,7 +385,8 @@
                           <p class="govuk-body">No upcoming court hearings.</p> 
                           
                           {% else %}
-                          <dl class="govuk-summary-list govuk-summary-list--no-border"  >
+                          <p class="govuk-body">No upcoming court hearings.</p> 
+                          <!-- <dl class="govuk-summary-list govuk-summary-list--no-border"  >
                             <div class="govuk-summary-list__row">
                                 <dt class="govuk-summary-list__key">
                                     Case reference
@@ -412,7 +419,7 @@
                                     5 April 2024 at 13:00
                                 </dd>
                             </div>
-                        </dl>
+                        </dl> -->
 
                         {% endif %}
                         </div>
@@ -447,13 +454,17 @@
                                 Calculation reason
                               </dt>
                               <dd class="govuk-summary-list__value">
-                                Transfer check
+                                2 day check
                               </dd>
                             </div>
                           </dl>
                           {% endif %} 
                       
-                          <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview?viewOption=adjustmentsReleasedTrue" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+                          {% if data['toShow'] == 'none' %}
+                          <p class="govuk-body"><a data-qa="overview-offences-view-all" href="no-court-cases?viewOption=RSReleasedTrue" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+                          {% else %}
+                          <p class="govuk-body"><a data-qa="overview-offences-view-all" href="overview?viewOption=RSReleasedTrue" class="govuk-link govuk-link--no-visited-state">Court cases and release dates</a></p>
+                          {% endif %} 
                         </div> 
                       </div>
                       </div>

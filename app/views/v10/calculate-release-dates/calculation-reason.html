@@ -67,6 +67,13 @@
                                 Recording a non-calculated date (including HDC,  APD or ROTL)
                                 </label> 
                             </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-6" name="calculationReasonId" type="radio" value="6" data-qa="reasonRadio-6">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-6">
+                                Recording a recall
+                                </label> 
+                            </div>
                             
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="calculationReasonId-7" name="calculationReasonId" type="radio" value="7" data-qa="reasonRadio-7">
@@ -138,7 +145,7 @@
 
                
                 <div class="govuk-button-group">
-                    <form method="post" action="check-sentence-and-offence-information">
+                    <form method="post" action="../recalls/revocation-date">
                         <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                             Continue
                         </button>

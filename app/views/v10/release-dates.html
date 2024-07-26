@@ -169,7 +169,7 @@
         <article class="moj-ticket-panel" aria-label="Sub navigation 1">
 
             <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
-              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Record a calculation</h2>
               <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates..</p>
               <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
                 Calculate release dates
@@ -178,6 +178,21 @@
           
           </article>
 
+
+          {% elif data['recallRequired'] == 'true' %} 
+
+
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+  
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Record a recall</h2>
+                <p class="govuk-body">This person has been brought back into prison after being released on licence. Record a recall to get accurate release dates. </p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="recalls/revocation-date">
+                  Record recall
+                </a>
+              </section>
+            
+            </article>
 
 
         {% elif data['toShow'] == 'releaseDatesNomis' %}
@@ -459,6 +474,8 @@
                 <span class="govuk-heading-m actions-list-header">Actions</span>
                 <li><a href="calculate-release-dates/calculation-reason">Calculate release dates</a></li>
                 <li><a href="calculate-release-dates/calculation-reason">Add APD, HDCAD or ROTL dates</a></li> 
+                <!-- <li><a href="#">Add a new court case</a></li> 
+                <li><a href="recalls/revocation-date">Record a recall</a></li>  -->
             </ul>
         </div>
     </div>

@@ -8,10 +8,10 @@
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row"> 
         <div class="govuk-grid-column-two-thirds">
-            <form method="post" action="check-answers">
+            <form method="post" action="recall-duration">
 
 
-                {% if data['toShow'] == 'fixedOrStandard' %}
+                {% if data['recallType'] == 'ORA' %}
 
                 <div class="govuk-form-group">
 
@@ -19,45 +19,99 @@
                     
                         <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                             <h1 class="govuk-fieldset__heading">
-                                Confirm recall type
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select a recall type
                             </h1>
                         </legend> 
 
                         
-                        <p class="govuk-body">We've identified the following recall types based on the this person's recall dates and sentence and offence information.</p>
-
-                        <p class="gouk-body">If you believe this information is wrong, check the details in NOMIS and then <a class="govuk-link" href="#">try again</a>.</p> 
+                        <p class="govuk-body">We've identified the following recall types based on the this person's sentence and offence information.</p>
 
                         <div class="govuk-radios" data-module="govuk-radios">
                             
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
                                 <label class="govuk-label govuk-radios__label" for="calculationReasonId">
-                                14 day fixed-term recall
+                                Standard recall
                                 </label> 
                             </div>
                                 
                             <div class="govuk-radios__item">
                                 <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
                                 <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
-                                28 day fixed-term recall
+                                Fixed-term recall
                                 </label> 
-                            </div>
+                            </div> 
+
                                 
                             <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="calculationReasonId-3" name="calculationReasonId" type="radio" value="3" data-qa="reasonRadio-3">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
                                 <label class="govuk-label govuk-radios__label" for="calculationReasonId-3">
-                                Standard recall
+                                Recall from Curfew Conditions
                                 </label> 
                             </div> 
                                 
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-4">
+                                    Recall from Home Detention Curfew, for a non-curfew violation
+                                </label> 
+                            </div> 
                         </div> 
 
                     </fieldset> 
                 </div>
-                {% elif data['toShow'] == 'HDC' %}
+
+
+                {% elif data['recallType'] == 'AR' %}
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select a recall type
+                            </h1>
+                        </legend> 
+
+                        
+                        <p class="govuk-body">We've identified the following recall types based on the this person's sentence and offence information.</p>
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                         
+                                    
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                Standard recall
+                                </label> 
+                            </div>
+                                 
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-3">
+                                Recall from Curfew Conditions
+                                </label> 
+                            </div> 
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-4">
+                                    Recall from Home Detention Curfew, for a non-curfew violation
+                                </label> 
+                            </div> 
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+                {% elif data['recallType1'] == 'HDC' %}
  
                 <h1 class="govuk-heading-xl">
+                    <span class="govuk-caption-xl">Record a recall</span>
                     Home Detention Curfew (HDC) recall required
                 </h1> 
 
@@ -71,43 +125,36 @@
 
                     <div class="govuk-form-group">
 
-                        <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
-                        
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
-                                <h1 class="govuk-fieldset__heading">
-                                    Confirm recall type
-                                </h1>
-                            </legend> 
+                    
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select a recall type
+                            </h1>
+                        </legend> 
 
                         
-                            <p class="govuk-body">We've identified the following recall types based on the this person's recall dates and sentence and offence information.</p>
-                            
-                            <p class="govuk-body">If you think some information is wrong, you must perform a recall on NOMIS.</p>
-    
+                        <p class="govuk-body">We've identified the following recall types based on the this person's sentence and offence information.</p>
+
 
                             <div class="govuk-radios" data-module="govuk-radios">
                                 
+                                    
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
                                     <label class="govuk-label govuk-radios__label" for="calculationReasonId">
-                                    14 day fixed-term recall
+                                    Standard recall
                                     </label> 
                                 </div>
                                     
                                 <div class="govuk-radios__item">
                                     <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
                                     <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
-                                    28 day fixed-term recall
+                                    Fixed-term recall
                                     </label> 
-                                </div>
-                                    
-                                <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="calculationReasonId-3" name="calculationReasonId" type="radio" value="3" data-qa="reasonRadio-3">
-                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId-3">
-                                    Standard recall
-                                    </label> 
-                                </div>
-                                    
+                                </div>  
                             </div> 
 
                         </fieldset> 

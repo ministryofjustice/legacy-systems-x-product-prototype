@@ -6,103 +6,80 @@
 </div>
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-row"> 
             
-            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+        <div class="moj-width-container">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            Calculation summary
+        </h1> 
 
-            <!-- <span class="govuk-caption-xl">11 March 2023 at HMP Kirkham</span> -->
-                Release dates
-            </h1>
+            <!-- <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Calculation details</h3> -->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds ">
 
-        <div class="govuk-button-group">
-
-            
-
-            <!-- <div class="govuk-button-group govuk-!-display-none-print">
-  
-                <button data-prevent-double-click="true"
-                    class="govuk-button no-js-hidden" data-module="govuk-button" onclick="">
-                    Print notification slip
-                </button>
-                
-                <button data-prevent-double-click="true"
-                    class="govuk-button govuk-button--secondary no-js-hidden" data-module="govuk-button" onclick="">
-                    Print establishment copy
-                </button>
-
-            </div> -->
-
-            <div class="moj-width-container">
-                <!-- <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Calculation details</h3> -->
-                <div class="govuk-grid-row">
-                    <div class="govuk-grid-column-two-thirds ">
-                        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
-                            <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Date of calculation
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                11 March 2023
-                            </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Calculation reason
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                Transfer check
-                            </dd>
-                            </div>
-                            <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Establishment
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                HMP Kirkham
-                            </dd>
-                            </div>
-                            <!-- <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key">
-                                Sentences included in this calculation
-                            </dt>
-                            <dd class="govuk-summary-list__value">
-                                2
-                            </dd>
-                            </div> -->
-                        </dl>
-
-
-                        <p class="govuk-body govuk-!-margin-top-8">
-                            <a href="/view/A8667DY/calculation-summary/51134/print">Print calculation summary</a>
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-1">
-                            <a class="govuk-link" href="/search/prisoners">View previous calculation for another person</a>
-                        </p>
-                        <p class="govuk-body govuk-!-margin-bottom-2">
-                            <a class="govuk-link" data-qa="back-to-dps-search-link" href="https://digital-dev.prison.service.justice.gov.uk">Back to Digital Prison Service (DPS) search</a>
-                        </p>
-                    <!-- <div class="govuk-button-group govuk-!-display-none-print">
-  
-                        <button data-prevent-double-click="true"
-                            class="govuk-button no-js-hidden" data-module="govuk-button" onclick="">
-                            Print notification slip
-                        </button>
-                        
-                        <button data-prevent-double-click="true"
-                            class="govuk-button govuk-button--secondary no-js-hidden" data-module="govuk-button" onclick="">
-                            Print establishment copy
-                        </button>
-
-                    </div> -->
-                    </div>
+            <h2 class="govuk-heading-m">
+                Calculation details
+        </h2> 
+                    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            11 March 2023
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Transfer check
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Establishment
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            HMP Kirkham
+                        </dd>
+                        </div>
+                        <!-- <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Sentences included in this calculation
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            2
+                        </dd>
+                        </div> -->
+                    </dl>
                 </div>
             </div>
 
-        </div>
-        </div>
-        
-    </div>
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  href="check-sentence-and-offence-information">Sentence and offence information</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="calculation-summary">Calculation summary</a>
+                    </li>
+                </ul>
+                
+            </nav>
+            
+            <div class="govuk-button-group govuk-!-display-none-print">
+                
+                <button data-prevent-double-click="true"
+                    class="govuk-button govuk-button--secondary no-js-hidden" data-module="govuk-button" onclick="">
+                    Print calculation summary
+                </button>
+
+            </div>
+        </div> 
+    </div>    
 </div>
 <!-- Final release dates -->
 <div class="moj-width-container">
@@ -318,24 +295,6 @@
             </table>
         </div>
     </div>
-    
-    <div class="govuk-grid-row">
-        <nav class="pagination" role="navigation" aria-label="Pagination">
-            <ul class="pagination__list">
-                <li class="pagination__item pagination__item--previous">
-                    <a href="check-sentence-and-offence-information" class="govuk-link pagination__link" data-qa="previous-page-button">
-                        <span class="pagination__link-title">
-                            <svg class="gem-c-pagination__link-icon" xmlns="http://www.w3.org/2000/svg" height="13" width="17" viewBox="0 0 17 13">
-                                <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
-                            </svg>
-                            <span class="pagination__link-text">Previous page</span>
-                        </span>
-                        <span class="pagination__link-divider visually-hidden">:</span>
-                        <span class="pagination__link-label">Release dates</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+     
 </div> 
 {% endblock %}
