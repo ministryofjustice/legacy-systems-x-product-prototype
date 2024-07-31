@@ -24,10 +24,13 @@ module.exports = {
                 {
                     "court-case-ref": "T20230101",
                     "overall-case-outcome": "Remand before conviction",
+                    "overall-conviction-date-day": "15",
+                    "overall-conviction-date-month": "1",
+                    "overall-conviction-date-year": "2024",
                     "next-court-date-set": "No",
-                    "warrant-date-day": "9",
-                    "warrant-date-month": "2",
-                    "warrant-date-year": "2023",
+                    "warrant-date-day": "15",
+                    "warrant-date-month": "1",
+                    "warrant-date-year": "2024",
                     "court-name": "Bristol Magistrates Court",
                     "next-hearing-type": "",
                     "next-court-date-day": "",
@@ -38,7 +41,7 @@ module.exports = {
                         {
                             "offence-start-date-day": "1",
                             "offence-start-date-month": "1",
-                            "offence-start-date-year": "2023",
+                            "offence-start-date-year": "2024",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
                             "offence-end-date-year": "",
@@ -53,30 +56,47 @@ module.exports = {
                 {
                     "court-case-ref": "T20230101",
                     "overall-case-outcome": "Imprisonment",
+                    "overall-conviction-date-day": "15",
+                    "overall-conviction-date-month": "1",
+                    "overall-conviction-date-year": "2024",
+
+                    "overall-sentence-length-years": "0",
+                    "overall-sentence-length-months": "12",
+                    "overall-sentence-length-weeks": "0",
+                    "overall-sentence-length-days": "0",
                     "next-court-date-set": "No",
-                    "warrant-date-day": "10",
-                    "warrant-date-month": "3",
-                    "warrant-date-year": "2023",
+                    "warrant-date-day": "15",
+                    "warrant-date-month": "1",
+                    "warrant-date-year": "2024",
                     "court-name": "Bristol Magistrates Court",
                     "next-hearing-type": "",
                     "next-court-date-day": "",
                     "next-court-date-month": "",
                     "next-court-date-year": "",
                     "next-court-time": "",
-                    "offences": [
-                        {
-                            "offence-start-date-day": "1",
-                            "offence-start-date-month": "1",
-                            "offence-start-date-year": "2023",
-                            "offence-end-date-day": "",
-                            "offence-end-date-month": "",
-                            "offence-end-date-year": "",
-                            "offence-code": [
-                                "COML025"
-                            ],
-                            "offence-name": " Burglary other than dwelling - theft",
-                            "outcome": "Sentenced"
-                        }
+                    "sentences": [{
+                        "count-number": "1",
+                        "conviction-date-day": "15",
+                        "conviction-date-month": "1",
+                        "conviction-date-year": "2024",
+                        "offence-start-date-day": "1",
+                        "offence-start-date-month": "1",
+                        "offence-start-date-year": "2024",
+                        "offence-end-date-day": "",
+                        "offence-end-date-month": "",
+                        "offence-end-date-year": "",
+                        "offence-code": [
+                            "CJ88001"
+                        ],
+                        "offence-name": "Burglary other than dwelling - theft",
+                        "outcome": "Imprisonment",
+                        "sentence-type": "SDS (Standard Determinate Sentence)",
+                        "sentence-length-years": "0",
+                        "sentence-length-months": "12",
+                        "sentence-length-weeks": "0",
+                        "sentence-length-days": "0",
+                        "consecutive-concurrent": "Forthwith"
+                    }
                     ]
                 }
             ]

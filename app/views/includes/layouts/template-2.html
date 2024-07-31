@@ -290,59 +290,399 @@ Court cases and release dates
       
     </nav> 
 </header> 
-
-{% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
-
-{% else %} 
-
 <div class="service-header">
-  <div class="service-header__container"> 
-      <a href="#"><span class="service-header__service-name">Court cases and release dates</span></a>
-  </div>
-</div>
+    <div class="service-header__container">
 
-{% endif %}  
+        {% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+    
+        {% else %}  
+        <a href="overview"><span class="service-header__service-name">Court cases and release dates</span></a>
+        {% endif %}  
+    </div>
+</div>
 {% endblock %}
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 {% block main %}
 <main class="govuk-main-wrapper-govuk-body">
     <div class="govuk-width-container">
         <!-- Breadcrumbs -->
-        <!-- {% block breadcrumbs %} -->
-        <!--         <div class="govuk-breadcrumbs">
+        {% block breadcrumbs %}
+        <!-- <div class="govuk-breadcrumbs govuk-!-display-none-print">
             <ol class="govuk-breadcrumbs__list">
-                <li class="govuk-breadcrumbs__list-item">
-                    <a class="govuk-breadcrumbs__link" href="#">Back to search</a>
-                </li>
+          
+            
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="DPS-home">Digital Prison Services</a>
+              </li>
+            
+          
+            
+              <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="DPS-prisoner-profile">Bloggs, Joe</a>
+              </li>
+            
+          
             </ol>
-        </div>
-        {% endblock %} -->
+          </div> -->
+        {% endblock %}
   
         {% block banner %}
-     
-            <div class="mini-profile govuk-!-margin-top-8" data-qa="mini-profile">
-              <div class="mini-profile-inner">
-                  <div class="mini-profile-left">
-                      <img class="mini-profile-person-img" src="/public/images/test-image-3.jpeg" alt="Image of Last, First" loading="lazy" data-qa="mini-profile-person-img">
-                  </div>
-                  <div class="mini-profile-right">
-                      <ul class="mini-profile-info">
-                          <li>
-                              <p class="govuk-heading-s govuk-!-margin-bottom-1">
-                                  <a class="govuk-link--no-visited-state" href="#" target="_blank" data-qa="mini-profile-person-profile-link">Bloggs, Joe</a>
-                              </p>
-                              <span class="govuk-body" data-qa="mini-profile-prisoner-number">A8207AA</span>
-                          </li>
-                          <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span><span class="govuk-body" data-qa="mini-profile-dob">01/04/1987</span></li>
-                          <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span><span class="govuk-body" data-qa="mini-profile-prison-name">HMP Kirkham</span></li>
-                          <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body" data-qa="mini-profile-cell-location">5-2-A-051</span></li>
-                          <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Status</span><span class="govuk-body" data-qa="mini-profile-status">Active in</span></li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
+
+        <div class="mini-profile govuk-!-margin-top-7" data-qa="mini-profile">
+            <div class="mini-profile-inner">
+                <div class="mini-profile-left">
+                    <img class="mini-profile-person-img" src="/public/images/test-image-3.jpeg" alt="Image of Last, First" loading="lazy" data-qa="mini-profile-person-img">
+                </div>
+                <div class="mini-profile-right">
+                    <ul class="mini-profile-info">
+                        <li>
+                            <p class="govuk-heading-s govuk-!-margin-bottom-1">
+                                <a class="govuk-link--no-visited-state" href="#" target="_blank" data-qa="mini-profile-person-profile-link">Bloggs, Joe</a>
+                            </p>
+                            <span class="govuk-body" data-qa="mini-profile-prisoner-number">A8207AA</span>
+                        </li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span><span class="govuk-body" data-qa="mini-profile-dob">01/04/1987</span></li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span><span class="govuk-body" data-qa="mini-profile-prison-name">HMP Kirkham</span></li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body" data-qa="mini-profile-cell-location">5-2-A-051</span></li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Status</span><span class="govuk-body" data-qa="mini-profile-status">Active in</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+ 
+ 
+
         {% endblock %}
         {% block nav %}
+
+
+        {% if overviewActive == true %} 
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
+                    </li> 
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} </a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} </a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                    </li> -->
+                </ul>
+            </nav>
+            {% elif data['viewOption'] == 'RSReleasedTrue' %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" aria-current="page" href="overview-2">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% else %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" aria-current="page" href="overview-2">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <!-- <a class="moj-sub-navigation__link" href="documents">Documents</a> -->
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% endif %}
+
+        {% elseif releaseDatesActive == true %}
+
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                    </li> 
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
+                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                    </li> -->
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                    </li> -->
+                </ul>
+            </nav>
+            {% else %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                        </li> -->
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% endif %}
+
+        {% elseif courtCasesActive == true %} 
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  aria-current="page" href="court-cases-2">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                        {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                        {% else %} 
+                        {% endif %} 
+                    </a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                        {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                        {% else %} 
+                        {% endif %} 
+                    </a>
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                </li> -->
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        {% elseif adjustmentsActive == true %}
+
+            {% if data['viewOption'] == 'adjustmentsReleasedTrue' %}
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                    </li> 
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                            {% else %} 
+                            {% endif %} 
+                        </a>
+                    </li>
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                    </li> -->
+                    <!-- <li class="moj-sub-navigation__item">
+                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                    </li> -->
+                </ul>
+            </nav>
+            {% else %}  
+                <nav class="moj-sub-navigation" aria-label="Sub navigation">
+                    <ul class="moj-sub-navigation__list">
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments 
+                                {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations 
+                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' %} <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% else %} 
+                                {% endif %} 
+                            </a>
+                        </li>
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                        </li> -->
+                        <!-- <li class="moj-sub-navigation__item">
+                            <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                        </li> -->
+                    </ul>
+                </nav>
+            {% endif %}
+        
+        {% elseif documentsActive == true %}
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations
+ </a>
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="documents">Documents</a>
+                </li> -->
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        {% elseif timelineActive == true %}
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="overview-2">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations
+ </a>
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                </li> -->
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  aria-current="page" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+
+        {% else %}
+
+        <nav class="moj-sub-navigation" aria-label="Sub navigation">
+            <ul class="moj-sub-navigation__list">
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"href="overview-2">Overview</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="court-cases-2">Court cases</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="adjustments-2">Adjustments</a>
+                </li>
+                <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="release-dates-2">Release dates and calculations
+ </a>
+                </li>
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="documents">Documents</a>
+                </li> -->
+                <!-- <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
+                </li> -->
+            </ul>
+        </nav>
+        {% endif %}
+
 
         {% endblock %}
         {% block content %}
@@ -360,8 +700,7 @@ Court cases and release dates
                 <div class="govuk-footer__meta-custom">
                     <h3 class="govuk-heading-m">Support</h3>
                     <p class="govuk-footer__meta-custom govuk-list govuk-!-margin-bottom-8">
-                        Email <a class="govuk-link govuk-footer__link" href="mailto:james.mckechnie@digital.justice.gov.uk">james.mckechnie
- <wbr>@digital.justice.gov.uk</a> for support.<br>
+                        Email <a class="govuk-link govuk-footer__link" href="mailto:james.mckechnie@digital.justice.gov.uk">james.mckechnie<wbr>@digital.justice.gov.uk</a> for support.<br>
                     </p>
                 </div>
                 <ul class="govuk-footer__inline-list">

@@ -38,7 +38,7 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
-                            Version 10
+                            Version 9.1
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
@@ -77,28 +77,14 @@
 
                                     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
-                                    <h4 class="govuk-heading-m">Scenario 1</h4> 
 
                                     <form action="post">
-                                    {{govukButton({
-                                        text: "Scenario 1 - prisoner profile - no booking",
-                                        attributes: {
-                                        "formaction": "v10/DPS-prisoner-profile?toShow=none",
-                                        "formmethod": "post"
-                                        },
-                                        classes: "govuk-button--secondary"
-                                        })}}
-                                    <p class="govuk-body">This scenario explores how a user could enter the recall journey when a new booking has been opened. The journey starts from the 'There are no sentences recorded' shutter page.</p> 
-                                    <ul class="govuk-list"> 
-                                        <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
-                                    </ul>   
-
-                                    <h4 class="govuk-heading-m">Scenario 2</h4> 
+                                    <h4 class="govuk-heading-m">Scenario 1</h4> 
 
                                     {{govukButton({
-                                        text: "Scenario 2 - prisoner - booking exists",
+                                        text: "Scenario 1 - prisoner profile - booking exists",
                                         attributes: {
-                                        "formaction": "v10/DPS-prisoner-profile?viewOption=RSReleasedTrue",
+                                        "formaction": "v9_1/DPS-prisoner-profile?viewOption=RSReleasedTrue",
                                         "formmethod": "post"
                                         },
                                         classes: "govuk-button--secondary"
@@ -106,7 +92,41 @@
                                     <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from the 'calculation reason' page on CRDS.</p> 
                                     <ul class="govuk-list"> 
                                         <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
-                                    </ul>   
+                                    </ul> 
+                                    </form>
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 2</h4> 
+
+                                    {{govukButton({
+                                        text: "Scenario 2 - prisoner profile - booking exists - plus UAL",
+                                        attributes: {
+                                        "formaction": "v9_1/DPS-prisoner-profile-2?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from the 'calculation reason' page on CRDS.</p> 
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
+                                    </ul>
+                                    </form> 
+
+                                    <h4 class="govuk-heading-m">Scenario 3</h4> 
+
+                                    <form action="post">
+                                    {{govukButton({
+                                        text: "Scenario 1 - prisoner profile - no booking",
+                                        attributes: {
+                                        "formaction": "v9_1/DPS-prisoner-profile?toShow=none",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores how a user could enter the recall journey when a new booking has been opened. The journey starts from the 'There are no sentences recorded' shutter page.</p> 
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
+                                    </ul>     
 
                                     </form>
 

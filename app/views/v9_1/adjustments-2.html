@@ -1,4 +1,4 @@
-{% extends "../includes/layouts/template.html" %}
+{% extends "../includes/layouts/template-2.html" %}
 {% set adjustmentsActive = true %}
 {% block content %}
 
@@ -129,15 +129,15 @@
                         Add new<span class="govuk-visually-hidden"> add new</span>
                     </a>
                     </li>
-                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-remand-summary">
+                    <!-- <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-remand-summary">
                         View<span class="govuk-visually-hidden"> remand</span>
                     </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
 
             <div class="adjustment-card_content">
-                <span id="REMAND" class="count govuk-body">30</span><span class="govuk-body">Days</span>
+                <span id="REMAND" class="count govuk-body">0</span><span class="govuk-body">Days</span>
                 <!-- <p class="govuk-body govuk-!-font-size-14">Last updated on 10 May 2023 by HMP Bristol</p> -->
                 <!-- <details class="govuk-details" data-module="govuk-details" style="margin-bottom: 0px">
                     <summary class="govuk-details__summary">
@@ -335,6 +335,43 @@
     </div> 
 
     <div class="govuk-grid-column-full govuk-!-margin-bottom-7" style=" display: flex; flex-wrap: wrap; gap: 10px;">
+
+        {% if data['addData'] == "UALadded" %}     
+        <div class="adjustment-card ">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">UAL (Unlawfully at large)</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="ual.html">
+                        Add new<span class="govuk-visually-hidden"> add new</span>
+                    </a>
+                    </li>
+                                   <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                                       Edit<span class="govuk-visually-hidden"> Edit</span>
+                                   </a>
+                                   </li>
+                </ul>
+            </div>
+            <div class="adjustment-card_content">
+     
+                <span id="UAL" class="count govuk-body">7</span><span class="govuk-body">Days</span>
+                <!-- <a class="govuk-link govuk-body" href="#">
+                    view details<span class="govuk-visually-hidden"> view details</span>
+                </a> -->
+<!--                                <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              More about UAL
+                            </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                   
+                     </div>
+                </details> -->
+            </div>
+        </div>
+
+        {% else %}     
         <div class="adjustment-card ">
             <div class="govuk-summary-card__title-wrapper">
                 <h2 class="govuk-summary-card__title">UAL (Unlawfully at large)</h2>
@@ -350,6 +387,7 @@
                 </ul>
             </div>
             <div class="adjustment-card_content">
+     
                 <span id="UAL" class="count govuk-body">0</span><span class="govuk-body">Days</span>
                 <!-- <a class="govuk-link govuk-body" href="#">
                     view details<span class="govuk-visually-hidden"> view details</span>
@@ -367,6 +405,8 @@
                 </details> -->
             </div>
         </div>
+
+        {% endif %}  
         <div class="adjustment-card ">
                 <div class="govuk-summary-card__title-wrapper">
                     <h2 class="govuk-summary-card__title">ADA (Additional days awarded)</h2>
