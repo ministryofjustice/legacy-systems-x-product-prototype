@@ -81,8 +81,9 @@
                                     <form action="post">
                                     <h4 class="govuk-heading-m">Scenario 1</h4> 
 
+                                    <p class="govuk-hint">Prisoner profile | Booking exists</p>
                                     {{govukButton({
-                                        text: "Scenario 1 - prisoner profile - booking exists",
+                                        text: "Launch scenario 1",
                                         attributes: {
                                         "formaction": "v9_1/DPS-prisoner-profile?viewOption=RSReleasedTrue",
                                         "formmethod": "post"
@@ -96,10 +97,11 @@
                                     </form>
 
                                     <form action="post">
-                                    <h4 class="govuk-heading-m">Scenario 2</h4> 
+                                    <h4 class="govuk-heading-m">Scenario 2</h4>
+                                    <p class="govuk-hint">Prisoner profile | Booking exists | Added UAL</p>
 
                                     {{govukButton({
-                                        text: "Scenario 2 - prisoner profile - booking exists - plus UAL",
+                                        text: "Launch scenario 2",
                                         attributes: {
                                         "formaction": "v9_1/DPS-prisoner-profile-2?viewOption=RSReleasedTrue",
                                         "formmethod": "post"
@@ -113,10 +115,10 @@
                                     </form> 
 
                                     <h4 class="govuk-heading-m">Scenario 3</h4> 
-
+                                    <p class="govuk-hint">No sentences added page | New booking</p>
                                     <form action="post">
                                     {{govukButton({
-                                        text: "Scenario 1 - prisoner profile - no booking",
+                                        text: "Launch scenario 3",
                                         attributes: {
                                         "formaction": "v9_1/DPS-prisoner-profile?toShow=none",
                                         "formmethod": "post"
