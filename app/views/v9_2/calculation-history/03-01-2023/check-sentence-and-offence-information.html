@@ -1,0 +1,124 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../../release-dates" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+    <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" aria-current="page" href="check-sentence-and-offence-information">Sentence and offence information</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link"  href="calculation-summary">Calculation summary</a>
+        </li>
+    </ul>
+    
+</nav>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <!-- <span class="govuk-caption-xl"><strong class="govuk-tag govuk-tag--grey">Not latest</strong></span>  -->
+            <h1 class="govuk-heading-xl">
+                Sentence and offence information
+            </h1>
+        </div>
+    </div>
+</div>
+
+<!-- ERSED checkbox -->
+<!-- <div class="moj-width-container govuk-!-margin-top-2">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
+        <label class="govuk-label govuk-checkboxes__label">
+          Include an Early release scheme eligibility date (ERSED) 
+        </label>
+                            <div class="govuk-hint govuk-checkboxes__hint">
+          Not applicable for terror or terror-related offences
+        </div>
+      </div>
+  </div>
+        </div>
+    </div>
+</div> -->
+
+            <p class="govuk-body">There is 1 sentence included in this calculation.</p>
+<!-- Court case 1 -->
+<div class="moj-width-container govuk-!-margin-top-6"> 
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Court case 1</h3>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court case number
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        T20230101
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Bristol Magistrates Court
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+    <!-- Count 1 -->
+    <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+            <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count 1</h3>
+            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                Burglary other than dwelling - theft
+            </h4>
+            <p class="govuk-body-s">Committed 1 January 2024</p>
+            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">CJA Code</th>
+                        <td class="govuk-table__cell">2020</td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
+                        <td class="govuk-table__cell">SDS (Standard Determinate Sentence)</td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
+                        <td class="govuk-table__cell">15 January 2024</td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                        <td class="govuk-table__cell">0 years 12 months 0 weeks 0 days
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Licence period</th>
+                        <td class="govuk-table__cell">0 year 12 months 0 weeks 0 days
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                        <td class="govuk-table__cell">Forthwith
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+ 
+ 
+</div>
+{% endblock %}

@@ -147,34 +147,28 @@
             
        
         {% if data['toShow'] == 'recallHistory' %}
-        <h3 class="govuk-heading-l">Latest recall</h3>
-        <dl class="govuk-summary-list" style="margin-bottom: 10px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Licence revocation date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    22 July 2024
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Return to custody date
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    22 July 2024
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Recall type
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    Fixed-term 14-day recall
-                </dd>
-            </div> 
-        </dl>
-        <p class="govuk-body"><a href="recall-details">View all recalls</a></p>
+        <h3 class="govuk-heading-l">Recall history</h3>
+       
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Licence revocation date</th>
+                    <th scope="col" class="govuk-table__header">Return to custody date</th>
+                    <th scope="col" class="govuk-table__header">Recall type</th> 
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body"> 
+ 
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">22 July 2024</td>
+                    <td class="govuk-table__cell">22 July 2024</td>
+                    <td class="govuk-table__cell">Fixed-term 14-day recall</td> 
+                </tr>
+ 
+                </tr>
+            </tbody>
+        </table>
+        <!-- <p class="govuk-body"><a href="recall-details">View all recalls</a></p> -->
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
            
 

@@ -38,12 +38,95 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
+                            Version 9.2
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-three-quarters"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 29th July 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet">
+                                        <li>gather reactions to journey entry points</li> 
+                                        <li>learn about user behaviour regarding opening new bookings</li> 
+                                        <li>user reactions to entering UAL adjustment separately via adjustments service.</li> 
+                                        <li>understand how users would expect to edit sentences returned by the service.</li> 
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764595352385874&cot=14">UR planning (miro)</a></li>   
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593724256446&cot=14">Recalls ideation (miro)</a></li>   
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593036591970&cot=14">UR R1 playback (miro)</a></li>   
+                                        <li><a class="govuk-link" target="external" href="...">UR R2 playback (miro) - TBC</a></li>  
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4> 
+
+                                    <p class="govuk-hint">Prisoner profile | Booking exists</p>
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v9_2/DPS-prisoner-profile?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from an action on the 'overview' page.</p> 
+                                     
+                                    </form>
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 2</h4>
+                                    <p class="govuk-hint">Prisoner profile | Booking exists | Added UAL</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 2",
+                                        attributes: {
+                                        "formaction": "v9_2/DPS-prisoner-profile-2?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from an action on the 'overview' page.</p> 
+                                    
+                                    </form> 
+ 
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
                             Version 9.1
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                                In design
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Superceded
                             </strong>
                         </span>
                         </h2>

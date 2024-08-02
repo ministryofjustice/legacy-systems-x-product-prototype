@@ -1,0 +1,107 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="revocation-date" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">
+                <span class="govuk-caption-xl">Record a recall</span>
+                Confirm the sentences and offences are correct
+            </h1>
+
+            <p class="govuk-body">We have found 1 sentence in relation to this recall.</p>
+            <p class="govuk-body">The latest SLED (Sentence and licence expiry date) is <b>Thursday, 14 January 2025</b>. This is the SLED on this person's licence.</p>
+ 
+        </div>
+    </div>
+</div>
+<!-- Court case 1 -->
+<div class="moj-width-container govuk-!-margin-top-6"> 
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Court case 1</h3>
+
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-4">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court case number
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        T20230101
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Court name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        Bristol Magistrates Court
+                    </dd>
+                </div>
+            </dl>
+        </div>
+    </div>
+    <!-- Count 1 -->
+    <div class="govuk-!-margin-bottom-6 app-possible-prison-record" style="display: flex;">
+        <div class="govuk-grid-column-full govuk-!-margin-top-4">
+            <h3 class="govuk-body-s govuk-!-margin-bottom-0">Count 1</h3>
+            <h4 class="govuk-heading-s govuk-!-margin-bottom-1">
+                Burglary other than dwelling - theft
+            </h4>
+            <p class="govuk-body-s">Committed 1 January 2024</p>
+            <table class="govuk-table govuk-!-margin-right-4 govuk-!-margin-bottom-6 govuk-!-margin-bottom-0">
+                <tbody class="govuk-table__body">
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">CJA Code</th>
+                        <td class="govuk-table__cell">2020</td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Sentence type</th>
+                        <td class="govuk-table__cell">SDS (Standard Determinate Sentence)</td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Sentence date</th>
+                        <td class="govuk-table__cell">15 January 2024</td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Sentence length</th>
+                        <td class="govuk-table__cell">0 years 12 months 0 weeks 0 days
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Licence period</th>
+                        <td class="govuk-table__cell">0 year 12 months 0 weeks 0 days
+                        </td>
+                    </tr>
+                    <tr class="govuk-table__row govuk-body-s">
+                        <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
+                        <td class="govuk-table__cell">Forthwith
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div> 
+     
+    
+    <h2 class="govuk-heading-m govuk-!-margin-top-4">Confirm the sentences and offences are correct</h2>
+ 
+    <!-- Call to action -->
+    <div class="moj-width-container govuk-!-margin-top-2">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">If you think some information is wrong, you can manage all court case information on <a class="govuk-link" target="external" href="../court-cases">Court cases and release dates (opens in a new tab)</a>.</p>
+                <a href="recall-type" role="button" draggable="false" class="govuk-button"
+                    data-module="govuk-button">
+                    Confirm
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

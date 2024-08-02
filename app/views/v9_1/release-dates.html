@@ -99,6 +99,18 @@
                     </tr>
                 </thead>
                 <tbody class="govuk-table__body"> 
+
+                    {% if data['toShow'] == 'recallHistory' %}
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">22 July 2024</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+
+                    {% else %}
+                    {% endif %}
  
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">13 July 2024</a></td>

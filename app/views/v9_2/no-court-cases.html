@@ -1,0 +1,58 @@
+ 
+{% extends "../includes/layouts/template-linear.html" %}
+ 
+{% block content %}
+<!-- Overview -->
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl">
+            There are no sentences recorded
+        </h1>
+    </div>
+</div>
+
+{% if data['viewOption'] == 'RSReleasedTrue' %} 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+           
+        <p class="gouk-body">You can either:</p> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li class="gouk-body"><a class="govuk-link" href="#">Record a court case now</a></li> 
+            <li class="gouk-body"><a class="govuk-link" href="recalls/revocation-date.html">Record a recall</a></li> 
+        </ul>  
+    </div>
+
+</div>
+
+{% elif  data['viewOption'] == 'adjustmentsReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <p class="gouk-body">You can either:</p> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li class="gouk-body">Check the details in NOMIS and then <a class="govuk-link" href="#">try again</a>.</li> 
+            <li class="gouk-body"><a class="govuk-link" href="recalls/add-recall-date">Check for a recall</a></li> 
+        </ul> 
+    </div>
+
+</div>
+
+{% else %} 
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <p class="gouk-body">You can either:</p> 
+        <ul class="govuk-list govuk-list--bullet">
+            <li class="gouk-body">Check the details in NOMIS and then <a class="govuk-link" href="#">try again</a>.</li> 
+            <li class="gouk-body"><a class="govuk-link" href="recalls/add-recall-date">Check for a recall</a></li> 
+        </ul> 
+    </div>
+
+</div>
+        {% endif %}
+ 
+{% endblock %}

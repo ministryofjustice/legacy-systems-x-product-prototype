@@ -1,0 +1,81 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../overview.html" class="govuk-back-link">Back</a>
+</div>
+
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+  <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="return-to-custody-date" method="post" enctype="multipart/form-data">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="to-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">Record a recall</span>
+                  Enter the date the person's licence was revoked 
+              </h1> 
+              </legend>
+         
+            <div id="dob-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+              
+              
+                <div class="govuk-date-input" id="to">
+                  
+                  
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="to-day">
+                        Day
+                      </label>
+                    
+                    
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric" maxlength="2">
+                    
+                    </div>
+                  </div>
+                  
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="to-month">
+                        Month
+                      </label>
+                    
+                    
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" maxlength="2">
+                    
+                    </div>
+                  </div>
+                  
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="to-year">
+                        Year
+                      </label>
+                    
+                    
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" maxlength="4">
+                    
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              
+              </fieldset> 
+
+          </div>
+              
+            <button class="govuk-button" data-module="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+</div>
+{% endblock %}

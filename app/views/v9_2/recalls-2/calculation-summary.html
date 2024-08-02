@@ -1,0 +1,126 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-answers" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <!-- <span class="govuk-caption-xl">Calculate release dates</span> -->
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+                Review calculation
+                <br>
+                <!-- <span class="govuk-body">Check the release dates before entering the approved dates.</span> -->
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- Final release dates -->
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title"><span class="govuk-!-font-size-24">Release dates</span></h2>
+                    <ul class="govuk-summary-card__actions">
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content" id="release-dates">
+                  
+                <dl class="govuk-summary-list release-dates-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            SLED
+                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">Tuesday, 14 January 2025</p>
+                        </dd>
+                    </div> 
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            TUSED
+                            <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Tuesday, 15 July 2025</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            PRRD
+                            <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Sunday, 4 August 2024 <br> <a class="govuk-link govuk-body-s" href="#">The Discretionary Friday/Pre-Bank Holiday Release Scheme Policy applies to this release date. (Opens in a new tab)</a></p>
+                        </dd>
+                    </div>
+                </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Why are some details missing?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Some dates and details are not included as according to <a
+                    href="http://www.justice.gov.uk/downloads/offenders/psipso/psi-2015/psi-03-2015-sentence-calculation-determiante-sentenced-prisoners.pdf"
+                    target="_blank">PSI 03/2015 (opens in new tab)</a> they are not relevant to this person's
+                circumstances.
+            </div>
+        </details>
+        <details class="govuk-details" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    How are final release dates calculated?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Some calculations are made up of different sentences and terms, such as overlapping or concurrent
+                sentences. The final release date comes from the sentence or term with the latest release date.
+            </div>
+        </details>
+    </div>
+</div> 
+
+<div class="govuk-inset-text">
+    If you think the calculation is wrong <a
+        href="/calculation/2c922fe3-39d4-40e8-b29c-4e7205023845/request-support">contact the specialist
+        support team</a>.
+</div>
+</div>
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Confirm the dates are correct</h3>
+            <p class="govuk-body">By continuing you are confirming that, to the best of your knowledge, the calculation
+                is correct.</p>
+            
+                <div class="govuk-button-group">
+                    <form method="post" action="recall-complete?addData=UALadded">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Confirm and continue
+                        </button>
+                    </form>
+
+                    <form method="post" action="cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            <!-- <p class="govuk-body govuk-!-font-size-16"><a href="../release-dates" class="govuk-link">Cancel calculation</a></p> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
