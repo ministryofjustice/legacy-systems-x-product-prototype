@@ -1,0 +1,37 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="check-answers">
+
+                <div class="govuk-form-group">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Confirm the recall type
+                            </h1>
+                        </legend> 
+
+                        <p class="govuk-body">We've identified that a <b>Standard recall</b> could be required based on this person's recall dates and sentence information.</p>
+                        
+                        <p> If you think this information is wrong, you can <a class="govuk-link" href="#">choose another recall type</a>.</p>
+
+
+
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                        Confirm and continue
+                        </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

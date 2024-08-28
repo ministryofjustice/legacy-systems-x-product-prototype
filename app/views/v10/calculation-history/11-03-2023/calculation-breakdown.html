@@ -1,153 +1,61 @@
 {% extends "../../../includes/layouts/template-linear.html" %}
 {% block content %} 
 <!-- Back link -->
-<div class="moj-width-container">
+<div class="moj-width-container govuk-!-margin-bottom-3">
     <a href="../../release-dates" class="govuk-back-link">Back</a>
 </div>
-<!-- Page intro -->
-<div class="moj-width-container govuk-!-margin-top-6">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <!-- <span class="govuk-caption-xl"><strong class="govuk-tag govuk-tag--grey">Not latest</strong></span>  -->
-            <h1 class="govuk-heading-xl">
-                Calculation details
-            </h1>
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Date
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    5 January 2023
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Reason
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Recording a recall
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Establishment
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    HMP Kirkham
-                  </dd>
-                </div> 
-              </dl>
-        </div>
-    </div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-quarter">
 
-    <nav class="moj-sub-navigation" aria-label="Sub navigation">
-    
-        <ul class="moj-sub-navigation__list">
-            <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link"  href="check-sentence-and-offence-information">Sentence and offence information</a>
-            </li>
-            <li class="moj-sub-navigation__item">
-            <a class="moj-sub-navigation__link" aria-current="page" href="calculation-summary">Release dates and calculation breakdown</a>
-            </li>
-        </ul>
-        
+    <nav class="moj-side-navigation govuk-!-padding-top-0" aria-label="Side navigation">
+      <ul class="moj-side-navigation__list">
+
+
+        <li class="moj-side-navigation__item ">
+        <a href="calculation-release-dates" >Release dates</a>
+        </li>
+
+        <li class="moj-side-navigation__item ">
+            <a href="calculation-sentences-and-offences">Sentence and offences</a>
+          </li>
+
+        <li class="moj-side-navigation__item">
+            <a href="calculation-adjustments">Adjustments</a>
+          </li>
+
+        <li class="moj-side-navigation__item moj-side-navigation__item--active">
+        <a href="calculation-breakdown" aria-current="true" >Calculation breakdown</a>
+        </li>
+
+      </ul>
     </nav>
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-             
-            <h2 class="govuk-heading-l govuk-!-margin-bottom-6">
-               Release dates and calculation breakdown
-            </h2>
-        </div>
-    </div>
-</div>
 
- 
-<!-- Final release dates -->
-<div class="moj-width-container">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
+  </div>  
+<div class="govuk-grid-column-three-quarters"> 
+    <h2 class="govuk-heading-xl">
+        <span class="govuk-caption-xl">Transfer calculation on 8 May 2023 at HMP Kirkham</span>
+        Calculation breakdown
+    </h2>
 
-            <div class="govuk-summary-card">
-                <div class="govuk-summary-card__title-wrapper">
-                    <h2 class="govuk-summary-card__title">
-                        <span class="govuk-!-font-size-24">Release dates</span>
-                    </h2>
-                  </div>
-                <div class="govuk-summary-card__content" id="release-dates">
-                  
-                <dl class="govuk-summary-list release-dates-list">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                            SLED
-                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            <p class="govuk-body">Tuesday, 14 January 2025</p>
-                        </dd>
-                    </div> 
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                            TUSED
-                            <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                            <p class="govuk-body">Tuesday, 15 July 2025</p>
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                            PRRD
-                            <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                            <p class="govuk-body">Sunday, 4 August 2024 <br> <a class="govuk-link govuk-body-s" href="#">The Discretionary Friday/Pre-Bank Holiday Release Scheme Policy applies to this release date. (Opens in a new tab)</a></p>
-                        </dd>
-                    </div>
-                </dl>
-                </div>
-            </div>
+        <div class="govuk-button-group">
+
+            <a href="print-attendee-list" role="button" draggable="false" class="govuk-button govuk-button--blue moj-button-menu__item govuk-!-margin-bottom-0" data-module="govuk-button">
+            Print this page
+            </a>
+         
         </div>
-    </div>
-</div>
-    <div class="govuk-grid-row govuk-!-margin-top-6">
-        <div class="govuk-grid-column-two-thirds">
-            <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                        Why are some details missing?
-                    </span>
-                </summary>
-                <div class="govuk-details__text">
-                    Some dates and details are not included as according to <a href="http://www.justice.gov.uk/downloads/offenders/psipso/psi-2015/psi-03-2015-sentence-calculation-determiante-sentenced-prisoners.pdf" target="_blank">PSI 03/2015 (opens in new tab)</a> they are not relevant to this person's circumstances.
-                </div>
-            </details>
-            <details class="govuk-details" data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                        How are final release dates calculated?
-                    </span>
-                </summary>
-                <div class="govuk-details__text">
-                    Some calculations are made up of different sentences and terms, such as overlapping or concurrent sentences. The final release date comes from the sentence or term with the latest release date.
-                </div>
-            </details>
-        </div>
-    </div>
-</div>
+
 <!-- Calculation breakdown -->
 <!-- Breakdown -->
 <div class="moj-width-container">
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-            <h2 class="govuk-heading-l govuk-!-margin-top-6">Calculation breakdown</h2>
+        <div class="govuk-grid-column-full govuk-!-margin-top-4"> 
             <!-- Concurrent sentence breakdown -->
-            <div class="govuk-!-margin-bottom-8">
-                <h3 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-4">
+            <div class="govuk-!-margin-bottom-4">
+                <h3 class="govuk-heading-l govuk-!-margin-bottom-4">
                     Sentences
                 </h3>
-                <table class="govuk-table govuk-!-margin-bottom-4">
+                <table class="govuk-table govuk-!-margin-bottom-8">
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th width="33%" scope="col" class="govuk-table__header">Sentence</th>
@@ -319,9 +227,9 @@
             </div>
         </div>
     </div>
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Release dates that include adjustments</h3>
+    <h3 class="govuk-heading-l govuk-!-margin-bottom-4">Release dates that include adjustments</h3>
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-grid-column-full">
             <table class="govuk-table govuk-!-margin-bottom-8" data-qa="release-dates-adjustments-table">
                 <thead class="govuk-table__head">
                     <tr class="govuk-table__row">
@@ -411,4 +319,5 @@
         </div>
     </div>
 </div> 
+</div>
 {% endblock %}

@@ -7,39 +7,52 @@
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <!-- <span class="govuk-caption-xl"><strong class="govuk-tag govuk-tag--grey">Not latest</strong></span>  -->
+        <div class="govuk-grid-column-two-thirds"> 
             <h1 class="govuk-heading-xl">
-                Calculation details
-            </h1>
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Date
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    5 January 2023
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Reason
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    Recording a recall
-                  </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                  <dt class="govuk-summary-list__key">
-                    Establishment
-                  </dt>
-                  <dd class="govuk-summary-list__value">
-                    HMP Kirkham
-                  </dd>
-                </div> 
-              </dl>
+            <!-- <span class="govuk-caption-xl">11 March 2023 at HMP Kirkham</span> -->
+                Sentence and offence information
+            </h1> 
         </div>
     </div>
+</div>
+ 
+
+<div class="moj-width-container"> 
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m">
+                    Calculation details
+            </h2> 
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    11 March 2023
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Reason
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Transfer check
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Establishment
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    HMP Kirkham
+                </dd>
+                </div> 
+            </dl> 
+        </div>
+    </div>
+</div>
 
 <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
@@ -48,41 +61,15 @@
         <a class="moj-sub-navigation__link" aria-current="page" href="check-sentence-and-offence-information">Sentence and offence information</a>
         </li>
         <li class="moj-sub-navigation__item">
-        <a class="moj-sub-navigation__link"  href="calculation-summary">Release dates and calculation breakdown</a>
+        <a class="moj-sub-navigation__link"  href="calculation-summary">Calculation summary</a>
         </li>
     </ul>
     
 </nav>
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
-            <!-- <span class="govuk-caption-xl"><strong class="govuk-tag govuk-tag--grey">Not latest</strong></span>  -->
-            <h2 class="govuk-heading-l">
-                Sentence and offence information
-            </h2>
-        </div>
-    </div>
-</div>
 
-<!-- ERSED checkbox -->
-<!-- <div class="moj-width-container govuk-!-margin-top-2">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-      <div class="govuk-checkboxes__item">
-        <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox" value="hmrc">
-        <label class="govuk-label govuk-checkboxes__label">
-          Include an Early release scheme eligibility date (ERSED) 
-        </label>
-                            <div class="govuk-hint govuk-checkboxes__hint">
-          Not applicable for terror or terror-related offences
-        </div>
-      </div>
-  </div>
-        </div>
-    </div>
-</div> -->
 
-            <p class="govuk-body">There is 1 sentence included in this calculation.</p>
+<!-- Court case 1 -->
+
 <!-- Court case 1 -->
 <div class="moj-width-container govuk-!-margin-top-6"> 
     <div class="govuk-grid-row">
@@ -144,14 +131,28 @@
                     </tr>
                     <tr class="govuk-table__row govuk-body-s">
                         <th scope="row" class="govuk-table__header sentence-table-header">Concurrent or consecutive</th>
-                        <td class="govuk-table__cell">Forthwith
+                        <td class="govuk-table__cell">Concurrent
                         </td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div> 
+     
+    
+    <h2 class="govuk-heading-m govuk-!-margin-top-4">Confirm the sentences and offences are correct</h2>
  
- 
+    <!-- Call to action -->
+    <div class="moj-width-container govuk-!-margin-top-2">
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
+                <p class="govuk-body">If you think some information is wrong, you can manage all court case information on <a class="govuk-link" target="external" href="../court-cases">Court cases and release dates (opens in a new tab)</a>.</p>
+                <a href="recall-type" role="button" draggable="false" class="govuk-button"
+                    data-module="govuk-button">
+                    Confirm
+                </a>
+            </div>
+        </div>
+    </div>
 </div>
 {% endblock %}

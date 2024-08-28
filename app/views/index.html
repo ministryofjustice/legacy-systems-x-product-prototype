@@ -38,12 +38,196 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
+                            Version 10.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-three-quarters"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 3rd Spetember 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet">
+                                        <li>gather reactions to journey new entry points</li> 
+                                        <li>retest the 'arrest date' page</li> 
+                                        <li>test and updated 'sentence and offence' page</li> 
+                                        <li>test a new 'choose a recall type' journey and gague reaction when the suggestions do not match user expecations</li> 
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764598289429871&cot=14">R3 scenario (miro)</a></li>   
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597787407425&cot=14">Research plan (miro)</a></li>   
+                                 
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+<!-- 
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4> 
+
+                                    <p class="govuk-hint">...</p>
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v10_1/DPS-prisoner-profile?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores ...</p> 
+                                     
+                                    </form>
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 2</h4>
+                                    <p class="govuk-hint">...</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 2",
+                                        attributes: {
+                                        "formaction": "v10_1/DPS-prisoner-profile-2?viewOption=RSReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores ...</p> 
+                                    
+                                    </form>  -->
+
+
+
+                                    <form action="post">
+                                        <h4 class="govuk-heading-m">Genuine overrides - CRDS</h4>
+                                        <!-- <p class="govuk-hint">Calculation journey</p> -->
+    
+                                        {{govukButton({
+                                            text: "Launch calculate release dates",
+                                            attributes: {
+                                            "formaction": "v10/calculate-release-dates/calculation-summary",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+                                        <p class="govuk-body">This scenario is for the purposes of testing genuine overrides for CRDS</p> 
+                                        
+                                        </form> 
+ 
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 10 
+                            
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-10">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v10/DPS-home?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                        {{govukButton({
+                                            text: "Launch from prisoner profile",
+                                            attributes: {
+                                            "formaction": "v10/DPS-prisoner-profile?viewOption=adjustmentsReleasedTrue",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">
+                                    <li>New entry point to record a recall</li>  
+                                    <li>Updated 'choose a recall type' flow</li>       
+                                    <li>View a recall</li>        
+                                    <li>Edit a recall</li>    
+                                    <li>Post-UR design improvements to recalls journey</li>   
+                                </ul> 
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764596988158504&cot=14">Entry points options (miro)</a></li>  
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764596920627745&cot=14">Choosing a recall (miro)</a></li>  
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764596968598715&cot=14">Recalls sequencing ideation (miro)</a></li>  
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597075612508&cot=14">Viewing a recall (miro)</a></li>  
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597473206296&cot=14">Editing a recall (miro)</a></li>  
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597473206296&cot=14">Additional R2 proto changes (miro)</a></li>  
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. New entry point to record a recall</h4> 
+                                <p class="govuk-body">From R2 we understood that user expected release dates to be calculated at the same time as recording a recall. Because of this, we want to test brinign recalls and CRDS closer together. In this version recall still has its own entry point, however it now lives on the release dates and calculations landing page. This also enable us to automaticall choose the calculation reason and take the user straight into the recalls journey.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v10/release-dates">Record a recall</a></li>   
+                                </ul>  
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">2. Update 'choose a recall type'</h4> 
+                                <p class="govuk-body">We are able to use sentence information and the dates provided by the user to narrow down or infer the recall type for the user. We want to understand how helpful this could be and wether there are scenarios where the recall type on the revokation order is different to what the system suggests. Our designs use a single question "is this fixed term?" which should allow us to either infer the recall type or provide a small list of options for the user to then choose from. If we are able to identify the recall type, we insted will show a page which aims to communicate this and allows the user to confirm. </p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/recall-type-fixed-question.html">'Is this a fixed term recall?' question page</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/recall-type-fixed-question.html">'Choose a recall type' options page</a></li> 
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/recall-type-confirm.html">'Confirm recall type' page</a></li> 
+                                </ul>  
+ 
+ 
+ 
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
                             Version 9.2
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
                             <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                In Design
+                                Closed
                             </strong>
                         </span>
                         </h2>
@@ -72,7 +256,7 @@
                                         <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764595352385874&cot=14">UR planning (miro)</a></li>   
                                         <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593724256446&cot=14">Recalls ideation (miro)</a></li>   
                                         <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593036591970&cot=14">UR R1 playback (miro)</a></li>   
-                                        <li><a class="govuk-link" target="external" href="...">UR R2 playback (miro) - TBC</a></li>  
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597710932094&cot=14">UR R2 playback (miro)</a></li>  
                                     </ul> 
 
                                     <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
@@ -116,6 +300,7 @@
                                   
                     </div>
                 </div>
+                </div>
 
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
@@ -140,84 +325,85 @@
                             
 
                     
-                                <div class="govuk-grid-column-three-quarters"> 
-                                    <h4 class="govuk-heading-m">What we are testing</h4> 
-                                    <p class="govuk-body">This remote round of UR is due to take place in wc 29th July 2024.</p> 
-                                    <p class="govuk-body">In this round, we aim to:</p> 
-                                    <ul class="govuk-list govuk-list--bullet">
-                                        <li>gather reactions to journey entry points</li> 
-                                        <li>learn about user behaviour regarding opening new bookings</li> 
-                                        <li>user reactions to entering UAL adjustment separately via adjustments service.</li> 
-                                        <li>understand how users would expect to edit sentences returned by the service.</li> 
-                                    </ul>   
-                                    <h4 class="govuk-heading-m">Supporting documents</h4>
-                                    <ul class="govuk-list"> 
-                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764595352385874&cot=14">UR planning (miro)</a></li>   
-                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593724256446&cot=14">Recalls ideation (miro)</a></li>   
-                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593036591970&cot=14">UR R1 playback (miro)</a></li>   
-                                        <li><a class="govuk-link" target="external" href="...">UR R2 playback (miro) - TBC</a></li>  
-                                    </ul> 
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">What we are testing</h4> 
+                                <p class="govuk-body">This remote round of UR is due to take place in wc 29th July 2024.</p> 
+                                <p class="govuk-body">In this round, we aim to:</p> 
+                                <ul class="govuk-list govuk-list--bullet">
+                                    <li>gather reactions to journey entry points</li> 
+                                    <li>learn about user behaviour regarding opening new bookings</li> 
+                                    <li>user reactions to entering UAL adjustment separately via adjustments service.</li> 
+                                    <li>understand how users would expect to edit sentences returned by the service.</li> 
+                                </ul>   
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764595352385874&cot=14">UR planning (miro)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593724256446&cot=14">Recalls ideation (miro)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764593036591970&cot=14">UR R1 playback (miro)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="...">UR R2 playback (miro) - TBC</a></li>  
+                                </ul> 
 
-                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-
-
-                                    <form action="post">
-                                    <h4 class="govuk-heading-m">Scenario 1</h4> 
-
-                                    <p class="govuk-hint">Prisoner profile | Booking exists</p>
-                                    {{govukButton({
-                                        text: "Launch scenario 1",
-                                        attributes: {
-                                        "formaction": "v9_1/DPS-prisoner-profile?viewOption=RSReleasedTrue",
-                                        "formmethod": "post"
-                                        },
-                                        classes: "govuk-button--secondary"
-                                        })}}
-                                    <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from the 'calculation reason' page on CRDS.</p> 
-                                    <ul class="govuk-list"> 
-                                        <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
-                                    </ul> 
-                                    </form>
-
-                                    <form action="post">
-                                    <h4 class="govuk-heading-m">Scenario 2</h4>
-                                    <p class="govuk-hint">Prisoner profile | Booking exists | Added UAL</p>
-
-                                    {{govukButton({
-                                        text: "Launch scenario 2",
-                                        attributes: {
-                                        "formaction": "v9_1/DPS-prisoner-profile-2?viewOption=RSReleasedTrue",
-                                        "formmethod": "post"
-                                        },
-                                        classes: "govuk-button--secondary"
-                                        })}}
-                                    <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from the 'calculation reason' page on CRDS.</p> 
-                                    <ul class="govuk-list"> 
-                                        <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
-                                    </ul>
-                                    </form> 
-
-                                    <h4 class="govuk-heading-m">Scenario 3</h4> 
-                                    <p class="govuk-hint">No sentences added page | New booking</p>
-                                    <form action="post">
-                                    {{govukButton({
-                                        text: "Launch scenario 3",
-                                        attributes: {
-                                        "formaction": "v9_1/DPS-prisoner-profile?toShow=none",
-                                        "formmethod": "post"
-                                        },
-                                        classes: "govuk-button--secondary"
-                                        })}}
-                                    <p class="govuk-body">This scenario explores how a user could enter the recall journey when a new booking has been opened. The journey starts from the 'There are no sentences recorded' shutter page.</p> 
-                                    <ul class="govuk-list"> 
-                                        <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
-                                    </ul>     
-
-                                    </form>
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
 
-                                </div>
+                                <form action="post">
+                                <h4 class="govuk-heading-m">Scenario 1</h4> 
+
+                                <p class="govuk-hint">Prisoner profile | Booking exists</p>
+                                {{govukButton({
+                                    text: "Launch scenario 1",
+                                    attributes: {
+                                    "formaction": "v9_1/DPS-prisoner-profile?viewOption=RSReleasedTrue",
+                                    "formmethod": "post"
+                                    },
+                                    classes: "govuk-button--secondary"
+                                    })}}
+                                <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from the 'calculation reason' page on CRDS.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
+                                </ul> 
+                                </form>
+
+                                <form action="post">
+                                <h4 class="govuk-heading-m">Scenario 2</h4>
+                                <p class="govuk-hint">Prisoner profile | Booking exists | Added UAL</p>
+
+                                {{govukButton({
+                                    text: "Launch scenario 2",
+                                    attributes: {
+                                    "formaction": "v9_1/DPS-prisoner-profile-2?viewOption=RSReleasedTrue",
+                                    "formmethod": "post"
+                                    },
+                                    classes: "govuk-button--secondary"
+                                    })}}
+                                <p class="govuk-body">This scenario explores how a user could access the recalls journey when an existing booking is re-opened. The journey start from the 'calculation reason' page on CRDS.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
+                                </ul>
+                                </form> 
+
+                                <h4 class="govuk-heading-m">Scenario 3</h4> 
+                                <p class="govuk-hint">No sentences added page | New booking</p>
+                                <form action="post">
+                                {{govukButton({
+                                    text: "Launch scenario 3",
+                                    attributes: {
+                                    "formaction": "v9_1/DPS-prisoner-profile?toShow=none",
+                                    "formmethod": "post"
+                                    },
+                                    classes: "govuk-button--secondary"
+                                    })}}
+                                <p class="govuk-body">This scenario explores how a user could enter the recall journey when a new booking has been opened. The journey starts from the 'There are no sentences recorded' shutter page.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v10/recalls/"></a></li>      
+                                </ul>     
+
+                                </form>
+
+
+                            </div>
                                   
+                        </div>
                     </div>
                 </div>
                 <div class="govuk-accordion__section">
@@ -1428,7 +1614,6 @@
                     </div>
                 </div> 
             </div>
-        </div>
         </div>
 
         <div class="govuk-grid-column-one-quarter"> 

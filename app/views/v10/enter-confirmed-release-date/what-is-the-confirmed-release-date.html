@@ -1,0 +1,64 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Prisoner identity bar -->
+<div class="moj-width-container">
+    <div class="moj-identity-bar">
+        <div class="moj-identity-bar__container govuk-!-margin-left-0">
+            <div class="moj-identity-bar__details">
+                <span class="moj-identity-bar__title"><span class="govuk-!-margin-right-5"><strong>Prisoner name: </strong>Joe Bloggs</span><strong> Date of birth: </strong><span class="govuk-!-margin-right-5">15 May 2000</span><strong>Prison number: </strong>G2883VE</span>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../hub-page" class="govuk-back-link">Back</a>
+</div>
+<!-- What is the confirmed date -->
+<div class="moj-width-container govuk-!-margin-top-4">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+            <form class="form" action="confirmed-release-date-reason">
+                    <div class="govuk-form-group">
+                        <span class="govuk-caption-l">Enter a confirmed release date</span>
+                        <label class="govuk-heading-l" for="confirmed-release-date">
+                            What is Joe Bloggs's confirmed release date?
+                        </label>
+                        <div id="confirmed-release-date-hint" class="govuk-hint">
+                            For example, 27 3 2007
+                        </div>
+                        <div class="govuk-date-input" id="confirmed-release-date">
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="confirmed-release-date-day">
+                                        Day
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmed-release-date-day" name="confirmed-release-date-day" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="confirmed-release-date-month">
+                                        Month
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="confirmed-release-date-month" name="confirmed-release-date-month" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                            <div class="govuk-date-input__item">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label govuk-date-input__label" for="confirmed-release-date-year">
+                                        Year
+                                    </label>
+                                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="confirmed-release-date-year" name="confirmed-release-date-year" type="text" pattern="[0-9]*" inputmode="numeric">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <button class="govuk-button" data-module="govuk-button">
+                            Continue
+                        </button>
+                </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

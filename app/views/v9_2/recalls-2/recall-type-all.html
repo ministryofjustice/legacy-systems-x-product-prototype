@@ -1,0 +1,205 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="recall-duration">
+
+
+                {% if data['recallType'] == 'ORA' %}
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select the type of recall
+                            </h1>
+                        </legend> 
+
+                        
+                        <p class="govuk-body">We've identified these types of recalls based on this person's sentences and offences. </p>
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                Standard recall
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                Fixed-term recall
+                                </label> 
+                            </div> 
+
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-3">
+                                Recall from Curfew Conditions
+                                </label> 
+                            </div> 
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-4">
+                                    Recall from Home Detention Curfew, for a non-curfew violation
+                                </label> 
+                            </div> 
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+
+                {% elif data['recallType'] == 'AR' %}
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select the type of recall
+                            </h1>
+                        </legend> 
+
+                        
+                        <p class="govuk-body">We've identified these types of recalls based on this person's sentences and offences. </p>
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                         
+                                    
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                Standard recall
+                                </label> 
+                            </div>
+                                 
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-3">
+                                Recall from Curfew Conditions
+                                </label> 
+                            </div> 
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-4">
+                                    Recall from Home Detention Curfew, for a non-curfew violation
+                                </label> 
+                            </div> 
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+                {% elif data['recallType1'] == 'HDC' %}
+ 
+                <h1 class="govuk-heading-xl">
+                    <span class="govuk-caption-xl">Record a recall</span>
+                    Home Detention Curfew (HDC) recall required
+                </h1> 
+
+            
+                <p class="govuk-body">We've identified that an HDC recall is required based on the this person's recall dates and sentence and offence information.</p>
+
+                <p class="govuk-body">If you think some information is wrong, you must perform a recall on NOMIS.</p>
+        
+        
+                {% else %}
+
+                    <div class="govuk-form-group">
+
+                    
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select the type of recall
+                            </h1>
+                        </legend> 
+
+                        
+                        <!-- <p class="govuk-body">We've identified these types of recalls based on this person's sentences and offences. </p> -->
+
+
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                
+                                    
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                    Standard recall
+                                    </label> 
+                                </div>
+                                    
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                        Fixed 28 Days 
+                                    </label> 
+                                </div>
+                                    
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                        Fixed 14 Days from HDC
+                                    </label> 
+                                </div>  
+                                
+                                    
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                        Fixed 28 Days from HDC
+                                    </label> 
+                                </div> 
+                                
+                                    
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                        Recall from HDC due to violation of curfew
+                                    </label> 
+                                </div>
+                                    
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                    <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                        Recall from HDC for some other reason
+                                    </label> 
+                                </div>  
+                                
+                                  
+                            </div> 
+
+                        </fieldset> 
+                    </div>
+
+                {% endif %}
+
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                    Continue
+                    </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
