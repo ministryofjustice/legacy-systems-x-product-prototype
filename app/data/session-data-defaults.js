@@ -74,7 +74,8 @@ module.exports = {
                     "next-court-date-month": "",
                     "next-court-date-year": "",
                     "next-court-time": "",
-                    "sentences": [{
+                    "sentences": [
+                        {
                         "count-number": "1",
                         "conviction-date-day": "3",
                         "conviction-date-month": "1",
@@ -90,9 +91,33 @@ module.exports = {
                         ],
                         "offence-name": "Burglary other than dwelling - theft",
                         "outcome": "Imprisonment",
-                        "sentence-type": "SDS (Standard Determinate Sentence)",
+                        "sentence-type": "	ORA Sentencing Code Standard Determinate Sentence",
                         "sentence-length-years": "0",
                         "sentence-length-months": "10",
+                        "sentence-length-weeks": "0",
+                        "sentence-length-days": "0",
+                        "consecutive-concurrent": "Forthwith"
+                    },
+
+                    {
+                        "count-number": "2",
+                        "conviction-date-day": "3",
+                        "conviction-date-month": "1",
+                        "conviction-date-year": "2024",
+                        "offence-start-date-day": "1",
+                        "offence-start-date-month": "11",
+                        "offence-start-date-year": "2023",
+                        "offence-end-date-day": "",
+                        "offence-end-date-month": "",
+                        "offence-end-date-year": "",
+                        "offence-code": [
+                            "CJ88001"
+                        ],
+                        "offence-name": "Burglary other than dwelling - theft",
+                        "outcome": "Imprisonment",
+                        "sentence-type": "	ORA Sentencing Code Standard Determinate Sentence",
+                        "sentence-length-years": "0",
+                        "sentence-length-months": "14",
                         "sentence-length-weeks": "0",
                         "sentence-length-days": "0",
                         "consecutive-concurrent": "Forthwith"
