@@ -3,7 +3,7 @@
 {% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
-  <a href="recall-type-confirm" class="govuk-back-link">Back</a>
+  <a href="recall-type" class="govuk-back-link">Back</a>
 </div>
 <!-- Documents -->
 <div class="govuk-grid-row govuk-!-margin-top-6">
@@ -62,7 +62,7 @@
               Sentences
             </dt>
             <dd class="govuk-summary-list__value">
-              1
+              2
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -81,8 +81,8 @@
               Recall type
             </dt>
             <dd class="govuk-summary-list__value">
-              Standard recall
-              <br><span class="govuk-hint">Saved to NOMIS as ORA Standard recall</span>
+              ORA license recall
+              <br><span class="govuk-hint">Saved to NOMIS as ORA license recall</span>
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -97,7 +97,7 @@
       </div>
           
       <div class="govuk-inset-text">
-        An additional <b>2 days</b> of UAL (unlawfully at large) have been added.
+        An additional <b>2 days</b> of UAL (unlawfully at large) have been added. You can review and add other adjustments after recording the recall.
       </div>
 
 <!--           
@@ -109,7 +109,7 @@
 
         {% if data['scenario'] == '2' %}
 
-        <form action="../court-cases?toShow=recallHistory" method="post">
+        <form action="recall-complete" method="post">
           <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
             Confirm and save
           </button> 
