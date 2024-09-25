@@ -1,0 +1,169 @@
+<head>
+    <!--[if lte IE 8]><link href="/public/stylesheets/application-ie8.css" rel="stylesheet" type="text/css" /><![endif]-->
+<!--[if gt IE 8]><!--><link href="/public/stylesheets/application.css" media="all" rel="stylesheet" type="text/css" /><!--<![endif]-->
+
+<link href="/public/css/accessible-autocomplete.min.css" rel="stylesheet" /> 
+{% for stylesheetUrl in extensionConfig.stylesheets %}
+  <link href="{{ stylesheetUrl }}" rel="stylesheet" type="text/css" />
+{% endfor %}
+
+</head>
+
+<body class="govuk-template__body  js-enabled" data-new-gr-c-s-check-loaded="14.1110.0" data-gr-ext-installed="">
+    <script
+        nonce="">document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
+
+
+
+    <a href="#main-content" class="govuk-skip-link" data-module="govuk-skip-link">Skip to main content</a>
+ 
+    <div class="print-width-container">
+
+        <span class="govuk-visually-hidden" id="occurrence-notification-slip-page"></span>
+
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+
+            <div class="govuk-grid-row print-button">
+                <div class="govuk-grid-column-full">
+                    <h1 class="govuk-heading-l govuk-visually-hidden">Print notification slip</h1>
+
+                    <div class="govuk-button-group govuk-!-display-none-print">
+  
+                        <button data-prevent-double-click="true"
+                            class="govuk-button govuk-button--blue js-print no-js-hidden" data-module="govuk-button" onClick="window.print()">
+                            Print notification slip
+                        </button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class="notification-slip">
+                <!-- <div class="hmpps-logo-wrapper"><img src="/public/images/hmpps-logo.png" alt="HMPPS logo"> </div> -->
+               
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <h2 class="govuk-heading-s notification-slip-establishment">HMP Kirkham</h2>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+                        <h1 class="govuk-heading-l">Your release dates </h1>
+                    </div>
+                </div>
+
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-two-thirds">
+                        <dl class="govuk-summary-list govuk-summary-list--no-border ">
+                            <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Name
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                Joe Bloggs
+                            </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Prison number
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                A8207AA
+                            </dd>
+                            </div> 
+                        </dl>
+                    </div>
+                </div>
+                
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                        <div class="printed-paragraph">
+                            <p class="govuk-body">Your release dates were calculated on 1&nbsp;August&nbsp;2023.</p>
+                            <p class="govuk-body">If you need help understanding your release dates, speak to your wing officer.</p>
+                        </div>
+
+                        <div class="release-date-callout__wrapper">
+                            <h2 class="govuk-heading-l"><span style="font-weight: normal;">You are scheduled to leave prison on </span>1&nbsp;December&nbsp;2024</h2> 
+                            <p class="govuk-body">This is your Conditional Release Date (CRD)</p>
+                        </div>
+                        
+                        <h2 class="govuk-heading-m">Other important dates</h2>
+                        
+                        <div class="printed-paragraph">
+                            <p class="govuk-body">Your sentence is scheduled to finish on <b>1&nbsp;December&nbsp;2026</b>.</p>
+                            <p class="govuk-body">This is your Sentence and Licence Expiry Date (SLED)</p>
+                        </div>
+
+                        <div class="printed-paragraph">
+                            <p class="govuk-body">You can apply for Home Detention Curfew from <b>1 July 2024</b>.</p>
+                            <p class="govuk-body">This is your Home Detention Curfew Eligibility Date (HDCED)</p>
+                        </div>
+ 
+                        <table class="govuk-table">
+                            <caption class="govuk-table__caption govuk-table__caption--m">Sentence details</caption>
+                            <thead class="govuk-table__head">
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Sentence</th>
+                                <th scope="col" class="govuk-table__header">Sentence start date</th>
+                                <th scope="col" class="govuk-table__header">Sentence length</th>
+                            </tr>
+                            </thead>
+                            <tbody class="govuk-table__body">
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 1, count 1</td>
+                                <td class="govuk-table__cell">1 December 2021</td>
+                                <td class="govuk-table__cell">5 years</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 2, count 1</td>
+                                <td class="govuk-table__cell">1 December 2021</td>
+                                <td class="govuk-table__cell">4 months</td>
+                            </tr>
+                            <tr class="govuk-table__row">
+                                <td class="govuk-table__cell">Court case 2, count 2</td>
+                                <td class="govuk-table__cell">1 December 2021</td>
+                                <td class="govuk-table__cell">4 months concurrent to <br>Court case 2, count 1</td>
+                            </tr>
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+                <div class="govuk-grid-row">
+                    <div class="govuk-grid-column-full">
+
+                        <h2 class="govuk-heading-m">Adjustments</h2>
+
+                        <dl class="govuk-summary-list govuk-summary-list--no-border dont-break">
+                            <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Remand
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                3 days taken away from your sentence 
+                            </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Unlawfully At Large
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                5 days added to your sentence
+                            </dd>
+                            </div> 
+                        </dl>
+                    </div>
+                </div>
+                
+            </div>
+
+
+        </main>
+    </div>
+
+
+
+
+    {% include "includes/scripts.html" %}

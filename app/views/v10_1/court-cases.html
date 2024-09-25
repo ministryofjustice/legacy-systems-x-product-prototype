@@ -49,6 +49,8 @@
                             <li class="govuk-summary-card__action">
                                 {% if courtCase['source'] == "nomis" %}
                                 <span class="moj-badge moj-badge--grey">NOMIS - read only</span>
+                                {% elif data['toShow'] == "recallHistory" %}
+                                <span class="moj-badge moj-badge--grey">Recalled</span>
                                 {% else %}
                                 <a class="govuk-link govuk-link--no-visited-state" href="/{{data.prototypeVersion}}/create-appearance?courtIndex={{courtCaseIndex}}">Add appearance<span class="govuk-visually-hidden"> to court case</span></a>
                                 {% endif %}
@@ -135,7 +137,7 @@
                         <hr class="govuk-section-break govuk-section-break--visible">
                         <div class="govuk-grid-row">
                         <div class="govuk-grid-column-two-thirds">
-                            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Latest appearance</h2>
+                            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Latest case update</h2>
                         </div>
                         </div>
                             <div class="govuk-grid-row">
@@ -150,20 +152,20 @@
                             </div>
                         <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
                             <div class="govuk-grid-column-one-third">
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Case reference</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">{{ lastAppearance['court-case-ref'] }}</p>
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Warrant date</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">{{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{ lastAppearance['warrant-date-year'] }}</p>
-                                {% if lastAppearance['overall-case-outcome'] == 'Imprisonment' %}
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Conviction date</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">{{ lastAppearance['overall-conviction-date-day'] }}/{{ lastAppearance['overall-conviction-date-month'] }}/{{ lastAppearance['overall-conviction-date-year'] }}</p>
-                                {% endif %}
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Outcome</h3>
+                                <p class="govuk-body govuk-!-margin-bottom-2">Recalled</p>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recall type</h3>
+                                <p class="govuk-body govuk-!-margin-bottom-2">ORA licence recall</p>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Location</h3>
+                                <p class="govuk-body govuk-!-margin-bottom-2">HMP Kirkham</p>
                             </div>
                             <div class="govuk-grid-column-two-thirds">
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Location</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">{{ lastAppearance['court-name'] }}</p>
-                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Outcome</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">{{ lastAppearance['overall-case-outcome'] }}</p>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recorded date</h3>
+                                <p class="govuk-body govuk-!-margin-bottom-2">3 September 2024</p>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Licence revocation date</h3>
+                                <p class="govuk-body govuk-!-margin-bottom-2">26 July 2024</p>
+                                <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Arrest date</h3>
+                                <p class="govuk-body govuk-!-margin-bottom-2">29 July 2024</p>
                             </div>
                             <div class="govuk-grid-column-full govuk-!-margin-top-4">
                                 {% if lastAppearance.sentences == null %}
@@ -368,7 +370,7 @@
                             </div>
                         </div>
                         <hr class="govuk-section-break govuk-!-margin-top-4 govuk-section-break--visible">
-                        <p class="govuk-body govuk-!-margin-top-6"><a class="govuk-link--no-visited-state govuk-!-font-weight-bold" href="court-case-detail?courtCaseIndex={{loop.revindex0}}">{% if courtCase['source'] == "nomis" %}View all appearances{% else %}View and edit all appearances ({{ courtCase.appearances.length }}){% endif %}</a></p>
+                        <p class="govuk-body govuk-!-margin-top-6"><a class="govuk-link--no-visited-state govuk-!-font-weight-bold" href="court-case-detail?courtCaseIndex={{loop.revindex0}}">{% if courtCase['source'] == "nomis" %}View all appearances{% elif data['toShow'] == "recallHistory" %}View all case updates{% else %}View and edit all appearances ({{ courtCase.appearances.length }}){% endif %}</a></p>
                     </div>
                 </div>
                 {% endfor %}
