@@ -15,7 +15,7 @@
                                First day spent UAL
                             </dt>
                             <dd id="start" class="govuk-summary-list__value">
-                               5 May 2023
+                                {{data['revocation-date-day']}} {{data['revocation-date-month']}} {{data['revocation-date-year']}}
                             </dd>
                             <dd class="govuk-summary-list__value">
                                 <a href="ual">Edit</a>
@@ -26,7 +26,7 @@
                                 Last day spent UAL
                             </dt>
                             <dd  id="end" class="govuk-summary-list__value">
-                                15 May 2023
+                                {{data['arrest-date-day']}} {{data['arrest-date-month']}} {{data['arrest-date-year']}}
                             </dd>
                             <dd class="govuk-summary-list__value">
                                 <a href="ual">Edit</a>
@@ -37,7 +37,7 @@
                                 Number of days
                             </dt>
                             <dd  id="days" class="govuk-summary-list__value">
-                                11
+                                3
                             </dd>
                             <dd class="govuk-summary-list__value">
                                 <a href="ual">Edit</a>
@@ -56,7 +56,7 @@
                         </div>
                     </dl>
                     <div class="govuk-button-group">
-                        <a href="../index-1"  id="confirmEditUALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
+                        <a href="view-ual?ual=added"  id="confirmEditUALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
                             Confirm and save
                         </a>
                         <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">

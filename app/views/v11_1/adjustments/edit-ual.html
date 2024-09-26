@@ -7,7 +7,7 @@
         <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds">
-                    <form action="/form-handler" method="post" novalidate>
+                    <form method="post" action="confirm-edit-ual">
 
                         <div id="" class="">
 
@@ -21,72 +21,72 @@
                                 <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1083190/sc-annex-a-operational-guidance.pdf#page=87">the policy framework</a>.
                             </p>
                          <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="revocation-date-hint">
                                     <legend class="govuk-fieldset__legend--s">
                                         First day spent UAL
                                     </legend>
-                                    <div id="passport-issued-hint" class="govuk-hint">
+                                    <div id="revocation-date-hint" class="govuk-hint">
                                         For example, 27 3 2022
                                     </div>
-                                    <div class="govuk-date-input" id="passport-issued">
+                                    <div class="govuk-date-input" id="revocation-date">
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="from-day">
+                                                <label class="govuk-label govuk-date-input__label" for="revocation-date-day">
                                                     Day
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-day" name="revocation-date-day" type="text" inputmode="numeric" value="{{data['revocation-date-day']}}">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="from-month">
+                                                <label class="govuk-label govuk-date-input__label" for="revocation-date-month">
                                                     Month
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" value="{{data['revocation-date-month']}}">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="from-year">
+                                                <label class="govuk-label govuk-date-input__label" for="revocation-date-year">
                                                     Year
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="revocation-date-year" name="revocation-date-year" type="text" inputmode="numeric" value="{{data['revocation-date-year']}}">
                                             </div>
                                         </div>
                                     </div>
                                 </fieldset>
                             </div>
                             <div class="govuk-form-group">
-                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="arrest-date-hint">
                                     <legend class="govuk-fieldset__legend--s">
                                         Last day spent UAL
                                     </legend>
-                                    <div id="passport-issued-hint" class="govuk-hint">
+                                    <div id="arrest-date-hint" class="govuk-hint">
                                         For example, 27 3 2022
                                     </div>
-                                    <div class="govuk-date-input" id="passport-issued">
+                                    <div class="govuk-date-input" id="arrest-date">
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="to-day">
+                                                <label class="govuk-label govuk-date-input__label" for="arrest-date-day">
                                                     Day
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-day" name="arrest-date-day" type="text" inputmode="numeric" value="{{data['arrest-date-day']}}">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="to-month">
+                                                <label class="govuk-label govuk-date-input__label" for="arrest-date-month">
                                                     Month
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-month" name="arrest-date-month" type="text" inputmode="numeric" value="{{data['arrest-date-month']}}">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
                                             <div class="govuk-form-group">
-                                                <label class="govuk-label govuk-date-input__label" for="to-year">
+                                                <label class="govuk-label govuk-date-input__label" for="arrest-date-year">
                                                     Year
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="arrest-date-year" name="arrest-date-year" type="text" inputmode="numeric" value="{{data['arrest-date-year']}}">
                                             </div>
                                         </div>
                                     </div>
@@ -99,7 +99,7 @@
                                     </legend>
                                     <div class="govuk-radios" data-module="govuk-radios">
                                         <div class="govuk-radios__item">
-                                            <input class="govuk-radios__input" id="UALtype-1" name="UALtype" type="radio" value="Recall">
+                                            <input class="govuk-radios__input" id="UALtype-1" name="UALtype" type="radio" value="Recall" checked>
                                             <label class="govuk-label govuk-radios__label" for="UALtype-1">
                                                 Recall
                                             </label>
@@ -134,14 +134,17 @@
 
                         </div>
 
-                        <div class="govuk-button-group">
-                            <a id="EditUAlButton" href="confirm-edit-ual" class="govuk-button" data-module="govuk-button">
+                    
+                        <div class="govuk-button-group"> 
+
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                                 Continue
-                            </a>
-                            <a href="view-ual" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            </button> 
+                        <!-- </form> -->
+                        <!-- <form method="post" action="cancel"> -->
+                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                                 Cancel
-                            </a>
-                        </div>
+                            </button> 
                     </form>
                 </div>
             </div>

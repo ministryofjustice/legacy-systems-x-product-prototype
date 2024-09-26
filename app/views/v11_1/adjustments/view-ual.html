@@ -27,7 +27,14 @@
                 <td class="govuk-table__cell"> {{data['arrest-date-day']}} {{data['arrest-date-month']}} {{data['arrest-date-year']}} </td>
                 <td class="govuk-table__cell">HMP Kirkham</td> 
                 <td class="govuk-table__cell">Recall</td> 
-                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">2</td> 
+
+                {% if data['ual'] == 'added' %}
+
+                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">3</td>
+                {% else %}
+
+                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">2</td>
+                {% endif %} 
                 <td class="govuk-table__cell"><a class="govuk-link" href="edit-ual">View and edit</a></td> 
             
                 </tr>
