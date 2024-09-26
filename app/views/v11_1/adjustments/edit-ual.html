@@ -42,7 +42,7 @@
                                                 <label class="govuk-label govuk-date-input__label" for="revocation-date-month">
                                                     Month
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" value="{{data['revocation-date-month']}}">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" value="{{data['revocation-date-month'] | monthName }}">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">
@@ -78,7 +78,7 @@
                                                 <label class="govuk-label govuk-date-input__label" for="arrest-date-month">
                                                     Month
                                                 </label>
-                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-month" name="arrest-date-month" type="text" inputmode="numeric" value="{{data['arrest-date-month']}}">
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-month" name="arrest-date-month" type="text" inputmode="numeric" value="{{data['arrest-date-month'] | monthName }}">
                                             </div>
                                         </div>
                                         <div class="govuk-date-input__item">

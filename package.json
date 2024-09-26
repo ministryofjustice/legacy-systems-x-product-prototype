@@ -8,6 +8,7 @@
   "dependencies": {
     "@govuk-prototype-kit/common-templates": "1.2.2",
     "@ministryofjustice/frontend": "^1.8.1",
+    "@x-govuk/govuk-prototype-filters": "^1.4.3",
     "govuk-frontend": "^4.7.0",
     "govuk-prototype-kit": "^13.16.0",
     "hmpps-court-cases-release-dates-design": "^2.2.0",

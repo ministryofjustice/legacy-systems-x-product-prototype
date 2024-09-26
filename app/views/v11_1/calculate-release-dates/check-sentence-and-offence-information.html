@@ -331,6 +331,16 @@
                                     <!-- Days -->
                                     <td class="govuk-table__cell">0</td>
                                 </tr>
+
+                                {% if data['toShow'] == 'ualAdded' %}
+                                <tr class="govuk-table__row">
+                                    <!-- Adjustment -->
+                                    <td class="govuk-table__cell">Unlawfully at large (UAL)</td>
+                                    <!-- Days -->
+                                    <td class="govuk-table__cell">3
+                                    </td>
+                                </tr>
+                                {% else %}
                                 <tr class="govuk-table__row">
                                     <!-- Adjustment -->
                                     <td class="govuk-table__cell">Unlawfully at large (UAL)</td>
@@ -338,6 +348,7 @@
                                     <td class="govuk-table__cell">2
                                     </td>
                                 </tr>
+                                {% endif %} 
                             </tbody>
                         </table>
                     </div>
@@ -354,9 +365,26 @@
                                 </tr>
                             </thead>
                             <tbody class="govuk-table__body">
+
+                                {% if data['toShow'] == 'ualAdded' %}
                                 <tr class="govuk-table__row">
                             
-                                    <td class="govuk-table__cell">From 26 August 2024 to 29 August 2024</td>
+                                    <td class="govuk-table__cell">From {{data['revocation-date-day']}} {{data['revocation-date-month'] | monthName }} {{data['revocation-date-year']}}  to {{data['arrest-date-day']}} {{data['arrest-date-month'] | monthName }} {{data['arrest-date-year']}}</td>
+                                   
+                                    <td class="govuk-table__cell">3</td>
+                                </tr> 
+                                <tr class="govuk-table__row"> 
+                                    <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">
+                                        Total days</td> 
+                                    <td class="govuk-table__cell">3
+                                    </td>
+                                </tr>
+
+                                {% else %}
+
+                                <tr class="govuk-table__row">
+                            
+                                    <td class="govuk-table__cell">From {{data['revocation-date-day']}} {{data['revocation-date-month'] | monthName }} {{data['revocation-date-year']}}  to {{data['arrest-date-day']}} {{data['arrest-date-month'] | monthName }} {{data['arrest-date-year']}}</td>
                                    
                                     <td class="govuk-table__cell">2</td>
                                 </tr> 
@@ -366,6 +394,8 @@
                                     <td class="govuk-table__cell">2
                                     </td>
                                 </tr>
+
+                                {% endif %}
                             </tbody>
                         </table>
                     </div>
@@ -415,11 +445,21 @@
                     calculation.</p>
                
                     <div class="govuk-button-group">
+                        {% if data['toShow'] == 'ualAdded' %}
+                        <form method="post" action="calculation-summary?toShow=calc2Complete">
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                                Calculate release dates
+                            </button>
+                        </form>
+
+                        {% else %}
                         <form method="post" action="calculation-summary?toShow=calcComplete">
                             <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                                 Calculate release dates
                             </button>
                         </form>
+
+                        {% endif %}
     
                         <form method="post" action="cancel">
                             <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">

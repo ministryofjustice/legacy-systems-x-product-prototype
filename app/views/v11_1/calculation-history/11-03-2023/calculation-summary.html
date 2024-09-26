@@ -26,7 +26,7 @@
                             Date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            11 March 2023
+                            {{ "today" | govukDate }}{{ "today" | govukDate }}
                         </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -34,7 +34,7 @@
                             Reason
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            Transfer check
+                            Recording a recall
                         </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -95,26 +95,17 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">Tuesday, 18 July 2023</p>
+                                <p class="govuk-body">Tuesday, 4 March 2025</p>
                             </dd>
-                        </div>
+                        </div> 
+    
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                                CRD
-                                <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                                PRRD
+                                <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Saturday, 29 April 2023</p>
-                                <p class="govuk-!-font-size-16 govuk-hint">Friday, 28 April 2023 when adjusted to a working day</p>
-                            </dd>
-                        </div>
-                        <div class="govuk-summary-list__row">
-                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
-                                HDCED
-                                <p class="govuk-!-font-size-16 govuk-hint">Home detention curfew eligibility date</p>
-                            </dt>
-                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Friday, 24 March 2023</p>
+                                <p class="govuk-body">Tuesday, 4 March 2025</p>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -123,9 +114,9 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Monday, 29 April 2024</p> 
+                                <p class="govuk-body">Monday, 4 August 2025</p>
                             </dd>
-                        </div> 
+                        </div>
                     </dl>
                 </div>
             </div>
@@ -156,145 +147,5 @@
             </details>
         </div>
     </div>
-</div>
-<!-- Calculation breakdown -->
-<!-- Breakdown -->
-<div class="moj-width-container">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-            <h2 class="govuk-heading-l govuk-!-margin-top-6">Calculation breakdown</h2>
-            <div class="govuk-grid-row">
-
-        
-                <div class="govuk-grid-column-full">
-                    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Consecutive sentences</h3>
-                </div>
-                <div class="govuk-grid-column-one-half">
-                    <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-top-2 govuk-!-margin-bottom-4" data-qa="consecutive-start-date">Consecutive sentences start date: <span class="govuk-body">10 March 2023</span>
-                    </p>
-                    <table class="govuk-table govuk-!-margin-bottom-4" data-qa="consecutive-sentence-table">
-        <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Sentence</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--date">Sentence length</th>
-            </tr>
-        </thead>
-        <tbody class="govuk-table__body calculation-breakdown">
-            
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Court case 1, count 1
-                        
-                            <br>
-                            <p class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">Court case number: T20230101</p>
-                        
-                    </td>
-                    <td class="govuk-table__cell">100 days<br>
-                        
-                    </td>
-                </tr>
-            
-                <tr class="govuk-table__row">
-                    <td class="govuk-table__cell">Court case 2, count 2
-                        
-                            <br>
-                            <p class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">Court case number: T20223256</p>
-                        
-                    </td>
-                    <td class="govuk-table__cell">60 days<br>
-                        
-                            <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">consecutive to court case 1, count 1</span>
-                        
-                    </td>
-                </tr>
-            
-        </tbody>
-    </table>
-                    <table class="govuk-table govuk-!-margin-top-6" data-qa="consecutive-dates-table">
-        <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-                <td class="govuk-table__header">Total sentence length</td>
-                <td class="govuk-table__cell">160
-                days
-            </td>
-            </tr>
-            <tr class="govuk-table__row">
-                <td class="govuk-table__header">SLED</td>
-                
-                <td class="govuk-table__cell">16 August 2023<br>
-                    <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">160 days</span></td>
-            </tr>
-            <tr class="govuk-table__row">
-                <td class="govuk-table__header">CRD</td>
-                
-                <td class="govuk-table__cell">28 May 2023<br>
-                    <span class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16">80 days</span></td>
-            </tr>
-        </tbody>
-    </table>
-                </div>
-            
-        </div>
-                 
-        </div>
-    </div>
-    <h3 class="govuk-heading-m govuk-!-margin-bottom-4">Release dates that include adjustments</h3>
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-            <table class="govuk-table govuk-!-margin-bottom-4" data-qa="release-dates-adjustments-table">
-                <tbody class="govuk-table__body">
-                    
-                        
-        <tr class="govuk-table__row">
-            <td class="govuk-table__header">SLED with adjustments</td>
-            <td class="govuk-table__cell">
-                18 July 2023
-                <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
-                    16 August 2023 minus 29 days
-                </div>
-            </td>
-        </tr>
-    
-                    
-                        
-        <tr class="govuk-table__row">
-            <td class="govuk-table__header">CRD with adjustments</td>
-            <td class="govuk-table__cell">
-                29 April 2023
-                <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
-                    28 May 2023 minus 29 days
-                </div>
-            </td>
-        </tr>
-    
-                    
-                        
-        <tr class="govuk-table__row">
-            <td class="govuk-table__header">HDCED with adjustments</td>
-            <td class="govuk-table__cell">
-                24 March 2023
-                <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
-                    10 March 2023 plus 14 days
-                </div>
-            </td>
-        </tr>
-    
-                    
-                        
-        <tr class="govuk-table__row">
-            <td class="govuk-table__header">TUSED with adjustments</td>
-            <td class="govuk-table__cell">
-                29 April 2024
-                <div class="govuk-hint govuk-!-margin-top-2 govuk-!-font-size-16 govuk-!-margin-bottom-0">
-                    28 May 2023 plus 12 months minus 29 days
-                </div>
-            </td>
-        </tr>
-    
-                    
-                </tbody>
-            </table>
-        </div>
-    </div>
-     
 </div> 
 {% endblock %}

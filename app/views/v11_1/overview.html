@@ -35,11 +35,24 @@
           
           </article>
 
+          {% elif data['toShow'] == 'ualAdded' %} 
+
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+  
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
+                <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="calculate-release-dates/calculation-reason">
+                  Calculate release dates
+                </a>
+              </section>
+            
+            </article>
           {% elif data['toShow'] == 'calcComplete' %}
   
           <div class="govuk-summary-card govuk-!-margin-bottom-6">
               <div class="govuk-summary-card__title-wrapper">
-                  <h2 class="govuk-summary-card__title">29 July 2024 at HMP Kirkham
+                  <h2 class="govuk-summary-card__title">{{ "today" | govukDate }} at HMP Kirkham
                       <br>
                       <span class="govuk-body">Calculation reason: Recording a recall</span>
                   </h2>
@@ -88,6 +101,62 @@
                 </dl>
               </div>
           </div>
+
+          {% elif data['toShow'] == 'calc2Complete' %}
+
+  
+          <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">{{ "today" | govukDate }} at HMP Kirkham
+                    <br>
+                    <span class="govuk-body">Calculation reason: Recording a recall</span>
+                </h2>
+               
+                <ul class="govuk-summary-card__actions" style="align-content: center;">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation on 8 May 2023 at HMP Kirkham</span></a>
+                    </li>
+                  <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculation-history/11-03-2023/check-sentence-and-offence-information">View details<span class="govuk-visually-hidden"> of Transfer calculation on 8 May 2023 at HMP Kirkham</span></a>
+                  </li>
+                 
+                </ul>
+             </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+              
+           
+              
+              <dl class="govuk-summary-list release-dates-list">
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                          SLED
+                          <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          <p class="govuk-body">Tuesday, 5 March 2025</p>
+                      </dd>
+                  </div> 
+
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                          PRRD
+                          <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                      </dt>
+                      <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                          <p class="govuk-body">Tuesday, 5 March 2025</p>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                          TUSED
+                          <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                      </dt>
+                      <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                          <p class="govuk-body">Monday, 5 August 2025</p>
+                      </dd>
+                  </div>
+              </dl>
+            </div>
+        </div>
+
         {% else %}
 
           
@@ -159,26 +228,6 @@
 
         {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
 
-        <!-- <h3 class="govuk-heading-m">Deductions</h3>
-        <dl class="govuk-summary-list" style="margin-bottom: 40px;">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Remand
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    99 Days including 30 days unused
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                   Tagged bail
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    4 Days
-                </dd>
-            </div>
-        </dl> -->
-
         <h3 class="govuk-heading-m">Additions</h3>
         <dl class="govuk-summary-list" style="margin-bottom: 10px;"> 
             <div class="govuk-summary-list__row">
@@ -187,6 +236,26 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                     2 Days
+                </dd>
+            </div>
+        </dl>
+
+
+        <p class="govuk-body govuk-!-margin-top-6"><a href="adjustments">View all adjustments</a></p>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+
+        {% elif data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}
+
+
+        <h3 class="govuk-heading-m">Additions</h3>
+        <dl class="govuk-summary-list" style="margin-bottom: 10px;"> 
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    UAL (Unlawfully at large)
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    3 Days
                 </dd>
             </div>
         </dl>
@@ -209,25 +278,25 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
             
        
-        {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
+        {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}
         <h3 class="govuk-heading-l">Recall history</h3>
        
         <table class="govuk-table">
             <thead class="govuk-table__head">
                 <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Recorded date</th>
                     <th scope="col" class="govuk-table__header">Date of revocation</th>
                     <th scope="col" class="govuk-table__header">Return to custody date</th>
-                    <th scope="col" class="govuk-table__header">Recall type</th> 
-                    <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Actions</span></th> 
+                    <th scope="col" class="govuk-table__header">Recall type</th>  
                 </tr>
             </thead>
             <tbody class="govuk-table__body"> 
  
                 <tr class="govuk-table__row">
-                    <td class="govuk-table__cell"> {{data['revocation-date-day']}} {{data['revocation-date-month']}} {{data['revocation-date-year']}} </td>
-                    <td class="govuk-table__cell"> {{data['arrest-date-day']}} {{data['arrest-date-month']}} {{data['arrest-date-year']}} </td>
+                    <td class="govuk-table__cell"><a class="govuk-link" href="recall-details">{{ "today" | govukDate }}</a></td> 
+                    <td class="govuk-table__cell"> {{data['revocation-date-day']}} {{data['revocation-date-month'] | monthName }} {{data['revocation-date-year']}} </td>
+                    <td class="govuk-table__cell"> {{data['arrest-date-day']}} {{data['arrest-date-month'] | monthName }} {{data['arrest-date-year']}} </td>
                     <td class="govuk-table__cell">{{data['recall-type']}}</td> 
-                    <td class="govuk-table__cell"><a class="govuk-link" href="recall-details">View and edit</a></td> 
                 </tr>
  
                 </tr>

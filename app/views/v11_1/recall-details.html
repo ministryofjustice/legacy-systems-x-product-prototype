@@ -4,7 +4,7 @@
 
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="release-dates" class="govuk-back-link">Back</a>
+    <a href="overview" class="govuk-back-link">Back</a>
 </div>
 
 <div class="govuk-grid-row govuk-!-margin-top-6">
@@ -12,7 +12,7 @@
 
         <h1 class="govuk-heading-l">
             <span class="govuk-caption-xl">Recall details</span>
-            Recorded on 3 September 2024
+            Recorded on {{ "today" | govukDate }}
         </h1>
     </div>
 </div> 
@@ -74,7 +74,7 @@
                 </dt>
                 <dd class="govuk-summary-list__value">
                   
-                  {{data['revocation-date-day']}} {{data['revocation-date-month']}} {{data['revocation-date-year']}} 
+                  {{data['revocation-date-day']}} {{data['revocation-date-month'] | monthName }} {{data['revocation-date-year']}} 
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <!-- <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden">Date of revocation</span></a> -->
@@ -85,7 +85,7 @@
                   Arrest date
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{data['arrest-date-day']}} {{data['arrest-date-month']}} {{data['arrest-date-year']}} 
+                  {{data['arrest-date-day']}} {{data['arrest-date-month'] | monthName }} {{data['arrest-date-year']}} 
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <!-- <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden">arrest date</span></a> -->
@@ -112,7 +112,7 @@
           <!-- <span class="govuk-caption-xl">Recall details</span> -->
           Associated calculations
       </h2>
-        {% if data['toShow'] == 'calcComplete' %}
+      {% if data['toShow'] == 'calcComplete' %}
 
       <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -125,16 +125,44 @@
           </thead>
           <tbody class="govuk-table__body">  
               <tr class="govuk-table__row">
-                  <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">3 September 2024</a></td>
+                  <td class="govuk-table__cell"><a href="calculation-history/11-03-2023/check-sentence-and-offence-information">{{ "today" | govukDate }}</a></td>
                   <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
                   <td class="govuk-table__cell">HMP Kirkham</td>
                   <td class="govuk-table__cell">Calculate release dates service</td> 
               </tr> 
           </tbody>
       </table>
-        {% else %}
-        <p>No calculations assocated with this recall.</p>
-        {% endif %}
+
+      {% elif data['toShow'] == 'calc2Complete' %}
+
+
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Calculation date</th>
+                <th scope="col" class="govuk-table__header">Calculation reason</th>
+                <th scope="col" class="govuk-table__header">Establishment</th>
+                <th scope="col" class="govuk-table__header">Source</th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body">  
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">{{ "today" | govukDate }}</a></td>
+            <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
+            <td class="govuk-table__cell">HMP Kirkham</td>
+            <td class="govuk-table__cell">Calculate release dates service</td> 
+        </tr> 
+            <tr class="govuk-table__row">
+                <td class="govuk-table__cell"><a href="calculation-history/11-03-2023/check-sentence-and-offence-information">{{ "today" | govukDate }}</a></td>
+                <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
+                <td class="govuk-table__cell">HMP Kirkham</td>
+                <td class="govuk-table__cell">Calculate release dates service</td> 
+            </tr> 
+        </tbody>
+    </table>
+      {% else %}
+      <p>No calculations assocated with this recall.</p>
+      {% endif %}
 
     </div>
   
