@@ -439,7 +439,12 @@
      
         <div class="govuk-button-group"> 
 
+
+            {% if (data['editLogic'] == 'editing') %}
+            <form method="post" action="edit-a-recall">
+            {% elif (data['editLogic'] == 'notediting') %}
             <form method="post" action="recall-type-fixed-question">
+            {% endif %}
                 <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                 Confirm and continue
                 </button> 

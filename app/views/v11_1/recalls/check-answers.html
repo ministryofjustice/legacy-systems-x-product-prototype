@@ -1,15 +1,16 @@
-{% extends "../../../includes/layouts/template-linear.html" %}
+{% extends "../../includes/layouts/template-linear.html" %}
 {% set documentsActive = true %}
 {% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
-  <a href="#" class="govuk-back-link">Back</a>
+  <a href="recall-type" class="govuk-back-link">Back</a>
 </div>
 <!-- Documents -->
 <div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-xl"> 
-      Edit recall
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Record a recall</span>
+      Check your answers
     </h1>
   </div>
 </div>
@@ -24,7 +25,7 @@
               Licence revocation date
             </dt>
             <dd class="govuk-summary-list__value">
-              26 August 2024
+              {{data['revocation-date-day']}} {{data['revocation-date-month']}} {{data['revocation-date-year']}} 
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -42,7 +43,7 @@
               Arrest date
             </dt>
             <dd class="govuk-summary-list__value">
-              29 August 2024
+              {{data['arrest-date-day']}} {{data['arrest-date-month']}} {{data['arrest-date-year']}} 
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -80,8 +81,8 @@
               Recall type
             </dt>
             <dd class="govuk-summary-list__value">
-              ORA licence recall
-              <br><span class="govuk-hint">Saved to NOMIS as ORA licence recall</span>
+              {{data['recall-type']}}
+              <br><span class="govuk-hint">Saved to NOMIS as {{data['recall-type']}}</span>
             </dd>
 
             <dd class="govuk-summary-list__actions">
@@ -94,24 +95,27 @@
 
         </dl>
       </div>
+          
+      <div class="govuk-inset-text">
+        <b>2 days</b> of UAL (unlawfully at large) will also be added. You can review and add other adjustments after recording the recall.
+      </div>
 
 <!--           
       <div class="govuk-inset-text">
         This will be saved to NOMIS as ORA 14 Day Fixed Term Recall.
       </div> -->
 
-      <div class="govuk-button-group"> 
- 
+      <div class="govuk-button-group">  
 
-        <form action="changes-complete" method="post">
+        <form action="recall-complete" method="post">
           <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-            Confirm changes
+            Confirm and save
           </button> 
       </form> 
 
         <form method="post" action="cancel">
             <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                Cancel changes
+                Cancel
             </button>
         </form>
       </div> 

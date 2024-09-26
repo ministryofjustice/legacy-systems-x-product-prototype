@@ -1,0 +1,72 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+
+    <div class="">
+        <a href="ual" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
+
+                    <h2 class="govuk-heading-m">UAL details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               First day spent UAL
+                            </dt>
+                            <dd id="start" class="govuk-summary-list__value">
+                               5 May 2023
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                                <a href="ual">Edit</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Last day spent UAL
+                            </dt>
+                            <dd  id="end" class="govuk-summary-list__value">
+                                15 May 2023
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                                <a href="ual">Edit</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Number of days
+                            </dt>
+                            <dd  id="days" class="govuk-summary-list__value">
+                                11
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                                <a href="ual">Edit</a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Type of UAL
+                            </dt>
+                            <dd  id="type" class="govuk-summary-list__value">
+                                Recall
+                            </dd>
+                            <dd class="govuk-summary-list__value">
+                                <a href="ual">Edit</a>
+                            </dd>
+                        </div>
+                    </dl>
+                    <div class="govuk-button-group">
+                        <a href="../index-1"  id="confirmEditUALButton" class="govuk-button" data-module="govuk-button"  data-journey="7">
+                            Confirm and save
+                        </a>
+                        <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
+
+{% endblock %}

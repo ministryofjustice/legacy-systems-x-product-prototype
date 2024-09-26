@@ -3,7 +3,7 @@
 {% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
-  <a href="#" class="govuk-back-link">Back</a>
+  <a href="../../recall-details" class="govuk-back-link">Back</a>
 </div>
 <!-- Documents -->
 <div class="govuk-grid-row govuk-!-margin-top-6">
@@ -24,11 +24,11 @@
               Licence revocation date
             </dt>
             <dd class="govuk-summary-list__value">
-              26 August 2024
+              {{data['revocation-date-day']}} {{data['revocation-date-month']}} {{data['revocation-date-year']}} 
             </dd>
 
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="revocation-date">Edit<span
+              <a class="govuk-link" href="revocation-date?editLogic=notediting">Edit<span
                   class="govuk-visually-hidden"> return to custody date</span>
                 </a>
 
@@ -42,11 +42,11 @@
               Arrest date
             </dt>
             <dd class="govuk-summary-list__value">
-              29 August 2024
+              {{data['arrest-date-day']}} {{data['arrest-date-month']}} {{data['arrest-date-year']}} 
             </dd>
 
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="return-to-custody-date">Edit<span
+              <a class="govuk-link" href="return-to-custody-date?editLogic=editing">Edit<span
                   class="govuk-visually-hidden"> return to custody date</span>
                 </a>
 
@@ -65,7 +65,7 @@
             </dd>
 
             <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="check-sentence-and-offence-information">Review<span
+            <a class="govuk-link" href="check-sentence-and-offence-information?editLogic=editing">Review<span
               class="govuk-visually-hidden">sentences</span>
             </a>
             </dd>
@@ -80,12 +80,12 @@
               Recall type
             </dt>
             <dd class="govuk-summary-list__value">
-              ORA licence recall
-              <br><span class="govuk-hint">Saved to NOMIS as ORA licence recall</span>
+              {{data['recall-type']}}
+              <br><span class="govuk-hint">Saved to NOMIS as {{data['recall-type']}}</span>
             </dd>
 
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recall-type">Edit<span
+              <a class="govuk-link" href="recall-type-fixed-question?editLogic=editing">Edit<span
                   class="govuk-visually-hidden"> Standard recall</span></a>
 
             </dd>
@@ -109,7 +109,7 @@
           </button> 
       </form> 
 
-        <form method="post" action="cancel">
+        <form method="post" action="../../recall-details">
             <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Cancel changes
             </button>

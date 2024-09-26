@@ -1,4 +1,4 @@
-{% extends "../../../includes/layouts/template-linear.html" %}
+{% extends "../../includes/layouts/template-linear.html" %}
 {% set documentsActive = true %}
 {% block content %}
 <!-- Back link -->
@@ -9,13 +9,15 @@
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
   <div class="govuk-grid-row">
+
+    <form method="post" action="return-to-custody-date">
       <div class="govuk-grid-column-two-thirds"> 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" role="group" aria-describedby="to-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
                   <span class="govuk-caption-xl">Record a recall</span>
-                  Edit the date the person's licence was revoked 
+                  Enter the date the person's licence was revoked 
               </h1> 
               </legend>
          
@@ -24,41 +26,41 @@
             </div>
               
               
-                <div class="govuk-date-input" id="to">
+                <div class="govuk-date-input" id="revocation-date">
                   
                   
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="to-day">
+                      <label class="govuk-label govuk-date-input__label" for="revocation-date-day">
                         Day
                       </label>
                     
                     
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="to-day" type="text" inputmode="numeric" maxlength="2">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-day" name="revocation-date-day" type="text" inputmode="numeric" maxlength="2">
                     
                     </div>
                   </div>
                   
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="to-month">
+                      <label class="govuk-label govuk-date-input__label" for="revocation-date-month">
                         Month
                       </label>
                     
                     
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="to-month" type="text" inputmode="numeric" maxlength="2">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" maxlength="2">
                     
                     </div>
                   </div>
                   
                   <div class="govuk-date-input__item">
                     <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="to-year">
+                      <label class="govuk-label govuk-date-input__label" for="revocation-date-year">
                         Year
                       </label>
                     
                     
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="to-year" type="text" inputmode="numeric" maxlength="4">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="revocation-date-year" name="revocation-date-year" type="text" inputmode="numeric" maxlength="4">
                     
                     </div>
                   </div>
@@ -78,8 +80,8 @@
                   <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                       Continue
                   </button> 
-              </form>
-              <form method="post" action="cancel">
+              <!-- </form> -->
+              <!-- <form method="post" action="cancel"> -->
                   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                       Cancel
                   </button>

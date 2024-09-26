@@ -1,0 +1,152 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div id="EditUALPage" class="govuk-body">
+    <div class="">
+        <a href="view-ual" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form action="/form-handler" method="post" novalidate>
+
+                        <div id="" class="">
+
+
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjustments</span>
+                               Edit UAL details
+                            </h1>
+                            <p class="govuk-body">
+                                The rules for UAL (Unlawfully at large) can be found in
+                                <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1083190/sc-annex-a-operational-guidance.pdf#page=87">the policy framework</a>.
+                            </p>
+                         <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        First day spent UAL
+                                    </legend>
+                                    <div id="passport-issued-hint" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="passport-issued">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        Last day spent UAL
+                                    </legend>
+                                    <div id="passport-issued-hint" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="passport-issued">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="to-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="passport-issued-day" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="to-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="passport-issued-month" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="to-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="passport-issued-year" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        Select the type of UAL
+                                    </legend>
+                                    <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-1" name="UALtype" type="radio" value="Recall">
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-1">
+                                                Recall
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-2" name="UALtype" type="radio" value="Escape, including absconds and RPTL failures">
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-2">
+                                                Escape, including absconds and RPTL failures
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-3" name="UALtype" type="radio" value="Sentenced in absence">
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-3">
+                                                Sentenced in absence
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-4" name="UALtype" type="radio" value="Release in error">
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-4">
+                                                Release in error
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+<!--                            <div class="govuk-form-group">-->
+<!--                                <label class="govuk-label" for="document-ID">-->
+<!--                                    Adjudication ID-->
+<!--                                </label>-->
+<!--                                <input class="govuk-input govuk-input&#45;&#45;width-20" id="document-ID" name="width-20" type="text">-->
+<!--                            </div>-->
+
+                        </div>
+
+                        <div class="govuk-button-group">
+                            <a id="EditUAlButton" href="confirm-edit-ual" class="govuk-button" data-module="govuk-button">
+                                Continue
+                            </a>
+                            <a href="view-ual" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
+{% endblock %}

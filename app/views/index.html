@@ -38,6 +38,88 @@
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
+                            Version 11.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In design
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-three-quarters"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 1st October 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet">
+                                        <li>...</li> 
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="...">R4 scenario (miro)</a></li>     
+                                 
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ 
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4>
+                                    <p class="govuk-hint">Recording a recall</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v11_1/DPS-prisoner-profile?scenario=2",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall using the hub and spoke method.</p> 
+                                    
+                                    </form>  
+
+
+
+                                    <form action="post">
+                                        <h4 class="govuk-heading-m">Scenario 2</h4>
+                                        <p class="govuk-hint">Editing a recall</p>
+    
+                                        {{govukButton({
+                                            text: "Launch scenario 1",
+                                            attributes: {
+                                            "formaction": "v11_1/overview?toShow=calcComplete",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+                                        <p class="govuk-body">This scenario explores tha ability to edit a recall through the recall details.</p> 
+                                        
+                                        </form>  
+
+ 
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
                             Version 11 
                             
                             <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
@@ -82,7 +164,7 @@
                                 <ul class="govuk-list govuk-list--number">
                                     <li>Post-R3 improvements</li>     
                                     <li>View a recall entry point experimentation</li>     
-                                    <li>Edit a recall logic</li>        
+                                    <li>Logic for edit</li>        
                                 </ul> 
 
 
@@ -103,7 +185,7 @@
                                 </ul>  
 
                                 <h4 class="govuk-heading-m">2. View a recall entry point experimentation</h4> 
-                                <p class="govuk-body">After a recall is recorded, users need to be able to view and edit the recall. This version implements how recalls might be viewed on the service in various places. We've also been experimenting with how recalls could live as tiles on the overview. </p> 
+                                <p class="govuk-body">After a recall is recorded, users need to be able to view and edit the recall. This version implements how recalls might be viewed on the service in various places. We've also been experimenting with how recalls could live as tiles on the overview. WE WILL NOT BE TESTING THIS DESIGN YET. </p> 
                                 <ul class="govuk-list"> 
                                     <li><a class="govuk-link" target="external" href="v11/overview?toShow=noCourtCases">New overview tiles - empty states</a></li>  
                                     <li><a class="govuk-link" target="external" href="v11/overview?toShow=recallHistory">New overview tiles - active states</a></li>   
@@ -111,6 +193,25 @@
                                     <li><a class="govuk-link" target="external" href="v11/court-case-detail?toShow=recallHistory">Court cases - court case details</a></li>     
                                 </ul>  
  
+
+                                <h4 class="govuk-heading-m">3. Logic for edit</h4> 
+                                <p class="govuk-body">Both during and after a recall has been recorded, we allow the user to modify their answers. This logic differs depending on what the person edits.</p> 
+                                <p>Before recall saved:</p>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/check-answers">Check your answers</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/revocation-date">Edit license revocation date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/return-to-custody-date">Edit arrest date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/recall-type-fixed-question">Edit recall type</a></li>   
+                                </ul>  
+
+                                <p>After recall saved:</p>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/edit-a-recall">Edit a recall</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/revocation-date">Edit license revocation date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/return-to-custody-date">Edit arrest date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/recall-type-fixed-question">Edit recall type</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/changes-complete">Changes saved</a></li>    
+                                </ul>  
                             </div> 
 
                         </div>
