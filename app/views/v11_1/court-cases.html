@@ -49,7 +49,7 @@
                             <li class="govuk-summary-card__action">
                                 {% if courtCase['source'] == "nomis" %}
                                 <span class="moj-badge moj-badge--grey">NOMIS - read only</span>
-                                {% elif data['toShow'] == "recallHistory" %}
+                                {% elif data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %}
                                 <span class="moj-badge moj-badge--purple">Recalled</span>
                                 {% else %}
                                 <a class="govuk-link govuk-link--no-visited-state" href="/{{data.prototypeVersion}}/create-appearance?courtIndex={{courtCaseIndex}}">Add appearance<span class="govuk-visually-hidden"> to court case</span></a>
@@ -161,9 +161,9 @@
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recorded date</h3>
                                 <p class="govuk-body govuk-!-margin-bottom-2">3 September 2024</p>
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date of revocation</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">   {{data['revocation-date-day']}} {{data['revocation-date-month'] | monthName }} {{data['revocation-date-year']}} </p>
+                                <p class="govuk-body govuk-!-margin-bottom-2">   {{data['revocation-date-day']}}/{{data['revocation-date-month'] }}/{{data['revocation-date-year']}} </p>
                                 <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Arrest date</h3>
-                                <p class="govuk-body govuk-!-margin-bottom-2">{{data['arrest-date-day']}} {{data['arrest-date-month'] | monthName }} {{data['arrest-date-year']}} </p>
+                                <p class="govuk-body govuk-!-margin-bottom-2">{{data['arrest-date-day']}}/{{data['arrest-date-month'] }}/{{data['arrest-date-year']}} </p>
                             </div>
                             <div class="govuk-grid-column-full govuk-!-margin-top-4">
                                 {% if lastAppearance.sentences == null %}
