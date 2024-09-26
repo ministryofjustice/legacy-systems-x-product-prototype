@@ -17,7 +17,7 @@
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
                 <h1 class="govuk-fieldset__heading">
                   <span class="govuk-caption-xl">Record a recall</span>
-                  Edit the date the person's licence was revoked 
+                  Edit the date of revocation
               </h1> 
               </legend>
          
@@ -36,7 +36,7 @@
                       </label>
                     
                     
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-day" name="revocation-date-day" type="text" inputmode="numeric" maxlength="2">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-day" name="revocation-date-day" type="text" inputmode="numeric" maxlength="2" value="{{ data['revocation-date-day'] }}">
                     
                     </div>
                   </div>
@@ -48,7 +48,7 @@
                       </label>
                     
                     
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" maxlength="2">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" maxlength="2" value="{{ data['revocation-date-month'] }}">
                     
                     </div>
                   </div>
@@ -60,7 +60,7 @@
                       </label>
                     
                     
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="revocation-date-year" name="revocation-date-year" type="text" inputmode="numeric" maxlength="4">
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="revocation-date-year" name="revocation-date-year" type="text" inputmode="numeric" maxlength="4" value="{{ data['revocation-date-year'] }}" >
                     
                     </div>
                   </div>
