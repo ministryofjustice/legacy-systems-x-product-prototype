@@ -1,0 +1,151 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../../release-dates" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+            
+        <div class="moj-width-container">
+        <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+            Calculation summary
+        </h1> 
+
+            <!-- <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Calculation details</h3> -->
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds ">
+
+            <h2 class="govuk-heading-m">
+                Calculation details
+        </h2> 
+                    <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Date
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            {{ "today" | govukDate }}{{ "today" | govukDate }}
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Reason
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            Recording a recall
+                        </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Establishment
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            HMP Kirkham
+                        </dd>
+                        </div>
+                        <!-- <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key">
+                            Sentences included in this calculation
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            2
+                        </dd>
+                        </div> -->
+                    </dl>
+                </div>
+            </div>
+
+            <nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+                <ul class="moj-sub-navigation__list">
+                    <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link"  href="check-sentence-and-offence-information">Sentence and offence information</a>
+                    </li>
+                    <li class="moj-sub-navigation__item">
+                    <a class="moj-sub-navigation__link" aria-current="page" href="calculation-summary">Calculation summary</a>
+                    </li>
+                </ul>
+                
+            </nav>
+            
+            <div class="govuk-button-group govuk-!-display-none-print">
+                
+                <button data-prevent-double-click="true"
+                    class="govuk-button govuk-button--secondary no-js-hidden" data-module="govuk-button" onclick="">
+                    Print calculation summary
+                </button>
+
+            </div>
+        </div> 
+    </div>    
+</div>
+<!-- Final release dates -->
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+            <h2 class="govuk-heading-l">Release dates</h2>
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__content" id="release-dates">
+                    <dl class="govuk-summary-list release-dates-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                SLED
+                                <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Tuesday, 5 March 2025</p>
+                            </dd>
+                        </div> 
+    
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                PRRD
+                                <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Tuesday, 5 March 2025</p>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                TUSED
+                                <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Monday, 5 August 2025</p>
+                            </dd>
+                        </div>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="govuk-grid-row govuk-!-margin-top-6">
+        <div class="govuk-grid-column-two-thirds">
+            <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Why are some details missing?
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    Some dates and details are not included as according to <a href="http://www.justice.gov.uk/downloads/offenders/psipso/psi-2015/psi-03-2015-sentence-calculation-determiante-sentenced-prisoners.pdf" target="_blank">PSI 03/2015 (opens in new tab)</a> they are not relevant to this person's circumstances.
+                </div>
+            </details>
+            <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        How are final release dates calculated?
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    Some calculations are made up of different sentences and terms, such as overlapping or concurrent sentences. The final release date comes from the sentence or term with the latest release date.
+                </div>
+            </details>
+        </div>
+    </div>
+</div> 
+{% endblock %}

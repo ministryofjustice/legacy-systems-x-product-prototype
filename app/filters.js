@@ -1,13 +1,5 @@
-//
-// For guidance on how to create filters see:
-// https://prototype-kit.service.gov.uk/docs/filters
-//
-
 const govukPrototypeKit = require('govuk-prototype-kit')
 const addFilter = govukPrototypeKit.views.addFilter
-
-// Add your filters here
-
 
 addFilter('unique', function(arr, field) {
     return [...new Set(arr.map(obj => obj[field]))]
@@ -27,4 +19,12 @@ addFilter('countNonDraft', function(arr) {
 
 addFilter('countDraft', function(arr) {
     return arr.filter(appearance => appearance['status'] == 'draft').length 
+})
+
+addFilter('inactiveCase', function(arr) {
+    return arr.filter(courtCase => courtCase['status'] == 'inactive')
+})
+
+addFilter('activeCase', function(arr) {
+    return arr.filter(courtCase => courtCase['status'] != 'inactive')
 })

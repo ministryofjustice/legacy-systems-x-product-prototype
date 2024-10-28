@@ -1,0 +1,61 @@
+{% extends "./template.html" %}
+
+{% set recallsActive = true %}
+{% block content %}
+
+<!-- Back link -->
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl"> 
+            Recalls
+        </h1> 
+
+        {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}
+   
+ 
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+       
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Recorded date</th>
+                    <th scope="col" class="govuk-table__header">Date of revocation</th>
+                    <th scope="col" class="govuk-table__header">Return to custody date</th>
+                    <th scope="col" class="govuk-table__header">Recall type</th>  
+                    <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Actions</span></th>  
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body"> 
+ 
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ "today" | govukDate }}</td> 
+                    <td class="govuk-table__cell"> {{data['revocation-date-day']}}/{{data['revocation-date-month'] }}/{{data['revocation-date-year']}} </td>
+                    <td class="govuk-table__cell"> {{data['arrest-date-day']}}/{{data['arrest-date-month'] }}/{{data['arrest-date-year']}} </td>
+                    <td class="govuk-table__cell">{{data['recall-type']}}</td> 
+                    <td class="govuk-table__cell"><a class="govuk-link" href="recalls/edit/edit-a-recall">View and edit</a></td> 
+                </tr>
+ 
+                </tr>
+            </tbody>
+        </table>
+           
+
+        {% else %}
+
+        <p class="govuk-body">There are no recalls recorded.</p>
+        
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+
+        {% endif %}
+
+{% endblock %}
