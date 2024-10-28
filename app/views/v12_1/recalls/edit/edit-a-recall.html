@@ -9,7 +9,9 @@
 <div class="govuk-grid-row govuk-!-margin-top-6">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-xl"> 
-      View and edit recall
+
+        <span class="govuk-caption-xl">View and edit recall</span>
+        Recorded on on {{ "today" | govukDate }}
     </h1>
   </div>
 </div>
@@ -109,7 +111,7 @@
           </button> 
       </form> 
 
-        <form method="post" action="../../recalls">
+        <form method="post" action="cancel">
             <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
                 Cancel changes
             </button>
