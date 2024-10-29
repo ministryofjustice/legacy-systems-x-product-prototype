@@ -344,9 +344,7 @@ Court cases and release dates
                         <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Date of birth</span><span class="govuk-body" data-qa="mini-profile-dob">01/04/1987</span></li>
                         <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Establishment</span><span class="govuk-body" data-qa="mini-profile-prison-name">HMP Kirkham</span></li>
                         <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Cell number</span><span class="govuk-body" data-qa="mini-profile-cell-location">5-2-A-051</span></li>
-                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Status</span><span class="govuk-body" data-qa="mini-profile-status">Active in</span> {% if data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %}
-                           <!-- <span class="moj-badge moj-badge--purple govuk-!-margin-bottom-1 govuk-!-margin-left-1">Recall</span> -->
-                          {% else %}{% endif %}</li>
+                        <li><span class="govuk-heading-s govuk-!-margin-bottom-0 govuk-!-padding-0">Status</span><span class="govuk-body" data-qa="mini-profile-status"> {% if data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' %} ORA Licence Recall {% elif data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %} ORA 14 Day Fixed Term Recall {% else %} ORA 2020 Standard Determinate Sentence {% endif %}</span></li>
                     </ul>
                 </div>
             </div>
