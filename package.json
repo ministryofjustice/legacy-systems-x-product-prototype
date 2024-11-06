@@ -12,7 +12,7 @@
     "@x-govuk/govuk-prototype-filters": "^1.4.3",
     "govuk-frontend": "^5.7.1",
     "govuk-prototype-kit": "^13.16.2",
-    "hmpps-court-cases-release-dates-design": "2.9.1",
+    "hmpps-court-cases-release-dates-design": "2.9.5",
     "npm": "^10.9.0",
     "print-this": "github:jasonday/printThis",
     "run": "^1.5.0",
@@ -20,6 +20,6 @@
   },
   "engines": {
     "node": "^20",
-    "npm": "^10"
+    "npm": "^10.9"
   }
 }
