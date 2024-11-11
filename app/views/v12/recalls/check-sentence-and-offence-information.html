@@ -7,7 +7,7 @@
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-three-quarters">
+        <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-xl">
                 <span class="govuk-caption-xl">Record a recall</span>
                 Check that the sentences and offences are correct
@@ -193,7 +193,7 @@
                         {% if sentence['status'] == 'inactive' %}
                         <div class="offence-card sentence-card">
                             <div class="offence-card-offence-details">
-                                <span class="govuk-body">Offence {{ sentence['count-number'] }}</span>
+                                <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
                                 <h4 class="govuk-heading-s">{{ sentence['offence-name'] }}
                                     {% if sentence['terror-related'] == 'Yes' %}
                                     <br><strong class="govuk-tag govuk-!-margin-top-2">

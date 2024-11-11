@@ -11,10 +11,14 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds"> 
         <div class="govuk-form-group">
-
+          {% if data['toDo'] == 'recallsUnsupportedSentences' %}
+          <form method="post" action="unsupported-sentences">
+          {% else %}
           <form method="post" action="check-sentence-and-offence-information">
+          {% endif %}
+
           <fieldset class="govuk-fieldset" aria-describedby="arrested-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
                 <span class="govuk-caption-xl">Record a recall</span>
                 Was Joe Bloggs in prison when the recall was made? 
