@@ -1,0 +1,43 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="recall-type-fixed-question" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+
+                <div class="govuk-form-group">
+                    
+                    <form method="post" action="check-answers">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Confirm the recall type
+                            </h1>
+                        </legend> 
+
+                        <p >Based on this person's recall dates and sentences, we think that a <b>standard recall</b> is required.</p>
+                        
+                        <p class="govuk-body"><a class="govuk-link" href="#">Choose another recall type</a> if you think this is wrong.</p>
+ 
+                    <div class="govuk-button-group govuk-!-margin-top-6"> 
+
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                                Confirm and continue
+                            </button> 
+                        <!-- </form> -->
+                        <!-- <form method="post" action="cancel"> -->
+                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </button>
+                        </form>
+                    </div> 
+                </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

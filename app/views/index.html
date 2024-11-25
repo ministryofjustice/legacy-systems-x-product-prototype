@@ -37,13 +37,111 @@
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-13">
+                            Version 13
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong> -->
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+
+                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong> -->
+
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-13">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v13/DPS-home",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v13/DPS-prisoner-profile",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">      
+                                    <li>Post-R5 improvements</li>     
+                                    <li>Updated - recall types page</li>         
+                                    <li>Unhappy paths - unsupported sentences (improved)</li>  
+                                    <li>Unhappy paths - repeat recalls</li>         
+                                </ul> 
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="...">R5 Playback (Google Sheets)</a></li>  
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Post-R5 improvements</h4> 
+                                <p class="govuk-body">Revised design of the recalls tab to consider multiple recalls.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls?toShow=recallHistory">Recalls tab</a></li>    
+                                </ul>      
+                                <h4 class="govuk-heading-m">2. Updated - recall types page</h4> 
+                                <p class="govuk-body">We have completed a mapping exercise which will allow us to offer a new set of plain-english recall types to the user and provide fewer steps for them to select.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type">Select a recall type - option with no specific recall types</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type?version=2">Select a recall type - option with hint text to show specific recall types</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type?version=3">Select a recall type - option with specific recall types as radio options</a></li>    
+                                </ul>    
+                                <p class="govuk-body">We are also iterating on designs for a page where we already know what the recall type will be.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type-confirm">Confirm recall type</a></li>    
+                                </ul>  
+                                <h4 class="govuk-heading-m">3. Unhappy paths - unsupported sentences (improved)</h4> 
+                                <p class="govuk-body">Revised design of the unhappy path where users must select sentences from a list in order to process the recall.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/unsupported-sentences">Select sentences</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/unsupported-sentences">Review sentences and offences</a></li>   
+                                </ul>  
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
                             Version 12.1
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                     In Design
+                                </strong> -->
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
                                 </strong>
                         </span>
                         </h2>
@@ -104,8 +202,12 @@
                         <span class="govuk-accordion__section-button" id="version-9">
                             Version 12
                             
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                            <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                 In Design
+                            </strong> -->
+
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
                             </strong>
                         </span>
                         </h2>
