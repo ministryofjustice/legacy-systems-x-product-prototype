@@ -1,29 +1,74 @@
-{% extends "../../includes/layouts/template-linear.html" %}
-{% block content %}
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %} 
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="calculation-reason" class="govuk-back-link">Back</a>
+    <a href="../../release-dates" class="govuk-back-link">Back</a>
 </div>
 <!-- Page intro -->
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-grid-column-two-thirds"> 
             <h1 class="govuk-heading-xl">
-                Check sentence and offence information
-            </h1>
-
+            <!-- <span class="govuk-caption-xl">11 March 2023 at HMP Kirkham</span> -->
+                Sentence and offence information
+            </h1> 
         </div>
     </div>
 </div>
+ 
 
-<!-- NOMIS sentences -->
-<div class="moj-width-container">
+<div class="moj-width-container"> 
     <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-           <p class="govuk-body">This calculation will include 4 sentences.</p>
+        <div class="govuk-grid-column-two-thirds">
+
+            <h2 class="govuk-heading-m">
+                    Calculation details
+            </h2> 
+            <dl class="govuk-summary-list govuk-summary-list--no-border">
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    {{ "today" | govukDate }}
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Reason
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Recording a recall
+                </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Establishment
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    HMP Kirkham
+                </dd>
+                </div> 
+            </dl> 
         </div>
     </div>
 </div>
+
+<nav class="moj-sub-navigation" aria-label="Sub navigation">
+
+    <ul class="moj-sub-navigation__list">
+        <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link" aria-current="page" href="check-sentence-and-offence-information">Sentence and offence information</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+        <a class="moj-sub-navigation__link"  href="calculation-summary">Calculation summary</a>
+        </li>
+    </ul>
+    
+</nav>
+
+
+ 
 <!-- Court cases -->
 <div class="moj-width-container govuk-!-margin-top-4"> 
     <!-- Count 1 -->
@@ -219,6 +264,7 @@
 
 
 </div> 
+
     <!-- Adjustments -->
     <div class="moj-width-container">
         <div class="govuk-grid-row">
@@ -378,79 +424,6 @@
             </div>
         </div>
     </div>
-    <!-- If some infomation is wrong -->
-    <div class="moj-width-container">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <div class="govuk-inset-text">
-                    If you think some information is wrong, you can edit it in NOMIS and <a onclick="location.reload();"
-                        href="javascript:void(0);">reload this page</a>.
-                </div>
-            </div>
-        </div>
-    </div>
 
-    <h2 class="govuk-heading-m govuk-!-margin-top-7">Now calculate release dates</h2>
 
-<!-- ERSED checkbox -->
-<div class="moj-width-container govuk-!-margin-top-2">
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-full">
-
-            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation" name="organisation" type="checkbox"
-                        value="hmrc">
-                    <label class="govuk-label govuk-checkboxes__label">
-                        Include an Early release scheme eligibility date (ERSED) in this calculation
-                    </label>
-                    <div class="govuk-hint govuk-checkboxes__hint">
-                        Not applicable for terror or terror-related offences
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-    <!-- Call to action -->
-    <div class="moj-width-container govuk-!-margin-top-4">
-        <div class="govuk-grid-row">
-            <div class="govuk-grid-column-two-thirds">
-                <p class="govuk-body">The release dates will not be saved in NOMIS until you have reviewed the
-                    calculation.</p>
-               
-                    <div class="govuk-button-group">
-                        {% if data['toShow'] == 'ualAdded' %}
-                        <form method="post" action="calculation-summary?toShow=calc2Complete">
-                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-                                Calculate release dates
-                            </button>
-                        </form>
-
-                        {% elif data['toDo'] == 'recallsUnsupportedSentences' %}
-                        <form method="post" action="unsupported-sentences">  
-                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-                                Calculate release dates
-                            </button>
-                        </form>
-
-                        {% else %}
-                        <form method="post" action="calculation-summary?toShow=calcComplete">
-                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-                                Calculate release dates
-                            </button>
-                        </form>
-
-                        {% endif %}
-    
-                        <form method="post" action="cancel">
-                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                                Cancel
-                            </button>
-                        </form>
-                    </div>
-            </div>
-        </div>
-    </div>
-</div>
 {% endblock %}

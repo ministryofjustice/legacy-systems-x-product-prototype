@@ -65,9 +65,17 @@
           </dd>
 
           <dd class="govuk-summary-list__actions">
+
+          {% if data['toDo'] == 'recallsUnsupportedSentences' %}
+
+          <a class="govuk-link" href="unsupported-sentences">Edit<span
+            class="govuk-visually-hidden">sentences</span></a>
+          {% else %}
+
           <a class="govuk-link" href="check-sentence-and-offence-information">Review<span
             class="govuk-visually-hidden">sentences</span>
           </a>
+          {% endif %}
           </dd>
 
 
@@ -85,9 +93,16 @@
           </dd>
 
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="recall-type">Edit<span
-                class="govuk-visually-hidden"> Standard recall</span></a>
-
+            {% if data['toDo'] == 'recallsUnsupportedSentences' %}
+  
+            <!-- <a class="govuk-link" href="unsupported-sentences">Review<span
+              class="govuk-visually-hidden">recall type</span></a> -->
+            {% else %}
+  
+            <a class="govuk-link" href="check-sentence-and-offence-information">Edit<span
+              class="govuk-visually-hidden">recall type</span>
+            </a>
+            {% endif %} 
           </dd>
 
         </div>

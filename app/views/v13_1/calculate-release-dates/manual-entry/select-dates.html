@@ -1,0 +1,401 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../release-dates" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds"> 
+
+
+
+
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="dateSelect-hint">
+
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+
+                            <h1 class="govuk-fieldset__heading">
+                                Select the dates you need to enter
+                            </h1>
+
+                        </legend>
+
+
+                        <div id="dateSelect-hint" class="govuk-hint">
+                            Select all that apply to the manual calculation.
+                        </div>
+
+
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes" data-govuk-checkboxes-init="">
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect" name="dateSelect" type="checkbox"
+                                    value="SED">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect">
+                                    SED (Sentence expiry date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-2" name="dateSelect"
+                                    type="checkbox" value="LED">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-2">
+                                    LED (Licence expiry date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-3" name="dateSelect"
+                                    type="checkbox" value="CRD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-3">
+                                    CRD (Conditional release date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-4" name="dateSelect"
+                                    type="checkbox" value="HDCED">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-4">
+                                    HDCED (Home detention curfew eligibility date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-5" name="dateSelect"
+                                    type="checkbox" value="TUSED">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-5">
+                                    TUSED (Top up supervision expiry date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-6" name="dateSelect"
+                                    type="checkbox" value="PRRD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-6">
+                                    PRRD (Post recall release date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-7" name="dateSelect"
+                                    type="checkbox" value="PED">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-7">
+                                    PED (Parole eligibility date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-8" name="dateSelect"
+                                    type="checkbox" value="ROTL">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-8">
+                                    ROTL (Release on temporary licence)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-9" name="dateSelect"
+                                    type="checkbox" value="ERSED">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-9">
+                                    ERSED (Early removal scheme eligibility date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-10" name="dateSelect"
+                                    type="checkbox" value="ARD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-10">
+                                    ARD (Automatic release date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-11" name="dateSelect"
+                                    type="checkbox" value="HDCAD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-11">
+                                    HDCAD (Home detention curfew approved date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-12" name="dateSelect"
+                                    type="checkbox" value="MTD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-12">
+                                    MTD (Mid transfer date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-13" name="dateSelect"
+                                    type="checkbox" value="ETD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-13">
+                                    ETD (Early transfer date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-14" name="dateSelect"
+                                    type="checkbox" value="LTD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-14">
+                                    LTD (Late transfer date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-15" name="dateSelect"
+                                    type="checkbox" value="APD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-15">
+                                    APD (Approved parole date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-16" name="dateSelect"
+                                    type="checkbox" value="NPD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-16">
+                                    NPD (Non-parole date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" id="dateSelect-17" name="dateSelect"
+                                    type="checkbox" value="DPRRD">
+                                <label class="govuk-label govuk-checkboxes__label" for="dateSelect-17">
+                                    DPRRD (Detention and training order post recall release date)
+                                </label>
+
+                            </div>
+
+
+
+
+
+                        </div>
+
+                    </fieldset>
+
+                </div>
+
+
+                <div class="govuk-button-group">
+                    <form method="post" action="#">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Continue
+                        </button>
+                    </form>
+
+                    <form method="post" action="../cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
