@@ -19,11 +19,16 @@
             {% set lastAppearance = courtCase.appearances | last %}
             {% set courtCaseIndex = loop.revindex0 %}  
 
+            {% if lastAppearance['unsupported'] == 'true' %}
             <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}}</h3>
                
+            {% else %}
+            {% endif %}
             <div class="govuk-checkboxes govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
 
                 {% for sentence in lastAppearance.sentences %}
+
+                {% if sentence['unsupported-sentence'] == 'true' %}
                 <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="select-offence" name="select-offence" type="checkbox" value="carcasses">
                 <label class="govuk-label govuk-checkboxes__label" for="select-offence">
@@ -54,7 +59,11 @@
                         {% endif %}</span>
                 </label>
                 </div> 
+
+                {% else %}
+                {% endif %}
                 {% endfor %}
+
                  
             </div> 
 

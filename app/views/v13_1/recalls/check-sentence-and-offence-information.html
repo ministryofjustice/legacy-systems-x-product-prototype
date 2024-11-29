@@ -16,15 +16,21 @@
             <!-- <p class="govuk-body">We have found 1 sentence in relation to this recall.</p> -->
             <p class="govuk-body">The latest SLED (Sentence and licence expiry date) is <b>Thursday, 09 July 2025</b>. This is the SLED on this person's licence.</p>
  
-            <h2 class="govuk-heading-l">Court cases with sentences eligible for recall ({{ data.courtCases | activeCase | length }})</h2> 
+            <h2 class="govuk-heading-l">Court cases with sentences eligible for recall (2)</h2> 
 
                 {% for courtCase in data.courtCases | reverse %}
                 {% set lastAppearance = courtCase.appearances | last %}
                 {% set courtCaseIndex = loop.revindex0 %}  
 
+                {% if lastAppearance['unsupported'] == 'true' %}
+                {% else %}
                 <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}}</h3>
+                {% endif %}
+                
                 {% for sentence in lastAppearance.sentences %}
 
+                {% if sentence['unsupported-sentence'] == 'true' %}
+                {% else %}
                 {% if sentence['status'] == 'active' %}
                 <div class="offence-card sentence-card">
                     <div class="offence-card-offence-details">
@@ -346,6 +352,8 @@
             
                     </div>
                     </details>
+                {% endif %}
+
                 {% endif %}
 
                 {% endfor %}

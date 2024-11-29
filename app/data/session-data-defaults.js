@@ -456,6 +456,143 @@ module.exports = {
                     ]
                 }
             ]
+        },
+        {
+            "appearances": [{
+                    "court-case-ref": "34F2356911",
+                    "court-case-number": "1",
+                    "overall-case-outcome": "Remanded in custody",
+                    "next-court-date-set": "No",
+                    "warrant-date-day": "20",
+                    "warrant-date-month": "09",
+                    "warrant-date-year": "2024",
+                    "court-name": "Sheffield MC",
+                    "unsupported": "true",
+                    // "source": "nomis",
+                    "offences": [{
+                            "offence-start-date-day": "01",
+                            "offence-start-date-month": "01",
+                            "offence-start-date-year": "2021",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "OF61131"
+                            ],
+                            "offence-name": "OF61131 - Wound / inflict grievous bodily harm without intent",
+                            "outcome": "Remand in custody",
+                        },
+                        {
+                            "offence-start-date-day": "01",
+                            "offence-start-date-month": "01",
+                            "offence-start-date-year": "2021",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "TH68045"
+                            ],
+                            "offence-name": "TH68045 - Aggrevated burglary - dwelling",
+                            "outcome": "Remand in custody",
+                        }
+                    ]
+                },
+                {
+                    "court-case-ref": "34F2356911",
+                    "court-case-number": "1",
+                    "overall-case-outcome": "Imprisonment",
+                    "overall-conviction-date-day": "13",
+                    "overall-conviction-date-month": "11",
+                    "overall-conviction-date-year": "2021",
+                    "next-court-date-set": "No",
+                    "warrant-date-day": "13",
+                    "warrant-date-month": "11",
+                    "warrant-date-year": "2024",
+                    "court-name": "Manchester Crown Court (Crown Square)",
+                    "overall-sentence-length-years": "0",
+                    "overall-sentence-length-months": "5",
+                    "overall-sentence-length-weeks": "0",
+                    "overall-sentence-length-days": "0",
+                    "unsupported": "true",
+                    // "status": ["saved","mismatch"],
+                    "sentences": [{
+                            "count-number": "1",
+                            "conviction-date-day": "13",
+                            "conviction-date-month": "11",
+                            "conviction-date-year": "2021",
+                            "offence-start-date-day": "01",
+                            "offence-start-date-month": "01",
+                            "offence-start-date-year": "2021",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "OF61131"
+                            ],
+                            "offence-name": "OF61131 - Wound / inflict grievous bodily harm without intent",
+                            "outcome": "Imprisonment",
+                            "sentence-type": "EDS LAPSO Extended determinate sentence",
+                            "sentence-length-years": "5",
+                            "sentence-length-months": "0",
+                            "sentence-length-weeks": "0",
+                            "sentence-length-days": "0",
+                            "consecutive-concurrent": "Forthwith",
+                            "status": "active",
+                            "unsupported-sentence": "true"
+                        },
+                        {
+                            "count-number": "2",
+                            "conviction-date-day": "13",
+                            "conviction-date-month": "11",
+                            "conviction-date-year": "2021",
+                            "offence-start-date-day": "01",
+                            "offence-start-date-month": "01",
+                            "offence-start-date-year": "2021",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "TH68045"
+                            ],
+                            "offence-name": "TH68045 - Aggrevated burglary - dwelling",
+                            "outcome": "Imprisonment",
+                            "sentence-type": "EDS LAPSO Extended determinate sentence",
+                            "sentence-length-years": "2",
+                            "sentence-length-months": "0",
+                            "sentence-length-weeks": "0",
+                            "sentence-length-days": "0",
+                            "consecutive-concurrent": "Concurrent",
+                            "unsupported-sentence": "true",
+                            "status": "active"
+                        },
+                        {
+                            "count-number": "3",
+                            "conviction-date-day": "13",
+                            "conviction-date-month": "11",
+                            "conviction-date-year": "2021",
+                            "offence-start-date-day": "01",
+                            "offence-start-date-month": "01",
+                            "offence-start-date-year": "2021",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "OF61014"
+                            ],
+                            "offence-name": "OF61014 - Threats to kill",
+                            "outcome": "Imprisonment",
+                            "sentence-type": "EDS LAPSO Extended determinate sentence",
+                            "sentence-length-years": "1",
+                            "sentence-length-months": "0",
+                            "sentence-length-weeks": "0",
+                            "sentence-length-days": "0",
+                            "consecutive-concurrent": "Concurrent",
+                            "unsupported-sentence": "true",
+                            "status": "active"
+                        } 
+                    ]
+                }
+            ]
         }
     ]
     // ,courtCase: {

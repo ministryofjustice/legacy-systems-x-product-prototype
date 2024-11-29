@@ -17,10 +17,14 @@
                 {% set lastAppearance = courtCase.appearances | last %}
                 {% set courtCaseIndex = loop.revindex0 %}  
 
+                {% if lastAppearance['unsupported'] == 'true' %}
                 <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}}</h3>
+                   
+                {% else %}
+                {% endif %}
                 {% for sentence in lastAppearance.sentences %}
 
-                {% if sentence['status'] == 'active' %}
+                {% if sentence['unsupported-sentence'] == 'true' %}
                 <div class="offence-card sentence-card">
                     <div class="offence-card-offence-details">
                         <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
@@ -189,7 +193,7 @@
      
         <div class="govuk-button-group"> 
 
-            <form method="post" action="recall-type">
+            <form method="post" action="recall-type-confirm">
                 <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                 Confirm and continue
                 </button> 
