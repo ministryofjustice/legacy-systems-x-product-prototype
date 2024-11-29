@@ -60,17 +60,24 @@
           <dt class="govuk-summary-list__key" style="width: 20%;">
             Sentences
           </dt>
+
+          {% if data['toDo'] == 'recallsUnsupportedSentences' %}
+          <dd class="govuk-summary-list__value">
+            3 sentences
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+
+
+          <a class="govuk-link" href="unsupported-sentences">Edit<span
+            class="govuk-visually-hidden">sentences</span></a>
+          {% else %}
+
           <dd class="govuk-summary-list__value">
             4 sentences
           </dd>
 
           <dd class="govuk-summary-list__actions">
-
-          {% if data['toDo'] == 'recallsUnsupportedSentences' %}
-
-          <a class="govuk-link" href="unsupported-sentences">Edit<span
-            class="govuk-visually-hidden">sentences</span></a>
-          {% else %}
 
           <a class="govuk-link" href="check-sentence-and-offence-information">Review<span
             class="govuk-visually-hidden">sentences</span>
