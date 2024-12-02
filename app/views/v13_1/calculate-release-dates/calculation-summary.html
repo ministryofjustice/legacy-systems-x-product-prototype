@@ -61,6 +61,39 @@
                             </dd>
                         </div>
                     </dl>
+ 
+                    {% elif data['toShow'] == 'calcComplete'  %} 
+                    
+                        <dl class="govuk-summary-list release-dates-list">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                    SLED
+                                    <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    <p class="govuk-body">Thursday, 10 January 2025</p>
+                                </dd>
+                            </div> 
+
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                    PRRD
+                                    <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                                </dt>
+                                <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                    <p class="govuk-body">Wednesday, 7 November 2024</p>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                    TUSED
+                                    <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                                </dt>
+                                <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                    <p class="govuk-body">Wednesday, 25 September 2025</p>
+                                </dd>
+                            </div>
+                        </dl> 
 
                     {% elif data['toShow'] == 'unsupportedCalcComplete' %} 
                     <dl class="govuk-summary-list release-dates-list">
