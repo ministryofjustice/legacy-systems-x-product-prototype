@@ -31,8 +31,11 @@
                 {% if sentence['unsupported-sentence'] == 'true' %}
                 <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="select-offence" name="select-offence" type="checkbox" value="carcasses">
-                <label class="govuk-label govuk-checkboxes__label" for="select-offence">
-                        {{ sentence['offence-name'] }} <br><span class="govuk-hint">Conviction date: {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}</span><br><span class="govuk-hint">Sentence length:  
+                <label class="govuk-label govuk-checkboxes__label govuk-!-padding-top-0" for="select-offence">
+                        {{ sentence['offence-name'] }} 
+                        <br><span class="govuk-hint">Conviction date: {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}</span>
+                        <br><span class="govuk-hint">Sentence type: {{ sentence['sentence-type'] }}</span>
+                        <br><span class="govuk-hint">Sentence length:  
                             {% if sentence['sentence-length-years'] %}
                             {{ sentence['sentence-length-years'] }} years
                             {% else %}
