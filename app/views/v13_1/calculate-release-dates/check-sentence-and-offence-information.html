@@ -20,7 +20,13 @@
 <div class="moj-width-container">
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-full">
-           <p class="govuk-body">This calculation will include 3 sentences.</p>
+
+            {% if data['toDo'] == 'recallsUnsupportedSentences' %}
+           <p class="govuk-body">This calculation will include 1 sentence.</p>
+           {% else %}
+           <p class="govuk-body">This calculation will include 3 sentence.</p>
+           {% endif %}
+
         </div>
     </div>
 </div>
@@ -66,7 +72,7 @@
     {% endif %}
     {% for sentence in lastAppearance.sentences %}
 
-    {% if sentence['unsupported-sentence'] == 'true' %}
+    {% if sentence['unsupported-sentence'] == 'true' and sentence['status'] == 'active' %}
     <div class="offence-card sentence-card">
         <div class="offence-card-offence-details">
             <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
@@ -522,7 +528,7 @@
                                     <!-- Adjustment -->
                                     <td class="govuk-table__cell">Unlawfully at large (UAL)</td>
                                     <!-- Days -->
-                                    <td class="govuk-table__cell">0
+                                    <td class="govuk-table__cell">1
                                     </td>
                                 </tr> 
                             </tbody>
@@ -546,12 +552,12 @@
                             
                                     <td class="govuk-table__cell">From {{data['revocation-date-day']}}/{{data['revocation-date-month']}} {{data['revocation-date-year']}}  to {{data['arrest-date-day']}}/{{data['arrest-date-month']}}/{{data['arrest-date-year']}}</td>
                                    
-                                    <td class="govuk-table__cell">0</td>
+                                    <td class="govuk-table__cell">3</td>
                                 </tr> 
                                 <tr class="govuk-table__row"> 
                                     <td class="govuk-table__cell govuk-!-font-weight-bold govuk-!-text-align-right">
                                         Total days</td> 
-                                    <td class="govuk-table__cell">0
+                                    <td class="govuk-table__cell">3
                                     </td>
                                 </tr>
  

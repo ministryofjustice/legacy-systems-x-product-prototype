@@ -518,11 +518,11 @@ module.exports = {
                     // "status": ["saved","mismatch"],
                     "sentences": [{
                             "count-number": "1",
-                            "conviction-date-day": "13",
-                            "conviction-date-month": "11",
+                            "conviction-date-day": "01",
+                            "conviction-date-month": "10",
                             "conviction-date-year": "2021",
-                            "offence-start-date-day": "01",
-                            "offence-start-date-month": "01",
+                            "offence-start-date-day": "13",
+                            "offence-start-date-month": "11",
                             "offence-start-date-year": "2021",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
@@ -533,7 +533,7 @@ module.exports = {
                             "offence-name": "OF61131 - Wound / inflict grievous bodily harm without intent",
                             "outcome": "Imprisonment",
                             "sentence-type": "EDS LAPSO Extended determinate sentence",
-                            "sentence-length-years": "5",
+                            "sentence-length-years": "3",
                             "sentence-length-months": "0",
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
@@ -543,11 +543,11 @@ module.exports = {
                         },
                         {
                             "count-number": "2",
-                            "conviction-date-day": "13",
-                            "conviction-date-month": "11",
+                            "conviction-date-day": "01",
+                            "conviction-date-month": "10",
                             "conviction-date-year": "2021",
-                            "offence-start-date-day": "01",
-                            "offence-start-date-month": "01",
+                            "offence-start-date-day": "13",
+                            "offence-start-date-month": "11",
                             "offence-start-date-year": "2021",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
@@ -564,15 +564,15 @@ module.exports = {
                             "sentence-length-days": "0",
                             "consecutive-concurrent": "Concurrent",
                             "unsupported-sentence": "true",
-                            "status": "active"
+                            "status": "inactive"
                         },
                         {
                             "count-number": "3",
-                            "conviction-date-day": "13",
-                            "conviction-date-month": "11",
+                            "conviction-date-day": "01",
+                            "conviction-date-month": "10",
                             "conviction-date-year": "2021",
-                            "offence-start-date-day": "01",
-                            "offence-start-date-month": "01",
+                            "offence-start-date-day": "13",
+                            "offence-start-date-month": "11",
                             "offence-start-date-year": "2021",
                             "offence-end-date-day": "",
                             "offence-end-date-month": "",
@@ -589,7 +589,7 @@ module.exports = {
                             "sentence-length-days": "0",
                             "consecutive-concurrent": "Concurrent",
                             "unsupported-sentence": "true",
-                            "status": "active"
+                            "status": "inactive"
                         } 
                     ]
                 }

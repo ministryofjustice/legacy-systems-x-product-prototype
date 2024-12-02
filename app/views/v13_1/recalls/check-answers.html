@@ -63,7 +63,7 @@
 
           {% if data['toDo'] == 'recallsUnsupportedSentences' %}
           <dd class="govuk-summary-list__value">
-            3 sentences
+            1 sentence
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -115,10 +115,16 @@
         </div>
 
       </dl>
-        
+       
+    {% if data['toDo'] == 'recallsUnsupportedSentences' %} 
     <div class="govuk-inset-text">
       <b>1 day</b> of UAL (unlawfully at large) will also be added. You can review and add other adjustments after recording the recall.
     </div>
+    {% else %}
+    <div class="govuk-inset-text">
+      <b>1 day</b> of UAL (unlawfully at large) will also be added. You can review and add other adjustments after recording the recall.
+    </div>
+    {% endif %} 
 
  
 
