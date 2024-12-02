@@ -457,7 +457,8 @@ module.exports = {
                 }
             ]
         },
-        {
+        {   
+            "status" : "unsupported",
             "appearances": [{
                     "court-case-ref": "34F2356911",
                     "court-case-number": "1",
