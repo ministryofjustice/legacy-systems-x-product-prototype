@@ -156,57 +156,6 @@
               </dl>
             </div>
         </div>
-        {% elif data['todo'] == 'recallsUnsupportedSentences' %} 
- 
-        <div class="govuk-summary-card govuk-!-margin-bottom-6">
-            <div class="govuk-summary-card__title-wrapper">
-                <h2 class="govuk-summary-card__title">22 September 2024 at HMP Kirkham
-                    <br>
-                    <span class="govuk-body">Calculation reason: 2-day check</span>
-                </h2>
-              
-                <!-- <ul class="govuk-summary-card__actions" style="align-content: center;">
-                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
-                    </li>
-                  <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculation-history/11-03-2023/check-sentence-and-offence-information">View details<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
-                  </li>
-                 
-                </ul> -->
-                <!-- <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-marrgin-top-1">Latest calculation: <a href="#">8 May 2023 at HMP Kirkham</a></p> -->
-            </div>
-            <div class="govuk-summary-card__content" id="release-dates">
-                <dl class="govuk-summary-list release-dates-list">
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                            SLED
-                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            <p class="govuk-body">Thursday, 13 November 2025</p>
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                            CRD
-                            <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                            <p class="govuk-body">Tuesday, 12 November 2024 </p> 
-                        </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
-                            PED
-                            <p class="govuk-!-font-size-16 govuk-hint">Parole eligibility date</p>
-                        </dt>
-                        <dd class="govuk-summary-list__value govuk-!-padding-top-4"> 
-                            <p class="govuk-body">Friday, 13 November 2023</p> 
-                        </dd>
-                    </div> 
-                </dl>
-            </div>
-        </div>
-
 
         {% elif data['toShow'] == 'unsupportedCalcComplete' %} 
        
@@ -251,6 +200,59 @@
                 </dl>
             </div>
         </div>
+        
+        {% elif data['toDo'] == 'recallsUnsupportedSentences' %} 
+ 
+        <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">22 September 2024 at HMP Kirkham
+                    <br>
+                    <span class="govuk-body">Calculation reason: 2-day check</span>
+                </h2>
+              
+                <!-- <ul class="govuk-summary-card__actions" style="align-content: center;">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                    </li>
+                  <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculation-history/11-03-2023/check-sentence-and-offence-information">View details<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                  </li>
+                 
+                </ul> -->
+                <!-- <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-marrgin-top-1">Latest calculation: <a href="#">8 May 2023 at HMP Kirkham</a></p> -->
+            </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+                <dl class="govuk-summary-list release-dates-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            SLED
+                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">Thursday, 12 November 2025</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            CRD
+                            <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Tuesday, 12 November 2024 </p> 
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
+                            PED
+                            <p class="govuk-!-font-size-16 govuk-hint">Parole eligibility date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4"> 
+                            <p class="govuk-body">Friday, 13 November 2023</p> 
+                        </dd>
+                    </div> 
+                </dl>
+            </div>
+        </div>
+
+
         {% else %}
 
           
