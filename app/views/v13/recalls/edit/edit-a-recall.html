@@ -1,0 +1,134 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="../../recalls" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-xl">Edit a recall</span>
+       Recorded on {{ "today" | govukDate }}
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+  <div class="govuk-form-group">
+ 
+
+        <dl class="govuk-summary-list"> 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 40%;">
+              Date of revocation
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['revocation-date-day']}}/{{data['revocation-date-month']}}/{{data['revocation-date-year']}} 
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="revocation-date">Edit<span
+                  class="govuk-visually-hidden"> return to custody date</span>
+                </a>
+
+            </dd>
+
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 40%;">
+              Arrest date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['arrest-date-day']}}/{{data['arrest-date-month']}}/{{data['arrest-date-year']}} 
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="return-to-custody-date?editLogic?editing">Edit<span
+                  class="govuk-visually-hidden"> return to custody date</span>
+                </a>
+
+            </dd>
+
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 40%;">
+              UAL (Unlawfully at large)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2 days
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+     
+            </dd>
+
+          </div>
+ 
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 40%;">
+              Sentences
+            </dt>
+            <dd class="govuk-summary-list__value">
+              4 sentences
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="check-sentence-and-offence-information?editLogic?editing">Review
+              <span class="govuk-visually-hidden">sentences</span>
+            </a>
+            </dd>
+
+
+          </div>
+ 
+          <div class="govuk-summary-list__row govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 40%;">
+              Recall type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['recall-type']}}
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="recall-type">Edit<span
+                  class="govuk-visually-hidden">recall type</span></a>
+
+            </dd>
+
+          </div>
+
+        </dl>
+
+        
+        <div class="govuk-inset-text">
+          <b>1 day</b> of UAL (unlawfully at large) was added.
+        </div>
+    
+     
+      <div class="govuk-button-group"> 
+ 
+
+        <form action="changes-complete?toShow=ualAdded" method="post">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+            Confirm changes
+          </button> 
+      </form> 
+
+        <form method="post" action="../../recalls">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel changes
+            </button>
+        </form>
+      </div> 
+
+  </div>
+</div>
+</div>
+{% endblock %}

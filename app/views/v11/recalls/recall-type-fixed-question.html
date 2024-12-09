@@ -1,0 +1,66 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="fixedTermId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Is this a fixed term recall?
+                            </h1>
+                        </legend> 
+
+                        
+                        <!-- <p class="govuk-body">We've identified these types of recalls based on this person's sentences and offences. </p> -->
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="fixedTermId" name="fixedTermId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="fixedTermId">
+                                Yes
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="fixedTermId-2" name="fixedTermId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="fixedTermId-2">
+                                No
+                                </label> 
+                            </div> 
+
+                                
+                        </div> 
+
+                    </fieldset> 
+                </div> 
+
+               
+     
+                <div class="govuk-button-group"> 
+
+                    <form method="post" action="recall-type">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Continue
+                        </button> 
+                    </form>
+                    <form method="post" action="cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+ 
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,63 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="edit-a-recall">
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Select the type of recall
+                            </h1>
+                        </legend> 
+
+                        <p class="govuk-body">We've identified these types of recall based on this person's sentences and offences. </p>
+                        <p><a class="govuk-link" href="#">You can manually choose another type of recall</a> if you think they are wrong.</p>
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                ORA licence recall
+                                </label> 
+                            </div>
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                ORA HDC recall (not curfew violation)
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                ORA recalled from curfew conditions
+                                </label> 
+                            </div> 
+
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                    Continue
+                    </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

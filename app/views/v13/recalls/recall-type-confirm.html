@@ -1,0 +1,45 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+
+                <div class="govuk-form-group">
+                    
+                    <form method="post" action="check-answers"> 
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Confirm the recall type
+                            </h1> 
+
+                        <p class="govuk-body">This service has identified the recall type to be:</p>
+
+                        <p class="govuk-body-l govuk-!-margin-bottom-5"><b>Standard recall</b></p>
+                        
+                        <p class="govuk-body">This is based on this person's recall dates and sentences.</p>
+                        
+                        <!-- <p class="govuk-body">If you think this is wrong, <a class="govuk-link" href="recall-type">choose another recall type</a>.</p> -->
+ 
+                        <div class="govuk-button-group govuk-!-margin-top-6"> 
+
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                                Confirm and continue
+                            </button> 
+                        <!-- </form> -->
+                        <!-- <form method="post" action="cancel"> -->
+                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </button>
+                        </form>
+                    </div> 
+                </div>
+
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,122 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% set documentsActive = true %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="#" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl"> 
+      Edit recall
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-form-group">
+        <dl class="govuk-summary-list">
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 30%;">
+              Licence revocation date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              26 August 2024
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="revocation-date">Edit<span
+                  class="govuk-visually-hidden"> return to custody date</span>
+                </a>
+
+            </dd>
+
+          </div>
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 30%;">
+              Arrest date
+            </dt>
+            <dd class="govuk-summary-list__value">
+              29 August 2024
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="return-to-custody-date">Edit<span
+                  class="govuk-visually-hidden"> return to custody date</span>
+                </a>
+
+            </dd>
+
+          </div>
+
+
+
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 20%;">
+              Sentences
+            </dt>
+            <dd class="govuk-summary-list__value">
+              2
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="check-sentence-and-offence-information">Review<span
+              class="govuk-visually-hidden">sentences</span>
+            </a>
+            </dd>
+
+
+          </div>
+
+
+
+          <div class="govuk-summary-list__row govuk-summary-list__row">
+            <dt class="govuk-summary-list__key" style="width: 20%;">
+              Recall type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              ORA licence recall
+              <br><span class="govuk-hint">Saved to NOMIS as ORA licence recall</span>
+            </dd>
+
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="recall-type">Edit<span
+                  class="govuk-visually-hidden"> Standard recall</span></a>
+
+            </dd>
+
+          </div>
+
+        </dl>
+      </div>
+
+<!--           
+      <div class="govuk-inset-text">
+        This will be saved to NOMIS as ORA 14 Day Fixed Term Recall.
+      </div> -->
+
+      <div class="govuk-button-group"> 
+ 
+
+        <form action="changes-complete" method="post">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+            Confirm changes
+          </button> 
+      </form> 
+
+        <form method="post" action="cancel">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel changes
+            </button>
+        </form>
+      </div> 
+
+  </div>
+</div>
+</div>
+{% endblock %}

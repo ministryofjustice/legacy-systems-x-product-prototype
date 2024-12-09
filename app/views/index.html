@@ -37,11 +37,533 @@
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-13_1">
+                            Version 13.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                    In Design
+                                </strong>
+
+                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong> -->
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-13_1">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-three-quarters"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 2nd December 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet">
+                                        <li>Validate our improvements to the core designs of recording a recall</li> 
+                                        <li>Testing our new manual entry journey for unsuppoerted sentences types</li> 
+                                        <li>Testing our new recalls type page designs</li> 
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list">  
+                                        <li><a class="govuk-link" target="external" href="https://docs.google.com/document/d/1_TCxQZ07N9kNTiBVKXCkQSEXSE6SBtrNcrd5q9N1V3Y/edit?tab=t.0">R6 discussion guide (docs)</a></li>    
+                                 
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ 
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4>
+                                    <p class="govuk-hint">Recording a recall - happy path</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v13_1/DPS-prisoner-profile",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey).</p> 
+                                    
+                                    </form>  
+
+
+
+                                    <form action="post">
+                                        <h4 class="govuk-heading-m">Scenario 2</h4>
+                                        <p class="govuk-hint">Recording a recall - unsupported sentences unhappy path</p>
+    
+                                        {{govukButton({
+                                            text: "Launch scenario 2",
+                                            attributes: {
+                                            "formaction": "v13_1/DPS-prisoner-profile?toDo=recallsUnsupportedSentences",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+                                        <p class="govuk-body">This scenario explores a new manual journey which is part of recording a recall, the user must select sentences from a list as our service had identified sentences it cannot support in CRDS. </p> 
+                                        
+                                        </form>  
+    
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-13">
+                            Version 13
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong> -->
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+
+                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong> -->
+
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-13">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v13/DPS-home",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v13/DPS-prisoner-profile",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">      
+                                    <li>Post-R5 improvements</li>     
+                                    <li>Updated - recall types page</li>         
+                                    <li>Unhappy paths - unsupported sentences (improved)</li>  
+                                    <li>Editing UAL</li>         
+                                </ul> 
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://docs.google.com/presentation/d/1YBeIdooS2viM1XDjkEnWGhxqbfE39a8PH1awGjfi_Wg/edit#slide=id.g301f2051127_0_22">R5 Playback (Google Sheets)</a></li>  
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764607488106698&cot=14">R6 design iterations (miro)</a></li>  
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Post-R5 improvements</h4> 
+                                <p class="govuk-body">Revised design of the recalls tab to consider multiple recalls.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls?toShow=recallHistory">Recalls tab</a></li>    
+                                </ul>      
+                                <h4 class="govuk-heading-m">2. Updated - recall types page</h4> 
+                                <p class="govuk-body">We have completed a mapping exercise which will allow us to offer a new set of plain-english recall types to the user and provide fewer steps for them to select.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type">Select a recall type - option with no specific recall types</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type?version=2">Select a recall type - option with hint text to show specific recall types</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type?version=3">Select a recall type - option with specific recall types as radio options</a></li>    
+                                </ul>    
+                                <p class="govuk-body">We are also iterating on designs for a page where we already know what the recall type will be.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/recall-type-confirm">Confirm recall type</a></li>    
+                                </ul>  
+                                <h4 class="govuk-heading-m">3. Unhappy paths - unsupported sentences (improved)</h4> 
+                                <p class="govuk-body">Revised design of the unhappy path where users must select sentences from a list in order to process the recall.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/unsupported-sentences">Select sentences</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v13/recalls/unsupported-sentences">Review sentences and offences</a></li>   
+                                </ul>   
+                                <h4 class="govuk-heading-m">4. Editing UAL</h4> 
+                                <p class="govuk-body">We have defined new rule around how UAL is edited when created from recording a recall. UAL is editable from the Adjustments service, a redesigned page on adjustments separated UAL that is associated with a recall and the user must edit the recall to edit the UAL. </p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v13/adjustments/view-ual">View UAL (in adjustments)</a></li>    
+                                </ul> 
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 12.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                    In Design
+                                </strong> -->
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-three-quarters"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 1st October 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet">
+                                        <li>Validate our improvements to the core designs of recording a recall</li> 
+                                        <li>Testing our iterations on view and edit a recall having been put in it's own tab</li> 
+                                        <li>Testing some scenarios with more complex sentencing information </li> 
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="https://docs.google.com/document/d/19Zrkhz1V87Ndz4B9CGs9eeDQWHExDg8goORkF2s7kF0/edit?tab=t.0">R5 mock scenario (docs)</a></li>   
+                                        <li><a class="govuk-link" target="external" href="https://docs.google.com/document/d/1iPpJHcfcyYxoieg8UjzSAlIPcxyJagHGT9e6pyyealQ/edit?tab=t.0#heading=h.y1kyip8kz10d">R5 discussion guide (docs)</a></li>    
+                                 
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ 
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4>
+                                    <p class="govuk-hint">Recording a recall</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v12_1/DPS-prisoner-profile?scenario=2",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey). This scenario includes a new entry point for all recall journeys on it own tab.</p> 
+                                    
+                                    </form>  
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 12
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong> -->
+
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-10">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v12/DPS-home?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v12/DPS-prisoner-profile?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">      
+                                    <li>Post-R4 improvements</li>     
+                                    <li>Unhappy paths - unsupported sentences</li>         
+                                </ul> 
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://docs.google.com/presentation/d/1xjwYbX2-3kfuMPlEiXNqAtR6XlE2DMXbpNiA_Dx1wks/edit#slide=id.g2ebc4771840_0_406">R4 Playback (Google Sheets)</a></li>     
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764604128735594&cot=14">R4 Ideation (miro)</a></li>     
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Post-R4 improvements</h4> 
+                                <p class="govuk-body">Introduction of the recalls tab as a new place to view and manage recalls.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v12/recalls">New recalls type</a></li>    
+                                </ul>    
+                                <h4 class="govuk-heading-m">2. Unhappy paths - unsupported sentences</h4> 
+                                <p class="govuk-body">Designs for unhappy paths, unsupported sentences.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v12/recalls?toDo=recallsUnsupportedSentences">Record a recall - unsupported flow</a></li>    
+                                </ul>    
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 11.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-9">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-three-quarters"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 1st October 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet">
+                                        <li>Validate our imrpvements to the hub and spoke designs of recording a recall</li> 
+                                        <li>Understand needs and test viewing a recall</li> 
+                                        <li>Understand needs and test editing a recall</li> 
+                                        <li>Understand needs around editing UAL and how it relates to editing a recall</li> 
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list"> 
+                                        <li><a class="govuk-link" target="external" href="...">R4 scenario (miro)</a></li>     
+                                 
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ 
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4>
+                                    <p class="govuk-hint">Recording a recall</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v11_1/DPS-prisoner-profile?scenario=2",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall using the hub and spoke method.</p> 
+                                    
+                                    </form>  
+
+
+
+                                    <form action="post">
+                                        <h4 class="govuk-heading-m">Scenario 2</h4>
+                                        <p class="govuk-hint">Editing a recall</p>
+    
+                                        {{govukButton({
+                                            text: "Launch scenario 2",
+                                            attributes: {
+                                            "formaction": "v11_1/overview?toShow=calcComplete",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+                                        <p class="govuk-body">This scenario explores tha ability to edit a recall through the recall details.</p> 
+                                        
+                                        </form>  
+
+ 
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-9">
+                            Version 11 
+                            
+                          
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-10">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v11/DPS-home?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v11/DPS-prisoner-profile?viewOption=adjustmentsReleasedTrue",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-three-quarters"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+
+                                <ul class="govuk-list govuk-list--number">
+                                    <li>Post-R3 improvements</li>     
+                                    <li>View a recall entry point experimentation</li>     
+                                    <li>Logic for edit</li>        
+                                </ul> 
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764599669982700&cot=14">R3 Playback (miro)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597075612508&cot=14">View a recall (miro)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597473206296&cot=14">Edit a recall (miro)</a></li>   
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Post-R3 improvements</h4> 
+                                <p class="govuk-body">From R3 we have agreed various improvements to the record a recall journey, these include: moving the entry point to court cases tab, making the sentences with expired SLEDs more visible, adding the calculate release dates link to the confirmation screen.</p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v11/court-cases?toShow=recallHistory">Court cases tab</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/check-sentence-and-offence-information">Review sentence and offence information</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/calculation-complete">Confirmation screen</a></li>   
+                                </ul>  
+
+                                <h4 class="govuk-heading-m">2. View a recall entry point experimentation</h4> 
+                                <p class="govuk-body">After a recall is recorded, users need to be able to view and edit the recall. This version implements how recalls might be viewed on the service in various places. We've also been experimenting with how recalls could live as tiles on the overview. WE WILL NOT BE TESTING THIS DESIGN YET. </p> 
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v11/overview?toShow=noCourtCases">New overview tiles - empty states</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v11/overview?toShow=recallHistory">New overview tiles - active states</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/court-cases?toShow=recallHistory">Court cases - recalled court cases</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v11/court-case-detail?toShow=recallHistory">Court cases - court case details</a></li>     
+                                </ul>  
+ 
+
+                                <h4 class="govuk-heading-m">3. Logic for edit</h4> 
+                                <p class="govuk-body">Both during and after a recall has been recorded, we allow the user to modify their answers. This logic differs depending on what the person edits.</p> 
+                                <p>Before recall saved:</p>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/check-answers">Check your answers</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/revocation-date">Edit license revocation date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/return-to-custody-date">Edit arrest date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/recall-type-fixed-question">Edit recall type</a></li>   
+                                </ul>  
+
+                                <p>After recall saved:</p>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/edit-a-recall">Edit a recall</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/revocation-date">Edit license revocation date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/return-to-custody-date">Edit arrest date</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/recall-type-fixed-question">Edit recall type</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v11/recalls/edit/changes-complete">Changes saved</a></li>    
+                                </ul>  
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-9">
                             Version 10.1
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
+
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
                         </span>
                         </h2>
                     </div> 
@@ -68,6 +590,7 @@
                                     <ul class="govuk-list"> 
                                         <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764598289429871&cot=14">R3 scenario (miro)</a></li>   
                                         <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764597787407425&cot=14">Research plan (miro)</a></li>   
+                                        <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNTjoHT8=/?moveToWidget=3458764598924096706&cot=14">R3 analysis  (miro)</a></li>   
                                  
                                     </ul> 
 
@@ -137,8 +660,9 @@
                         <span class="govuk-accordion__section-button" id="version-9">
                             Version 10 
                             
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
-                                In Design
+                            
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
                             </strong>
                         </span>
                         </h2>
