@@ -23,7 +23,9 @@
                     {% set lastAppearance = courtCase.appearances | last %}
                     {% set courtCaseIndex = loop.revindex0 %}  
     
-                    <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}}</h3>
+                    <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }}
+                        on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{
+                            lastAppearance['warrant-date-year'] }}</h3>
                     {% for sentence in lastAppearance.sentences %}
     
                     {% if sentence['status'] == 'active' %}

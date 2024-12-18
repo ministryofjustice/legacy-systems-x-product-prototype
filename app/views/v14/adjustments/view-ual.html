@@ -1,0 +1,91 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="../adjustments" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>
+                UAL overview
+            </h1>
+
+            <table  id="viewUAL" class="govuk-table govuk-!-margin-bottom-8">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col" width="20%">Start date</th>
+                    <th class="govuk-table__header" scope="col" width="20%">End date</th>
+                    <th class="govuk-table__header" scope="col" width="20%">Entered by</th>
+                    <th class="govuk-table__header" scope="col" width="10%">Type</th> 
+                    <th class="govuk-table__header govuk-!-text-align-right" scope="col" width="15%">Number of days</th>
+                    <th class="govuk-table__header " scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+
+                <td class="govuk-table__cell"> 8/10/2024 </td>
+                <td class="govuk-table__cell">10/10/2024</td>
+                <td class="govuk-table__cell">HMP Kirkham</td> 
+                <td class="govuk-table__cell">Absconded</td> 
+
+                {% if data['toShow'] == 'ualAdded'%}
+
+                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">3</td>
+                {% else %}
+
+                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">2</td>
+                {% endif %} 
+                <td class="govuk-table__cell"><a class="govuk-link" href="edit-ual">Edit</a> <a class="govuk-link govuk-!-padding-left-2" href="edit-ual">Delete</a></td> 
+            
+                </tr>
+
+                </tbody>
+
+            </table>
+
+            <h1 class="govuk-heading-m">
+                UAL from recalls
+            </h1>
+            <p class="govuk-body">This UAL time was identified when a recall was recorded.</p>
+            <table  id="viewUAL" class="govuk-table govuk-!-margin-bottom-8">
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col" width="20%">Date of revocation</th>
+                    <th class="govuk-table__header" scope="col" width="20%">Arrest date</th>
+                    <th class="govuk-table__header" scope="col" width="20%">Entered by</th>
+                    <th class="govuk-table__header" scope="col" width="10%">Type</th> 
+                    <th class="govuk-table__header govuk-!-text-align-right" scope="col" width="15%">Number of days</th>
+                    <th class="govuk-table__header " scope="col">Actions</th>
+                </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+               <tr class="govuk-table__row">
+
+                <td class="govuk-table__cell"> {{data['revocation-date-day']}}/{{data['revocation-date-month']}}/{{data['revocation-date-year']}} </td>
+                <td class="govuk-table__cell"> {{data['arrest-date-day']}}/{{data['arrest-date-month']}}/{{data['arrest-date-year']}} </td>
+                <td class="govuk-table__cell">HMP Kirkham</td> 
+                <td class="govuk-table__cell">Recall</td> 
+
+                {% if data['toShow'] == 'ualAdded'%}
+
+                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">3</td>
+                {% else %}
+
+                <td class="govuk-table__cell govuk-!-text-align-right" scope="col">2</td>
+                {% endif %} 
+                <td class="govuk-table__cell"><a class="govuk-link" href="../recalls/edit/edit-a-recall">Edit recall</a></td> 
+            
+                </tr>
+
+                </tbody>
+
+            </table>
+
+            <a href="#" class="govuk-button" data-name="RADA" data-desc="RADA (Restore additional days awarded) ">
+                Add new
+            </a>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
+{% endblock %}

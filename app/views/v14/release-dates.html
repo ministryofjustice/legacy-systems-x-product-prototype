@@ -1,0 +1,395 @@
+
+{% if data['viewOption'] == 'adjustmentsReleasedFalse' %}
+{% extends "../includes/layouts/template-linear.html" %}
+{% else %}
+{% extends "./template.html" %}
+{% endif %}
+
+{% set releaseDatesActive = true %}
+{% block content %}
+
+
+<!-- Release dates -->
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Release dates and calculations
+        </h1>
+    </div>
+</div>
+ 
+
+ <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+            
+        {% if data['toShow'] == 'recallHistory' %} 
+
+        <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+            <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-6" aria-label="Section 1">
+              <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
+              <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates.</p>
+              <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="calculate-release-dates/calculation-reason" >
+                Calculate release dates
+              </a>
+            </section>
+          
+          </article>
+
+          {% elif data['toShow'] == 'ualAdded'%} 
+
+          <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+  
+              <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
+                <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
+                <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates.</p>
+                <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="calculate-release-dates/calculation-reason">
+                  Calculate release dates
+                </a>
+              </section>
+            
+            </article>
+
+          {% elif data['toShow'] == 'calcComplete' %}
+
+            <h3 class="govuk-heading-l">Latest calculation</h3>
+  
+          <div class="govuk-summary-card govuk-!-margin-bottom-6">
+              <div class="govuk-summary-card__title-wrapper">
+                  <h2 class="govuk-summary-card__title">{{ "today" | govukDate }} at HMP Kirkham
+                      <br>
+                      <span class="govuk-body">Calculation reason: Recording a recall</span>
+                  </h2>
+                 
+                  <ul class="govuk-summary-card__actions" style="align-content: center;">
+                      <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                      </li>
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculation-history/11-03-2023/check-sentence-and-offence-information">View details<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                    </li>
+                   
+                  </ul>
+               </div>
+              <div class="govuk-summary-card__content" id="release-dates">
+          
+                <dl class="govuk-summary-list release-dates-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            SLED
+                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">Tuesday, 4 March 2025</p>
+                        </dd>
+                    </div> 
+
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            PRRD
+                            <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Tuesday, 4 March 2025</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            TUSED
+                            <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Monday, 4 August 2025</p>
+                        </dd>
+                    </div>
+                </dl>
+              </div>
+          </div>
+
+          {% elif data['toShow'] == 'calc2Complete' %}
+
+  
+          <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">{{ "today" | govukDate }} at HMP Kirkham
+                    <br>
+                    <span class="govuk-body">Calculation reason: Recording a recall</span>
+                </h2>
+               
+                <ul class="govuk-summary-card__actions" style="align-content: center;">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                    </li>
+                  <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculation-history/11-03-2023/check-sentence-and-offence-information">View details<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                  </li>
+                 
+                </ul>
+             </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+              
+           
+              
+              <dl class="govuk-summary-list release-dates-list">
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                          SLED
+                          <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                      </dt>
+                      <dd class="govuk-summary-list__value">
+                          <p class="govuk-body">Tuesday, 5 March 2025</p>
+                      </dd>
+                  </div> 
+
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                          PRRD
+                          <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                      </dt>
+                      <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                          <p class="govuk-body">Tuesday, 5 March 2025</p>
+                      </dd>
+                  </div>
+                  <div class="govuk-summary-list__row">
+                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                          TUSED
+                          <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                      </dt>
+                      <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                          <p class="govuk-body">Monday, 5 August 2025</p>
+                      </dd>
+                  </div>
+              </dl>
+            </div>
+        </div>
+
+        {% else %}
+
+        <h3 class="govuk-heading-l">Latest calculation</h3>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-2">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Calculation date
+              </dt>
+              <dd class="govuk-summary-list__value">
+                22 September 2024
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Calculation reason
+              </dt>
+              <dd class="govuk-summary-list__value">
+                2-day check
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Establishment
+              </dt>
+              <dd class="govuk-summary-list__value">
+                HMP Kirkham
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Source
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">Paper calculation <br>
+                <span class="govuk-!-font-size-16 govuk-hint">Entered in the Calculate release dates service</span></p>
+              </dd>
+            </div>
+          </dl>
+       
+        <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title"> Release dates
+                </h2>
+                <ul class="govuk-summary-card__actions" style="align-content: center;">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+                    </li>
+                </ul>
+                <!-- <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-marrgin-top-1">Latest calculation: <a href="#">8 May 2023 at HMP Kirkham</a></p> -->
+            </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+                <dl class="govuk-summary-list release-dates-list">
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            SLED
+                            <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value">
+                            <p class="govuk-body">Thursday, 09 January 2025</p>
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            CRD
+                            <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Tuesday, 24 September 2024 
+                                <!-- <br> <span class="govuk-!-font-size-16 govuk-hint">40% date has been applied</span> -->
+                            </p> 
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
+                            HDCED
+                            <p class="govuk-!-font-size-16 govuk-hint">Home detention curfew eligibility date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4"> 
+                            <p class="govuk-body">Friday, 06 September 2024
+                                 <!-- <br> <span class="govuk-!-font-size-16 govuk-hint">50% date has been applied</span> -->
+                                </p> 
+                        </dd>
+                    </div>
+                    <div class="govuk-summary-list__row">
+                        <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                            TUSED
+                            <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                        </dt>
+                        <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                            <p class="govuk-body">Wednesday, 24 September 2025 
+                                <!-- <br> <span class="govuk-!-font-size-16 govuk-hint">Anniversary of 40% CRD</span> -->
+                            </p>
+                        </dd>
+                    </div>
+                </dl>
+            </div>
+        </div>
+
+        <ul class="govuk-list">
+            <!-- <li class=""> <a class="govuk-link" href="calculate-release-dates/notification-slip-mvp">Print notification slip<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+            </li> -->
+            <li class=""> <a class="govuk-link" href="calculation-history/11-03-2023/check-sentence-and-offence-information">View calculation details<span class="govuk-visually-hidden"> of Transfer calculation 8 May 2023 at HMP Kirkham</span></a>
+            </li>
+        </ul> 
+        
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+ 
+        {% endif %}
+
+          
+
+       
+        {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
+        <!-- <h3 class="govuk-heading-l">Recall history</h3>
+       
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Recorded date</th>
+                    <th scope="col" class="govuk-table__header">Date of revocation</th>
+                    <th scope="col" class="govuk-table__header">Arrest date</th>
+                    <th scope="col" class="govuk-table__header">Recall type</th> 
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body"> 
+ 
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell"><a href="recall-details">3 September 2024</a></td>
+                    <td class="govuk-table__cell">26 August 2024</td>
+                    <td class="govuk-table__cell">29 August 2024</td>
+                    <td class="govuk-table__cell">ORA licence recall</td> 
+                </tr>
+ 
+                </tr>
+            </tbody>
+        </table> -->
+        <!-- <p class="govuk-body"><a href="recall-details">View all recalls</a></p> --> 
+           
+
+        {% else %}
+        {% endif %}
+    
+    <h3 class="govuk-heading-l">Calculation history</h3>
+    <!-- <div class="govuk-summary-card" id="calculation-history">
+        <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Calculation history</h2>
+        </div>
+        <div class="govuk-summary-card__content"> -->
+            <table class="govuk-table">
+                <thead class="govuk-table__head">
+                    <tr class="govuk-table__row">
+                        <th scope="col" class="govuk-table__header">Calculation date</th>
+                        <th scope="col" class="govuk-table__header">Calculation reason</th>
+                        <th scope="col" class="govuk-table__header">Establishment</th>
+                        <th scope="col" class="govuk-table__header">Source</th>
+                    </tr>
+                </thead>
+                <tbody class="govuk-table__body"> 
+
+                    {% if data['toShow'] == 'calcComplete' %}
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/11-03-2023/check-sentence-and-offence-information">{{ "today" | govukDate }}</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+
+
+                    {% elif data['toShow'] == 'calc2Complete' %}
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">{{ "today" | govukDate }}</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/11-03-2023/check-sentence-and-offence-information">{{ "today" | govukDate }}</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+
+                    {% else %}
+                    {% endif %}
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">22 September 2024</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">2-day check</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Paper calculation <br>
+                            <span class="govuk-!-font-size-16 govuk-hint">Entered in the Calculate release dates service</span></td> 
+                    </tr>
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">10 September 2024</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">14-day check</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">15 July 2024</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+                </tbody>
+            </table>
+        <!-- </div>
+    </div> -->
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <div class="actions-list">
+            <ul class="govuk-list actions-list-list">
+                <span class="govuk-heading-m actions-list-header">Actions</span>
+                <li><a href="calculate-release-dates/calculation-reason">Calculate release dates</a></li>
+                <li><a href="calculate-release-dates/calculation-reason">Add APD, HDCAD or ROTL dates</a></li> 
+                <!-- <li><a href="#">Add a new court case</a></li>  -->
+                <!-- <li><a href="recalls/revocation-date">Record a recall</a></li>   -->
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+ 
+    {% endblock %}
