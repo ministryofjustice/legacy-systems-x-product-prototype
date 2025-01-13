@@ -37,6 +37,90 @@
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-13_1">
+                            Version 14.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                    In Design
+                                </strong>
+
+                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong> -->
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-13_1">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            </div>
+                            
+                            
+
+                    
+                                <div class="govuk-grid-column-full govuk-!-margin-right-3"> 
+                                    <h4 class="govuk-heading-m">What we are testing</h4> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 13th January 2024.</p> 
+                                    <p class="govuk-body">In this round, we aim to:</p> 
+                                    <ul class="govuk-list govuk-list--bullet"> 
+                                        <li>Testing and updated version manual entry journey for unsuppoerted sentences types which requires the user to select cases</li>  
+                                    </ul>   
+                                    <h4 class="govuk-heading-m">Supporting documents</h4>
+                                    <ul class="govuk-list">  
+                                        <li><a class="govuk-link" target="external" href="...">...</a></li>    
+                                 
+                                    </ul> 
+
+                                    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+ 
+
+                                    <form action="post">
+                                    <h4 class="govuk-heading-m">Scenario 1</h4>
+                                    <p class="govuk-hint">Recording a recall - happy path</p>
+
+                                    {{govukButton({
+                                        text: "Launch scenario 1",
+                                        attributes: {
+                                        "formaction": "v14_1/DPS-prisoner-profile",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+                                    <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey).</p> 
+                                    
+                                    </form>  
+
+
+
+                                    <form action="post">
+                                        <h4 class="govuk-heading-m">Scenario 2</h4>
+                                        <p class="govuk-hint">Recording a recall - unsupported sentences unhappy path</p>
+    
+                                        {{govukButton({
+                                            text: "Launch scenario 2",
+                                            attributes: {
+                                            "formaction": "v14_1/DPS-prisoner-profile?toDo=recallsUnsupportedSentences",
+                                            "formmethod": "post"
+                                            },
+                                            classes: "govuk-button--secondary"
+                                            })}}
+                                        <p class="govuk-body">This scenario explores a new manual journey which is part of recording a recall, the user must select sentences from a list as our service had identified sentences it cannot support in CRDS. </p> 
+                                        
+                                        </form>  
+    
+
+
+                                </div>
+                                  
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-14">
                             Version 14
                             
@@ -91,8 +175,8 @@
 
                                     <li>Post-R6 improvements:</li>   
                                         <ul class="govuk-list govuk-list--number">      
-                                            <li>Displaying both sentence and conviction dates to sentence cards</li>    
-                                            <li>Adding overall effective SLED to manual sentence selection page</li>                    
+                                            <li>Improvements to the 'select the relevant offence information' page</li>    
+                                            <li>Improvements to the 'check sentence and offence information' page</li>                    
                                         </ul> 
 
                                     <li>Other changes</li>  
@@ -112,45 +196,50 @@
                                 </ul> 
 
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
-                                <h4 class="govuk-heading-m">1.1 Displaying both sentence and conviction dates to sentence cards</h4> 
-                                <p class="govuk-body">Users have expressed a need to see both sentence and conviction dates for the purposes of reviewing sentence information in recalls.</p> 
-                                <ul class="govuk-list"> 
-                                    <li><a class="govuk-link" target="external" href="v14/recalls/check-sentence-and-offence-information">Check sentence and offence information page</a></li>    
-                                </ul>      
-                                
-                                <h4 class="govuk-heading-m">1.2 Adding overall effective SLED to manual sentence selection page</h4> 
+                                <h4 class="govuk-heading-m">1.1 Improvements to the 'select the relevant offence information' page</h4> 
+                                <h5 class="govuk-heading-s" >Adding overall effective SLED to manual sentence selection page</h5>
                                 <p class="govuk-body">Bringing the unhappy path design into line with happy path, we will surface the overall effectvie SLED on the 'select sentence' page to help people with choosing the appropriate sentences. </p> 
+                               
+                                <h5 class="govuk-heading-s" >Requiring the user to select cases instead of sentences</h5> 
+                                <p class="govuk-body">R6 showed that users were confused by having to select relevant sentences, some selected all sentences just to be sure that they wouldn't be lost. After consideration around accuracy conversations with policy (still undecided). We are planning to test a simplified version of the manual selection where the user selects the entire case, this is intended to make the choice much simpler for the user.</p> 
+                               
                                 <ul class="govuk-list"> 
                                     <li><a class="govuk-link" target="external" href="v14/recalls/unsupported-sentences">Select sentence and offence information page</a></li>    
-                                </ul>      
+                                </ul>  
                                 
-                                <h4 class="govuk-heading-m">2.1 Modifying court case headings to add last warrant date</h4> 
+                                <h4 class="govuk-heading-m">1.2 Improvements to the 'check sentence and offence information' page</h4> 
+                                <h5 class="govuk-heading-s" >Displaying both sentence and conviction dates to sentence cards</h5>
+                                <p class="govuk-body">Users have expressed a need to see both sentence and conviction dates for the purposes of reviewing sentence information in recalls.</p> 
+                                <h5 class="govuk-heading-s">Modifying court case headings to add last warrant date</h5> 
                                 <p class="govuk-body">We've created a new pattern library for surfacing court case information, with that, a new naming convention for helping people identify a court case by adding in the date of last appearance. </p> 
+                               
                                 <ul class="govuk-list"> 
                                     <li><a class="govuk-link" target="external" href="v14/recalls/check-sentence-and-offence-information">Check sentence and offence information page</a></li>    
-                                </ul>       
+                                </ul>      
+                                       
                                 
                                 <h4 class="govuk-heading-m">2.2 New way of displaying latest calculation dates on CRDS</h4> 
                                 <p class="govuk-body">A new design for showing the latest calculation on the release dates and calculation landing page. This design adds a summary list to allow more space to surface information on the source of calculation (particularly improtant where dates are entered on CRDS manually from a paper calculation)</p> 
                                 <ul class="govuk-list"> 
-                                    <li><a class="govuk-link" target="external" href="v13/release-dates">Release dates and calculations landing page - source manual calc</a></li> 
-                                    <li><a class="govuk-link" target="external" href="v13/release-dates-CRDS">Release dates and calculations landing page - source CRDS</a></li>
-                                    <li><a class="govuk-link" target="external" href="v13/release-dates-NOMIS">Release dates and calculations landing page - source nomis</a></li>   
-                                    <li><a class="govuk-link" target="external" href="v13/calculation-history/03-01-2023/calculation-summary">Calculation details - source manual calc</a></li>       
-                                    <li><a class="govuk-link" target="external" href="v13/calculation-history/03-01-2023/calculation-summary-CRDS">Calculation details - source NOMIS</a></li>       
-                                    <li><a class="govuk-link" target="external" href="v13/calculation-history/03-01-2023/calculation-summary-NOMIS">Calculation details - source CRDS</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v14/release-dates">Release dates and calculations landing page - source manual calc</a></li> 
+                                    <li><a class="govuk-link" target="external" href="v14/release-dates-CRDS">Release dates and calculations landing page - source CRDS</a></li>
+                                    <li><a class="govuk-link" target="external" href="v14/release-dates-NOMIS">Release dates and calculations landing page - source nomis</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v14/calculation-history/03-01-2023/calculation-summary">Calculation details - source manual calc</a></li>       
+                                    <li><a class="govuk-link" target="external" href="v14/calculation-history/03-01-2023/calculation-summary-CRDS">Calculation details - source CRDS</a></li>       
+                                    <li><a class="govuk-link" target="external" href="v14/calculation-history/03-01-2023/calculation-summary-NOMIS">Calculation details - source NOMIS</a></li>    
                                 </ul>          
-                                
+<!--                                 
                                 <h4 class="govuk-heading-m">2.3 Unhappy path - 'Recall not possible' error pages (TBC)</h4> 
                                 <p class="govuk-body">For when a recall is not technically possible. </p> 
                                 <ul class="govuk-list"> 
                                     <li><a class="govuk-link" target="external" href="...">...</a></li>    
-                                </ul>          
+                                </ul>           -->
                                 
-                                <h4 class="govuk-heading-m">2.4 Unhappy path - editing UAL overlapping UAL periods (TBC)</h4> 
-                                <p class="govuk-body">For when a recall is not technically possible. </p> 
+                                <h4 class="govuk-heading-m">2.4 Unhappy path - editing UAL overlapping UAL periods</h4> 
+                                <p class="govuk-body">For when there is UAL of the recall dates already existing on the service, we will automatically associate any overlap and then inform the user of what is happening.  </p> 
                                 <ul class="govuk-list"> 
-                                    <li><a class="govuk-link" target="external" href="...">...</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v14/recalls/check-answers">Check answers - record a recall</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v14/recalls/edit/edit-a-recall.html">Edit a recall</a></li>    
                                 </ul>      
                             </div> 
 
@@ -165,13 +254,13 @@
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                     In Design
-                                </strong>
-
-                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                    Closed
                                 </strong> -->
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong>
                         </span>
                         </h2>
                     </div> 
