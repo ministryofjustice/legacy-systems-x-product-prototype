@@ -36,3 +36,13 @@ addFilter('unsupportedInactiveCase', function(arr) {
 addFilter('unsupportedActiveCase', function(arr) {
     return arr.filter(courtCase => courtCase['unsupported'] == 'true' & courtCase['status'] != 'inactive' )
 })
+
+
+addFilter('unsupportedSentence', function(arr) {
+    return arr.filter(appearances => appearances['unsupported-sentence'] == 'true' & appearances['status'] != 'inactive' )
+})
+ 
+
+addFilter('activeSentence', function(arr) {
+    return arr.filter(appearances => appearances['unsupported-sentence'] != 'true' & appearances['status'] != 'inactive' )
+})

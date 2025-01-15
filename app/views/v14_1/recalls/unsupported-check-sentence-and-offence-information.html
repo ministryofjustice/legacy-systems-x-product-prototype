@@ -26,7 +26,7 @@
                 {% endif %}
                 {% for sentence in lastAppearance.sentences %}
 
-                {% if courtCase['unsupported'] == 'true' and sentence['status'] != 'inactive' %}
+                {% if courtCase['unsupported'] == 'true' and courtCase['status'] != 'inactive' %}
                 <div class="offence-card sentence-card">
                     <div class="offence-card-offence-details">
                         <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
