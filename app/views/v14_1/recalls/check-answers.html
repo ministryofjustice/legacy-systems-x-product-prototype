@@ -61,7 +61,12 @@
             Sentences
           </dt>
           <dd class="govuk-summary-list__value">
-            4 sentences
+
+            {% if data['unsupportedSentences'] == 'true' %} 
+            {{ data.courtCases | unsupportedActiveCase | length }} sentences
+            {% else %} 
+            {{ data.courtCases | ActiveCase | length }} sentences
+            {% endif %} 
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -80,8 +85,12 @@
             Recall type
           </dt>
           <dd class="govuk-summary-list__value">
-            {{data['recall-type']}}
-            <!-- <br><span class="govuk-hint">Saved to NOMIS as {{data['recall-type']}}</span> -->
+
+          {% if data['unsupportedSentences'] == 'true' %}
+          Standard recall
+          {% else %} 
+          {{data['recall-type']}}
+          {% endif %} 
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -96,7 +105,7 @@
         
     
       <div class="govuk-inset-text">
-        These recall dates will create <b>1 day</b> of UAL. You can review all UAL dates in the adjustments service, after recording the recall.
+        These recall dates will create <b>3 days</b> of UAL. Once you have confirmed and saved this recall, you can review all UAL dates in the adjustments service.
       </div>
 
  

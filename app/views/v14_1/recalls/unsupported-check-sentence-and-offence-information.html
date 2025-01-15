@@ -17,7 +17,7 @@
                 {% set lastAppearance = courtCase.appearances | last %}
                 {% set courtCaseIndex = loop.revindex0 %}  
 
-                {% if lastAppearance['unsupported'] == 'true' %}
+                {% if courtCase['unsupported'] == 'true' and courtCase['status'] != 'inactive' %}
                 <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }}
                     on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{
                         lastAppearance['warrant-date-year'] }}</h3>
@@ -26,7 +26,7 @@
                 {% endif %}
                 {% for sentence in lastAppearance.sentences %}
 
-                {% if sentence['unsupported-sentence'] == 'true' and sentence['status'] == 'active' %}
+                {% if courtCase['unsupported'] == 'true' and sentence['status'] != 'inactive' %}
                 <div class="offence-card sentence-card">
                     <div class="offence-card-offence-details">
                         <span class="govuk-body">Count {{ sentence['count-number'] }}</span>

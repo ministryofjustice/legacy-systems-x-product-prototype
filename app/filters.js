@@ -22,9 +22,17 @@ addFilter('countDraft', function(arr) {
 })
 
 addFilter('inactiveCase', function(arr) {
-    return arr.filter(courtCase => courtCase['status'] == 'inactive')
+    return arr.filter(courtCase => courtCase['unsupported'] != 'true' & courtCase['status'] == 'inactive')
 })
 
 addFilter('activeCase', function(arr) {
-    return arr.filter(courtCase => courtCase['status'] != 'inactive')
+    return arr.filter(courtCase => courtCase['unsupported'] != 'true' & courtCase['status'] != 'inactive' )
+})
+
+addFilter('unsupportedInactiveCase', function(arr) {
+    return arr.filter(courtCase => courtCase['unsupported'] == 'true' & courtCase['status'] == 'inactive' )
+})
+
+addFilter('unsupportedActiveCase', function(arr) {
+    return arr.filter(courtCase => courtCase['unsupported'] == 'true' & courtCase['status'] != 'inactive' )
 })

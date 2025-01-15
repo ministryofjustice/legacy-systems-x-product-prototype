@@ -10,19 +10,20 @@
         <div class="govuk-grid-column-two-thirds">
             <h1 class="govuk-heading-l">
                 <span class="govuk-caption-xl">Record a recall</span>
-                Select the relevant offence information
+                Select the relevant cases
             </h1>  
             
             <p class="govuk-body">You must select all relevant court cases that this person is being recalled on.</p>  
              
 
-            <p class="govuk-body">The latest SLED (Sentence and licence expiry date) is <b>Thursday, 09 July 2025</b>. This is the SLED on this person's licence.</p>
+            <p class="govuk-body">The latest SLED (Sentence and licence expiry date) is <b>Saturday, 06 September 2025</b>. This is the SLED on this person's licence.</p>
 
             <div class="govuk-checkboxes govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
             {% for courtCase in data.courtCases | reverse %}
             {% set lastAppearance = courtCase.appearances | last %}
-            {% set courtCaseIndex = loop.revindex0 %}  
- 
+            {% set courtCaseIndex = loop.revindex0 %} 
+            
+            {% if courtCase['unsupported'] == "true"  %}  
 
             <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="select-offence" name="select-offence" type="checkbox" value="court-case-ref">
@@ -30,7 +31,9 @@
                     Case {{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}} on {{ lastAppearance['warrant-date-day']}}/{{ lastAppearance['warrant-date-month']}}/{{ lastAppearance['warrant-date-year']}}
                
                 </label>
-            </div>  
+            </div>   
+            {% else %}  
+            {% endif %}  
             {% endfor %}
             </div>
 
