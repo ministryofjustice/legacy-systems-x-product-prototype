@@ -55,6 +55,7 @@
         </div>
 
 
+        {% if data['unsupportedSentences'] == 'true' %} 
 
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key" style="width: 20%;">
@@ -62,11 +63,7 @@
           </dt>
           <dd class="govuk-summary-list__value">
 
-            {% if data['unsupportedSentences'] == 'true' %} 
-            {{ data.courtCases | unsupportedActiveCase | length }} sentences
-            {% else %} 
-            {{ data.courtCases | activeCase | length }} cases
-            {% endif %} 
+            {{ data.courtCases | unsupportedActiveCase | length }} cases
           </dd>
 
           <dd class="govuk-summary-list__actions">
@@ -78,6 +75,8 @@
 
         </div>
 
+        {% else %}  
+        {% endif %} 
 
 
         <div class="govuk-summary-list__row">
