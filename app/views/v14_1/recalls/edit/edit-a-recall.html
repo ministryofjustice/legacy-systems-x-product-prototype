@@ -20,98 +20,115 @@
   <div class="govuk-form-group">
  
 
-        <dl class="govuk-summary-list"> 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">
-              Date of revocation
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['revocation-date-day']}}/{{data['revocation-date-month']}}/{{data['revocation-date-year']}} 
-            </dd>
-
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="revocation-date">Edit<span
-                  class="govuk-visually-hidden"> return to custody date</span>
-                </a>
-
-            </dd>
-
-          </div>
+    <dl class="govuk-summary-list">
 
 
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">
-              Arrest date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['arrest-date-day']}}/{{data['arrest-date-month']}}/{{data['arrest-date-year']}} 
-            </dd>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 30%;">
+          Date of revocation
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['revocation-date-day']}}/{{data['revocation-date-month']}}/{{data['revocation-date-year']}} 
+        </dd>
 
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="return-to-custody-date?editLogic?editing">Edit<span
-                  class="govuk-visually-hidden"> return to custody date</span>
-                </a>
-
-            </dd>
-
-          </div>
-
-
-          <!-- <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">
-              UAL (Unlawfully at large)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              2 days
-            </dd>
-
-            <dd class="govuk-summary-list__actions">
-     
-            </dd>
-
-          </div>
-  -->
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">
-              Sentences
-            </dt>
-            <dd class="govuk-summary-list__value">
-              4 sentences
-            </dd>
-
-            <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="check-sentence-and-offence-information?editLogic?editing">Review
-              <span class="govuk-visually-hidden">sentences</span>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="revocation-date">Edit<span
+              class="govuk-visually-hidden"> return to custody date</span>
             </a>
-            </dd>
+
+        </dd>
+
+      </div>
 
 
-          </div>
- 
-          <div class="govuk-summary-list__row govuk-summary-list__row">
-            <dt class="govuk-summary-list__key" style="width: 40%;">
-              Recall type
-            </dt>
-            <dd class="govuk-summary-list__value">
-              {{data['recall-type']}}
-            </dd>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 30%;">
+          Arrest date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{data['arrest-date-day']}}/{{data['arrest-date-month']}}/{{data['arrest-date-year']}} 
+        </dd>
 
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="recall-type">Edit<span
-                  class="govuk-visually-hidden">recall type</span></a>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="return-to-custody-date">Edit<span
+              class="govuk-visually-hidden"> return to custody date</span>
+            </a>
 
-            </dd>
+        </dd>
 
-          </div>
+      </div>
 
-        </dl>
 
-        
-       
-        <div class="govuk-inset-text">
-          These recall dates will create <b>1 day</b> of UAL. Once you have confirmed and saved this recall, you can review all UAL dates in the adjustments service.
-        </div>
-    
+      {% if data['unsupportedSentences'] == 'true' %} 
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 20%;">
+          Cases
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+          {{ data.courtCases | unsupportedActiveCase | length }} cases
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="unsupported-sentences">Edit<span
+          class="govuk-visually-hidden">cases</span>
+        </a>
+        </dd>
+
+
+      </div>
+
+      {% else %}  
+      {% endif %} 
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 20%;">
+          Sentences
+        </dt>
+        <dd class="govuk-summary-list__value">
+          4 sentences
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+        <a class="govuk-link" href="unsupported-check-sentence-and-offence-information">Review<span
+          class="govuk-visually-hidden">sentences</span>
+        </a>
+        </dd>
+
+
+      </div>
+
+
+      <div class="govuk-summary-list__row govuk-summary-list__row">
+        <dt class="govuk-summary-list__key" style="width: 20%;">
+          Recall type
+        </dt>
+        <dd class="govuk-summary-list__value">
+
+        {% if data['unsupportedSentences'] == 'true' %}
+        Standard recall
+        {% else %} 
+        {{data['recall-type']}}
+        {% endif %} 
+        </dd>
+
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="recall-type">Edit<span
+              class="govuk-visually-hidden"> Standard recall</span></a>
+
+        </dd>
+
+      </div>
+
+    </dl>
+      
+  
+    <div class="govuk-inset-text">
+      These recall dates will create <b>3 days</b> of UAL. Once you have confirmed and saved this recall, you can review all UAL dates in the adjustments service.
+    </div>
+
      
       <div class="govuk-button-group"> 
  
