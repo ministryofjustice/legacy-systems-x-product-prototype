@@ -37,18 +37,141 @@
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-15">
+                            Version 15
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong> -->
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+
+                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong> -->
+
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-15">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v15/DPS-home",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v15/DPS-prisoner-profile",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-full govuk-!-margin-right-6"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+                                
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>Displaying recalls in R&S</li>     
+                                    <li>Recalls from NOMIS</li>   
+                                    <li>Making it clearer which cases to select on the unsupported journey</li>   
+                                    <li>Allowing user to select any recall type</li>   
+                                </ul>
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list">
+                                    <li><a class="govuk-link" target="external" href="https://docs.google.com/presentation/d/18jAtKztPbqhf6pZD008Mko1gRSvxRwlWVkRmhPkPQ4s/edit#slide=id.g31e4035f417_0_0">R7 Playback (Google Slides)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764615918362981&cot=14">R8 iterations board (Miro)</a></li>   
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Displaying a recall in remand and sentencing</h4>  
+                                <p class="govuk-body">Once a recall is record, we need to show which court cases have been part of a recall. In collaboration with R&S, we will adpot a similar design pattern used when cases are merged, using insted text to provide details of the recall against each recall.</p> 
+                              
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/court-cases?toShow=recallHistory">Court cases landing page</a></li>    
+                                </ul>    
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">2. Recalls from NOMIS</h4>  
+                                <p class="govuk-body">...</p> 
+                              
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls?toShow=recallHistory">Recalls landing page</a></li>    
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">3. Making it clearer which cases to select on the unsupported journey</h4>  
+                                <p class="govuk-body">R7 showed mixed results when testing this page. We agreed to tweak the content of the page to try and make it clearer that the user should select cases with active sentences.</p> 
+                              
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/unsupported-sentences">Select cases (unsupported journey)</a></li>    
+                                </ul>  
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">4. Allowing user to select any recall type</h4>  
+                                <p class="govuk-body">Previously we filtered the list of recall types and the user would not be able to choose an incorrect recall type. Previous rounds of research showed that sometimes users will recieve a revocation order from PPCS with a recall type which doesn't match the sentence type and length rules. The user may question this PPCS but it is not always corrected by PPCS. We need to allow the user a way of selecting any recall type whilst still highlighting when a recall type might be incorrect. </p> 
+                              
+                                <h5 class="govuk-heading-s">Happy path - user reseaches the 'select recall type' page, all are available and a correct one is selected</h5>  
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type">Select recall type</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/check-answers">Check your answers</a></li>   
+                                </ul>
+                                <h5 class="govuk-heading-s">Unhappy path - user reseaches the 'select recall type' page, all are available and an incorrect one is selected</h5>  
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type?toShow=incorrectRecallType">Select recall type</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type-intercept?toShow=incorrectRecallType">'Are you sure' intercept page</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/check-answers">Check your answers</a></li>  
+                                </ul>
+                                <h5 class="govuk-heading-s">Happy path - user reseaches the 'standard recall only' page, user confirms this as the correct recall type</h5>  
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type-confirm">Confirm recall type</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/check-answers">Check your answers</a></li>   
+                                </ul>
+                                <h5 class="govuk-heading-s">Uhappy path - user reseaches the 'standard recall only' page, user overrides this recall type</h5>  
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type-confirm?toShow=incorrectRecallType">Confirm recall type</a></li>
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type?toShow=incorrectRecallType">Select recall type</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/recall-type-intercept?toShow=incorrectRecallType">'Are you sure' intercept page</a></li> 
+                                    <li><a class="govuk-link" target="external" href="v15/recalls/check-answers">Check your answers</a></li>     
+                                </ul>
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-13_1">
                             Version 14.1
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                     In Design
-                                </strong>
-
-                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                    Closed
                                 </strong> -->
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong>
                         </span>
                         </h2>
                     </div> 
@@ -63,14 +186,14 @@
                     
                                 <div class="govuk-grid-column-full govuk-!-margin-right-3"> 
                                     <h4 class="govuk-heading-m">What we are testing</h4> 
-                                    <p class="govuk-body">This remote round of UR is due to take place in wc 13th January 2024.</p> 
+                                    <p class="govuk-body">This remote round of UR is due to take place in wc 13th January 2025.</p> 
                                     <p class="govuk-body">In this round, we aim to:</p> 
                                     <ul class="govuk-list govuk-list--bullet"> 
                                         <li>Testing and updated version manual entry journey for unsuppoerted sentences types which requires the user to select cases</li>  
                                     </ul>   
                                     <h4 class="govuk-heading-m">Supporting documents</h4>
                                     <ul class="govuk-list">  
-                                        <li><a class="govuk-link" target="external" href="...">...</a></li>    
+                                        <li><a class="govuk-link" target="external" href="https://docs.google.com/presentation/d/18jAtKztPbqhf6pZD008Mko1gRSvxRwlWVkRmhPkPQ4s/edit#slide=id.g31e4035f417_0_0">R7 playback</a></li>    
                                  
                                     </ul> 
 
@@ -126,13 +249,13 @@
                             <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong> -->
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                            <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                 In Design
-                            </strong>
-
-                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                Closed
                             </strong> -->
+
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
 
                         </span>
                         </h2>

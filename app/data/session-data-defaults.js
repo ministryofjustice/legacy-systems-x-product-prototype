@@ -1,49 +1,6 @@
 module.exports = {
     courtCases: [
-    // { 
-    //     "appearances": [{  
-    //         "court-case-ref": "34F2356911",
-    //         "overall-case-outcome": "Imprisonment",
-    //         "overall-conviction-date-day": "10",
-    //         "overall-conviction-date-month": "07",
-    //         "overall-conviction-date-year": "2024",
-    //         "next-court-date-set": "No",
-    //         "warrant-date-day": "10",
-    //         "warrant-date-month": "07",
-    //         "warrant-date-year": "2024",
-    //         "court-name": "Manchester Crown Court (Crown Square)",
-    //         "overall-sentence-length-years": "0",
-    //         "overall-sentence-length-months": "6",
-    //         "overall-sentence-length-weeks": "0",
-    //         "overall-sentence-length-days": "0",
-    //         "status": "inactive",
-    //         "sentences": [{
-    //                 "count-number": "1",
-    //                 "conviction-date-day": "10",
-    //                 "conviction-date-month": "07",
-    //                 "conviction-date-year": "2024",
-    //                 "offence-start-date-day": "15",
-    //                 "offence-start-date-month": "04",
-    //                 "offence-start-date-year": "2024",
-    //                 "offence-end-date-day": "",
-    //                 "offence-end-date-month": "",
-    //                 "offence-end-date-year": "",
-    //                 "offence-code": [
-    //                     "TH68037"
-    //                 ],
-    //                 "offence-name": "TH68037 - Burglary other than dwelling - theft",
-    //                 "outcome": "Imprisonment",
-    //                 "sentence-type": "SDS (Standard Determinate Sentence)",
-    //                 "sentence-length-years": "0",
-    //                 "sentence-length-months": "6",
-    //                 "sentence-length-weeks": "0",
-    //                 "sentence-length-days": "0",
-    //                 "consecutive-concurrent": "Forthwith"
-    //             } 
-    //         ]
-    //     }
-    // ]
-    //     },
+   
         {
             "source": "nomis",
             "appearances": [{
@@ -300,7 +257,7 @@ module.exports = {
                             "sentence-length-months": "0",
                             "sentence-length-weeks": "6",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "status": "inactive"
                         }
                     ]
@@ -414,7 +371,7 @@ module.exports = {
                             "sentence-length-months": "6",
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "status": "active"
                         },
                         {
@@ -441,7 +398,7 @@ module.exports = {
                             "sentence-length-months": "6",
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "status": "active"
                         },
                         {
@@ -468,7 +425,7 @@ module.exports = {
                             "sentence-length-months": "3",
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "status": "inactive"
                         }
                     ]
@@ -587,7 +544,7 @@ module.exports = {
                             "sentence-length-months": "12",
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "unsupported-sentence": "true",
                             "status": "inactive"
                         } 
@@ -797,7 +754,7 @@ module.exports = {
                             "sentence-length-months": "6",
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "unsupported-sentence": "true",
                             "status": "active"
                         },
@@ -825,7 +782,7 @@ module.exports = {
                             "sentence-length-months": "0",
                             "sentence-length-weeks": "1",
                             "sentence-length-days": "0",
-                            "consecutive-concurrent": "Concurrent",
+                            "consecutive-concurrent": "Concurrent to count 1",
                             "unsupported-sentence": "true",
                             "status": "inactive"
                         }
@@ -835,19 +792,6 @@ module.exports = {
         }
         
     ]
-    
-    // ,courtCase: {
-    //     'court-case-ref': '123',
-    //     'court-name': 'Birmingham Court',
-    //     'warrant-date-day': '12',
-    //     'warrant-date-month': '9',
-    //     'warrant-date-year': '2023',
-    //     'type-of-case': "Remand",
-    //     'overall-case-outcome': "Remanded in custody",
-    //     'next-court-date-set': "No",
-    //      offences: []
-    // } Example of what is stored in the session for submitting a court case
-
-    // Insert values here
+  
 
 }
