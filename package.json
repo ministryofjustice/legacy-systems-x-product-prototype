@@ -3,16 +3,21 @@
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
-    "clean": "rm -rf .tmp node_modules"
+    "compile-sass": "sass --quiet-deps --no-source-map --load-path=node_modules/govuk-frontend/dist --load-path=node_modules/@ministryofjustice/frontend --load-path=. app/assets/sass/application.scss:./assets/stylesheets/application.css --style compressed"
   },
   "dependencies": {
-    "@govuk-prototype-kit/common-templates": "1.2.2",
-    "@ministryofjustice/frontend": "^1.8.1",
+    "@ministryofjustice/frontend": "^3.3.1",
     "@x-govuk/govuk-prototype-filters": "^1.4.3",
-    "govuk-frontend": "^4.7.0",
-    "govuk-prototype-kit": "^13.16.0",
-    "hmpps-court-cases-release-dates-design": "^2.2.0",
-    "hmpps-design-system-frontend": "^1.0.3",
-    "print-this": "github:jasonday/printThis"
+    "govuk-frontend": "5.8.0",
+    "govuk-prototype-kit": "^13.16.2",
+    "hmpps-court-cases-release-dates-design": "^4.2.0",
+    "jquery": "3.7.1"
+  },
+  "devDependencies": {
+    "sass": "^1.79.5"
+  },
+  "engines": {
+    "node": "^20",
+    "npm": "^10.9"
   }
 }

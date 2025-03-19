@@ -18,7 +18,7 @@
     }
 
     &__information {
-      @extend %govuk-list;
+    
       column-gap: $govuk-gutter;
 
       @include govuk-media-query($from: mobile) {
