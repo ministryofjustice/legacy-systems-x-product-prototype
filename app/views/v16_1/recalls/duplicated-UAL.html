@@ -1,0 +1,101 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+
+                <div class="govuk-form-group">
+
+                    <form method="post" action="check-answers">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="recall-type-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                            <h1 class="govuk-fieldset__heading">
+                                <span class="govuk-caption-xl">Record a recall</span>
+                                Confirm how UAL (unlawfully at large) should be added
+                            </h1>
+                        </legend> 
+
+                        <p class="govuk-body">A period of UAL overlaps with the recall dates provided. Confirm how UAL should be added.</p>
+
+                        
+                        <table  id="viewUAL" class="govuk-table">
+                            <caption class="govuk-table__caption govuk-table__caption--s">Existing UAL</caption>
+  
+                            <thead class="govuk-table__head"> 
+                                <th class="govuk-table__header" scope="col" width="20%">Start date</th>
+                                <th class="govuk-table__header" scope="col" width="20%">End date</th> 
+                                <th class="govuk-table__header" scope="col" width="15%">Number of days</th>  
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row"> 
+                                    <td class="govuk-table__cell"> 8/10/2024 </td>
+                                    <td class="govuk-table__cell">11/10/2024</td> 
+                                    <td class="govuk-table__cell" scope="col">3</td>   
+                                </tr> 
+                            </tbody> 
+                        </table>
+
+                        
+                        <table  id="viewUAL" class="govuk-table">
+                            <caption class="govuk-table__caption govuk-table__caption--s">Proposed UAL</caption>
+  
+                            <thead class="govuk-table__head"> 
+                                <th class="govuk-table__header" scope="col" width="20%">Revocation date</th>
+                                <th class="govuk-table__header" scope="col" width="20%">Arrest date</th> 
+                                <th class="govuk-table__header" scope="col" width="15%">Number of days</th>  
+                            </thead>
+                            <tbody class="govuk-table__body">
+                                <tr class="govuk-table__row"> 
+                                    <td class="govuk-table__cell"> 8/10/2024 </td>
+                                    <td class="govuk-table__cell">12/10/2024</td> 
+                                    <td class="govuk-table__cell" scope="col">4</td>   
+                                </tr> 
+                            </tbody> 
+                        </table>
+ 
+ 
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="recall-type" name="recall-type" type="radio" value="Standard recall" data-qa="recalltypeRadio-1" >
+                                <label class="govuk-label govuk-radios__label" for="recall-type">
+                                    Delete existing <b>3 days</b> and add new <b>4 days</b> proposed
+                                </label> 
+                            </div>
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="recall-type-2" name="recall-type" type="radio" value="Fixed-term" data-qa="recalltypeRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="recall-type-2">
+                                    Keep existing <b>3 days</b> and add and additional <b>1 day</b> 
+                                </label> 
+                            </div>  
+                        </div> 
+                     
+
+                    </fieldset> 
+                </div>
+
+                <div class="govuk-button-group"> 
+
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitfixed">
+                            Continue
+                        </button> 
+                    <!-- </form> -->
+                    <!-- <form method="post" action="cancel"> -->
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -31,14 +31,74 @@
                 </strong>
             </div>
 
-            <!-- Version 15.1 -->
+
+            <!-- Version recalls prototype v17.1 -->
+            <h2 class="govuk-heading-l">Version 16.1</h2>
+          
+                <div class="govuk-grid-row">  
+                     
+            
+                        <div class="govuk-grid-column-full govuk-!-margin-top-4"> 
+                            <h4 class="govuk-heading-m">What we are testing</h4> 
+                            <p class="govuk-body">This remote round of UR is due to take place in wc 16th March 2025.</p> 
+                            <p class="govuk-body">In this round, we aim to:</p> 
+                            <ul class="govuk-list govuk-list--bullet"> 
+                                <li>Testing the laest designs for view and edit a recall - part of this round we will take the user through the happy path. </li>  
+                            </ul>   
+                            <h4 class="govuk-heading-m">Supporting documents</h4>
+                            <ul class="govuk-list">  
+                                <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764615918362981&cot=14">R8 design iterations (miro)</a></li>    
+                         
+                            </ul> 
+
+                            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+                            <form action="post">
+                            <h4 class="govuk-heading-m">Scenario 1A</h4>
+                            <p class="govuk-hint">Recording a recall - happy path</p>
+
+                            {{govukButton({
+                                text: "Launch scenario 1A",
+                                attributes: {
+                                "formaction": "v16_1/DPS-prisoner-profile",
+                                "formmethod": "post"
+                                },
+                                classes: "govuk-button--secondary"
+                                })}}
+                            <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey).</p> 
+                            
+                            </form>  
+
+
+                            <form action="post">
+                            <h4 class="govuk-heading-m">Scenario 1B</h4>
+                            <p class="govuk-hint">Viewing and editing a recall</p>
+
+                            {{govukButton({
+                                text: "Launch scenario 1B",
+                                attributes: {
+                                "formaction": "v16_1/overview?nomisRecall=true",
+                                "formmethod": "post"
+                                },
+                                classes: "govuk-button--secondary"
+                                })}}
+                            <p class="govuk-body">This scenario will test view and edit a recall.</p> 
+                            
+                            </form>  
+ 
+                        </div>
+                          
+            </div>
+
+            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+            <!-- Version recalls prototype v15.1 -->
             <h2 class="govuk-heading-l">Version 15.1</h2>
           
                 <div class="govuk-grid-row">  
                     
-                    
-
-            
+                     
                         <div class="govuk-grid-column-full govuk-!-margin-top-4"> 
                             <h4 class="govuk-heading-m">What we are testing</h4> 
                             <p class="govuk-body">This remote round of UR is due to take place in wc 17th February 2025.</p> 
@@ -56,13 +116,30 @@
 
 
                             <form action="post">
-                            <h4 class="govuk-heading-m">Scenario 1</h4>
+                            <h4 class="govuk-heading-m">Scenario 1A</h4>
                             <p class="govuk-hint">Recording a recall - happy path</p>
 
                             {{govukButton({
-                                text: "Launch scenario 1",
+                                text: "Launch scenario 1A",
                                 attributes: {
                                 "formaction": "v15_1/DPS-prisoner-profile",
+                                "formmethod": "post"
+                                },
+                                classes: "govuk-button--secondary"
+                                })}}
+                            <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey).</p> 
+                            
+                            </form>  
+
+
+                            <form action="post">
+                            <h4 class="govuk-heading-m">Scenario 1B</h4>
+                            <p class="govuk-hint">Recording a recall - recall type intercept</p>
+
+                            {{govukButton({
+                                text: "Launch scenario 1B",
+                                attributes: {
+                                "formaction": "v15_1/DPS-prisoner-profile?recallTypeIntercept=true",
                                 "formmethod": "post"
                                 },
                                 classes: "govuk-button--secondary"
@@ -80,7 +157,7 @@
                                 {{govukButton({
                                     text: "Launch scenario 2",
                                     attributes: {
-                                    "formaction": "v15_1/DPS-prisoner-profile?unsupportedSentences=true",
+                                    "formaction": "v15_2/DPS-prisoner-profile?unsupportedSentences=true",
                                     "formmethod": "post"
                                     },
                                     classes: "govuk-button--secondary"
@@ -94,6 +171,7 @@
                           
             </div>
 
+ 
 
             <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 

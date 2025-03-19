@@ -1,0 +1,444 @@
+{% extends "./template.html" %}
+{% set adjustmentsActive = true %}
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+        <h1 class="govuk-heading-xl">
+            <!-- <span class="govuk-caption-xl">Adjust release dates</span> -->
+            Adjustments
+        </h1>
+    </div>
+</div> 
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-two-thirds">
+{% if data['toDo'] == 'ADAupdated' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA updates</h2>
+    <p class="govuk-body">Updates have been made to ADA (Additional days awarded) information, which need to be approved.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review ADA
+    </a>
+    </section>
+
+</article>
+
+
+{% elif data['toDo'] == 'ADAnomis' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA adjudication</h2>
+    <p class="govuk-body">This service has identified ADA adjustments that were created in NOMIS. You must review the adjudications with ADAs and approve them in this service.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review ADA
+    </a>
+    </section>
+
+</article>
+
+
+{% elif data['toDo'] == 'ADAnoAdjustment' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review ADA adjudication</h2>
+    <p class="govuk-body">This service has identified an ADA adjustment with no supporting ADA adjudication. You must review the ADA adjustment and confirm whether it should be deleted.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review ADA
+    </a>
+    </section>
+
+</article>
+
+
+{% elif data['toDo'] == 'PADAreview' %}
+
+
+<article class="moj-ticket-panel" aria-label="Sub navigation 1">
+
+    <section class="moj-ticket-panel__content moj-ticket-panel__content--grey govuk-!-margin-bottom-8" aria-label="Section 1">
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Review PADA</h2>
+    <p class="govuk-body">There is a PADA (Prospective additional days awarded) recorded for Joe Bloggs. Review the PADA and approve if it's relevant to the current sentence.</p>
+    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button">
+        Review PADA
+    </a>
+    </section>
+
+</article>
+
+{% else %}
+
+{% endif %}
+</div>
+</div>
+
+
+
+{% if data['toShow'] == "courtCaseAddedFalse" and data['viewOption'] == 'RSReleasedTrue' %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no court cases recorded for Joe Bloggs.</p>
+        <p class="govuk-body"><a href="#">Record a court case now</a></p>
+    </div>
+
+</div>
+
+{% elif data['toShow'] == "courtCaseAddedFalse" %} or {% elif data['toShow'] == "noActiveSentences" %}
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+       
+        <p class="govuk-body">There are no sentences for Joe Bloggs.</p>
+        <p class="govuk-body">Check the details in NOMIS and then <a href="#">try again</a>.</p> 
+    </div>
+</div>
+
+
+{% else %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <!-- <p>This page lists all the adjustments that have been recorded for Joe Bloggs. You can add new adjustments, update existing information or review remand that has been logged in NOMIS.</p> -->
+    </div>
+    <div class="govuk-grid-column-full">
+
+        <h2 class="govuk-heading-m">Deductions</h2>
+    
+    </div>
+   
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-7" style=" display: flex; flex-wrap: wrap; gap: 10px;">
+        <!-- Adjustment 1 -->
+        <div class="adjustment-card">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Remand</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                        Add new<span class="govuk-visually-hidden"> add new</span>
+                    </a>
+                    </li>
+                    <!-- <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-remand-summary">
+                        View<span class="govuk-visually-hidden"> remand</span>
+                    </a>
+                    </li> -->
+                </ul>
+            </div>
+
+            <div class="adjustment-card_content">
+                <span id="REMAND" class="count govuk-body">0</span><span class="govuk-body">days</span>
+                <!-- <p class="govuk-body govuk-!-font-size-14">Last updated on 10 May 2023 by HMP Bristol</p> -->
+                <!-- <details class="govuk-details" data-module="govuk-details" style="margin-bottom: 0px">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          More about remand
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                        
+                    </div>
+                </details> -->
+            </div>
+        </div>
+        <!-- Adjustment 2 -->
+        <div class="adjustment-card ">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Tagged bail</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                        Add new<span class="govuk-visually-hidden"> add new</span>
+                    </a>
+                    </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                </ul>
+            </div>
+            <div class="adjustment-card_content">
+                <span id="TAGGED-BAIl"  class="count govuk-body">0</span><span class="govuk-body">days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <ul class="govuk-list govuk-!-padding-top-3">-->
+<!--                                        <li><a href="add-tagged-bail.html">Add tagged bail</a></li>-->
+<!--                                        <li><a href="add-tagged-bail.html">View/Edit tagged bail</a></li>-->
+<!--                                    </ul>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          More about tagged bail
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                        
+                    </div>
+                </details> -->
+
+            </div>
+        </div>
+        <!-- Adjustment 3 -->
+       
+        <div class="adjustment-card ">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Lawfully at large</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                        Add new<span class="govuk-visually-hidden"> add new</span>
+                    </a>
+                    </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                </ul>
+            </div>
+            <div class="adjustment-card_content">
+                <span id="LAL"  class="count govuk-body">0</span><span class="govuk-body">days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                          More about Lawfully at large
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                        
+                    </div>
+                </details> -->
+
+            </div>
+        </div>
+        <!-- Adjustment 4 -->
+        <div class="adjustment-card ">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">RADA (Restore additional days awarded)</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="rada.html">
+                        Add new<span class="govuk-visually-hidden"> add new</span>
+                    </a>
+                    </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view.html">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                </ul>
+            </div>
+            <div class="adjustment-card_content">
+                <span id="RADA" class="count govuk-body">0</span><span class="govuk-body">days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            More about RADA
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                        
+                    </div>
+                </details> -->
+            </div>
+        </div>
+        <!-- Adjustment 5 -->
+        <div class="adjustment-card ">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Special remission</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action">
+                        <a class="govuk-link" href="#">
+                            Add new<span class="govuk-visually-hidden"> add new</span>
+                        </a>
+                    </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                </ul>
+            </div>
+            <div class="adjustment-card_content">
+                <span class="count govuk-body">0</span><span class="govuk-body">days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                            More about Special remission
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                        
+                    </div>
+                </details> -->
+            </div>
+        </div>
+
+        <!-- Adjustment 5 -->
+            <div class="adjustment-card ">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">Time spent in custody abroad</h2>
+                    <ul class="govuk-summary-card__actions">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">
+                            Add new<span class="govuk-visually-hidden"> add new</span>
+                        </a>
+                        </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                    </ul>
+                </div>
+                <div class="adjustment-card_content">
+                    <span class="count govuk-body">0</span><span class="govuk-body">days</span>
+<!--                                    <a class="govuk-link" href="#">-->
+<!--                                        view details<span class="govuk-visually-hidden"> view details</span>-->
+<!--                                    </a>-->
+<!--                                    <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                    <!-- <details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                More about Time spent in custody abroad
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            Here you will find details about this adjustment type......                                        
+                        </div>
+                    </details> -->
+                </div>
+            </div>
+    </div>
+
+
+    <div class="govuk-grid-column-full">
+
+        <h2 class="govuk-heading-m">Additions</h2>
+
+    </div> 
+
+    <div class="govuk-grid-column-full govuk-!-margin-bottom-7" style=" display: flex; flex-wrap: wrap; gap: 10px;">
+        <div class="adjustment-card ">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">UAL (Unlawfully at large)</h2>
+                <ul class="govuk-summary-card__actions">
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="ual.html">Add new<span class="govuk-visually-hidden"> add new</span></a></li>
+                    
+                {% if data['toShow'] == 'ualAdded'%}
+                <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ual">View<span class="govuk-visually-hidden"> View</span></a></li>
+            </ul>
+        </div>
+        <div class="adjustment-card_content">
+            
+            <span id="UAL" class="count govuk-body">1</span><span class="govuk-body">day</span>
+            {% elif data['ualEdited'] == 'true' or data['recallEdited'] == 'true' %}
+            <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ual">View<span class="govuk-visually-hidden"> View</span></a></li>
+        </ul>
+    </div>
+    <div class="adjustment-card_content">
+        
+        <span id="UAL" class="count govuk-body">2</span><span class="govuk-body">days</span>
+              
+           
+        
+                    {% elif data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ual">View<span class="govuk-visually-hidden"> View</span></a></li>
+                </ul>
+            </div>
+            <div class="adjustment-card_content">
+                
+                <span id="UAL" class="count govuk-body">1</span><span class="govuk-body">day</span>
+
+        {% else %}
+
+            </ul>
+        </div>
+        <div class="adjustment-card_content">
+            
+            <span id="UAL" class="count govuk-body">0</span><span class="govuk-body">days</span>
+        {% endif %}
+                <!-- <a class="govuk-link govuk-body" href="#">
+                    view details<span class="govuk-visually-hidden"> view details</span>
+                </a> -->
+<!--                                <p class="govuk-body govuk-!-font-size-14">Last updated on 2 jun 2023 by Belmarsh prison</p>-->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              More about UAL
+                            </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                   
+                     </div>
+                </details> -->
+            </div>
+        </div>
+        <div class="adjustment-card ">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title">ADA (Additional days awarded)</h2>
+                    <ul class="govuk-summary-card__actions">
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="date-of-ada.html">-->
+<!--                                            Add new<span class="govuk-visually-hidden"> add new</span>-->
+<!--                                        </a>-->
+                        </li>
+<!--                                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="view.html">-->
+<!--                                            Edit<span class="govuk-visually-hidden"> Edit</span>-->
+<!--                                        </a>-->
+<!--                                        </li>-->
+                    </ul>
+                </div>
+            <div class="adjustment-card_content">
+                <span id="ADA" class="count-2 govuk-body">0</span><span class="govuk-body">days</span>
+                <!-- <a class="govuk-link govuk-body" href="view-ada.html">
+                    view details<span class="govuk-visually-hidden"> view details</span>
+                </a>
+                <p class="govuk-body govuk-!-font-size-14">Last updated on 15 Dec 2022 by WMI</p> -->
+                <!-- <details class="govuk-details" data-module="govuk-details">
+                    <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                              More about ADA
+                            </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        Here you will find details about this adjustment type......                                    
+                    </div>
+                </details> -->
+            </div>
+        </div>
+    
+    </div>
+            
+    </div>
+</div>
+
+</div>
+  
+{% endif %}
+<script>
+function toggleAlert() {
+    var x = document.getElementById("alert");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+}
+</script>
+{% endblock %}

@@ -4,24 +4,25 @@
 <form method="post" action="check-answers">
 <div class="moj-interruption-card">
     <div class="moj-interruption-card__content">
-      <h1 class="govuk-heading-l moj-interruption-card__heading" style="color: #ffff;">Should this be a 14-day fixed term recall?</h1>
+      <h1 class="govuk-heading-l moj-interruption-card__heading" style="color: #ffff;">Is this the correct recall type?</h1>
       <div class="govuk-body-l moj-interruption-card__body">
-        <p>Based on the sentence types and overall sentence length, this service has calculated that a 14-day recall should be recorded. </p> 
-        <p>The recall type currently recorded is <b>{{data['recall-type']}}</b>.</p> 
+        <p>This service has identified that the recall type selected could be incorrect. </p> 
+        <p>The recall type currently selected is: <b>{{data['recall-type']}}</b>.</p> 
         <h2 class="govuk-heading-m moj-interruption-card__heading" style="color: #ffff;">What to do next</h2> 
-    
-        <p>Contact the PPCS to check the recall type.</p>
-        <p>If it is a 14-day recall, <a class="govuk-link--inverse" href="recall-type">go back and update the recall details</a>.</p>
-        <p>If the recall type currently recorded is correct, continue to save the recall.</p>
+        <ul class=" govuk-list--number">
+            <li>Check with PPCS that this is the correct recall type.</li>
+            <li>If you need to make a change to the recall, <a class="govuk-link--inverse" href="recall-type?recallTypeIntercept=false">go back and update the recall details</a>.</li>
+            <li>Once you have confirmed the recall is correct, select continue</li>
+        </ul> 
     
       </div>
       <div class="govuk-button-group moj-interruption-card__actions">
    
         <button role="button" draggable="false" type="button" class="govuk-button govuk-button--inverse" data-module="govuk-button">
-          Save recall
+          Continue
         </button>
   
-        <a class="govuk-link govuk-link--inverse" href="recall-type">Update recall details</a>
+        <a class="govuk-link govuk-link--inverse" href="cancel">Cancel</a>
   
       </div>
     </div>

@@ -26,51 +26,51 @@
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="arrested" name="arrested" type="radio" value="email"
-                  data-aria-controls="conditional-arrested">
+                <input class="govuk-radios__input" id="arrested" name="arrested" type="radio" value="yes">
                 <label class="govuk-label govuk-radios__label" for="arrested">
                   Yes
                 </label>
               </div>
+            
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="arrested-2" name="arrested" type="radio" value="phone"
-                  data-aria-controls="conditional-arrested-2">
+                <input class="govuk-radios__input" id="arrested-2" name="arrested" type="radio" value="no"
+                  data-aria-controls="conditional-arrested">
                 <label class="govuk-label govuk-radios__label" for="arrested-2">
                   No
                 </label>
               </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-arrested-2">
+            
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-arrested">
                 <div class="govuk-form-group">
-
-                  <div class="govuk-date-input" id="arrest-date">
-                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                      <h2 class="govuk-fieldset__heading">
-                        Date they were arrested
-                      </h2>
-                    </legend>
-
-                    <div id="dob-hint" class="govuk-hint">
-                      For example, 31 3 2024
-                    </div>
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                    <h2 class="govuk-fieldset__heading">
+                      Date they were arrested
+                    </h2>
+                  </legend>
+            
+                  <div id="dob-hint" class="govuk-hint">
+                    For example, 31 3 2024
+                  </div>
+            
+                  <div class="govuk-date-input">
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="arrest-date-day">
                           Day
-                        </label> 
+                        </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-day" name="arrest-date-day" type="text" inputmode="numeric" maxlength="2">
                       </div>
                     </div>
-
+            
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="arrest-date-month">
                           Month
-                        </label> 
+                        </label>
                         <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-month" name="arrest-date-month" type="text" inputmode="numeric" maxlength="2">
                       </div>
                     </div>
-
+            
                     <div class="govuk-date-input__item">
                       <div class="govuk-form-group">
                         <label class="govuk-label govuk-date-input__label" for="arrest-date-year">
@@ -80,10 +80,10 @@
                       </div>
                     </div>
                   </div>
-
                 </div>
               </div>
             </div>
+            
           </fieldset>
         </div>
 

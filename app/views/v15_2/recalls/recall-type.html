@@ -1,0 +1,123 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+
+                <div class="govuk-form-group">
+
+                    <form method="post" action="check-answers">
+
+                 
+                        <fieldset class="govuk-fieldset" aria-describedby="recall-type-hint">
+                    
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Record a recall</span>
+                                    Select the type of recall
+                                </h1>
+                            </legend> 
+    
+                            <p class="govuk-body">We've identified these types of recall based on this person's sentences and offences. </p>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type" name="recall-type" type="radio" value="Standard recall" data-qa="recalltypeRadio-1" >
+                                    <label class="govuk-label govuk-radios__label" for="recall-type">
+                                        Standard
+                                    </label> 
+                                </div>
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-2" name="recall-type" type="radio" value="14-day fixed-term" data-qa="recalltypeRadio-2">
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-2">
+                                        14-day fixed-term
+                                    </label> 
+                                </div> 
+                                
+                                
+            {% if data['recallTypeIntercept'] == 'false' %}
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-7" name="recall-type" type="radio" value="28-day fixed-term" data-qa="recalltypeRadio-7" checked>
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-7">
+                                        28-day fixed-term
+                                    </label> 
+                                </div>
+    
+                            
+            {% else %}
+                       
+            <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="recall-type-7" name="recall-type" type="radio" value="28-day fixed-term" data-qa="recalltypeRadio-7" >
+                <label class="govuk-label govuk-radios__label" for="recall-type-7">
+                    28-day fixed-term
+                </label> 
+            </div>  
+            {% endif %}       
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-3" name="recall-type" type="radio" value="Standard recall from HDC" data-qa="recalltypeRadio-3">
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-3">
+                                        Standard recall from HDC
+                                    </label> 
+                                </div> 
+                                
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-4" name="recall-type" type="radio" value="14-day fixed-term from HDC" data-qa="recalltypeRadio-4">
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-4">
+                                        14-day fixed-term from HDC
+                                    </label> 
+                                </div> 
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-8" name="recall-type" type="radio" value="28-day fixed-term from HDC" data-qa="recalltypeRadio-8">
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-8">
+                                        28-day fixed-term from HDC
+                                    </label> 
+                                </div> 
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-5" name="recall-type" type="radio" value="HDC recalled from curfew conditions" data-qa="recalltypeRadio-5">
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-5">
+                                        HDC recalled from curfew conditions
+                                    </label> 
+                                </div> 
+    
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="recall-type-6" name="recall-type" type="radio" value="HDC recalled from inability to monitor" data-qa="recalltypeRadio-6">
+                                    <label class="govuk-label govuk-radios__label" for="recall-type-6">
+                                        HDC recalled from inability to monitor
+                                    </label> 
+                                </div> 
+    
+                            </div> 
+    
+     
+                           
+    
+                        </fieldset> 
+                </div>
+
+                <div class="govuk-button-group"> 
+
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitfixed">
+                            Continue
+                        </button> 
+                    <!-- </form> -->
+                    <!-- <form method="post" action="cancel"> -->
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

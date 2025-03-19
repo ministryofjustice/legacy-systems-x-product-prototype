@@ -1,0 +1,145 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="recall-type" class="govuk-back-link">Back</a>
+</div>
+<!-- Documents -->
+<div class="govuk-grid-row govuk-!-margin-top-6">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      <span class="govuk-caption-xl">Record a recall</span>
+      Check your answers
+    </h1>
+  </div>
+</div>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds"> 
+      <dl class="govuk-summary-list">
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width: 30%;">
+            Date of revocation
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['revocation-date-day']}}/{{data['revocation-date-month']}}/{{data['revocation-date-year']}} 
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="revocation-date">Edit<span
+                class="govuk-visually-hidden"> return to custody date</span>
+              </a>
+
+          </dd>
+
+        </div>
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width: 30%;">
+            Arrest date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{data['arrest-date-day']}}/{{data['arrest-date-month']}}/{{data['arrest-date-year']}} 
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="return-to-custody-date">Edit<span
+                class="govuk-visually-hidden"> return to custody date</span>
+              </a>
+
+          </dd>
+
+        </div>
+
+
+        {% if data['unsupportedSentences'] == 'true' %} 
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width: 20%;">
+            Cases
+          </dt>
+          <dd class="govuk-summary-list__value">
+
+            {{ data.courtCases | unsupportedActiveCase | length }} cases
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="unsupported-sentences">Edit<span
+            class="govuk-visually-hidden">cases</span>
+          </a>
+          </dd>
+
+
+        </div>
+
+        {% else %}  
+        {% endif %} 
+
+
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width: 20%;">
+            Sentences
+          </dt>
+          <dd class="govuk-summary-list__value">
+            4 sentences
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="unsupported-check-sentence-and-offence-information">Review<span
+            class="govuk-visually-hidden">sentences</span>
+          </a>
+          </dd>
+
+
+        </div>
+
+
+        <div class="govuk-summary-list__row govuk-summary-list__row">
+          <dt class="govuk-summary-list__key" style="width: 20%;">
+            Recall type
+          </dt>
+          <dd class="govuk-summary-list__value">
+ 
+          {{data['recall-type']}}
+          
+          </dd>
+
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="recall-type">Edit<span
+                class="govuk-visually-hidden"> Standard recall</span></a>
+
+          </dd>
+
+        </div>
+
+      </dl>
+        
+    
+      <div class="govuk-inset-text">
+        These recall dates will create <b>3 days</b> of UAL. Once you have confirmed and saved this recall, you can review all UAL dates in the adjustments service.
+      </div>
+
+ 
+
+      <div class="govuk-button-group">  
+
+        <form action="recall-complete" method="post">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+            Confirm and save
+          </button> 
+      </form> 
+
+        <form method="post" action="cancel">
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                Cancel
+            </button>
+        </form>
+      </div> 
+
+  </div>
+</div>
+</div>
+{% endblock %}

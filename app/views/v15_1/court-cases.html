@@ -10,7 +10,7 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
         {% if data.courtCases | length %}
-        <div class="govuk-grid-row">
+        <div class="govuk-grid-row govuk-!-margin-bottom-6">
             <div class="govuk-grid-column-full">
                 <div class="moj-search search">
                     <form action="#" method="post">
@@ -65,7 +65,7 @@
                             <p class="govuk-body"><a href="add-a-court-case/task-list?courtCaseIndex={{loop.revindex0}}">Continue adding appearance information</a></p>
                         {% else %}
                         {% if data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %}
-                        <div class="govuk-inset-text govuk-!-margin-top-2">This court case was part of one or more recalls. You can <a href="recalls/edit/edit-a-recall">view and edit the recall details</a>.</div>
+                        <div class="govuk-inset-text govuk-!-margin-top-2">This court case was related to one or more recalls. You can <a href="recalls/edit/edit-a-recall">view and edit the recall details</a>.</div>
                         {% endif %}  
 
                         <dl class="govuk-summary-list">
@@ -774,8 +774,8 @@
                             <p class="govuk-body"><a href="add-a-court-case/task-list?courtCaseIndex={{loop.revindex0}}">Continue adding appearance information</a></p>
                         {% else %}
 
-                        {% if data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %}
-                        <div class="govuk-inset-text govuk-!-margin-top-2">This court case was part of one or more recalls. You can <a href="recalls/edit/edit-a-recall">view and edit the recall details</a>.</div>
+                        {% if data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %} 
+                        <div class="govuk-inset-text govuk-!-margin-top-2">This court case was related to a recall recorded on NOMIS. <a href="recalls/edit/edit-a-recall">View the recall details</a>.</div>
                         {% endif %}  
                         <dl class="govuk-summary-list">
                             <div class="govuk-summary-list__row">
