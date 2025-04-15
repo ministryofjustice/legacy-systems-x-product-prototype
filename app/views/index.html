@@ -33,6 +33,81 @@
  
 
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-16_1">
+                            Version 17.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                    In Design
+                                </strong>
+
+                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong> -->
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-16_1">
+                        <div class="govuk-grid-row">
+                            
+            
+                        <div class="govuk-grid-column-full govuk-!-margin-top-4"> 
+                            <h4 class="govuk-heading-m">What we are testing</h4> 
+                            <p class="govuk-body">This remote round of UR is due to take place in wc 15 April 2025.</p> 
+                            <p class="govuk-body">In this round, we aim to:</p> 
+                            <ul class="govuk-list govuk-list--bullet"> 
+                                <li>Testing the iterated designs for manual unsupported journeys. </li>  
+                            </ul>   
+                            <h4 class="govuk-heading-m">Supporting documents</h4>
+                            <ul class="govuk-list">  
+                                <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764619592856271&cot=14">R9 design iterations (miro)</a></li>    
+                         
+                            </ul> 
+
+                            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+                            <form action="post">
+                            <h4 class="govuk-heading-m">Scenario 1A</h4>
+                            <p class="govuk-hint">Recording a recall - happy path</p>
+
+                            {{govukButton({
+                                text: "Launch scenario 1A",
+                                attributes: {
+                                "formaction": "v17_1/DPS-prisoner-profile",
+                                "formmethod": "post"
+                                },
+                                classes: "govuk-button--secondary"
+                                })}}
+                            <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey).</p> 
+                            
+                            </form>  
+
+
+                            <form action="post">
+                            <h4 class="govuk-heading-m">Scenario 1B</h4>
+                            <p class="govuk-hint">Recording a recall - unsupported path</p>
+
+                            {{govukButton({
+                                text: "Launch scenario 1B",
+                                attributes: {
+                                "formaction": "v17_1/overview?unsupportedSentences=true",
+                                "formmethod": "post"
+                                },
+                                classes: "govuk-button--secondary"
+                                })}}
+                            <p class="govuk-body">This scenario will test mannual unsupported journey.</p> 
+                            
+                            </form>  
+ 
+                        </div>
+                    </div>
+                </div>
+                </div>
 
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
@@ -89,6 +164,7 @@
                                 
                                 <ul class="govuk-list govuk-list--number">  
                                     <li>Validation interupption for recalls overlapping adjustments</li>    
+                                    <li>'Recall not possible' error pages</li>  
                                 </ul>
 
 
@@ -105,6 +181,33 @@
                                     <li><a class="govuk-link" target="external" href="v17/recalls/recall-overlapping-adjustments">The revocation date and arrest date overlap with existing adjustments - interruption page</a></li>    
                                 </ul>    
  
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">2. 'Recall not possible' error pages</h4>  
+                                <p class="govuk-body">Where validation issus with underlying sentence data would couse a CRDS calc to fail, the user cannot record a recall until the issues is resolved. These error pages instruct the user on what to do in these instances. </p> 
+                              
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=multiple-errors">Example of multiple errors are once</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=EDS18_EDS21_EDSU18_SENTENCE_TYPE_INCORRECT">Error: EDS18_EDS21_EDSU18_SENTENCE_TYPE_INCORRECT</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=EDS_LICENCE_TERM_LESS_THAN_ONE_YEAR">Error: EDS_LICENCE_TERM_LESS_THAN_ONE_YEAR</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=EDS_LICENCE_TERM_MORE_THAN_EIGHT_YEARS">Error: EDS_LICENCE_TERM_MORE_THAN_EIGHT_YEARS</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=LASPO_AR_SENTENCE_TYPE_INCORRECT">Error: LASPO_AR_SENTENCE_TYPE_INCORRECT</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=MORE_THAN_ONE_IMPRISONMENT_TERM">Error: MORE_THAN_ONE_IMPRISONMENT_TERM</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=MORE_THAN_ONE_LICENCE_TERM">Error: MORE_THAN_ONE_LICENCE_TERM</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=OFFENCE_DATE_AFTER_SENTENCE_RANGE_DATE">Error: OFFENCE_DATE_AFTER_SENTENCE_RANGE_DATE</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=OFFENCE_DATE_AFTER_SENTENCE_START_DATE">Error: OFFENCE_DATE_AFTER_SENTENCE_START_DATE</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=OFFENCE_MISSING_DATE">Error: OFFENCE_MISSING_DATE</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SEC236A_SENTENCE_TYPE_INCORRECT">Error: SEC236A_SENTENCE_TYPE_INCORRECT </a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SEC_91_SENTENCE_TYPE_INCORRECT">Error: SEC_91_SENTENCE_TYPE_INCORRECT</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SENTENCE_HAS_MULTIPLE_TERMS">Error: SENTENCE_HAS_MULTIPLE_TERMS</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SENTENCE_HAS_NO_IMPRISONMENT_TERM">Error: SENTENCE_HAS_NO_IMPRISONMENT_TERM</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SENTENCE_HAS_NO_LICENCE_TERM">Error: SENTENCE_HAS_NO_LICENCE_TERM</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SOPC18_SOPC21_SENTENCE_TYPE_INCORRECT">Error: SOPC18_SOPC21_SENTENCE_TYPE_INCORRECT </a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SOPC_LICENCE_TERM_NOT_12_MONTHS">Error: SOPC_LICENCE_TERM_NOT_12_MONTHS</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=ZERO_IMPRISONMENT_TERM">Error: ZERO_IMPRISONMENT_TERM</a></li>      
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=REMAND_ON_OR_AFTER_SENTENCE_DATE">Error: REMAND_ON_OR_AFTER_SENTENCE_DATE</a></li>   
+                                </ul>    
+ 
  
                             </div> 
 
@@ -119,13 +222,13 @@
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                     In Design
-                                </strong>
-
-                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                    Closed
                                 </strong> -->
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong>
                         </span>
                         </h2>
                     </div> 

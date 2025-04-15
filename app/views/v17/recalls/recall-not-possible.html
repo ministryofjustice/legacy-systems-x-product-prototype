@@ -1,0 +1,87 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../recalls" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+
+                <h1 class="govuk-heading-l">
+                <!-- <span class="govuk-caption-l">Record a recall</span> -->
+                You cannot record a recall</h1>
+
+                {% if data['error'] == 'EDS18_EDS21_EDSU18_SENTENCE_TYPE_INCORRECT' %}
+                <p class="govuk-body">This is because the EDS sentence type for court case 34F2356911 count 2 cannot be used when the sentence date is on or after 1 December 2022.</p>
+            
+                {% elif data['error'] == 'EDS_LICENCE_TERM_LESS_THAN_ONE_YEAR' %}
+                <p class="govuk-body">This is because court case 34F2356911 count 2 must have a licence term of at least one year.</p>
+           
+                {% elif data['error'] == 'EDS_LICENCE_TERM_MORE_THAN_EIGHT_YEARS' %}
+                <p class="govuk-body">This is because the licence term for court case 34F2356911 count 2 exceeds 8 years.</p>
+            
+                {% elif data['error'] == 'LASPO_AR_SENTENCE_TYPE_INCORRECT' %}
+                <p class="govuk-body">This is because the LASPO AR sentence type for court case 34F2356911 count 2 cannot be used when the sentence date is after 13 April 2015.</p>
+  
+                {% elif data['error'] == 'MORE_THAN_ONE_IMPRISONMENT_TERM' %}
+                <p class="govuk-body">This is because there is more than one imprisonment term for court case 34F2356911 count 2.</p>
+            
+                {% elif data['error'] == 'MORE_THAN_ONE_LICENCE_TERM' %}
+                <p class="govuk-body">This is because there is more than one licence term for court case 34F2356911 count 2.</p>
+            
+                {% elif data['error'] == 'OFFENCE_DATE_AFTER_SENTENCE_RANGE_DATE' %}
+                <p class="govuk-body">This is because the offence date for court case 34F2356911 count 2 is after the sentence date.</p>
+              
+                {% elif data['error'] == 'OFFENCE_DATE_AFTER_SENTENCE_START_DATE' %}
+                <p class="govuk-body">This is because the offence date for court case 34F2356911 count 2 is after the sentence date.</p>
+               
+                {% elif data['error'] == 'OFFENCE_MISSING_DATE' %}
+                <p class="govuk-body">This is because court case 34F2356911 count 2 does not have an offence date.</p>
+              
+                {% elif data['error'] == 'SEC236A_SENTENCE_TYPE_INCORRECT' %}
+                <p class="govuk-body">This is because the SEC236A sentence type for court case 34F2356911 count 2 cannot be used when the sentence date is after 01 December 2020.</p>
+             
+                {% elif data['error'] == 'SEC_91_SENTENCE_TYPE_INCORRECT' %}
+                <p class="govuk-body">This is because the SEC91_03 sentence type for court case 34F2356911 count 2 cannot be used when the sentence date is after 01 December 2020.</p>
+             
+                {% elif data['error'] == 'SENTENCE_HAS_MULTIPLE_TERMS' %}
+                <p class="govuk-body">This is because court case 34F2356911 count 2 has more than one term in NOMIS.</p>
+  
+                {% elif data['error'] == 'SENTENCE_HAS_NO_IMPRISONMENT_TERM' %}
+                <p class="govuk-body">This is because court case 34F2356911 count 2 does not have an imprisonment term.</p>
+  
+                {% elif data['error'] == 'SENTENCE_HAS_NO_LICENCE_TERM' %}
+                <p class="govuk-body">This is because court case 34F2356911 count 2 does not have a licence term.</p>
+  
+                {% elif data['error'] == 'SOPC18_SOPC21_SENTENCE_TYPE_INCORRECT' %}
+                <p class="govuk-body">This is because the [SOPCI_18 or SOPCI_21] sentence type for court case 34F2356911 count 2 is invalid for the sentence date entered.</p>
+  
+                {% elif data['error'] == 'SOPC_LICENCE_TERM_NOT_12_MONTHS' %}
+                <p class="govuk-body">This is because court case 34F2356911 count 2 does not have a licence term of 12 months or 1 year.</p> 
+          
+                {% elif data['error'] == 'ZERO_IMPRISONMENT_TERM' %}
+                <p class="govuk-body">This is because the imprisonment term for court case 34F2356911 count 2 is 0.</p> 
+           
+                {% elif data['error'] == 'REMAND_ON_OR_AFTER_SENTENCE_DATE' %}
+                <p class="govuk-body">This is because the 'From' or 'To' date of the remand period must be earlier than the sentence date for court case 34F2356911 count 2.</p> 
+              
+        
+                {% elif data['error'] == 'multiple-errors' %}
+                <p class="govuk-body">This is because:</p> 
+                <ul class="govuk-list govuk-list--bullet">
+                    <li>the imprisonment term for court case 34F2356911 count 2 is 0</li>
+                    <li>court case 34F2356911 count 3 does not have a licence term of 12 months or 1 year</li>
+                </ul>
+                {% else %}
+                {% endif %}
+
+                <h2 class="govuk-heading-m">What you need to do</h2>   
+                <p class="govuk-body">
+                    Update these details in NOMIS and <a class="govuk-link" href="#">reload this page</a>. 
+                </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
