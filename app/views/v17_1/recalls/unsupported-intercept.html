@@ -1,0 +1,41 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container govuk-!-margin-bottom-6">
+  <a href="return-to-custody-date" class="govuk-back-link">Back</a>
+</div>
+<div class="moj-interruption-card">
+    <div class="moj-interruption-card__content">
+      <h1 class="govuk-heading-l moj-interruption-card__heading" style="color: #ffff;">Select all the cases that are relevant to this recall</h1>
+      <div class="govuk-body-l moj-interruption-card__body">
+        <p>This service is cannot determine which sentences are eligible for recall.</p> 
+ 
+        <p>To make sure the recall is recorded correctly, you must select all cases with sentences that were active when this person's licence was revoked. </p> 
+  
+        <p>This could include sentences that are currently inactive, which would have been active when this person's licence was revoked. </p> 
+   
+        
+      </div>
+      <div class="govuk-button-group moj-interruption-card__actions">
+
+        <div class="govuk-button-group"> 
+
+          <form method="post" action="unsupported-sentences">
+              <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--inverse" data-module="govuk-button" data-qa="submitReason">
+                  Continue
+              </button> 
+          <!-- </form> -->
+          <!-- <form method="post" action="cancel"> -->
+              <button type="submit" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                  Cancel recall
+              </button>
+          </form>
+      </div> 
+    
+  
+      </div>
+    </div>
+  </div>
+
+  
+{% endblock %}

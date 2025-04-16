@@ -342,14 +342,14 @@
                     <li class="govuk-summary-card__action"> <a class="govuk-link" href="ual.html">Add new<span class="govuk-visually-hidden"> add new</span></a></li>
                     
                 {% if data['toShow'] == 'ualAdded'%}
-                <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ual">View<span class="govuk-visually-hidden"> View</span></a></li>
+                <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> View</span></a></li>
             </ul>
         </div>
         <div class="adjustment-card_content">
             
             <span id="UAL" class="count govuk-body">1</span><span class="govuk-body">day</span>
             {% elif data['ualEdited'] == 'true' or data['recallEdited'] == 'true' %}
-            <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ual">View<span class="govuk-visually-hidden"> View</span></a></li>
+            <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> View</span></a></li>
         </ul>
     </div>
     <div class="adjustment-card_content">
@@ -359,7 +359,7 @@
            
         
                     {% elif data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
-                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="adjustments/view-ual">View<span class="govuk-visually-hidden"> View</span></a></li>
+                    <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> View</span></a></li>
                 </ul>
             </div>
             <div class="adjustment-card_content">
