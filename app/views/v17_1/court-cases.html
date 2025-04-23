@@ -53,9 +53,9 @@
                                 {% elif (courtCase.appearances.length == 1) and (lastAppearance['status'] == 'draft') %}
                                 <strong class="govuk-tag govuk-tag--blue">Draft</strong>
                                 {% elif data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %}
-                                <span class="moj-badge moj-badge--purple">Recalled</span>
+                                <span class="govuk-tag govuk-tag--purple">Recalled</span>
                                 {% elif courtCase['source'] == "NOMIS" and data['toShow'] == "recallHistory" or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete' %}
-                                <span class="moj-badge moj-badge--grey">NOMIS - read only</span><span class="moj-badge moj-badge--purple">Recalled</span>
+                                <span class="moj-badge moj-badge--grey">NOMIS - read only</span><span class="govuk-tag govuk-tag--purple">Recalled</span>
                                 {% else %}
                                 <a class="govuk-link govuk-link--no-visited-state" href="/{{data.prototypeVersion}}/create-appearance?courtIndex={{courtCaseIndex}}">Add appearance<span class="govuk-visually-hidden"> to court case</span></a>
                                 {% endif %}
