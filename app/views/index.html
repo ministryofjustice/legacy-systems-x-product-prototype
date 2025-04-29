@@ -33,6 +33,86 @@
  
 
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-15">
+                            Version 18
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong> -->
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+
+                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong> -->
+
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-15">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v18/DPS-home",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v18/DPS-prisoner-profile",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-full govuk-!-margin-right-6"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+                                
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>Delete a recall </li>    
+                                </ul>
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764619592713797&cot=14">R10 iterations board (Miro)</a></li>   
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">1. Delete a recall</h4>  
+                                <p class="govuk-body">We are planning to allow user to delete recalls in the event where something has been recorded incorrectly and would not suffice to just edit the recall. For now, we would only allow for the most recent recall to be deleted, to avoid any unintended deletion of data which underpins active recalls.</p> 
+                              
+                                <ul class="govuk-list"> 
+                                    <!-- <li><a class="govuk-link" target="external" href="v18/recalls/edit/edit-a-recall">Edit a recall</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v18/recalls/edit/edit-a-recall">Do you wish to delete the associated UAL with this recall?</a></li>    -->
+                                    <li><a class="govuk-link" target="external" href="v18/recalls/edit/are-you-sure-delete">Are you sure you want to delete this recall?</a></li>   
+                                </ul>    
+  
+ 
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
@@ -118,13 +198,13 @@
                             <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong> -->
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                            <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                 In Design
-                            </strong>
-
-                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                Closed
                             </strong> -->
+
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
 
                         </span>
                         </h2>
@@ -165,6 +245,7 @@
                                 <ul class="govuk-list govuk-list--number">  
                                     <li>Validation interupption for recalls overlapping adjustments</li>    
                                     <li>'Recall not possible' error pages</li>  
+                                    <li>Updated manual unsupport journey (step-by-step)</li>  
                                 </ul>
 
 
@@ -206,7 +287,19 @@
                                     <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=SOPC_LICENCE_TERM_NOT_12_MONTHS">Error: SOPC_LICENCE_TERM_NOT_12_MONTHS</a></li>      
                                     <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=ZERO_IMPRISONMENT_TERM">Error: ZERO_IMPRISONMENT_TERM</a></li>      
                                     <li><a class="govuk-link" target="external" href="v17/recalls/recall-not-possible?error=REMAND_ON_OR_AFTER_SENTENCE_DATE">Error: REMAND_ON_OR_AFTER_SENTENCE_DATE</a></li>   
-                                </ul>    
+                                </ul>
+                                
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+                                <h4 class="govuk-heading-m">3. Updated manual unsupport journey (step-by-step)</h4>  
+                                <p class="govuk-body">For next round of UR we are planning to test a new verion of the manual unsupported journey. This design includes an intecept page, aimed at better introducing the task to the user, then next is a step by step format of the sentence information and questions to decipher which cases are relevant to the recall. </p> 
+                              
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/unsupported-intercept">Interruption page</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/unsupported-sentences">Stepped page 1</a></li>    
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/unsupported-sentences-2">Stepped page 2</a></li>       
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/unsupported-sentences-3">Stepped page 3</a></li>         
+                                    <li><a class="govuk-link" target="external" href="v17/recalls/unsupported-check-sentence-and-offence-information">Check sentences and offences</a></li>      
  
  
                             </div> 
