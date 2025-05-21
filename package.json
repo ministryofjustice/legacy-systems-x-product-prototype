@@ -6,18 +6,18 @@
     "compile-sass": "sass --quiet-deps --no-source-map --load-path=node_modules/govuk-frontend/dist --load-path=node_modules/@ministryofjustice/frontend --load-path=. app/assets/sass/application.scss:./assets/stylesheets/application.css --style compressed"
   },
   "dependencies": {
-    "@ministryofjustice/frontend": "^3.3.1",
-    "@x-govuk/govuk-prototype-filters": "^1.4.3",
-    "govuk-frontend": "5.8.0",
+    "@ministryofjustice/frontend": "^5.1.3",
+    "@x-govuk/govuk-prototype-filters": "^2.0.0",
+    "govuk-frontend": "5.10.1",
     "govuk-prototype-kit": "^13.16.2",
-    "hmpps-court-cases-release-dates-design": "^4.2.0",
+    "hmpps-court-cases-release-dates-design": "^4.4.0",
     "jquery": "3.7.1"
   },
   "devDependencies": {
-    "sass": "^1.79.5"
+    "sass": "^1.89.0"
   },
   "engines": {
-    "node": "^20",
-    "npm": "^10.9"
-  }
+  "node": ">=18 <=23",
+  "npm": "^10"
+}
 }
