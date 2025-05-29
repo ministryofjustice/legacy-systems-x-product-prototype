@@ -436,6 +436,16 @@
                                                 {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}
                                             </dd>
                                         </div>
+                                        {% endif %} 
+                                        {% if sentence['sentence-type'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence type
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-type'] }}
+                                            </dd>
+                                        </div>
                                         {% endif %}
                                         {% if sentence['sentence-date-day'] %}
                                         <div class="govuk-summary-list__row">
@@ -444,16 +454,6 @@
                                             </dt>
                                             <dd class="govuk-summary-list__value">
                                                 {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
-                                            </dd>
-                                        </div>
-                                        {% endif %}
-                                        {% if sentence['sentence-type'] %}
-                                        <div class="govuk-summary-list__row">
-                                            <dt class="govuk-summary-list__key">
-                                                Sentence type
-                                            </dt>
-                                            <dd class="govuk-summary-list__value">
-                                                {{ sentence['sentence-type'] }}
                                             </dd>
                                         </div>
                                         {% endif %}
