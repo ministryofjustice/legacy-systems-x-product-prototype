@@ -239,3 +239,29 @@ router.get('/:version/recalls/revocation-date', (req, res) => {
 	});
   });
   
+
+  router.get('/:version/recalls/edit/are-you-sure-delete', (req, res) => {
+	const version = req.params.version;
+	const msInDay = 24 * 60 * 60 * 1000;
+  
+	const revocation = new Date(
+	  `${req.session.data['revocation-date-year']}-${req.session.data['revocation-date-month']}-${req.session.data['revocation-date-day']}`
+	);
+  
+	const arrest = new Date(
+	  `${req.session.data['arrest-date-year']}-${req.session.data['arrest-date-month']}-${req.session.data['arrest-date-day']}`
+	);
+  
+	let daysBetween = null;
+  
+	if (!isNaN(revocation) && !isNaN(arrest)) {
+	  let rawDiff = Math.round((arrest - revocation) / msInDay);
+	  daysBetween = rawDiff > 1 ? rawDiff - 1 : 0;
+	}
+  
+	res.render(`${version}/recalls/edit/are-you-sure-delete`, {
+	  data: req.session.data,
+	  daysBetween,
+	});
+  });
+  

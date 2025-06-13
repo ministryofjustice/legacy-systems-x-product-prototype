@@ -278,8 +278,11 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
  
         <h3 class="govuk-heading-l">Adjustments</h3>
+
+             
+        {% if data['recallDeleted'] == 'true' %}
        
-        {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
+        {% elif data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' %}
 
         <h3 class="govuk-heading-m">Additions</h3>
         <dl class="govuk-summary-list" style="margin-bottom: 10px;"> 
@@ -333,7 +336,22 @@
         <p class="govuk-body govuk-!-margin-top-6"><a href="adjustments">View all adjustments</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-        {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}
+             
+        {% if data['recallDeleted'] == 'true' %}
+
+
+        <h3 class="govuk-heading-l">Recalls</h3>
+        <p class="govuk-body">There are no recalls recorded.</p>
+        
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary govuk-!-margin-bottom-1 govuk-!-margin-top-2" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+           
+
+        {% elif data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}
         <h3 class="govuk-heading-l">Recalls</h3>
        
    
@@ -597,7 +615,10 @@
 
         <p><a class="govuk-body govuk-link" href="recalls">View all recalls</a></p>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-           
+
+
+ 
+     
 
         {% else %}
 

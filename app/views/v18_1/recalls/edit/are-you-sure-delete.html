@@ -8,7 +8,7 @@
 <div class="moj-width-container govuk-!-margin-top-6">
     <div class="govuk-grid-row"> 
         <div class="govuk-grid-column-two-thirds">
-            <form method="post" action="../../recalls">
+            <form method="post" action="../../recalls?recallDeleted=true">
 
                 <div class="govuk-form-group">
 
@@ -57,14 +57,13 @@
                                     <p class="govuk-body govuk-!-margin-bottom-2">{{data['arrest-date-day']}}/{{data['arrest-date-month'] }}/{{data['arrest-date-year']}} </p>
                                     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">UAL (unlawfully at large)</h3>
                                 
-                                    {% if data['ualEdited'] == 'true' %}
-                                
-                                    <p class="govuk-body govuk-!-margin-bottom-2">2 days</p>
-                                    {% else %} 
-                                
-                                    <p class="govuk-body govuk-!-margin-bottom-2">1 day</p>
+                                         
+                                        {% if daysBetween !== null %} 
+                                        <p class="govuk-body govuk-!-margin-bottom-2">{{ daysBetween }} day{% if daysBetween != 1 %}s{% endif %} 
+
+                                    {% else %}  
+
                                     {% endif %} 
-                                
                                 
                                 </div> 
                             </div> 
@@ -76,7 +75,7 @@
                                     <details class="govuk-details govuk-!-margin-bottom-0">
                                         <summary class="govuk-details__summary">
                                             <span class="govuk-details__summary-text">
-                                                Court cases (2)
+                                                Court cases (1)
                                             </span>
                                         </summary>
                                     
@@ -279,9 +278,14 @@
                             </div>
                             </div>
 
+    
+                            {% if daysBetween !== null %}
                             <div class="govuk-inset-text">
-                                Deleting this recall will delete the <b>1 day</b> of associated UAL. To delete tagged bail or remand time, go to the adjustments service.
-                              </div>
+                                Deleting this recall will delete the <b>{{ daysBetween }} day{% if daysBetween != 1 %}s{% endif %}</b> of associated UAL. To delete tagged bail or remand time, go to the adjustments service.
+                            </div>
+                          {% else %}
+                          
+                          {% endif %} 
 
 
                         <div class="govuk-radios" data-module="govuk-radios">

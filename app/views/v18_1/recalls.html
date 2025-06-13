@@ -12,7 +12,16 @@
             Recalls
         </h1> 
 
-        {% if data['nomisRecall'] == 'true' %}
+          
+        {% if data['recallDeleted'] == 'true' %}
+
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+
+        {% elif data['nomisRecall'] == 'true' %}
     
       
         <div class="action-button-group">
@@ -817,7 +826,6 @@
 
   
  
-          
         {% else %}
 
         <div class="action-button-group">

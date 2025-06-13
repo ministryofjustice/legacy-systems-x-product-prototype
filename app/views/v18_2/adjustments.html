@@ -369,18 +369,34 @@
                     <li class="govuk-summary-card__action"> <a class="govuk-link" href="ual.html">Add new<span class="govuk-visually-hidden"> add new</span></a></li>
                     
                
+        {% if data['recallDeleted'] == 'true' %}
+
+        {% else %} 
+
                     <li class="govuk-summary-card__action"> <a class="govuk-link" href="#">View<span class="govuk-visually-hidden"> View</span></a></li>
+
+        {% endif %} 
                         </ul>
                     </div>
                     <div class="adjustment-card_content">
                         
-                        <span id="UAL" class="count govuk-body">    
-                            {% if daysBetween !== null %} 
+                        <span id="UAL" class="count govuk-body">  
+                            
+             
+        {% if data['recallDeleted'] == 'true' %}
+
+
+        <span id="UAL" class="count govuk-body">0
+                        
+        </span><span class="govuk-body"> days</span>
+          
+                            {% elif daysBetween !== null %} 
                                 <span id="UAL" class="count govuk-body">{{ daysBetween }}
                         
                         </span><span class="govuk-body"> day{% if daysBetween != 1 %}s</span>{% endif %} 
         
                         {% else %} 
+
 
                         <span id="UAL" class="count govuk-body">0
                         
