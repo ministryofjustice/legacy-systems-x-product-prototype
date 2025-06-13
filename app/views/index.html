@@ -37,6 +37,122 @@
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
                         <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-18_1">
+                            Version 18.1
+                            <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong>
+                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                    In Design
+                                </strong>
+<!-- 
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong> -->
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-16_1">
+                        <div class="govuk-grid-row">
+                            
+            
+                        <div class="govuk-grid-column-full govuk-!-margin-top-4"> 
+                            <h4 class="govuk-heading-m">What we are testing</h4> 
+                            <p class="govuk-body">This remote round of UR is due to take place in wc 22 June 2025.</p> 
+                            <p class="govuk-body">In this round, we aim to:</p> 
+                            <ul class="govuk-list govuk-list--bullet"> 
+                                <li>Testing the happy path journey with added remand (remand tool) and tagged bail  </li>  
+                                <li>Testing unhappy path where there are sentences not eligible for recall </li>  
+                                <li>Testing the happy path where UAL adjustments mean that sentences would have been inactive at point of recall</li>  
+                            </ul>   
+                            <h4 class="govuk-heading-m">Supporting documents</h4>
+                            <ul class="govuk-list">  
+                                <li><a class="govuk-link" target="external" href="">...</a></li>    
+                         
+                            </ul> 
+
+                            <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+                            <form action="post">
+                            <h4 class="govuk-heading-m">Scenario 1</h4>
+                            <p class="govuk-hint">Recording a recall - happy path and delete a recall</p>
+
+                            <p class="govuk-body">This scenario explores the previously tested journey where the user records a recall (core journey) with remand and tagged bail included. We will then get the user to delete a recall. </p> 
+                            
+                            {{govukButton({
+                                text: "Launch scenario 1",
+                                attributes: {
+                                "formaction": "v18_1/DPS-prisoner-profile?noAdjustments=true",
+                                "formmethod": "post"
+                                },
+                                classes: "govuk-button--secondary"
+                                })}}
+
+                            <!-- <h4 class="govuk-heading-s">Prototype links</h4>
+                            <ul class="govuk-list">  
+                                <li><a class="govuk-link" target="external" href="v18_1/adjustments/remand-tool/check-for-replaced-offences-intercept">Remand tool</a></li>    
+                         
+                            </ul>  -->
+
+                            </form>  
+
+                            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+ 
+                            <form action="post">
+                                <h4 class="govuk-heading-m">Scenario 2</h4>
+                                <p class="govuk-hint">Recording a recall - happy path with inactive sentences</p>
+                                <p class="govuk-body">This scenario will test happy path where UAL adjustments mean that sentences would have been inactive at point of recall.</p> 
+                                
+                                {{govukButton({
+                                    text: "Launch scenario 2",
+                                    attributes: {
+                                    "formaction": "v18_2/overview",
+                                    "formmethod": "post"
+                                    },
+                                    classes: "govuk-button--secondary"
+                                    })}}
+                               
+                                </form>  
+
+                                <h4 class="govuk-heading-s">Prototype links</h4>
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v18_1/recalls/check-sentence-and-offence-information">Check sentences and offences</a></li>    
+                             
+                                </ul> 
+
+ 
+                            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                            <form action="post">
+                                <h4 class="govuk-heading-m">Scenario 3</h4>
+                                <p class="govuk-hint">Recording a recall - unsupported path which includes sentences not eligible for recall</p>
+                                <p class="govuk-body">This scenario will test mannual unsupported journey sentences not eligible for recall.</p> 
+                                {{govukButton({
+                                    text: "Launch scenario 3",
+                                    attributes: {
+                                    "formaction": "v18_1/overview?unsupportedSentences=true",
+                                    "formmethod": "post"
+                                    },
+                                    classes: "govuk-button--secondary"
+                                    })}}
+                                
+                                </form>  
+    
+                                <h4 class="govuk-heading-s">Prototype links</h4>
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v18_1/recalls/unsupported-sentences">Unsupported select court case</a></li>    
+                             
+                                </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
                         <span class="govuk-accordion__section-button" id="version-15">
                             Version 18
                             

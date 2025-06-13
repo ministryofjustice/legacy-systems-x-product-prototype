@@ -1,0 +1,832 @@
+{% extends "./template.html" %}
+
+{% set recallsActive = true %}
+{% block content %}
+
+<!-- Back link -->
+
+<div class="govuk-grid-row govuk-!-margin-top-6">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-xl"> 
+            Recalls
+        </h1> 
+
+        {% if data['nomisRecall'] == 'true' %}
+    
+      
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+       
+        <!-- <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Recorded date</th>
+                    <th scope="col" class="govuk-table__header">Date of revocation</th>
+                    <th scope="col" class="govuk-table__header">Return to custody date</th>
+                    <th scope="col" class="govuk-table__header">Recall type</th>  
+                    <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Actions</span></th>  
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body"> 
+ 
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{ "today" | govukDate }}</td> 
+                    <td class="govuk-table__cell"> {{data['revocation-date-day']}}/{{data['revocation-date-month'] }}/{{data['revocation-date-year']}} </td>
+                    <td class="govuk-table__cell"> {{data['arrest-date-day']}}/{{data['arrest-date-month'] }}/{{data['arrest-date-year']}} </td>
+                    <td class="govuk-table__cell">{{data['recall-type']}}</td> 
+                    <td class="govuk-table__cell"><a class="govuk-link" href="recalls/edit/edit-a-recall">View and edit</a></td> 
+                </tr>
+ 
+                </tr>
+            </tbody>
+        </table>
+     -->
+
+
+        <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Recorded on {{ "today" | govukDate }} at HMP Kirkham
+                    <!-- <span class="moj-badge moj-badge--green govuk-!-margin-bottom-1 govuk-!-margin-left-1">Active</span>  -->
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                    <div class="">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="recalls/edit/edit-a-recall">Edit<span class="govuk-visually-hidden"> recall recorded on 30 October 2024</span></a>
+                        </li>  
+
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="recalls/edit/are-you-sure-delete">Delete<span class="govuk-visually-hidden"> recall recorded on 30 October 2024</span></a>
+                        </li> 
+                    </div> 
+                </ul>
+             </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+                  
+            <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+                <div class="govuk-grid-column-one-half"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recall type</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                        
+          {% if data['unsupportedSentences'] == 'true' %}
+          Standard recall
+          {% else %} 
+          {{data['recall-type']}}
+          {% endif %} </p>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date of revocation</h3>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{data['revocation-date-day']}}/{{data['revocation-date-month'] }}/{{data['revocation-date-year']}}</p>
+      
+                </div>
+                <div class="govuk-grid-column-one-half"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Arrest date</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">{{data['arrest-date-day']}}/{{data['arrest-date-month'] }}/{{data['arrest-date-year']}} </p>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">UAL (unlawfully at large)</h3>
+                   
+                    {% if data['ualEdited'] == 'true' %}
+                  
+                    <p class="govuk-body govuk-!-margin-bottom-2">2 days. <a href="adjustments">View UAL details</a></p>
+                    {% else %} 
+                
+                    <p class="govuk-body govuk-!-margin-bottom-2">1 day. <a href="adjustments">View UAL details</a></p>
+                    {% endif %} 
+                
+                
+                </div> 
+            </div> 
+            
+
+            <div class="govuk-grid-row govuk-!-padding-bottom-2">
+                <div class="govuk-grid-column-full"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Court cases</h3>
+                    <details class="govuk-details govuk-!-margin-bottom-0">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Court cases (1)
+                            </span>
+                        </summary>
+                    
+                        <div class="govuk-details__text">
+                            {% for courtCase in data.courtCases | reverse %}
+                            {% set lastAppearance = courtCase.appearances | last %}
+                            {% set courtCaseIndex = loop.revindex0 %}  
+            
+                            {% if lastAppearance['unsupported'] == 'true' %}
+                            {% else %}
+                            <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }}
+                                        on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{
+                                            lastAppearance['warrant-date-year'] }}</h3>
+                            {% endif %}
+                            
+                            {% for sentence in lastAppearance.sentences %}
+            
+                            {% if sentence['unsupported-sentence'] == 'true' %}
+                            {% else %}
+                            {% if sentence['status'] == 'active' %}
+                            <div class="offence-card sentence-card">
+                                <div class="offence-card-offence-details">
+                                    <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
+                                    <h4 class="govuk-heading-s">{{ sentence['offence-name'] }}
+                                        {% if sentence['terror-related'] == 'Yes' %}
+                                        <br><strong class="govuk-tag govuk-!-margin-top-2">
+                                            Terror-related
+                                        </strong>
+                                        {% endif %}</h4>
+                                        <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                        {% if sentence['offence-start-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Commited on
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
+                                                {% if sentence['offence-end-date-day'] > 0 %}
+                                                to
+                                                {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['conviction-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Conviction date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['sentence-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['sentence-type'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence type
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-type'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'SDS (Standard Determinate Sentence)') or (sentence['sentence-type'] == 'ORA (Sentencing Code Standard Determinate Sentence)') or (sentence['sentence-type'] == 'SOPC (offenders of a particular concern)') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {% if sentence['sentence-length-years'] %}
+                                                {{ sentence['sentence-length-years'] }} years
+                                                {% else %}
+                                                0 years
+                                                {% endif %}
+                                                {% if sentence['sentence-length-months'] %}
+                                                {{ sentence['sentence-length-months'] }} months
+                                                {% else %}
+                                                0 months
+                                                {% endif %}
+                                                {% if sentence['sentence-length-weeks'] %}
+                                                {{ sentence['sentence-length-weeks'] }} weeks
+                                                {% else %}
+                                                0 weeks
+                                                {% endif %}
+                                                {% if sentence['sentence-length-days'] %}
+                                                {{ sentence['sentence-length-days'] }} days
+                                                {% else %}
+                                                0 days
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'Imprisonment in default of a fine') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Fine amount
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                £{{ sentence['fine-amount'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == "Automatic life") or (sentence['sentence-type'] == "Adult discretionary life") or (sentence['sentence-type'] == "Adult mandatory life") %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Tariff length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['tariff-length-years'] }} years {{ sentence['tariff-length-months'] }} months {{ sentence['tariff-length-weeks'] }} weeks {{ sentence['tariff-length-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'BOTUS (Breach of top up supervision)') or (sentence['sentence-type'] == 'Civil imprisonment') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Term length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['term-length-years'] }} years {{ sentence['term-length-months'] }} months {{ sentence['term-length-weeks'] }} weeks {{ sentence['term-length-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'EDS (Extended Determinate Sentence)') or (sentence['sentence-type'] == 'STS (Serious terrorism sentence)') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Overall sentence length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['overall-sentence-length-individual-years'] }} years {{ sentence['overall-sentence-length-individual-months'] }} months {{ sentence['overall-sentence-length-individual-weeks'] }} weeks {{ sentence['overall-sentence-length-individual-days'] }} days
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Custodial term
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['custodial-term-years'] }} years {{ sentence['custodial-term-months'] }} months {{ sentence['custodial-term-weeks'] }} weeks {{ sentence['custodial-term-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['licence-period-years'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Licence period
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['licence-period-years'] }} years {{ sentence['licence-period-months'] }} months {{ sentence['licence-period-weeks'] }} weeks {{ sentence['licence-period-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['consecutive-concurrent'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Consecutive or concurrent
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['consecutive-concurrent'] }}
+                                                {% if sentence['forthwith'] == 'Yes' %}
+                                                (forthwith)
+                                                {% endif %}
+                                                {% if sentence['consecutive-concurrent'] == 'Consecutive' %}
+                                                to offence {{ sentence['consecutive-to'] }}
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                    </dl>
+                                </div>
+                            </div>
+            
+                            {% endif %}
+            
+                         
+            
+                            {% endif %}
+            
+                            {% endfor %}
+            
+             
+                            
+                            {% endfor %} 
+            
+    
+                
+                        </div> 
+                    </details>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+                
+        <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Recorded on 11 January 2025 at HMP Kirkham
+                    <span class="moj-badge moj-badge--grey govuk-!-margin-bottom-1 govuk-!-margin-left-1">NOMIS</span>
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                    <div class="">
+               
+                        <!-- <li class="govuk-summary-card__action"> <a class="govuk-link" href="recalls/edit/delete-associated-UAL">Delete<span class="govuk-visually-hidden"> recall recorded on 30 October 2024</span></a>
+                        </li> -->
+                    </div> 
+                </ul>
+             </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+                  
+            <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+                <div class="govuk-grid-column-one-half"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recall type</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                        14-day fixed-term </p>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date of revocation</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">Not entered</p>
+                </div>
+                <div class="govuk-grid-column-one-half"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Arrest date</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">8 January 2025</p>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">UAL (unlawfully at large)</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2"><a href="adjustments">View UAL details</a></p>
+                
+                </div> 
+            </div> 
+            
+
+            <div class="govuk-grid-row govuk-!-padding-bottom-2">
+                <div class="govuk-grid-column-full"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Court cases</h3>
+                    <details class="govuk-details govuk-!-margin-bottom-0">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Court cases (2)
+                            </span>
+                        </summary>
+                    
+                        <div class="govuk-details__text">
+                            {% for courtCase in data.courtCases | reverse %}
+                            {% set lastAppearance = courtCase.appearances | last %}
+                            {% set courtCaseIndex = loop.revindex0 %}  
+            
+                            {% if lastAppearance['unsupported'] == 'true' %}
+                            {% else %}
+                            <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }}
+                                        on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{
+                                            lastAppearance['warrant-date-year'] }}</h3>
+                            {% endif %}
+                            
+                            {% for sentence in lastAppearance.sentences %}
+            
+                            {% if sentence['unsupported-sentence'] == 'true' %}
+                            {% else %}
+                            {% if sentence['status'] == 'active' %}
+                            <div class="offence-card sentence-card">
+                                <div class="offence-card-offence-details">
+                                    <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
+                                    <h4 class="govuk-heading-s">{{ sentence['offence-name'] }}
+                                        {% if sentence['terror-related'] == 'Yes' %}
+                                        <br><strong class="govuk-tag govuk-!-margin-top-2">
+                                            Terror-related
+                                        </strong>
+                                        {% endif %}</h4>
+                                        <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                        {% if sentence['offence-start-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Commited on
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
+                                                {% if sentence['offence-end-date-day'] > 0 %}
+                                                to
+                                                {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['conviction-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Conviction date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['sentence-type'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence type
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-type'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['sentence-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'SDS (Standard Determinate Sentence)') or (sentence['sentence-type'] == 'ORA (Sentencing Code Standard Determinate Sentence)') or (sentence['sentence-type'] == 'SOPC (offenders of a particular concern)') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {% if sentence['sentence-length-years'] %}
+                                                {{ sentence['sentence-length-years'] }} years
+                                                {% else %}
+                                                0 years
+                                                {% endif %}
+                                                {% if sentence['sentence-length-months'] %}
+                                                {{ sentence['sentence-length-months'] }} months
+                                                {% else %}
+                                                0 months
+                                                {% endif %}
+                                                {% if sentence['sentence-length-weeks'] %}
+                                                {{ sentence['sentence-length-weeks'] }} weeks
+                                                {% else %}
+                                                0 weeks
+                                                {% endif %}
+                                                {% if sentence['sentence-length-days'] %}
+                                                {{ sentence['sentence-length-days'] }} days
+                                                {% else %}
+                                                0 days
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'Imprisonment in default of a fine') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Fine amount
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                £{{ sentence['fine-amount'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == "Automatic life") or (sentence['sentence-type'] == "Adult discretionary life") or (sentence['sentence-type'] == "Adult mandatory life") %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Tariff length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['tariff-length-years'] }} years {{ sentence['tariff-length-months'] }} months {{ sentence['tariff-length-weeks'] }} weeks {{ sentence['tariff-length-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'BOTUS (Breach of top up supervision)') or (sentence['sentence-type'] == 'Civil imprisonment') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Term length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['term-length-years'] }} years {{ sentence['term-length-months'] }} months {{ sentence['term-length-weeks'] }} weeks {{ sentence['term-length-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'EDS (Extended Determinate Sentence)') or (sentence['sentence-type'] == 'STS (Serious terrorism sentence)') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Overall sentence length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['overall-sentence-length-individual-years'] }} years {{ sentence['overall-sentence-length-individual-months'] }} months {{ sentence['overall-sentence-length-individual-weeks'] }} weeks {{ sentence['overall-sentence-length-individual-days'] }} days
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Custodial term
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['custodial-term-years'] }} years {{ sentence['custodial-term-months'] }} months {{ sentence['custodial-term-weeks'] }} weeks {{ sentence['custodial-term-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['licence-period-years'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Licence period
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['licence-period-years'] }} years {{ sentence['licence-period-months'] }} months {{ sentence['licence-period-weeks'] }} weeks {{ sentence['licence-period-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['consecutive-concurrent'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Consecutive or concurrent
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['consecutive-concurrent'] }}
+                                                {% if sentence['forthwith'] == 'Yes' %}
+                                                (forthwith)
+                                                {% endif %}
+                                                {% if sentence['consecutive-concurrent'] == 'Consecutive' %}
+                                                to offence {{ sentence['consecutive-to'] }}
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                    </dl>
+                                </div>
+                            </div>
+            
+                            {% endif %}
+            
+                         
+            
+                            {% endif %}
+            
+                            {% endfor %}
+            
+             
+                            
+                            {% endfor %} 
+            
+    
+                
+                        </div> 
+                    </details>
+                    </div>
+                </div>
+        
+            </div>
+            </div>
+        
+        {% elif data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}
+   
+ 
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+  
+        <div class="govuk-summary-card govuk-!-margin-bottom-6">
+            <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Recorded on {{ "today" | govukDate }} at HMP Kirkham
+                    <!-- <span class="moj-badge moj-badge--green govuk-!-margin-bottom-1 govuk-!-margin-left-1">Active</span>  -->
+                </h2>
+                <ul class="govuk-summary-card__actions">
+                    <div class="">
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="recalls/edit/edit-a-recall">Edit<span class="govuk-visually-hidden"> recall recorded on 30 October 2024</span></a>
+                        </li>  
+
+                        <li class="govuk-summary-card__action"> <a class="govuk-link" href="recalls/edit/are-you-sure-delete">Delete<span class="govuk-visually-hidden"> recall recorded on 30 October 2024</span></a>
+                        </li>
+                    </div> 
+                </ul>
+             </div>
+            <div class="govuk-summary-card__content" id="release-dates">
+                  
+            <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+                <div class="govuk-grid-column-one-half"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recall type</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">
+                        
+          {% if data['unsupportedSentences'] == 'true' %}
+          Standard recall
+          {% else %} 
+          {{data['recall-type']}}
+          {% endif %} </p>
+          <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date of revocation</h3>
+          <p class="govuk-body govuk-!-margin-bottom-2">{{data['revocation-date-day']}}/{{data['revocation-date-month'] }}/{{data['revocation-date-year']}}</p>
+      
+                </div>
+                <div class="govuk-grid-column-one-half"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Arrest date</h3>
+                    <p class="govuk-body govuk-!-margin-bottom-2">{{data['arrest-date-day']}}/{{data['arrest-date-month'] }}/{{data['arrest-date-year']}} </p>
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">UAL (unlawfully at large)</h3>
+                        
+                    {% if daysBetween !== null %} 
+                    <p class="govuk-body govuk-!-margin-bottom-2">{{ daysBetween }} day{% if daysBetween != 1 %}s{% endif %} 
+
+                {% else %}  
+
+                {% endif %} 
+   
+                
+                </div> 
+            </div> 
+            
+
+            <div class="govuk-grid-row govuk-!-padding-bottom-2">
+                <div class="govuk-grid-column-full"> 
+                    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Court cases</h3>
+                    <details class="govuk-details govuk-!-margin-bottom-0">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Court cases (1)
+                            </span>
+                        </summary>
+                    
+                        <div class="govuk-details__text">
+                            {% for courtCase in data.courtCases | reverse %}
+                            {% set lastAppearance = courtCase.appearances | last %}
+                            {% set courtCaseIndex = loop.revindex0 %}  
+            
+                            {% if lastAppearance['unsupported'] == 'true' %}
+                            {% else %}
+                            <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }}
+                                        on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{
+                                            lastAppearance['warrant-date-year'] }}</h3>
+                            {% endif %}
+                            
+                            {% for sentence in lastAppearance.sentences %}
+            
+                            {% if sentence['unsupported-sentence'] == 'true' %}
+                            {% else %}
+                            {% if sentence['status'] == 'active' %}
+                            <div class="offence-card sentence-card">
+                                <div class="offence-card-offence-details">
+                                    <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
+                                    <h4 class="govuk-heading-s">{{ sentence['offence-name'] }}
+                                        {% if sentence['terror-related'] == 'Yes' %}
+                                        <br><strong class="govuk-tag govuk-!-margin-top-2">
+                                            Terror-related
+                                        </strong>
+                                        {% endif %}</h4>
+                                        <dl class="govuk-summary-list govuk-summary-list--no-border">
+                                        {% if sentence['offence-start-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Commited on
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
+                                                {% if sentence['offence-end-date-day'] > 0 %}
+                                                to
+                                                {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['conviction-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Conviction date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %} 
+                                        {% if sentence['sentence-type'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence type
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-type'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['sentence-date-day'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'SDS (Standard Determinate Sentence)') or (sentence['sentence-type'] == 'ORA (Sentencing Code Standard Determinate Sentence)') or (sentence['sentence-type'] == 'SOPC (offenders of a particular concern)') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {% if sentence['sentence-length-years'] %}
+                                                {{ sentence['sentence-length-years'] }} years
+                                                {% else %}
+                                                0 years
+                                                {% endif %}
+                                                {% if sentence['sentence-length-months'] %}
+                                                {{ sentence['sentence-length-months'] }} months
+                                                {% else %}
+                                                0 months
+                                                {% endif %}
+                                                {% if sentence['sentence-length-weeks'] %}
+                                                {{ sentence['sentence-length-weeks'] }} weeks
+                                                {% else %}
+                                                0 weeks
+                                                {% endif %}
+                                                {% if sentence['sentence-length-days'] %}
+                                                {{ sentence['sentence-length-days'] }} days
+                                                {% else %}
+                                                0 days
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'Imprisonment in default of a fine') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Fine amount
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                £{{ sentence['fine-amount'] }}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == "Automatic life") or (sentence['sentence-type'] == "Adult discretionary life") or (sentence['sentence-type'] == "Adult mandatory life") %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Tariff length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['tariff-length-years'] }} years {{ sentence['tariff-length-months'] }} months {{ sentence['tariff-length-weeks'] }} weeks {{ sentence['tariff-length-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'BOTUS (Breach of top up supervision)') or (sentence['sentence-type'] == 'Civil imprisonment') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Term length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['term-length-years'] }} years {{ sentence['term-length-months'] }} months {{ sentence['term-length-weeks'] }} weeks {{ sentence['term-length-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if (sentence['sentence-type'] == 'EDS (Extended Determinate Sentence)') or (sentence['sentence-type'] == 'STS (Serious terrorism sentence)') %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Overall sentence length
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['overall-sentence-length-individual-years'] }} years {{ sentence['overall-sentence-length-individual-months'] }} months {{ sentence['overall-sentence-length-individual-weeks'] }} weeks {{ sentence['overall-sentence-length-individual-days'] }} days
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Custodial term
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['custodial-term-years'] }} years {{ sentence['custodial-term-months'] }} months {{ sentence['custodial-term-weeks'] }} weeks {{ sentence['custodial-term-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['licence-period-years'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Licence period
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['licence-period-years'] }} years {{ sentence['licence-period-months'] }} months {{ sentence['licence-period-weeks'] }} weeks {{ sentence['licence-period-days'] }} days
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                        {% if sentence['consecutive-concurrent'] %}
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Consecutive or concurrent
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ sentence['consecutive-concurrent'] }}
+                                                {% if sentence['forthwith'] == 'Yes' %}
+                                                (forthwith)
+                                                {% endif %}
+                                                {% if sentence['consecutive-concurrent'] == 'Consecutive' %}
+                                                to offence {{ sentence['consecutive-to'] }}
+                                                {% endif %}
+                                            </dd>
+                                        </div>
+                                        {% endif %}
+                                    </dl>
+                                </div>
+                            </div>
+            
+                            {% endif %}
+            
+                         
+            
+                            {% endif %}
+            
+                            {% endfor %}
+            
+             
+                            
+                            {% endfor %} 
+            
+    
+                
+                        </div> 
+                    </details>
+                    </div>
+                </div>
+            </div>
+            </div>
+
+  
+ 
+          
+        {% else %}
+
+        <div class="action-button-group">
+            <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Record a recall
+                </button></a>
+        </div> 
+
+
+        {% endif %}
+
+{% endblock %}

@@ -1,0 +1,84 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="add-tagged-bail.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <h1 class="govuk-heading-l">
+                        <span class="govuk-caption-xl">Adjustments</span>
+                        Confirm and save
+                    </h1>
+                    <div id="dataContainer">
+
+                    </div>
+
+                    {% if data.courtCases | length %}
+                    {% for courtCase in data.courtCases | reverse %}
+                    {% set lastAppearance = courtCase.appearances | last %}
+                    {% set courtCaseIndex = loop.revindex0 %}
+                    {% if courtCase['status'] != "inactive" and courtCase['unsupported'] != "true"  %}
+
+                    <h2 class="govuk-heading-m">Tagged bail details</h2>
+                    <div class="govuk-!-margin-top-6" id="ReviewTaggedBail">
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                   Case details
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['court-name']}} 
+                                    <br>
+                                   <span class="govuk-hint">  {{ lastAppearance['court-case-ref'] }}</span>
+                                   <br>
+                                   <span class="govuk-hint"> {% for sentence in lastAppearance.sentences %}
+                                    {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                    {% endfor %}</span>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="select-case">
+                                        Edit<span class="govuk-visually-hidden"> Edit</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Number of days 
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    20 days
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="add-tagged-bail.html">
+                                        Edit<span class="govuk-visually-hidden"> Edit</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    {% endif %}
+
+                    {% endfor %}
+
+                    {% endif %}
+
+                    <div class="govuk-button-group">
+                        <a href="../../adjustments?taggedBailAdded=true" id="saveTaggedBailButton" class="govuk-button" data-journey="3">
+                            Confirm and save
+                        </a>
+                        <a href="../index" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+<!--                    <a href=".html" class="govuk-link">Return to tagged bail details</a>-->
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

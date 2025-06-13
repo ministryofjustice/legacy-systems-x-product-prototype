@@ -13,3 +13,14 @@
 <script>
   window.GOVUKFrontend.initAll();
 </script>
+
+
+<script>
+  const cl = document.getElementById("clear-storage");
+
+cl.addEventListener("click", function (e){
+  e.preventDefault();
+  localStorage.clear();
+  location.reload();
+});
+</script>

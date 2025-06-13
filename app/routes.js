@@ -84,7 +84,158 @@ router.post(`/:prototypeVersion/approved-dates-question`, function (req, res) {
 	}
   });
  
- 
- 
+  // Define the routes using :version as a param
+router.get('/:version/recalls/revocation-date', (req, res) => {
+	const version = req.params.version;
+	res.render(`${version}/recalls/revocation-date`, { data: req.session.data });
+  });
+  
+  router.post('/:version/recalls/revocation-date', (req, res) => {
+	const version = req.params.version;
+	const { 'revocation-date-day': day, 'revocation-date-month': month, 'revocation-date-year': year } = req.body;
+	req.session.data['revocation-date-day'] = day;
+	req.session.data['revocation-date-month'] = month;
+	req.session.data['revocation-date-year'] = year;
+	res.redirect(`/${version}/recalls/return-to-custody-date`);
+  });
+  
+  router.get('/:version/recalls/return-to-custody-date', (req, res) => {
+	const version = req.params.version;
+	res.render(`${version}/recalls/return-to-custody-date`, { data: req.session.data });
+  });
+  
+  router.post('/:version/recalls/return-to-custody-date', (req, res) => {
+	const version = req.params.version;
+	const { 'arrest-date-day': day, 'arrest-date-month': month, 'arrest-date-year': year } = req.body;
+	req.session.data['arrest-date-day'] = day;
+	req.session.data['arrest-date-month'] = month;
+	req.session.data['arrest-date-year'] = year;
+	res.redirect(`/${version}/recalls/check-sentence-and-offence-information`);
+  });
+  
+  router.get('/:version/recalls/check-answers', (req, res) => {
+	const version = req.params.version;
+	const msInDay = 24 * 60 * 60 * 1000;
+  
+	const revocation = new Date(
+	  `${req.session.data['revocation-date-year']}-${req.session.data['revocation-date-month']}-${req.session.data['revocation-date-day']}`
+	);
+  
+	const arrest = new Date(
+	  `${req.session.data['arrest-date-year']}-${req.session.data['arrest-date-month']}-${req.session.data['arrest-date-day']}`
+	);
+  
+	let daysBetween = null;
+  
+	if (!isNaN(revocation) && !isNaN(arrest)) {
+	  let rawDiff = Math.round((arrest - revocation) / msInDay);
+	  daysBetween = rawDiff > 1 ? rawDiff - 1 : 0;
+	}
+  
+	res.render(`${version}/recalls/check-answers`, {
+	  data: req.session.data,
+	  daysBetween,
+	});
+  });
+  
 
- 
+  router.get('/:version/adjustments', (req, res) => {
+	const version = req.params.version;
+	const msInDay = 24 * 60 * 60 * 1000;
+  
+	const revocation = new Date(
+	  `${req.session.data['revocation-date-year']}-${req.session.data['revocation-date-month']}-${req.session.data['revocation-date-day']}`
+	);
+  
+	const arrest = new Date(
+	  `${req.session.data['arrest-date-year']}-${req.session.data['arrest-date-month']}-${req.session.data['arrest-date-day']}`
+	);
+  
+	let daysBetween = null;
+  
+	if (!isNaN(revocation) && !isNaN(arrest)) {
+	  let rawDiff = Math.round((arrest - revocation) / msInDay);
+	  daysBetween = rawDiff > 1 ? rawDiff - 1 : 0;
+	}
+  
+	res.render(`${version}/adjustments`, {
+	  data: req.session.data,
+	  daysBetween,
+	});
+  });
+  
+  router.get('/:version/calculate-release-dates/check-sentence-and-offence-information', (req, res) => {
+	const version = req.params.version;
+	const msInDay = 24 * 60 * 60 * 1000;
+  
+	const revocation = new Date(
+	  `${req.session.data['revocation-date-year']}-${req.session.data['revocation-date-month']}-${req.session.data['revocation-date-day']}`
+	);
+  
+	const arrest = new Date(
+	  `${req.session.data['arrest-date-year']}-${req.session.data['arrest-date-month']}-${req.session.data['arrest-date-day']}`
+	);
+  
+	let daysBetween = null;
+  
+	if (!isNaN(revocation) && !isNaN(arrest)) {
+	  let rawDiff = Math.round((arrest - revocation) / msInDay);
+	  daysBetween = rawDiff > 1 ? rawDiff - 1 : 0;
+	}
+  
+	res.render(`${version}/calculate-release-dates/check-sentence-and-offence-information`, {
+	  data: req.session.data,
+	  daysBetween,
+	});
+  });
+  
+  router.get('/:version/overview', (req, res) => {
+	const version = req.params.version;
+	const msInDay = 24 * 60 * 60 * 1000;
+  
+	const revocation = new Date(
+	  `${req.session.data['revocation-date-year']}-${req.session.data['revocation-date-month']}-${req.session.data['revocation-date-day']}`
+	);
+  
+	const arrest = new Date(
+	  `${req.session.data['arrest-date-year']}-${req.session.data['arrest-date-month']}-${req.session.data['arrest-date-day']}`
+	);
+  
+	let daysBetween = null;
+  
+	if (!isNaN(revocation) && !isNaN(arrest)) {
+	  let rawDiff = Math.round((arrest - revocation) / msInDay);
+	  daysBetween = rawDiff > 1 ? rawDiff - 1 : 0;
+	}
+  
+	res.render(`${version}/overview`, {
+	  data: req.session.data,
+	  daysBetween,
+	});
+  });
+  
+  router.get('/:version/recalls', (req, res) => {
+	const version = req.params.version;
+	const msInDay = 24 * 60 * 60 * 1000;
+  
+	const revocation = new Date(
+	  `${req.session.data['revocation-date-year']}-${req.session.data['revocation-date-month']}-${req.session.data['revocation-date-day']}`
+	);
+  
+	const arrest = new Date(
+	  `${req.session.data['arrest-date-year']}-${req.session.data['arrest-date-month']}-${req.session.data['arrest-date-day']}`
+	);
+  
+	let daysBetween = null;
+  
+	if (!isNaN(revocation) && !isNaN(arrest)) {
+	  let rawDiff = Math.round((arrest - revocation) / msInDay);
+	  daysBetween = rawDiff > 1 ? rawDiff - 1 : 0;
+	}
+  
+	res.render(`${version}/recalls`, {
+	  data: req.session.data,
+	  daysBetween,
+	});
+  });
+  

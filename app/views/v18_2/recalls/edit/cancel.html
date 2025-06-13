@@ -1,0 +1,57 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<!-- <div class="moj-width-container">
+    <a href="../release-dates" class="govuk-back-link">Back</a>
+</div> -->
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="../release-dates">
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+
+      <span class="govuk-caption-xl">Edit a recall</span>
+                            Are you sure you want to cancel editing the recall?
+                            </h1>
+                        </legend> 
+
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                    Yes, cancel editing the recall
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                    No, go back to the recall
+                                </label> 
+                            </div>
+                            
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+                <input type="hidden" name="_csrf" value="ijUvXjJJ-cnFaw1jmM3mPKVq1y8JyrPCB4DQ"> 
+
+                <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                Confirm
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
