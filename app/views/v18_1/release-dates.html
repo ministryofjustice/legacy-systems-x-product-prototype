@@ -23,7 +23,7 @@
     <div class="govuk-grid-column-two-thirds">
         
             
-        {% if data['toShow'] == 'recallHistory' %} 
+        {% if data['toShow'] == 'recallHistory'  %} 
 
         <article class="moj-ticket-panel" aria-label="Sub navigation 1">
 
@@ -37,7 +37,7 @@
           
           </article>
 
-          {% elif data['toShow'] == 'ualAdded' or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' %} 
+          {% elif data['toShow'] == 'ualAdded' or data['ualEdited'] == 'true' or data['recallEdited'] == 'true'  or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %} 
 
           <article class="moj-ticket-panel" aria-label="Sub navigation 1">
   
