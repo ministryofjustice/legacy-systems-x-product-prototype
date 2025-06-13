@@ -2,7 +2,8 @@ module.exports = {
     courtCases: [
    
         
-        {
+        {   "scenario" : "1", 
+            "status" : "active",
             "appearances": [{
                     "court-case-ref": "34F2356911",
                     "court-case-number": "1",
@@ -76,8 +77,197 @@ module.exports = {
                 }
             ]
         },
-        {   
-            "unsupported" : "true",
+        {   "scenario" : "2", 
+            "status" : "active",
+            "appearances": [{
+                    "court-case-ref": "34F2356912",
+                    "court-case-number": "2",
+                    "overall-case-outcome": "Remanded in custody",
+                    "next-court-date-set": "No",
+                    "warrant-date-day": "20",
+                    "warrant-date-month": "09",
+                    "warrant-date-year": "2022",
+                    "court-name": "Sheffield MC",
+                    // "source": "nomis",
+                    "offences": [{
+                            "offence-start-date-day": "04",
+                            "offence-start-date-month": "05",
+                            "offence-start-date-year": "2023",
+                            "offence-end-date-day": "08",
+                            "offence-end-date-month": "05",
+                            "offence-end-date-year": "2023",
+                            "offence-code": [
+                                "TH68037"
+                            ],
+                            "offence-name": "TH68037 - Burglary other than dwelling - theft",
+                            "outcome": "Remand in custody",
+                        },  
+                        {
+                            "offence-start-date-day": "06",
+                            "offence-start-date-month": "05",
+                            "offence-start-date-year": "2023",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "TH68038"
+                            ],
+                            "offence-name": "TH68038 – Burglary dwelling inflict grievous bodily harm ",
+                            "outcome": "Remand in custody",
+                        }  
+                    ]
+                },
+                {
+                    "court-case-ref": "34F2356912",
+                    "court-case-number": "2",
+                    "overall-case-outcome": "Imprisonment",
+                    "overall-conviction-date-day": "4",
+                    "overall-conviction-date-month": "9",
+                    "overall-conviction-date-year": "2023",
+                    "next-court-date-set": "No",
+                    "warrant-date-day": "4",
+                    "warrant-date-month": "9",
+                    "warrant-date-year": "2023",
+                    "court-name": "Manchester Crown Court (Crown Square)",
+                    "overall-sentence-length-years": "0",
+                    "overall-sentence-length-months": "20",
+                    "overall-sentence-length-weeks": "0",
+                    "overall-sentence-length-days": "0",
+                    // "status": ["saved","mismatch"],
+                    "sentences": [{
+                            "count-number": "2",
+                            "conviction-date-day": "04",
+                            "conviction-date-month": "09",
+                            "conviction-date-year": "2023",
+                            "sentence-date-day": "04",
+                            "sentence-date-month": "09",
+                            "sentence-date-year": "2023",
+                            "offence-start-date-day": "6",
+                            "offence-start-date-month": "5",
+                            "offence-start-date-year": "2023",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "TH68038"
+                            ],
+                            "offence-name": "TH68038 – Burglary dwelling inflict grievous bodily harm ",
+                            "outcome": "Imprisonment",
+                            "sentence-type": "SDS (Standard Determinate Sentence)",
+                            "sentence-length-years": "0",
+                            "sentence-length-months": "20",
+                            "sentence-length-weeks": "0",
+                            "sentence-length-days": "0",
+                            "consecutive-concurrent": "Concurrent",
+                            "status": "active"
+                        },
+                        {
+                        "count-number": "2",
+                        "conviction-date-day": "12",
+                        "conviction-date-month": "6",
+                        "conviction-date-year": "2023",
+                        "sentence-date-day": "12",
+                        "sentence-date-month": "6",
+                        "sentence-date-year": "2023",
+                        "offence-start-date-day": "04",
+                        "offence-start-date-month": "05",
+                        "offence-start-date-year": "2023",
+                        "offence-end-date-day": "08",
+                        "offence-end-date-month": "05",
+                        "offence-end-date-year": "2023",
+                        "offence-code": [
+                            "TH68037"
+                        ],
+                        "offence-name": "TH68037 - Burglary other than dwelling - theft",
+                        "outcome": "Imprisonment",
+                        "sentence-type": "SDS (Standard Determinate Sentence)",
+                        "sentence-length-years": "0",
+                        "sentence-length-months": "3",
+                        "sentence-length-weeks": "0",
+                        "sentence-length-days": "0",
+                        "consecutive-concurrent": "Concurrent",
+                        "status": "inactive"
+                    }
+                    ]
+                }
+            ]
+        },
+        {   "scenario" : "2", 
+            "status" : "active",
+            "appearances": [{
+                    "court-case-ref": "45F2356967",
+                    "court-case-number": "1",
+                    "overall-case-outcome": "Remanded in custody",
+                    "next-court-date-set": "No",
+                    "warrant-date-day": "20",
+                    "warrant-date-month": "09",
+                    "warrant-date-year": "2024",
+                    "court-name": "Sheffield MC",
+                    // "source": "nomis",
+                    "offences": [{
+                            "offence-start-date-day": "06",
+                            "offence-start-date-month": "07",
+                            "offence-start-date-year": "2024",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "TH68037"
+                            ],
+                            "offence-name": "TH68037 - Burglary other than dwelling - theft",
+                            "outcome": "Remand in custody",
+                        } 
+                    ]
+                },
+                {
+                    "court-case-ref": "45F2356967",
+                    "court-case-number": "1",
+                    "overall-case-outcome": "Imprisonment",
+                    "overall-conviction-date-day": "01",
+                    "overall-conviction-date-month": "03",
+                    "overall-conviction-date-year": "2025",
+                    "next-court-date-set": "No",
+                    "warrant-date-day": "01",
+                    "warrant-date-month": "03",
+                    "warrant-date-year": "2025",
+                    "court-name": "Manchester Crown Court (Crown Square)",
+                    "overall-sentence-length-years": "0",
+                    "overall-sentence-length-months": "4",
+                    "overall-sentence-length-weeks": "0",
+                    "overall-sentence-length-days": "0",
+                    // "status": ["saved","mismatch"],
+                    "sentences": [{
+                            "count-number": "1",
+                            "conviction-date-day": "01",
+                            "conviction-date-month": "03",
+                            "conviction-date-year": "2025",
+                            "sentence-date-day": "01",
+                            "sentence-date-month": "03",
+                            "sentence-date-year": "2025",
+                            "offence-start-date-day": "06",
+                            "offence-start-date-month": "07",
+                            "offence-start-date-year": "2024",
+                            "offence-end-date-day": "",
+                            "offence-end-date-month": "",
+                            "offence-end-date-year": "",
+                            "offence-code": [
+                                "TH68037"
+                            ],
+                            "offence-name": "TH68037 - Burglary other than dwelling - theft",
+                            "outcome": "Imprisonment",
+                            "sentence-type": "SDS (Standard Determinate Sentence)",
+                            "sentence-length-years": "0",
+                            "sentence-length-months": "4",
+                            "sentence-length-weeks": "0",
+                            "sentence-length-days": "0",
+                            "consecutive-concurrent": "Forthwith",
+                            "status": "active"
+                        } 
+                    ]
+                }
+            ]
+        },
+        {   "scenario" : "unsupported",
             "status" : "inactive",
             "appearances": [{
                     "court-case-ref": "65F2356976",
@@ -198,8 +388,8 @@ module.exports = {
                 }
             ]
         },
-        {
-            "unsupported" : "true", 
+        {   "scenario" : "unsupported",
+            "status" : "active",
             "appearances": [{
                 "court-case-ref": "56F2356989",
                 "court-case-number": "2",
@@ -276,8 +466,8 @@ module.exports = {
             }
         ]
         },
-        {   
-            "unsupported" : "true", 
+        {   "scenario" : "unsupported",
+            "status" : "active",
             "appearances": [{
                     "court-case-ref": "34F2356911",
                     "court-case-number": "1",
@@ -401,8 +591,8 @@ module.exports = {
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
                             "consecutive-concurrent": "Concurrent to count 1",
-                            "unsupported-sentence": "true",
-                            "status": "active"
+                            "status": "active",
+                            "unsupported-sentence": "true"
                         },
                         {
                             "count-number": "3",
@@ -429,8 +619,8 @@ module.exports = {
                             "sentence-length-weeks": "0",
                             "sentence-length-days": "0",
                             "consecutive-concurrent": "Concurrent to count 1",
-                            "unsupported-sentence": "true",
-                            "status": "inactive"
+                            "status": "active",
+                            "unsupported-sentence": "true"
                         }
                     ]
                 }

@@ -19,7 +19,9 @@
                     {% for courtCase in data.courtCases | reverse %}
                     {% set lastAppearance = courtCase.appearances | last %}
                     {% set courtCaseIndex = loop.revindex0 %}
-                    {% if courtCase['status'] != "inactive" and courtCase['unsupported'] != "true"  %}
+
+                    {% if data['scenario'] == '1' %}
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "1"  %}
 
                     <h2 class="govuk-heading-m">Tagged bail details</h2>
                     <div class="govuk-!-margin-top-6" id="ReviewTaggedBail">
@@ -58,7 +60,94 @@
                             </div>
                         </dl>
                     </div>
+                    {% endif %}
+                    {% endif %}
 
+
+                    {% if data['scenario'] == '2' %}
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "2"  %}
+
+                    <h2 class="govuk-heading-m">Tagged bail details</h2>
+                    <div class="govuk-!-margin-top-6" id="ReviewTaggedBail">
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                   Case details
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['court-name']}} 
+                                    <br>
+                                   <span class="govuk-hint">  {{ lastAppearance['court-case-ref'] }}</span>
+                                   <br>
+                                   <span class="govuk-hint"> {% for sentence in lastAppearance.sentences %}
+                                    {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                    {% endfor %}</span>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="select-case">
+                                        Edit<span class="govuk-visually-hidden"> Edit</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Number of days 
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    20 days
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="add-tagged-bail.html">
+                                        Edit<span class="govuk-visually-hidden"> Edit</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                    {% endif %}
+                    {% endif %}
+
+                    {% if data['scenario'] == 'unsupported' %}
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported"  %}
+
+                    <h2 class="govuk-heading-m">Tagged bail details</h2>
+                    <div class="govuk-!-margin-top-6" id="ReviewTaggedBail">
+                        <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                   Case details
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    {{ lastAppearance['court-name']}} 
+                                    <br>
+                                   <span class="govuk-hint">  {{ lastAppearance['court-case-ref'] }}</span>
+                                   <br>
+                                   <span class="govuk-hint"> {% for sentence in lastAppearance.sentences %}
+                                    {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                    {% endfor %}</span>
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="select-case">
+                                        Edit<span class="govuk-visually-hidden"> Edit</span>
+                                    </a>
+                                </dd>
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Number of days 
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    20 days
+                                </dd>
+                                <dd class="govuk-summary-list__actions">
+                                    <a class="govuk-link" href="add-tagged-bail.html">
+                                        Edit<span class="govuk-visually-hidden"> Edit</span>
+                                    </a>
+                                </dd>
+                            </div>
+                        </dl>
+                    </div>
+                    {% endif %}
                     {% endif %}
 
                     {% endfor %}

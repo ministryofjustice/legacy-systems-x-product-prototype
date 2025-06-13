@@ -83,7 +83,7 @@
                             {{govukButton({
                                 text: "Launch scenario 1",
                                 attributes: {
-                                "formaction": "v18_1/DPS-prisoner-profile?noAdjustments=true",
+                                "formaction": "v18_1/DPS-prisoner-profile?scenario=1",
                                 "formmethod": "post"
                                 },
                                 classes: "govuk-button--secondary"
@@ -107,7 +107,7 @@
                                 {{govukButton({
                                     text: "Launch scenario 2",
                                     attributes: {
-                                    "formaction": "v18_2/overview",
+                                    "formaction": "v18_2/overview?scenario=2",
                                     "formmethod": "post"
                                     },
                                     classes: "govuk-button--secondary"
@@ -131,7 +131,7 @@
                                 {{govukButton({
                                     text: "Launch scenario 3",
                                     attributes: {
-                                    "formaction": "v18_1/overview?unsupportedSentences=true",
+                                    "formaction": "v18_2/overview?unsupportedSentences=true",
                                     "formmethod": "post"
                                     },
                                     classes: "govuk-button--secondary"

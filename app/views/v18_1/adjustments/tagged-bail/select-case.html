@@ -23,11 +23,13 @@
                             {% for courtCase in data.courtCases | reverse %}
                             {% set lastAppearance = courtCase.appearances | last %}
                             {% set courtCaseIndex = loop.revindex0 %}
-                            {% if courtCase['status'] != "inactive" and courtCase['unsupported'] != "true"  %}
-                            
+
+
+                            {% if data['scenario'] == '1' %}
+                            {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "1"  %}
                             <div class="govuk-summary-card">
                                 <div class="govuk-summary-card__title-wrapper">
-                                    <h2 class="govuk-summary-card__title">{{ lastAppearance['court-name']}} <span class="moj-badge moj-badge--grey">recall</span></h2>
+                                    <h2 class="govuk-summary-card__title">{{ lastAppearance['court-name']}}                                             {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}<span class="moj-badge moj-badge--grey">recall</span>   {% endif %}</h2>
                                     <ul class="govuk-summary-card__actions">
                                         <li class="govuk-summary-card__action">
                                             <a class="govuk-link select-case-link" href="#"  data-date="10 May 2023"  data-case="T20223256" data-court="Bristol Magistrates Court">
@@ -60,11 +62,92 @@
                                     </dl>
                                 </div>
                             </div>
-                           
-
-
+                            {% endif %}
                             {% endif %}
 
+
+
+                            {% if data['scenario'] == '2' %}
+                            {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "2"  %}
+                            <div class="govuk-summary-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">{{ lastAppearance['court-name']}}                                             {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}<span class="moj-badge moj-badge--grey">recall</span>   {% endif %}</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link select-case-link" href="#"  data-date="10 May 2023"  data-case="T20223256" data-court="Bristol Magistrates Court">
+                                            Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="govuk-summary-card__content">
+                                    <dl class="govuk-summary-list">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Case reference
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ lastAppearance['court-case-ref'] }}
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+
+                                                {% for sentence in lastAppearance.sentences %}
+                                                {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                                {% endfor %}
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endif %}
+
+
+                            {% if data['scenario'] == 'unsupported' %}
+                            {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported"  %}
+                            <div class="govuk-summary-card">
+                                <div class="govuk-summary-card__title-wrapper">
+                                    <h2 class="govuk-summary-card__title">{{ lastAppearance['court-name']}}                                             {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}<span class="moj-badge moj-badge--grey">recall</span>   {% endif %}</h2>
+                                    <ul class="govuk-summary-card__actions">
+                                        <li class="govuk-summary-card__action">
+                                            <a class="govuk-link select-case-link" href="#"  data-date="10 May 2023"  data-case="T20223256" data-court="Bristol Magistrates Court">
+                                            Select this case<span class="govuk-visually-hidden"> of University of Gloucestershire</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="govuk-summary-card__content">
+                                    <dl class="govuk-summary-list">
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Case reference
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+                                                {{ lastAppearance['court-case-ref'] }}
+                                            </dd>
+                                        </div>
+                                        <div class="govuk-summary-list__row">
+                                            <dt class="govuk-summary-list__key">
+                                                Sentence date
+                                            </dt>
+                                            <dd class="govuk-summary-list__value">
+
+                                                {% for sentence in lastAppearance.sentences %}
+                                                {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
+                                                {% endfor %}
+                                            </dd>
+                                        </div>
+                                    </dl>
+                                </div>
+                            </div>
+                            {% endif %}
+                            {% endif %}
+                            
                             {% endfor %}
 
                             {% endif %}

@@ -85,7 +85,13 @@
           </dt>
           <dd class="govuk-summary-list__value">
  
-            1 sentence
+            {% if data['scenario'] == '2' %} 
+            {{ data.courtCases | activeSentence2 | length }} sentence{% if data.courtCases | activeSentence2 | length != 1 %}s{% endif %}
+
+            {% else %}
+            {{ data.courtCases | activeSentence | length }} sentence{% if data.courtCases | activeSentence | length != 1 %}s{% endif %}
+
+        {% endif %} 
           </dd>
 
           <dd class="govuk-summary-list__actions">
