@@ -33,20 +33,6 @@
                 </section>
             
             </article>
-
-            {% elif data['toShow'] == 'ualAdded' or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' %} 
-
-            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
-    
-                <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
-                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
-                    <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates.</p>
-                    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="calculate-release-dates/calculation-reason">
-                    Calculate release dates
-                    </a>
-                </section>
-                
-                </article>
             {% elif data['toShow'] == 'calcComplete' %}
     
             <div class="govuk-summary-card govuk-!-margin-bottom-6">
@@ -74,7 +60,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">Thursday, 14 August 2025</p>
+                                <p class="govuk-body">Friday, 19 December 2025</p>
                             </dd>
                         </div>  
                         <div class="govuk-summary-list__row">
@@ -83,7 +69,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Monday, 14 July 2025</p>
+                                <p class="govuk-body">Tuesday, 1st July 2025</p>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -92,12 +78,28 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Tuesday, 2 June 2026</p>
+                                <p class="govuk-body">Sunday, 26 April 2026</p>
                             </dd>
                         </div>
                     </dl>
+ 
                 </div>
             </div>
+
+
+            {% elif data['toShow'] == 'ualAdded' or data['ualEdited'] == 'true' or data['recallEdited'] == 'true'  or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %} 
+
+            <article class="moj-ticket-panel" aria-label="Sub navigation 1">
+    
+                <section class="moj-ticket-panel__content moj-ticket-panel__content--grey" aria-label="Section 1">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Perform a calculation</h2>
+                    <p class="govuk-body">Some information has changed. Check that all information is up to date then calculation release dates.</p>
+                    <a class="govuk-button govuk-!-margin-bottom-1" data-module="govuk-button" href="calculate-release-dates/calculation-reason">
+                    Calculate release dates
+                    </a>
+                </section>
+                
+                </article>
 
             {% elif data['toShow'] == 'calc2Complete' %} 
     
@@ -235,7 +237,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value">
-                                <p class="govuk-body">Thursday, 30 June 2025</p>
+                                <p class="govuk-body">Thursday, 18 December 2025</p>
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -244,7 +246,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Saturday, 18 April 2025</p> 
+                                <p class="govuk-body">Saturday, 25 April 2025</p> 
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -253,7 +255,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Home detention curfew eligibility date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4"> 
-                                <p class="govuk-body">Monday, 29 March 2025 </p> 
+                                <p class="govuk-body">Monday, 06 Febraury 2025 </p> 
                             </dd>
                         </div>
                         <div class="govuk-summary-list__row">
@@ -262,7 +264,7 @@
                                 <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
                             </dt>
                             <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                                <p class="govuk-body">Wednesday, 18 April 2026 </p>
+                                <p class="govuk-body">Wednesday, 25 April 2026 </p>
                             </dd>
                         </div>
                     </dl>
@@ -606,7 +608,7 @@
                     <details class="govuk-details govuk-!-margin-bottom-0">
                         <summary class="govuk-details__summary">
                             <span class="govuk-details__summary-text">
-                                Court cases ({{ data.courtCases | scenario2ActiveCase | length }})
+                                Court cases ({{ data.courtCases | activeCase | length }})
                             </span>
                         </summary>
                     

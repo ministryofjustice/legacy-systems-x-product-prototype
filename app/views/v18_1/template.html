@@ -376,7 +376,8 @@ Court cases and release dates
                         </li>
                         <li class="moj-sub-navigation__item">
                             <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
-                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded'   or data['ualEdited'] == 'true' or data['recallEdited'] == 'true'  or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% if data['toShow'] == 'calcComplete'  %} 
+                                {% elif data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded'   or data['ualEdited'] == 'true' or data['recallEdited'] == 'true'  or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
                                 {% else %} 
                                 {% endif %} 
                             </a>
@@ -410,7 +411,8 @@ Court cases and release dates
                         </li>
                         <li class="moj-sub-navigation__item">
                             <a class="moj-sub-navigation__link"  aria-current="page" href="release-dates">Release dates and calculations 
-                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded'  or data['ualEdited'] == 'true' or data['recallEdited'] == 'true'  or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% if data['toShow'] == 'calcComplete'  %} 
+                                {% elif data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded'  or data['ualEdited'] == 'true' or data['recallEdited'] == 'true'  or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
                                 {% else %} 
                                 {% endif %} 
                             </a>
@@ -446,7 +448,8 @@ Court cases and release dates
                 </li>
                 <li class="moj-sub-navigation__item">
                     <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
-                        {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory'  or data['toShow'] == 'ualAdded'  or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
+                        {% if data['toShow'] == 'calcComplete'  %} 
+                        {% elif data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory'  or data['toShow'] == 'ualAdded'  or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
                         {% else %} 
                         {% endif %} 
                     </a>
@@ -482,7 +485,8 @@ Court cases and release dates
                         </li>
                         <li class="moj-sub-navigation__item">
                             <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
-                                {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory'  or data['toShow'] == 'ualAdded'    or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true'  %}  <span id="notifications" class="moj-notification-badge">1</span> 
+                                {% if data['toShow'] == 'calcComplete'  %} 
+                                {% elif data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory'  or data['toShow'] == 'ualAdded'    or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true'  %}  <span id="notifications" class="moj-notification-badge">1</span> 
                                 {% else %} 
                                 {% endif %} 
                             </a>
@@ -517,7 +521,8 @@ Court cases and release dates
               </li>
               <li class="moj-sub-navigation__item">
                   <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
-                      {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory'  or data['toShow'] == 'ualAdded'    or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true'  %}  <span id="notifications" class="moj-notification-badge">1</span> 
+                      {% if data['toShow'] == 'calcComplete'  %} 
+                      {% elif data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory'  or data['toShow'] == 'ualAdded'    or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' or data['taggedBailAdded'] == 'true' or data['remandAdded'] == 'true'  %}  <span id="notifications" class="moj-notification-badge">1</span> 
                       {% else %} 
                       {% endif %} 
                   </a>
