@@ -1,0 +1,310 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+
+    <a href="../index-1" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters govuk-!-padding-top-6">
+
+                <h1 class="govuk-heading-s"><span class="govuk-caption-xl">Adjustments</span>
+                 
+                </h1>
+                <div class="moj-banner moj-banner--warning" role="region" aria-label="Warning">
+                    <h2 class="govuk-heading-m">
+                        Before you can continue to this service, you need to check if any offences without a sentence have been replaced. 
+                    </h2>
+    
+                    <p class="govuk-body">This service has marked the below remand as not relevant.</p>
+                    <p class="govuk-body">This is because the offence below that Justin Bell was remanded for did not result in a sentence being imposed.</p>
+                    <p class="govuk-body">If the offence that Justin Bell was remanded for was replaced, and a sentence was imposed for that replaced offence, the below remand may be considered relevant.</p>
+                    <p class="govuk-body">To enable this service to accurately calculate relevant remand, check if the offence was replaced and confirm this below.</p>
+                    <p class="govuk-body">Select no if there is any other reason that the offence does not have a sentence imposed.</p>
+                    
+             
+                  </div>
+                  
+          
+                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                <div class="offence-card sentence-card ">
+                    <div class="offence-card-offence-details"> 
+                        <!-- <span class="govuk-body">Count 1</span>  -->
+                        <h4 class="govuk-heading-s">
+                            Accidentally allow a chimney to be on fire
+                            <br>
+                            <strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2">
+                                Case not concluded
+                              </strong>
+                
+                        </h4>  
+                        <dl class="govuk-summary-list govuk-summary-list--no-border" data-qa="offenceSummaryList"> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Committed on
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    23 November 2023
+                                </dd>
+                
+                            </div> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Court
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Birmingham crown court
+                                </dd>
+                
+                            </div> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Case number
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    ABC123
+                                </dd>
+                
+                            </div> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Remand
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    24 days
+                                </dd>
+                
+                            </div> 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Period
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    23 November 2023 to 16 December 2023
+                                </dd>
+                
+                            </div>
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Start outcome
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Commit to crown court for trial (Summary / Either Way Sentences) on 23 November 2023
+                                </dd>
+                
+                            </div>
+                 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Stop outcome
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Remand on Conditional Bail on 16 December 2023
+                                </dd>
+                
+                            </div>
+                 
+                            <div class="govuk-summary-list__row">
+                                <dt class="govuk-summary-list__key">
+                                    Offence outcome 
+                                </dt>
+                                <dd class="govuk-summary-list__value">
+                                    Imprisonment
+                                </dd>
+                
+                            </div>
+                        </dl>
+                
+                    </div>  
+                
+                </div>
+
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                      <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        <h1 class="govuk-fieldset__heading">
+                          Has this sentence been replaced?
+                        </h1>
+                      </legend>
+                      <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="sentencesReplaced" name="sentencesReplaced" type="radio" value="No, this offence has not been replaced">
+                          <label class="govuk-label govuk-radios__label" for="sentencesReplaced">
+                            No, this offence has not been replaced
+                          </label>
+                        </div>
+
+                        <div class="govuk-radios__divider">or</div>
+
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="sentencesReplaced-2" name="sentencesReplaced" type="radio" value="
+                          Yes, this sentences was replaced with Manslaughter committed on 2 February 2019">
+                          <label class="govuk-label govuk-radios__label" for="sentencesReplaced-2">
+                            Yes, this sentences was replaced with <b>Manslaughter</b> committed on 2 February 2019
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="sentencesReplaced-3" name="sentencesReplaced" type="radio" value="
+                          Yes, this sentences was replaced with Accidentally allowing a chimney to be on fire committed on 24 June 2021">
+                          <label class="govuk-label govuk-radios__label" for="sentencesReplaced-3">
+                            Yes, this sentences was replaced with <b>Accidentally allowing a chimney to be on fire</b> committed on 24 June 2021
+                          </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                          <input class="govuk-radios__input" id="sentencesReplaced-4" name="sentencesReplaced" type="radio" value="Yes, this sentences was replaced with Water without a licence committed on 2 March 2020">
+                          <label class="govuk-label govuk-radios__label" for="sentencesReplaced-4"> 
+                            Yes, this sentences was replaced with <b>Water without a licence</b> committed on 2 March 2020
+                          </label>
+                        </div> 
+                      </div>
+                    </fieldset>
+                  </div>
+
+                  <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                  <div class="offence-card sentence-card ">
+                      <div class="offence-card-offence-details"> 
+                          <!-- <span class="govuk-body">Count 1</span>  -->
+                          <h4 class="govuk-heading-s">
+                              Accidentally allow a chimney to be on fire
+                              <br>
+                              <strong class="govuk-tag govuk-tag--red govuk-!-margin-top-2">
+                                  Case not concluded
+                                </strong>
+                  
+                          </h4>  
+                          <dl class="govuk-summary-list govuk-summary-list--no-border" data-qa="offenceSummaryList"> 
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Committed on
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      23 November 2023
+                                  </dd>
+                  
+                              </div> 
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Court
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      Birmingham crown court
+                                  </dd>
+                  
+                              </div> 
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Case number
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      ABC123
+                                  </dd>
+                  
+                              </div> 
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Remand
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      24 days
+                                  </dd>
+                  
+                              </div> 
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Period
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      23 November 2023 to 16 December 2023
+                                  </dd>
+                  
+                              </div>
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Start outcome
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      Commit to crown court for trial (Summary / Either Way Sentences) on 23 November 2023
+                                  </dd>
+                  
+                              </div>
+                   
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Stop outcome
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      Remand on Conditional Bail on 16 December 2023
+                                  </dd>
+                  
+                              </div>
+                   
+                              <div class="govuk-summary-list__row">
+                                  <dt class="govuk-summary-list__key">
+                                      Offence outcome 
+                                  </dt>
+                                  <dd class="govuk-summary-list__value">
+                                      Imprisonment
+                                  </dd>
+                  
+                              </div>
+                          </dl>
+                  
+                      </div>  
+                  
+                  </div>
+  
+                  <div class="govuk-form-group">
+                      <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                          <h1 class="govuk-fieldset__heading">
+                            Has this sentence been replaced?
+                          </h1>
+                        </legend>
+                        <div class="govuk-radios" data-module="govuk-radios">
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sentencesReplaced" name="sentencesReplaced" type="radio" value="No, this offence has not been replaced">
+                            <label class="govuk-label govuk-radios__label" for="sentencesReplaced">
+                              No, this offence has not been replaced
+                            </label>
+                          </div>
+  
+                          <div class="govuk-radios__divider">or</div>
+  
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sentencesReplaced-2" name="sentencesReplaced" type="radio" value="
+                            Yes, this sentences was replaced with Manslaughter committed on 2 February 2019">
+                            <label class="govuk-label govuk-radios__label" for="sentencesReplaced-2">
+                              Yes, this sentences was replaced with <b>Manslaughter</b> committed on 2 February 2019
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sentencesReplaced-3" name="sentencesReplaced" type="radio" value="
+                            Yes, this sentences was replaced with Accidentally allowing a chimney to be on fire committed on 24 June 2021">
+                            <label class="govuk-label govuk-radios__label" for="sentencesReplaced-3">
+                              Yes, this sentences was replaced with <b>Accidentally allowing a chimney to be on fire</b> committed on 24 June 2021
+                            </label>
+                          </div>
+                          <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="sentencesReplaced-4" name="sentencesReplaced" type="radio" value="Yes, this sentences was replaced with Water without a licence committed on 2 March 2020">
+                            <label class="govuk-label govuk-radios__label" for="sentencesReplaced-4"> 
+                              Yes, this sentences was replaced with <b>Water without a licence</b> committed on 2 March 2020
+                            </label>
+                          </div> 
+                        </div>
+                      </fieldset>
+                    </div>
+  
+            <div class="govuk-button-group">
+                <a href="check-remand-details" class="govuk-button" data-module="govuk-button">
+                    Confirm and continue
+                </a>
+                <a href="cancel" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                    Cancel
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}

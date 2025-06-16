@@ -10,24 +10,20 @@
         <div class="govuk-grid-column-two-thirds"> 
             <h1 class="govuk-heading-xl">
             <!-- <span class="govuk-caption-xl">11 March 2023 at HMP Kirkham</span> -->
-                Sentence and offence information
+                Calculation details
             </h1> 
         </div>
     </div>
 </div>
  
-
-<div class="moj-width-container"> 
+ 
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
-
-            <h2 class="govuk-heading-m">
-                    Calculation details
-            </h2> 
-            <dl class="govuk-summary-list govuk-summary-list--no-border">
+ 
+            <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
                 <div class="govuk-summary-list__row">
                 <dt class="govuk-summary-list__key">
-                    Date
+                    Date of calculation
                 </dt>
                 <dd class="govuk-summary-list__value">
                     {{ "today" | govukDate }}
@@ -48,11 +44,19 @@
                 <dd class="govuk-summary-list__value">
                     HMP Kirkham
                 </dd>
-                </div> 
-            </dl> 
+                </div>
+                <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Source
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Paper calculation <br>
+                <span class="govuk-!-font-size-16 govuk-hint">Entered in the Calculate release dates service</span>
+                </dd>
+                </div>
+            </dl>
         </div>
-    </div>
-</div>
+    </div> 
 
 <nav class="moj-sub-navigation" aria-label="Sub navigation">
 
@@ -68,6 +72,31 @@
 </nav>
 
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h3 class="govuk-heading-l govuk-!-margin-top-2">Court case 1</h3>
+
+        <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-0">
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Court case number
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    TS28402BG
+                </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                    Court name
+                </dt>
+                <dd class="govuk-summary-list__value">
+                    Bristol Crown Court
+                </dd>
+            </div>
+        </dl>
+    </div>
+</div> 
     <!-- Count 1 -->
 
     <div class="offence-card sentence-card">

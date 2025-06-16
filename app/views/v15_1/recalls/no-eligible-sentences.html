@@ -1,0 +1,41 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="return-to-custody-date" class="govuk-back-link">Back</a>
+</div>
+
+<form method="post" action="check-answers">
+<div class="moj-interruption-card">
+    <div class="moj-interruption-card__content">
+      <h1 class="govuk-heading-l moj-interruption-card__heading" style="color: #ffff;">None of the sentences recorded are eligible for recall</h1>
+      <div class="govuk-body-l moj-interruption-card__body">
+        <p>The date of revocation entered date is <b>27/02/2025</b>.</p>  
+        <h2 class="govuk-heading-m moj-interruption-card__heading" style="color: #ffff;">What to do next</h2> 
+        <ul class=" govuk-list--number">
+          <li>Check the date of revocation you have entered is correct.</li> 
+            <li>Cancel recording this recall, and check the sentence information has been recorded correctly.</li>
+        </ul> 
+    
+      </div>
+      <div class="govuk-button-group moj-interruption-card__actions">
+   
+    
+        <div class="govuk-button-group moj-interruption-card__actions">
+   
+          <button role="button" draggable="false" type="button" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+            Update revocation date
+          </button>
+    
+          <button role="button" draggable="false" type="button" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+            Cancel recall
+          </button>
+    
+        </div>
+      </div>
+    </div>
+  </div>
+
+</form>
+  
+{% endblock %}

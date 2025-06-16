@@ -1,0 +1,26 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../recalls" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+                <h1 class="govuk-heading-xl">You cannot record a recall</h1>
+
+                {% if data['error'] == 'EDS18_EDS21_EDSU18_SENTENCE_TYPE_INCORRECT' %}
+                <p class="govuk-body">This is because:</p>
+                <p class="govuk-body">The EDS sentence type for court case 34F2356911 count 2<b></b> cannot be used when the sentence date is 1 December 2020.</p>
+                <h2 class="govuk-heading-m">What you need to do</h2>   
+                <p class="govuk-body">
+                  Update these details in NOMIS and <a class="govuk-link" href="#">reload this page</a>. </p>
+
+        
+                {% else %}
+                {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -10,20 +10,17 @@
             
         <div class="moj-width-container">
         <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
-            Calculation summary
+            Calculation details
         </h1> 
 
             <!-- <h3 class="govuk-heading-l govuk-!-margin-bottom-2">Calculation details</h3> -->
             <div class="govuk-grid-row">
                 <div class="govuk-grid-column-two-thirds ">
 
-            <h2 class="govuk-heading-m">
-                Calculation details
-        </h2> 
                     <dl class="govuk-summary-list govuk-summary-list--no-border govuk-!-margin-bottom-6">
                         <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Date
+                            Date of calculation
                         </dt>
                         <dd class="govuk-summary-list__value">
                             {{ "today" | govukDate }}{{ "today" | govukDate }}
@@ -45,14 +42,15 @@
                             HMP Kirkham
                         </dd>
                         </div>
-                        <!-- <div class="govuk-summary-list__row">
+                        <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
-                            Sentences included in this calculation
+                            Source
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            2
+                            Paper calculation <br>
+                <span class="govuk-!-font-size-16 govuk-hint">Entered in the Calculate release dates service</span>
                         </dd>
-                        </div> -->
+                        </div>
                     </dl>
                 </div>
             </div>
@@ -86,8 +84,8 @@
     <div class="govuk-grid-row">
         <div class="govuk-grid-column-three-quarters">
             <h2 class="govuk-heading-l">Release dates</h2>
-            <div class="govuk-summary-card">
-                <div class="govuk-summary-card__content" id="release-dates">
+            <!-- <div class="govuk-summary-card"> -->
+                <!-- <div class="govuk-summary-card__content" id="release-dates"> -->
                     <dl class="govuk-summary-list release-dates-list">
                         <div class="govuk-summary-list__row">
                             <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
@@ -118,8 +116,8 @@
                             </dd>
                         </div>
                     </dl>
-                </div>
-            </div>
+                <!-- </div> -->
+            <!-- </div> -->
         </div>
     </div>
     </div>
@@ -135,7 +133,7 @@
                     Some dates and details are not included as according to <a href="http://www.justice.gov.uk/downloads/offenders/psipso/psi-2015/psi-03-2015-sentence-calculation-determiante-sentenced-prisoners.pdf" target="_blank">PSI 03/2015 (opens in new tab)</a> they are not relevant to this person's circumstances.
                 </div>
             </details>
-            <details class="govuk-details" data-module="govuk-details">
+            <!-- <details class="govuk-details" data-module="govuk-details">
                 <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
                         How are final release dates calculated?
@@ -144,7 +142,7 @@
                 <div class="govuk-details__text">
                     Some calculations are made up of different sentences and terms, such as overlapping or concurrent sentences. The final release date comes from the sentence or term with the latest release date.
                 </div>
-            </details>
+            </details> -->
         </div>
     </div>
 </div> 

@@ -1,0 +1,106 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+  <a href="revocation-date" class="govuk-back-link">Back</a>
+</div>
+
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds"> 
+        <div class="govuk-form-group">
+          {% if data['unsupportedSentences'] == 'true' %}
+          <form method="post" action="unsupported-sentences">
+          {% else %}
+          <form method="post" action="check-sentence-and-offence-information">
+          {% endif %}
+
+          <fieldset class="govuk-fieldset" aria-describedby="arrested-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                <span class="govuk-caption-xl">Record a recall</span>
+                Was Joe Bloggs in prison when the recall was made? 
+              </h1>
+            </legend>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="arrested" name="arrested" type="radio" value="email"
+                  data-aria-controls="conditional-arrested">
+                <label class="govuk-label govuk-radios__label" for="arrested">
+                  Yes
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="arrested-2" name="arrested" type="radio" value="phone"
+                  data-aria-controls="conditional-arrested-2">
+                <label class="govuk-label govuk-radios__label" for="arrested-2">
+                  No
+                </label>
+              </div>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-arrested-2">
+                <div class="govuk-form-group">
+
+                  <div class="govuk-date-input" id="arrest-date">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                      <h2 class="govuk-fieldset__heading">
+                        Date they were arrested
+                      </h2>
+                    </legend>
+
+                    <div id="dob-hint" class="govuk-hint">
+                      For example, 31 3 2024
+                    </div>
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="arrest-date-day">
+                          Day
+                        </label> 
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-day" name="arrest-date-day" type="text" inputmode="numeric" maxlength="2">
+                      </div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="arrest-date-month">
+                          Month
+                        </label> 
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-month" name="arrest-date-month" type="text" inputmode="numeric" maxlength="2">
+                      </div>
+                    </div>
+
+                    <div class="govuk-date-input__item">
+                      <div class="govuk-form-group">
+                        <label class="govuk-label govuk-date-input__label" for="arrest-date-year">
+                          Year
+                        </label>
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="arrest-date-year" name="arrest-date-year" type="text" inputmode="numeric" maxlength="4">
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+
+
+        <div class="govuk-button-group"> 
+
+              <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                  Continue
+              </button> 
+          <!-- </form> -->
+          <!-- <form method="post" action="cancel"> -->
+              <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Cancel
+              </button>
+          </form>
+      </div> 
+    </div>
+  </div>
+</div>
+{% endblock %}

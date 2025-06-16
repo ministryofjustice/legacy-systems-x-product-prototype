@@ -1,0 +1,54 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="return-to-custody-date" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                <span class="govuk-caption-xl">Record a recall</span>
+                Select the relevant offence information
+            </h1>  
+            
+            <p class="govuk-body">You must select all relevant court cases that this person is being recalled on.</p>  
+             
+
+            <p class="govuk-body">The latest SLED (Sentence and licence expiry date) is <b>Thursday, 09 July 2025</b>. This is the SLED on this person's licence.</p>
+
+            <div class="govuk-checkboxes govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+            {% for courtCase in data.courtCases | reverse %}
+            {% set lastAppearance = courtCase.appearances | last %}
+            {% set courtCaseIndex = loop.revindex0 %}  
+ 
+
+            <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="select-offence" name="select-offence" type="checkbox" value="court-case-ref">
+                <label class="govuk-label govuk-checkboxes__label" for="select-offence">
+                    Case {{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}} on {{ lastAppearance['warrant-date-day']}}/{{ lastAppearance['warrant-date-month']}}/{{ lastAppearance['warrant-date-year']}}
+               
+                </label>
+            </div>  
+            {% endfor %}
+            </div>
+
+                  
+
+            <div class="govuk-button-group"> 
+
+                <form method="post" action="unsupported-check-sentence-and-offence-information">
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                    Confirm and continue
+                    </button> 
+                </form>
+                <form method="post" action="cancel">
+                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </button>
+                </form>
+            </div> 
+    </div>
+</div>
+{% endblock %}

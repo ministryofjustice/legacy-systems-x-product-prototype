@@ -1,0 +1,39 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+    <a href="../index-1.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds-from-desktop govuk-!-padding-top-6">
+            <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span>Tagged bail overview</h1>
+            <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Tagged Bail details</caption>
+                <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header">Court name</th>
+                    <th scope="col" class="govuk-table__header">Case reference</th>
+                    <th scope="col" class="govuk-table__header">Days</th>
+                    <th scope="col" class="govuk-table__header">Actions</th>
+                </tr>
+                </thead>
+                <tbody id="TaggedBailDetails" class="govuk-table__body">
+
+                </tbody>
+                <tfoot>
+                <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header" colspan="2">Total days</th>
+                    <td id="totalTB" class="govuk-table__cell" colspan="2">5</td>
+                </tr>
+                </tfoot>
+            </table>
+
+            <div class="govuk-!-margin-bottom-6">
+                <a href="select-case" class="govuk-button" data-module="govuk-button">
+                    Add new
+                </a>
+            </div>
+
+        </div>
+    </div>
+
+
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
