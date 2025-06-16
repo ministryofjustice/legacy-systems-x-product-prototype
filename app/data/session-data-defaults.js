@@ -195,7 +195,7 @@ module.exports = {
         {   "scenario" : "2", 
             "status" : "active",
             "appearances": [{
-                    "court-case-ref": "45F2356967",
+                    "court-case-ref": "DRT124",
                     "court-case-number": "1",
                     "overall-case-outcome": "Remanded in custody",
                     "next-court-date-set": "No",
@@ -220,7 +220,7 @@ module.exports = {
                     ]
                 },
                 {
-                    "court-case-ref": "45F2356967",
+                    "court-case-ref": "DRT124",
                     "court-case-number": "1",
                     "overall-case-outcome": "Imprisonment",
                     "overall-conviction-date-day": "01",
