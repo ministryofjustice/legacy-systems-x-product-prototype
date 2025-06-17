@@ -5,7 +5,7 @@ module.exports = {
         {   "scenario" : "1", 
             "status" : "active",
             "appearances": [{
-                    "court-case-ref": "ATG051",
+                    "court-case-ref": "34F2356911",
                     "court-case-number": "1",
                     "overall-case-outcome": "Remanded in custody",
                     "next-court-date-set": "No",
@@ -30,7 +30,7 @@ module.exports = {
                     ]
                 },
                 {
-                    "court-case-ref": "ATG051",
+                    "court-case-ref": "34F2356911",
                     "court-case-number": "1",
                     "overall-case-outcome": "Imprisonment",
                     "overall-conviction-date-day": "18",
@@ -80,7 +80,7 @@ module.exports = {
         {   "scenario" : "2", 
             "status" : "active",
             "appearances": [{
-                    "court-case-ref": "34F2356912",
+                    "court-case-ref": "ATG051",
                     "court-case-number": "2",
                     "overall-case-outcome": "Remanded in custody",
                     "next-court-date-set": "No",
@@ -118,7 +118,7 @@ module.exports = {
                     ]
                 },
                 {
-                    "court-case-ref": "34F2356912",
+                    "court-case-ref": "ATG051",
                     "court-case-number": "2",
                     "overall-case-outcome": "Imprisonment",
                     "overall-conviction-date-day": "4",
