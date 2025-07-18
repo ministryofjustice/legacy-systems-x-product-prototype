@@ -33,6 +33,85 @@
  
 
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-19">
+                            Version 19
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong> -->
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+
+                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong> -->
+
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-19">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v19/DPS-home?unsupportedSentences=true",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v19/DPS-prisoner-profile?unsupportedSentences=true",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-full govuk-!-margin-right-6"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+                                
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>Identifying unknown pre-recall sentence types</li>       
+                                </ul>
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764630966669790&cot=14">Design ideas (Miro)</a></li>   
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                                <h4 class="govuk-heading-m">Identifying unknown pre-recall sentence types</h4>  
+                                <hp class="govuk-body">A mechanism is required for identifying sentence types where the underlying sentence types have been deleted, this would be due to a recall being recorded on NOMIS to which another recall is later layered on top. In this scenario, we must retrieve the sentence type from the user in order to sync the information back to NOMIS, and to accurately calculate release dates. </>   
+                              
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v19/recalls/update-sentence-types">Update sentence types page</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v19/recalls/sentence-type">Select sentence type</a></li>   
+                                </ul>    
+ 
+ 
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
 
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
@@ -42,13 +121,13 @@
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                     In Design
-                                </strong>
-<!-- 
+                                </strong> -->
+
                                 <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
                                     Closed
-                                </strong> -->
+                                </strong>
                         </span>
                         </h2>
                     </div> 
@@ -159,13 +238,13 @@
                             <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong> -->
-                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                            <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                 In Design
-                            </strong>
-
-                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                Closed
                             </strong> -->
+
+                            <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong>
 
                         </span>
                         </h2>
