@@ -1,0 +1,52 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container govuk-!-margin-bottom-6">
+  <a href="return-to-custody-date" class="govuk-back-link">Back</a>
+</div>
+<div class="moj-interruption-card">
+    <div class="moj-interruption-card__content">
+      <div class="govuk-grid-row">
+
+        <div class="govuk-grid-column-full">
+            <h1 class="govuk-heading-l moj-interruption-card__heading" style="color: #ffff;">Select all the cases that are relevant to this recall</h1>
+        </div>  
+        <div class="govuk-grid-column-three-quarters">
+
+            <div class="govuk-body-l moj-interruption-card__body">
+              <p>This service cannot determine which sentences are eligible for recall.</p> 
+
+              <h2 class="govuk-heading-m moj-interruption-card__heading" style="color: #ffff;">What you need to do</h2>
+      
+              <p>You must make sure the recall is recorded correctly, as per the original warrant. To to this, you must select all cases that include sentences that were active when the person's licence was revoked. </p> 
+        
+              <!-- <p>This could include sentences that are currently inactive, which would have been active when this person's licence was revoked. </p> 
+              -->
+              
+            </div>
+    
+          </div>
+          <div class="govuk-grid-column-full">
+            <div class="govuk-button-group moj-interruption-card__actions">
+        
+                <form method="post" action="unsupported-sentences">
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--inverse" data-module="govuk-button" data-qa="submitReason">
+                        Continue
+                    </button> 
+                <!-- </form> -->
+                <!-- <form method="post" action="cancel"> -->
+                    <button type="submit" class="govuk-button govuk-button--inverse" data-module="govuk-button">
+                        Cancel recall
+                    </button>
+                </form> 
+          
+            </div>
+    
+          </div>
+
+      </div>
+    </div>
+  </div>
+
+  
+{% endblock %}

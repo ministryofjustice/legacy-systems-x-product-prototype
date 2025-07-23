@@ -1,0 +1,107 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="../index" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form action="/form-handler" method="post" novalidate>
+
+                        <div id="" class="govuk-body">
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjustments</span>
+                                Enter remand dates
+                            </h1>
+                            <p>Make sure you enter the full amount of remand. This service will automatically calculate unused remand time later.</p>
+                         <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                    <label class="govuk-label--s">
+                                        Remand start date
+                                    </label>
+                                    <div id="remand-start-hint" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="remand-start">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-day" name="remand-start-day" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="from-month" name="remand-start-month" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="from-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="from-year" name="remand-start-year" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="passport-issued-hint">
+                                    <label class="govuk-label--s">
+                                        Remand end date
+                                    </label>
+                                    <div id="passport-issued-hint" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="passport-issued">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="to-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-day" name="remand-end-day" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="to-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="to-month" name="remand-end-month" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="to-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="to-year" name="remand-end-year" type="text" inputmode="numeric">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                        </div>
+                        <div class="govuk-button-group">
+                            <a href="select-offences" id="add-remand-dates-button" class="govuk-button">
+                                Continue
+                            </a>
+                            <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </a>
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

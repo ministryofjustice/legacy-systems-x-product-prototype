@@ -1,0 +1,69 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+
+    <div id="EditRemandPage" class="">
+        <a href="view-remand.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+                    <h1 class="govuk-heading-l"> <span class="govuk-caption-xl">Adjustments</span>Edit remand details</h1>
+<!--                    <p>[Explainer].</p>-->
+                    <h2 class="govuk-heading-m">Remand details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Remand period
+                            </dt>
+                            <dd id="PeriodDate" class="govuk-summary-list__value">
+                               12 Mar 2023 to 5 May 2023
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link edit-link" href="edit-remand-dates ">
+                                    Edit<span class="govuk-visually-hidden"> name</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul id="OffenceLI" class="govuk-list ">
+                                    <li>offence name 1</li>
+                                    <li>offence name 2</li>
+                                    <li>offence name 3</li>
+                                </ul>
+                            </dd>
+                            <dd class="govuk-summary-list__actions">
+                                <a class="govuk-link" href="select-offences-edit">
+                                    Edit<span class="govuk-visually-hidden"> address</span>
+                                </a>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days spent on remand
+                            </dt>
+                            <dd id="PeriodDays" class="govuk-summary-list__value">
+                                000
+                            </dd>
+
+                        </div>
+                    </dl>
+                    <div class="govuk-button-group">
+<!--                        <a id="saveEditButton" href="../overview-with-cta/view-remand.html" class="govuk-button " data-module="govuk-button">-->
+<!--                            Save-->
+<!--                        </a>-->
+                        <a href="view-remand" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

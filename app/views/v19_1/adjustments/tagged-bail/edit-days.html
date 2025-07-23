@@ -1,0 +1,44 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="edit-tagged-bail.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-full">
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-xl">Adjustments</span>
+                                    Edit the amount of tagged bail
+                                </h1>
+                            </legend>
+                            <p class="govuk-body">Enter the number of days as it’s written on the warrant.</p>
+                            <div class="govuk-form-group govuk-body govuk-!-margin-top-6">
+
+                                <label class="govuk-label--s" for="taggedBailDays">
+                                    Number of days
+                                </label>
+                                <div class="govuk-input__wrapper"><input id="taggedBailDays" class="govuk-input govuk-input--width-5"  name="weight" type="text" spellcheck="false">
+                                    <div class="govuk-input__suffix" aria-hidden="true">days</div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div class="govuk-button-group">
+                        <a href="" id="edit-tagged-bail-days-button" class="govuk-button" >
+                            Continue
+                        </a>
+                        <a href="../overview-with-cta/index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand-mvp.js"></script>
+{% endblock %}
