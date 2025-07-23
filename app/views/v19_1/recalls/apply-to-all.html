@@ -68,7 +68,7 @@
             {% set lastAppearance = courtCase.appearances | last %}
             {% set courtCaseIndex = loop.revindex0 %}  
     
-            {% if courtCase['status'] != "inactive" and lastAppearance['court-case-number'] == "1" and courtCase['scenario'] == "unsupported"  %}
+            {% if courtCase['status'] != "inactive" and lastAppearance['court-case-number'] == "2" and courtCase['scenario'] == "unsupported"  %}
     
             <div class="offence-summary">
                 <h2 class="govuk-heading-m govuk-!-margin-top-4">Court case details</h2>
@@ -93,7 +93,7 @@
     
             {% endfor %}
     
-            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Offences (3)</h2>
+            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Offences (2)</h2>
     
             <details class="govuk-details filter white show-toggle govuk-!-margin-bottom-0" open="">
                 <summary class="govuk-details__summary">
@@ -110,7 +110,7 @@
             {% set courtCaseIndex = loop.revindex0 %}  
      
             {% for sentence in lastAppearance.sentences %}
-            {% if courtCase['status'] != "inactive" and lastAppearance['court-case-number'] == "1" and courtCase['scenario'] == "unsupported"  %}
+            {% if courtCase['status'] != "inactive" and lastAppearance['court-case-number'] == "2" and courtCase['scenario'] == "unsupported"  %}
                            
                 <div class="offences-summary-card-row">
                     <dd class="offences-summary-card-value govuk-body-s govuk-!-margin-bottom-1">Count {{ sentence['count-number'] }}</dd>

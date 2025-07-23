@@ -563,12 +563,8 @@
                 <div class="govuk-grid-column-one-half"> 
                     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Recall type</h3>
                     <p class="govuk-body govuk-!-margin-bottom-2">
-                        
-          {% if data['unsupportedSentences'] == 'true' %}
-          Standard recall
-          {% else %} 
-          {{data['recall-type']}}
-          {% endif %} </p>
+         
+          {{data['recall-type']}} </p>
           <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date of revocation</h3>
           <p class="govuk-body govuk-!-margin-bottom-2">{{data['revocation-date-day']}}/{{data['revocation-date-month'] }}/{{data['revocation-date-year']}}</p>
       
@@ -590,7 +586,7 @@
             </div> 
             
 
-            {% if data['scenario'] == 'unsupported' %}
+            {% if data['unsupportedSentences'] == 'true' %}
             <div class="govuk-grid-row govuk-!-padding-bottom-2">
                 <div class="govuk-grid-column-full"> 
                     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Court cases</h3>

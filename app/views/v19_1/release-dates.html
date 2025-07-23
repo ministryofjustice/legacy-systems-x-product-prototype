@@ -91,7 +91,6 @@
               <div class="govuk-summary-card__content" id="release-dates">
                
         
-              
                 <dl class="govuk-summary-list release-dates-list">
                   <div class="govuk-summary-list__row">
                       <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
@@ -99,7 +98,7 @@
                           <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                       </dt>
                       <dd class="govuk-summary-list__value">
-                          <p class="govuk-body">Friday, 19 December 2025</p>
+                          <p class="govuk-body">Friday, 18 June 2026</p>
                       </dd>
                   </div>  
                   <div class="govuk-summary-list__row">
@@ -108,18 +107,9 @@
                           <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
                       </dt>
                       <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                          <p class="govuk-body">Tuesday, 1st July 2025</p>
+                          <p class="govuk-body">Tuesday, 24 August 2025</p>
                       </dd>
-                  </div>
-                  <div class="govuk-summary-list__row">
-                      <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                          TUSED
-                          <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
-                      </dt>
-                      <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                          <p class="govuk-body">Sunday, 26 April 2026</p>
-                      </dd>
-                  </div>
+                  </div> 
               </dl>
 
               </div>
@@ -264,7 +254,7 @@
                 Calculation date
               </dt>
               <dd class="govuk-summary-list__value">
-                25 December 2024
+                XXXXXX
               </dd>
             </div>
             <div class="govuk-summary-list__row">
@@ -304,6 +294,7 @@
                 <!-- <p class="govuk-body govuk-!-margin-bottom-0 govuk-!-marrgin-top-1">Latest calculation: <a href="#">8 May 2023 at HMP Kirkham</a></p> -->
             </div>
             <div class="govuk-summary-card__content" id="release-dates">
+         
               <dl class="govuk-summary-list release-dates-list">
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
@@ -311,36 +302,18 @@
                         <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
                     </dt>
                     <dd class="govuk-summary-list__value">
-                        <p class="govuk-body">Thursday, 7 August 2025</p>
+                        <p class="govuk-body">Friday, 18 June 2026</p>
                     </dd>
-                </div>
+                </div>  
                 <div class="govuk-summary-list__row">
                     <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                        CRD
-                        <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                        PRRD
+                        <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
                     </dt>
                     <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                        <p class="govuk-body">Saturday, 27 December 2024 </p> 
+                        <p class="govuk-body">Tuesday, 24 August 2025</p>
                     </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24 govuk-!-padding-bottom-0">
-                        HDCED
-                        <p class="govuk-!-font-size-16 govuk-hint">Home detention curfew eligibility date</p>
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-!-padding-top-4"> 
-                        <p class="govuk-body">Monday, 3 November 2024 </p> 
-                    </dd>
-                </div>
-                <div class="govuk-summary-list__row">
-                    <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
-                        TUSED
-                        <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
-                    </dt>
-                    <dd class="govuk-summary-list__value govuk-!-padding-top-4">
-                        <p class="govuk-body">Wednesday, 27 December 2025 </p>
-                    </dd>
-                </div>
+                </div> 
             </dl>
             </div>
         </div>
@@ -536,43 +509,57 @@
                     </tr>
 
 
-                    {% elif data['unsupportedSentences'] == 'true' %}
+                    {% endif %}
+ 
  
                     <tr class="govuk-table__row">
-                      <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">25 December 2024</a></td>
-                      <td class="govuk-table__cell" data-sort-value="8850">2-day check</td>
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">XXXXXX</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">2-day check</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+ 
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">XXXXXXX</a></td>
+                        <td class="govuk-table__cell" data-sort-value="8850">14-day check</td>
+                        <td class="govuk-table__cell">HMP Kirkham</td>
+                        <td class="govuk-table__cell">Calculate release dates service</td> 
+                    </tr>
+
+                    <tr class="govuk-table__row">
+                      <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">XXXXXX</a></td>
+                      <td class="govuk-table__cell" data-sort-value="8850">Recording a recall</td>
                       <td class="govuk-table__cell">HMP Kirkham</td>
                       <td class="govuk-table__cell">Calculate release dates service</td> 
                   </tr>
 
 
   
-                    {% else %}
-                    {% endif %}
  
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">23 April 2024</a></td>
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">XXXXXX</a></td>
                         <td class="govuk-table__cell" data-sort-value="8850">2-day check</td>
                         <td class="govuk-table__cell">HMP Kirkham</td>
                         <td class="govuk-table__cell">Calculate release dates service</td> 
                     </tr>
  
-                    <!-- <tr class="govuk-table__row">
-                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">10 September 2024</a></td>
+                    <tr class="govuk-table__row">
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">XXXXXXX</a></td>
                         <td class="govuk-table__cell" data-sort-value="8850">14-day check</td>
                         <td class="govuk-table__cell">HMP Kirkham</td>
                         <td class="govuk-table__cell">Calculate release dates service</td> 
-                    </tr> -->
+                    </tr>
  
+<!--  
                     <tr class="govuk-table__row">
                         <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">07 March 2024</a></td>
                         <td class="govuk-table__cell" data-sort-value="8850">Adding more sentences or terms</td>
                         <td class="govuk-table__cell">HMP Kirkham</td>
                         <td class="govuk-table__cell">NOMIS</td> 
-                    </tr>
+                    </tr> -->
  
                     <tr class="govuk-table__row">
-                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">26 April 2015</a></td>
+                        <td class="govuk-table__cell"><a href="calculation-history/03-01-2023/check-sentence-and-offence-information">26 January 2024</a></td>
                         <td class="govuk-table__cell" data-sort-value="8850">Initial calculation</td>
                         <td class="govuk-table__cell">HMP Kirkham</td>
                         <td class="govuk-table__cell">NOMIS</td> 

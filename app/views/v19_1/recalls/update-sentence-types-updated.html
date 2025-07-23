@@ -2,14 +2,30 @@
 {% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="../release-dates" class="govuk-back-link">Back</a>
+    <a href="recall-type" class="govuk-back-link">Back</a>
 </div>
-
-<!-- What is the confirmed date -->
+ 
 <div class="govuk-grid-row govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds">
-        <form class="form" action="check-sentence-and-offence-information" method="post">
-            <h1 class="govuk-heading-l">
+       
+        {% if data['validationError'] == '1' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">You must update all sentence types</a>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          {% endif %} 
+            <h1 class="govuk-heading-xl">
 
             <span class="govuk-caption-xl">Record a recall</span>
                 Update sentence types
@@ -18,7 +34,7 @@
                
                 <p class="govuk-body">This is the sentence type from the original warrant.</p>
 
-                    <h2 class="govuk-heading-l">Sentences that have not been updated (1)</h2>
+                    <h2 class="govuk-heading-l">Sentences that have not been updated (2)</h2>
                     {% for courtCase in data.courtCases | reverse %}
                     {% set lastAppearance = courtCase.appearances | last %}
                     {% set courtCaseIndex = loop.revindex0 %}  
@@ -81,7 +97,7 @@
                                         Sentence type
                                     </dt>
                                     <dd class="govuk-summary-list__value">
-                                        {% if offence['sentence-type-changed'] != 'true' and sentence['count-number'] == '2' and lastAppearance['court-case-number'] == '2'  %}
+                                        {% if offence['sentence-type-changed'] != 'true' and lastAppearance['court-case-number'] == '2'  %}
                                             <a href="apply-to-all">Update sentence type</a></li> 
                                       
                                         {% else %}
@@ -144,7 +160,7 @@
                     {% endfor %} 
 
 
-                      <h2 class="govuk-heading-l">Sentences with updated sentence types (3)</h2>
+                      <h2 class="govuk-heading-l">Sentences with updated sentence types (1)</h2>
                     {% for courtCase in data.courtCases | reverse %}
                     {% set lastAppearance = courtCase.appearances | last %}
                     {% set courtCaseIndex = loop.revindex0 %}  
@@ -175,7 +191,7 @@
                                     <dt class="govuk-summary-list__key">
                                         Commited on
                                     </dt>
-                                    <dd class="govuk-summary-list__value" style="width: 50%;">
+                                    <dd class="govuk-summary-list__value" style="width: 60%;">
                                         {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
                                         {% if sentence['offence-end-date-day'] > 0 %}
                                         to
@@ -187,7 +203,7 @@
                                     <dt class="govuk-summary-list__key">
                                         Outcome
                                     </dt>
-                                    <dd class="govuk-summary-list__value" style="width: 50%;">
+                                    <dd class="govuk-summary-list__value" style="width: 60%;">
                                         {{ sentence['outcome'] }} 
                                     </dd>
                                 </div>
@@ -195,8 +211,8 @@
                                     <dt class="govuk-summary-list__key">
                                         Sentence type
                                     </dt>
-                                    <dd class="govuk-summary-list__value" style="width: 50%;">
-                                        SDS (Standard determinate sentence)
+                                    <dd class="govuk-summary-list__value" style="width: 60%;">
+                                        <div class="govuk-!-padding-bottom-1">{{ sentence['sentence-type'] }}</div>  <strong class="govuk-tag govuk-tag--blue">Updated</strong>
                                     </dd>
                                     <dd class="govuk-summary-list__actions">
                                         <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> name</span></a>
@@ -206,7 +222,7 @@
                                     <dt class="govuk-summary-list__key">
                                         Sentence length
                                     </dt>
-                                    <dd class="govuk-summary-list__value" style="width: 50%;">
+                                    <dd class="govuk-summary-list__value" style="width: 60%;">
                                         {{ sentence['sentence-length-years'] }} years {{ sentence['sentence-length-months'] }} months {{ sentence['sentence-length-weeks'] }} weeks {{ sentence['sentence-length-days'] }} days
                                     </dd>
                                 </div>
@@ -215,7 +231,7 @@
                                     <dt class="govuk-summary-list__key">
                                         Licence period
                                     </dt>
-                                    <dd class="govuk-summary-list__value" style="width: 50%;">
+                                    <dd class="govuk-summary-list__value" style="width: 60%;">
                                         {{ sentence['licence-period-years'] }} years {{ sentence['licence-period-months'] }} months {{ sentence['licence-period-weeks'] }} weeks {{ sentence['licence-period-days'] }} days
                                     </dd>
                                 </div>
@@ -224,7 +240,7 @@
                                     <dt class="govuk-summary-list__key">
                                         Consecutive or concurrent
                                     </dt>
-                                    <dd class="govuk-summary-list__value" style="width: 50%;">
+                                    <dd class="govuk-summary-list__value" style="width: 60%;">
                                         {{ sentence['consecutive-concurrent'] }}
                                         {% if sentence['forthwith'] == 'Yes' %}
                                         (forthwith)
@@ -273,7 +289,7 @@
                
               <div class="govuk-button-group"> 
 
-                <form method="post" action="unsupported-check-sentence-and-offence-information">
+                <form method="post" action="?validationError=1">
                     <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                         Continue
                     </button> 
@@ -284,8 +300,7 @@
                     </button>
                 </form>
             </div> 
-            </div>
-        </form>
+            </div> 
     </div>
  
     

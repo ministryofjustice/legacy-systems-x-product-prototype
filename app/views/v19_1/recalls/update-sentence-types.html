@@ -2,12 +2,30 @@
 {% block content %}
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="../release-dates" class="govuk-back-link">Back</a>
+    <a href="recall-type" class="govuk-back-link">Back</a>
 </div>
 
 <!-- What is the confirmed date -->
 <div class="govuk-grid-row govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds"> 
+
+        {% if data['validationError'] == '2' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">You must update all sentence types</a>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          {% endif %} 
             <h1 class="govuk-heading-xl">
 
             <span class="govuk-caption-xl">Record a recall</span>
@@ -82,7 +100,7 @@
                                         Sentence type
                                     </dt>
                                     <dd class="govuk-summary-list__value">
-                                        {% if offence['sentence-type-changed'] != 'true' and sentence['count-number'] == '2' and lastAppearance['court-case-number'] == '2'  %}
+                                        {% if offence['sentence-type-changed'] != 'true' and lastAppearance['court-case-number'] == '2'  %}
                                             <a href="apply-to-all">Update sentence type</a></li> 
                                       
                                         {% else %}
@@ -156,7 +174,7 @@
                
               <div class="govuk-button-group"> 
 
-                <form method="post" action="unsupported-check-sentence-and-offence-information">
+                <form method="post" action="?validationError=2">
                     <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
                         Continue
                     </button> 
