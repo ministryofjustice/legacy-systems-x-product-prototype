@@ -462,7 +462,7 @@ module.exports = {
                         "offence-end-date-month": "",
                         "offence-end-date-year": "",
                         "offence-code": [
-                            "TP47017 "
+                            "TP47017"
                         ],
                         "offence-name": "TP47017 - Accidentally allow a chimney to be on fire",
                         "outcome": "Imprisonment",

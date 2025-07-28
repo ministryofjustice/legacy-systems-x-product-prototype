@@ -7,151 +7,82 @@
 
 <div class="govuk-grid-row govuk-!-margin-top-4">
     <div class="govuk-grid-column-two-thirds">
-   
-            <form class="form" action="update-sentence-types-updated-2" method="post">
-          
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                            
-                            <h1 class="govuk-fieldset__heading"> 
-                                <span class="govuk-caption-l">Record a recall</span> 
-                                Select the sentence type
-                            </h1> 
-                        </legend>
-
-                        <div class="govuk-radios" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-1" name="sentence[sentence-type]"
-                                    type="radio" value="SDS (Standard Determinate Sentence)">
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-1">
-                                    SDS (Standard Determinate Sentence)
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-2" name="sentence[sentence-type]"
-                                    type="radio" value="EDS (Extended Determinate Sentence)" {% if
-                                    data.sentence['sentence-type']=='EDS (Extended Determinate Sentence)' %} checked {%
-                                    endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-2">
-                                    EDS (Extended Determinate Sentence)
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-3" name="sentence[sentence-type]"
-                                    type="radio" value="SOPC (offenders of a particular concern)" {% if
-                                    data.sentence['sentence-type']=='SOPC (offenders of a particular concern)' %}
-                                    checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-3">
-                                    SOPC (offenders of a particular concern)
-                                </label>
-                                <div id="sopc-hint" class="govuk-hint govuk-radios__hint">
-                                    A manditory licence period of 12 months will automatically be added to the sentence
-                                </div>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-4" name="sentence[sentence-type]"
-                                    type="radio"
-                                    value="ORA SDS (Offender rehabilitation act standard determinate sentence)" {% if
-                                    data.sentence['sentence-type']=='ORA SDS (Offender rehabilitation act standard determinate sentence)'
-                                    %} checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-4">
-                                    ORA SDS (Offender rehabilitation act standard determinate sentence)
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-5" name="sentence[sentence-type]"
-                                    type="radio" value="Automatic life" {% if
-                                    data.sentence['sentence-type']=='AAutomatic life' %} checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-5">
-                                    Automatic life
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-6" name="sentence[sentence-type]"
-                                    type="radio" value="BOTUS (Breach of top up supervision)" {% if
-                                    data.sentence['sentence-type']=='BOTUS (Breach of top up supervision)' %} checked {%
-                                    endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-6">
-                                    BOTUS (Breach of top up supervision)
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-7" name="sentence[sentence-type]"
-                                    type="radio" value="Adult discretionary life" {% if
-                                    data.sentence['sentence-type']=='Adult discretionary life' %} checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-7">
-                                    Adult discretionary life
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-8" name="sentence[sentence-type]"
-                                    type="radio" value="Adult mandatory life" {% if
-                                    data.sentence['sentence-type']=='Adult mandatory life' %} checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-8">
-                                    Adult mandatory life
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-9" name="sentence[sentence-type]"
-                                    type="radio" value="STS (Serious terrorism sentence)" {% if
-                                    data.sentence['sentence-type']=='STS (Serious terrorism sentence)' %} checked {%
-                                    endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-9">
-                                    STS (Serious terrorism sentence)
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-10" name="sentence[sentence-type]"
-                                    type="radio" value="VOO (Violent offender order)" {% if
-                                    data.sentence['sentence-type']=='STS (Serious Terrorism Sentence Sec 282A 21+)' %}
-                                    checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-10">
-                                    VOO (Violent offender order)
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-11" name="sentence[sentence-type]"
-                                    type="radio" value="Civil imprisonment" {% if
-                                    data.sentence['sentence-type']=='Civil imprisonment' %} checked {% endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-11">
-                                    Civil imprisonment
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="sentence-type-12
-                        5" name="sentence[sentence-type]" type="radio" value="Imprisonment in default of a fine" {% if
-                                    data.sentence['sentence-type']=='Imprisonment in default of a fine' %} checked {%
-                                    endif %}>
-                                <label class="govuk-label govuk-radios__label" for="sentence-type-12">
-                                    Imprisonment in default of a fine
-                                </label>
-                            </div>
-                            <!--                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sentence-type-6" name="sentence[sentence-type]" type="radio" value="Licence Recall">
-                            <label class="govuk-label govuk-radios__label" for="sentence-type-6">
-                                Licence Recall
-                            </label>
-                        </div> -->
-                            <!--                         <div class="govuk-radios__item">
-                            <input class="govuk-radios__input" id="sentence-type-7" name="sentence[sentence-type]" type="radio" value="License Recall EDS and SOPC">
-                            <label class="govuk-label govuk-radios__label" for="sentence-type-7">
-                                License Recall EDS and SOPC
-                            </label>
-                        </div> -->
-                        </div>
-                    </fieldset>
+        <form action="/v19_1/recalls/update-sentence-types" method="post">
+            <input type="hidden" name="courtCaseNumber" value="{{ data.courtCaseNumber }}">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                  <h1 class="govuk-fieldset__heading"> 
+                    <span class="govuk-caption-l">Record a recall</span> 
+                    Select the sentence type
+                  </h1> 
+                </legend>
+            <!-- Radio buttons for sentence-type selection -->
+            <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-1" name="sentence-type" type="radio" value="SDS (Standard Determinate Sentence)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-1">SDS (Standard Determinate Sentence)</label>
                 </div>
-                <div class="govuk-button-group">
-                    <button type="submit" class="govuk-button" data-module="govuk-button">
-                        Continue
-                    </button>
-                    <button class="govuk-button govuk-button--secondary" data-module="govuk-button"
-                        formaction="/{{data.prototypeVersion}}/save-court-case" method="post">
-                        Cancel 
-                    </button>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-2" name="sentence-type" type="radio" value="EDS (Extended Determinate Sentence)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-2">EDS (Extended Determinate Sentence)</label>
                 </div>
-            </form>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-3" name="sentence-type" type="radio" value="SOPC (offenders of a particular concern)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-3">SOPC (offenders of a particular concern)</label>
+                  <div id="sopc-hint" class="govuk-hint govuk-radios__hint">
+                    A mandatory licence period of 12 months will automatically be added to the sentence
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-4" name="sentence-type" type="radio" value="ORA SDS (Offender rehabilitation act standard determinate sentence)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-4">ORA SDS (Offender rehabilitation act standard determinate sentence)</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-5" name="sentence-type" type="radio" value="Automatic life">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-5">Automatic life</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-6" name="sentence-type" type="radio" value="BOTUS (Breach of top up supervision)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-6">BOTUS (Breach of top up supervision)</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-7" name="sentence-type" type="radio" value="Adult discretionary life">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-7">Adult discretionary life</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-8" name="sentence-type" type="radio" value="Adult mandatory life">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-8">Adult mandatory life</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-9" name="sentence-type" type="radio" value="STS (Serious terrorism sentence)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-9">STS (Serious terrorism sentence)</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-10" name="sentence-type" type="radio" value="VOO (Violent offender order)">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-10">VOO (Violent offender order)</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-11" name="sentence-type" type="radio" value="Civil imprisonment">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-11">Civil imprisonment</label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="sentence-type-12" name="sentence-type" type="radio" value="Imprisonment in default of a fine">
+                  <label class="govuk-label govuk-radios__label" for="sentence-type-12">Imprisonment in default of a fine</label>
+                </div>
+              </div>
+              
+            </fieldset>
+            
+            <div class="govuk-button-group govuk-!-margin-top-6">
+                <button type="submit" class="govuk-button" data-module="govuk-button">
+                  Continue
+                </button>
+                <button class="govuk-button govuk-button--secondary" data-module="govuk-button" formaction="/{{data.prototypeVersion}}/save-court-case" method="post">
+                  Cancel
+                </button>
+              </div>
+          </form> 
+ 
     </div>
     <div class="govuk-grid-column-one-third">
         {% for courtCase in data.courtCases | reverse %}

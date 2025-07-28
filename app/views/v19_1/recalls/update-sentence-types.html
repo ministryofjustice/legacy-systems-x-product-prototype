@@ -1,193 +1,170 @@
 {% extends "../../includes/layouts/template-linear.html" %}
+
 {% block content %}
+
+{# ------------------------------------------ #}
+{# Count updated and not updated sentences    #}
+{# ------------------------------------------ #}
+{% set updatedCount = 0 %}
+{% set notUpdatedCount = 0 %}
+
+{% for courtCase in data.courtCases %}
+  {% if courtCase.status != "inactive" and courtCase.scenario == "unsupported" %}
+    {% set lastAppearance = courtCase.appearances | last %}
+    {% for sentence in lastAppearance.sentences %}
+      {% set offenceCode = sentence['offence-code'] %}
+      {% if data.updatedOffences and data.updatedOffences[offenceCode] == 'updated' %}
+        {% set updatedCount = updatedCount + 1 %}
+      {% else %}
+        {% set notUpdatedCount = notUpdatedCount + 1 %}
+      {% endif %}
+    {% endfor %}
+  {% endif %}
+{% endfor %}
+
+
+
 <!-- Back link -->
 <div class="moj-width-container">
-    <a href="recall-type" class="govuk-back-link">Back</a>
+  <a href="recall-type" class="govuk-back-link">Back</a>
 </div>
 
 <!-- What is the confirmed date -->
 <div class="govuk-grid-row govuk-!-margin-top-4">
-    <div class="govuk-grid-column-two-thirds"> 
+  <div class="govuk-grid-column-two-thirds"> 
 
-        {% if data['validationError'] == '2' %}
-        <div class="govuk-error-summary" data-module="govuk-error-summary">
-            <div role="alert">
-              <h2 class="govuk-error-summary__title">
-                There is a problem
-              </h2>
-              <div class="govuk-error-summary__body">
-                <ul class="govuk-list govuk-error-summary__list">
-                  <li>
-                    <a href="#">You must update all sentence types</a>
-                  </li> 
-                </ul>
-              </div>
-            </div>
-          </div>
-    
-          {% endif %} 
-            <h1 class="govuk-heading-xl">
-
-            <span class="govuk-caption-xl">Record a recall</span>
-                Update sentence types
-            </h1>
-            <div class="">
-                <p class="govuk-body">This is the sentence type from the original warrant.</p>
-               
-
-                    <h2 class="govuk-heading-l">Sentences that have not been updated (3)</h2>
-
-
-                    {% for courtCase in data.courtCases | reverse %}
-                    {% set lastAppearance = courtCase.appearances | last %}
-                    {% set courtCaseIndex = loop.revindex0 %}  
-
-
-
-                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported"   %}
-                    <h3 class="govuk-heading-m">
-                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
-                    </h3>
-
-                    {% endif %} 
-
-                    {% for sentence in lastAppearance.sentences %}
-                    {% if sentence['status'] != 'inactive' and courtCase['scenario'] == "unsupported"   %}
-             
-                    <div class="offence-card sentence-card">
-                        <div class="offence-card-offence-details">
-                            <span class="govuk-body">Count {{ sentence['count-number'] }}</span>
-                            <h4 class="govuk-heading-s">{{ sentence['offence-name'] }}
-                                {% if sentence['terror-related'] == 'Yes' %}
-                                <br><strong class="govuk-tag govuk-!-margin-top-2">
-                                    Terror-related
-                                </strong>
-                                {% endif %}</h4>
-                            <dl class="govuk-summary-list govuk-summary-list--no-border">
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Commited on
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
-                                        {% if sentence['offence-end-date-day'] > 0 %}
-                                        to
-                                        {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
-                                        {% endif %}
-                                    </dd>
-                                </div>
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Outcome
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['outcome'] }} 
-                                    </dd>
-                                </div>
-
-                                {% if sentence['conviction-date-day'] %}
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Conviction date
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}
-                                    </dd>
-                                </div>
-                                {% endif %}
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Sentence type
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {% if offence['sentence-type-changed'] != 'true' and lastAppearance['court-case-number'] == '2'  %}
-                                            <a href="apply-to-all">Update sentence type</a></li> 
-                                      
-                                        {% else %}
-                                        <a href="sentence-type">Update sentence type</a></li> 
-                                        {% endif %}
-                                    </dd>
-                                </div>
-
-                                {% if sentence['sentence-date-day'] %}
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Sentence date
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['sentence-date-day'] }}/{{ sentence['sentence-date-month'] }}/{{ sentence['sentence-date-year'] }}
-                                    </dd>
-                                </div>
-                                {% endif %}
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Sentence length
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['sentence-length-years'] }} years {{ sentence['sentence-length-months'] }} months {{ sentence['sentence-length-weeks'] }} weeks {{ sentence['sentence-length-days'] }} days
-                                    </dd>
-                                </div>
-                                {% if sentence['licence-period-years'] %}
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Licence period
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['licence-period-years'] }} years {{ sentence['licence-period-months'] }} months {{ sentence['licence-period-weeks'] }} weeks {{ sentence['licence-period-days'] }} days
-                                    </dd>
-                                </div>
-                                {% endif %}
-                                <div class="govuk-summary-list__row">
-                                    <dt class="govuk-summary-list__key">
-                                        Consecutive or concurrent
-                                    </dt>
-                                    <dd class="govuk-summary-list__value">
-                                        {{ sentence['consecutive-concurrent'] }}
-                                        {% if sentence['forthwith'] == 'Yes' %}
-                                        (forthwith)
-                                        {% endif %}
-                                        {% if sentence['consecutive-concurrent'] == 'Consecutive' %}
-                                        to count {{ sentence['consecutive-to'] }}
-                                        {% endif %}
-                                    </dd>
-                                </div>
-                            </dl>
-                          
-                        </div>
-                     
-                    </div>
-
-                    {% endif %} 
-                   
-                    {% endfor %} 
-
-                    {% endfor %} 
-
-
-                    <h2 class="govuk-heading-l  govuk-!-margin-top-7">Sentences with updated sentence types (0)</h2>
-                    <div class="govuk-inset-text">
-                        There are no sentences with updated sentence types.
-                      </div> 
-            </div>
-            <div class="govuk-form-group govuk-!-margin-top-6">
-        
-               
-              <div class="govuk-button-group"> 
-
-                <form method="post" action="?validationError=2">
-                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
-                        Continue
-                    </button> 
-                <!-- </form> -->
-                <!-- <form method="post" action="cancel"> -->
-                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-                        Cancel
-                    </button>
-                </form>
-            </div> 
-            </div> 
+    {% if error %}
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="govuk-error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li><a href="{{ error.href }}">You must update all sentence types</a></li>
+        </ul>
+      </div>
     </div>
- 
-    
+    {% endif %}
+
+    <h1 class="govuk-heading-xl">
+      <span class="govuk-caption-xl">Record a recall</span>
+      Update sentence types
+    </h1>
+
+    <p class="govuk-body">This is the sentence type from the original warrant.</p>
+
+    <div class="govuk-form-group {% if error %}govuk-form-group--error{% endif %}">
+    <h2 class="govuk-heading-l">Sentences that have not been updated ({{ notUpdatedCount }})</h2>
+
+    {% if error %}
+    <p class="govuk-error-message">
+      <span class="govuk-visually-hidden">Error:</span> You must update all sentence types
+    </p>
+    {% endif %}
+
+    {% if notUpdatedCount == 0 %}
+    <div class="govuk-inset-text">
+      All sentence types have been updated.
+    </div>
+{% endif %}
+    {% for courtCase in data.courtCases | reverse %}
+
+    {% if courtCase.status != "inactive" and courtCase.scenario == "unsupported" %}
+      {% set lastAppearance = courtCase.appearances | last %}
+
+      {# Collect sentences NOT updated #}
+      {% set notUpdatedSentences = [] %}
+      {% for sentence in lastAppearance.sentences %}
+        {% if not (data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated') %}
+          {% set notUpdatedSentences = notUpdatedSentences.concat([sentence]) %}
+        {% endif %}
+      {% endfor %}
+
+      {% if notUpdatedSentences.length > 0 %}
+        <h3 class="govuk-heading-s">
+          {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on
+          {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{ lastAppearance['warrant-date-year'] }}
+        </h3>
+
+        {% for sentence in notUpdatedSentences %}
+          {% include "includes/templates/sentence-card/sentence-type.njk" %}
+        {% endfor %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    </div>
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-l">Sentences with updated sentence types ({{ updatedCount }})</h2>
+
+    {% if updatedCount == 0 %}
+    <div class="govuk-inset-text">
+      No sentence types have been updated yet.
+    </div> 
+  {% endif %}
+    {% for courtCase in data.courtCases | reverse %}
+
+    {% if courtCase.status != "inactive" and courtCase.scenario == "unsupported" %}
+      {% set lastAppearance = courtCase.appearances | last %}
+
+      {# Collect sentences that ARE updated #}
+      {% set updatedSentences = [] %}
+      {% for sentence in lastAppearance.sentences %}
+        {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
+          {% set updatedSentences = updatedSentences.concat([sentence]) %}
+        {% endif %}
+      {% endfor %}
+
+      {% if updatedSentences.length > 0 %}
+        <h3 class="govuk-heading-s">
+          {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on
+          {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{ lastAppearance['warrant-date-year'] }}
+        </h3>
+
+        {% for sentence in updatedSentences %}
+          {% include "includes/templates/sentence-card/sentence-type.njk" %}
+        {% endfor %}
+      {% endif %}
+      {% endif %}
+    {% endfor %}
+    <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+
+
+    <form method="post" action="/v19_1/recalls/update-sentence-types-finish">
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" id="sentence-types-check">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            Have you finished updating sentence types?
+          </legend>
+
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="finish-yes" name="finish-updating" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="finish-yes">Yes</label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="finish-no" name="finish-updating" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="finish-no">No</label>
+            </div>
+          </div> 
+        </fieldset>
+      </div>
+
+
+      <div class="govuk-form-group govuk-!-margin-top-6">
+        <div class="govuk-button-group"> 
+            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+              Continue
+            </button> 
+            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+              Cancel
+            </button>
+        </div> 
+      </div> 
+    </form>
+
+  </div>
 </div>
+
 {% endblock %}
