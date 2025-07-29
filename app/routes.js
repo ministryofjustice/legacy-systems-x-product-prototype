@@ -399,11 +399,65 @@ router.get('/:version/recalls/revocation-date', (req, res) => {
 	  offenceCode: req.session.data['sentenceUpdated']
 	});
   });
+
+  router.post('/v19_1/recalls/sentence-type', function (req, res) {
+	const selectedType = req.body['sentence-type'];
+	const code = req.session.data['sentenceUpdated'];
+
+
+	console.log('[DEBUG] sentence-type:', selectedType);
+	console.log('[DEBUG] sentenceUpdated:', code);
+  
+	if (!selectedType || !code) {
+	  return res.render('v19_1/recalls/sentence-type', {
+		offenceCode: code,
+		error: true,
+		errorMessage: 'Select a sentence type'
+	  });
+	}
+  
+	req.session.data.sentenceTypes = req.session.data.sentenceTypes || {};
+	req.session.data.updatedOffences = req.session.data.updatedOffences || {};
+  
+	req.session.data.sentenceTypes[code] = selectedType;
+	req.session.data.updatedOffences[code] = 'updated';
+   
+  
+	return res.redirect('/v19_1/recalls/update-sentence-types');
+  });
+  
   
   // Render the sentence type selection for all offences
   router.get('/v19_1/recalls/sentence-type-all', function (req, res) {
 	res.render('v19_1/recalls/sentence-type-all');
   });
+
+  router.post('/v19_1/recalls/sentence-type-all', function (req, res) {
+	const selectedType = req.body['sentence-type'];
+	const codes = req.session.data.currentAppearanceOffenceCodes || [];
+  
+	if (!selectedType || codes.length === 0) {
+	  return res.render('v19_1/recalls/sentence-type-all', {
+		error: true,
+		errorMessage: 'Select a sentence type'
+	  });
+	}
+  
+	req.session.data.sentenceTypes = req.session.data.sentenceTypes || {};
+	req.session.data.updatedOffences = req.session.data.updatedOffences || {};
+  
+	codes.forEach(code => {
+	  req.session.data.sentenceTypes[code] = selectedType;
+	  req.session.data.updatedOffences[code] = 'updated';
+	});
+  
+	// Clean up
+	delete req.session.data.currentAppearanceOffenceCodes;
+	delete req.session.data.applyToAll;
+  
+	return res.redirect('/v19_1/recalls/update-sentence-types');
+  });
+
   
   // Handle submission of sentence type updates
   router.post('/v19_1/recalls/update-sentence-types', function (req, res) {
@@ -445,7 +499,7 @@ router.get('/:version/recalls/revocation-date', (req, res) => {
   
   
   // Render update sentence types overview page
-router.get('/v19_1/recalls/update-sentence-types', function(req, res) {
+  router.get('/v19_1/recalls/update-sentence-types', function(req, res) {
 	const updatedOffences = req.session.data.updatedOffences || {};
 	const sentenceTypes = req.session.data.sentenceTypes || {};
 	const totalOffences = Object.keys(sentenceTypes).length;
@@ -458,65 +512,54 @@ router.get('/v19_1/recalls/update-sentence-types', function(req, res) {
 		sentenceTypes,
 		allUpdated,
 		totalOffences,
-		updatedCount,
-		error: req.session.data.error || null
+		updatedCount
 	});
-	delete req.session.data.error; // clear after use
 });
 
-router.post('/v19_1/recalls/update-sentence-types-finish', function (req, res) {
-	const choice = req.body['finish-updating'];
-	const sentenceTypes = req.session.data.sentenceTypes || {};
-	const updatedOffences = req.session.data.updatedOffences || {};
+
+router.post('/v19_1/recalls/update-sentence-types', function (req, res) {
 	const courtCases = req.session.data.courtCases || [];
-  
+	const updatedOffences = req.session.data.updatedOffences || {};
+
 	let totalOffences = 0;
-  
-	for (const courtCase of courtCases) {
-	  if (courtCase.status !== 'inactive' && courtCase.scenario === 'unsupported') {
-		for (const appearance of courtCase.appearances) {
-		  if (appearance.sentences) {
-			totalOffences += appearance.sentences.length;
-		  }
+	let updatedCount = 0;
+
+	courtCases.forEach(courtCase => {
+		if (courtCase.status !== 'inactive' && courtCase.scenario === 'unsupported') {
+			const lastAppearance = courtCase.appearances.slice(-1)[0];
+
+			if (lastAppearance && lastAppearance.sentences) {
+				lastAppearance.sentences.forEach(sentence => {
+					const code = sentence['offence-code'];
+					if (code) {
+						totalOffences++;
+						if (updatedOffences[code] === 'updated') {
+							updatedCount++;
+						}
+					}
+				});
+			}
 		}
-	  }
+	});
+
+	if (updatedCount < totalOffences) {
+		console.warn('[WARNING] Not all sentence types updated');
+
+		// Render the same page with error message
+		const sentenceTypes = req.session.data.sentenceTypes || {};
+		return res.render('v19_1/recalls/update-sentence-types', {
+			error: {
+				href: '#sentence-types-section',
+				text: 'You must update all sentence types'
+			},
+			updatedOffences,
+			sentenceTypes,
+			updatedCount,
+			totalOffences,
+			allUpdated: false
+		});
 	}
-  
-	const updatedCount = Object.keys(updatedOffences).length;
-  
-	console.log('[DEBUG] totalOffences:', totalOffences);
-	console.log('[DEBUG] updatedCount:', updatedCount);
-	console.log('[DEBUG] finish-updating choice:', choice);
-  
-	// Nothing selected – show error
-	if (!choice) {
-	  return res.render('v19_1/recalls/update-sentence-types', {
-		error: true,
-		errorMessage: 'Select yes if you have finished updating sentence types',
-		updatedOffences,
-		sentenceTypes
-	  });
-	}
-  
-	// Selected "no" – refresh page (no error)
-	if (choice === 'no') {
-	  return res.redirect('/v19_1/recalls/update-sentence-types');
-	}
-  
-	// Selected "yes" but not all offences updated – show error
-	if (choice === 'yes' && updatedCount < totalOffences) {
-	  return res.render('v19_1/recalls/update-sentence-types', {
-		error: true,
-		errorMessage: 'You must update sentence types for all offences before continuing',
-		updatedOffences,
-		sentenceTypes
-	  });
-	}
-  
-	// All offences updated – go to next step
+
+	console.log('[DEBUG] All sentence types updated. Proceeding to next step.');
 	return res.redirect('/v19_1/recalls/unsupported-check-sentence-and-offence-information');
-  });
-  
-  
-  
-  
+});

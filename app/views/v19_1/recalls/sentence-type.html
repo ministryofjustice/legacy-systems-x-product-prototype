@@ -43,37 +43,57 @@
         {% endif %}
 
         <div class="govuk-radios" data-module="govuk-radios">
-          {% set typeOptions = [
-            "SDS (Standard Determinate Sentence)",
-            "EDS (Extended Determinate Sentence)",
-            "SOPC (offenders of a particular concern)",
-            "ORA SDS (Offender rehabilitation act standard determinate sentence)",
-            "Automatic life",
-            "BOTUS (Breach of top up supervision)",
-            "Adult discretionary life",
-            "Adult mandatory life",
-            "STS (Serious terrorism sentence)",
-            "VOO (Violent offender order)",
-            "Civil imprisonment",
-            "Imprisonment in default of a fine"
-          ] %}
-
-          {% for option in typeOptions %}
-            {% set optionId = "sentence-type-" + loop.index %}
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="{{ optionId }}" name="sentence[sentence-type]" type="radio" value="{{ option }}"
-                {% if data.sentence['sentence-type'] == option %} checked {% endif %}>
-              <label class="govuk-label govuk-radios__label" for="{{ optionId }}">
-                {{ option }}
-              </label>
-
-              {% if option == "SOPC (offenders of a particular concern)" %}
-                <div id="sopc-hint" class="govuk-hint govuk-radios__hint">
-                  A mandatory licence period of 12 months will automatically be added to the sentence
-                </div>
-              {% endif %}
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-1" name="sentence-type" type="radio" value="SDS (Standard Determinate Sentence)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-1">SDS (Standard Determinate Sentence)</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-2" name="sentence-type" type="radio" value="EDS (Extended Determinate Sentence)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-2">EDS (Extended Determinate Sentence)</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-3" name="sentence-type" type="radio" value="SOPC (offenders of a particular concern)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-3">SOPC (offenders of a particular concern)</label>
+            <div id="sopc-hint" class="govuk-hint govuk-radios__hint">
+              A mandatory licence period of 12 months will automatically be added to the sentence
             </div>
-          {% endfor %}
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-4" name="sentence-type" type="radio" value="ORA SDS (Offender rehabilitation act standard determinate sentence)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-4">ORA SDS (Offender rehabilitation act standard determinate sentence)</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-5" name="sentence-type" type="radio" value="Automatic life">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-5">Automatic life</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-6" name="sentence-type" type="radio" value="BOTUS (Breach of top up supervision)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-6">BOTUS (Breach of top up supervision)</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-7" name="sentence-type" type="radio" value="Adult discretionary life">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-7">Adult discretionary life</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-8" name="sentence-type" type="radio" value="Adult mandatory life">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-8">Adult mandatory life</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-9" name="sentence-type" type="radio" value="STS (Serious terrorism sentence)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-9">STS (Serious terrorism sentence)</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-10" name="sentence-type" type="radio" value="VOO (Violent offender order)">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-10">VOO (Violent offender order)</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-11" name="sentence-type" type="radio" value="Civil imprisonment">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-11">Civil imprisonment</label>
+          </div>
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="sentence-type-12" name="sentence-type" type="radio" value="Imprisonment in default of a fine">
+            <label class="govuk-label govuk-radios__label" for="sentence-type-12">Imprisonment in default of a fine</label>
+          </div>
         </div>
       </fieldset>
     </div>
