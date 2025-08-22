@@ -328,10 +328,7 @@ module.exports = {
                     "unsupported": "true",
                     // "status": ["saved","mismatch"],
                     "sentences": [{
-                        "count-number": "1",
-                        "conviction-date-day": "26",
-                        "conviction-date-month": "04",
-                        "conviction-date-year": "2015",
+                        "count-number": "1", 
                         "sentence-date-day": "26",
                         "sentence-date-month": "04",
                         "sentence-date-year": "2024",
@@ -356,10 +353,7 @@ module.exports = {
                         "status": "inactive"
                     },
                     {
-                            "count-number": "2",
-                            "conviction-date-day": "18",
-                            "conviction-date-month": "03",
-                            "conviction-date-year": "2015",
+                            "count-number": "2", 
                             "sentence-date-day": "18",
                             "sentence-date-month": "03",
                             "sentence-date-year": "2015",
@@ -448,10 +442,7 @@ module.exports = {
                 "unsupported": "true",
                 // "status": ["saved","mismatch"],
                 "sentences": [{
-                        "count-number": "1",
-                        "conviction-date-day": "19",
-                        "conviction-date-month": "06",
-                        "conviction-date-year": "2024",
+                        "count-number": "1", 
                         "sentence-date-day": "19",
                         "sentence-date-month": "06",
                         "sentence-date-year": "2024",
@@ -476,10 +467,7 @@ module.exports = {
                         "unsupported-sentence": "true"
                     },
                     {
-                        "count-number": "2",
-                        "conviction-date-day": "19",
-                        "conviction-date-month": "06",
-                        "conviction-date-year": "2024",
+                        "count-number": "2", 
                         "sentence-date-day": "19",
                         "sentence-date-month": "06",
                         "sentence-date-year": "2024",
@@ -554,10 +542,7 @@ module.exports = {
                     "unsupported": "true",
                     // "status": ["saved","mismatch"],
                     "sentences": [{
-                            "count-number": "1",
-                            "conviction-date-day": "21",
-                            "conviction-date-month": "07",
-                            "conviction-date-year": "2024",
+                            "count-number": "1", 
                             "sentence-date-day": "21",
                             "sentence-date-month": "07",
                             "sentence-date-year": "2024",

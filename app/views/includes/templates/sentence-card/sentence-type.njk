@@ -29,26 +29,6 @@
       </div>
       {% endif %}
 
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Sentence type</dt>
-        <dd class="govuk-summary-list__value" style="width:60%">
-          {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
-          {{ sentence['sentence-type'] }}
-           
-           <br>
-            <span class="govuk-tag govuk-tag--blue govuk-!-margin-top-1">Updated</span>
-          {% else %}
-          <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Update sentence type</a>
-          {% endif %}
-        </dd>
-         {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
-          <dd class="govuk-summary-list__action">
-            <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Edit</a>
-          </dd>
-        {% endif %}
-        </dd>
-      </div> 
-
       {% if sentence['sentence-date-day'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Sentence date</dt>
@@ -84,6 +64,27 @@
           {% endif %}
         </dd>
       </div>
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Sentence type</dt>
+        <dd class="govuk-summary-list__value" style="width:60%">
+          {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
+          {{ sentence['sentence-type'] }}
+           
+           <br>
+            <span class="govuk-tag govuk-tag--blue govuk-!-margin-top-1">Updated</span>
+          {% else %}
+          <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Update sentence type</a>
+          {% endif %}
+        </dd>
+         {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
+          <dd class="govuk-summary-list__action">
+            <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Edit</a>
+          </dd>
+        {% endif %}
+        </dd>
+      </div> 
     </dl>
   </div>
 </div>

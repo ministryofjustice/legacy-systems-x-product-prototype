@@ -4983,12 +4983,11 @@ p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-hea
     color: #fff;
     background-color: #1d70b8;
     letter-spacing: 1px;
-    text-decoration: none;
-    text-transform: uppercase;
+    text-decoration: none; 
     font-family: "GDS Transport", arial, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-weight: 700;
+    font-weight: 400;
     font-size: 14px;
     font-size: .875rem;
     line-height: 1;
@@ -5050,12 +5049,12 @@ p + .govuk-heading-m, .govuk-body-m + .govuk-heading-m, .govuk-body + .govuk-hea
 }
 
 .govuk-tag--red {
-    color: #942514;
+    color: #2a0b06;
     background:#f6d7d2
 }
 
 .govuk-tag--pink {
-    color: #80224d;
+    color: #6b1c40;
     background:#f7d7e6
 }
 

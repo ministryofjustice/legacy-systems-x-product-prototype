@@ -1,0 +1,43 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<!-- <div class="moj-width-container">
+    <a href="../release-dates" class="govuk-back-link">Back</a>
+</div> -->
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <form method="post" action="../release-dates">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            
+            <h1 class="govuk-heading-xl">
+                <span class="govuk-caption-xl">Record a recall</span>
+                No cases have been selected
+            </h1>
+            <p class="govuk-body">You must select at least one active sentence that was relevant on the revocation date.</p>
+            <p class="govuk-body">The revocation date entered is <b>11 September 2025</b>.</p>
+
+
+            <h2 class="govuk-heading-m">
+                What to do next
+            </h2>
+            <ul class="govuk-list govuk-list--spaced">
+                <li>
+                    Check the date of revocation is correct, and if not, <a class="govuk-link" href="revocation-date">update the revocation date</a>.</li>
+                </li>
+                <li>
+                Go back through the court cases again and <a class="govuk-link" href="unsupported-sentences">check for relevant sentences</a>.
+                </li> 
+              </ul> 
+         
+              <div class="govuk-button-group govuk-!-margin-top-6">
+                <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Cancel recall
+                </button> 
+              </div> 
+        </div>
+    </div>
+
+</form>
+</div>
+{% endblock %}

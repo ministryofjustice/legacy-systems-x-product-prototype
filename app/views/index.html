@@ -33,6 +33,116 @@
  
 
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-19">
+                            Version 20
+                            
+                            <!-- <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
+                                For research
+                                </strong> -->
+                            <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                In Design
+                            </strong>
+
+                            <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                Closed
+                            </strong> -->
+
+                        </span>
+                        </h2>
+                    </div> 
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-20">
+                        <div class="govuk-grid-row">
+                            <div class="govuk-grid-column-full"> 
+                                <!-- <h3 class="govuk-heading-l">UR round 2</h3>  -->
+                            <form action="post">
+                                <div class="govuk-button-group"> 
+                                
+                                    {{govukButton({
+                                        text: "Launch from DPS homepage",
+                                        attributes: {
+                                        "formaction": "v20/DPS-home?unsupportedSentences=true",
+                                        "formmethod": "get"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+    
+                                    {{govukButton({
+                                        text: "Launch from prisoner profile",
+                                        attributes: {
+                                        "formaction": "v20/DPS-prisoner-profile?unsupportedSentences=true",
+                                        "formmethod": "post"
+                                        },
+                                        classes: "govuk-button--secondary"
+                                        })}}
+         
+                                </div>
+                            </form>
+                            </div>
+                            
+                           
+                            <div class="govuk-grid-column-full govuk-!-margin-right-6"> 
+                                <h4 class="govuk-heading-m">Changes in this version</h4> 
+                                
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>R12 UR round iterations
+                                        <ul class="govuk-list govuk-list--number">  
+                                            <li>Identifying unknown pre-recall sentence types</li>     
+                                            <li>Making it clearer what an active sentence is (intercept)</li>  
+                                            <li>Making next steps clearer on the confirmation screen</li>     
+                                        </ul>
+                                    </li>      
+                                </ul>
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list"> 
+                                    <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764637327806027&cot=14">Design ideas (Miro)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="https://justiceuk.sharepoint.com/:p:/r/sites/TransformingSentenceCalculations/_layouts/15/doc2.aspx?sourcedoc=%7Be9217bde-f7b7-4f80-9d11-333a921e41e3%7D&action=edit&wdPreviousSession=642c420a-b8ce-430a-cd68-d402d147a48d">R12 UR playback (powerpoint)</a></li>   
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                                <h4 class="govuk-heading-m">1.1 Identifying unknown pre-recall sentence types</h4>  
+                                <p class="govuk-body">Users found it difficult to understand what was expected of them, missing most of the content explaining what to do. Once explained they found it straightforward. Design improvements aim to make signposting clearer and content more obvious. </p>   
+                              
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/update-sentence-types">Update sentence types page</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/sentence-type">Select sentence type (single)</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/apply-to-all">Apply to all sentences?</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/sentence-type-all">Select sentence type (multiple)</a></li>   
+                                </ul>    
+
+                                <h4 class="govuk-heading-m">1.2 Making it clearer what an active sentence is (intercept)</h4>  
+                                <p class="govuk-body">Some users asked about what is meant by an active sentence as it can mean different things in different contexts. This change aims to make this more explicit in the intercept page. </p>   
+                              
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/unsupported-intercept">Select all active cases (intercept)</a></li>    
+                                </ul>   
+ 
+
+                                <h4 class="govuk-heading-m">1.3 Making next steps clearer on the confirmation screen</h4>  
+                                <p class="govuk-body">Some users we found we going straight to CRDS without checking fo existing adjustments. Whilst this isn't wrong we want to make it clearer what the recommended next steps are on the confirmation screen. </p>   
+                              
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/recall-complete">Recall saved (confirmation screen)</a></li>    
+                                </ul>   
+ 
+ 
+
+                                <h4 class="govuk-heading-m">2.1 Showing where a parallel sentence has been added since release</h4>  
+                                <p class="govuk-body">We have been looking at where we might want to let the user know that there is a parallel sentence added since the person last released, this would not be part of the recall but could have an effect on the recall.  </p>   
+                              
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="v20/recalls/check-sentence-and-offence-information">Check sentences and offences</a></li>    
+                                </ul>   
+                            </div> 
+
+                        </div>
+                    </div>
+                </div>
 
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">
@@ -42,13 +152,13 @@
                             <strong class="govuk-tag govuk-tag--pink govuk-!-margin-left-1">
                                 For research
                                 </strong>
-                                <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
                                     In Design
-                                </strong>
-
-                                <!-- <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
-                                    Closed
                                 </strong> -->
+
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong>
                         </span>
                         </h2>
                     </div> 
@@ -65,7 +175,7 @@
                             </ul>   
                             <h4 class="govuk-heading-m">Supporting documents</h4>
                             <ul class="govuk-list">  
-                                <li><a class="govuk-link" target="external" href="">...</a></li>    
+                                <li><a class="govuk-link" target="external" href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764635760002806&cot=14">Designs  (miro board)</a></li>    
                          
                             </ul>  
 
@@ -88,7 +198,10 @@
     
                                 <h4 class="govuk-heading-s">Prototype links</h4>
                                 <ul class="govuk-list">  
-                                    <!-- <li><a class="govuk-link" target="external" href="v18_1/recalls/unsupported-sentences">Unsupported select court case</a></li>     -->
+                                    <li><a class="govuk-link" target="external" href="v19_1/recalls/update-sentence-types">Update sentences tasklist</a></li>  
+                                    <li><a class="govuk-link" target="external" href="v19_1/recalls/sentence-type">Select sentence type (single sentence)</a></li>     
+                                    <li><a class="govuk-link" target="external" href="v19_1/recalls/apply-to-all">Apply to all sentences?</a></li>   
+                                    <li><a class="govuk-link" target="external" href="v19_1/recalls/sentence-type-all">Select sentence type (multiple sentence)</a></li>     
                             
                                 </ul>
 
@@ -163,7 +276,7 @@
                                 <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
 
                                 <h4 class="govuk-heading-m">Identifying unknown pre-recall sentence types</h4>  
-                                <hp class="govuk-body">A mechanism is required for identifying sentence types where the underlying sentence types have been deleted, this would be due to a recall being recorded on NOMIS to which another recall is later layered on top. In this scenario, we must retrieve the sentence type from the user in order to sync the information back to NOMIS, and to accurately calculate release dates. </>   
+                                <p class="govuk-body">A mechanism is required for identifying sentence types where the underlying sentence types have been deleted, this would be due to a recall being recorded on NOMIS to which another recall is later layered on top. In this scenario, we must retrieve the sentence type from the user in order to sync the information back to NOMIS, and to accurately calculate release dates. </p>   
                               
                                 <ul class="govuk-list">  
                                     <li><a class="govuk-link" target="external" href="v19/recalls/update-sentence-types">Update sentence types page</a></li>   
