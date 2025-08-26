@@ -1,0 +1,138 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="update-sentence-types" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds"> 
+
+                <div class="govuk-form-group">
+
+                    <form method="post" action="/v19_1/recalls/apply-to-all" >
+
+                 
+                        <fieldset class="govuk-fieldset" aria-describedby="apply-all-sentence-type-hint">
+                    
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                                <h1 class="govuk-fieldset__heading">
+                                    <span class="govuk-caption-l">Record a recall</span>
+                                    Is the sentence type the same for all sentences in this court case?
+                                </h1>
+                            </legend> 
+    
+                            <!-- <p class="govuk-body">We've identified these types of recall based on this person's sentences and offences. </p> -->
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="apply-all-sentence-type" name="choice" type="radio" value="yes" data-qa="recalltypeRadio-1" >
+                                    <label class="govuk-label govuk-radios__label" for="apply-all-sentence-type">
+                                        Yes
+                                    </label> 
+                                </div>
+                                
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="apply-all-sentence-type-2" name="choice" type="radio" value="no" data-qa="recalltypeRadio-2">
+                                    <label class="govuk-label govuk-radios__label" for="apply-all-sentence-type-2">
+                                        No
+                                    </label> 
+                                </div> 
+                                
+    
+                            </div> 
+    
+     
+                           
+    
+                        </fieldset> 
+                </div> 
+                <div class="govuk-button-group"> 
+
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitfixed">
+                            Continue
+                        </button> 
+                    <!-- </form> -->
+                    <!-- <form method="post" action="cancel"> -->
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            </form>
+        </div>
+
+        <div class="govuk-grid-column-one-third">
+            {% for courtCase in data.courtCases | reverse %}
+            {% set lastAppearance = courtCase.appearances | last %}
+            {% set courtCaseIndex = loop.revindex0 %}  
+    
+            {% if courtCase['status'] != "inactive" and lastAppearance['court-case-number'] == "2" and courtCase['scenario'] == "unsupported"  %}
+    
+            <div class="offence-summary">
+                <h2 class="govuk-heading-m govuk-!-margin-top-4">Court case details</h2>
+                <dl class="govuk-summary-list govuk-summary-list--no-border offences-summary-card-content">
+                  <div class="govuk-summary-list__row offences-summary-card-court-details-row">
+                    <dt class="govuk-summary-list__key">Case reference</dt>
+                    <dd class="govuk-summary-list__value">{{ lastAppearance['court-case-ref'] }}</dd>
+                  </div>
+                  <div class="govuk-summary-list__row offences-summary-card-court-details-row">
+                    <dt class="govuk-summary-list__key">Court name</dt>
+                    <dd class="govuk-summary-list__value">{{ lastAppearance['court-name'] }}</dd>
+                  </div>
+                  <div class="govuk-summary-list__row offences-summary-card-court-details-row">
+                    <dt class="govuk-summary-list__key">Warrant date</dt>
+                    <dd class="govuk-summary-list__value">{{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}</dd>
+                  </div> 
+                </dl>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+               
+         
+            {% endif %} 
+    
+            {% endfor %}
+    
+            <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-2">Offences (2)</h2>
+    
+            <details class="govuk-details filter white show-toggle govuk-!-margin-bottom-0" open="">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        Show offences
+                    </span>
+                </summary>
+                <div class="govuk-details__text"> 
+    
+                    <dl class="offences-summary-card-content">
+    
+            {% for courtCase in data.courtCases | reverse %}
+            {% set lastAppearance = courtCase.appearances | last %}
+            {% set courtCaseIndex = loop.revindex0 %}  
+     
+            {% for sentence in lastAppearance.sentences %}
+            {% if courtCase['status'] != "inactive" and lastAppearance['court-case-number'] == "2" and courtCase['scenario'] == "unsupported"  %}
+                           
+                <div class="offences-summary-card-row">
+                    <dd class="offences-summary-card-value govuk-body-s govuk-!-margin-bottom-1">Count {{ sentence['count-number'] }}</dd>
+                    <dt class="offences-summary-card-key govuk-!-font-weight-bold">
+                        {{ sentence['offence-code'] }} - {{ sentence['offence-name'] }}
+                    </dt>
+                    <dd class="offences-summary-card-value govuk-body-s">Committed on {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}</dd>
+                    <dd class="offences-summary-card-value govuk-body-s">Sentence length {{ sentence['sentence-length-years'] }} years {{ sentence['sentence-length-months'] }} months {{ sentence['sentence-length-weeks'] }} weeks {{ sentence['sentence-length-days'] }} days</dd>
+                </div> 
+            {% endif %} 
+            {% endfor %} 
+            {% endfor %} 
+                           
+            </dl>
+                </div>
+            </details>
+    
+        </div>     
+     
+              
+        </div>
+        
+    </div>
+</div>
+{% endblock %}

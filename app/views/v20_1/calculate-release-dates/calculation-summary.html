@@ -1,0 +1,174 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="check-sentence-and-offence-information" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <!-- <span class="govuk-caption-xl">Calculate release dates</span> -->
+            <h1 class="govuk-heading-xl govuk-!-margin-bottom-6">
+                Review calculation
+                <br>
+                <span class="govuk-body">Check the release dates before entering the approved dates.</span>
+            </h1>
+        </div>
+    </div>
+</div>
+<!-- Final release dates -->
+<div class="moj-width-container">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-three-quarters">
+
+            <div class="govuk-summary-card">
+                <div class="govuk-summary-card__title-wrapper">
+                    <h2 class="govuk-summary-card__title"><span class="govuk-!-font-size-24">Release dates</span></h2>
+                    <ul class="govuk-summary-card__actions">
+                    </ul>
+                </div>
+                <div class="govuk-summary-card__content" id="release-dates">
+                
+                    {% if data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'  %} 
+                    <dl class="govuk-summary-list release-dates-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                SLED
+                                <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Tuesday, 5 March 2025</p>
+                            </dd>
+                        </div> 
+    
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                PRRD
+                                <p class="govuk-!-font-size-16 govuk-hint">Post recall release date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Tuesday, 5 March 2025</p>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                TUSED
+                                <p class="govuk-!-font-size-16 govuk-hint">Top-up supervision expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Monday, 5 August 2025</p>
+                            </dd>
+                        </div>
+                    </dl>
+                    {% else %} 
+                
+                    <dl class="govuk-summary-list release-dates-list">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                CRD
+                                <p class="govuk-!-font-size-16 govuk-hint">Conditional release date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Tuesday, 25 August 2025</p>
+                            </dd>
+                        </div> 
+                         
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                HDCED
+                                <p class="govuk-!-font-size-16 govuk-hint">Home Detention Curfew Elgibility date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value govuk-!-padding-top-4">
+                                <p class="govuk-body">Tuesday, 25 January 2026</p>
+                            </dd>
+                        </div> 
+
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key release-dates-key govuk-!-font-size-24">
+                                SLED
+                                <p class="govuk-!-font-size-16 govuk-hint">Sentence and licence expiry date</p>
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <p class="govuk-body">Friday, 18 June 2026</p>
+                            </dd>
+                        </div>  
+                    </dl>
+                    <details class="govuk-details govuk-!-margin-bottom-2 govuk-!-margin-top-2" data-module="govuk-details ">
+                        <summary class="govuk-details__summary">
+                            <span class="govuk-details__summary-text">
+                                Explain these release dates using AI
+                            </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                            <p>This case falls under <b>Tranche 2</b> of the release provisions, where individuals serving standard determinate sentences may be eligible for release at the <b>40% point</b> of their sentence.</p>
+                        
+                            <p>The individual’s <b>CRD (Conditional Release Date)</b> is <b>Tuesday, 25 August 2025</b>, which represents the date they are scheduled to be released automatically at the 40% mark of their sentence. As this CRD falls on a <b>weekend</b>, the individual is eligible for release on the preceding <b>Friday</b>, in line with the <b>Weekend Release Scheme</b>.</p>
+                        
+                            <p>The individual’s <b>HDCED (Home Detention Curfew Eligibility Date)</b> is <b>Tuesday, 25 January 2026</b>. This is the earliest date they could be considered for release on a tag under the Home Detention Curfew scheme, subject to risk assessment and approval.</p>
+                        
+                            <p>The individual’s <b>SLED (Sentence and Licence Expiry Date)</b> is <b>Friday, 18 June 2026</b>. This marks the point at which the individual’s sentence, including any period of post-release supervision or licence conditions, will come to an end.</p>
+                        </div>
+                        
+                    </details>
+ 
+                    {% endif %}  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <!-- <details class="govuk-details govuk-!-margin-bottom-2" data-module="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                    Why are some details missing?
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Some dates and details are not included as according to <a
+                    href="http://www.justice.gov.uk/downloads/offenders/psipso/psi-2015/psi-03-2015-sentence-calculation-determiante-sentenced-prisoners.pdf"
+                    target="_blank">PSI 03/2015 (opens in new tab)</a> they are not relevant to this person's
+                circumstances.
+            </div>
+        </details> -->
+    </div>
+</div>
+</div>
+<!-- Calculation breakdown -->
+<!-- Breakdown -->
+<div class="moj-width-container">
+   
+<!-- 
+    <div class="govuk-inset-text">
+        If you think the calculation is wrong <a
+            href="request-specialist-support">contact the specialist
+            support team</a>.
+    </div> -->
+</div> 
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h3 class="govuk-heading-m">Confirm the dates are correct</h3>
+            <p class="govuk-body">By continuing you are confirming that, to the best of your knowledge, the calculation
+                is correct.</p>
+            
+                <div class="govuk-button-group">
+                    <form method="post" action="enter-approved-dates-question">
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                            Confirm and continue
+                        </button>
+                    </form>
+
+                    <form method="post" action="cancel">
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div>
+            <!-- <p class="govuk-body govuk-!-font-size-16"><a href="../release-dates" class="govuk-link">Cancel calculation</a></p> -->
+        </div>
+    </div>
+</div>
+{% endblock %}
