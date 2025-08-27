@@ -19,16 +19,6 @@
         </dd>
       </div>
 
-
-      {% if sentence['conviction-date-day'] %}
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Conviction date</dt>
-        <dd class="govuk-summary-list__value" style="width:60%">
-          {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}
-        </dd>
-      </div>
-      {% endif %}
-
       {% if sentence['sentence-date-day'] %}
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Sentence date</dt>
@@ -37,6 +27,29 @@
         </dd>
       </div>
       {% endif %}
+
+
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Sentence type</dt>
+        <dd class="govuk-summary-list__value" style="width:60%">
+          {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
+          {{ sentence['sentence-type'] }}
+           
+           <br>
+            <span class="govuk-tag govuk-tag--blue govuk-!-margin-top-1">Updated</span>
+          {% else %}
+
+            <span class="govuk-tag govuk-tag--red">Missing</span> 
+          {% endif %}
+        </dd>
+         {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
+          <dd class="govuk-summary-list__action">
+            <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Edit</a>
+          </dd>
+        {% endif %}
+        </dd>
+      </div> 
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Sentence length</dt>
@@ -65,26 +78,14 @@
         </dd>
       </div>
 
-
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">Sentence type</dt>
-        <dd class="govuk-summary-list__value" style="width:60%">
-          {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
-          {{ sentence['sentence-type'] }}
-           
-           <br>
-            <span class="govuk-tag govuk-tag--blue govuk-!-margin-top-1">Updated</span>
-          {% else %}
-          <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Update sentence type</a>
-          {% endif %}
-        </dd>
-         {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
-          <dd class="govuk-summary-list__action">
-            <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Edit</a>
-          </dd>
-        {% endif %}
-        </dd>
-      </div> 
+ 
     </dl>
+    {% if data.updatedOffences and data.updatedOffences[sentence['offence-code']] == 'updated' %}
+    {% else %}
+        <p class="govuk-body govuk-!-margin-top-4 govuk-!-margin-bottom-2">
+          <a href="/v19_1/set-sentence/{{ sentence['offence-code'] }}">Update sentence type</a>
+      </p>
+    {% endif %}
+   
   </div>
 </div>
