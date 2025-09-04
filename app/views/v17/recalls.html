@@ -13,7 +13,6 @@
         </h1> 
 
         {% if data['nomisRecall'] == 'true' %}
-    
       
         <div class="action-button-group">
             <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
@@ -812,6 +811,8 @@
  
           
         {% else %}
+
+        <p class="govuk-body">There are no recalls recorded.</p>
 
         <div class="action-button-group">
             <a href="recalls/revocation-date"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
