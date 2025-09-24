@@ -137,3 +137,29 @@ addFilter('inactiveSentence2', function(arr) {
         )
     );
 });
+
+const { DateTime } = require('luxon')
+
+addFilter('govukDate', function(input, format = 'short') {
+  let date
+
+  if (input === 'today') {
+    date = DateTime.local()
+  } else {
+    // Try parsing ISO string or JS date
+    date = DateTime.fromISO(input)
+    if (!date.isValid) {
+      date = DateTime.fromJSDate(new Date(input))
+    }
+  }
+
+  if (!date.isValid) return input
+
+  if (format === 'long') {
+    // Long GOV.UK style (e.g. 24 September 2025)
+    return date.toFormat('d MMMM yyyy')
+  } else {
+    // Short UK style with single-digit day/month (e.g. 1/9/2025)
+    return date.toFormat('d/L/yyyy')
+  }
+})
