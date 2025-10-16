@@ -156,10 +156,10 @@ addFilter('govukDate', function(input, format = 'short') {
   if (!date.isValid) return input
 
   if (format === 'long') {
-    // Long GOV.UK style (e.g. 24 September 2025)
-    return date.toFormat('d MMMM yyyy')
+    // Long GOV.UK style (e.g. 01 September 2025)
+    return date.toFormat('dd MMMM yyyy')
   } else {
-    // Short UK style with single-digit day/month (e.g. 1/9/2025)
-    return date.toFormat('d/L/yyyy')
+    // Short UK style with leading zeros (e.g. 01/09/2025)
+    return date.toFormat('dd/LL/yyyy')
   }
 })
