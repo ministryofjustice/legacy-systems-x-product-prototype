@@ -1,0 +1,61 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div >
+
+    <div id="DeleteRemandPage" class="">
+        <a href="iew-remand" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-l"> <span class="govuk-caption-xl">Adjustments</span>Delete remand </h1>
+                    <h2 class="govuk-heading-m">Remand details</h2>
+                    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Period of remand
+                            </dt>
+                            <dd id="PeriodDate" class="govuk-summary-list__value">
+                               12 Mar 2023 to 5 May 2023
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                               Offences
+                            </dt>
+                            <dd class="govuk-summary-list__value">
+                                <ul id="OffenceLI" class="govuk-list">
+                                    <li>offence name 1</li>
+                                    <li>offence name 2</li>
+                                    <li>offence name 3</li>
+                                </ul>
+                            </dd>
+                        </div>
+                        <div class="govuk-summary-list__row">
+                            <dt class="govuk-summary-list__key">
+                                Days spent on remand
+                            </dt>
+                            <dd id="PeriodDays" class="govuk-summary-list__value">
+                                000
+                            </dd>
+                        </div>
+                    </dl>
+<!--                    <div class="govuk-!-margin-bottom-6">-->
+<!--                        <h2 class="govuk-heading-m">Are you sure you want to delete this period of remand?</h2>-->
+<!--                        <p>The remand time will be removed from the records. You will need to recalculate a prisoner’s release dates.</p>-->
+<!--                    </div>-->
+                    <div class="govuk-button-group">
+                        <a id="DeleteRemandPeriod" href="../index-1" class="govuk-button " data-module="govuk-button" data-journey="2">
+                            Delete
+                        </a>
+                        <a href="view-remand" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand-mvp.js"></script>
+{% endblock %}

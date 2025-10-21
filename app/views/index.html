@@ -34,6 +34,130 @@
 
             <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
 
+                <div class="govuk-accordion__section">
+                    <div class="govuk-accordion__section-header">
+                        <h2 class="govuk-accordion__section-heading">
+                        <span class="govuk-accordion__section-button" id="version-20_1">
+                            MVP Version of all journeys and flows
+                            <strong class="govuk-tag govuk-tag--blue govuk-!-margin-left-1">
+                                For Development
+                                </strong>
+                                <!-- <strong class="govuk-tag govuk-tag--green govuk-!-margin-left-1">
+                                    In Design
+                                </strong> -->
+<!-- 
+                                <strong class="govuk-tag govuk-tag--grey govuk-!-margin-left-1">
+                                    Closed
+                                </strong> -->
+                        </span>
+                        </h2>
+                    </div> 
+
+                    <div id="" class="govuk-accordion__section-content" aria-labelledby="version-MVP">
+                        <div class="govuk-grid-row"> 
+                            
+                           
+                            <div class="govuk-grid-column-full govuk-!-margin-right-6"> 
+                                <h4 class="govuk-heading-m">Journeys included in this version</h4> 
+ 
+                                <h5 class="govuk-heading-s">Record a recall</h5> 
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>Happy path - supported sentences journey</li>   
+                                    <li>Unhappy path - unsupported sentences journey </li>     
+                                    <li>Unhappy path - unsupported sentences journey with unknown sentences types</li>           
+                                </ul>
+
+ 
+                                <h5 class="govuk-heading-s">Edit/delete a recall</h5> 
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>Edit a recall</li>    
+                                    <li>Delete a recall</li>           
+                                </ul>
+
+
+                                <h5 class="govuk-heading-s">Miscellaneous flows and pages</h5> 
+
+                                <ul class="govuk-list govuk-list--number">  
+                                    <li>Record a recall - wrong recall type chosen</li>         
+                                    <li>Record a recall - no sentence available for recall</li> 
+                                    <li>Record a recall - clashing adjustment types</li>           
+                                </ul>
+
+
+                                <h4 class="govuk-heading-m">Supporting documents</h4>
+                                <ul class="govuk-list"> 
+                                <li><a class="govuk-link" target="external" href="https://www.figma.com/design/aZ7mvm8uzKc3MSuSnNwLMH/Recalls---MVP-Design?node-id=3924-34908&t=pt2GA6O9KMNF1yT3-1">Figma journey - happy path  (Figma)</a></li>    
+                                </ul> 
+
+                                <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+                                <h4 class="govuk-heading-l">Record a recall</h4> 
+                                
+                                <h4 class="govuk-heading-m">Happy path - supported sentences journey</h4>   
+                                <p class="govuk-body">Record a recall journey with supported sentences and the correct options chosen by the user.</p>   
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls">Recalls landing page</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/revocation-date">Date of revocation</a></li> 
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/return-to-custody-date">Arrest date</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/check-sentence-and-offence-information">Check sentence and offence information</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-type">Recall type</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/check-answers">Check answers</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-complete">Confirmation</a></li>   
+                                </ul>    
+ 
+
+                                
+                                <h4 class="govuk-heading-m">Unhappy path - unsupported sentences journey </h4>   
+                                <p class="govuk-body">Record a recall journey where we cannot identify the sentences/court cases to recall the manual unsupporter journey is triggered.</p>   
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls?unsupportedSentences=true">Recalls landing page</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/revocation-date?unsupportedSentences=true">Date of revocation</a></li> 
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/return-to-custody-date?unsupportedSentences=true">Arrest date</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/unsupported-intercept?unsupportedSentences=true">Select all the cases that are relevant to this recall - intercept screen</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/unsupported-sentences?unsupportedSentences=true">Select all cases that had an active sentence</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/unsupported-check-sentence-and-offence-information?unsupportedSentences=true">Check sentence and offence information</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-type">Recall type</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/check-answers">Check answers</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-complete">Confirmation</a></li>   
+                                </ul>  
+ 
+                                
+                                <h4 class="govuk-heading-m">Unhappy path - unsupported sentences journey with unknown sentences types</h4>   
+                                <p class="govuk-body">Record a recall journey where we cannot identify the sentences/court cases to recall the manual unsupporter journey is triggered, this scenario also inlcudes where there are unknown pre-recall sentence types which we need to user to update to process the recall.</p>   
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls?unknownSentenceTypes=true">Recalls landing page</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/revocation-date?unknownSentenceTypes=true">Date of revocation</a></li> 
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/return-to-custody-date?unknownSentenceTypes=true">Arrest date</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/unsupported-intercept?unknownSentenceTypes=true">Select all the cases that are relevant to this recall - intercept screen</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/unsupported-sentences?unknownSentenceTypes=true">Select all cases that had an active sentence</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-type?unknownSentenceTypes=true">Recall type</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/update-sentence-types?unknownSentenceTypes=true">Update sentence types</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/apply-to-all?unknownSentenceTypes=true">Is the sentence type the same for all sentences in this court case?</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/sentence-type?unknownSentenceTypes=true">Select a sentence type</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/unsupported-check-sentence-and-offence-information?unknownSentenceTypes=true">Check sentence and offence information</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/check-answers?unknownSentenceTypes=true">Check answers</a></li>   
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-complete">Confirmation</a></li>   
+                                </ul>  
+
+
+
+                                <h4 class="govuk-heading-l">Edit/delete a recall</h4> 
+                                <h4 class="govuk-heading-m">Edit a recall</h4>   
+                                <p class="govuk-body">Edit a recall journey with supported sentences and the correct options chosen by the user.</p>   
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/edit-a-recall?editLogic=editing">Edit recall overview</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/revocation-date?editLogic=edit-revocation">Edit revocation date</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/return-to-custody-date?editLogic=edit-arrest">Edit a arrest date</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/check-sentence-and-offence-information?editLogic=review-sentences">Review sentences and offences</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/recall-type?editLogic=editing">Edit recall type</a></li>   
+                                </ul>    
+ 
+                            </div> 
+
+                        </div>
+                    </div> 
+                </div>
+
 
                 <div class="govuk-accordion__section">
                     <div class="govuk-accordion__section-header">

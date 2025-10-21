@@ -1,0 +1,170 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="recall-type" class="govuk-back-link">Back</a>
+</div>
+ 
+<div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-two-thirds">
+       
+        {% if data['validationError'] == '1' %}
+        <div class="govuk-error-summary" data-module="govuk-error-summary">
+            <div role="alert">
+              <h2 class="govuk-error-summary__title">
+                There is a problem
+              </h2>
+              <div class="govuk-error-summary__body">
+                <ul class="govuk-list govuk-error-summary__list">
+                  <li>
+                    <a href="#">You must update all sentence types</a>
+                  </li> 
+                </ul>
+              </div>
+            </div>
+          </div>
+    
+          {% endif %} 
+            <h1 class="govuk-heading-xl">
+
+            <span class="govuk-caption-xl">Record a recall</span>
+                Update sentence types
+            </h1>
+            <div class="">
+               
+                <p class="govuk-body">This is the sentence type from the original warrant.</p>
+
+                    <h2 class="govuk-heading-l">Sentences that have not been updated ()</h2>
+                    {% for courtCase in data.courtCases | reverse %}
+                    {% set lastAppearance = courtCase.appearances | last %}
+                    {% set courtCaseIndex = loop.revindex0 %}  
+
+
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported" and sentence['offence-code'] == "EX14016" and data['EX14016'] !== "updated" %}
+                    <h3 class="govuk-heading-s">
+                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
+                    </h3>
+                    {% endif %} 
+                      
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported" and sentence['offence-code'] == "TP47017" and data['TP47017'] !== "updated" %}
+                    <h3 class="govuk-heading-s">
+                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
+                    </h3>
+                    {% endif %} 
+                      
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported" and sentence['offence-code'] == "CJ94017" and data['CJ94017'] !== "updated" %}
+                    <h3 class="govuk-heading-s">
+                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
+                    </h3>
+                    {% endif %} 
+                 
+
+                    {% for sentence in lastAppearance.sentences %}
+                   
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported" and sentence['offence-code'] == "EX14016" and data['EX14016'] !== "updated" %}
+                    {% include "includes/templates/sentence-card/sentence-type-missing.njk" %}
+                    {% endif %} 
+                   
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported" and sentence['offence-code'] == "TP47017" and data['TP47017'] !== "updated" %}
+                    {% include "includes/templates/sentence-card/sentence-type-missing.njk" %}
+                    {% endif %} 
+                   
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported" and sentence['offence-code'] == "CJ94017" and data['CJ94017'] !== "updated" %}
+                    {% include "includes/templates/sentence-card/sentence-type-missing.njk" %}
+                    {% endif %} 
+               
+
+                    {% endfor %} 
+
+                    {% endfor %} 
+
+
+                    <h2 class="govuk-heading-l">Sentences with updated sentence types ()</h2>
+                    {% for courtCase in data.courtCases | reverse %}
+                    {% set lastAppearance = courtCase.appearances | last %}
+                    {% set courtCaseIndex = loop.revindex0 %}  
+
+
+                    {% if data['EX14016'] == "updated" and sentence['offence-code'] == "EX14016" %}
+                    <h3 class="govuk-heading-s">
+                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
+                    </h3>
+                    {% endif %} 
+                      
+                    {% if data['TP47017'] == "updated" and sentence['offence-code'] == "TP47017" %}
+                    <h3 class="govuk-heading-s">
+                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
+                    </h3>
+                    {% endif %} 
+                      
+                    {% if data['CJ94017'] == "updated" and sentence['offence-code'] == "CJ94017" %}
+                    <h3 class="govuk-heading-s">
+                        {{ lastAppearance['court-case-ref'] }} at {{ lastAppearance['court-name'] }} on {{ lastAppearance['warrant-date-day'] }}/{{ lastAppearance['warrant-date-month'] }}/{{lastAppearance['warrant-date-year'] }}
+                    </h3>
+                    {% endif %} 
+                      
+                  
+
+                    {% for sentence in lastAppearance.sentences %}
+                   
+                    {% if  data['EX14016'] == "updated" and sentence['offence-code'] == "EX14016" %}
+                    {% include "includes/templates/sentence-card/sentence-type-updated.njk" %}
+                    {% endif %} 
+                   
+                    {% if  data['TP47017'] == "updated" and sentence['offence-code'] == "TP47017" %}
+                    {% include "includes/templates/sentence-card/sentence-type-updated.njk" %}
+                    {% endif %} 
+                   
+                    {% if data['CJ94017'] == "updated" and sentence['offence-code'] == "CJ94017" %}
+                    {% include "includes/templates/sentence-card/sentence-type-updated.njk" %}
+                    {% endif %} 
+            
+
+                    {% endfor %} 
+
+                    {% endfor %} 
+
+
+
+                    <!-- <p>There are no sentences with updated sentence types.</p> -->
+            </div>
+            <div class="govuk-form-group govuk-!-margin-top-6">
+                <!-- <fieldset class="govuk-fieldset">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                        Have you finished reviewing offences?
+                    </legend>
+                    <div class="govuk-radios" data-module="govuk-radios">
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="finished-adding-offences" name="appearance[finished-adding-offences]" type="radio" value="yes">
+                            <label class="govuk-label govuk-radios__label" for="finished-adding-offences">
+                                Yes, I’ve finished reviewing offences {% if data.appearance['warrant-type'] == "Sentencing" %}and sentences{% endif %}
+                            </label>
+                        </div>
+                        <div class="govuk-radios__item">
+                            <input class="govuk-radios__input" id="finished-adding-offences-2" name="appearance[finished-adding-offences]" type="radio" value="no">
+                            <label class="govuk-label govuk-radios__label" for="finished-adding-offences-2">
+                                No, cancel and
+                            </label>
+                        </div>
+                    </div>
+                </fieldset> -->
+               
+              <div class="govuk-button-group"> 
+
+                <form method="post" action="?validationError=1">
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                        Continue
+                    </button> 
+                <!-- </form> -->
+                <!-- <form method="post" action="cancel"> -->
+                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </button>
+                </form>
+            </div> 
+            </div> 
+    </div>
+ 
+    
+</div>
+{% endblock %}

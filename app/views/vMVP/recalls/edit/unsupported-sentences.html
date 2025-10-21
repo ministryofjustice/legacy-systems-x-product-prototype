@@ -1,0 +1,93 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="return-to-custody-date" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-l">
+                <span class="govuk-caption-xl">Edit a recall</span>
+                Select the relevant offence information
+            </h1>  
+            
+            <p class="govuk-body">You must select all relevant sentences that this person is being recalled on.</p>  
+             
+
+            <p class="govuk-body">The latest SLED (Sentence and licence expiry date) is <b>Thursday, 09 July 2025</b>. This is the SLED on this person's licence.</p>
+
+            {% for courtCase in data.courtCases | reverse %}
+            {% set lastAppearance = courtCase.appearances | last %}
+            {% set courtCaseIndex = loop.revindex0 %}  
+
+            {% if lastAppearance['unsupported'] == 'true' %}
+            <h3 class="govuk-heading-m">{{ lastAppearance['court-case-ref'] }}  <span class="font-weight-regular">at</span> {{ lastAppearance['court-name']}}</h3>
+               
+            {% else %}
+            {% endif %}
+            <div class="govuk-checkboxes govuk-!-margin-bottom-6" data-module="govuk-checkboxes">
+
+                {% for sentence in lastAppearance.sentences %}
+
+                {% if sentence['unsupported-sentence'] == 'true' %}
+                <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="select-offence" name="select-offence" type="checkbox" value="carcasses" checked>
+                <label class="govuk-label govuk-checkboxes__label govuk-!-padding-top-0" for="select-offence">
+                        {{ sentence['offence-name'] }} 
+                        <br><span class="govuk-hint">Conviction date: {{ sentence['conviction-date-day'] }}/{{ sentence['conviction-date-month'] }}/{{ sentence['conviction-date-year'] }}</span>
+                        <br><span class="govuk-hint">Sentence type: {{ sentence['sentence-type'] }}</span>
+                        <br><span class="govuk-hint">Sentence length:  
+                            {% if sentence['sentence-length-years'] %}
+                            {{ sentence['sentence-length-years'] }} years
+                            {% else %}
+                            0 years
+                            {% endif %}
+                            {% if sentence['sentence-length-months'] %}
+                            {{ sentence['sentence-length-months'] }} months
+                            {% else %}
+                            0 months
+                            {% endif %}
+                            {% if sentence['sentence-length-weeks'] %}
+                            {{ sentence['sentence-length-weeks'] }} weeks
+                            {% else %}
+                            0 weeks
+                            {% endif %}
+                            {% if sentence['sentence-length-days'] %}
+                            {{ sentence['sentence-length-days'] }} days
+                            {% else %}
+                            0 days
+                            {% endif %}
+                        {% if sentence['offence-end-date-day'] > 0 %}
+                        to
+                        {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                        {% endif %}</span>
+                </label>
+                </div> 
+
+                {% else %}
+                {% endif %}
+                {% endfor %}
+
+                 
+            </div> 
+
+            {% endfor %}
+
+            <div class="govuk-button-group"> 
+
+                <form method="post" action="unsupported-check-sentence-and-offence-information">
+                    <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                    Confirm and continue
+                    </button> 
+                </form>
+                <form method="post" action="cancel">
+                    <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Cancel
+                    </button>
+                </form>
+            </div> 
+    </div>
+</div>
+{% endblock %}

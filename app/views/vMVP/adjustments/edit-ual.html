@@ -1,0 +1,155 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div id="EditUALPage" class="govuk-body">
+    <div class="">
+        <a href="view-ual" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <form method="post" action="confirm-edit-ual">
+
+                        <div id="" class="">
+
+
+                            <h1 class="govuk-heading-l">
+                                <span class="govuk-caption-xl">Adjustments</span>
+                               Edit UAL details
+                            </h1>
+                            <p class="govuk-body">
+                                The rules for UAL (Unlawfully at large) can be found in
+                                <a href="https://assets.publishing.service.gov.uk/government/uploads/system/uploads/attachment_data/file/1083190/sc-annex-a-operational-guidance.pdf#page=87">the policy framework</a>.
+                            </p>
+                         <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="revocation-date-hint">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        First day spent UAL
+                                    </legend>
+                                    <div id="revocation-date-hint" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="revocation-date">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="revocation-date-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-day" name="revocation-date-day" type="text" inputmode="numeric" value="8">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="revocation-date-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" value="10">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="revocation-date-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="revocation-date-year" name="revocation-date-year" type="text" inputmode="numeric" value="2024">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset" role="group" aria-describedby="arrest-date-hint">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        Last day spent UAL
+                                    </legend>
+                                    <div id="arrest-date-hint" class="govuk-hint">
+                                        For example, 27 3 2022
+                                    </div>
+                                    <div class="govuk-date-input" id="arrest-date">
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="arrest-date-day">
+                                                    Day
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-day" name="arrest-date-day" type="text" inputmode="numeric" value="10">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="arrest-date-month">
+                                                    Month
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="arrest-date-month" name="arrest-date-month" type="text" inputmode="numeric" value="10">
+                                            </div>
+                                        </div>
+                                        <div class="govuk-date-input__item">
+                                            <div class="govuk-form-group">
+                                                <label class="govuk-label govuk-date-input__label" for="arrest-date-year">
+                                                    Year
+                                                </label>
+                                                <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="arrest-date-year" name="arrest-date-year" type="text" inputmode="numeric" value="2024">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="govuk-form-group">
+                                <fieldset class="govuk-fieldset">
+                                    <legend class="govuk-fieldset__legend--s">
+                                        Select the type of UAL
+                                    </legend>
+                                    <div class="govuk-radios" data-module="govuk-radios">
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-1" name="UALtype" type="radio" value="Recall" checked>
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-1">
+                                                Recall
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-2" name="UALtype" type="radio" value="Escape, including absconds and RPTL failures" checked>
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-2">
+                                                Escape, including absconds and RPTL failures
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-3" name="UALtype" type="radio" value="Sentenced in absence">
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-3">
+                                                Sentenced in absence
+                                            </label>
+                                        </div>
+                                        <div class="govuk-radios__item">
+                                            <input class="govuk-radios__input" id="UALtype-4" name="UALtype" type="radio" value="Release in error">
+                                            <label class="govuk-label govuk-radios__label" for="UALtype-4">
+                                                Release in error
+                                            </label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+<!--                            <div class="govuk-form-group">-->
+<!--                                <label class="govuk-label" for="document-ID">-->
+<!--                                    Adjudication ID-->
+<!--                                </label>-->
+<!--                                <input class="govuk-input govuk-input&#45;&#45;width-20" id="document-ID" name="width-20" type="text">-->
+<!--                            </div>-->
+
+                        </div>
+
+                    
+                        <div class="govuk-button-group"> 
+
+                            <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                                Continue
+                            </button> 
+                        <!-- </form> -->
+                        <!-- <form method="post" action="cancel"> -->
+                            <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                                Cancel
+                            </button> 
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/adjustments-3-mvp.js"></script>
+{% endblock %}

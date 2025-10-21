@@ -1,0 +1,42 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+ 
+<div class="moj-interruption-card">
+    <div class="moj-interruption-card__content">
+      <h1 class="govuk-heading-l moj-interruption-card__heading" style="color: #ffff;">Before you can continue to the remand tool, you need to check if any offences have been replaced. </h1>
+      <div class="govuk-body-l moj-interruption-card__body">
+       
+        <p class="">The remand tool has flagged <b>two</b> offences that have not resulted in a sentence being imposed.</p>
+        <p class="">You need to check if these offences were replaced (for example, reduced to a lesser offence).</p>
+        <p class="">Select no if there is any other reason that these offences do not have a sentence imposed..</p>
+        <details class="govuk-details">
+          <summary class="govuk-details__summary govuk-link--inverse" style="color: #ffff;">
+            <span class="govuk-details__summary-text govuk-link--inverse">
+              Why is this important?
+            </span>
+          </summary>
+          <div class="govuk-details__text" >
+            <p class="govuk-body-l" style="color: #ffff;">Time spent on remand is marked as not relevant if the offence did not result in a sentence being imposed. </p>
+           
+            <p class="govuk-body-l" style="color: #ffff;">However, if the offence was replaced, and a sentence was imposed for that replaced offence, this remand might be relevant. </p>
+          
+           </div>
+        </details>
+  
+      </div>
+      <div class="govuk-button-group moj-interruption-card__actions">
+   
+        <form method="post" action="confirm-replaced-offences-1">
+          <button type="submit" data-prevent-double-click="true" class="govuk-button govuk-button--inverse" data-module="govuk-button" data-qa="submitReason">
+              Continue
+          </button>
+  
+        <a class="govuk-link govuk-link--inverse" href="cancel">Cancel</a>
+  
+      </form>
+      </div>
+    </div>
+  </div>
+ 
+  
+{% endblock %}

@@ -1,0 +1,41 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %} 
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../release-dates" class="govuk-back-link">Back</a>
+</div>
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+
+              
+            <div class="govuk-form-group">
+                    
+                <form method="post" action="#">
+                    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                        <h1 class="govuk-fieldset__heading"> 
+                            Review ADA ajudication
+                        </h1>
+                    </legend> 
+
+                    <p >This service had identified ADA adjustments that were created in NOMIS. You must review adjudications with ADAs and approve them in this service.</p>
+                     
+
+                <div class="govuk-button-group govuk-!-margin-top-6"> 
+
+                        <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                         Review ADA
+                        </button> 
+                    <!-- </form> -->
+                    <!-- <form method="post" action="cancel"> -->
+                        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </button>
+                    </form>
+                </div> 
+            </div> 
+        </div>
+    </div>
+</div>
+{% endblock %}

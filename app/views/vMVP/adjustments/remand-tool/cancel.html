@@ -1,0 +1,59 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<!-- Back link -->
+<!-- <div class="moj-width-container">
+    <a href="../release-dates" class="govuk-back-link">Back</a>
+</div> -->
+<!-- Page intro -->
+<div class="govuk-width-container govuk-!-margin-top-6">
+    <div class="govuk-grid-row"> 
+        <div class="govuk-grid-column-two-thirds">
+            <form method="post" action="../index-1?toShow=reviewRemand">
+
+                <div class="govuk-form-group">
+
+                    <fieldset class="govuk-fieldset" aria-describedby="calculationReasonId-hint">
+                    
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                            <h1 class="govuk-fieldset__heading">
+                            Are you sure you want to cancel?
+                            </h1>
+                        </legend> 
+                        
+                        <div id="changedName-hint" class="govuk-hint">
+                            Changes you have made will not be saved.
+                          </div>
+
+
+                        <div class="govuk-radios" data-module="govuk-radios">
+                            
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId" name="calculationReasonId" type="radio" value="1" data-qa="reasonRadio-1">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId">
+                                Yes, cancel
+                                </label> 
+                            </div>
+                                
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="calculationReasonId-2" name="calculationReasonId" type="radio" value="2" data-qa="reasonRadio-2">
+                                <label class="govuk-label govuk-radios__label" for="calculationReasonId-2">
+                                    No, go back to review remand
+                                </label> 
+                            </div>
+                            
+                        </div> 
+
+                    </fieldset> 
+                </div>
+
+                <input type="hidden" name="_csrf" value="ijUvXjJJ-cnFaw1jmM3mPKVq1y8JyrPCB4DQ"> 
+
+                <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                Confirm
+                </button>
+
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}
