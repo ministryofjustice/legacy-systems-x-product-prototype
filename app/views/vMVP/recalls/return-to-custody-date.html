@@ -17,6 +17,12 @@
 
           {% elif data['unknownSentenceTypes'] == 'true' %}
           <form method="post" action="unsupported-intercept">
+
+          {% elif data['recallSentences'] == 'ineligible' %}
+          <form method="post" action="no-eligible-sentences">
+
+          {% elif data['overlappingAdjusments'] == 'true' %}
+          <form method="post" action="recall-overlapping-adjustments">
           {% else %}
           <form method="post" action="return-to-custody-date">
           {% endif %}

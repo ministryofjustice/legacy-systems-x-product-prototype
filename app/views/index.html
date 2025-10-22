@@ -81,6 +81,7 @@
                                     <li>Record a recall - wrong recall type chosen</li>         
                                     <li>Record a recall - no sentence available for recall</li> 
                                     <li>Record a recall - clashing adjustment types</li>           
+                                    <li>Record a recall - unsupported journey where user doesn't select any cases</li>           
                                 </ul>
 
 
@@ -142,7 +143,7 @@
 
 
                                 <h4 class="govuk-heading-l">Edit/delete a recall</h4> 
-                                <h4 class="govuk-heading-m">Edit a recall</h4>   
+                                <h4 class="govuk-heading-m">Edit a recall - happy path</h4>   
                                 <p class="govuk-body">Edit a recall journey with supported sentences and the correct options chosen by the user.</p>   
                                 <ul class="govuk-list">  
                                     <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/edit-a-recall?editLogic=editing">Edit recall overview</a></li>    
@@ -151,13 +152,46 @@
                                     <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/check-sentence-and-offence-information?editLogic=review-sentences">Review sentences and offences</a></li>  
                                     <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/recall-type?editLogic=editing">Edit recall type</a></li>   
                                 </ul>    
- 
 
                                 <h4 class="govuk-heading-m">Delete a recall</h4>   
                                 <p class="govuk-body">Delete a recall journey with supported sentences and the correct options chosen by the user.</p>   
                                 <ul class="govuk-list">  
                                     <li><a class="govuk-link" target="external" href="vMVP/recalls?toShow=recallHistory">Recall homepage</a></li>    
                                     <li><a class="govuk-link" target="external" href="vMVP/recalls/edit/are-you-sure-delete">Are you sure you want to delete?</a></li>  
+                                </ul>  
+                                
+                                
+
+                                <h4 class="govuk-heading-l">Miscellaneous journeys</h4> 
+
+
+                                <h4 class="govuk-heading-m">Record a recall - wrong recall type chosen</h4>   
+                                <p class="govuk-body">Supporting doc: <a href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764616719401064&cot=14">Miro - designs</a></p>   
+                                <p class="govuk-body">When recording a recall, the user may choose a recall type that is unexpected, we use an intercept offer up options before the user continues.</p>   
+                                <ul class="govuk-list">  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-type?recallType=incorrect">Recall recall type</a></li>    
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-type-intercept">Intercept - should this be a 14-day fixed term?</a></li>  
+                                </ul>  
+
+
+                                <h4 class="govuk-heading-m">Record a recall - no sentence available for recall</h4>   
+                                <p class="govuk-body">Supporting doc: <a href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764617591068347&cot=14">Miro - designs</a></p>   
+                                <p class="govuk-body">When recording a recall, the revocation date the user chooses might mean that there are no sentences eligible for recall, we display page to explain this and offer options to resolve.</p>   
+                                <ul class="govuk-list">      
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/revocation-date?recallSentences=ineligible">Revocation date</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/return-to-custody-date?recallSentences=ineligible">Arrest date</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/no-eligible-sentences?recallSentences=ineligible">Intercept - no sentences are eligible</a></li>  
+                                </ul>
+
+
+                                <h4 class="govuk-heading-m">Record a recall - clashing adjustment types</h4>    
+                                <p class="govuk-body">Supporting doc: <a href="https://miro.com/app/board/uXjVNIny_G0=/?moveToWidget=3458764621819650407&cot=14">Miro - designs</a></p>   
+                                <p class="govuk-body">When recording a recall, the UAL created may overlap with existing adjustment types, we display and intercept to explain this and offer options to resolve.</p>  
+                                <ul class="govuk-list">      
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/revocation-date?adjustmentsOverlap=true">Revocation date</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/return-to-custody-date?adjustmentsOverlap=true">Arrest date</a></li>  
+                                    <li><a class="govuk-link" target="external" href="vMVP/recalls/recall-overlapping-adjustments?adjustmentsOverlap=true">Intercept - no sentences are eligible</a></li>  
+                                </ul>
                             </div> 
 
                         </div>

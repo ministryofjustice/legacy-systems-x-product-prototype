@@ -17,6 +17,9 @@
             {% elif data['unknownSentenceTypes'] == 'true' %}
 
             <form method="post" action="update-sentence-types">
+            {% elif data['recallType'] == 'incorrect' %}
+
+            <form method="post" action="recall-type-intercept">
 
             {% else %}
 
