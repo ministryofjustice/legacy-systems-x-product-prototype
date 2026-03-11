@@ -1,0 +1,93 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+
+{% block content %}
+<!-- Back link -->
+<div class="moj-width-container">
+    <a href="../recalls" class="govuk-back-link">Back</a>
+</div>
+
+<!-- Page intro -->
+<div class="moj-width-container govuk-!-margin-top-6">
+  <div class="govuk-grid-row">
+
+    <form method="post" action="revocation-date">
+      <div class="govuk-grid-column-two-thirds"> 
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" role="group" aria-describedby="to-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  <span class="govuk-caption-xl">Record a recall</span>
+                  Enter the date of revocation
+              </h1> 
+              </legend>
+         
+            <div id="dob-hint" class="govuk-hint">
+              For example, 31 3 1980
+            </div>
+              
+              
+                <div class="govuk-date-input" id="revocation-date">
+                  
+                  
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="revocation-date-day">
+                        Day
+                      </label>
+                    
+                    
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-day" name="revocation-date-day" type="text" inputmode="numeric" maxlength="2">
+                    
+                    </div>
+                  </div>
+                  
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="revocation-date-month">
+                        Month
+                      </label>
+                    
+                    
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="revocation-date-month" name="revocation-date-month" type="text" inputmode="numeric" maxlength="2">
+                    
+                    </div>
+                  </div>
+                  
+                  <div class="govuk-date-input__item">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label govuk-date-input__label" for="revocation-date-year">
+                        Year
+                      </label>
+                    
+                    
+                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="revocation-date-year" name="revocation-date-year" type="text" inputmode="numeric" maxlength="4">
+                    
+                    </div>
+                  </div>
+                  
+                  
+                </div>
+              
+              </fieldset> 
+
+          </div>
+            
+
+     
+            <div class="govuk-button-group"> 
+
+                  <button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button" data-qa="submitReason">
+                      Continue
+                  </button> 
+              <!-- </form> -->
+              <!-- <form method="post" action="cancel"> -->
+                  <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                      Cancel
+                  </button>
+          </div> 
+
+        </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

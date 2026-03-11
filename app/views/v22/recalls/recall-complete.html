@@ -1,0 +1,57 @@
+{% extends "../../includes/layouts/template-linear.html" %}
+{% block content %}
+
+<!-- Breadcrumbs -->
+<div class="moj-width-container">
+    <!--     <div class="govuk-breadcrumbs govuk-!-display-none-print">
+        <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/prisoner/G9126UE">Bloggs, Joe</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item" aria-current="page">Calculate release dates</li>
+        </ol>
+    </div> -->
+</div>
+<div class="moj-width-container govuk-!-margin-top-7">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                    <div class="">Recall recorded</div>
+                    <span class="govuk-body-l" style="color: #ffff;">The recall will be included in your next release date calculation.</span>
+                </h1> 
+            </div>
+         
+ 
+            <div class="govuk-!-margin-top-6">
+                <h2 class="govuk-heading-l">What you must do next</h2>
+                
+                <p class="govuk-body">To make sure all the adjustment information is correct, you must <a href="../adjustments?toShow=recallHistory">review the remand and tagged bail</a>.</p>
+                <p class="govuk-body">Once  all adjustments have been made, continue to calculate release dates.</p>
+                <!-- <ul class="govuk-list govuk-list--number govuk-!-margin-top-2">
+                    <li><a href="../adjustments?toShow=recallHistory">Review the remand and tagged bail</a></li>
+                    <li><a href="../calculate-release-dates/calculation-reason?toShow=recallHistory">Calculate release dates</a></li> 
+                </ul> -->
+  
+                <h2 class="govuk-heading-m">Other things you can do</h2>   
+                <p>Go back to the <a href="../DPS-prisoner-profile?toShow=recallHistory">prisoner profile</a>.</p>
+           
+            </div>
+<!-- 
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <div class="">
+                <h2 class="govuk-heading-m">Help improve this service</h2>
+                <div class="govuk-body"><span>This is a new service. Your feedback will help make it better. To give feedback you can:</span>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="">Complete a short survey</a></li>
+                    <li><a href="">Report a specific problem by email</a></li>
+                </ul>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+{% endblock %}

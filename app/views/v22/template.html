@@ -222,89 +222,76 @@ Court cases and release dates
       
         <div id="connect-dps-common-header-search-menu" class="connect-dps-common-header__pushdown-menu" hidden="hidden">
           <div class="govuk-width-container">
-            </header>
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-half">
+                <form action="https://digital-dev.prison.service.justice.gov.uk/prisoner-search">
+                  <h3 class="govuk-label-wrapper">
+                    <label class="govuk-label govuk-label--m" for="connect-dps-common-header-prisoner-search">
+                      Search for a prisoner
+                    </label>
+                  </h3>
+                  <div id="connect-dps-common-header-prisoner-search-hint" class="govuk-hint">
+                    Enter a prisoner's name or prison number.
+                  </div>
+                  <div class="connect-dps-common-header__search-input-wrapper">
+                    <input enterkeyhint="search" id="connect-dps-common-header-prisoner-search" class="connect-dps-common-header__search-item connect-dps-common-header__search-menu-input" name="keywords" title="Search for a prisoner" type="search" aria-describedby="connect-dps-common-header-prisoner-search-hint">
+                    <div class="connect-dps-common-header__search-item connect-dps-common-header__search-menu-submit-wrapper">
+                      <button class="connect-dps-common-header__search-menu-submit-btn" type="submit" enterkeyhint="search">
+                        Search for a prisoner
+                        
+  <svg class="connect-dps-common-header__search-toggle-button-icon" width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+    <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+    <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+  </svg>
 
-            <!-- Experimental service navigation preserved — original govuk-service-navigation block commented out below -->
-            <!--
-            <section aria-label="Service information" class="govuk-service-navigation"
-              data-module="govuk-service-navigation">
-              <div class="govuk-width-container">
-                <div class="govuk-service-navigation__container">
-                  <span class="govuk-service-navigation__service-name">
-                    <a href="/{{ data.prototypeVersion }}/court-cases/confirm-exit" class="govuk-service-navigation__link">
-                      Court cases and release dates
-                    </a>
-                  </span>
+                      </button>
+                    </div>
+                  </div>
 
-                  {% raw %}{% if overviewActive == true %}{% endraw %}   
-                  <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
-                    <button type="button" class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle" aria-controls="navigation" hidden>
-                      Menu
-                    </button>
-                    <ul class="govuk-service-navigation__list" id="navigation">
-                      <li class="govuk-service-navigation__item govuk-service-navigation__item--active">
-                        <a class="govuk-service-navigation__link" href="overview" aria-current="true">
-                            <strong class="govuk-service-navigation__active-fallback">Overview</strong>
-                        </a>
-                      </li>
-                      <li class="govuk-service-navigation__item ">
-                        <a class="govuk-service-navigation__link" href="court-cases" >
-                          Court cases
-                        </a>
-                      </li>
-                      <li class="govuk-service-navigation__item">
-                        <a class="govuk-service-navigation__link" href="adjustments">
-                          Adjustments
-                        </a>
-                      </li>
-                      <li class="govuk-service-navigation__item">
-                        <a class="govuk-service-navigation__link" href="recalls">
-                          Recalls
-                        </a>
-                      </li>
-                      <li class="govuk-service-navigation__item">
-                        <a class="govuk-service-navigation__link" href="release-dates">
-                          Release dates and calculations
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-            -->
+                </form>
+                <a href="https://digital-dev.prison.service.justice.gov.uk/prisoner-search" class="govuk-link govuk-!-margin-bottom-0 govuk-!-font-size-19 govuk-link--no-visited-state">View all prisoners in Hull (HMP)</a>.
+              </div>
+            </div>
 
-            {% block nav %}
+          </div>
+        </div>
+        
 
-                    {% if overviewActive == true %}   
-                            <nav class="moj-sub-navigation" aria-label="Sub navigation">
-                                <ul class="moj-sub-navigation__list">
-                                    <li class="moj-sub-navigation__item">
-                                        <a class="moj-sub-navigation__link" aria-current="page" href="overview">Overview</a>
-                                    </li>
-                                    <li class="moj-sub-navigation__item">
-                                        <a class="moj-sub-navigation__link" href="court-cases">Court cases</a>
-                                    </li>
-                                    <li class="moj-sub-navigation__item">
-                                        <a class="moj-sub-navigation__link" href="adjustments">Adjustments 
-                                            {% if data['toDo'] == 'ADAupdated' or data['toDo'] == 'ADAnomis' or data['toDo'] == 'ADAnoAdjustment' or data['toDo'] == 'PADAreview' %} <span id="notifications" class="moj-notification-badge">1</span> 
-                                            {% else %} 
-                                            {% endif %} 
-                                        </a>
-                                    </li>
-                                    <li class="moj-sub-navigation__item">
-                                        <a class="moj-sub-navigation__link" href="release-dates">Release dates and calculations 
-                                            {% if data['calcRequired'] == 'true' or data['toDo'] == 'adjustmentsApplied' or data['toDo'] == 'courtCaseAdded' or data['toDo'] == 'generalChangesApplied' or data['toShow'] == 'recallHistory' or data['toShow'] == 'ualAdded'   or data['ualEdited'] == 'true' or data['recallEdited'] == 'true' %}  <span id="notifications" class="moj-notification-badge">1</span> 
-                                            {% else %} 
-                                            {% endif %} 
-                                        </a>
-                                    </li>
-                                    <li class="moj-sub-navigation__item">
-                                        <a class="moj-sub-navigation__link" href="recalls">Recalls</a>
-                                    </li>
-                                    <!-- <li class="moj-sub-navigation__item">
-                                        <a class="moj-sub-navigation__link" href="timeline">Timeline</a>
-                                    </li> -->
-                                </ul>
-                            </nav> 
-
+        
+        <div id="connect-dps-common-header-services-menu" class="connect-dps-common-header__pushdown-menu connect-dps-common-header__services-menu" hidden="hidden">
+          <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-three-quarters">
+                <h3 class="govuk-heading-m">
+                  Services
+                </h3>
+                <ul class="govuk-list">
+                  
+                    <li><a href="https://manage-adjudications-dev.hmpps.service.justice.gov.uk" class="govuk-link govuk-link--no-visited-state">Adjudications</a></li>
+                  
+                    <li><a href="https://check-my-diary-dev.prison.service.justice.gov.uk?fromDPS=true" class="govuk-link govuk-link--no-visited-state">Check my diary</a></li>
+                  
+                    <li><a href="https://digital-dev.prison.service.justice.gov.uk/establishment-roll" class="govuk-link govuk-link--no-visited-state">Establishment roll check</a></li>
+                  
+                    <li><a href="https://incentives-ui-dev.hmpps.service.justice.gov.uk" class="govuk-link govuk-link--no-visited-state">Incentives</a></li>
+                  
+                    <li><a href="https://manage-offences-dev.hmpps.service.justice.gov.uk" class="govuk-link govuk-link--no-visited-state">Manage offences</a></li>
+                  
+                    <li><a href="https://digital-dev.prison.service.justice.gov.uk/manage-prisoner-whereabouts" class="govuk-link govuk-link--no-visited-state">Prisoner whereabouts</a></li>
+                  
+                    <li><a href="https://submit-a-mercury-report-dev.hmpps.service.justice.gov.uk" class="govuk-link govuk-link--no-visited-state">Submit an Intelligence Report</a></li>
+                  
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      
+    </nav> 
+</header> 
+<section aria-label="Service information" class="govuk-service-navigation"
+  data-module="govuk-service-navigation">
   <div class="govuk-width-container">
     <div class="govuk-service-navigation__container">
       <span class="govuk-service-navigation__service-name">

@@ -1,0 +1,53 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+
+<!-- Breadcrumbs -->
+<div class="moj-width-container">
+    <!--     <div class="govuk-breadcrumbs govuk-!-display-none-print">
+        <ol class="govuk-breadcrumbs__list">
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/">Home</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item">
+                <a class="govuk-breadcrumbs__link" href="/prisoner/G9126UE">Bloggs, Joe</a>
+            </li>
+            <li class="govuk-breadcrumbs__list-item" aria-current="page">Calculate release dates</li>
+        </ol>
+    </div> -->
+</div>
+<div class="moj-width-container govuk-!-margin-top-7">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+            <div class="govuk-panel govuk-panel--confirmation">
+                <h1 class="govuk-panel__title">
+                    <div class="">Changes to recall saved</div>
+                </h1> 
+            </div>
+
+            <div class="govuk-!-margin-top-6">
+                <h2 class="govuk-heading-l">What you can do next</h2>  
+ 
+                <p><a href="../../adjustments?recallEdited=true">Check the adjustments information</a></p> 
+
+                <h2 class="govuk-heading-m">Other things you can do</h2>  
+                    <ul class="govuk-list govuk-list--spaced govuk-!-margin-top-2">
+                        <li><a href="../../calculate-release-dates/calculation-reason?recallEdited=true">Calculate release dates</a></li> 
+                        <li>Go back to the <a href="../../DPS-prisoner-profile?recallEdited=true">prisoner profile</a></li>
+                    </ul>
+                </div>  
+            </div>
+<!-- 
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+            <div class="">
+                <h2 class="govuk-heading-m">Help improve this service</h2>
+                <div class="govuk-body"><span>This is a new service. Your feedback will help make it better. To give feedback you can:</span>
+                <ul class="govuk-list govuk-!-margin-top-2">
+                    <li><a href="">Complete a short survey</a></li>
+                    <li><a href="">Report a specific problem by email</a></li>
+                </ul>
+                </div>
+            </div> -->
+        </div>
+    </div>
+</div>
+{% endblock %}

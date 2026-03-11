@@ -1,0 +1,58 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="review-2.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
+                    <div id="dataContainer">
+
+                    </div>
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Remand details</caption>
+                        <thead class="govuk-table__head">
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Remand periods</th>
+                            <th scope="col" class="govuk-table__header">Days spent on remand</th>
+                          </tr>
+                        </thead>
+                        <tbody class="govuk-table__body">
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">9 January 2024 to 8 February 2024</td>
+                            <td class="govuk-table__cell">31</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">17 April 2024 to  29 April 2024</td>
+                            <td class="govuk-table__cell">13</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <td class="govuk-table__cell">23 May 2024 to 7 September 2024</td>
+                            <td class="govuk-table__cell">108</td>
+                          </tr>
+                          <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Total days</th>
+                            <th scope="col" class="govuk-table__header">152</th>
+                          </tr>
+                        </tbody>
+                      </table>
+                    <div id="alerthere"></div>
+                   <div class="govuk-button-group">
+                          <a href="../index-1?toShow=remandAdded" class="govuk-button" data-module="govuk-button">
+                              Continue
+                          </a>
+                         
+                        <a href="check-remand-details-2.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                          Check remand tool
+                      </a>
+                      </div>
+                    <a href="review-2.html" class="govuk-link">Return to remand details</a>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

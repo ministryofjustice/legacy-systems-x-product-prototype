@@ -1,0 +1,29 @@
+{% extends "version-1/dps/includes/hub-layout-minus-nav2.html" %}
+{% block content %}
+
+    <a href="../remand-periods/index.html" class="govuk-back-link">Back</a>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+
+                <h1 class="govuk-heading-xl"><span class="govuk-caption-xl">Adjustments</span></h1>
+                <div class="govuk-error-summary" data-module="govuk-error-summary">
+                  <div role="alert">
+                    <h2 class="govuk-error-summary__title">
+                      There is a problem
+                    </h2>
+                    <div class="govuk-error-summary__body">
+                      <p>There is information missing in NOMIS that could impact the remand time.</p><br>
+                        <p>There is another offence of 'Attempt theft from a shop' within booking 41711A that has a missing offence date.</p><br>
+                       <p> There is another offence of 'Section 18 - wounding with intent' within booking 46813A that has a missing offence date.</p><br>
+                        <p>To ensure the remand time is calculated correctly, add the missing information in NOMIS, then <a href="../remand-tool/check-remand-details-2">reload this page.</a></p>
+                    </div>
+                  </div>
+                </div>
+                
+            
+        </div>
+    </div>
+</div>
+
+<script src="/public/javascripts/cases.js"></script>
+{% endblock %}

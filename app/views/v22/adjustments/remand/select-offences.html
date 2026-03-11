@@ -1,0 +1,207 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+
+    <div class="">
+        <a href="enter-remand.html" class="govuk-back-link">Back</a>
+
+        <main class="govuk-main-wrapper offence-outcome " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-l">
+                        <span class="govuk-caption-l">Adjustments</span>
+                        Select the offences
+                    </h1>
+                    <p class="govuk-body govuk-!-margin-top-6 "> You have entered  <span class="govuk-!-font-weight-bold" id="Days"></span>  day(s) of remand. Select all the offences that apply to this remand time. </p>
+                    <p class="govuk-body">The rules for applying remand can be found in the <a href="#">policy framework</a>.</p>
+
+                    {% if data.courtCases | length %}
+                    {% for courtCase in data.courtCases | reverse %}
+                    {% set lastAppearance = courtCase.appearances | last %}
+                    {% set courtCaseIndex = loop.revindex0 %}
+
+                    
+                    {% if data['scenario'] == '1' %}
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "1"  %}
+                    <h2 class="govuk-heading-m">
+                        Court case {{ lastAppearance['court-case-number']}}
+                    </h2>
+                    <div class="case-border govuk-!-margin-bottom-6">
+                        <p>
+                            <b>Court name :</b> {{ lastAppearance['court-name']}}<br>
+                            <b>Case reference :</b> {{ lastAppearance['court-case-ref'] }}
+                        </p>
+                        <div class="govuk-form-group  ">
+                            <fieldset class="govuk-fieldset" aria-describedby="case-1-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    Offences
+                                </legend>
+                                <div id="case-1-hint" class="govuk-hint">
+                                    Select all that apply
+                                </div>
+
+                               
+                                {% for sentence in lastAppearance.sentences %}
+                                <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="case-1-offence-1" name="case-1-offences" type="checkbox"
+                                               aria-describedby="case-1-offence-1-hint"
+                                               value="Burglary other than dwelling - theft"
+                                               data-court="Bristol Magistrates Court"
+                                               data-case-ref="T20220702"
+                                               data-offence-date="Committed on 1 Jan 2023"
+                                               data-offence-date-date="1 Jan 2023"
+                                               data-id="1"
+                                        >
+                                        <label class="govuk-label govuk-checkboxes__label" for="case-1-offence-1" >
+                                            {{ sentence['offence-name'] }} 
+                                            {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}<span class="moj-badge moj-badge--grey">recall</span>   {% endif %}
+                                        </label>
+                                        <div id="case-1-offence-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                            Committed on  {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
+                                            {% if sentence['offence-end-date-day'] > 0 %}
+                                            to
+                                            {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                                            {% endif %}
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                {% endfor %}
+                            </fieldset>
+                        </div>
+                    </div> 
+
+                    {% endif %}
+                    {% endif %}
+
+                    {% if data['scenario'] == '2' %}
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "2"  %}
+                    <h2 class="govuk-heading-m">
+                        Court case {{ lastAppearance['court-case-number']}}
+                    </h2>
+                    <div class="case-border govuk-!-margin-bottom-6">
+                        <p>
+                            <b>Court name :</b> {{ lastAppearance['court-name']}}<br>
+                            <b>Case reference :</b> {{ lastAppearance['court-case-ref'] }}
+                        </p>
+                        <div class="govuk-form-group  ">
+                            <fieldset class="govuk-fieldset" aria-describedby="case-1-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    Offences
+                                </legend>
+                                <div id="case-1-hint" class="govuk-hint">
+                                    Select all that apply
+                                </div>
+
+                               
+                                {% for sentence in lastAppearance.sentences %}
+                                <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="case-1-offence-1" name="case-1-offences" type="checkbox"
+                                               aria-describedby="case-1-offence-1-hint"
+                                               value="Burglary other than dwelling - theft"
+                                               data-court="Bristol Magistrates Court"
+                                               data-case-ref="T20220702"
+                                               data-offence-date="Committed on 1 Jan 2023"
+                                               data-offence-date-date="1 Jan 2023"
+                                               data-id="1"
+                                        >
+                                        <label class="govuk-label govuk-checkboxes__label" for="case-1-offence-1" >
+                                            {{ sentence['offence-name'] }} 
+                                            {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}<span class="moj-badge moj-badge--grey">recall</span>   {% endif %}
+                                        </label>
+                                        <div id="case-1-offence-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                            Committed on  {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
+                                            {% if sentence['offence-end-date-day'] > 0 %}
+                                            to
+                                            {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                                            {% endif %}
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                {% endfor %}
+                            </fieldset>
+                        </div>
+                    </div> 
+
+                    {% endif %}
+                    {% endif %}
+
+                    {% if data['scenario'] == 'unsupported' %}
+                    {% if courtCase['status'] != "inactive" and courtCase['scenario'] == "unsupported"  %}
+                    <h2 class="govuk-heading-m">
+                        Court case {{ lastAppearance['court-case-number']}}
+                    </h2>
+                    <div class="case-border govuk-!-margin-bottom-6">
+                        <p>
+                            <b>Court name :</b> {{ lastAppearance['court-name']}}<br>
+                            <b>Case reference :</b> {{ lastAppearance['court-case-ref'] }}
+                        </p>
+                        <div class="govuk-form-group  ">
+                            <fieldset class="govuk-fieldset" aria-describedby="case-1-hint">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    Offences
+                                </legend>
+                                <div id="case-1-hint" class="govuk-hint">
+                                    Select all that apply
+                                </div>
+
+                               
+                                {% for sentence in lastAppearance.sentences %}
+                                <div class="govuk-checkboxes " data-module="govuk-checkboxes">
+                                    <div class="govuk-checkboxes__item">
+                                        <input class="govuk-checkboxes__input" id="case-1-offence-1" name="case-1-offences" type="checkbox"
+                                               aria-describedby="case-1-offence-1-hint"
+                                               value="Burglary other than dwelling - theft"
+                                               data-court="Bristol Magistrates Court"
+                                               data-case-ref="T20220702"
+                                               data-offence-date="Committed on 1 Jan 2023"
+                                               data-offence-date-date="1 Jan 2023"
+                                               data-id="1"
+                                        >
+                                        <label class="govuk-label govuk-checkboxes__label" for="case-1-offence-1" >
+                                            {{ sentence['offence-name'] }} 
+                                            {% if data['toShow'] == 'recallHistory' or data['toShow'] == 'calcComplete' or data['toShow'] == 'ualAdded' or data['toShow'] == 'calc2Complete'%}<span class="moj-badge moj-badge--grey">recall</span>   {% endif %}
+                                        </label>
+                                        <div id="case-1-offence-1-hint" class="govuk-hint govuk-checkboxes__hint">
+                                            Committed on  {{ sentence['offence-start-date-day'] }}/{{ sentence['offence-start-date-month'] }}/{{ sentence['offence-start-date-year'] }}
+                                            {% if sentence['offence-end-date-day'] > 0 %}
+                                            to
+                                            {{ sentence['offence-end-date-day'] }}/{{ sentence['offence-end-date-month'] }}/{{ sentence['offence-end-date-year'] }}
+                                            {% endif %}
+                                        </div>
+                                    </div> 
+                                </div>
+
+                                {% endfor %}
+                            </fieldset>
+                        </div>
+                    </div> 
+
+                    {% endif %}
+                    {% endif %}
+                    
+
+                    {% endfor %}
+
+                    {% endif %}
+
+                    <p class="govuk-inset-text">If you think some information is wrong, you can edit it in NOMIS and <a href="#">reload this page</a>.</p>
+                    <div class="govuk-button-group">
+                        <a href="review-2.html" id="add-offences-button" class="govuk-button" data-name="ADA" data-desc="ADA (Additional days awarded)">
+                            Continue
+                        </a>
+                        <a href="../index-1" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+
+            </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}

@@ -1,0 +1,51 @@
+{% extends "../../../includes/layouts/template-linear.html" %}
+{% block content %}
+<div class="">
+    <div class="">
+        <a href="review-2.html" class="govuk-back-link">Back</a>
+        <main class="govuk-main-wrapper " id="main-content" role="main">
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds-from-desktop">
+
+                    <h1 class="govuk-heading-l"><span class="govuk-caption-xl">Adjustments</span>Confirm and save</h1>
+                    <div id="dataContainer">
+
+                    </div>
+                    <table class="govuk-table">
+                        <caption class="govuk-table__caption govuk-table__caption--m">Remand details</caption>
+                        <thead class="govuk-table__head">
+                        <tr class="govuk-table__row">
+                            <th scope="col" class="govuk-table__header">Remand period</th>
+                            <th scope="col" class="govuk-table__header">Days spent on remand</th>
+<!--                            <th scope="col" class="govuk-table__header"></th>-->
+                        </tr>
+                        </thead>
+                        <tbody id="tableBody-2" class="govuk-table__body">
+
+
+                        </tbody>
+                        <tfoot>
+                        <tr class="govuk-table__row">
+                            <th scope="row" class="govuk-table__header">Total days</th>
+                            <td class="govuk-table__cell" id="saveTableTotal">000</td>
+                            <td class="govuk-table__cell"></td>
+                        </tr>
+                        </tfoot>
+                    </table>
+                
+                    <div class="govuk-button-group">
+                        <a href="../../adjustments?remandAdded=true" id="saveRemandButton" class="govuk-button" data-journey="1">
+                            Confirm and save
+                        </a>
+                        <a href="../index-1.html" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                            Cancel
+                        </a>
+                    </div>
+ 
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+<script src="/public/javascripts/add-remand.js"></script>
+{% endblock %}
