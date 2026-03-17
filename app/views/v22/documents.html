@@ -1,6 +1,99 @@
 {% extends "./template.html" %}
 {% set documentsActive = true %}
 {% block content %}
+<style>
+    /* Expander container */
+    .filter-expander {
+        border-top: 1px solid #b1b4b6;
+        border-bottom: 1px solid #b1b4b6;
+        margin-bottom: -1px;
+        overflow: hidden;
+    }
+
+    .moj-filter__options .filter-expander:first-of-type {
+        border-top: none;
+    }
+
+    /* Button base */
+    .filter-expander__button {
+        position: relative;
+        width: 100%;
+        text-align: left;
+        background: none;
+        border: 0;
+        padding: 14px 0 14px 26px;
+        cursor: pointer;
+        color: #0b0c0c;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 1.25;
+    }
+
+    .govuk-checkboxes__label {
+        max-width: 100%
+    }
+
+    /* Chevron when expanded (no animation) */
+    .filter-expander__button[aria-expanded="true"] {
+        padding: 14px 0 5px 26px;
+    }
+
+    /* Label inside button */
+    .filter-expander__label {
+        display: inline-block;
+        padding: 0;
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+    }
+
+    /* Hover */
+    .filter-expander__button:hover .filter-expander__label {
+        border-bottom: 3px solid #0b0c0c;
+    }
+
+    /* Active (while pressing) */
+    .filter-expander__button:active .filter-expander__label {
+        background: #ffdd00;
+        border-bottom: 3px solid #0b0c0c;
+    }
+
+    /* Focus (keyboard / click) */
+    .filter-expander__button:focus-visible .filter-expander__label {
+        background: #ffdd00;
+        border-bottom: 3px solid #0b0c0c;
+        outline: none;
+        /* optional */
+    }
+
+    /* Chevron */
+    .filter-expander__button::before {
+        content: "";
+        position: absolute;
+        left: 2px;
+        top: 25px;
+        width: 10px;
+        height: 10px;
+        border-right: 2.5px solid #0b0c0c;
+        border-bottom: 2.5px solid #0b0c0c;
+        transform-origin: center;
+        transform: translateY(-50%) rotate(45deg);
+        /* down */
+    }
+
+    /* Chevron when expanded (no animation) */
+    .filter-expander__button[aria-expanded="true"]::before {
+        transform: translateY(-50%) rotate(-135deg);
+        /* up */
+        top: 30px;
+    }
+
+    /* Content */
+    .filter-expander__content {
+        padding: 0 0 20px 0;
+    }
+</style>
+
+
 <!-- Documents -->
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
@@ -19,16 +112,8 @@
     </div>
 </div> -->
 
-{% if data['uploadSuccess'] == 'true' %}
-<div class="moj-banner moj-banner--success" role="region" aria-label="Success">
-    <svg class="moj-banner__icon" fill="currentColor" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 25 25" height="25" width="25">
-        <path d="M25,6.2L8.7,23.2L0,14.1l4-4.2l4.7,4.9L21,2L25,6.2z" />
-    </svg>
-    <div class="moj-banner__message">New document added</div>
-</div>
-{% endif %}
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-third">
+    <div class="govuk-grid-column-one-quarter">
         <div class="moj-filter">
             <div class="moj-filter__header">
                 <div class="moj-filter__header-title">
@@ -38,7 +123,7 @@
                 </div>
             </div>
             <div class="moj-filter__content">
-                <div class="moj-filter__selected">
+                <!-- <div class="moj-filter__selected">
                     <div class="moj-filter__selected-heading">
                         <div class="moj-filter__heading-title">
                             <h2 class="govuk-heading-m">Selected filters</h2>
@@ -58,509 +143,1805 @@
                     <ul class="moj-filter-tags">
                         <li><a class="moj-filter__tag" href="/path/to/remove/this"><span class="govuk-visually-hidden">Remove this filter</span> From 23/10/21 to 13/06/24</a></li>
                     </ul>
-                </div>
+                </div> -->
+
+
                 <div class="moj-filter__options">
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="court-name">
-                            Court name
-                        </label>
-                        <input class="govuk-input govuk-!-margin-top-4" id="court-name" name="court-name" type="text" value="Leeds Crown Court">
-                    </div>
-                    
-                    <div class="govuk-form-group">
-                        <label class="govuk-label govuk-label--m" for="court-name">
-                            Case reference
-                        </label>
-                        <input class="govuk-input govuk-!-margin-top-4" id="court-name" name="court-name" type="text" value="Leeds Crown Court">
-                    </div>
-                    <div class="govuk-form-group">
-                        <fieldset class="govuk-fieldset">
-                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                                Type
-                            </legend>
-                            <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type" name="type" type="checkbox" value="1" checked>
-                                    <label class="govuk-label govuk-checkboxes__label" for="type">
-                                        Custodial warrant
-                                    </label>
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        Indictment
-                                    </label>
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2" checked>
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        Trial record sheet
-                                    </label>
-                                </div>
-                                <!-- <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        Order of imprisonment
-                                    </label>
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        Preconditions
-                                    </label>
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        Confiscation order
-                                    </label>
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        PNC check
-                                    </label>
-                                </div>
-                                                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        HDC eligibility checklist
-                                    </label>
-                                </div>
-                                                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-2" name="type" type="checkbox" value="2">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-2">
-                                        Licences
-                                    </label>
-                                </div>
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                                        Communication
-                                    </label>
-                                </div> -->
-                                <div class="govuk-checkboxes__item">
-                                    <input class="govuk-checkboxes__input" id="type-3" name="type" type="checkbox" value="3">
-                                    <label class="govuk-label govuk-checkboxes__label" for="type-3">
-                                        Other
-                                    </label>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div>
-                    <div class="govuk-form-group hmpps-datepicker" data-module="hmpps-datepicker">
-                        <label class="govuk-label govuk-label--m" for="endDate">
-                            Date from
-                        </label>
-                        <div id="endDate-hint" class="govuk-hint">
-                            For example, 31/3/2024
-                        </div>
-                        <div class="hmpps-datepicker-input__wrapper">
-                            <div class="govuk-form-group">
-                                <input class="govuk-input govuk-input hmpps-js-datepicker-input" id="endDate" name="endDate" type="text" autocomplete="off" maxlength="10" data-mindate="" data-maxdate="">
-                                <div id="datepicker-endDate" class="hmpps-datepicker__dialog  datepickerDialog" role="dialog" aria-modal="true" aria-labelledby="datepicker-title-endDate">
-                                    <div class="hmpps-datepicker__dialog__header ">
-                                        <div class="hmpps-datepicker__dialog__navbuttons">
-                                            <button class="js-datepicker-prev-year" aria-label="previous year" data-button="button-datepicker-prevyear">
-                                                <span class="govuk-visually-hidden">Previous year</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#double_chevron_left"></use>
-                                                </svg>
-                                            </button>
-                                            <button class="js-datepicker-prev-month" aria-label="previous month" data-button="button-datepicker-prevmonth">
-                                                <span class="govuk-visually-hidden">Previous month</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#chevron_left"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <h2 id="datepicker-title-endDate" class="hmpps-datepicker__dialog__title  js-datepicker-month-year" aria-live="polite">June 2024</h2>
-                                        <div class="hmpps-datepicker__dialog__navbuttons">
-                                            <button class="js-datepicker-next-month" aria-label="next month" data-button="button-datepicker-nextmonth">
-                                                <span class="govuk-visually-hidden">Next month</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#chevron_right"></use>
-                                                </svg>
-                                            </button>
-                                            <button class="js-datepicker-next-year" aria-label="next year" data-button="button-datepicker-nextyear">
-                                                <span class="govuk-visually-hidden">Next year</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#double_chevron_right"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <table class="hmpps-datepicker__dialog__table  js-datepicker-grid" role="grid" aria-labelledby="datepicker-title-endDate">
-                                        <caption class="hmpps-datepicker__dialog__table-caption">You can use the arrow keys to select a date</caption>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" abbr="Monday">Mo</th>
-                                                <th scope="col" abbr="Tuesday">Tu</th>
-                                                <th scope="col" abbr="Wednesday">We</th>
-                                                <th scope="col" abbr="Thursday">Th</th>
-                                                <th scope="col" abbr="Friday">Fr</th>
-                                                <th scope="col" abbr="Saturday">Sa</th>
-                                                <th scope="col" abbr="Sunday">Su</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: none;">29</button></td>
-                                                <td><button data-form="date-select" style="display: none;">30</button></td>
-                                                <td><button data-form="date-select" style="display: none;">31</button></td>
-                                                <td><button data-form="date-select" style="display: block;">1</button></td>
-                                                <td><button data-form="date-select" style="display: block;">2</button></td>
-                                                <td><button data-form="date-select" style="display: block;">3</button></td>
-                                                <td><button data-form="date-select" style="display: block;">4</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;">5</button></td>
-                                                <td><button data-form="date-select" style="display: block;">6</button></td>
-                                                <td><button data-form="date-select" style="display: block;">7</button></td>
-                                                <td><button data-form="date-select" style="display: block;">8</button></td>
-                                                <td><button data-form="date-select" style="display: block;">9</button></td>
-                                                <td><button data-form="date-select" style="display: block;">10</button></td>
-                                                <td><button data-form="date-select" style="display: block;">11</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;">12</button></td>
-                                                <td><button data-form="date-select" style="display: block;">13</button></td>
-                                                <td><button data-form="date-select" style="display: block;">14</button></td>
-                                                <td><button data-form="date-select" style="display: block;">15</button></td>
-                                                <td><button data-form="date-select" style="display: block;">16</button></td>
-                                                <td><button data-form="date-select" style="display: block;">17</button></td>
-                                                <td><button data-form="date-select" style="display: block;">18</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;">19</button></td>
-                                                <td><button data-form="date-select" style="display: block;">20</button></td>
-                                                <td><button data-form="date-select" style="display: block;">21</button></td>
-                                                <td><button data-form="date-select" style="display: block;">22</button></td>
-                                                <td><button data-form="date-select" style="display: block;">23</button></td>
-                                                <td><button data-form="date-select" style="display: block;">24</button></td>
-                                                <td><button data-form="date-select" style="display: block;">25</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;">26</button></td>
-                                                <td><button data-form="date-select" style="display: block;">27</button></td>
-                                                <td><button data-form="date-select" style="display: block;">28</button></td>
-                                                <td><button data-form="date-select" style="display: block;">29</button></td>
-                                                <td><button data-form="date-select" style="display: block;">30</button></td>
-                                                <td><button data-form="date-select" style="display: none;">1</button></td>
-                                                <td><button data-form="date-select" style="display: none;">2</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: none;">3</button></td>
-                                                <td><button data-form="date-select" style="display: none;">4</button></td>
-                                                <td><button data-form="date-select" style="display: none;">5</button></td>
-                                                <td><button data-form="date-select" style="display: none;">6</button></td>
-                                                <td><button data-form="date-select" style="display: none;">7</button></td>
-                                                <td><button data-form="date-select" style="display: none;">8</button></td>
-                                                <td><button data-form="date-select" style="display: none;">9</button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="hmpps-datepicker__dialog__buttongroup">
-                                        <button type="button" class="govuk-button js-datepicker-ok" value="ok" data-button="button-datepicker-ok">Select</button>
-                                        <button type="button" class="govuk-button govuk-button--secondary js-datepicker-cancel" value="cancel" data-button="button-datepicker-cancel">Cancel</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="hmpps-datepicker-button hmpps-js-datepicker-button" data-button="datepicker-endDate-toggle">
-                                <span class="govuk-visually-hidden">Choose date.</span>
-                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img" viewBox="0 0 22 22">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1333 2.93333H5.86668V4.4C5.86668 5.21002 5.21003 5.86667 4.40002 5.86667C3.59 5.86667 2.93335 5.21002 2.93335 4.4V2.93333H2C0.895431 2.93333 0 3.82877 0 4.93334V19.2667C0 20.3712 0.89543 21.2667 2 21.2667H20C21.1046 21.2667 22 20.3712 22 19.2667V4.93333C22 3.82876 21.1046 2.93333 20 2.93333H19.0667V4.4C19.0667 5.21002 18.41 5.86667 17.6 5.86667C16.79 5.86667 16.1333 5.21002 16.1333 4.4V2.93333ZM20.5333 8.06667H1.46665V18.8C1.46665 19.3523 1.91436 19.8 2.46665 19.8H19.5333C20.0856 19.8 20.5333 19.3523 20.5333 18.8V8.06667Z"></path>
-                                    <rect x="3.66669" width="1.46667" height="5.13333" rx="0.733333"></rect>
-                                    <rect x="16.8667" width="1.46667" height="5.13333" rx="0.733333"></rect>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="govuk-form-group hmpps-datepicker" data-module="hmpps-datepicker">
-                        <label class="govuk-label govuk-label--m" for="startDate">
-                            Date to
-                        </label>
-                        <div id="startDate-hint" class="govuk-hint">
-                            For example, 31/3/2024
-                        </div>
-                        <div class="hmpps-datepicker-input__wrapper">
-                            <div class="govuk-form-group">
-                                <input class="govuk-input govuk-input hmpps-js-datepicker-input" id="startDate" name="startDate" type="text" autocomplete="off" maxlength="10" data-mindate="" data-maxdate="">
-                                <div id="datepicker-startDate" class="hmpps-datepicker__dialog datepickerDialog" role="dialog" aria-modal="true" aria-labelledby="datepicker-title-startDate" style="display: none; left: 229px;">
-                                    <div class="hmpps-datepicker__dialog__header ">
-                                        <div class="hmpps-datepicker__dialog__navbuttons">
-                                            <button class="js-datepicker-prev-year" aria-label="previous year" data-button="button-datepicker-prevyear">
-                                                <span class="govuk-visually-hidden">Previous year</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#double_chevron_left"></use>
-                                                </svg>
-                                            </button>
-                                            <button class="js-datepicker-prev-month" aria-label="previous month" data-button="button-datepicker-prevmonth">
-                                                <span class="govuk-visually-hidden">Previous month</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#chevron_left"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                        <h2 id="datepicker-title-startDate" class="hmpps-datepicker__dialog__title  js-datepicker-month-year" aria-live="polite">June 2024</h2>
-                                        <div class="hmpps-datepicker__dialog__navbuttons">
-                                            <button class="js-datepicker-next-month" aria-label="next month" data-button="button-datepicker-nextmonth">
-                                                <span class="govuk-visually-hidden">Next month</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#chevron_right"></use>
-                                                </svg>
-                                            </button>
-                                            <button class="js-datepicker-next-year" aria-label="next year" data-button="button-datepicker-nextyear">
-                                                <span class="govuk-visually-hidden">Next year</span>
-                                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img">
-                                                    <use href="/assets/images/icons.stack.svg#double_chevron_right"></use>
-                                                </svg>
-                                            </button>
-                                        </div>
-                                    </div>
-                                    <table class="hmpps-datepicker__dialog__table  js-datepicker-grid" role="grid" aria-labelledby="datepicker-title-startDate">
-                                        <caption class="hmpps-datepicker__dialog__table-caption govuk-body">You can use the arrow keys to select a date</caption>
-                                        <thead>
-                                            <tr>
-                                                <th scope="col" abbr="Monday">Mo</th>
-                                                <th scope="col" abbr="Tuesday">Tu</th>
-                                                <th scope="col" abbr="Wednesday">We</th>
-                                                <th scope="col" abbr="Thursday">Th</th>
-                                                <th scope="col" abbr="Friday">Fr</th>
-                                                <th scope="col" abbr="Saturday">Sa</th>
-                                                <th scope="col" abbr="Sunday">Su</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">29</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">30</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">31</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">1</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">2</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">3</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">4</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">5</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">6</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">7</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">8</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="0" class="hmpps-datepicker-selected">9</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">10</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">11</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1" class="hmpps-datepicker__today">12</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">13</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">14</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">15</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">16</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">17</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">18</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">19</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">20</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">21</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">22</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">23</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">24</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">25</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">26</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">27</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">28</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">29</button></td>
-                                                <td><button data-form="date-select" style="display: block;" tabindex="-1">30</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">1</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">2</button></td>
-                                            </tr>
-                                            <tr>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">3</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">4</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">5</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">6</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">7</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">8</button></td>
-                                                <td><button data-form="date-select" style="display: none;" tabindex="-1">9</button></td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                    <div class="hmpps-datepicker__dialog__buttongroup">
-                                        <button type="button" class="govuk-button js-datepicker-ok" value="ok" data-button="button-datepicker-ok">Select</button>
-                                        <button type="button" class="govuk-button govuk-button--secondary js-datepicker-cancel" value="cancel" data-button="button-datepicker-cancel">Cancel</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <button class="hmpps-datepicker-button hmpps-js-datepicker-button" data-button="datepicker-startDate-toggle">
-                                <span class="govuk-visually-hidden">Choose date.</span>
-                                <svg focusable="false" class="hmpps-datepicker-icon" aria-hidden="true" role="img" viewBox="0 0 22 22">
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.1333 2.93333H5.86668V4.4C5.86668 5.21002 5.21003 5.86667 4.40002 5.86667C3.59 5.86667 2.93335 5.21002 2.93335 4.4V2.93333H2C0.895431 2.93333 0 3.82877 0 4.93334V19.2667C0 20.3712 0.89543 21.2667 2 21.2667H20C21.1046 21.2667 22 20.3712 22 19.2667V4.93333C22 3.82876 21.1046 2.93333 20 2.93333H19.0667V4.4C19.0667 5.21002 18.41 5.86667 17.6 5.86667C16.79 5.86667 16.1333 5.21002 16.1333 4.4V2.93333ZM20.5333 8.06667H1.46665V18.8C1.46665 19.3523 1.91436 19.8 2.46665 19.8H19.5333C20.0856 19.8 20.5333 19.3523 20.5333 18.8V8.06667Z"></path>
-                                    <rect x="3.66669" width="1.46667" height="5.13333" rx="0.733333"></rect>
-                                    <rect x="16.8667" width="1.46667" height="5.13333" rx="0.733333"></rect>
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <button class="govuk-button govuk-!-margin-top-4 govuk-!-margin-bottom-2" data-module="govuk-button" data-test-id="submit-button">
+
+                    <button class="govuk-button  govuk-!-margin-bottom-2">
                         Apply filters
                     </button>
-                    <div class="moj-filter__heading-action govuk-!-margin-top-5 govuk-!-margin-left-4">
+
+                    <!-- <div class="moj-filter__heading-action govuk-!-margin-top-2 govuk-!-margin-left-4">
                         <p><a class="govuk-link govuk-link--no-visited-state" href="">Clear filters</a></p>
+                    </div> -->
+
+                    <!-- Court case reference -->
+                    <div class="filter-expander">
+                        <button class="filter-expander__button" type="button" id="filter-court-case-reference-button"
+                            aria-expanded="false" aria-controls="filter-court-case-reference">
+                            <span class="govuk-label govuk-label--s filter-expander__label">Court case reference</span>
+                        </button>
+
+                        <div id="filter-court-case-reference" class="filter-expander__content" hidden role="region"
+                            aria-labelledby="filter-court-case-reference-button">
+                            <label class="govuk-label" for="court-case-reference-input">
+                                Court case reference
+                            </label>
+                            <input class="govuk-input" id="court-case-reference-input" name="courtCaseReference"
+                                type="text">
+                        </div>
                     </div>
+
+                    <!-- Court name -->
+                    <div class="filter-expander">
+                        <button class="filter-expander__button" type="button" id="filter-court-name-button"
+                            aria-expanded="false" aria-controls="filter-court-name">
+                            <span class="govuk-label govuk-label--s filter-expander__label">Court name</span>
+                        </button>
+
+                        <div id="filter-court-name" class="filter-expander__content" hidden role="region"
+                            aria-labelledby="filter-court-name-button">
+                            <label class="govuk-label " for="court-name-select">
+                                Court name
+                            </label>
+
+                            <select id="court-name-select" class="enhance-autocomplete" name="appearance[court-name]"
+                                type="text" aria-describedby="search-hint">
+                                {% if data.appearance['court-name'] %}
+                                <option>{{ data.appearance['court-name'] }}</option>
+                                {% else %}
+                                <option></option>
+                                {% endif %}
+                                <option value="Aberdare County Court">Aberdare County Court</option>
+                                <option value="Aberdare MC">Aberdare MC</option>
+                                <option value="Abergavenny MC">Abergavenny MC</option>
+                                <option value="Abertillery MC">Abertillery MC</option>
+                                <option value="Aberystwyth County Court">Aberystwyth County Court</option>
+                                <option value="Aberystwyth MC">Aberystwyth MC</option>
+                                <option value="Accrington County Court">Accrington County Court</option>
+                                <option value="Accrington MC">Accrington MC</option>
+                                <option value="Acton MC">Acton MC</option>
+                                <option value="Aldershot and Farnham County Court">Aldershot and Farnham County Court
+                                </option>
+                                <option value="Aldershot MC">Aldershot MC</option>
+                                <option value="Alnwick MC">Alnwick MC</option>
+                                <option value="Alton MC">Alton MC</option>
+                                <option value="Altrincham County Court">Altrincham County Court</option>
+                                <option value="Amersham Crown Court">Amersham Crown Court</option>
+                                <option value="Ammanford MC">Ammanford MC</option>
+                                <option value="Andover MC">Andover MC</option>
+                                <option value="Ashford County Court">Ashford County Court</option>
+                                <option value="Ashford MC">Ashford MC</option>
+                                <option value="Aylesbury County Court">Aylesbury County Court</option>
+                                <option value="Aylesbury Crown Court">Aylesbury Crown Court</option>
+                                <option value="Aylesbury MC">Aylesbury MC</option>
+                                <option value="Banbury County Court">Banbury County Court</option>
+                                <option value="Banbury MC">Banbury MC</option>
+                                <option value="Barkingside Magistrates Court">Barkingside Magistrates Court</option>
+                                <option value="Barnet County Court">Barnet County Court</option>
+                                <option value="Barnet MC">Barnet MC</option>
+                                <option value="Barnsley County Court">Barnsley County Court</option>
+                                <option value="Barnsley MC">Barnsley MC</option>
+                                <option value="Barnstaple County Court">Barnstaple County Court</option>
+                                <option value="Barnstaple Crown Court">Barnstaple Crown Court</option>
+                                <option value="Barnstaple MC">Barnstaple MC</option>
+                                <option value="BARROW IN FURNESS Magistrates Court">BARROW IN FURNESS Magistrates Court
+                                </option>
+                                <option value="Barrow-in-Furness County Court">Barrow-in-Furness County Court</option>
+                                <option value="Barrow-in-Furness Crown Court">Barrow-in-Furness Crown Court</option>
+                                <option value="Basildon County Court">Basildon County Court</option>
+                                <option value="Basildon Crown Court">Basildon Crown Court</option>
+                                <option value="Basildon MC">Basildon MC</option>
+                                <option value="Basingstoke County Court">Basingstoke County Court</option>
+                                <option value="Basingstoke MC">Basingstoke MC</option>
+                                <option value="Bath County Court">Bath County Court</option>
+                                <option value="Bath MC">Bath MC</option>
+                                <option value="Bedford County Court">Bedford County Court</option>
+                                <option value="Bedford MC">Bedford MC</option>
+                                <option value="Bedlington MC">Bedlington MC</option>
+                                <option value="Belfast AIT">Belfast AIT</option>
+                                <option value="Belmarsh MC">Belmarsh MC</option>
+                                <option value="Berwick upon Tweed MC">Berwick upon Tweed MC</option>
+                                <option value="Beverley MC">Beverley MC</option>
+                                <option value="Bexley MC">Bexley MC</option>
+                                <option value="Bicester MC">Bicester MC</option>
+                                <option value="Bingley MC">Bingley MC</option>
+                                <option value="Birkenhead County Court">Birkenhead County Court</option>
+                                <option value="Birkenhead MC">Birkenhead MC</option>
+                                <option value="Birmingham (Corporation St) MC">Birmingham (Corporation St) MC</option>
+                                <option value="Birmingham AIT">Birmingham AIT</option>
+                                <option value="Birmingham Civil Justice Centre">Birmingham Civil Justice Centre</option>
+                                <option value="Birmingham Crown Court">Birmingham Crown Court</option>
+                                <option value="Birmingham Crown Court (Annex)">Birmingham Crown Court (Annex)</option>
+                                <option value="Bishop Auckland">Bishop Auckland</option>
+                                <option value="Bishop Auckland MC">Bishop Auckland MC</option>
+                                <option value="Blackburn County Court">Blackburn County Court</option>
+                                <option value="Blackburn MC">Blackburn MC</option>
+                                <option value="Blackfriars Crown Court">Blackfriars Crown Court</option>
+                                <option value="Blackpool County Court">Blackpool County Court</option>
+                                <option value="Blackpool MC">Blackpool MC</option>
+                                <option value="Blackwood County Court">Blackwood County Court</option>
+                                <option value="Blandford MC">Blandford MC</option>
+                                <option value="Blaydon MC">Blaydon MC</option>
+                                <option value="Bodmin County Court">Bodmin County Court</option>
+                                <option value="Bodmin MC">Bodmin MC</option>
+                                <option value="Bolton County Court">Bolton County Court</option>
+                                <option value="Bolton Crown Court">Bolton Crown Court</option>
+                                <option value="Bolton MC">Bolton MC</option>
+                                <option value="Boston County Court">Boston County Court</option>
+                                <option value="Boston MC">Boston MC</option>
+                                <option value="Bourne MC">Bourne MC</option>
+                                <option value="Bournemouth County Court">Bournemouth County Court</option>
+                                <option value="Bournemouth Crown Court">Bournemouth Crown Court</option>
+                                <option value="Bournemouth MC">Bournemouth MC</option>
+                                <option value="Bow County Court">Bow County Court</option>
+                                <option value="Bow Street MC">Bow Street MC</option>
+                                <option value="Bradford AIT">Bradford AIT</option>
+                                <option value="Bradford County Court">Bradford County Court</option>
+                                <option value="Bradford Crown Court">Bradford Crown Court</option>
+                                <option value="Bradford MC">Bradford MC</option>
+                                <option value="Brecknock County Court">Brecknock County Court</option>
+                                <option value="Brecon MC">Brecon MC</option>
+                                <option value="Brentford County Court">Brentford County Court</option>
+                                <option value="Bridgend County Court">Bridgend County Court</option>
+                                <option value="Bridgwater MC">Bridgwater MC</option>
+                                <option value="Bridlington MC">Bridlington MC</option>
+                                <option value="Bridport MC">Bridport MC</option>
+                                <option value="Brighton County Court">Brighton County Court</option>
+                                <option value="Brighton Crown Court">Brighton Crown Court</option>
+                                <option value="Brighton Magistrates Court (Edward St)">Brighton Magistrates Court
+                                    (Edward St)</option>
+                                <option value="Bristol County Court">Bristol County Court</option>
+                                <option value="Bristol Crown Court">Bristol Crown Court</option>
+                                <option value="Bristol MC">Bristol MC</option>
+                                <option value="Bromley (London Road) MC">Bromley (London Road) MC</option>
+                                <option value="Bromley County Court">Bromley County Court</option>
+                                <option value="Bulford Military Court Centre">Bulford Military Court Centre</option>
+                                <option value="Burnley and Pendle Magistrates Court">Burnley and Pendle Magistrates
+                                    Court</option>
+                                <option value="Burnley County Court">Burnley County Court</option>
+                                <option value="Burnley Crown Court">Burnley Crown Court</option>
+                                <option value="Burton-upon-Trent County Court">Burton-upon-Trent County Court</option>
+                                <option value="Bury County Court">Bury County Court</option>
+                                <option value="Bury MC">Bury MC</option>
+                                <option value="Bury St Edmunds MC">Bury St Edmunds MC</option>
+                                <option value="Bury St. Edmunds County Court">Bury St. Edmunds County Court</option>
+                                <option value="Bury St. Edmunds Crown Court">Bury St. Edmunds Crown Court</option>
+                                <option value="Buxton County Court">Buxton County Court</option>
+                                <option value="Buxton MC">Buxton MC</option>
+                                <option value="Byron House AIT">Byron House AIT</option>
+                                <option value="C and SW Staffs MC - Cannock">C and SW Staffs MC - Cannock</option>
+                                <option value="Caernarfon County Court">Caernarfon County Court</option>
+                                <option value="Caernarfon Crown Court">Caernarfon Crown Court</option>
+                                <option value="Caernarfon Magistrates Court">Caernarfon Magistrates Court</option>
+                                <option value="Caerphilly MC">Caerphilly MC</option>
+                                <option value="Camborne MC">Camborne MC</option>
+                                <option value="Cambridge County Court">Cambridge County Court</option>
+                                <option value="Cambridge Crown Court">Cambridge Crown Court</option>
+                                <option value="Cambridge MC">Cambridge MC</option>
+                                <option value="Canterbury County Court">Canterbury County Court</option>
+                                <option value="Canterbury Crown Court">Canterbury Crown Court</option>
+                                <option value="Canterbury MC">Canterbury MC</option>
+                                <option value="Cardiff County Court">Cardiff County Court</option>
+                                <option value="Cardiff Crown Court">Cardiff Crown Court</option>
+                                <option value="Cardiff MC">Cardiff MC</option>
+                                <option value="Cardigan MC">Cardigan MC</option>
+                                <option value="Carlisle and District Magistrates Court">Carlisle and District
+                                    Magistrates Court</option>
+                                <option value="Carlisle County Court">Carlisle County Court</option>
+                                <option value="Carlisle Crown Court">Carlisle Crown Court</option>
+                                <option value="Carmarthen County Court">Carmarthen County Court</option>
+                                <option value="Carmarthen Crown Court">Carmarthen Crown Court</option>
+                                <option value="Carmarthen MC">Carmarthen MC</option>
+                                <option value="Castleford MC">Castleford MC</option>
+                                <option value="Central Criminal Court">Central Criminal Court</option>
+                                <option value="Central Family Court">Central Family Court</option>
+                                <option value="Central London County Court">Central London County Court</option>
+                                <option value="Chelmsford County Court">Chelmsford County Court</option>
+                                <option value="Chelmsford Crown Court">Chelmsford Crown Court</option>
+                                <option value="Chelmsford MC">Chelmsford MC</option>
+                                <option value="Cheltenham County Court">Cheltenham County Court</option>
+                                <option value="Cheltenham MC">Cheltenham MC</option>
+                                <option value="Chester County Court">Chester County Court</option>
+                                <option value="Chester Crown Court">Chester Crown Court</option>
+                                <option value="Chester MC">Chester MC</option>
+                                <option value="Chester MC sitting Crown Court">Chester MC sitting Crown Court</option>
+                                <option value="Chesterfield (Tapton Lane) MC">Chesterfield (Tapton Lane) MC</option>
+                                <option value="Chesterfield County Court">Chesterfield County Court</option>
+                                <option value="Chesterfield MC-Crown Court Docks">Chesterfield MC-Crown Court Docks
+                                </option>
+                                <option value="Chichester County Court">Chichester County Court</option>
+                                <option value="Chichester Crown Court">Chichester Crown Court</option>
+                                <option value="Chippenham (Pewsham Way) MC">Chippenham (Pewsham Way) MC</option>
+                                <option value="Chorley County Court">Chorley County Court</option>
+                                <option value="Chorley MC">Chorley MC</option>
+                                <option value="Cirencester MC">Cirencester MC</option>
+                                <option value="City of London (Queen Victoria St) MC">City of London (Queen Victoria St)
+                                    MC</option>
+                                <option value="Clerkenwell County Court">Clerkenwell County Court</option>
+                                <option value="Co Durham and Darlington EC">Co Durham and Darlington EC</option>
+                                <option value="Coalville MC">Coalville MC</option>
+                                <option value="Colchester County Court">Colchester County Court</option>
+                                <option value="Colchester Magistrates Court">Colchester Magistrates Court</option>
+                                <option value="Coleford MC">Coleford MC</option>
+                                <option value="Consett County Court">Consett County Court</option>
+                                <option value="Consett MC">Consett MC</option>
+                                <option value="Conwy and Colwyn County Court">Conwy and Colwyn County Court</option>
+                                <option value="Corby MC">Corby MC</option>
+                                <option value="Court Not Known">Court Not Known</option>
+                                <option value="Court Of Appeal Criminal Division">Court Of Appeal Criminal Division
+                                </option>
+                                <option value="Courts Martial">Courts Martial</option>
+                                <option value="Coventry County Court">Coventry County Court</option>
+                                <option value="Coventry Crown Court">Coventry Crown Court</option>
+                                <option value="Coventry MC">Coventry MC</option>
+                                <option value="Crawley MC">Crawley MC</option>
+                                <option value="Crewe County Court">Crewe County Court</option>
+                                <option value="Crewe MC">Crewe MC</option>
+                                <option value="Croydon County Court">Croydon County Court</option>
+                                <option value="Croydon Crown Court">Croydon Crown Court</option>
+                                <option value="Croydon MC">Croydon MC</option>
+                                <option value="Cwmbran MC">Cwmbran MC</option>
+                                <option value="Darlington County Court">Darlington County Court</option>
+                                <option value="Darlington MC">Darlington MC</option>
+                                <option value="Dartford County Court">Dartford County Court</option>
+                                <option value="Denbigh MC">Denbigh MC</option>
+                                <option value="Derby (St Mary's Gate) MC">Derby (St Mary's Gate) MC</option>
+                                <option value="Derby County Court">Derby County Court</option>
+                                <option value="Derby Crown Court">Derby Crown Court</option>
+                                <option value="Devizes MC">Devizes MC</option>
+                                <option value="Dewsbury County Court">Dewsbury County Court</option>
+                                <option value="Dewsbury MC">Dewsbury MC</option>
+                                <option value="Didcot MC">Didcot MC</option>
+                                <option value="Dolgellau Crown Court">Dolgellau Crown Court</option>
+                                <option value="Dolgellau MC">Dolgellau MC</option>
+                                <option value="Doncaster County Court">Doncaster County Court</option>
+                                <option value="Doncaster Crown Court">Doncaster Crown Court</option>
+                                <option value="Doncaster MC">Doncaster MC</option>
+                                <option value="Dorchester Crown Court">Dorchester Crown Court</option>
+                                <option value="Dorking MC">Dorking MC</option>
+                                <option value="Dover MC">Dover MC</option>
+                                <option value="Dudley County Court">Dudley County Court</option>
+                                <option value="Dudley MC">Dudley MC</option>
+                                <option value="Durham County Court">Durham County Court</option>
+                                <option value="Durham Crown Court">Durham Crown Court</option>
+                                <option value="Durham MC">Durham MC</option>
+                                <option value="Ealing MC">Ealing MC</option>
+                                <option value="East London County Court">East London County Court</option>
+                                <option value="Eastbourne County Court">Eastbourne County Court</option>
+                                <option value="Eden Magistrates Court">Eden Magistrates Court</option>
+                                <option value="Edmonton County Court">Edmonton County Court</option>
+                                <option value="Ely MC">Ely MC</option>
+                                <option value="Epping MC">Epping MC</option>
+                                <option value="Epsom County Court">Epsom County Court</option>
+                                <option value="Evesham County Court">Evesham County Court</option>
+                                <option value="Exeter County Court">Exeter County Court</option>
+                                <option value="Exeter Crown Court">Exeter Crown Court</option>
+                                <option value="Exeter MC">Exeter MC</option>
+                                <option value="Feltham MC">Feltham MC</option>
+                                <option value="Field House AIT">Field House AIT</option>
+                                <option value="Flint (Bodhyfryd) Mag Court">Flint (Bodhyfryd) Mag Court</option>
+                                <option value="Folkestone MC">Folkestone MC</option>
+                                <option value="Frome MC">Frome MC</option>
+                                <option value="Fylde Coast at Fleetwood MC">Fylde Coast at Fleetwood MC</option>
+                                <option value="Gainsborough MC">Gainsborough MC</option>
+                                <option value="Gateshead County Court">Gateshead County Court</option>
+                                <option value="Gateshead MC">Gateshead MC</option>
+                                <option value="Glasgow AIT">Glasgow AIT</option>
+                                <option value="Glossop MC">Glossop MC</option>
+                                <option value="Gloucester County Court">Gloucester County Court</option>
+                                <option value="Gloucester Crown Court">Gloucester Crown Court</option>
+                                <option value="Goole MC">Goole MC</option>
+                                <option value="Gosforth MC">Gosforth MC</option>
+                                <option value="Grantham County Court">Grantham County Court</option>
+                                <option value="Grantham MC">Grantham MC</option>
+                                <option value="Gravesend County Court">Gravesend County Court</option>
+                                <option value="Grays MC">Grays MC</option>
+                                <option value="Great Grimsby County Court">Great Grimsby County Court</option>
+                                <option value="Great Grimsby Crown Court">Great Grimsby Crown Court</option>
+                                <option value="Great Yarmouth MC">Great Yarmouth MC</option>
+                                <option value="Grimsby MC">Grimsby MC</option>
+                                <option value="Guernsey Courts">Guernsey Courts</option>
+                                <option value="Guildford County Court">Guildford County Court</option>
+                                <option value="Guildford Crown Court">Guildford Crown Court</option>
+                                <option value="Guildford MC">Guildford MC</option>
+                                <option value="Halesowen MC">Halesowen MC</option>
+                                <option value="Halifax County Court">Halifax County Court</option>
+                                <option value="Hammersmith MC">Hammersmith MC</option>
+                                <option value="Harlow County Court">Harlow County Court</option>
+                                <option value="Harlow MC">Harlow MC</option>
+                                <option value="Harmondsworth AIT">Harmondsworth AIT</option>
+                                <option value="Harrogate County Court">Harrogate County Court</option>
+                                <option value="Harrogate MC">Harrogate MC</option>
+                                <option value="Harrow Crown Court">Harrow Crown Court</option>
+                                <option value="Hartlepool County Court">Hartlepool County Court</option>
+                                <option value="Hartlepool MC">Hartlepool MC</option>
+                                <option value="Harwich MC">Harwich MC</option>
+                                <option value="Hastings County Court">Hastings County Court</option>
+                                <option value="Hastings MC">Hastings MC</option>
+                                <option value="Hatfield Remand Court">Hatfield Remand Court</option>
+                                <option value="Hatton Cross- Gloucester House AIT">Hatton Cross- Gloucester House AIT
+                                </option>
+                                <option value="Hatton Cross- York House AIT">Hatton Cross- York House AIT</option>
+                                <option value="Haverfordwest County Court">Haverfordwest County Court</option>
+                                <option value="Haverfordwest Crown Court">Haverfordwest Crown Court</option>
+                                <option value="Haverfordwest MC">Haverfordwest MC</option>
+                                <option value="Haywards Heath County Court">Haywards Heath County Court</option>
+                                <option value="Haywards Heath MC">Haywards Heath MC</option>
+                                <option value="Hemel Hempstead MC">Hemel Hempstead MC</option>
+                                <option value="Hendon MC">Hendon MC</option>
+                                <option value="Hereford (Bath Street) MC">Hereford (Bath Street) MC</option>
+                                <option value="Hereford County Court">Hereford County Court</option>
+                                <option value="Hereford Crown Court">Hereford Crown Court</option>
+                                <option value="Hereford MC-Crown Court Docks">Hereford MC-Crown Court Docks</option>
+                                <option value="Hertford County Court">Hertford County Court</option>
+                                <option value="Hexham MC">Hexham MC</option>
+                                <option value="High Wycombe County Court">High Wycombe County Court</option>
+                                <option value="High Wycombe Magistrates Court">High Wycombe Magistrates Court</option>
+                                <option value="Highbury Corner Magistrates Court">Highbury Corner Magistrates Court
+                                </option>
+                                <option value="Hinckley MC">Hinckley MC</option>
+                                <option value="Hitchin County Court">Hitchin County Court</option>
+                                <option value="Honiton MC">Honiton MC</option>
+                                <option value="Horsham County Court">Horsham County Court</option>
+                                <option value="Horsham MC">Horsham MC</option>
+                                <option value="Houghton le Spring MC">Houghton le Spring MC</option>
+                                <option value="House Of Lords (Appeals)">House Of Lords (Appeals)</option>
+                                <option value="Hove Crown Court">Hove Crown Court</option>
+                                <option value="Huddersfield County Court">Huddersfield County Court</option>
+                                <option value="Huddersfield MC">Huddersfield MC</option>
+                                <option value="Huntingdon County Court">Huntingdon County Court</option>
+                                <option value="Huntingdon Crown Court">Huntingdon Crown Court</option>
+                                <option value="Huntingdon MC">Huntingdon MC</option>
+                                <option value="Huyton MC">Huyton MC</option>
+                                <option value="ILCFPC (Wells Street) MC">ILCFPC (Wells Street) MC</option>
+                                <option value="Ilford County Court">Ilford County Court</option>
+                                <option value="Ilkeston MC">Ilkeston MC</option>
+                                <option value="Immigration">Immigration</option>
+                                <option value="Inner London Sessions House Crown Court">Inner London Sessions House
+                                    Crown Court</option>
+                                <option value="Ipswich County Court">Ipswich County Court</option>
+                                <option value="Ipswich Crown Court">Ipswich Crown Court</option>
+                                <option value="Ipswich MC">Ipswich MC</option>
+                                <option value="Isle Of Man Courts">Isle Of Man Courts</option>
+                                <option value="Isles of Scilly MC">Isles of Scilly MC</option>
+                                <option value="Isleworth Crown Court">Isleworth Crown Court</option>
+                                <option value="Jersey Courts">Jersey Courts</option>
+                                <option value="Keighley County Court">Keighley County Court</option>
+                                <option value="Kendal County Court">Kendal County Court</option>
+                                <option value="Kendal Magistrates Court">Kendal Magistrates Court</option>
+                                <option value="Kettering County Court">Kettering County Court</option>
+                                <option value="Kettering MC">Kettering MC</option>
+                                <option value="Kidderminster (Comberton Place) MC">Kidderminster (Comberton Place) MC
+                                </option>
+                                <option value="Kidderminster County Court">Kidderminster County Court</option>
+                                <option value="King's Lynn County Court">King's Lynn County Court</option>
+                                <option value="King's Lynn Crown Court">King's Lynn Crown Court</option>
+                                <option value="King's Lynn Magistrates Court">King's Lynn Magistrates Court</option>
+                                <option value="Kingston upon Thames Crown Court">Kingston upon Thames Crown Court
+                                </option>
+                                <option value="Kingston-Upon-Hull Combined Court Centre">Kingston-Upon-Hull Combined
+                                    Court Centre</option>
+                                <option value="Kingston-upon-Hull County Court">Kingston-upon-Hull County Court</option>
+                                <option value="Kingston-upon-Hull Crown Court">Kingston-upon-Hull Crown Court</option>
+                                <option value="Kingston-upon-Hull Magistrates Court">Kingston-upon-Hull Magistrates
+                                    Court</option>
+                                <option value="Kingston-upon-Thames County Court">Kingston-upon-Thames County Court
+                                </option>
+                                <option value="Knutsford Crown Court">Knutsford Crown Court</option>
+                                <option value="Lambeth County Court">Lambeth County Court</option>
+                                <option value="Lancaster County Court">Lancaster County Court</option>
+                                <option value="Lancaster Crown Court">Lancaster Crown Court</option>
+                                <option value="Lancaster MC">Lancaster MC</option>
+                                <option value="Launceston MC">Launceston MC</option>
+                                <option value="Lavender Hill MC">Lavender Hill MC</option>
+                                <option value="Leamington Crown Court">Leamington Crown Court</option>
+                                <option value="Leamington Spa County Court">Leamington Spa County Court</option>
+                                <option value="Leeds County Court">Leeds County Court</option>
+                                <option value="Leeds Crown Court">Leeds Crown Court</option>
+                                <option value="Leeds MC">Leeds MC</option>
+                                <option value="Leicester County Court">Leicester County Court</option>
+                                <option value="Leicester Crown Court">Leicester Crown Court</option>
+                                <option value="Leicester MC">Leicester MC</option>
+                                <option value="Leigh County Court">Leigh County Court</option>
+                                <option value="Lewes County Court">Lewes County Court</option>
+                                <option value="Lewes Crown Court">Lewes Crown Court</option>
+                                <option value="Lewes MC">Lewes MC</option>
+                                <option value="Lincoln County Court">Lincoln County Court</option>
+                                <option value="Lincoln Crown Court">Lincoln Crown Court</option>
+                                <option value="Lincoln MC">Lincoln MC</option>
+                                <option value="Lincoln MC-Crown Court Docks">Lincoln MC-Crown Court Docks</option>
+                                <option value="Liskeard MC">Liskeard MC</option>
+                                <option value="Liverpool County Court">Liverpool County Court</option>
+                                <option value="Liverpool Crown Court">Liverpool Crown Court</option>
+                                <option value="Liverpool Magistrates Court">Liverpool Magistrates Court</option>
+                                <option value="Llandrindod Wells MC">Llandrindod Wells MC</option>
+                                <option value="Llandudno MC">Llandudno MC</option>
+                                <option value="Llanelli County Court">Llanelli County Court</option>
+                                <option value="Llanelli MC">Llanelli MC</option>
+                                <option value="Llangefni County Court">Llangefni County Court</option>
+                                <option value="Llangefni MC">Llangefni MC</option>
+                                <option value="Llantrisant MC">Llantrisant MC</option>
+                                <option value="Llwynypia MC">Llwynypia MC</option>
+                                <option value="Loughborough Courthouse">Loughborough Courthouse</option>
+                                <option value="Louth MC">Louth MC</option>
+                                <option value="Lowestoft County Court">Lowestoft County Court</option>
+                                <option value="Lowestoft MC">Lowestoft MC</option>
+                                <option value="Ludlow County Court">Ludlow County Court</option>
+                                <option value="Luton County Court">Luton County Court</option>
+                                <option value="Luton Crown Court">Luton Crown Court</option>
+                                <option value="Luton MC">Luton MC</option>
+                                <option value="Lyndhurst MC">Lyndhurst MC</option>
+                                <option value="Maidstone County Court">Maidstone County Court</option>
+                                <option value="Maidstone Crown Court">Maidstone Crown Court</option>
+                                <option value="Maidstone MC">Maidstone MC</option>
+                                <option value="Manchester AIT">Manchester AIT</option>
+                                <option value="Manchester Civil Justice Centre">Manchester Civil Justice Centre</option>
+                                <option value="Manchester County Court">Manchester County Court</option>
+                                <option value="Manchester Crown Court (Crown Square)">Manchester Crown Court (Crown
+                                    Square)</option>
+                                <option value="Manchester Crown Court (Minshull Street)">Manchester Crown Court
+                                    (Minshull Street)</option>
+                                <option value="Manchester MC">Manchester MC</option>
+                                <option value="Mansfield (Rosemary St) MC">Mansfield (Rosemary St) MC</option>
+                                <option value="Mansfield County Court">Mansfield County Court</option>
+                                <option value="Margate MC">Margate MC</option>
+                                <option value="Market Drayton MC">Market Drayton MC</option>
+                                <option value="Market Harborough MC">Market Harborough MC</option>
+                                <option value="Medway County Court">Medway County Court</option>
+                                <option value="Medway Magistrates Court">Medway Magistrates Court</option>
+                                <option value="Melton Mowbray County Court">Melton Mowbray County Court</option>
+                                <option value="Melton, Belvoir and Rutland MC">Melton, Belvoir and Rutland MC</option>
+                                <option value="Merthyr Tydfil County Court">Merthyr Tydfil County Court</option>
+                                <option value="Merthyr Tydfil Crown Court">Merthyr Tydfil Crown Court</option>
+                                <option value="Merthyr Tydfil MC">Merthyr Tydfil MC</option>
+                                <option value="Middlesborough MC-Crown Court Docks">Middlesborough MC-Crown Court Docks
+                                </option>
+                                <option value="Middlesbrough County Court">Middlesbrough County Court</option>
+                                <option value="Middlesbrough MC">Middlesbrough MC</option>
+                                <option value="Middlesex Guildhall Crown Court">Middlesex Guildhall Crown Court</option>
+                                <option value="Mildenhall MC">Mildenhall MC</option>
+                                <option value="Milton Keynes County Court">Milton Keynes County Court</option>
+                                <option value="Milton Keynes MC">Milton Keynes MC</option>
+                                <option value="Minehead MC">Minehead MC</option>
+                                <option value="Mold County Court">Mold County Court</option>
+                                <option value="Mold Crown Court">Mold Crown Court</option>
+                                <option value="Mold MC">Mold MC</option>
+                                <option value="Morpeth and Berwick County Court">Morpeth and Berwick County Court
+                                </option>
+                                <option value="Neath and Port Talbot County Court">Neath and Port Talbot County Court
+                                </option>
+                                <option value="Neath MC">Neath MC</option>
+                                <option value="Nelson County Court">Nelson County Court</option>
+                                <option value="Newark County Court">Newark County Court</option>
+                                <option value="Newark MC">Newark MC</option>
+                                <option value="Newbury County Court">Newbury County Court</option>
+                                <option value="Newcastle upon Tyne County Court">Newcastle upon Tyne County Court
+                                </option>
+                                <option value="Newcastle Upon Tyne Crown Court Moothall">Newcastle Upon Tyne Crown Court
+                                    Moothall</option>
+                                <option value="Newcastle upon Tyne Crown Court Quayside">Newcastle upon Tyne Crown Court
+                                    Quayside</option>
+                                <option value="Newcastle Upon Tyne Mag Court (Quayside)">Newcastle Upon Tyne Mag Court
+                                    (Quayside)</option>
+                                <option value="Newcastle-Under-Lyme Magistrates Court">Newcastle-Under-Lyme Magistrates
+                                    Court</option>
+                                <option value="Newport (I.O.W.) County Court">Newport (I.O.W.) County Court</option>
+                                <option value="Newport (I.O.W.) Crown Court">Newport (I.O.W.) Crown Court</option>
+                                <option value="Newport (I.O.W.) Mag Court">Newport (I.O.W.) Mag Court</option>
+                                <option value="Newport (South Wales) County Court">Newport (South Wales) County Court
+                                </option>
+                                <option value="Newport (South Wales) Crown Court">Newport (South Wales) Crown Court
+                                </option>
+                                <option value="Newport (South Wales) Magistrates Court">Newport (South Wales)
+                                    Magistrates Court</option>
+                                <option value="Newport AIT">Newport AIT</option>
+                                <option value="Newton Abbot MC">Newton Abbot MC</option>
+                                <option value="Newton Aycliffe MC">Newton Aycliffe MC</option>
+                                <option value="Newton MC">Newton MC</option>
+                                <option value="North Shields AIT">North Shields AIT</option>
+                                <option value="North Shields County Court">North Shields County Court</option>
+                                <option value="North Shields Magistrates Court">North Shields Magistrates Court</option>
+                                <option value="North Somerset Magistrates Court">North Somerset Magistrates Court
+                                </option>
+                                <option value="North Warwickshire MC">North Warwickshire MC</option>
+                                <option value="Northallerton MC">Northallerton MC</option>
+                                <option value="Northampton County Court">Northampton County Court</option>
+                                <option value="Northampton Crown Court">Northampton Crown Court</option>
+                                <option value="Northampton MC">Northampton MC</option>
+                                <option value="Northen Ireland Courts">Northen Ireland Courts</option>
+                                <option value="Northwich County Court">Northwich County Court</option>
+                                <option value="Norwich County Court">Norwich County Court</option>
+                                <option value="Norwich Crown Court">Norwich Crown Court</option>
+                                <option value="Norwich MC">Norwich MC</option>
+                                <option value="Nottingham (Carrington St) MC">Nottingham (Carrington St) MC</option>
+                                <option value="Nottingham AIT">Nottingham AIT</option>
+                                <option value="Nottingham County Court">Nottingham County Court</option>
+                                <option value="Nottingham Crown Court">Nottingham Crown Court</option>
+                                <option value="Nuneaton County Court">Nuneaton County Court</option>
+                                <option value="Oakham MC">Oakham MC</option>
+                                <option value="Okehampton MC">Okehampton MC</option>
+                                <option value="Oldham County Court">Oldham County Court</option>
+                                <option value="Ormskirk MC">Ormskirk MC</option>
+                                <option value="Oswestry County Court">Oswestry County Court</option>
+                                <option value="Oswestry MC">Oswestry MC</option>
+                                <option value="Oxford County Court">Oxford County Court</option>
+                                <option value="Oxford Crown Court">Oxford Crown Court</option>
+                                <option value="Oxford MC">Oxford MC</option>
+                                <option value="Penrith County Court">Penrith County Court</option>
+                                <option value="Penzance County Court">Penzance County Court</option>
+                                <option value="Penzance MC">Penzance MC</option>
+                                <option value="Peterborough County Court">Peterborough County Court</option>
+                                <option value="Peterborough Crown Court">Peterborough Crown Court</option>
+                                <option value="Peterborough MC">Peterborough MC</option>
+                                <option value="Peterlee MC">Peterlee MC</option>
+                                <option value="Plymouth County Court">Plymouth County Court</option>
+                                <option value="Plymouth Crown Court">Plymouth Crown Court</option>
+                                <option value="Plymouth MC">Plymouth MC</option>
+                                <option value="Pontefract County Court">Pontefract County Court</option>
+                                <option value="Pontefract MC">Pontefract MC</option>
+                                <option value="Pontypool County Court">Pontypool County Court</option>
+                                <option value="Pontypridd (Court House) MC">Pontypridd (Court House) MC</option>
+                                <option value="Pontypridd County Court">Pontypridd County Court</option>
+                                <option value="Poole County Court">Poole County Court</option>
+                                <option value="Poole MC">Poole MC</option>
+                                <option value="Port Talbot Magistrates Court">Port Talbot Magistrates Court</option>
+                                <option value="Portsmouth County Court">Portsmouth County Court</option>
+                                <option value="Portsmouth Crown Court">Portsmouth Crown Court</option>
+                                <option value="Portsmouth MC">Portsmouth MC</option>
+                                <option value="Prestatyn Justice Centre">Prestatyn Justice Centre</option>
+                                <option value="Preston (Sessions House) Crown Court">Preston (Sessions House) Crown
+                                    Court</option>
+                                <option value="Preston Coroners Court">Preston Coroners Court</option>
+                                <option value="Preston County Court">Preston County Court</option>
+                                <option value="Preston Crown Court">Preston Crown Court</option>
+                                <option value="Preston MC">Preston MC</option>
+                                <option value="Procession House (Field House) AIT">Procession House (Field House) AIT
+                                </option>
+                                <option value="Pwllheli MC">Pwllheli MC</option>
+                                <option value="Quarter Session/Assizes">Quarter Session/Assizes</option>
+                                <option value="Rawtenstall County Court">Rawtenstall County Court</option>
+                                <option value="Reading County Court">Reading County Court</option>
+                                <option value="Reading Crown Court">Reading Crown Court</option>
+                                <option value="Reading MC">Reading MC</option>
+                                <option value="Redditch County Court">Redditch County Court</option>
+                                <option value="Redditch MC">Redditch MC</option>
+                                <option value="Redhill MC">Redhill MC</option>
+                                <option value="Reedley MC">Reedley MC</option>
+                                <option value="Reigate County Court">Reigate County Court</option>
+                                <option value="Repatriated To This Country">Repatriated To This Country</option>
+                                <option value="Retford MC">Retford MC</option>
+                                <option value="Rhyl County Court">Rhyl County Court</option>
+                                <option value="Rochdale MC">Rochdale MC</option>
+                                <option value="Romford County Court">Romford County Court</option>
+                                <option value="Romford MC">Romford MC</option>
+                                <option value="Rossendale MC">Rossendale MC</option>
+                                <option value="Rotherham County Court">Rotherham County Court</option>
+                                <option value="Rotherham MC">Rotherham MC</option>
+                                <option value="Royal Courts Of Justice">Royal Courts Of Justice</option>
+                                <option value="Rugby County Court">Rugby County Court</option>
+                                <option value="Rugby MC">Rugby MC</option>
+                                <option value="Runcorn County Court">Runcorn County Court</option>
+                                <option value="Runcorn MC">Runcorn MC</option>
+                                <option value="Sale MC">Sale MC</option>
+                                <option value="Salford County Court">Salford County Court</option>
+                                <option value="Salisbury County Court">Salisbury County Court</option>
+                                <option value="Salisbury Crown Court">Salisbury Crown Court</option>
+                                <option value="Salisbury MC">Salisbury MC</option>
+                                <option value="Scarborough County Court">Scarborough County Court</option>
+                                <option value="Scarborough Magistrates Court">Scarborough Magistrates Court</option>
+                                <option value="Scottish Courts">Scottish Courts</option>
+                                <option value="Scunthorpe County Court">Scunthorpe County Court</option>
+                                <option value="Scunthorpe MC">Scunthorpe MC</option>
+                                <option value="SE Staffs MC - Burton">SE Staffs MC - Burton</option>
+                                <option value="SE Staffs MC - Burton">SE Staffs MC - Burton</option>
+                                <option value="SE Staffs MC - Tamworth">SE Staffs MC - Tamworth</option>
+                                <option value="Sefton Magistrates Court">Sefton Magistrates Court</option>
+                                <option value="Selby MC">Selby MC</option>
+                                <option value="Sevenoaks MC">Sevenoaks MC</option>
+                                <option value="Sheffield County Court">Sheffield County Court</option>
+                                <option value="Sheffield Crown Court">Sheffield Crown Court</option>
+                                <option value="Sheffield MC">Sheffield MC</option>
+                                <option value="Sherborne MC">Sherborne MC</option>
+                                <option value="Shoreditch County Court">Shoreditch County Court</option>
+                                <option value="Shrewsbury County Court">Shrewsbury County Court</option>
+                                <option value="Shrewsbury Crown Court">Shrewsbury Crown Court</option>
+                                <option value="Shrewsbury MC">Shrewsbury MC</option>
+                                <option value="Sittingbourne MC">Sittingbourne MC</option>
+                                <option value="Skegness County Court">Skegness County Court</option>
+                                <option value="Skegness MC">Skegness MC</option>
+                                <option value="Skipton County Court">Skipton County Court</option>
+                                <option value="Skipton MC">Skipton MC</option>
+                                <option value="Sleaford MC">Sleaford MC</option>
+                                <option value="Slough County Court">Slough County Court</option>
+                                <option value="Slough Magistrates Court">Slough Magistrates Court</option>
+                                <option value="Snaresbrook Crown Court">Snaresbrook Crown Court</option>
+                                <option value="Snaresbrook Crown Court (Annex)">Snaresbrook Crown Court (Annex)</option>
+                                <option value="Solihull MC">Solihull MC</option>
+                                <option value="South Ribble MC">South Ribble MC</option>
+                                <option value="South Shields (Millbank) MC">South Shields (Millbank) MC</option>
+                                <option value="South Shields County Court">South Shields County Court</option>
+                                <option value="South Warwickshire MC">South Warwickshire MC</option>
+                                <option value="Southampton (WH) Magistrates Court">Southampton (WH) Magistrates Court
+                                </option>
+                                <option value="Southampton County Court">Southampton County Court</option>
+                                <option value="Southampton Crown Court">Southampton Crown Court</option>
+                                <option value="Southend County Court">Southend County Court</option>
+                                <option value="Southend Crown Court">Southend Crown Court</option>
+                                <option value="Southend on Sea MC">Southend on Sea MC</option>
+                                <option value="Southport County Court">Southport County Court</option>
+                                <option value="Southwark Crown Court">Southwark Crown Court</option>
+                                <option value="Spalding MC">Spalding MC</option>
+                                <option value="St Albans MC">St Albans MC</option>
+                                <option value="St. Albans County Court">St. Albans County Court</option>
+                                <option value="St. Albans Crown Court">St. Albans Crown Court</option>
+                                <option value="St. Helens County Court">St. Helens County Court</option>
+                                <option value="Stafford County Court">Stafford County Court</option>
+                                <option value="Stafford Crown Court">Stafford Crown Court</option>
+                                <option value="Staines County Court">Staines County Court</option>
+                                <option value="Staines MC">Staines MC</option>
+                                <option value="Stamford MC">Stamford MC</option>
+                                <option value="Stevenage MC">Stevenage MC</option>
+                                <option value="Stockport Combined Court – Mag Court">Stockport Combined Court – Mag
+                                    Court</option>
+                                <option value="Stoke on Trent AIT">Stoke on Trent AIT</option>
+                                <option value="Stoke-on-Trent County Court">Stoke-on-Trent County Court</option>
+                                <option value="Stoke-on-Trent Crown Court">Stoke-on-Trent Crown Court</option>
+                                <option value="Stourbridge County Court">Stourbridge County Court</option>
+                                <option value="Stratford MC">Stratford MC</option>
+                                <option value="Stratford-upon-Avon County Court">Stratford-upon-Avon County Court
+                                </option>
+                                <option value="Stroud MC">Stroud MC</option>
+                                <option value="Sudbury MC">Sudbury MC</option>
+                                <option value="Sunderland County Court">Sunderland County Court</option>
+                                <option value="Sunderland MC">Sunderland MC</option>
+                                <option value="SURREY CORONERS COURT">SURREY CORONERS COURT</option>
+                                <option value="Sutton AIT">Sutton AIT</option>
+                                <option value="Swaffham MC">Swaffham MC</option>
+                                <option value="Swansea (Grove Place) MC">Swansea (Grove Place) MC</option>
+                                <option value="Swansea County Court">Swansea County Court</option>
+                                <option value="Swansea Crown Court">Swansea Crown Court</option>
+                                <option value="Swindon County Court">Swindon County Court</option>
+                                <option value="Swindon Crown Court">Swindon Crown Court</option>
+                                <option value="Swindon MC">Swindon MC</option>
+                                <option value="Tameside County Court">Tameside County Court</option>
+                                <option value="Tameside MC">Tameside MC</option>
+                                <option value="Tamworth County Court">Tamworth County Court</option>
+                                <option value="Taunton County Court">Taunton County Court</option>
+                                <option value="Taunton Crown Court">Taunton Crown Court</option>
+                                <option value="Taunton MC">Taunton MC</option>
+                                <option value="Taylor House AIT">Taylor House AIT</option>
+                                <option value="Teesside Crown Court">Teesside Crown Court</option>
+                                <option value="Telford County Court">Telford County Court</option>
+                                <option value="Telford MC">Telford MC</option>
+                                <option value="Telford MC-Crown Court Docks">Telford MC-Crown Court Docks</option>
+                                <option value="Tenby MC">Tenby MC</option>
+                                <option value="Thames MC">Thames MC</option>
+                                <option value="Thanet County Court">Thanet County Court</option>
+                                <option value="The Mayor's &City of London County Court">The Mayor's &City of London
+                                    County Court</option>
+                                <option value="Torquay and Newton Abbot County Court">Torquay and Newton Abbot County
+                                    Court</option>
+                                <option value="Totnes MC">Totnes MC</option>
+                                <option value="Towcester MC">Towcester MC</option>
+                                <option value="Tower Bridge MC">Tower Bridge MC</option>
+                                <option value="Trowbridge County Court">Trowbridge County Court</option>
+                                <option value="Truro County Court">Truro County Court</option>
+                                <option value="Truro Crown Court">Truro Crown Court</option>
+                                <option value="Truro MC">Truro MC</option>
+                                <option value="Tunbridge Wells County Court">Tunbridge Wells County Court</option>
+                                <option value="Uxbridge County Court">Uxbridge County Court</option>
+                                <option value="Uxbridge MC">Uxbridge MC</option>
+                                <option value="Vale of Glamorgan MC, Barry">Vale of Glamorgan MC, Barry</option>
+                                <option value="Wakefield County Court">Wakefield County Court</option>
+                                <option value="Walsall (Stafford Street) MC">Walsall (Stafford Street) MC</option>
+                                <option value="Walsall AIT">Walsall AIT</option>
+                                <option value="Walsall County Court">Walsall County Court</option>
+                                <option value="WALSALL MC">WALSALL MC</option>
+                                <option value="Wandsworth County Court">Wandsworth County Court</option>
+                                <option value="Wantage MC">Wantage MC</option>
+                                <option value="Wareham MC">Wareham MC</option>
+                                <option value="Warrington County Court">Warrington County Court</option>
+                                <option value="Warrington Crown Court">Warrington Crown Court</option>
+                                <option value="Warrington Magistrates Court">Warrington Magistrates Court</option>
+                                <option value="Warwick County Court">Warwick County Court</option>
+                                <option value="Watford County Court">Watford County Court</option>
+                                <option value="Watford MC">Watford MC</option>
+                                <option value="Wellingborough County Court">Wellingborough County Court</option>
+                                <option value="Wellingborough MC">Wellingborough MC</option>
+                                <option value="Wells MC">Wells MC</option>
+                                <option value="Welshpool and Newtown County Court">Welshpool and Newtown County Court
+                                </option>
+                                <option value="Welshpool Crown Court">Welshpool Crown Court</option>
+                                <option value="Welshpool MC">Welshpool MC</option>
+                                <option value="West Berkshire MC">West Berkshire MC</option>
+                                <option value="West Bromwich MC">West Bromwich MC</option>
+                                <option value="West London Coroners Court">West London Coroners Court</option>
+                                <option value="West London County Court">West London County Court</option>
+                                <option value="Westminster Magistrates Court">Westminster Magistrates Court</option>
+                                <option value="Weston-super-Mare County Court">Weston-super-Mare County Court</option>
+                                <option value="Weymouth County Court">Weymouth County Court</option>
+                                <option value="Weymouth Crown Court">Weymouth Crown Court</option>
+                                <option value="Weymouth MC">Weymouth MC</option>
+                                <option value="Whitby MC">Whitby MC</option>
+                                <option value="Whitehaven County Court">Whitehaven County Court</option>
+                                <option value="Whitehaven MC">Whitehaven MC</option>
+                                <option value="Widnes MC">Widnes MC</option>
+                                <option value="Wigan County Court">Wigan County Court</option>
+                                <option value="Wigan MC">Wigan MC</option>
+                                <option value="Willesden County Court">Willesden County Court</option>
+                                <option value="Willesden MC">Willesden MC</option>
+                                <option value="Wimbledon MC">Wimbledon MC</option>
+                                <option value="Winchester County Court">Winchester County Court</option>
+                                <option value="Winchester Crown Court">Winchester Crown Court</option>
+                                <option value="Winchester Magistrates Court">Winchester Magistrates Court</option>
+                                <option value="Wisbech MC">Wisbech MC</option>
+                                <option value="Witham MC">Witham MC</option>
+                                <option value="Witney MC">Witney MC</option>
+                                <option value="Woking MC">Woking MC</option>
+                                <option value="Wolverhampton County Court">Wolverhampton County Court</option>
+                                <option value="Wolverhampton Crown Court">Wolverhampton Crown Court</option>
+                                <option value="Wolverhampton MC">Wolverhampton MC</option>
+                                <option value="Wood Green Crown Court">Wood Green Crown Court</option>
+                                <option value="Woolwich Crown Court">Woolwich Crown Court</option>
+                                <option value="Woolwich MC">Woolwich MC</option>
+                                <option value="Worcester (Castle St) MC">Worcester (Castle St) MC</option>
+                                <option value="Worcester County Court">Worcester County Court</option>
+                                <option value="Worcester Crown Court">Worcester Crown Court</option>
+                                <option value="Workington (West Cumbria) Magistrates Ct">Workington (West Cumbria)
+                                    Magistrates Ct</option>
+                                <option value="WORKINGTON COUNTY COURT">WORKINGTON COUNTY COURT</option>
+                                <option value="Worksop County Court">Worksop County Court</option>
+                                <option value="Worksop MC">Worksop MC</option>
+                                <option value="Worthing County Court">Worthing County Court</option>
+                                <option value="Worthing MC">Worthing MC</option>
+                                <option value="Woverhampton MC-Crown Court Docks">Woverhampton MC-Crown Court Docks
+                                </option>
+                                <option value="Wrexham County Court">Wrexham County Court</option>
+                                <option value="Wrexham MC">Wrexham MC</option>
+                                <option value="Yarls Wood AIT">Yarls Wood AIT</option>
+                                <option value="Yate MC">Yate MC</option>
+                                <option value="Yeovil County Court & Probation Office">Yeovil County Court & Probation
+                                    Office</option>
+                                <option value="Yeovil MC">Yeovil MC</option>
+                                <option value="York County Court">York County Court</option>
+                                <option value="York Crown Court">York Crown Court</option>
+                                <option value="York MC">York MC</option>
+                                <option value="Ystradgynlais MC">Ystradgynlais MC</option>
+                                <option value="Aberdare Youth Court">Aberdare Youth Court</option>
+                                <option value="Aberystwyth Youth Court">Aberystwyth Youth Court</option>
+                                <option value="Accrington Youth Court">Accrington Youth Court</option>
+                                <option value="Acton Crown Court">Acton Crown Court</option>
+                                <option value="Acton Youth Court">Acton Youth Court</option>
+                                <option value="Aldridge Youth Court">Aldridge Youth Court</option>
+                                <option value="Alnwick Youth Court">Alnwick Youth Court</option>
+                                <option value="Alton Youth Court">Alton Youth Court</option>
+                                <option value="Amersham MC">Amersham MC</option>
+                                <option value="Amersham Youth Court">Amersham Youth Court</option>
+                                <option value="Ammanford Youth Court">Ammanford Youth Court</option>
+                                <option value="Andover Youth Court">Andover Youth Court</option>
+                                <option value="Atherstone MC">Atherstone MC</option>
+                                <option value="Aylesbury Youth Court">Aylesbury Youth Court</option>
+                                <option value="Banbury (Bridge Street) MC">Banbury (Bridge Street) MC</option>
+                                <option value="Banbury (County Court Parsons Street) MC">Banbury (County Court Parsons
+                                    Street) MC</option>
+                                <option value="Banbury County Court">Banbury County Court</option>
+                                <option value="Banbury Youth Court">Banbury Youth Court</option>
+                                <option value="Bangor MC">Bangor MC</option>
+                                <option value="Barking (East Street) MC">Barking (East Street) MC</option>
+                                <option value="Barking (North Street) MC">Barking (North Street) MC</option>
+                                <option value="Barking Youth Court">Barking Youth Court</option>
+                                <option value="Barnet Youth Court">Barnet Youth Court</option>
+                                <option value="Barnsley Youth Court">Barnsley Youth Court</option>
+                                <option value="Barnstaple Youth Court">Barnstaple Youth Court</option>
+                                <option value="Barrow-in-Furness Combined Court">Barrow-in-Furness Combined Court
+                                </option>
+                                <option value="Basildon Youth Court">Basildon Youth Court</option>
+                                <option value="Basingstoke Youth Court">Basingstoke Youth Court</option>
+                                <option value="Bath Youth Court">Bath Youth Court</option>
+                                <option value="Batley and Dewsbury Youth Court">Batley and Dewsbury Youth Court</option>
+                                <option value="Bedford Youth Court">Bedford Youth Court</option>
+                                <option value="Berwick-upon-Tweed Youth Court">Berwick-upon-Tweed Youth Court</option>
+                                <option value="Beverley Crown Court">Beverley Crown Court</option>
+                                <option value="Beverley Youth Court">Beverley Youth Court</option>
+                                <option value="Bexley Youth Court">Bexley Youth Court</option>
+                                <option value="Bicester Youth Court">Bicester Youth Court</option>
+                                <option value="Birkenhead Crown Court">Birkenhead Crown Court</option>
+                                <option value="Birmingham (Bull Street) MC">Birmingham (Bull Street) MC</option>
+                                <option value="Birmingham (Newton Street) MC">Birmingham (Newton Street) MC</option>
+                                <option value="Birmingham (Steelehouse Lane) MC">Birmingham (Steelehouse Lane) MC
+                                </option>
+                                <option value="Birmingham Youth Court">Birmingham Youth Court</option>
+                                <option value="Bishop Auckland Youth Court">Bishop Auckland Youth Court</option>
+                                <option value="Blackburn, Darwen and Ribble Valley YC">Blackburn, Darwen and Ribble
+                                    Valley YC</option>
+                                <option value="Blackwood MC">Blackwood MC</option>
+                                <option value="Blackwood Youth Court">Blackwood Youth Court</option>
+                                <option value="Blandford Forum Youth Court">Blandford Forum Youth Court</option>
+                                <option value="Blaydon Youth Court">Blaydon Youth Court</option>
+                                <option value="Bodmin Crown Court">Bodmin Crown Court</option>
+                                <option value="Bodmin Youth Court">Bodmin Youth Court</option>
+                                <option value="Bolton Combined Court">Bolton Combined Court</option>
+                                <option value="Bolton Youth Court">Bolton Youth Court</option>
+                                <option value="Bootle MC">Bootle MC</option>
+                                <option value="Boston Youth Court">Boston Youth Court</option>
+                                <option value="Bourne Youth Court">Bourne Youth Court</option>
+                                <option value="Bradford Youth Court">Bradford Youth Court</option>
+                                <option value="Brecon Youth Court">Brecon Youth Court</option>
+                                <option value="Brent Youth Court">Brent Youth Court</option>
+                                <option value="Brentford MC">Brentford MC</option>
+                                <option value="Brentford Youth Court">Brentford Youth Court</option>
+                                <option value="Bridgend MC">Bridgend MC</option>
+                                <option value="Bridgend Youth Court">Bridgend Youth Court</option>
+                                <option value="Bridgnorth MC">Bridgnorth MC</option>
+                                <option value="Bridgwater Youth Court">Bridgwater Youth Court</option>
+                                <option value="Bridlington Youth Court">Bridlington Youth Court</option>
+                                <option value="Brighton (John Street) MC">Brighton (John Street) MC</option>
+                                <option value="Brighton Combined Court">Brighton Combined Court</option>
+                                <option value="Brighton Youth Court">Brighton Youth Court</option>
+                                <option value="Bristol (Bridewell St) Crown Court">Bristol (Bridewell St) Crown Court
+                                </option>
+                                <option value="Bristol (Corn St) Crown Court">Bristol (Corn St) Crown Court</option>
+                                <option value="Bristol (Guildhall) Crown Court">Bristol (Guildhall) Crown Court</option>
+                                <option value="Bristol Youth Court">Bristol Youth Court</option>
+                                <option value="Bromley AIT">Bromley AIT</option>
+                                <option value="Bromley Youth Court">Bromley Youth Court</option>
+                                <option value="Bromsgrove and Redditch Youth Court">Bromsgrove and Redditch Youth Court
+                                </option>
+                                <option value="Burnley and Pendle Youth Court">Burnley and Pendle Youth Court</option>
+                                <option value="Bury St. Edmunds Youth Court">Bury St. Edmunds Youth Court</option>
+                                <option value="Bury Youth Court">Bury Youth Court</option>
+                                <option value="C and SW Staffs Youth Court - Cannock">C and SW Staffs Youth Court -
+                                    Cannock</option>
+                                <option value="C and SW Staffs Youth Court - Stafford">C and SW Staffs Youth Court -
+                                    Stafford</option>
+                                <option value="Caernarfon (County Court) MC">Caernarfon (County Court) MC</option>
+                                <option value="Caernarfon Combined Court">Caernarfon Combined Court</option>
+                                <option value="Caernarfon Youth Court">Caernarfon Youth Court</option>
+                                <option value="Caistor MC">Caistor MC</option>
+                                <option value="Calderdale Youth Court">Calderdale Youth Court</option>
+                                <option value="Camberley MC">Camberley MC</option>
+                                <option value="Camberwell Green MC">Camberwell Green MC</option>
+                                <option value="Camborne Youth Court">Camborne Youth Court</option>
+                                <option value="Cambridge Youth Court">Cambridge Youth Court</option>
+                                <option value="Canterbury Youth Court">Canterbury Youth Court</option>
+                                <option value="Cardiff (Penarth Rd) Crown Court">Cardiff (Penarth Rd) Crown Court
+                                </option>
+                                <option value="Cardiff Youth Court">Cardiff Youth Court</option>
+                                <option value="Cardigan Youth Court">Cardigan Youth Court</option>
+                                <option value="Carlisle and District Youth Court">Carlisle and District Youth Court
+                                </option>
+                                <option value="Carmarthen Youth Court">Carmarthen Youth Court</option>
+                                <option value="Central Family Court">Central Family Court</option>
+                                <option value="Central Norfolk Youth Court">Central Norfolk Youth Court</option>
+                                <option value="Chatham MC">Chatham MC</option>
+                                <option value="Chatham Youth Court">Chatham Youth Court</option>
+                                <option value="Cheltenham Youth Court">Cheltenham Youth Court</option>
+                                <option value="Chepstow MC">Chepstow MC</option>
+                                <option value="Cheshunt MC">Cheshunt MC</option>
+                                <option value="Cheshunt Youth Court">Cheshunt Youth Court</option>
+                                <option value="Chester le Street MC">Chester le Street MC</option>
+                                <option value="Chester Youth Court">Chester Youth Court</option>
+                                <option value="Chesterfield (Brimington Rd) MC">Chesterfield (Brimington Rd) MC</option>
+                                <option value="Chesterfield (West Bars) MC">Chesterfield (West Bars) MC</option>
+                                <option value="Chichester MC">Chichester MC</option>
+                                <option value="Chichester Youth Court">Chichester Youth Court</option>
+                                <option value="Chippenham Youth Court">Chippenham Youth Court</option>
+                                <option value="Chorley Youth Court">Chorley Youth Court</option>
+                                <option value="City of Salford Youth Court">City of Salford Youth Court</option>
+                                <option value="City of Westminster Mag Court">City of Westminster Mag Court</option>
+                                <option value="Coalville Youth Court">Coalville Youth Court</option>
+                                <option value="Colchester (County Court, South Way)">Colchester (County Court, South
+                                    Way)</option>
+                                <option value="Colchester (Stanwell House) MC">Colchester (Stanwell House) MC</option>
+                                <option value="Colchester (Town Hall) MC">Colchester (Town Hall) MC</option>
+                                <option value="Consett Youth Court">Consett Youth Court</option>
+                                <option value="Court Not Yet Allocated">Court Not Yet Allocated</option>
+                                <option value="Coventry Youth Court">Coventry Youth Court</option>
+                                <option value="Crawley Youth Court">Crawley Youth Court</option>
+                                <option value="Crewe Youth Court">Crewe Youth Court</option>
+                                <option value="Croydon Youth Court">Croydon Youth Court</option>
+                                <option value="Cullompton MC">Cullompton MC</option>
+                                <option value="Cwmbran Youth Court">Cwmbran Youth Court</option>
+                                <option value="Darlington Youth Court">Darlington Youth Court</option>
+                                <option value="Dartford MC">Dartford MC</option>
+                                <option value="Dartford Youth Court">Dartford Youth Court</option>
+                                <option value="Daventry MC">Daventry MC</option>
+                                <option value="Denbigh Youth Court">Denbigh Youth Court</option>
+                                <option value="Derby (Bold Lane) MC">Derby (Bold Lane) MC</option>
+                                <option value="Derby (Derwent St) MC">Derby (Derwent St) MC</option>
+                                <option value="Derby (Swadlincote) MC">Derby (Swadlincote) MC</option>
+                                <option value="Devizes Crown Court">Devizes Crown Court</option>
+                                <option value="Didcot Youth Court">Didcot Youth Court</option>
+                                <option value="Dolgellau Youth Court">Dolgellau Youth Court</option>
+                                <option value="Doncaster Youth Court">Doncaster Youth Court</option>
+                                <option value="Dorchester MC">Dorchester MC</option>
+                                <option value="Droitwich MC">Droitwich MC</option>
+                                <option value="Dudley Crown Court">Dudley Crown Court</option>
+                                <option value="Dudley Youth Court">Dudley Youth Court</option>
+                                <option value="Durham Youth Court">Durham Youth Court</option>
+                                <option value="East Berkshire MC Bracknell Court House">East Berkshire MC Bracknell
+                                    Court House</option>
+                                <option value="East Berkshire MC Maidenhead Court House">East Berkshire MC Maidenhead
+                                    Court House</option>
+                                <option value="East Berkshire YC Maidenhead Court House">East Berkshire YC Maidenhead
+                                    Court House</option>
+                                <option value="Eastbourne MC">Eastbourne MC</option>
+                                <option value="Eastbourne Youth Court">Eastbourne Youth Court</option>
+                                <option value="Eastleigh MC">Eastleigh MC</option>
+                                <option value="Eden Youth Court">Eden Youth Court</option>
+                                <option value="Ely Youth Court">Ely Youth Court</option>
+                                <option value="Epsom MC">Epsom MC</option>
+                                <option value="Evesham MC">Evesham MC</option>
+                                <option value="Exeter Combined Court Centre">Exeter Combined Court Centre</option>
+                                <option value="Exeter Youth Court">Exeter Youth Court</option>
+                                <option value="Fareham MC">Fareham MC</option>
+                                <option value="Fareham Youth Court">Fareham Youth Court</option>
+                                <option value="Fenland Youth Court">Fenland Youth Court</option>
+                                <option value="Flax Bourton MC">Flax Bourton MC</option>
+                                <option value="Folkestone Youth Court">Folkestone Youth Court</option>
+                                <option value="Frome Youth Court">Frome Youth Court</option>
+                                <option value="Furness and District Magistrates Court">Furness and District Magistrates
+                                    Court</option>
+                                <option value="Furness and District Youth Court">Furness and District Youth Court
+                                </option>
+                                <option value="Fylde Coast at Blackpool Youth Court">Fylde Coast at Blackpool Youth
+                                    Court</option>
+                                <option value="Fylde Coast at Fleetwood Youth Court">Fylde Coast at Fleetwood Youth
+                                    Court</option>
+                                <option value="Gloucester MC">Gloucester MC</option>
+                                <option value="Gloucester Youth Court">Gloucester Youth Court</option>
+                                <option value="Goole Youth Court">Goole Youth Court</option>
+                                <option value="Gosforth Youth Court">Gosforth Youth Court</option>
+                                <option value="Gowerton MC">Gowerton MC</option>
+                                <option value="Grantham Youth Court">Grantham Youth Court</option>
+                                <option value="Grays Youth Court">Grays Youth Court</option>
+                                <option value="Great Yarmouth Youth Court">Great Yarmouth Youth Court</option>
+                                <option value="Greenwich MC">Greenwich MC</option>
+                                <option value="Grimsby Youth Court">Grimsby Youth Court</option>
+                                <option value="Guildford Youth Court">Guildford Youth Court</option>
+                                <option value="Guisborough MC">Guisborough MC</option>
+                                <option value="Halesowen Youth Court">Halesowen Youth Court</option>
+                                <option value="Halifax MC">Halifax MC</option>
+                                <option value="Hampshire Crown Court">Hampshire Crown Court</option>
+                                <option value="Harlow Youth Court">Harlow Youth Court</option>
+                                <option value="Harrogate Youth Court">Harrogate Youth Court</option>
+                                <option value="Harrow MC">Harrow MC</option>
+                                <option value="Harrow Youth Court">Harrow Youth Court</option>
+                                <option value="Hartlepool Youth Court">Hartlepool Youth Court</option>
+                                <option value="Harwich Youth Court">Harwich Youth Court</option>
+                                <option value="Hastings Youth Court">Hastings Youth Court</option>
+                                <option value="Hatfield Magistrates Court">Hatfield Magistrates Court</option>
+                                <option value="Havant Magistrates Court">Havant Magistrates Court</option>
+                                <option value="Haverfordwest Combined Court">Haverfordwest Combined Court</option>
+                                <option value="Haverfordwest Youth Court">Haverfordwest Youth Court</option>
+                                <option value="Havering Youth Court">Havering Youth Court</option>
+                                <option value="Haywards Heath Crown Court">Haywards Heath Crown Court</option>
+                                <option value="Haywards Heath Youth Court">Haywards Heath Youth Court</option>
+                                <option value="Hemel Hempstead Youth Court">Hemel Hempstead Youth Court</option>
+                                <option value="Hendon Youth Court">Hendon Youth Court</option>
+                                <option value="Hereford Youth Court">Hereford Youth Court</option>
+                                <option value="Hertford MC">Hertford MC</option>
+                                <option value="High Peak Youth Court (Buxton)">High Peak Youth Court (Buxton)</option>
+                                <option value="High Peak Youth Court (Glossop)">High Peak Youth Court (Glossop)</option>
+                                <option value="Highbury Corner MC">Highbury Corner MC</option>
+                                <option value="Highgate MC">Highgate MC</option>
+                                <option value="Highgate Youth Court">Highgate Youth Court</option>
+                                <option value="Hinckley Youth Court">Hinckley Youth Court</option>
+                                <option value="Holyhead MC">Holyhead MC</option>
+                                <option value="Holyhead Youth Court">Holyhead Youth Court</option>
+                                <option value="Horncastle MC">Horncastle MC</option>
+                                <option value="Horseferry Road MC">Horseferry Road MC</option>
+                                <option value="Horsham Youth Court">Horsham Youth Court</option>
+                                <option value="Houghton-le-Spring Youth Court">Houghton-le-Spring Youth Court</option>
+                                <option value="Huddersfield Crown Court">Huddersfield Crown Court</option>
+                                <option value="Huddersfield Youth Court">Huddersfield Youth Court</option>
+                                <option value="Hull Youth Court">Hull Youth Court</option>
+                                <option value="Huntingdon Law Courts">Huntingdon Law Courts</option>
+                                <option value="Huntingdon Youth Court">Huntingdon Youth Court</option>
+                                <option value="Inner London Youth Courts Centre 1">Inner London Youth Courts Centre 1
+                                </option>
+                                <option value="Inner London Youth Courts Centre 2">Inner London Youth Courts Centre 2
+                                </option>
+                                <option value="Inner London Youth Courts Centre 3">Inner London Youth Courts Centre 3
+                                </option>
+                                <option value="Inner London Youth Courts Centre 4">Inner London Youth Courts Centre 4
+                                </option>
+                                <option value="Ipswich Youth Court">Ipswich Youth Court</option>
+                                <option value="Isle of Wight Youth Court">Isle of Wight Youth Court</option>
+                                <option value="Keighley Youth Court">Keighley Youth Court</option>
+                                <option value="Kendal Crown Court">Kendal Crown Court</option>
+                                <option value="Kendal Youth Court">Kendal Youth Court</option>
+                                <option value="Kettering Youth Court">Kettering Youth Court</option>
+                                <option value="Kidderminster Youth Court">Kidderminster Youth Court</option>
+                                <option value="King's Lynn Combined Court">King's Lynn Combined Court</option>
+                                <option value="Kings Court, North Shields MC">Kings Court, North Shields MC</option>
+                                <option value="Kingston (Canbury Park) Crown Court">Kingston (Canbury Park) Crown Court
+                                </option>
+                                <option value="Kingston upon Thames MC">Kingston upon Thames MC</option>
+                                <option value="Kingston-upon-Hull Combined Court Centre">Kingston-upon-Hull Combined
+                                    Court Centre</option>
+                                <option value="Kingston-upon-Thames Youth Court">Kingston-upon-Thames Youth Court
+                                </option>
+                                <option value="Knightsbridge Crown Court">Knightsbridge Crown Court</option>
+                                <option value="Knowlsey Youth Court">Knowlsey Youth Court</option>
+                                <option value="Lancaster Youth Court">Lancaster Youth Court</option>
+                                <option value="Leamington Spa MC">Leamington Spa MC</option>
+                                <option value="Leamington Spa Youth Court">Leamington Spa Youth Court</option>
+                                <option value="Leeds Youth Court">Leeds Youth Court</option>
+                                <option value="Leicester Youth Court">Leicester Youth Court</option>
+                                <option value="Lewes Youth Court">Lewes Youth Court</option>
+                                <option value="Lincoln Youth Court">Lincoln Youth Court</option>
+                                <option value="Liverpool (Crown & Jerome Bldgs) MC">Liverpool (Crown & Jerome Bldgs) MC
+                                </option>
+                                <option value="Liverpool (Hatton Garden) MC">Liverpool (Hatton Garden) MC</option>
+                                <option value="Liverpool Youth Court">Liverpool Youth Court</option>
+                                <option value="Llandovery MC">Llandovery MC</option>
+                                <option value="Llandudno Youth Court">Llandudno Youth Court</option>
+                                <option value="Llanelli Youth Court">Llanelli Youth Court</option>
+                                <option value="Llangefni Youth Court">Llangefni Youth Court</option>
+                                <option value="Llwynypia Youth Court">Llwynypia Youth Court</option>
+                                <option value="Long Sutton MC">Long Sutton MC</option>
+                                <option value="Loughborough Youth Court">Loughborough Youth Court</option>
+                                <option value="Louth Youth Court">Louth Youth Court</option>
+                                <option value="Lowestoft Youth Court">Lowestoft Youth Court</option>
+                                <option value="Ludlow MC">Ludlow MC</option>
+                                <option value="Luton Youth Court">Luton Youth Court</option>
+                                <option value="Macclesfield (Hibel Rd) MC">Macclesfield (Hibel Rd) MC</option>
+                                <option value="Macclesfield County Court">Macclesfield County Court</option>
+                                <option value="Macclesfield Youth Court">Macclesfield Youth Court</option>
+                                <option value="Machynlleth MC">Machynlleth MC</option>
+                                <option value="Maidstone Youth Court">Maidstone Youth Court</option>
+                                <option value="Manchester City Youth Court">Manchester City Youth Court</option>
+                                <option value="Mansfield Youth Court">Mansfield Youth Court</option>
+                                <option value="Margate Youth Court">Margate Youth Court</option>
+                                <option value="Market Drayton Youth Court">Market Drayton Youth Court</option>
+                                <option value="Marylebone (185 Marylebone Rd) MC">Marylebone (185 Marylebone Rd) MC
+                                </option>
+                                <option value="Maybush Crown Court">Maybush Crown Court</option>
+                                <option value="Melton Mowbray Youth Court">Melton Mowbray Youth Court</option>
+                                <option value="Merthyr Tydfil Combined Court">Merthyr Tydfil Combined Court</option>
+                                <option value="Merthyr Tydfil Youth Court">Merthyr Tydfil Youth Court</option>
+                                <option value="Mid Glamorgan Crown Court">Mid Glamorgan Crown Court</option>
+                                <option value="Middlesbrough Youth Court">Middlesbrough Youth Court</option>
+                                <option value="Milton Keynes Youth Court">Milton Keynes Youth Court</option>
+                                <option value="Minehead Youth Court">Minehead Youth Court</option>
+                                <option value="Mold Combined Court">Mold Combined Court</option>
+                                <option value="Mold Youth Court">Mold Youth Court</option>
+                                <option value="N Staffs Youth Court - Fenton">N Staffs Youth Court - Fenton</option>
+                                <option value="N Staffs Youth Court - Newcastle">N Staffs Youth Court - Newcastle
+                                </option>
+                                <option value="NE Derby/Dales Youth Crt (Chesterfield)">NE Derby/Dales Youth Crt
+                                    (Chesterfield)</option>
+                                <option value="Neath Youth Court">Neath Youth Court</option>
+                                <option value="New Forest Youth Court">New Forest Youth Court</option>
+                                <option value="Newark Youth Court">Newark Youth Court</option>
+                                <option value="Newcastle upon Tyne Youth Court">Newcastle upon Tyne Youth Court</option>
+                                <option value="Newcastle-Upon-Tyne Comb. Ct. (Quayside)">Newcastle-Upon-Tyne Comb. Ct.
+                                    (Quayside)</option>
+                                <option value="Newcastle-Upon-Tyne MC">Newcastle-Upon-Tyne MC</option>
+                                <option value="Newport (IoW) Combined Court">Newport (IoW) Combined Court</option>
+                                <option value="Newport (Pentonville) MC">Newport (Pentonville) MC</option>
+                                <option value="Newport (South Wales) Mag Court">Newport (South Wales) Mag Court</option>
+                                <option value="Newton Abbot Youth Court">Newton Abbot Youth Court</option>
+                                <option value="Newton Aycliffe Youth Court">Newton Aycliffe Youth Court</option>
+                                <option value="North Liverpool Community Justice Centre">North Liverpool Community
+                                    Justice Centre</option>
+                                <option value="North Norfolk Magistrates Court">North Norfolk Magistrates Court</option>
+                                <option value="North Norfolk Youth Court">North Norfolk Youth Court</option>
+                                <option value="North Sefton Youth Court">North Sefton Youth Court</option>
+                                <option value="North Shields Magistrates Court">North Shields Magistrates Court</option>
+                                <option value="North Shields Youth Court">North Shields Youth Court</option>
+                                <option value="North Staffordshire MC - Fenton">North Staffordshire MC - Fenton</option>
+                                <option value="North Warwickshire Youth Court">North Warwickshire Youth Court</option>
+                                <option value="Northallerton Youth Court">Northallerton Youth Court</option>
+                                <option value="Northampton Youth Court">Northampton Youth Court</option>
+                                <option value="Northants (County Hall) Crown Court">Northants (County Hall) Crown Court
+                                </option>
+                                <option value="Northants (Guildhall) Crown Court">Northants (Guildhall) Crown Court
+                                </option>
+                                <option value="Northwich MC">Northwich MC</option>
+                                <option value="Northwich Youth Court">Northwich Youth Court</option>
+                                <option value="Norwich Youth Court">Norwich Youth Court</option>
+                                <option value="Nottingham Youth Court">Nottingham Youth Court</option>
+                                <option value="Nuneaton Magistrates Court">Nuneaton Magistrates Court</option>
+                                <option value="Nuneaton MC">Nuneaton MC</option>
+                                <option value="Nuneaton Youth Court">Nuneaton Youth Court</option>
+                                <option value="Nuneaton, Vicarage St MC">Nuneaton, Vicarage St MC</option>
+                                <option value="Oldbury Youth Court">Oldbury Youth Court</option>
+                                <option value="Oldham Crown Court">Oldham Crown Court</option>
+                                <option value="Oldham MC">Oldham MC</option>
+                                <option value="Oldham Youth Court">Oldham Youth Court</option>
+                                <option value="Ormskirk Youth Court">Ormskirk Youth Court</option>
+                                <option value="Oswestry Youth Court">Oswestry Youth Court</option>
+                                <option value="Oxford Youth Court">Oxford Youth Court</option>
+                                <option value="Penzance Youth Court">Penzance Youth Court</option>
+                                <option value="Peterborough Youth Court">Peterborough Youth Court</option>
+                                <option value="Peterlee Youth Court">Peterlee Youth Court</option>
+                                <option value="Pickering MC">Pickering MC</option>
+                                <option value="Plymouth Youth Court">Plymouth Youth Court</option>
+                                <option value="Pontefract Youth Court">Pontefract Youth Court</option>
+                                <option value="Pontypridd (Union Street) MC">Pontypridd (Union Street) MC</option>
+                                <option value="Poole Crown Court">Poole Crown Court</option>
+                                <option value="Poole Youth Court">Poole Youth Court</option>
+                                <option value="Port Talbot Youth Court">Port Talbot Youth Court</option>
+                                <option value="Prestatyn MC">Prestatyn MC</option>
+                                <option value="Prestatyn Youth Court">Prestatyn Youth Court</option>
+                                <option value="Preston (Amounderness) Crown Court">Preston (Amounderness) Crown Court
+                                </option>
+                                <option value="Preston Youth Court">Preston Youth Court</option>
+                                <option value="Pwllheli Youth Court">Pwllheli Youth Court</option>
+                                <option value="Rawtenstall MC">Rawtenstall MC</option>
+                                <option value="Rawtenstall Youth Court">Rawtenstall Youth Court</option>
+                                <option value="Reading (Artillery House) Crown Court">Reading (Artillery House) Crown
+                                    Court</option>
+                                <option value="Reading (Shire Hall) Crown Court">Reading (Shire Hall) Crown Court
+                                </option>
+                                <option value="Reading and West Berkshire YC">Reading and West Berkshire YC</option>
+                                <option value="Redbridge MC">Redbridge MC</option>
+                                <option value="Redbridge Youth Court">Redbridge Youth Court</option>
+                                <option value="Redhill Youth Court">Redhill Youth Court</option>
+                                <option value="Reedley Youth Court">Reedley Youth Court</option>
+                                <option value="Retford Youth Court">Retford Youth Court</option>
+                                <option value="Rhondda MC">Rhondda MC</option>
+                                <option value="Richmond MC">Richmond MC</option>
+                                <option value="Richmond upon Thames MC">Richmond upon Thames MC</option>
+                                <option value="Richmond-upon-Thames Youth Court">Richmond-upon-Thames Youth Court
+                                </option>
+                                <option value="Rochdale Youth Court">Rochdale Youth Court</option>
+                                <option value="Rochester Crown Court">Rochester Crown Court</option>
+                                <option value="Rotherham Youth Court">Rotherham Youth Court</option>
+                                <option value="Rugby Youth Court">Rugby Youth Court</option>
+                                <option value="Rugeley MC">Rugeley MC</option>
+                                <option value="Rutland MC">Rutland MC</option>
+                                <option value="S.Derbyshire Youth Court (Ilkeston)">S.Derbyshire Youth Court (Ilkeston)
+                                </option>
+                                <option value="Salford MC">Salford MC</option>
+                                <option value="Salisbury Law Courts">Salisbury Law Courts</option>
+                                <option value="Salisbury Youth Court">Salisbury Youth Court</option>
+                                <option value="Sandwell Magistrates Court">Sandwell Magistrates Court</option>
+                                <option value="Scarborough (County Court,Valley Bridge)">Scarborough (County
+                                    Court,Valley Bridge)</option>
+                                <option value="Scarborough (Northway) MC">Scarborough (Northway) MC</option>
+                                <option value="Scarborough Youth Court">Scarborough Youth Court</option>
+                                <option value="Scunthorpe Youth Court">Scunthorpe Youth Court</option>
+                                <option value="SE Northumberland Magistrates' Court">SE Northumberland Magistrates'
+                                    Court</option>
+                                <option value="SE Staffs Youth Court - Burton">SE Staffs Youth Court - Burton</option>
+                                <option value="SE Staffs Youth Court - Tamworth">SE Staffs Youth Court - Tamworth
+                                </option>
+                                <option value="Selby Youth Court">Selby Youth Court</option>
+                                <option value="Sevenoaks Youth Court">Sevenoaks Youth Court</option>
+                                <option value="Sheffield Youth Court">Sheffield Youth Court</option>
+                                <option value="Shrewsbury Youth Court">Shrewsbury Youth Court</option>
+                                <option value="Sittingbourne Youth Court">Sittingbourne Youth Court</option>
+                                <option value="Skegness Youth Court">Skegness Youth Court</option>
+                                <option value="Skipton Youth Court">Skipton Youth Court</option>
+                                <option value="Sleaford Youth Court">Sleaford Youth Court</option>
+                                <option value="Solihull Youth Court">Solihull Youth Court</option>
+                                <option value="South Norfolk Youth Court">South Norfolk Youth Court</option>
+                                <option value="South Ribble Youth Court">South Ribble Youth Court</option>
+                                <option value="South Sefton Youth Court">South Sefton Youth Court</option>
+                                <option value="South Shields Youth Court">South Shields Youth Court</option>
+                                <option value="South Shropshire Youth Court">South Shropshire Youth Court</option>
+                                <option value="South Warwickshire Youth Court">South Warwickshire Youth Court</option>
+                                <option value="South Western (Balham) MC">South Western (Balham) MC</option>
+                                <option value="South Worcestershire Youth Court">South Worcestershire Youth Court
+                                </option>
+                                <option value="Southampton Youth Court">Southampton Youth Court</option>
+                                <option value="Southend Combined Court">Southend Combined Court</option>
+                                <option value="Southend Crown Court">Southend Crown Court</option>
+                                <option value="Southend-on-Sea Youth Court">Southend-on-Sea Youth Court</option>
+                                <option value="Southern Derbyshire Youth Court (Derby)">Southern Derbyshire Youth Court
+                                    (Derby)</option>
+                                <option value="Southport County Court">Southport County Court</option>
+                                <option value="Southport MC">Southport MC</option>
+                                <option value="Spalding Youth Court">Spalding Youth Court</option>
+                                <option value="St Helens MC">St Helens MC</option>
+                                <option value="St. Albans Youth Court">St. Albans Youth Court</option>
+                                <option value="St. Helens Youth Court">St. Helens Youth Court</option>
+                                <option value="Stafford Magistrates Court">Stafford Magistrates Court</option>
+                                <option value="Staines Youth Court">Staines Youth Court</option>
+                                <option value="Stevenage Youth Court">Stevenage Youth Court</option>
+                                <option value="Stockport County Court">Stockport County Court</option>
+                                <option value="Stockport Youth Court">Stockport Youth Court</option>
+                                <option value="Stoke-on-Trent Combined Court">Stoke-on-Trent Combined Court</option>
+                                <option value="Stoke-on-Trent Magistrates Court">Stoke-on-Trent Magistrates Court
+                                </option>
+                                <option value="Stourbridge MC">Stourbridge MC</option>
+                                <option value="Stratford upon Avon MC">Stratford upon Avon MC</option>
+                                <option value="Stratford Youth Court">Stratford Youth Court</option>
+                                <option value="Sudbury Youth Court">Sudbury Youth Court</option>
+                                <option value="Sunderland Youth Court">Sunderland Youth Court</option>
+                                <option value="Surbiton Crown Court">Surbiton Crown Court</option>
+                                <option value="Surrey Crown Court">Surrey Crown Court</option>
+                                <option value="Sutton Coldfield MC">Sutton Coldfield MC</option>
+                                <option value="Sutton Coldfield Youth Court">Sutton Coldfield Youth Court</option>
+                                <option value="Sutton MC">Sutton MC</option>
+                                <option value="Sutton Youth Court">Sutton Youth Court</option>
+                                <option value="Swansea (Dynevor Place) MC">Swansea (Dynevor Place) MC</option>
+                                <option value="Swansea (Guildhall) Crown Court">Swansea (Guildhall) Crown Court</option>
+                                <option value="Swansea Youth Court">Swansea Youth Court</option>
+                                <option value="Swindon Youth Court">Swindon Youth Court</option>
+                                <option value="Tameside Youth Court">Tameside Youth Court</option>
+                                <option value="Taunton Youth Court">Taunton Youth Court</option>
+                                <option value="Telford & Bridgnorth Youth Court">Telford & Bridgnorth Youth Court
+                                </option>
+                                <option value="Tewkesbury MC">Tewkesbury MC</option>
+                                <option value="Thame MC">Thame MC</option>
+                                <option value="Thetford MC">Thetford MC</option>
+                                <option value="Torquay MC">Torquay MC</option>
+                                <option value="Tottenham MC">Tottenham MC</option>
+                                <option value="Tottenham Youth Court">Tottenham Youth Court</option>
+                                <option value="Trafford Youth Court">Trafford Youth Court</option>
+                                <option value="Tredegar MC">Tredegar MC</option>
+                                <option value="Trowbridge MC">Trowbridge MC</option>
+                                <option value="Truro Youth Court">Truro Youth Court</option>
+                                <option value="Tynedale Magistrates' Court">Tynedale Magistrates' Court</option>
+                                <option value="Upper Norwood Crown Court">Upper Norwood Crown Court</option>
+                                <option value="Uxbridge Youth Court">Uxbridge Youth Court</option>
+                                <option value="Vale of Glamorgan Youth Court, Barry">Vale of Glamorgan Youth Court,
+                                    Barry</option>
+                                <option value="Wakefield Crown Court">Wakefield Crown Court</option>
+                                <option value="Wakefield MC">Wakefield MC</option>
+                                <option value="Wakefield Youth Court">Wakefield Youth Court</option>
+                                <option value="Wallasey MC">Wallasey MC</option>
+                                <option value="Wallington Crown Court">Wallington Crown Court</option>
+                                <option value="Walsall Crown Court">Walsall Crown Court</option>
+                                <option value="Walsall Youth Court">Walsall Youth Court</option>
+                                <option value="Waltham Forest MC">Waltham Forest MC</option>
+                                <option value="Waltham Forest Youth Court">Waltham Forest Youth Court</option>
+                                <option value="Warrington Combined Court">Warrington Combined Court</option>
+                                <option value="Warrington Youth Court">Warrington Youth Court</option>
+                                <option value="Warwickshire Justice Centre (L'ton Spa)">Warwickshire Justice Centre
+                                    (L'ton Spa)</option>
+                                <option value="Watford Crown Court">Watford Crown Court</option>
+                                <option value="Wellinbgborough Youth Court">Wellinbgborough Youth Court</option>
+                                <option value="Wells Youth Court">Wells Youth Court</option>
+                                <option value="Welshpool Youth Court">Welshpool Youth Court</option>
+                                <option value="West Allerdale and Keswick Mag. Court">West Allerdale and Keswick Mag.
+                                    Court</option>
+                                <option value="West Allerdale and Keswick YC">West Allerdale and Keswick YC</option>
+                                <option value="West Bromwich Youth Court">West Bromwich Youth Court</option>
+                                <option value="West Norfolk Magistrates Court">West Norfolk Magistrates Court</option>
+                                <option value="West Norfolk Youth Court">West Norfolk Youth Court</option>
+                                <option value="Weston Super Mare MC">Weston Super Mare MC</option>
+                                <option value="Weston-super-Mare Youth Court">Weston-super-Mare Youth Court</option>
+                                <option value="Wetherby MC">Wetherby MC</option>
+                                <option value="Weymouth Youth Court">Weymouth Youth Court</option>
+                                <option value="Whitchurch MC">Whitchurch MC</option>
+                                <option value="Whitehaven Youth Court">Whitehaven Youth Court</option>
+                                <option value="Widnes Youth Court">Widnes Youth Court</option>
+                                <option value="Wigan Youth Court">Wigan Youth Court</option>
+                                <option value="Willesden Crown Court">Willesden Crown Court</option>
+                                <option value="Wiltshire Crown Court">Wiltshire Crown Court</option>
+                                <option value="Wimbledon Youth Court">Wimbledon Youth Court</option>
+                                <option value="Wimborne MC">Wimborne MC</option>
+                                <option value="Wirral Youth Court">Wirral Youth Court</option>
+                                <option value="Witham Youth Court">Witham Youth Court</option>
+                                <option value="Woking Youth Court">Woking Youth Court</option>
+                                <option value="Wolverhampton Youth Court">Wolverhampton Youth Court</option>
+                                <option value="Woolwich County Court">Woolwich County Court</option>
+                                <option value="Workington Magistrates Court">Workington Magistrates Court</option>
+                                <option value="Worksop Youth Court">Worksop Youth Court</option>
+                                <option value="Worthing Youth Court">Worthing Youth Court</option>
+                                <option value="Wrexham Youth Court">Wrexham Youth Court</option>
+                                <option value="Wycombe MC">Wycombe MC</option>
+                                <option value="Wycombe Youth Court">Wycombe Youth Court</option>
+                                <option value="Yate Youth Court">Yate Youth Court</option>
+                                <option value="Yeovil Youth Court">Yeovil Youth Court</option>
+                                <option value="York Youth Court">York Youth Court</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Warrant date -->
+                    <div class="filter-expander">
+                        <button class="filter-expander__button" type="button" id="filter-warrant-date-button"
+                            aria-expanded="false" aria-controls="filter-warrant-date">
+                            <span class="govuk-label govuk-label--s filter-expander__label">Warrant date</span>
+                        </button>
+
+                        <div id="filter-warrant-date" class="filter-expander__content" hidden role="region"
+                            aria-labelledby="filter-warrant-date-button">
+
+                            <!-- Label for the date input -->
+
+                            <div class="moj-datepicker" data-module="moj-date-picker">
+                                <div class="govuk-form-group">
+                                    <label class="govuk-label " for="warrant-date-input">
+                                        Warrant date
+                                    </label>
+                                    <div id="date-hint" class="govuk-hint">
+                                        For example, 17/5/2024.
+                                    </div>
+                                    <input class="govuk-input moj-js-datepicker-input" id="date" name="date" type="text"
+                                        aria-describedby="date-hint" autocomplete="off">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Date added -->
+                    <div class="filter-expander">
+                        <button class="filter-expander__button" type="button" id="filter-date-added-button"
+                            aria-expanded="false" aria-controls="filter-date-added">
+                            <span class="govuk-label govuk-label--s filter-expander__label">Date added</span>
+                        </button>
+
+                        <div id="filter-date-added" class="filter-expander__content" hidden role="region"
+                            aria-labelledby="filter-date-added-button">
+
+                            <!-- MOJ Date picker wrapper -->
+                            <div class="moj-datepicker" data-module="moj-date-picker">
+                                <div class="govuk-form-group">
+                                    <!-- Label -->
+                                    <label class="govuk-label" for="date-added-input">
+                                        Date added
+                                    </label>
+
+                                    <!-- Hint text -->
+                                    <div id="date-added-hint" class="govuk-hint">
+                                        For example, 17/05/2024.
+                                    </div>
+
+                                    <!-- Date input -->
+                                    <input class="govuk-input moj-js-datepicker-input" id="date-added-input"
+                                        name="dateAdded" type="text" aria-describedby="date-added-hint"
+                                        autocomplete="off">
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Type -->
+                    <div class="filter-expander">
+                        <button class="filter-expander__button" type="button" id="filter-type-button"
+                            aria-expanded="false" aria-controls="filter-type">
+                            <span class="govuk-label govuk-label--s filter-expander__label">Type</span>
+                        </button>
+
+                        <div id="filter-type" class="filter-expander__content" hidden role="region"
+                            aria-labelledby="filter-type-button">
+
+                            <div class="govuk-checkboxes govuk-checkboxes--small">
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-bail-order" name="type[]"
+                                        type="checkbox" value="Bail order">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-bail-order">
+                                        Bail order (2)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-calculation-sheet" name="type[]"
+                                        type="checkbox" value="Calculation sheet">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-calculation-sheet">
+                                        Calculation sheet (1)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-community-order" name="type[]"
+                                        type="checkbox" value="Community order">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-community-order">
+                                        Community order (2)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-foi" name="type[]" type="checkbox"
+                                        value="FOI">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-foi">
+                                        FOI (19)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-indictment" name="type[]"
+                                        type="checkbox" value="Indictment">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-indictment">
+                                        Indictment (1)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-notice-discontinuance" name="type[]"
+                                        type="checkbox" value="Notice of discontinuance">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-notice-discontinuance">
+                                        Notice of discontinuance (2)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-recall" name="type[]"
+                                        type="checkbox" value="Recall">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-recall">
+                                        Recall (3)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-remand-warrant" name="type[]"
+                                        type="checkbox" value="Remand warrant">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-remand-warrant">
+                                        Remand warrant (6)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-prison-court-register" name="type[]"
+                                        type="checkbox" value="Prison court register">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-prison-court-register">
+                                        Prison court register (1)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-sentencing-warrant" name="type[]"
+                                        type="checkbox" value="Sentencing warrant">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-sentencing-warrant">
+                                        Sentencing warrant (18)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-suspended-imprisonment-order"
+                                        name="type[]" type="checkbox" value="Suspended Imprisonment order">
+                                    <label class="govuk-label govuk-checkboxes__label"
+                                        for="type-suspended-imprisonment-order">
+                                        Suspended Imprisonment order (26)
+                                    </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                    <input class="govuk-checkboxes__input" id="type-trial-record-sheet" name="type[]"
+                                        type="checkbox" value="Trial record sheet">
+                                    <label class="govuk-label govuk-checkboxes__label" for="type-trial-record-sheet">
+                                        Trial record sheet (5)
+                                    </label>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+
                 </div>
+
             </div>
         </div>
     </div>
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-three-quarters">
         <div class="content-top govuk-!-margin-bottom-2">
             <div>
-                <span class="govuk-body govuk-!-font-weight-bold">Sort by:</span><span class="govuk-body govuk-!-margin-left-2">Most recent <span class="seperator">|</span> <a href="">Earliest</a></span>
+                <span class="govuk-body govuk-!-font-weight-bold">Sort by:</span><span
+                    class="govuk-body govuk-!-margin-left-2">Most recent first<span class="seperator">|</span> <a
+                        href="">Oldest first</a></span>
             </div>
             <div>
-                <span class="govuk-body">Showing <strong>6</strong> documents</span>
+                <span class="govuk-body">Showing <strong>1</strong> to <strong>10</strong> of <strong>56</strong> documents</span>
             </div>
         </div>
         <!-- <p class="govuk-body govuk-!-font-weight-bold govuk-!-margin-bottom-3">6 documents</p> -->
-        <ul class="govuk-list documents-list">
-            <!-- <div class="govuk-form-group govuk-!-margin-top-4">
-  <label class="govuk-label sort-options-label" for="sort">
-    Sort by
-  </label>
-  <select class="govuk-select sort-options-select" id="sort" name="sort">
-    <option value="published">Date added (most recent)</option>
-    <option value="updated" selected>Date added (oldest)</option>
-  </select>
-</div> -->
-            <!-- Document 1 -->
-            <li class="documents-list-item">
-                <h3 class="govuk-heading-s document-title"><a href="{{ asset_path }}documents/order-of-imprisonment-court-case-1.pdf" class="govuk-link--no-visited-state" target="_blank">Custodial warrant</a></h3>
-                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
-                <table class="govuk-table documennt-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
-                            <td class="govuk-table__cell document-table-cell"><a href="/court-cases/court-case-T20240101">T20240101</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
-                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
-                            <td class="govuk-table__cell document-table-cell">1 July 2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-            <!-- Document 2 -->
-            <li class="documents-list-item">
-                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/order-of-imprisonment-court-case-2.pdf" class="govuk-link--no-visited-state" target="_blank">Custodial warrant</a></h3>
-                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
-                <table class="govuk-table documennt-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
-                            <td class="govuk-table__cell document-table-cell"><a href="">T20240102</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
-                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
-                        </tr>
-                        <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
-                            <td class="govuk-table__cell document-table-cell">1 July 2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-            <!-- Document 3 -->
-            <li class="documents-list-item">
-                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/indictment-court-case-1.pdf" class="govuk-link--no-visited-state" target="_blank">Indictment</a></h3>
-                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
-                <table class="govuk-table documennt-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
-                            <td class="govuk-table__cell document-table-cell"><a href="">T20240101</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
-                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
-                        </tr>
-                        <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
-                            <td class="govuk-table__cell document-table-cell">1 July 2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-            <!-- Document 4 -->
-            <li class="documents-list-item">
-                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/indictment-court-case-2.pdf" class="govuk-link--no-visited-state" target="_blank">Indictment</a></h3>
-                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
-                <table class="govuk-table documennt-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
-                            <td class="govuk-table__cell document-table-cell"><a href="">T20240102</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
-                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
-                        </tr>
-                        <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
-                            <td class="govuk-table__cell document-table-cell">1 July 2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-            <!-- Document 4 -->
-            <li class="documents-list-item">
-                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/trial-record-sheet-court-case-1.pdf" class="govuk-link--no-visited-state" target="_blank">Trial record sheet</a></h3>
-                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
-                <table class="govuk-table documennt-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
-                            <td class="govuk-table__cell document-table-cell"><a href="">T20240101</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
-                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
-                        </tr>
-                        <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
-                            <td class="govuk-table__cell document-table-cell">23 October 2021</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-            <!-- Document 5 -->
-            <li class="documents-list-item">
-                <h3 class="govuk-heading-s document-title govuk-link--no-visited-state"><a href="{{ asset_path }}documents/trial-record-sheet-court-case-2.pdf" class="govuk-link--no-visited-state" target="_blank">Trial record sheet</a></h3>
-                <a href="" class="govuk-link remove-link govuk-link--no-visited-state">Remove</a>
-                <table class="govuk-table documennt-table">
-                    <tbody class="govuk-table__body">
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Case reference</th>
-                            <td class="govuk-table__cell document-table-cell"><a href="">T20240102</a></td>
-                        </tr>
-                        <tr class="govuk-table__row">
-                            <th scope="row" class="govuk-table__header document-table-header">Court name</th>
-                            <td class="govuk-table__cell document-table-cell">Leeds Crown Court</td>
-                        </tr>
-                        <tr class="govuk-table__row ">
-                            <th scope="row" class="govuk-table__header document-table-header">Warrant date</th>
-                            <td class="govuk-table__cell document-table-cell">31 March 2024</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </li>
-        </ul>
+      
+ <ul class="govuk-list documents-list">
+
+  <!-- 1 Sentencing warrant -->
+  <li class="documents-list-item" >
+    <div style="border-left: solid 8px #1d70b8; padding-left: 10px">
+   <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0" style="display:flex; align-items:center;">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Sentencing warrant</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+
+    <strong class="govuk-tag" style="margin-left:auto;">New</strong>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Case reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">TB58634RB</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Manchester City Magistrates Court</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Warrant date</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">05/02/2026</p>
+      </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Common Platform</p>
+        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color:#484949">
+          File name: Manchester City Magistrates Court; Bloggs FEBRUARY; 2026-02-05; 01EK1123456
+        </p>
+      </div>
+    </div>
+    </div>
+  </li>
+
+  <!-- 2 Indictment -->
+  <li class="documents-list-item">
+
+    <div style="border-left: solid 8px #1d70b8; padding-left: 10px">
+   <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0" style="display:flex; align-items:center;">
+
+  <span>
+    <a href="#" class="govuk-link--no-visited-state" target="_blank">Indictment</a>
+    <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+  </span>
+
+  <strong class="govuk-tag" style="margin-left:auto;">New</strong>
+
+</h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Case reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">TB58634RB</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Manchester City Magistrates Court</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Warrant date</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">05/02/2026</p>
+      </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Common Platform</p>
+        <p class="govuk-body-s govuk-!-margin-bottom-0" style="color:#484949">
+          File name: Manchester City Magistrates Court; Bloggs FEBRUARY; 2026-02-05; 059HKT30923
+        </p>
+      </div>
+    </div>
+    </div>
+  </li>
+
+  <!-- 3 Trial record sheet -->
+  <li class="documents-list-item">
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Trial record sheet</a>
+
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+
+     
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Case reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">TB58634RB</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Manchester City Magistrates Court</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Warrant date</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">05/02/2026</p>
+      </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Court cases</a></p>
+      </div>
+    </div>
+  </li>
+
+  <!-- 4 Remand warrant -->
+  <li class="documents-list-item">
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Remand warrant</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Case reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">TB58634RB</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Manchester City Magistrates Court</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Warrant date</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">03/08/2024</p>
+      </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Court cases</a></p>
+      </div>
+    </div>
+  </li>
+
+  <!-- 5 Recall order -->
+  <li class="documents-list-item">
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Recall order</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">PPCS reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">ABCD12345BCDE</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Date added</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">11/01/2024</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          <a href="#" class="govuk-link">Recall on 11/01/2024</a>
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <!-- 6 IS91 -->
+  <li class="documents-list-item">
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">IS91 Detention Authority</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Home Office reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">ABCD12345BCDE</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Date added</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">03/07/2023</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          <a href="#" class="govuk-link">IS91 recorded on 03/07/2023</a>
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <!-- 7 Calculation sheet -->
+  <li class="documents-list-item" >
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Calculation sheet</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Uploaded by</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">B. Tate</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Date added</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">11/06/2023</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">
+          <a href="#" class="govuk-link">Calculation on 11/06/2023</a>
+        </p>
+      </div>
+    </div>
+  </li>
+
+  <!-- 8 Remand warrant (old) -->
+  <li class="documents-list-item">
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Remand warrant</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Case reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">SA194874TB</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Manchester City Magistrates Court</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Warrant date</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">03/08/2022</p>
+      </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Court cases</a></p>
+      </div>
+    </div>
+  </li>
+
+  <!-- 9 Prison court register -->
+  <li class="documents-list-item">
+    <h3 class="govuk-heading-s document-title govuk-!-margin-bottom-0">
+      <a href="#" class="govuk-link--no-visited-state" target="_blank">Prison court register</a>
+      <span class="govuk-body-s" style="color:#484949">PDF 2.2MB</span>
+    </h3>
+
+    <div class="govuk-grid-row govuk-!-padding-bottom-2 govuk-!-margin-top-2">
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Case reference</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">SA194874TB</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Court name</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">Manchester City Magistrates Court</p>
+      </div>
+      <div class="govuk-grid-column-one-third govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Warrant date</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0">03/08/2022</p>
+      </div>
+      <div class="govuk-grid-column-full govuk-!-margin-bottom-0">
+        <h3 class="govuk-heading-s govuk-!-margin-bottom-0">Source</h3>
+        <p class="govuk-body govuk-!-margin-bottom-0"><a href="#" class="govuk-link">Court cases</a></p>
+      </div>
+    </div>
+  </li>
+
+</ul>
+<nav class="govuk-pagination" aria-label="Pagination">
+  <div class="govuk-pagination__prev">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="prev">
+      <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.449-4.1856-3.9768h12.896v-2h-12.984l4.2931-4.293-1.414-1.414z"></path>
+      </svg>
+      <span class="govuk-pagination__link-title">
+        Previous<span class="govuk-visually-hidden"> page</span>
+      </span>
+    </a>
+  </div>
+  <ul class="govuk-pagination__list">
+    <li class="govuk-pagination__item govuk-pagination__item--current">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+        1
+      </a>
+    </li>
+    <li class="govuk-pagination__item ">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2" >
+        2
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+        3
+      </a>
+    </li>
+    <li class="govuk-pagination__item">
+      <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 4">
+        4
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-pagination__next">
+    <a class="govuk-link govuk-pagination__link" href="#" rel="next">
+      <span class="govuk-pagination__link-title">
+        Next<span class="govuk-visually-hidden"> page</span>
+      </span>
+      <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+        <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+      </svg>
+    </a>
+  </div>
+</nav>
     </div>
 </div>
+
+<script>
+    document.querySelectorAll('.filter-expander__button').forEach(button => {
+        const content = document.getElementById(button.getAttribute('aria-controls'));
+
+        // Initialize hidden content
+        content.hidden = true;
+
+        button.addEventListener('click', () => {
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+
+            // Toggle expanded state
+            button.setAttribute('aria-expanded', !expanded);
+            content.hidden = expanded;
+
+            // Ensure the button keeps focus after click
+            button.focus();
+        });
+    });
+</script>
 {% endblock %}

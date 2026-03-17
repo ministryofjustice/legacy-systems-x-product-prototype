@@ -4,15 +4,16 @@
 // For guidance on how to add JavaScript see:
 // https://prototype-kit.service.gov.uk/docs/adding-css-javascript-and-images
 //
-
+$(document).ready(function () {
+  window.MOJFrontend.initAll(); // this will automatically initialize moj-datepicker
+});
 
 $(document).ready(function () {
-  window.MOJFrontend.initAll()
-  accessibleAutocomplete.enhanceSelectElement({
-    selectElement: document.querySelector('.enhance-autcomplete')
-  })
-})
-
+  const select = document.querySelector('.enhance-autocomplete');
+  if (select) {
+    accessibleAutocomplete.enhanceSelectElement({ selectElement: select });
+  }
+});
 
 // Check all checkboxes
 $('#unselect-all').click(function(event) {   
